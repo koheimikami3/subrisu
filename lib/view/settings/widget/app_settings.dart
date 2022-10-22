@@ -21,12 +21,13 @@ class AppSettings extends StatelessWidget {
           leadingIcon: Icons.notifications_outlined,
           onTap: () => _onTap(context),
         ),
-        SettingItem(
-          middleItem: true,
-          itemName: Texts.appColorItem,
-          leadingIcon: Icons.palette_outlined,
-          onTap: () => _onTap(context),
-        ),
+        // Ver1.1.0で実装
+        // SettingItem(
+        //   middleItem: true,
+        //   itemName: Texts.appColorItem,
+        //   leadingIcon: Icons.palette_outlined,
+        //   onTap: () => _onTap(context),
+        // ),
         SettingItem(
           bottomItem: true,
           itemName: Texts.darkModeItem,

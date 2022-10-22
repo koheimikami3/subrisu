@@ -44,23 +44,13 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pageList.elementAt(_selectedIndex),
-      bottomNavigationBar: Theme(
-        data: ThemeData(
-          // リップルエフェクトを無効化
-          splashColor: Colors.transparent,
-        ),
-        child: BottomNavigationBar(
-          onTap: (index) => _onItemTapped(index),
-          iconSize: 30,
-          selectedFontSize: 12.sp,
-          unselectedFontSize: 12.sp,
-          currentIndex: _selectedIndex,
-          fixedColor: Colors.black,
-          items: [
-            _list(),
-            _settings(),
-          ],
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) => _onItemTapped(index),
+        currentIndex: _selectedIndex,
+        items: [
+          _list(),
+          _settings(),
+        ],
       ),
     );
   }

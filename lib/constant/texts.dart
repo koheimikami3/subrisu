@@ -13,6 +13,9 @@ class Texts {
   static const googleSignInButton = 'Googleでサインイン';
   static const guestStartButton = 'アカウント登録しないで始める';
 
+  // 設定画面ボタンテキスト
+  static const deleteUserButton = 'すべてのデータを削除';
+
   // 設定画面項目リストタイトル
   static const paidPlanTitle = '有料プラン';
   static const appSettingsTitle = 'アプリ';
@@ -31,7 +34,6 @@ class Texts {
   static const tosItem = '利用規約';
   static const privacyPolicyItem = 'プライバシーポリシー';
   static const appVersionItem = 'アプリのバージョン';
-  static const deleteUserItem = '全データの削除';
 
   // ダークモード画面項目名
   static const deviceSettingItem = '端末設定と同じ';

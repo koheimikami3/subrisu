@@ -13,10 +13,10 @@ class DarkModePage extends ConsumerWidget {
       appBar: AppBar(
         title: const Text(Texts.darkModePage),
       ),
-      body: PhysicalModel(
-        color: !isDark
-            ? const Color.fromRGBO(240, 240, 245, 1)
-            : Configs.darkThemeBackgroundColor,
+      body: Material(
+        color: isDark
+            ? Configs.darkBackgroundColor
+            : Configs.settingsBackgroundColor,
         child: Row(
           children: [
             SizedBox(width: 20.w),

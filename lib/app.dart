@@ -5,13 +5,13 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkMode = ref.watch(darkModeProvider);
+    final isDark = ref.watch(darkModeProvider);
 
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       builder: (_, __) {
         return MaterialApp(
-          theme: !isDarkMode ? AppTheme.lightTheme() : AppTheme.darkTheme(),
+          theme: isDark ? AppTheme.darkTheme() : AppTheme.lightTheme(),
           debugShowCheckedModeBanner: false,
           initialRoute: '/',
           routes: {
@@ -20,7 +20,7 @@ class MyApp extends ConsumerWidget {
             '/darkMode': (_) => const DarkModePage(),
             '/bottomNav': (_) => const BottomNavBar(),
           },
-          home: const LoginPage(),
+          home: const BottomNavBar(),
         );
       },
     );

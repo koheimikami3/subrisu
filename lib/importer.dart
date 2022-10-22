@@ -29,7 +29,7 @@ export 'package:subrisu/app_theme.dart';
 export 'package:subrisu/view/list/widget/create_page_button.dart';
 export 'package:subrisu/view/settings/widget/app_settings.dart';
 export 'package:subrisu/component/setting_item.dart';
-export 'package:subrisu/view/settings/widget/delete_user.dart';
+export 'package:subrisu/view/settings/widget/delete_user_button.dart';
 export 'package:subrisu/view/bottom_nav_bar.dart';
 export 'package:subrisu/view/settings/dark_mode/dark_mode_page.dart';
 export 'package:subrisu/view/settings/widget/supports.dart';

@@ -13,10 +13,10 @@ class SettingsPage extends ConsumerWidget {
         title: const Text(Texts.settingsPage),
         automaticallyImplyLeading: false,
       ),
-      body: PhysicalModel(
-        color: !isDark
-            ? const Color.fromRGBO(240, 240, 245, 1)
-            : Configs.darkThemeBackgroundColor,
+      body: Material(
+        color: isDark
+            ? Configs.darkBackgroundColor
+            : Configs.settingsBackgroundColor,
         child: SingleChildScrollView(
           child: Row(
             children: [
@@ -32,8 +32,8 @@ class SettingsPage extends ConsumerWidget {
                     const Supports(),
                     SizedBox(height: 25.h),
                     const AppVersion(),
-                    SizedBox(height: 25.h),
-                    const DeleteUserItem(),
+                    SizedBox(height: 35.h),
+                    const DeleteUserButton(),
                     SizedBox(height: 25.h),
                   ],
                 ),

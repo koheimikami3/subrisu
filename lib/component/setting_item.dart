@@ -1,7 +1,7 @@
 import 'package:subrisu/importer.dart';
 
 /// 設定項目のUIを作成する
-class SettingItem extends StatelessWidget {
+class SettingItem extends ConsumerWidget {
   const SettingItem({
     Key? key,
     this.independenceItem = false,
@@ -9,7 +9,6 @@ class SettingItem extends StatelessWidget {
     this.middleItem = false,
     this.bottomItem = false,
     required this.itemName,
-    this.textColor = Colors.black,
     this.leadingIcon,
     this.trailing = const ArrowIcon(),
     required this.onTap,
@@ -20,13 +19,14 @@ class SettingItem extends StatelessWidget {
   final bool middleItem; // リスト中間項目か
   final bool bottomItem; // リスト最下部項目か
   final String itemName; // 項目名
-  final Color textColor; // 項目テキストの色
   final IconData? leadingIcon; // 前方アイコン
   final Widget trailing; // 後方コンテンツ
   final VoidCallback? onTap; // ボタンタップ時の動作
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+
     return Material(
       borderRadius: independenceItem
           ? _independenceRadius()
@@ -37,7 +37,7 @@ class SettingItem extends StatelessWidget {
                   : bottomItem
                       ? _bottomRadius()
                       : null,
-      color: Colors.white,
+      color: isDark ? Configs.darkItemColor : Colors.white,
       child: InkWell(
         onTap: onTap,
         borderRadius: independenceItem
@@ -67,7 +67,7 @@ class SettingItem extends StatelessWidget {
                   SizedBox(height: 10.w),
                   Row(
                     children: [
-                      Expanded(child: _text()),
+                      Expanded(child: Text(itemName)),
                       trailing,
                       SizedBox(width: 15.w),
                     ],
@@ -107,15 +107,6 @@ class SettingItem extends StatelessWidget {
     return Icon(
       leadingIcon,
       size: 21,
-      color: Colors.black54,
-    );
-  }
-
-  /// 項目名テキストを表示する
-  Text _text() {
-    return Text(
-      itemName,
-      style: TextStyle(color: textColor),
     );
   }
 
