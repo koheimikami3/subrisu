@@ -69,24 +69,37 @@ class DarkModePage extends ConsumerWidget {
   }
 
   /// テーマ設定を端末設定と同じにする
-  void _onDeviceSettingTap(BuildContext context, WidgetRef ref) {
-    ref.watch(themeSettingProvider.notifier).state = 0;
+  Future<void> _onDeviceSettingTap(BuildContext context, WidgetRef ref) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    // 設定を保存
+    prefs.setInt(Configs.themeKey, Configs.deviceTheme);
+    ref.watch(themeSettingProvider.notifier).state = Configs.deviceTheme;
 
     // 端末のテーマ設定を取得し、ダークモードか判定
+    // ignore: use_build_context_synchronously
     final brightness = MediaQuery.platformBrightnessOf(context);
     final isDark = brightness == Brightness.dark;
     ref.watch(darkModeProvider.notifier).state = isDark;
   }
 
   /// テーマ設定をライトモードにする
-  void _onLightModeTap(WidgetRef ref) {
-    ref.watch(themeSettingProvider.notifier).state = 1;
+  Future<void> _onLightModeTap(WidgetRef ref) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    // 設定を保存
+    prefs.setInt(Configs.themeKey, Configs.lightTheme);
+    ref.watch(themeSettingProvider.notifier).state = Configs.lightTheme;
     ref.watch(darkModeProvider.notifier).state = false;
   }
 
   /// テーマ設定をダークモードにする
-  void _onDarkModeTap(WidgetRef ref) {
-    ref.watch(themeSettingProvider.notifier).state = 2;
+  Future<void> _onDarkModeTap(WidgetRef ref) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    // 設定を保存
+    prefs.setInt(Configs.themeKey, Configs.darkTheme);
+    ref.watch(themeSettingProvider.notifier).state = Configs.darkTheme;
     ref.watch(darkModeProvider.notifier).state = true;
   }
 }

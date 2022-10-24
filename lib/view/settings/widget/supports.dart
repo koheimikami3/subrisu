@@ -11,34 +11,43 @@ class Supports extends StatelessWidget {
         const ItemsTitle(title: Texts.supportsTitle),
         SettingItem(
           topItem: true,
-          itemName: Texts.appReviewItem,
+          itemName: Texts.reviewItem,
           leadingIcon: Icons.rate_review_outlined,
           trailing: const SizedBox.shrink(),
-          onTap: () => _onTap(context),
+          onTap: () => _onReviewTap(),
         ),
         SettingItem(
           middleItem: true,
-          itemName: Texts.appShareItem,
+          itemName: Texts.shareItem,
           leadingIcon: Icons.share_outlined,
           trailing: const SizedBox.shrink(),
-          onTap: () => _onTap(context),
+          onTap: () => _onShareTap(),
         ),
         SettingItem(
           middleItem: true,
           leadingIcon: Icons.description_outlined,
           itemName: Texts.tosItem,
-          onTap: () => _onTap(context),
+          onTap: () => _onTosTap(context),
         ),
         SettingItem(
           bottomItem: true,
           leadingIcon: Icons.verified_user_outlined,
           itemName: Texts.privacyPolicyItem,
-          onTap: () => _onTap(context),
+          onTap: () => _onPrivacyPolicyTap(context),
         ),
       ],
     );
   }
 
-  /// 有料プラン画面に遷移する
-  void _onTap(BuildContext context) {}
+  /// レビュー画面を呼び出す
+  void _onReviewTap() {}
+
+  /// シェア画面を呼び出す
+  Future<void> _onShareTap() async => await Share.share(Texts.shareText);
+
+  /// 利用規約画面に遷移する
+  void _onTosTap(BuildContext context) {}
+
+  /// プライバシーポリシー画面に遷移する
+  void _onPrivacyPolicyTap(BuildContext context) {}
 }

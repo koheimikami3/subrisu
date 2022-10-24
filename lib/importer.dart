@@ -1,3 +1,6 @@
+// dart
+export 'dart:io';
+
 // third party
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:firebase_core/firebase_core.dart';
@@ -8,6 +11,11 @@ export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:google_sign_in/google_sign_in.dart';
 export 'package:sign_in_with_apple/sign_in_with_apple.dart';
 export 'package:package_info_plus/package_info_plus.dart';
+export 'package:shared_preferences/shared_preferences.dart';
+export 'package:share_plus/share_plus.dart';
+export 'package:freezed_annotation/freezed_annotation.dart';
+export 'package:cloud_firestore/cloud_firestore.dart';
+export 'package:flutter_localizations/flutter_localizations.dart';
 
 // app
 export 'package:subrisu/app.dart';
@@ -33,3 +41,9 @@ export 'package:subrisu/view/settings/widget/delete_user_button.dart';
 export 'package:subrisu/view/bottom_nav_bar.dart';
 export 'package:subrisu/view/settings/dark_mode/dark_mode_page.dart';
 export 'package:subrisu/view/settings/widget/supports.dart';
+export 'package:subrisu/constant/urls.dart';
+export 'package:subrisu/model/user/user_data.dart';
+export 'package:subrisu/repository/user/user_repository.dart';
+export 'package:subrisu/repository/user/user_repository_impl.dart';
+export 'package:subrisu/view_model/user_view_model.dart';
+export 'package:subrisu/component/progress_dialog.dart';

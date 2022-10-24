@@ -4,12 +4,17 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
+  final auth = FirebaseAuth.instance;
+
   // アプリ画面を縦固定に設定
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
+  // Firebaseにログインしている現在のユーザーを取得
+  final user = auth.currentUser;
+
   runApp(
-    const ProviderScope(
-      child: MyApp(),
+    ProviderScope(
+      child: MyApp(user: user),
     ),
   );
 }

@@ -1,3 +1,5 @@
+import 'package:subrisu/importer.dart';
+
 class Texts {
   // ボトムナビゲーションバーテキスト
   static const listNavi = 'リスト';
@@ -29,8 +31,8 @@ class Texts {
   static const notificationItem = 'プッシュ通知';
   static const appColorItem = 'テーマカラー';
   static const darkModeItem = 'ダークモード';
-  static const appReviewItem = 'レビューを書く';
-  static const appShareItem = 'アプリをシェア';
+  static const reviewItem = 'レビューを書く';
+  static const shareItem = 'アプリをシェア';
   static const tosItem = '利用規約';
   static const privacyPolicyItem = 'プライバシーポリシー';
   static const appVersionItem = 'アプリのバージョン';
@@ -39,4 +41,7 @@ class Texts {
   static const deviceSettingItem = '端末設定と同じ';
   static const lightSettingItem = 'ライトモード';
   static const darkSettingItem = 'ダークモード';
+
+  // シェアテキスト
+  static const shareText = 'サブリス\n${Urls.appStoreUrl}';
 }
