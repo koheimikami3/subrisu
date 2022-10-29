@@ -1,5 +1,4 @@
-import 'package:subrisu/component/circular_indicator.dart';
-import 'package:subrisu/importer.dart';
+import '../../importer.dart';
 
 /// データ処理の実行中を知らせるダイアログ
 ///
@@ -21,7 +20,7 @@ class ProgressDialog {
                 padding: EdgeInsets.all(30.w),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.black.withOpacity(0.7),
+                  color: Colors.black.withOpacity(0.6),
                 ),
                 child: const CircularIndicator(),
               ),

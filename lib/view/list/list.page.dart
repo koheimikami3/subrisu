@@ -1,4 +1,5 @@
 import 'package:subrisu/importer.dart';
+import '../../constant/texts.dart' as texts;
 
 /// リスト画面のUIを作成する
 class ListPage extends StatelessWidget {
@@ -8,7 +9,7 @@ class ListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(Texts.listPage),
+        title: const Text(texts.listPage),
         automaticallyImplyLeading: false,
       ),
       floatingActionButton: const CreatePageButton(),

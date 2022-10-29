@@ -1,4 +1,5 @@
-import 'package:subrisu/importer.dart';
+import '../../../constant/texts.dart' as texts;
+import '../../../importer.dart';
 
 /// アプリ設定項目リストのUIを作成する
 class AppSettings extends StatelessWidget {
@@ -8,29 +9,29 @@ class AppSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const ItemsTitle(title: Texts.appSettingsTitle),
+        const ItemsTitle(title: texts.appSettingsTitle),
         SettingItem(
           topItem: true,
-          itemName: Texts.accountItem,
+          itemName: texts.accountItem,
           leadingIcon: Icons.account_circle_outlined,
           onTap: () => _onTap(context),
         ),
         SettingItem(
           middleItem: true,
-          itemName: Texts.notificationItem,
+          itemName: texts.notificationItem,
           leadingIcon: Icons.notifications_outlined,
           onTap: () => _onTap(context),
         ),
         // Ver1.1.0で実装
         // SettingItem(
         //   middleItem: true,
-        //   itemName: Texts.appColorItem,
+        //   itemName: texts.appColorItem,
         //   leadingIcon: Icons.palette_outlined,
         //   onTap: () => _onTap(context),
         // ),
         SettingItem(
           bottomItem: true,
-          itemName: Texts.darkModeItem,
+          itemName: texts.darkModeItem,
           leadingIcon: Icons.dark_mode_outlined,
           onTap: () => _onDarkModeTap(context),
         ),

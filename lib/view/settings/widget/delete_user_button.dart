@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:subrisu/importer.dart';
+import '../../../constant/texts.dart' as texts;
+import '../../../importer.dart';
 
 /// ユーザー削除を行うボタン
 class DeleteUserButton extends ConsumerWidget {
@@ -8,7 +9,7 @@ class DeleteUserButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CupertinoButton(
-      onPressed: () => _onPressed(context, ref),
+      onPressed: () async => await _onPressed(context, ref),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -30,9 +31,12 @@ class DeleteUserButton extends ConsumerWidget {
 
   /// テキストを表示する
   Text _text() {
-    return const Text(
-      Texts.deleteUserButton,
-      style: TextStyle(color: Colors.red),
+    return Text(
+      texts.deleteUserButton,
+      style: TextStyle(
+        fontSize: 15.sp,
+        color: Colors.red,
+      ),
     );
   }
 
@@ -41,24 +45,27 @@ class DeleteUserButton extends ConsumerWidget {
   /// 今までの画面を全てウィジェットツリーから削除する
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
-    final repository = ref.watch(userViewModelProvider);
-    final userId = ref.watch(userIdProvider);
+    final repository = ref.watch(userViewModelProvider.notifier);
 
     // プログレスダイアログを表示
     ProgressDialog.show(context);
 
-    // ユーザーデータを削除
-    await repository.delete(userId);
+    try {
+      // ユーザードキュメントを削除
+      await repository.delete();
+    } catch (e) {
+      Navigator.pop(context);
+      IOSAlertDialog.show(context, true, e.toString());
+      return;
+    }
 
-    // 匿名ユーザーを削除
+    // 認証ユーザーを削除
     auth.currentUser!.delete();
 
     // プログレスダイアログを閉じる
-    // ignore: use_build_context_synchronously
     Navigator.pop(context);
 
     // ログイン画面に遷移
-    // ignore: use_build_context_synchronously
     Navigator.pushNamedAndRemoveUntil(context, '/login', (_) => false);
   }
 }

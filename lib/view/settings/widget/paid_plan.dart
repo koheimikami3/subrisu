@@ -1,4 +1,5 @@
-import 'package:subrisu/importer.dart';
+import '../../../constant/texts.dart' as texts;
+import '../../../importer.dart';
 
 /// 有料プラン項目のUIを作成する
 class PaidPlan extends StatelessWidget {
@@ -8,11 +9,11 @@ class PaidPlan extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const ItemsTitle(title: Texts.paidPlanTitle),
+        const ItemsTitle(title: texts.paidPlanTitle),
         SettingItem(
           independenceItem: true,
           leadingIcon: Icons.hide_image_outlined,
-          itemName: Texts.paidPlanItem,
+          itemName: texts.paidPlanItem,
           onTap: () => _onTap(context),
         ),
       ],

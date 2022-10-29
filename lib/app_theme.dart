@@ -1,4 +1,5 @@
-import 'package:subrisu/importer.dart';
+import 'constant/configs.dart' as configs;
+import 'importer.dart';
 
 class AppTheme {
   /// ライトモードのテーマ設定を行う
@@ -18,7 +19,7 @@ class AppTheme {
   static ThemeData darkTheme() {
     return ThemeData(
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: Configs.darkBackgroundColor,
+      scaffoldBackgroundColor: configs.darkBackgroundColor,
       iconTheme: const IconThemeData(color: Colors.white),
       splashColor: Colors.transparent,
       appBarTheme: _darkAppBarTheme(),
@@ -32,7 +33,7 @@ class AppTheme {
   static AppBarTheme _lightAppBarTheme() {
     return AppBarTheme(
       elevation: 1,
-      backgroundColor: Configs.appColor,
+      backgroundColor: configs.appColor,
       iconTheme: const IconThemeData(color: Colors.white),
       titleTextStyle: TextStyle(
         fontSize: 17.sp,
@@ -73,7 +74,7 @@ class AppTheme {
       unselectedIconTheme: const IconThemeData(size: 30),
       selectedLabelStyle: TextStyle(fontSize: 12.sp),
       unselectedLabelStyle: TextStyle(fontSize: 12.sp),
-      selectedItemColor: Configs.appColor,
+      selectedItemColor: configs.appColor,
     );
   }
 
@@ -82,7 +83,7 @@ class AppTheme {
     return const FloatingActionButtonThemeData(
       elevation: 2,
       highlightElevation: 2,
-      backgroundColor: Configs.appColor,
+      backgroundColor: configs.appColor,
       splashColor: Colors.transparent,
     );
   }

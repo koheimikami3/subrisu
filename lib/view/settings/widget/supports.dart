@@ -1,4 +1,5 @@
-import 'package:subrisu/importer.dart';
+import '../../../constant/texts.dart' as texts;
+import '../../../importer.dart';
 
 /// サポート項目リストのUIを作成する
 class Supports extends StatelessWidget {
@@ -8,17 +9,17 @@ class Supports extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const ItemsTitle(title: Texts.supportsTitle),
+        const ItemsTitle(title: texts.supportsTitle),
         SettingItem(
           topItem: true,
-          itemName: Texts.reviewItem,
+          itemName: texts.reviewItem,
           leadingIcon: Icons.rate_review_outlined,
           trailing: const SizedBox.shrink(),
           onTap: () => _onReviewTap(),
         ),
         SettingItem(
           middleItem: true,
-          itemName: Texts.shareItem,
+          itemName: texts.shareItem,
           leadingIcon: Icons.share_outlined,
           trailing: const SizedBox.shrink(),
           onTap: () => _onShareTap(),
@@ -26,13 +27,13 @@ class Supports extends StatelessWidget {
         SettingItem(
           middleItem: true,
           leadingIcon: Icons.description_outlined,
-          itemName: Texts.tosItem,
+          itemName: texts.tosItem,
           onTap: () => _onTosTap(context),
         ),
         SettingItem(
           bottomItem: true,
           leadingIcon: Icons.verified_user_outlined,
-          itemName: Texts.privacyPolicyItem,
+          itemName: texts.privacyPolicyItem,
           onTap: () => _onPrivacyPolicyTap(context),
         ),
       ],
@@ -43,7 +44,7 @@ class Supports extends StatelessWidget {
   void _onReviewTap() {}
 
   /// シェア画面を呼び出す
-  Future<void> _onShareTap() async => await Share.share(Texts.shareText);
+  Future<void> _onShareTap() async => await Share.share(texts.shareText);
 
   /// 利用規約画面に遷移する
   void _onTosTap(BuildContext context) {}

@@ -1,4 +1,5 @@
-import 'package:subrisu/importer.dart';
+import '../constant/configs.dart' as configs;
+import '../importer.dart';
 
 /// 設定項目のUIを作成する
 class SettingItem extends ConsumerWidget {
@@ -37,7 +38,7 @@ class SettingItem extends ConsumerWidget {
                   : bottomItem
                       ? _bottomRadius()
                       : null,
-      color: isDark ? Configs.darkItemColor : Colors.white,
+      color: isDark ? configs.darkItemColor : Colors.white,
       child: InkWell(
         onTap: onTap,
         borderRadius: independenceItem

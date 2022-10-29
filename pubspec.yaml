@@ -29,6 +29,7 @@ dependencies:
   share_plus: ^6.0.1
   freezed: ^2.2.0
   freezed_annotation: ^2.2.0
+  json_serializable: ^6.5.4
 
 dev_dependencies:
   flutter_test:
@@ -54,8 +55,10 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/splash.png
-    - assets/images/os_icon/
+    - images/splash.png
+    - images/apple.png
+    - images/google.png
+    - images/icon/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

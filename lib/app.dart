@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:subrisu/importer.dart';
+import 'constant/configs.dart' as configs;
+import 'importer.dart';
 
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({
@@ -18,25 +19,29 @@ class _MyAppState extends ConsumerState<MyApp> {
   void initState() {
     super.initState();
 
+    // ログインユーザーが存在する場合、ユーザーデータを取得
+    if (widget.user != null) getUserData();
+
+    // 端末内の設定データを取得
     getSettingData();
+  }
+
+  /// ユーザーデータを取得する
+  Future<void> getUserData() async {
+    final repository = ref.read(userViewModelProvider.notifier);
+
+    await repository.getUser(widget.user!.uid);
   }
 
   /// 設定データを取得し、アプリに反映する
   Future<void> getSettingData() async {
-    final prefs = await SharedPreferences.getInstance();
-
-    if (widget.user != null) {
-      prefs.setString(Configs.userIdKey, widget.user!.uid);
-      final userId = prefs.getString(Configs.userIdKey);
-      ref.read(userIdProvider.notifier).state = userId!;
-    }
-
     // テーマ設定状況を取得
-    final theme = prefs.getInt(Configs.themeKey) ?? 0;
+    final prefs = await SharedPreferences.getInstance();
+    final theme = prefs.getInt(configs.themeKey) ?? 0;
 
     // 「端末設定と同じ」の場合、端末のテーマ設定を取得し、ダークモードか判定
-    if (theme == Configs.deviceTheme) {
-      ref.read(themeSettingProvider.notifier).state = Configs.deviceTheme;
+    if (theme == configs.deviceTheme) {
+      ref.read(themeSettingProvider.notifier).state = configs.deviceTheme;
 
       // ignore: use_build_context_synchronously
       final brightness = MediaQuery.platformBrightnessOf(context);
@@ -45,14 +50,14 @@ class _MyAppState extends ConsumerState<MyApp> {
     }
 
     // 「ライトモード」の場合
-    if (theme == Configs.lightTheme) {
-      ref.read(themeSettingProvider.notifier).state = Configs.lightTheme;
+    if (theme == configs.lightTheme) {
+      ref.read(themeSettingProvider.notifier).state = configs.lightTheme;
       ref.read(darkModeProvider.notifier).state = false;
     }
 
     // 「ダークモード」の場合
-    if (theme == Configs.darkTheme) {
-      ref.read(themeSettingProvider.notifier).state = Configs.darkTheme;
+    if (theme == configs.darkTheme) {
+      ref.read(themeSettingProvider.notifier).state = configs.darkTheme;
       ref.read(darkModeProvider.notifier).state = true;
     }
   }

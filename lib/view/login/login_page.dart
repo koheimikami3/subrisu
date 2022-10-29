@@ -13,18 +13,19 @@ class LoginPage extends StatelessWidget {
             SizedBox(width: 25.w),
             Expanded(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 50.h),
+                  // SizedBox(height: 50.h),
                   // _appName(),
-                  SizedBox(height: 10.h),
-                  _catchphrase(),
-                  SizedBox(height: 20.h),
-                  _splashImage(),
-                  SizedBox(height: 40.h),
+                  // SizedBox(height: 10.h),
+                  // _catchphrase(),
+                  // SizedBox(height: 20.h),
+                  // _splashImage(),
+                  // SizedBox(height: 40.h),
                   const AppleSignInButton(),
                   SizedBox(height: 20.h),
                   const GoogleSignInButton(),
-                  SizedBox(height: 30.h),
+                  SizedBox(height: 20.h),
                   const GuestStartButton(),
                 ],
               ),
@@ -49,22 +50,22 @@ class LoginPage extends StatelessWidget {
   //   );
   // }
 
-  /// スプラッシュ画像を表示する
-  SizedBox _splashImage() {
-    return SizedBox(
-      height: 160.h,
-      width: 160.w,
-      child: Image.asset(Configs.splashImagePath),
-    );
-  }
+  // /// スプラッシュ画像を表示する
+  // SizedBox _splashImage() {
+  //   return SizedBox(
+  //     height: 160.h,
+  //     width: 160.w,
+  //     child: Image.asset(paths.splashPath),
+  //   );
+  // }
 
   /// キャッチフレーズを表示する
-  Text _catchphrase() {
-    const text = 'サブスクリプションをリストで管理';
+  // Text _catchphrase() {
+  //   const text = 'サブスクリプションをリストで管理';
 
-    return Text(
-      text,
-      style: TextStyle(fontSize: 17.sp),
-    );
-  }
+  //   return Text(
+  //     text,
+  //     style: TextStyle(fontSize: 17.sp),
+  //   );
+  // }
 }

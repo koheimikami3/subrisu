@@ -1,4 +1,6 @@
-import 'package:subrisu/importer.dart';
+import '../../constant/configs.dart' as configs;
+import '../../constant/texts.dart' as texts;
+import '../../importer.dart';
 
 /// 設定画面のUIを作成する
 class SettingsPage extends ConsumerWidget {
@@ -10,13 +12,13 @@ class SettingsPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(Texts.settingsPage),
+        title: const Text(texts.settingsPage),
         automaticallyImplyLeading: false,
       ),
       body: Material(
         color: isDark
-            ? Configs.darkBackgroundColor
-            : Configs.settingsBackgroundColor,
+            ? configs.darkBackgroundColor
+            : configs.settingsBackgroundColor,
         child: SingleChildScrollView(
           child: Row(
             children: [

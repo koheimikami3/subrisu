@@ -1,4 +1,6 @@
-import 'package:subrisu/importer.dart';
+import '../../../constant/paths.dart' as paths;
+import '../../../constant/texts.dart' as texts;
+import '../../../importer.dart';
 
 /// Appleでサインインするボタン
 class AppleSignInButton extends StatelessWidget {
@@ -7,8 +9,8 @@ class AppleSignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SignInButton(
-      iconImagePath: Configs.appleIconImagePath,
-      text: Texts.appleSignInButton,
+      iconImagePath: paths.appleIconPath,
+      text: texts.appleSignInButton,
       textColor: Colors.white,
       backgroundColor: Colors.black,
       border: null,

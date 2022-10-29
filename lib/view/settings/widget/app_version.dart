@@ -1,4 +1,5 @@
-import 'package:subrisu/importer.dart';
+import '../../../constant/texts.dart' as texts;
+import '../../../importer.dart';
 
 /// アプリバージョン項目のUIを作成する
 class AppVersion extends ConsumerWidget {
@@ -8,11 +9,11 @@ class AppVersion extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        const ItemsTitle(title: Texts.appVersionTitle),
+        const ItemsTitle(title: texts.appVersionTitle),
         SettingItem(
           independenceItem: true,
           leadingIcon: Icons.info_outline,
-          itemName: Texts.appVersionItem,
+          itemName: texts.appVersionItem,
           trailing: _appVersion(ref),
           onTap: null,
         ),

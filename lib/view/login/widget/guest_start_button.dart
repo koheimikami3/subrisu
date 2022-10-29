@@ -1,4 +1,8 @@
-import 'package:subrisu/importer.dart';
+import 'package:flutter/cupertino.dart';
+
+import '../../../constant/configs.dart' as configs;
+import '../../../constant/texts.dart' as texts;
+import '../../../importer.dart';
 
 /// ゲストで始めるボタン
 class GuestStartButton extends ConsumerWidget {
@@ -6,16 +10,20 @@ class GuestStartButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return InkWell(
-      onTap: () => _onTap(context, ref),
-      highlightColor: Colors.black26,
-      splashColor: Colors.transparent,
-      child: Text(
-        Texts.guestStartButton,
-        style: TextStyle(
-          fontSize: 15.sp,
-          color: Configs.appColor,
-        ),
+    return CupertinoButton(
+      onPressed: () async => await _onTap(context, ref),
+      padding: EdgeInsets.zero,
+      child: _text(),
+    );
+  }
+
+  /// ボタンテキストを表示する
+  Text _text() {
+    return Text(
+      texts.guestStartButton,
+      style: TextStyle(
+        fontSize: 15.sp,
+        color: configs.appColor,
       ),
     );
   }
@@ -23,7 +31,7 @@ class GuestStartButton extends ConsumerWidget {
   /// 匿名ユーザーを作成し、ボトムナビゲーションバーを経由してリスト画面に遷移する
   Future<void> _onTap(BuildContext context, WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
-    final repository = ref.watch(userViewModelProvider);
+    final repository = ref.watch(userViewModelProvider.notifier);
 
     // プログレスダイアログを表示
     ProgressDialog.show(context);
@@ -38,15 +46,10 @@ class GuestStartButton extends ConsumerWidget {
     // 匿名認証IDをユーザーIDとする
     await repository.create(anonAuthId);
 
-    // ユーザーIDをプロバイダに保存
-    ref.watch(userIdProvider.notifier).state = anonAuthId;
-
     // プログレスダイアログを閉じる
-    // ignore: use_build_context_synchronously
     Navigator.pop(context);
 
     // ボトムナビゲーションバーを経由してリスト画面に遷移
-    // ignore: use_build_context_synchronously
     Navigator.pushNamed(context, '/bottomNav');
   }
 }

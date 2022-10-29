@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:subrisu/importer.dart';
+
+import '../importer.dart';
 
 /// データ処理の実行中を知らせるインジケーター
 class CircularIndicator extends StatelessWidget {

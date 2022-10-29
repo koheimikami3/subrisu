@@ -1,4 +1,5 @@
 import 'package:subrisu/importer.dart';
+import '../constant/texts.dart' as texts;
 
 /// ボトムナビゲーションバーのUIを作成する
 class BottomNavBar extends ConsumerStatefulWidget {
@@ -59,7 +60,7 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
   BottomNavigationBarItem _list() {
     return const BottomNavigationBarItem(
       icon: Icon(Icons.list),
-      label: Texts.listNavi,
+      label: texts.listNavi,
     );
   }
 
@@ -67,7 +68,7 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
   BottomNavigationBarItem _settings() {
     return const BottomNavigationBarItem(
       icon: Icon(Icons.settings),
-      label: Texts.settingsNavi,
+      label: texts.settingsNavi,
     );
   }
 }

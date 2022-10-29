@@ -1,4 +1,6 @@
-import 'package:subrisu/importer.dart';
+import '../../../constant/paths.dart' as paths;
+import '../../../constant/texts.dart' as texts;
+import '../../../importer.dart';
 
 /// Googleでサインインするボタン
 class GoogleSignInButton extends ConsumerWidget {
@@ -7,11 +9,11 @@ class GoogleSignInButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SignInButton(
-      iconImagePath: Configs.googleIconImagePath,
-      text: Texts.googleSignInButton,
+      iconImagePath: paths.googleIconPath,
+      text: texts.googleSignInButton,
       textColor: Colors.black54,
       backgroundColor: Colors.white,
-      border: Border.all(width: 2, color: Colors.black26),
+      border: Border.all(width: 1, color: Colors.black26),
       onPressed: () async => await _onPressed(context, ref),
     );
   }
@@ -19,7 +21,7 @@ class GoogleSignInButton extends ConsumerWidget {
   // Googleでサインインし、ボトムナビゲーションバーを経由してリスト画面に遷移する
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
-    final repository = ref.watch(userViewModelProvider);
+    final repository = ref.watch(userViewModelProvider.notifier);
 
     // Googleサインインをリクエストする
     final googleUser = await GoogleSignIn(scopes: ['email']).signIn();
@@ -45,10 +47,6 @@ class GoogleSignInButton extends ConsumerWidget {
     // ユーザーを作成
     // ユーザーIDをドキュメントIDにする
     await repository.create(userId);
-
-    // ユーザーIDをプロバイダに保存
-
-    ref.watch(userIdProvider.notifier).state = userId;
 
     // ボトムナビゲーションバーを経由してリスト画面に遷移
     // ignore: use_build_context_synchronously

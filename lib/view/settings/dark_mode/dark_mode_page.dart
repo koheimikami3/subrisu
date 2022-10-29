@@ -1,4 +1,6 @@
-import 'package:subrisu/importer.dart';
+import '../../../constant/configs.dart' as configs;
+import '../../../constant/texts.dart' as texts;
+import '../../../importer.dart';
 
 /// ダークモード画面のUIを作成する
 class DarkModePage extends ConsumerWidget {
@@ -11,12 +13,12 @@ class DarkModePage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(Texts.darkModePage),
+        title: const Text(texts.darkModePage),
       ),
       body: Material(
         color: isDark
-            ? Configs.darkBackgroundColor
-            : Configs.settingsBackgroundColor,
+            ? configs.darkBackgroundColor
+            : configs.settingsBackgroundColor,
         child: Row(
           children: [
             SizedBox(width: 20.w),
@@ -26,7 +28,7 @@ class DarkModePage extends ConsumerWidget {
                   SizedBox(height: 25.h),
                   SettingItem(
                     topItem: true,
-                    itemName: Texts.deviceSettingItem,
+                    itemName: texts.deviceSettingItem,
                     leadingIcon: Icons.phone_iphone_outlined,
                     trailing:
                         mode == 0 ? _checkIcon() : const SizedBox.shrink(),
@@ -34,7 +36,7 @@ class DarkModePage extends ConsumerWidget {
                   ),
                   SettingItem(
                     middleItem: true,
-                    itemName: Texts.lightSettingItem,
+                    itemName: texts.lightSettingItem,
                     leadingIcon: Icons.light_mode_outlined,
                     trailing:
                         mode == 1 ? _checkIcon() : const SizedBox.shrink(),
@@ -42,7 +44,7 @@ class DarkModePage extends ConsumerWidget {
                   ),
                   SettingItem(
                     bottomItem: true,
-                    itemName: Texts.darkSettingItem,
+                    itemName: texts.darkSettingItem,
                     leadingIcon: Icons.dark_mode_outlined,
                     trailing:
                         mode == 2 ? _checkIcon() : const SizedBox.shrink(),
@@ -64,7 +66,7 @@ class DarkModePage extends ConsumerWidget {
     return const Icon(
       Icons.check,
       size: 22,
-      color: Configs.appColor,
+      color: configs.appColor,
     );
   }
 
@@ -73,8 +75,8 @@ class DarkModePage extends ConsumerWidget {
     final prefs = await SharedPreferences.getInstance();
 
     // 設定を保存
-    prefs.setInt(Configs.themeKey, Configs.deviceTheme);
-    ref.watch(themeSettingProvider.notifier).state = Configs.deviceTheme;
+    prefs.setInt(configs.themeKey, configs.deviceTheme);
+    ref.watch(themeSettingProvider.notifier).state = configs.deviceTheme;
 
     // 端末のテーマ設定を取得し、ダークモードか判定
     // ignore: use_build_context_synchronously
@@ -88,8 +90,8 @@ class DarkModePage extends ConsumerWidget {
     final prefs = await SharedPreferences.getInstance();
 
     // 設定を保存
-    prefs.setInt(Configs.themeKey, Configs.lightTheme);
-    ref.watch(themeSettingProvider.notifier).state = Configs.lightTheme;
+    prefs.setInt(configs.themeKey, configs.lightTheme);
+    ref.watch(themeSettingProvider.notifier).state = configs.lightTheme;
     ref.watch(darkModeProvider.notifier).state = false;
   }
 
@@ -98,8 +100,8 @@ class DarkModePage extends ConsumerWidget {
     final prefs = await SharedPreferences.getInstance();
 
     // 設定を保存
-    prefs.setInt(Configs.themeKey, Configs.darkTheme);
-    ref.watch(themeSettingProvider.notifier).state = Configs.darkTheme;
+    prefs.setInt(configs.themeKey, configs.darkTheme);
+    ref.watch(themeSettingProvider.notifier).state = configs.darkTheme;
     ref.watch(darkModeProvider.notifier).state = true;
   }
 }
