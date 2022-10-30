@@ -11,6 +11,7 @@ class SettingItem extends ConsumerWidget {
     this.bottomItem = false,
     required this.itemName,
     this.leadingIcon,
+    this.settingText = '',
     this.trailing = const ArrowIcon(),
     required this.onTap,
   }) : super(key: key);
@@ -21,6 +22,7 @@ class SettingItem extends ConsumerWidget {
   final bool bottomItem; // リスト最下部項目か
   final String itemName; // 項目名
   final IconData? leadingIcon; // 前方アイコン
+  final String settingText; // 設定内容テキスト
   final Widget trailing; // 後方コンテンツ
   final VoidCallback? onTap; // ボタンタップ時の動作
 
@@ -69,6 +71,8 @@ class SettingItem extends ConsumerWidget {
                   Row(
                     children: [
                       Expanded(child: Text(itemName)),
+                      if (settingText != '') _settings(ref),
+                      SizedBox(width: 3.w),
                       trailing,
                       SizedBox(width: 15.w),
                     ],
@@ -108,6 +112,22 @@ class SettingItem extends ConsumerWidget {
     return Icon(
       leadingIcon,
       size: 21,
+    );
+  }
+
+  /// 設定内容を表示する
+  Text _settings(WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+    Color color = Colors.black54;
+
+    if (isDark) color = Colors.grey.shade400;
+
+    return Text(
+      settingText,
+      style: TextStyle(
+        fontSize: 13.sp,
+        color: color,
+      ),
     );
   }
 

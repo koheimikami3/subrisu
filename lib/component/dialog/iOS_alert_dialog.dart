@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../importer.dart';
-
-/// iOS用の実行結果を表示するダイアログ
+/// iOS：実行結果を表示するダイアログ
 class IOSAlertDialog {
   const IOSAlertDialog({Key? key});
 
@@ -12,7 +10,7 @@ class IOSAlertDialog {
       builder: (context) {
         return CupertinoAlertDialog(
           title: _title(isErr),
-          content: _content(content),
+          content: Text(content),
           actions: [_closeButton(context)],
         );
       },
@@ -26,18 +24,7 @@ class IOSAlertDialog {
     if (isErr) text = 'エラー';
     if (!isErr) text = '実行結果';
 
-    return Text(
-      text,
-      style: TextStyle(fontSize: 15.sp),
-    );
-  }
-
-  /// 内容を表示する
-  static Text _content(String content) {
-    return Text(
-      content,
-      style: TextStyle(fontSize: 14.sp),
-    );
+    return Text(text);
   }
 
   /// 閉じるボタンを表示する

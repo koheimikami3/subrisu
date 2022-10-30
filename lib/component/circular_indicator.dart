@@ -3,13 +3,20 @@ import 'package:flutter/cupertino.dart';
 import '../importer.dart';
 
 /// データ処理の実行中を知らせるインジケーター
-class CircularIndicator extends StatelessWidget {
-  const CircularIndicator({Key? key}) : super(key: key);
+class CircularIndicator extends ConsumerWidget {
+  const CircularIndicator({
+    Key? key,
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+
     return Platform.isAndroid
         ? const CircularProgressIndicator()
-        : const CupertinoActivityIndicator(radius: 20, color: Colors.white);
+        : CupertinoActivityIndicator(
+            radius: 17,
+            color: isDark ? Colors.black : null,
+          );
   }
 }

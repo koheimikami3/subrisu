@@ -1,9 +1,10 @@
 import 'package:subrisu/importer.dart';
 
 class UserViewModel extends StateNotifier<UserState> {
-  UserViewModel(this.repository) : super(const UserState());
+  UserViewModel(this.repository, this.ref) : super(const UserState());
 
   final UserRepository repository;
+  final Ref ref;
 
   Future<void> getUser(String userId) async {
     try {
@@ -20,6 +21,8 @@ class UserViewModel extends StateNotifier<UserState> {
         os: userDoc.get('os'),
         createdAt: dateTime,
       );
+
+      ref.watch(isUserDataLoadedProvider.notifier).state = true;
     } catch (_) {
       rethrow;
     }
@@ -48,17 +51,25 @@ class UserViewModel extends StateNotifier<UserState> {
         os: data.os,
         createdAt: data.createdAt,
       );
+
+      ref.watch(isUserDataLoadedProvider.notifier).state = true;
     } catch (_) {
       rethrow;
     }
   }
 
   Future<void> delete() async {
-    final userId = state.userId;
-
     try {
+      // DeleteUserDataを作成
+      final data = DeleteUserData(
+        userId: state.userId,
+        os: state.os,
+      );
+
       // UserDocumentを削除
-      await repository.delete(userId);
+      await repository.delete(data);
+
+      ref.watch(isUserDataLoadedProvider.notifier).state = false;
     } catch (_) {
       rethrow;
     }

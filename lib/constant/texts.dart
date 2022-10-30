@@ -3,6 +3,7 @@ import 'urls.dart' as urls;
 // 画面タイトル
 const listPage = 'リスト';
 const settingsPage = '設定';
+const linkAccountPage = 'アカウント連携';
 const darkModePage = 'ダークモード';
 
 // ログイン画面ボタンテキスト
@@ -22,7 +23,7 @@ const userDataTitle = 'ユーザー';
 
 // 設定画面項目名
 const paidPlanItem = '広告の非表示';
-const accountItem = 'アカウント連携';
+const linkAccountItem = 'アカウント連携';
 const notificationItem = 'プッシュ通知';
 const appColorItem = 'テーマカラー';
 const darkModeItem = 'ダークモード';

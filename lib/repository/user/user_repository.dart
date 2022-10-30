@@ -5,5 +5,5 @@ abstract class UserRepository {
 
   Future<void> create(UserData data);
 
-  Future<void> delete(String userId);
+  Future<void> delete(DeleteUserData data);
 }

@@ -1,7 +1,7 @@
 import 'package:subrisu/importer.dart';
 
 /// 項目リストタイトルのUIを作成する
-class ItemsTitle extends StatelessWidget {
+class ItemsTitle extends ConsumerWidget {
   const ItemsTitle({
     Key? key,
     required this.title,
@@ -10,13 +10,13 @@ class ItemsTitle extends StatelessWidget {
   final String title; // タイトル
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
         Row(
           children: [
             SizedBox(width: 15.w),
-            _title(),
+            _title(ref),
           ],
         ),
         SizedBox(height: 5.h),
@@ -25,12 +25,17 @@ class ItemsTitle extends StatelessWidget {
   }
 
   /// タイトルテキストを表示する
-  Text _title() {
+  Text _title(WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+    Color color = Colors.grey.shade700;
+
+    if (isDark) color = Colors.grey.shade400;
+
     return Text(
       title,
       style: TextStyle(
         fontSize: 13.sp,
-        color: Colors.grey.shade700,
+        color: color,
       ),
     );
   }

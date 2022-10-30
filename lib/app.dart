@@ -84,6 +84,7 @@ class _MyAppState extends ConsumerState<MyApp> {
           routes: {
             '/login': (_) => const LoginPage(),
             '/settings': (_) => const SettingsPage(),
+            '/linkAccount': (_) => const LinkAccountPage(),
             '/darkMode': (_) => const DarkModePage(),
             '/bottomNav': (_) => const BottomNavBar(),
           },

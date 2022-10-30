@@ -12,6 +12,12 @@ const darkItemColor = Color(0xFF303030);
 // 設定画面の背景色
 const settingsBackgroundColor = Color.fromRGBO(240, 240, 245, 1);
 
+// ダイアログタイトルフォントサイズ
+const dialogTitleFontSize = 14;
+
+// ダイアログ内容フォントサイズ
+const dialogContentFontSize = 12;
+
 // ユーザーIDキー
 const userIdKey = 'userId';
 

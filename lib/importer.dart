@@ -50,3 +50,8 @@ export 'package:subrisu/component/dialog/progress_dialog.dart';
 export 'package:subrisu/component/circular_indicator.dart';
 export 'package:subrisu/component/dialog/iOS_alert_dialog.dart';
 export 'package:subrisu/model/state/user_state.dart';
+export 'package:subrisu/model/data/delete_user/delete_user_data.dart';
+export 'package:subrisu/component/loading_indicator.dart';
+export 'package:subrisu/component/dialog/iOS_conform_dialog.dart';
+export 'package:subrisu/view/settings/widget/delete_user_dialog.dart';
+export 'package:subrisu/view/settings/link_account/link_account_page.dart';

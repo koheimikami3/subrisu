@@ -32,7 +32,7 @@ class AppTheme {
   /// ライトモードAppBarのUI設定を行う
   static AppBarTheme _lightAppBarTheme() {
     return AppBarTheme(
-      elevation: 1,
+      elevation: 0,
       backgroundColor: configs.appColor,
       iconTheme: const IconThemeData(color: Colors.white),
       titleTextStyle: TextStyle(
@@ -46,7 +46,7 @@ class AppTheme {
   /// ダークモードAppBarのUI設定を行う
   static AppBarTheme _darkAppBarTheme() {
     return AppBarTheme(
-      elevation: 1,
+      elevation: 0,
       iconTheme: const IconThemeData(color: Colors.white),
       titleTextStyle: TextStyle(
         fontSize: 17.sp,

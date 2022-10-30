@@ -1,20 +1,28 @@
 import '../../../constant/texts.dart' as texts;
+import '../../../constant/configs.dart' as configs;
 import '../../../importer.dart';
 
 /// アプリ設定項目リストのUIを作成する
-class AppSettings extends StatelessWidget {
+class AppSettings extends ConsumerWidget {
   const AppSettings({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = ref.watch(themeSettingProvider);
+    String themeText = '';
+
+    if (theme == configs.deviceTheme) themeText = texts.deviceSettingItem;
+    if (theme == configs.lightTheme) themeText = texts.lightSettingItem;
+    if (theme == configs.darkTheme) themeText = texts.darkSettingItem;
+
     return Column(
       children: [
         const ItemsTitle(title: texts.appSettingsTitle),
         SettingItem(
           topItem: true,
-          itemName: texts.accountItem,
+          itemName: texts.linkAccountItem,
           leadingIcon: Icons.account_circle_outlined,
-          onTap: () => _onTap(context),
+          onTap: () => _linkAccountOnTap(context),
         ),
         SettingItem(
           middleItem: true,
@@ -33,6 +41,7 @@ class AppSettings extends StatelessWidget {
           bottomItem: true,
           itemName: texts.darkModeItem,
           leadingIcon: Icons.dark_mode_outlined,
+          settingText: themeText,
           onTap: () => _onDarkModeTap(context),
         ),
       ],
@@ -40,6 +49,11 @@ class AppSettings extends StatelessWidget {
   }
 
   void _onTap(BuildContext context) {}
+
+  /// アカウント連携画面に遷移する
+  void _linkAccountOnTap(BuildContext context) {
+    Navigator.pushNamed(context, '/linkAccount');
+  }
 
   /// ダークモード画面に遷移する
   void _onDarkModeTap(BuildContext context) {
