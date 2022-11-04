@@ -5,22 +5,38 @@ import 'importer.dart';
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({
     Key? key,
-    required this.user,
   }) : super(key: key);
-
-  final User? user; // Firebaseにログインしているユーザー
 
   @override
   ConsumerState<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends ConsumerState<MyApp> {
+  late final User? user;
+
   @override
   void initState() {
     super.initState();
+    final auth = FirebaseAuth.instance;
+
+    // Firebaseにログインしているユーザーを取得
+    user = auth.currentUser;
+
+    // アカウント連携状況を取得
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (user != null) {
+        if (!user!.isAnonymous) {
+          final userInfoList = auth.currentUser!.providerData;
+          final providerId = userInfoList.first.providerId;
+          if (providerId == 'google.com') {
+            ref.read(accountProvider.notifier).state = 'Google';
+          }
+        }
+      }
+    });
 
     // ログインユーザーが存在する場合、ユーザーデータを取得
-    if (widget.user != null) getUserData();
+    if (user != null) getUserData();
 
     // 端末内の設定データを取得
     getSettingData();
@@ -30,35 +46,39 @@ class _MyAppState extends ConsumerState<MyApp> {
   Future<void> getUserData() async {
     final repository = ref.read(userViewModelProvider.notifier);
 
-    await repository.getUser(widget.user!.uid);
+    await repository.getUser(user!.uid);
   }
 
   /// 設定データを取得し、アプリに反映する
   Future<void> getSettingData() async {
+    // アプリバージョンを取得し、プロバイダに保存
+    final packageInfo = await PackageInfo.fromPlatform();
+    final version = packageInfo.version;
+    ref.watch(appVersionProvider.notifier).state = version;
+
     // テーマ設定状況を取得
     final prefs = await SharedPreferences.getInstance();
     final theme = prefs.getInt(configs.themeKey) ?? 0;
 
     // 「端末設定と同じ」の場合、端末のテーマ設定を取得し、ダークモードか判定
     if (theme == configs.deviceTheme) {
-      ref.read(themeSettingProvider.notifier).state = configs.deviceTheme;
+      ref.watch(themeSettingProvider.notifier).state = configs.deviceTheme;
 
-      // ignore: use_build_context_synchronously
       final brightness = MediaQuery.platformBrightnessOf(context);
       final isDark = brightness == Brightness.dark;
-      ref.read(darkModeProvider.notifier).state = isDark;
+      ref.watch(darkModeProvider.notifier).state = isDark;
     }
 
     // 「ライトモード」の場合
     if (theme == configs.lightTheme) {
-      ref.read(themeSettingProvider.notifier).state = configs.lightTheme;
-      ref.read(darkModeProvider.notifier).state = false;
+      ref.watch(themeSettingProvider.notifier).state = configs.lightTheme;
+      ref.watch(darkModeProvider.notifier).state = false;
     }
 
     // 「ダークモード」の場合
     if (theme == configs.darkTheme) {
-      ref.read(themeSettingProvider.notifier).state = configs.darkTheme;
-      ref.read(darkModeProvider.notifier).state = true;
+      ref.watch(themeSettingProvider.notifier).state = configs.darkTheme;
+      ref.watch(darkModeProvider.notifier).state = true;
     }
   }
 
@@ -88,7 +108,7 @@ class _MyAppState extends ConsumerState<MyApp> {
             '/darkMode': (_) => const DarkModePage(),
             '/bottomNav': (_) => const BottomNavBar(),
           },
-          home: widget.user == null ? const LoginPage() : const BottomNavBar(),
+          home: user == null ? const LoginPage() : const BottomNavBar(),
         );
       },
     );

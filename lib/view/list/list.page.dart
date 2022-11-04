@@ -18,7 +18,9 @@ class ListPage extends ConsumerWidget {
       body: !isUserDataLoaded
           ? const Center(child: LoadingIndicator())
           : Column(
-              children: const [],
+              children: [
+                Expanded(child: Container()),
+              ],
             ),
     );
   }

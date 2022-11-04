@@ -1,5 +1,7 @@
 import 'package:subrisu/importer.dart';
 
+final accountProvider = StateProvider((ref) => '');
+
 final appVersionProvider = StateProvider((ref) => '');
 
 final themeSettingProvider = StateProvider((ref) => 0);

@@ -8,7 +8,6 @@ class LinkAccountPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final mode = ref.watch(themeSettingProvider);
     final isDark = ref.watch(darkModeProvider);
 
     return Scaffold(
@@ -21,87 +20,27 @@ class LinkAccountPage extends ConsumerWidget {
             : configs.settingsBackgroundColor,
         child: Row(
           children: [
-            SizedBox(width: 20.w),
+            SizedBox(width: 25.w),
             Expanded(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 25.h),
-                  SettingItem(
-                    topItem: true,
-                    itemName: texts.deviceSettingItem,
-                    leadingIcon: Icons.phone_iphone_outlined,
-                    trailing:
-                        mode == 0 ? _checkIcon() : const SizedBox.shrink(),
-                    onTap: () => _onDeviceSettingTap(context, ref),
-                  ),
-                  SettingItem(
-                    middleItem: true,
-                    itemName: texts.lightSettingItem,
-                    leadingIcon: Icons.light_mode_outlined,
-                    trailing:
-                        mode == 1 ? _checkIcon() : const SizedBox.shrink(),
-                    onTap: () => _onLightModeTap(ref),
-                  ),
-                  SettingItem(
-                    bottomItem: true,
-                    itemName: texts.darkSettingItem,
-                    leadingIcon: Icons.dark_mode_outlined,
-                    trailing:
-                        mode == 2 ? _checkIcon() : const SizedBox.shrink(),
-                    onTap: () => _onDarkModeTap(ref),
-                  ),
-                  SizedBox(height: 25.h),
+                  SizedBox(height: 30.h),
+                  const Text('アカウント連携を行うことで'),
+                  const Text('①アプリを削除してもデータを復元できます'),
+                  const Text('②機種変更した際にデータを移行できます'),
+                  const Text('③複数端末でのデータ管理が可能です'),
+                  SizedBox(height: 30.h),
+                  const CreateAppleUserButton(),
+                  SizedBox(height: 20.h),
+                  const LinkGoogleUserButton(),
                 ],
               ),
             ),
-            SizedBox(width: 20.w),
+            SizedBox(width: 25.w),
           ],
         ),
       ),
     );
-  }
-
-  /// チェックアイコンを表示する
-  Icon _checkIcon() {
-    return const Icon(
-      Icons.check,
-      size: 22,
-      color: configs.appColor,
-    );
-  }
-
-  /// テーマ設定を端末設定と同じにする
-  Future<void> _onDeviceSettingTap(BuildContext context, WidgetRef ref) async {
-    final prefs = await SharedPreferences.getInstance();
-
-    // 設定を保存
-    prefs.setInt(configs.themeKey, configs.deviceTheme);
-    ref.watch(themeSettingProvider.notifier).state = configs.deviceTheme;
-
-    // 端末のテーマ設定を取得し、ダークモードか判定
-    // ignore: use_build_context_synchronously
-    final brightness = MediaQuery.platformBrightnessOf(context);
-    final isDark = brightness == Brightness.dark;
-    ref.watch(darkModeProvider.notifier).state = isDark;
-  }
-
-  /// テーマ設定をライトモードにする
-  Future<void> _onLightModeTap(WidgetRef ref) async {
-    final prefs = await SharedPreferences.getInstance();
-
-    // 設定を保存
-    prefs.setInt(configs.themeKey, configs.lightTheme);
-    ref.watch(themeSettingProvider.notifier).state = configs.lightTheme;
-    ref.watch(darkModeProvider.notifier).state = false;
-  }
-
-  /// テーマ設定をダークモードにする
-  Future<void> _onDarkModeTap(WidgetRef ref) async {
-    final prefs = await SharedPreferences.getInstance();
-
-    // 設定を保存
-    prefs.setInt(configs.themeKey, configs.darkTheme);
-    ref.watch(themeSettingProvider.notifier).state = configs.darkTheme;
-    ref.watch(darkModeProvider.notifier).state = true;
   }
 }

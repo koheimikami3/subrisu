@@ -1,4 +1,4 @@
-import 'package:subrisu/importer.dart';
+import '../../importer.dart';
 
 /// ログイン画面のUIを作成する
 class LoginPage extends StatelessWidget {
@@ -22,11 +22,11 @@ class LoginPage extends StatelessWidget {
                   // SizedBox(height: 20.h),
                   // _splashImage(),
                   // SizedBox(height: 40.h),
-                  const AppleSignInButton(),
+                  const CreateAppleUserButton(),
                   SizedBox(height: 20.h),
-                  const GoogleSignInButton(),
+                  const CreateGoogleUserButton(),
                   SizedBox(height: 20.h),
-                  const GuestStartButton(),
+                  const CreateAnonymousUserButton(),
                 ],
               ),
             ),

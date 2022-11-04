@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:subrisu/importer.dart';
 
-/// Googleでサインインするボタン
+import '../../importer.dart';
+
+/// サインインボタンのUIを作成する
 class SignInButton extends StatelessWidget {
   const SignInButton({
     Key? key,

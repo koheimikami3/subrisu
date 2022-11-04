@@ -7,12 +7,16 @@ const linkAccountPage = 'アカウント連携';
 const darkModePage = 'ダークモード';
 
 // ログイン画面ボタンテキスト
-const appleSignInButton = 'Appleでサインイン';
-const googleSignInButton = 'Googleでサインイン';
-const guestStartButton = 'アカウント登録しないで始める';
+const createAppleUserButton = 'Appleでサインイン';
+const createGoogleUserButton = 'Googleでサインイン';
+const createAnonymousUserButton = 'アカウント登録しないで始める';
 
 // 設定画面ボタンテキスト
 const deleteUserButton = 'すべてのデータを削除';
+
+// アカウント連携画面ボタンテキスト
+const linkAppleUserButton = 'Appleで続ける';
+const linkGoogleUserButton = 'Googleで続ける';
 
 // 設定画面項目リストタイトル
 const paidPlanTitle = '有料プラン';

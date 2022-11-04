@@ -24,7 +24,22 @@ class DeleteUserDialog extends ConsumerWidget {
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
     final repository = ref.watch(userViewModelProvider.notifier);
+    final account = ref.watch(accountProvider);
     String err = '';
+
+    // Googleアカウントの場合
+    if (account == 'Google') {
+      // 再サインインし、新しいクレデンシャルを取得
+      final credential = await GoogleManager.singnIn();
+      if (credential == null) {
+        // プログレスダイアログを閉じる
+        Navigator.pop(context);
+        return;
+      }
+
+      // 再認証を実施
+      await auth.currentUser!.reauthenticateWithCredential(credential);
+    }
 
     // プログレスダイアログを表示
     ProgressDialog.show(context);
@@ -36,7 +51,7 @@ class DeleteUserDialog extends ConsumerWidget {
       // 認証ユーザーを削除
       await auth.currentUser!.delete();
     } catch (e) {
-      err = e.toString();
+      err = ErrorHandler.selectMessage(e.toString());
     }
 
     // プログレスダイアログを閉じる
@@ -46,7 +61,7 @@ class DeleteUserDialog extends ConsumerWidget {
     Navigator.pop(context);
 
     if (err != '') {
-      IOSAlertDialog.show(context, true, err.toString());
+      IOSAlertDialog.show(context, true, err);
       return;
     }
 

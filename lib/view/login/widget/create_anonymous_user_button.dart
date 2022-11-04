@@ -4,9 +4,9 @@ import '../../../constant/configs.dart' as configs;
 import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
-/// ゲストで始めるボタン
-class GuestStartButton extends ConsumerWidget {
-  const GuestStartButton({Key? key}) : super(key: key);
+/// 匿名ユーザーで始めるボタン
+class CreateAnonymousUserButton extends ConsumerWidget {
+  const CreateAnonymousUserButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,7 +20,7 @@ class GuestStartButton extends ConsumerWidget {
   /// ボタンテキストを表示する
   Text _text() {
     return Text(
-      texts.guestStartButton,
+      texts.createAnonymousUserButton,
       style: TextStyle(
         fontSize: 15.sp,
         color: configs.appColor,
@@ -45,6 +45,9 @@ class GuestStartButton extends ConsumerWidget {
     // ユーザーを作成
     // 匿名認証IDをユーザーIDとする
     await repository.create(anonAuthId);
+
+    // アカウント名をプロバイダに保存
+    ref.watch(accountProvider.notifier).state = 'Anonymous';
 
     // プログレスダイアログを閉じる
     Navigator.pop(context);

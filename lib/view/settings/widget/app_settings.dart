@@ -9,8 +9,13 @@ class AppSettings extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeSettingProvider);
+    final account = ref.watch(accountProvider);
+    String accountText = 'ゲスト';
     String themeText = '';
 
+    if (account == 'Google') accountText = 'Google';
+
+    // テーマ設定状況を取得
     if (theme == configs.deviceTheme) themeText = texts.deviceSettingItem;
     if (theme == configs.lightTheme) themeText = texts.lightSettingItem;
     if (theme == configs.darkTheme) themeText = texts.darkSettingItem;
@@ -22,6 +27,7 @@ class AppSettings extends ConsumerWidget {
           topItem: true,
           itemName: texts.linkAccountItem,
           leadingIcon: Icons.account_circle_outlined,
+          settingText: accountText,
           onTap: () => _linkAccountOnTap(context),
         ),
         SettingItem(

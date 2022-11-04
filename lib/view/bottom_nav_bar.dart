@@ -1,4 +1,7 @@
+import 'package:flutter/foundation.dart';
+
 import 'package:subrisu/importer.dart';
+import '../constant/configs.dart' as configs;
 import '../constant/texts.dart' as texts;
 
 /// ボトムナビゲーションバーのUIを作成する
@@ -14,6 +17,19 @@ class BottomNavBar extends ConsumerStatefulWidget {
 
 class _BottomNavBarState extends ConsumerState<BottomNavBar> {
   int _selectedIndex = 0;
+
+  final BannerAd _myBanner = BannerAd(
+    adUnitId: Platform.isIOS
+        ? kReleaseMode
+            ? configs.iOSDebugAdId
+            : configs.iOSDebugAdId
+        : kReleaseMode
+            ? configs.androidDebugAdId
+            : configs.androidDebugAdId,
+    size: AdSize.fullBanner,
+    request: const AdRequest(),
+    listener: const BannerAdListener(),
+  );
 
   final _pageList = [
     const ListPage(),
@@ -31,28 +47,33 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
   void initState() {
     super.initState();
 
-    getStartData();
-  }
-
-  Future<void> getStartData() async {
-    // アプリバージョンを取得し、プロバイダに保存
-    final packageInfo = await PackageInfo.fromPlatform();
-    final version = packageInfo.version;
-    ref.watch(appVersionProvider.notifier).state = version;
+    // バナー広告を読み込む
+    _myBanner.load();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pageList.elementAt(_selectedIndex),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (index) => _onItemTapped(index),
-        currentIndex: _selectedIndex,
-        items: [
-          _list(),
-          _settings(),
+      body: Column(
+        children: [
+          Expanded(child: _pageList.elementAt(_selectedIndex)),
+          _bannerAd(),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: (index) => _onItemTapped(index),
+        items: [_list(), _settings()],
+      ),
+    );
+  }
+
+  /// バナー広告を表示する
+  SizedBox _bannerAd() {
+    return SizedBox(
+      height: _myBanner.size.height.toDouble(),
+      width: double.infinity,
+      child: AdWidget(ad: _myBanner),
     );
   }
 

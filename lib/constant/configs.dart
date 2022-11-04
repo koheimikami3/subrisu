@@ -1,4 +1,16 @@
-import 'package:subrisu/importer.dart';
+import '../importer.dart';
+
+// iOSリリース用広告ID
+const iOSReleaseAdId = 'ca-app-pub-3768273762534884/8719323691';
+
+// iOSデバッグ用広告ID
+const iOSDebugAdId = 'ca-app-pub-3940256099942544/2934735716';
+
+// Androidリリース用広告ID
+const androidReleaseAdId = '';
+
+// Androidデバッグ用広告ID
+const androidDebugAdId = 'ca-app-pub-3940256099942544/6300978111';
 
 // アプリカラー
 const appColor = Color.fromARGB(255, 0, 180, 160);
