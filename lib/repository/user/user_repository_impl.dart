@@ -26,41 +26,4 @@ class UserRepositoryImpl implements UserRepository {
       throw errors.createUserErr;
     }
   }
-
-  // UserDocumentを削除
-  @override
-  Future<void> delete(DeleteUserData data) async {
-    final batch = _db.batch();
-
-    try {
-      final user = await _db.collection('users').doc(data.userId).get();
-      final subscriptions = await _db
-          .collection('users')
-          .doc(data.userId)
-          .collection('subscriptions')
-          .get();
-      final deleteUser = await _db.collection('deleteUsers').doc().get();
-
-      // UserDocumentを削除
-      batch.delete(user.reference);
-
-      // SubscriptionDocumentを全て削除
-      for (var doc in subscriptions.docs) {
-        batch.delete(doc.reference);
-      }
-
-      // DeleteUserDocumentを作成
-      // UserDocumentのcreatedAtを追加
-      batch.set(deleteUser.reference, data.toJson());
-      batch.set(
-        deleteUser.reference,
-        {'createdAt': user.get('createdAt')},
-        SetOptions(merge: true),
-      );
-
-      await batch.commit();
-    } catch (_) {
-      throw errors.deleteUserErr;
-    }
-  }
 }

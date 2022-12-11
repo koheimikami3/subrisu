@@ -23,33 +23,18 @@ class DeleteUserDialog extends ConsumerWidget {
   /// 今までの画面を全てウィジェットツリーから削除する
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
-    final repository = ref.watch(userViewModelProvider.notifier);
-    final account = ref.watch(accountProvider);
+    final repository = ref.watch(deletedUserViewModelProvider);
     String err = '';
-
-    // Googleアカウントの場合
-    if (account == 'Google') {
-      // 再サインインし、新しいクレデンシャルを取得
-      final credential = await GoogleManager.singnIn();
-      if (credential == null) {
-        // プログレスダイアログを閉じる
-        Navigator.pop(context);
-        return;
-      }
-
-      // 再認証を実施
-      await auth.currentUser!.reauthenticateWithCredential(credential);
-    }
 
     // プログレスダイアログを表示
     ProgressDialog.show(context);
 
     try {
-      // ユーザードキュメントを削除
-      await repository.delete();
+      // 削除ユーザードキュメントを作成
+      await repository.create();
 
-      // 認証ユーザーを削除
-      await auth.currentUser!.delete();
+      // Firebaseからサインアウト
+      await auth.signOut();
     } catch (e) {
       err = ErrorHandler.selectMessage(e.toString());
     }

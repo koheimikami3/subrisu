@@ -18,7 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UserState {
   String get userId => throw _privateConstructorUsedError;
   String get os => throw _privateConstructorUsedError;
-  DateTime? get createdAt => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserStateCopyWith<UserState> get copyWith =>
@@ -30,7 +29,7 @@ abstract class $UserStateCopyWith<$Res> {
   factory $UserStateCopyWith(UserState value, $Res Function(UserState) then) =
       _$UserStateCopyWithImpl<$Res, UserState>;
   @useResult
-  $Res call({String userId, String os, DateTime? createdAt});
+  $Res call({String userId, String os});
 }
 
 /// @nodoc
@@ -48,7 +47,6 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
   $Res call({
     Object? userId = null,
     Object? os = null,
-    Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
       userId: null == userId
@@ -59,10 +57,6 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
     ) as $Val);
   }
 }
@@ -74,7 +68,7 @@ abstract class _$$_UserStateCopyWith<$Res> implements $UserStateCopyWith<$Res> {
       __$$_UserStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String userId, String os, DateTime? createdAt});
+  $Res call({String userId, String os});
 }
 
 /// @nodoc
@@ -90,7 +84,6 @@ class __$$_UserStateCopyWithImpl<$Res>
   $Res call({
     Object? userId = null,
     Object? os = null,
-    Object? createdAt = freezed,
   }) {
     return _then(_$_UserState(
       userId: null == userId
@@ -101,10 +94,6 @@ class __$$_UserStateCopyWithImpl<$Res>
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: freezed == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
     ));
   }
 }
@@ -112,8 +101,7 @@ class __$$_UserStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UserState extends _UserState {
-  const _$_UserState({this.userId = '', this.os = '', this.createdAt = null})
-      : super._();
+  const _$_UserState({this.userId = '', this.os = ''}) : super._();
 
   @override
   @JsonKey()
@@ -121,13 +109,10 @@ class _$_UserState extends _UserState {
   @override
   @JsonKey()
   final String os;
-  @override
-  @JsonKey()
-  final DateTime? createdAt;
 
   @override
   String toString() {
-    return 'UserState(userId: $userId, os: $os, createdAt: $createdAt)';
+    return 'UserState(userId: $userId, os: $os)';
   }
 
   @override
@@ -136,13 +121,11 @@ class _$_UserState extends _UserState {
         (other.runtimeType == runtimeType &&
             other is _$_UserState &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.os, os) || other.os == os) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt));
+            (identical(other.os, os) || other.os == os));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userId, os, createdAt);
+  int get hashCode => Object.hash(runtimeType, userId, os);
 
   @JsonKey(ignore: true)
   @override
@@ -152,18 +135,14 @@ class _$_UserState extends _UserState {
 }
 
 abstract class _UserState extends UserState {
-  const factory _UserState(
-      {final String userId,
-      final String os,
-      final DateTime? createdAt}) = _$_UserState;
+  const factory _UserState({final String userId, final String os}) =
+      _$_UserState;
   const _UserState._() : super._();
 
   @override
   String get userId;
   @override
   String get os;
-  @override
-  DateTime? get createdAt;
   @override
   @JsonKey(ignore: true)
   _$$_UserStateCopyWith<_$_UserState> get copyWith =>

@@ -5,6 +5,9 @@ class ErrorHandler {
     String result = err;
 
     switch (err) {
+      case errors.signInAnonymouslyErr:
+        break;
+
       case errors.getUserErr:
         break;
 
@@ -15,7 +18,7 @@ class ErrorHandler {
         break;
 
       default:
-        result = '予期せぬエラーが発生しました。時間をおいて再度お試しください。';
+        result = errors.unexpectedErr;
         break;
     }
 

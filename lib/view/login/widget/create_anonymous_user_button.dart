@@ -30,27 +30,34 @@ class CreateAnonymousUserButton extends ConsumerWidget {
 
   /// 匿名ユーザーを作成し、ボトムナビゲーションバーを経由してリスト画面に遷移する
   Future<void> _onTap(BuildContext context, WidgetRef ref) async {
-    final auth = FirebaseAuth.instance;
     final repository = ref.watch(userViewModelProvider.notifier);
+    String err = '';
 
     // プログレスダイアログを表示
     ProgressDialog.show(context);
 
-    // 匿名認証を実施
-    final credential = await auth.signInAnonymously();
+    try {
+      // 匿名サインインを実施し、結果から匿名ユーザーIDを取得
+      final userId = await UserManager.anonymousSingnIn();
 
-    // 匿名認証の結果から現在のユーザーIDを取得
-    final anonAuthId = credential.user!.uid;
+      // ユーザーを作成
+      // 匿名ユーザーIDをドキュメントIDとする
+      await repository.create(userId);
 
-    // ユーザーを作成
-    // 匿名認証IDをユーザーIDとする
-    await repository.create(anonAuthId);
-
-    // アカウント名をプロバイダに保存
-    ref.watch(accountProvider.notifier).state = 'Anonymous';
+      // プロバイダ名をプロバイダに保存
+      ref.watch(accountProvider.notifier).state = 'Anonymous';
+    } catch (e) {
+      err = ErrorHandler.selectMessage(e.toString());
+    }
 
     // プログレスダイアログを閉じる
     Navigator.pop(context);
+
+    // エラー内容を表示
+    if (err != '') {
+      IOSAlertDialog.show(context, true, err);
+      return;
+    }
 
     // ボトムナビゲーションバーを経由してリスト画面に遷移
     Navigator.pushNamed(context, '/bottomNav');

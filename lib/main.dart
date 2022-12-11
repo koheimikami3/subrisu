@@ -8,9 +8,12 @@ void main() async {
   // アプリ画面を縦固定に設定
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
+  // Firebaseにサインインしているユーザーを取得
+  final user = FirebaseAuth.instance.currentUser;
+
   runApp(
-    const ProviderScope(
-      child: MyApp(),
+    ProviderScope(
+      child: MyApp(user: user),
     ),
   );
 }

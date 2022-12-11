@@ -19,7 +19,7 @@ class LinkGoogleUserButton extends ConsumerWidget {
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
 
-    final credential = await GoogleManager.singnIn();
+    final credential = await UserManager.googleSingnIn();
     if (credential == null) return;
 
     // プログレスダイアログを表示

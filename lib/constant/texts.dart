@@ -2,6 +2,7 @@ import 'urls.dart' as urls;
 
 // 画面タイトル
 const listPage = 'リスト';
+const createPage = '新規作成';
 const settingsPage = '設定';
 const linkAccountPage = 'アカウント連携';
 const darkModePage = 'ダークモード';

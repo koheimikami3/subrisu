@@ -9,6 +9,5 @@ abstract class UserState implements _$UserState {
   const factory UserState({
     @Default('') String userId,
     @Default('') String os,
-    @Default(null) DateTime? createdAt,
   }) = _UserState;
 }

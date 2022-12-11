@@ -1,5 +1,4 @@
 import '../../constant/paths.dart' as paths;
-import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// Appleでサインインするボタン

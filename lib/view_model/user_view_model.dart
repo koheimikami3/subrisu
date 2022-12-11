@@ -6,23 +6,23 @@ class UserViewModel extends StateNotifier<UserState> {
   final UserRepository repository;
   final Ref ref;
 
-  Future<void> getUser(String userId) async {
+  Future<DocumentSnapshot?> getUser(String userId) async {
     try {
       // UserDocumentを取得
       final userDoc = await repository.getUser(userId);
 
-      // createdAtをTimestamp型からDateTime型に変換する
-      final timestamp = userDoc.get('createdAt');
-      final dateTime = timestamp.toDate();
+      // Documentが存在しない場合、NULLを返す
+      if (!userDoc.exists) return null;
 
       // stateを更新
       state = state.copyWith(
         userId: userDoc.id,
         os: userDoc.get('os'),
-        createdAt: dateTime,
       );
 
       ref.watch(isUserDataLoadedProvider.notifier).state = true;
+
+      return userDoc;
     } catch (_) {
       rethrow;
     }
@@ -49,27 +49,9 @@ class UserViewModel extends StateNotifier<UserState> {
       state = state.copyWith(
         userId: data.userId,
         os: data.os,
-        createdAt: data.createdAt,
       );
 
       ref.watch(isUserDataLoadedProvider.notifier).state = true;
-    } catch (_) {
-      rethrow;
-    }
-  }
-
-  Future<void> delete() async {
-    try {
-      // DeleteUserDataを作成
-      final data = DeleteUserData(
-        userId: state.userId,
-        os: state.os,
-      );
-
-      // UserDocumentを削除
-      await repository.delete(data);
-
-      ref.watch(isUserDataLoadedProvider.notifier).state = false;
     } catch (_) {
       rethrow;
     }

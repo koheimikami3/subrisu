@@ -12,3 +12,6 @@ final isUserDataLoadedProvider = StateProvider((ref) => false);
 
 final userViewModelProvider = StateNotifierProvider<UserViewModel, UserState>(
     (ref) => UserViewModel(UserRepositoryImpl(), ref));
+
+final deletedUserViewModelProvider = Provider<DeletedUserViewModel>(
+    (ref) => DeletedUserViewModel(DeletedUserRepositoryImpl(), ref));
