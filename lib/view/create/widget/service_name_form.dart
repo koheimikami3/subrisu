@@ -1,3 +1,4 @@
+import '../../../constant/configs.dart' as configs;
 import '../../../importer.dart';
 
 /// サービス名フォームを表示する
@@ -6,42 +7,19 @@ class ServiceNameForm extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            SizedBox(width: 10.w),
-            const Text(
-              'サービス名',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const Text(
-              '*',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.red,
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 5.h),
-        SizedBox(
-          child: TextField(
-            decoration: InputDecoration(
-              isDense: true,
-              filled: true,
-              fillColor: Colors.grey.shade200,
-              border: const OutlineInputBorder(
-                borderSide: BorderSide.none,
-              ),
-            ),
-            onChanged: (value) {
-              ref.watch(serviceNameProvider.notifier).state = value;
-            },
-          ),
-        ),
-      ],
+    return TextField(
+      cursorColor: configs.appColor,
+      decoration: InputDecoration(
+        hintText: 'サービス名',
+        hintStyle: TextStyle(fontSize: 14.sp),
+        isDense: true,
+        filled: true,
+        fillColor: Colors.white,
+        border: const OutlineInputBorder(borderSide: BorderSide.none),
+      ),
+      onChanged: (value) {
+        ref.watch(serviceNameProvider.notifier).state = value;
+      },
     );
   }
 }

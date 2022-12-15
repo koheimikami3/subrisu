@@ -1,5 +1,3 @@
-import 'package:subrisu/view/create/create_page.dart';
-
 import '../../../importer.dart';
 
 /// 作成画面に遷移するボタン
@@ -13,21 +11,17 @@ class CreatePageButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () {
         Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const CreatePage(),
-              //以下を追加
-              fullscreenDialog: true,
-            ));
-
-        // showModalBottomSheet(
-        //   backgroundColor: Colors.transparent,
-        //   isScrollControlled: true,
-        //   context: context,
-        //   builder: (_) => const CreatePage(),
-        // );
+          context,
+          MaterialPageRoute(
+            builder: (_) => const CreatePage(),
+            fullscreenDialog: true,
+          ),
+        );
       },
-      child: const Icon(Icons.add),
+      child: const Icon(
+        Icons.add,
+        size: 30,
+      ),
     );
   }
 }

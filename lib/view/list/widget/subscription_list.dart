@@ -17,7 +17,8 @@ class SubscriptionList extends ConsumerWidget {
           children: [
             if (index == 0) SizedBox(height: 20.h),
             SubscriptionItem(subscriptionDoc: subscriptionDocList[index]),
-            SizedBox(height: 20.h),
+            SizedBox(height: 15.h),
+            if (index == subscriptionDocList.length - 1) SizedBox(height: 50.h),
           ],
         );
       },

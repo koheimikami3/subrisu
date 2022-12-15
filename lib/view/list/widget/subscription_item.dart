@@ -13,7 +13,7 @@ class SubscriptionItem extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 60.h,
+      height: 55.h,
       width: double.infinity,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -65,7 +65,7 @@ class SubscriptionItem extends ConsumerWidget {
       serviceName,
       style: TextStyle(
         fontSize: 16.sp,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
       ),
     );
   }
@@ -79,7 +79,7 @@ class SubscriptionItem extends ConsumerWidget {
       text,
       style: TextStyle(
         fontSize: 16.sp,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w600,
       ),
     );
   }

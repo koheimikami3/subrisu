@@ -9,6 +9,9 @@ class RegisterButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final serviceName = ref.watch(serviceNameProvider);
+    final price = ref.watch(priceProvider);
+
     return Container(
       height: 40.h,
       width: double.infinity,
@@ -19,7 +22,9 @@ class RegisterButton extends ConsumerWidget {
         borderRadius: const BorderRadius.all(Radius.circular(30)),
         padding: EdgeInsets.zero,
         color: configs.appColor,
-        onPressed: () async => await _onPressed(context, ref),
+        onPressed: serviceName == '' || price == ''
+            ? null
+            : () async => await _onPressed(context, ref),
         child: _text(),
       ),
     );

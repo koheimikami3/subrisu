@@ -1,3 +1,4 @@
+import '../../../constant/configs.dart' as configs;
 import '../../../importer.dart';
 
 /// 料金フォームを表示する
@@ -6,41 +7,21 @@ class PriceForm extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            SizedBox(width: 10.w),
-            const Text(
-              '料金',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            const Text(
-              '*',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.red,
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 5.h),
-        TextField(
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            isDense: true,
-            filled: true,
-            fillColor: Colors.grey.shade200,
-            border: const OutlineInputBorder(
-              borderSide: BorderSide.none,
-            ),
-          ),
-          onChanged: (value) {
-            ref.watch(priceProvider.notifier).state = value;
-          },
-        ),
-      ],
+    return TextField(
+      cursorColor: configs.appColor,
+      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+      keyboardType: TextInputType.number,
+      decoration: InputDecoration(
+        hintText: '料金',
+        hintStyle: TextStyle(fontSize: 14.sp),
+        isDense: true,
+        filled: true,
+        fillColor: Colors.white,
+        border: const OutlineInputBorder(borderSide: BorderSide.none),
+      ),
+      onChanged: (value) {
+        ref.watch(priceProvider.notifier).state = value;
+      },
     );
   }
 }

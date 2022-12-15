@@ -10,9 +10,9 @@ final darkModeProvider = StateProvider((ref) => false);
 
 final isUserDataLoadedProvider = StateProvider((ref) => false);
 
-final serviceNameProvider = StateProvider((ref) => '');
+final serviceNameProvider = StateProvider.autoDispose((ref) => '');
 
-final priceProvider = StateProvider((ref) => '');
+final priceProvider = StateProvider.autoDispose((ref) => '');
 
 final userViewModelProvider = StateNotifierProvider<UserViewModel, UserState>(
     (ref) => UserViewModel(UserRepositoryImpl(), ref));

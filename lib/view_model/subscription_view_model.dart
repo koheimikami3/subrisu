@@ -22,8 +22,8 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
 
   Future<void> create() async {
     final userId = ref.watch(userViewModelProvider).userId;
-    final serviceName = ref.watch(serviceNameProvider);
-    final price = ref.watch(priceProvider);
+    final serviceName = ref.read(serviceNameProvider);
+    final price = ref.read(priceProvider);
 
     try {
       // SubscriptionDataを作成

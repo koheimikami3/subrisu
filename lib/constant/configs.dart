@@ -13,7 +13,7 @@ const androidReleaseAdId = '';
 const androidDebugAdId = 'ca-app-pub-3940256099942544/6300978111';
 
 // アプリカラー
-const appColor = Color.fromARGB(255, 0, 180, 160);
+const appColor = Color.fromARGB(255, 0, 200, 180);
 
 // ダークモード時の背景色
 const darkBackgroundColor = Color(0xFF212121);
