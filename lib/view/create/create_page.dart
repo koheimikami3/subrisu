@@ -1,5 +1,3 @@
-import 'package:subrisu/view/create/widget/service_name_form.dart';
-
 import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
@@ -9,65 +7,48 @@ class CreatePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(title: const Text(texts.createPage)),
-      body: Row(
-        children: [
-          SizedBox(width: 20.w),
-          Expanded(
-            child: Column(
-              children: [
-                SizedBox(height: 25.h),
-                Row(
-                  children: [
-                    Container(
-                      height: 85.w,
-                      width: 85.w,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey),
-                        shape: BoxShape.circle,
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: AppBar(title: const Text(texts.createPage)),
+        body: Row(
+          children: [
+            SizedBox(width: 20.w),
+            Expanded(
+              child: Column(
+                children: [
+                  SizedBox(height: 25.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Container(
+                        height: 70.w,
+                        width: 70.w,
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(10)),
+                          border: Border.all(color: Colors.grey),
+                        ),
+                        child: const Icon(
+                          Icons.add,
+                          size: 35,
+                        ),
                       ),
-                      child: const Icon(
-                        Icons.add,
-                        size: 35,
-                      ),
-                    ),
-                    SizedBox(width: 20.w),
-                    const Expanded(child: ServiceNameForm()),
-                  ],
-                ),
-              ],
+                      SizedBox(width: 20.w),
+                      const Expanded(child: ServiceNameForm()),
+                    ],
+                  ),
+                  SizedBox(height: 25.h),
+                  const PriceForm(),
+                  const Spacer(),
+                  const RegisterButton(),
+                  SizedBox(height: 50.h),
+                ],
+              ),
             ),
-          ),
-          SizedBox(width: 20.w),
-        ],
-      ),
-    );
-  }
-
-  /// 画面を閉じるボタン
-  Material _closeButton(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: GestureDetector(
-        onTap: () => Navigator.of(context).pop(),
-        child: const Icon(
-          Icons.close,
-          color: Colors.black,
+            SizedBox(width: 20.w),
+          ],
         ),
-      ),
-    );
-  }
-
-  /// 画面タイトルを表示する
-  Text _title() {
-    const text = '新規作成';
-
-    return Text(
-      text,
-      style: TextStyle(
-        fontSize: 17.sp,
-        fontWeight: FontWeight.bold,
       ),
     );
   }

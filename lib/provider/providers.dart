@@ -10,8 +10,16 @@ final darkModeProvider = StateProvider((ref) => false);
 
 final isUserDataLoadedProvider = StateProvider((ref) => false);
 
+final serviceNameProvider = StateProvider((ref) => '');
+
+final priceProvider = StateProvider((ref) => '');
+
 final userViewModelProvider = StateNotifierProvider<UserViewModel, UserState>(
     (ref) => UserViewModel(UserRepositoryImpl(), ref));
+
+final subscriptionViewModelProvider =
+    StateNotifierProvider<SubscriptionViewModel, List<QueryDocumentSnapshot>>(
+        (ref) => SubscriptionViewModel(SubscriptionRepositoryImpl(), ref));
 
 final deletedUserViewModelProvider = Provider<DeletedUserViewModel>(
     (ref) => DeletedUserViewModel(DeletedUserRepositoryImpl(), ref));
