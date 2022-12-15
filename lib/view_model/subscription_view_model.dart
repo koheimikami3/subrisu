@@ -6,6 +6,20 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
   final SubscriptionRepository repository;
   final Ref ref;
 
+  void getSubscriptions() {
+    final userId = ref.watch(userViewModelProvider).userId;
+
+    try {
+      final stream = repository.getSubscriptions(userId);
+
+      stream.listen((query) {
+        state = query.docs;
+      });
+    } catch (_) {
+      rethrow;
+    }
+  }
+
   Future<void> create() async {
     final userId = ref.watch(userViewModelProvider).userId;
     final serviceName = ref.watch(serviceNameProvider);

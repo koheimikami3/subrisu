@@ -7,8 +7,12 @@ class AppDataManager {
   static Future<void> getUser(WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
     final repository = ref.read(userViewModelProvider.notifier);
+    final repo = ref.read(subscriptionViewModelProvider.notifier);
 
     await repository.getUser(auth.currentUser!.uid);
+    repo.getSubscriptions();
+
+    ref.watch(isUserDataLoadedProvider.notifier).state = true;
   }
 
   /// 現在の設定内容を取得し、アプリに反映する

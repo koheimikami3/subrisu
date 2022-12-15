@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 料金フォームを表示する

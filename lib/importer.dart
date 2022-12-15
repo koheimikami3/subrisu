@@ -72,3 +72,5 @@ export 'package:subrisu/view_model/subscription_view_model.dart';
 export 'package:subrisu/view/create/widget/price_form.dart';
 export 'package:subrisu/view/create/widget/register_button.dart';
 export 'package:subrisu/view/create/widget/service_name_form.dart';
+export 'package:subrisu/view/list/widget/subscription_item.dart';
+export 'package:subrisu/view/list/widget/subscription_list.dart';

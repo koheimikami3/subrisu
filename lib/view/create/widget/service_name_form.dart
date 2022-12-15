@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// サービス名フォームを表示する

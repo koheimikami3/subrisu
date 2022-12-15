@@ -11,43 +11,45 @@ class CreatePage extends ConsumerWidget {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: AppBar(title: const Text(texts.createPage)),
-        body: Row(
-          children: [
-            SizedBox(width: 20.w),
-            Expanded(
-              child: Column(
-                children: [
-                  SizedBox(height: 25.h),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Container(
-                        height: 70.w,
-                        width: 70.w,
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(10)),
-                          border: Border.all(color: Colors.grey),
+        body: SingleChildScrollView(
+          child: Row(
+            children: [
+              SizedBox(width: 20.w),
+              Expanded(
+                child: Column(
+                  children: [
+                    SizedBox(height: 25.h),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                          height: 70.w,
+                          width: 70.w,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(10)),
+                            border: Border.all(color: Colors.grey),
+                          ),
+                          child: const Icon(
+                            Icons.add,
+                            size: 35,
+                          ),
                         ),
-                        child: const Icon(
-                          Icons.add,
-                          size: 35,
-                        ),
-                      ),
-                      SizedBox(width: 20.w),
-                      const Expanded(child: ServiceNameForm()),
-                    ],
-                  ),
-                  SizedBox(height: 25.h),
-                  const PriceForm(),
-                  const Spacer(),
-                  const RegisterButton(),
-                  SizedBox(height: 50.h),
-                ],
+                        SizedBox(width: 20.w),
+                        const Expanded(child: ServiceNameForm()),
+                      ],
+                    ),
+                    SizedBox(height: 25.h),
+                    const PriceForm(),
+                    SizedBox(height: 50.h),
+                    const RegisterButton(),
+                    SizedBox(height: 50.h),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(width: 20.w),
-          ],
+              SizedBox(width: 20.w),
+            ],
+          ),
         ),
       ),
     );

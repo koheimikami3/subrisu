@@ -20,8 +20,6 @@ class UserViewModel extends StateNotifier<UserState> {
         os: userDoc.get('os'),
       );
 
-      ref.watch(isUserDataLoadedProvider.notifier).state = true;
-
       return userDoc;
     } catch (_) {
       rethrow;

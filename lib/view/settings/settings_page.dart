@@ -15,34 +15,32 @@ class SettingsPage extends ConsumerWidget {
         title: const Text(texts.settingsPage),
         automaticallyImplyLeading: false,
       ),
-      body: Material(
-        color: isDark
-            ? configs.darkBackgroundColor
-            : configs.settingsBackgroundColor,
-        child: SingleChildScrollView(
-          child: Row(
-            children: [
-              SizedBox(width: 20.w),
-              Expanded(
-                child: Column(
-                  children: [
-                    SizedBox(height: 25.h),
-                    const PaidPlan(),
-                    SizedBox(height: 25.h),
-                    const AppSettings(),
-                    SizedBox(height: 25.h),
-                    const Supports(),
-                    SizedBox(height: 25.h),
-                    const AppVersion(),
-                    SizedBox(height: 15.h),
-                    const DeleteUserButton(),
-                    SizedBox(height: 15.h),
-                  ],
-                ),
+      backgroundColor: isDark
+          ? configs.darkBackgroundColor
+          : configs.settingsBackgroundColor,
+      body: SingleChildScrollView(
+        child: Row(
+          children: [
+            SizedBox(width: 20.w),
+            Expanded(
+              child: Column(
+                children: [
+                  SizedBox(height: 25.h),
+                  const PaidPlan(),
+                  SizedBox(height: 25.h),
+                  const AppSettings(),
+                  SizedBox(height: 25.h),
+                  const Supports(),
+                  SizedBox(height: 25.h),
+                  const AppVersion(),
+                  SizedBox(height: 15.h),
+                  const DeleteUserButton(),
+                  SizedBox(height: 15.h),
+                ],
               ),
-              SizedBox(width: 20.w),
-            ],
-          ),
+            ),
+            SizedBox(width: 20.w),
+          ],
         ),
       ),
     );
