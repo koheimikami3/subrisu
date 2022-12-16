@@ -14,6 +14,8 @@ final serviceNameProvider = StateProvider.autoDispose((ref) => '');
 
 final priceProvider = StateProvider.autoDispose((ref) => '');
 
+final notificationProvider = StateProvider.autoDispose((ref) => false);
+
 final userViewModelProvider = StateNotifierProvider<UserViewModel, UserState>(
     (ref) => UserViewModel(UserRepositoryImpl(), ref));
 
