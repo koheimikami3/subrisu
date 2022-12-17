@@ -12,6 +12,10 @@ final isUserDataLoadedProvider = StateProvider((ref) => false);
 
 final serviceNameProvider = StateProvider.autoDispose((ref) => '');
 
+final selectIconImagePathProvider = StateProvider.autoDispose((ref) => '');
+
+final resultIconImagePathProvider = StateProvider.autoDispose((ref) => '');
+
 final priceProvider = StateProvider.autoDispose((ref) => '');
 
 final notificationProvider = StateProvider.autoDispose((ref) => false);

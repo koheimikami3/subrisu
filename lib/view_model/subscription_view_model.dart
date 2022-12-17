@@ -24,12 +24,14 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
     final userId = ref.watch(userViewModelProvider).userId;
     final serviceName = ref.read(serviceNameProvider);
     final price = ref.read(priceProvider);
+    final iconImagePath = ref.read(resultIconImagePathProvider);
 
     try {
       // SubscriptionDataを作成
       final data = SubscriptionData(
         serviceName: serviceName,
         price: price,
+        iconImagePath: iconImagePath,
       );
 
       // SubscriptionDocumentを作成

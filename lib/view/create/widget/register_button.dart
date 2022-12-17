@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
-
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 新規登録を行うボタン
@@ -12,32 +10,11 @@ class RegisterButton extends ConsumerWidget {
     final serviceName = ref.watch(serviceNameProvider);
     final price = ref.watch(priceProvider);
 
-    return Container(
-      height: 40.h,
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-      ),
-      child: CupertinoButton(
-        borderRadius: const BorderRadius.all(Radius.circular(30)),
-        padding: EdgeInsets.zero,
-        color: configs.appColor,
-        onPressed: serviceName == '' || price == ''
-            ? null
-            : () async => await _onPressed(context, ref),
-        child: _text(),
-      ),
-    );
-  }
-
-  /// ボタンのテキストを表示する
-  Text _text() {
-    return const Text(
-      '登録',
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
+    return MyCupertinoButton(
+      text: texts.createSubscriptionButton,
+      onPressed: serviceName == '' || price == ''
+          ? null
+          : () async => await _onPressed(context, ref),
     );
   }
 

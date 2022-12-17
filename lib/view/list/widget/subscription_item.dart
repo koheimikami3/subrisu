@@ -13,7 +13,7 @@ class SubscriptionItem extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      height: 50.h,
+      height: 55.h,
       width: double.infinity,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -51,8 +51,8 @@ class SubscriptionItem extends ConsumerWidget {
       colorFilter: const ColorFilter.mode(configs.appColor, BlendMode.srcIn),
       child: Image.asset(
         imagePath,
-        height: 35.h,
-        width: 35.h,
+        height: 40.h,
+        width: 40.h,
       ),
     );
   }

@@ -12,6 +12,10 @@ const createAppleUserButton = 'Appleでサインイン';
 const createGoogleUserButton = 'Googleでサインイン';
 const createAnonymousUserButton = 'アカウント登録しないで始める';
 
+// 登録画面ボタンテキスト
+const saveIconButton = '保存';
+const createSubscriptionButton = '登録';
+
 // 設定画面ボタンテキスト
 const deleteUserButton = 'すべてのデータを削除';
 
