@@ -1,5 +1,5 @@
-import 'package:subrisu/importer.dart';
 import '../../constant/errors.dart' as errors;
+import '../../importer.dart';
 
 class SubscriptionRepositoryImpl implements SubscriptionRepository {
   SubscriptionRepositoryImpl();
@@ -31,6 +31,20 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
           .add(data.toJson());
     } catch (_) {
       throw errors.createSubscriptionErr;
+    }
+  }
+
+  @override
+  Future<void> delete(String userId, String subscriptionId) async {
+    try {
+      await _db
+          .collection('users')
+          .doc(userId)
+          .collection('subscriptions')
+          .doc(subscriptionId)
+          .delete();
+    } catch (_) {
+      throw errors.deleteSubscriptionErr;
     }
   }
 }

@@ -2,7 +2,8 @@ import 'urls.dart' as urls;
 
 // 画面タイトル
 const listPage = 'リスト';
-const createPage = '新規作成';
+const createPage = '新規登録';
+const editPage = '編集';
 const settingsPage = '設定';
 const linkAccountPage = 'アカウント連携';
 const darkModePage = 'ダークモード';
@@ -53,3 +54,13 @@ const settingsNavi = '設定';
 
 // シェアテキスト
 const shareText = 'サブリス\n${urls.appStoreUrl}';
+
+// 支払い周期テキストリスト
+const paymentCycleList = [
+  '毎日',
+  '週に1回',
+  '1ヶ月に1回',
+  '3ヶ月に1回',
+  '6ヶ月に1回',
+  '年に1回',
+];

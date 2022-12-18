@@ -1,5 +1,3 @@
-import 'package:subrisu/view/create/widget/memo_form.dart';
-
 import '../../constant/configs.dart' as configs;
 import '../../constant/texts.dart' as texts;
 import '../../importer.dart';

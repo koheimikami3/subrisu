@@ -12,30 +12,46 @@ class SubscriptionItem extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
-      height: 55.h,
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-        color: Colors.white,
-      ),
-      child: Column(
-        children: [
-          SizedBox(height: 5.h),
-          Expanded(
-            child: Row(
-              children: [
-                SizedBox(width: 15.w),
-                _iconImage(),
-                SizedBox(width: 15.w),
-                Expanded(child: _serviceName()),
-                _price(),
-                SizedBox(width: 15.w),
-              ],
-            ),
+    return Material(
+      borderRadius: const BorderRadius.all(Radius.circular(10)),
+      color: Colors.white,
+      child: InkWell(
+        onTap: () => _onTap(context),
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        highlightColor: Colors.grey.shade300,
+        child: SizedBox(
+          height: 60.h,
+          width: double.infinity,
+          child: Column(
+            children: [
+              SizedBox(height: 5.h),
+              Expanded(
+                child: Row(
+                  children: [
+                    SizedBox(width: 15.w),
+                    _iconImage(),
+                    SizedBox(width: 15.w),
+                    Expanded(child: _serviceName()),
+                    _price(),
+                    SizedBox(width: 15.w),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5.h),
+            ],
           ),
-          SizedBox(height: 5.h),
-        ],
+        ),
+      ),
+    );
+  }
+
+  /// 編集画面に遷移する
+  void _onTap(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => EditPage(subscriptionDoc: subscriptionDoc),
+        fullscreenDialog: true,
       ),
     );
   }
@@ -64,7 +80,7 @@ class SubscriptionItem extends ConsumerWidget {
     return Text(
       serviceName,
       style: TextStyle(
-        fontSize: 15.sp,
+        fontSize: 16.sp,
         fontWeight: FontWeight.w600,
       ),
     );
@@ -79,7 +95,7 @@ class SubscriptionItem extends ConsumerWidget {
       text,
       style: TextStyle(
         fontSize: 15.sp,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w500,
       ),
     );
   }

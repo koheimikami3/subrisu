@@ -1,5 +1,3 @@
-import 'package:subrisu/view/create/widget/icon_list.dart';
-
 import '../../../constant/configs.dart' as configs;
 import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
@@ -98,16 +96,17 @@ class IconSelectDialog extends ConsumerWidget {
 
   /// アイコン画像を保存するボタン
   Widget _saveButton(BuildContext context, WidgetRef ref) {
+    final imagePath = ref.watch(selectIconImagePathProvider);
+
     return MyCupertinoButton(
       text: texts.saveIconButton,
-      onPressed: () {
-        final selectIconImagePath = ref.watch(selectIconImagePathProvider);
+      onPressed: imagePath == ''
+          ? null
+          : () {
+              ref.watch(resultIconImagePathProvider.notifier).state = imagePath;
 
-        ref.watch(resultIconImagePathProvider.notifier).state =
-            selectIconImagePath;
-
-        Navigator.pop(context);
-      },
+              Navigator.pop(context);
+            },
     );
   }
 }

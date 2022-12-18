@@ -18,7 +18,22 @@ final resultIconImagePathProvider = StateProvider.autoDispose((ref) => '');
 
 final priceProvider = StateProvider.autoDispose((ref) => '');
 
+final priceControllerProvider =
+    StateProvider.autoDispose((ref) => TextEditingController(text: ''));
+
+final selectPaymentCycleProvider = StateProvider.autoDispose((ref) => 2);
+
+final resultPaymentCycleProvider = StateProvider.autoDispose((ref) => 2);
+
+final selectStartDateProvider =
+    StateProvider.autoDispose((ref) => DateTime.now());
+
+final resultStartDateProvider =
+    StateProvider.autoDispose((ref) => DateTime.now());
+
 final notificationProvider = StateProvider.autoDispose((ref) => false);
+
+final memoProvider = StateProvider.autoDispose((ref) => '');
 
 final userViewModelProvider = StateNotifierProvider<UserViewModel, UserState>(
     (ref) => UserViewModel(UserRepositoryImpl(), ref));

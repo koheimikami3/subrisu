@@ -21,8 +21,13 @@ SubscriptionData _$SubscriptionDataFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SubscriptionData {
   String get serviceName => throw _privateConstructorUsedError;
-  String get iconImagePath => throw _privateConstructorUsedError;
   String get price => throw _privateConstructorUsedError;
+  String get iconImagePath => throw _privateConstructorUsedError;
+  int get paymentCycle => throw _privateConstructorUsedError;
+  @UpdatedAtField()
+  DateTime? get startedAt => throw _privateConstructorUsedError;
+  bool get notification => throw _privateConstructorUsedError;
+  String get memo => throw _privateConstructorUsedError;
   @CreatedAtField()
   DateTime? get createdAt => throw _privateConstructorUsedError;
   @UpdatedAtField()
@@ -42,8 +47,12 @@ abstract class $SubscriptionDataCopyWith<$Res> {
   @useResult
   $Res call(
       {String serviceName,
-      String iconImagePath,
       String price,
+      String iconImagePath,
+      int paymentCycle,
+      @UpdatedAtField() DateTime? startedAt,
+      bool notification,
+      String memo,
       @CreatedAtField() DateTime? createdAt,
       @UpdatedAtField() DateTime? updatedAt});
 }
@@ -62,8 +71,12 @@ class _$SubscriptionDataCopyWithImpl<$Res, $Val extends SubscriptionData>
   @override
   $Res call({
     Object? serviceName = null,
-    Object? iconImagePath = null,
     Object? price = null,
+    Object? iconImagePath = null,
+    Object? paymentCycle = null,
+    Object? startedAt = freezed,
+    Object? notification = null,
+    Object? memo = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -72,13 +85,29 @@ class _$SubscriptionDataCopyWithImpl<$Res, $Val extends SubscriptionData>
           ? _value.serviceName
           : serviceName // ignore: cast_nullable_to_non_nullable
               as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as String,
       iconImagePath: null == iconImagePath
           ? _value.iconImagePath
           : iconImagePath // ignore: cast_nullable_to_non_nullable
               as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
+      paymentCycle: null == paymentCycle
+          ? _value.paymentCycle
+          : paymentCycle // ignore: cast_nullable_to_non_nullable
+              as int,
+      startedAt: freezed == startedAt
+          ? _value.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      notification: null == notification
+          ? _value.notification
+          : notification // ignore: cast_nullable_to_non_nullable
+              as bool,
+      memo: null == memo
+          ? _value.memo
+          : memo // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -102,8 +131,12 @@ abstract class _$$_SubscriptionDataCopyWith<$Res>
   @useResult
   $Res call(
       {String serviceName,
-      String iconImagePath,
       String price,
+      String iconImagePath,
+      int paymentCycle,
+      @UpdatedAtField() DateTime? startedAt,
+      bool notification,
+      String memo,
       @CreatedAtField() DateTime? createdAt,
       @UpdatedAtField() DateTime? updatedAt});
 }
@@ -120,8 +153,12 @@ class __$$_SubscriptionDataCopyWithImpl<$Res>
   @override
   $Res call({
     Object? serviceName = null,
-    Object? iconImagePath = null,
     Object? price = null,
+    Object? iconImagePath = null,
+    Object? paymentCycle = null,
+    Object? startedAt = freezed,
+    Object? notification = null,
+    Object? memo = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -130,13 +167,29 @@ class __$$_SubscriptionDataCopyWithImpl<$Res>
           ? _value.serviceName
           : serviceName // ignore: cast_nullable_to_non_nullable
               as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as String,
       iconImagePath: null == iconImagePath
           ? _value.iconImagePath
           : iconImagePath // ignore: cast_nullable_to_non_nullable
               as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
+      paymentCycle: null == paymentCycle
+          ? _value.paymentCycle
+          : paymentCycle // ignore: cast_nullable_to_non_nullable
+              as int,
+      startedAt: freezed == startedAt
+          ? _value.startedAt
+          : startedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      notification: null == notification
+          ? _value.notification
+          : notification // ignore: cast_nullable_to_non_nullable
+              as bool,
+      memo: null == memo
+          ? _value.memo
+          : memo // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -155,8 +208,12 @@ class __$$_SubscriptionDataCopyWithImpl<$Res>
 class _$_SubscriptionData extends _SubscriptionData {
   const _$_SubscriptionData(
       {required this.serviceName,
-      this.iconImagePath = '',
       required this.price,
+      this.iconImagePath = '',
+      required this.paymentCycle,
+      @UpdatedAtField() this.startedAt,
+      required this.notification,
+      required this.memo,
       @CreatedAtField() this.createdAt,
       @UpdatedAtField() this.updatedAt})
       : super._();
@@ -167,10 +224,19 @@ class _$_SubscriptionData extends _SubscriptionData {
   @override
   final String serviceName;
   @override
+  final String price;
+  @override
   @JsonKey()
   final String iconImagePath;
   @override
-  final String price;
+  final int paymentCycle;
+  @override
+  @UpdatedAtField()
+  final DateTime? startedAt;
+  @override
+  final bool notification;
+  @override
+  final String memo;
   @override
   @CreatedAtField()
   final DateTime? createdAt;
@@ -180,7 +246,7 @@ class _$_SubscriptionData extends _SubscriptionData {
 
   @override
   String toString() {
-    return 'SubscriptionData(serviceName: $serviceName, iconImagePath: $iconImagePath, price: $price, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'SubscriptionData(serviceName: $serviceName, price: $price, iconImagePath: $iconImagePath, paymentCycle: $paymentCycle, startedAt: $startedAt, notification: $notification, memo: $memo, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -190,9 +256,16 @@ class _$_SubscriptionData extends _SubscriptionData {
             other is _$_SubscriptionData &&
             (identical(other.serviceName, serviceName) ||
                 other.serviceName == serviceName) &&
+            (identical(other.price, price) || other.price == price) &&
             (identical(other.iconImagePath, iconImagePath) ||
                 other.iconImagePath == iconImagePath) &&
-            (identical(other.price, price) || other.price == price) &&
+            (identical(other.paymentCycle, paymentCycle) ||
+                other.paymentCycle == paymentCycle) &&
+            (identical(other.startedAt, startedAt) ||
+                other.startedAt == startedAt) &&
+            (identical(other.notification, notification) ||
+                other.notification == notification) &&
+            (identical(other.memo, memo) || other.memo == memo) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -202,7 +275,16 @@ class _$_SubscriptionData extends _SubscriptionData {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, serviceName, iconImagePath, price, createdAt, updatedAt);
+      runtimeType,
+      serviceName,
+      price,
+      iconImagePath,
+      paymentCycle,
+      startedAt,
+      notification,
+      memo,
+      createdAt,
+      updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -221,8 +303,12 @@ class _$_SubscriptionData extends _SubscriptionData {
 abstract class _SubscriptionData extends SubscriptionData {
   const factory _SubscriptionData(
       {required final String serviceName,
-      final String iconImagePath,
       required final String price,
+      final String iconImagePath,
+      required final int paymentCycle,
+      @UpdatedAtField() final DateTime? startedAt,
+      required final bool notification,
+      required final String memo,
       @CreatedAtField() final DateTime? createdAt,
       @UpdatedAtField() final DateTime? updatedAt}) = _$_SubscriptionData;
   const _SubscriptionData._() : super._();
@@ -233,9 +319,18 @@ abstract class _SubscriptionData extends SubscriptionData {
   @override
   String get serviceName;
   @override
+  String get price;
+  @override
   String get iconImagePath;
   @override
-  String get price;
+  int get paymentCycle;
+  @override
+  @UpdatedAtField()
+  DateTime? get startedAt;
+  @override
+  bool get notification;
+  @override
+  String get memo;
   @override
   @CreatedAtField()
   DateTime? get createdAt;

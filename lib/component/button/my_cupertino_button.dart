@@ -25,6 +25,7 @@ class MyCupertinoButton extends ConsumerWidget {
         borderRadius: const BorderRadius.all(Radius.circular(30)),
         padding: EdgeInsets.zero,
         color: configs.appColor,
+        disabledColor: Colors.grey.shade300,
         onPressed: onPressed,
         child: _text(),
       ),

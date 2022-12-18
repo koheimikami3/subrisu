@@ -11,8 +11,12 @@ abstract class SubscriptionData implements _$SubscriptionData {
 
   const factory SubscriptionData({
     required String serviceName,
-    @Default('') String iconImagePath,
     required String price,
+    @Default('') String iconImagePath,
+    required int paymentCycle,
+    @UpdatedAtField() DateTime? startedAt,
+    required bool notification,
+    required String memo,
     @CreatedAtField() DateTime? createdAt,
     @UpdatedAtField() DateTime? updatedAt,
   }) = _SubscriptionData;

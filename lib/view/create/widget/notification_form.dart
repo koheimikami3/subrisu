@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:intl/intl.dart';
 
+import '../../../constant/configs.dart' as configs;
 import '../../../importer.dart';
 
 /// 通知フォームを表示する
@@ -32,6 +32,7 @@ class NotificationForm extends ConsumerWidget {
       height: 15.h,
       child: CupertinoSwitch(
         value: isOn,
+        activeColor: configs.appColor,
         onChanged: (value) {
           ref.watch(notificationProvider.notifier).state = value;
         },

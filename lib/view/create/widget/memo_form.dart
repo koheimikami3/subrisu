@@ -25,7 +25,7 @@ class MemoForm extends ConsumerWidget {
             ),
           ),
           onChanged: (value) {
-            ref.watch(serviceNameProvider.notifier).state = value;
+            ref.watch(memoProvider.notifier).state = value;
           },
         ),
       ],
