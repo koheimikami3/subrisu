@@ -1,16 +1,17 @@
+import 'package:subrisu/view/create/widget/payment_method_form.dart';
+
+import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 詳細情報を表示する
-class DetailInfo extends ConsumerWidget {
+class DetailInfo extends StatelessWidget {
   const DetailInfo({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // final isDark = ref.watch(darkModeProvider);
-
+  Widget build(BuildContext context) {
     return Column(
       children: [
-        const ItemsTitle(title: '詳細情報'),
+        const ItemsTitle(title: texts.detailInfoTitle),
         Container(
           width: double.infinity,
           decoration: const BoxDecoration(
@@ -24,6 +25,8 @@ class DetailInfo extends ConsumerWidget {
                 child: Column(
                   children: const [
                     PaymentCycleForm(),
+                    ItemDivider(),
+                    PaymentMethodForm(),
                     ItemDivider(),
                     StartDateForm(),
                     ItemDivider(),

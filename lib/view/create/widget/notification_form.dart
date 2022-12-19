@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/colors.dart' as colors;
+import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 通知フォームを表示する
@@ -9,31 +10,23 @@ class NotificationForm extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Column(
-      children: [
-        SizedBox(height: 12.h),
-        Row(
-          children: [
-            const Text('前日に通知'),
-            const Spacer(),
-            _selectButton(ref),
-            SizedBox(width: 15.w),
-          ],
-        ),
-        SizedBox(height: 12.h),
-      ],
+    return DetailItem(
+      title: texts.notificationTitle,
+      content: _switch(ref),
     );
   }
 
-  Widget _selectButton(WidgetRef ref) {
+  /// プッシュ通知のオン・オフを選択するSwitch
+  Widget _switch(WidgetRef ref) {
     final isOn = ref.watch(notificationProvider);
 
     return SizedBox(
       height: 15.h,
       child: CupertinoSwitch(
         value: isOn,
-        activeColor: configs.appColor,
+        activeColor: colors.appColor,
         onChanged: (value) {
+          // 変更内容をプロバイダに保存
           ref.watch(notificationProvider.notifier).state = value;
         },
       ),

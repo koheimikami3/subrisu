@@ -1,4 +1,4 @@
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/colors.dart' as colors;
 import '../../../importer.dart';
 
 class IconList extends ConsumerWidget {
@@ -33,13 +33,13 @@ class IconList extends ConsumerWidget {
             padding: EdgeInsets.all(10.w),
             decoration: BoxDecoration(
               border: Border.all(
-                color: isSelected ? configs.appColor : Colors.grey.shade400,
+                color: isSelected ? colors.appColor : Colors.grey.shade400,
               ),
               borderRadius: const BorderRadius.all(Radius.circular(10)),
             ),
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
-                isSelected ? configs.appColor : Colors.black,
+                isSelected ? colors.appColor : Colors.black,
                 BlendMode.srcIn,
               ),
               child: Image.asset(list[index]),

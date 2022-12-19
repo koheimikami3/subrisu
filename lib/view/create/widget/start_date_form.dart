@@ -1,70 +1,34 @@
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 利用開始日フォームを表示する
-class StartDateForm extends ConsumerWidget {
+class StartDateForm extends ConsumerStatefulWidget {
   const StartDateForm({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Column(
-      children: [
-        SizedBox(height: 12.h),
-        Row(
-          children: [
-            const Text('利用開始日'),
-            const Spacer(),
-            _selectButton(context, ref),
-            SizedBox(width: 15.w),
-          ],
-        ),
-        SizedBox(height: 12.h),
-      ],
+  ConsumerState<StartDateForm> createState() => _StartDateFormState();
+}
+
+class _StartDateFormState extends ConsumerState<StartDateForm> {
+  DateTime _selectedDateTime = DateTime.now();
+
+  @override
+  Widget build(BuildContext context) {
+    return DetailItem(
+      title: texts.startDateTitle,
+      content: _selectButton(),
     );
   }
 
-  Widget _selectButton(BuildContext context, WidgetRef ref) {
-    final dateTime = ref.watch(resultStartDateProvider);
-    final text = DateFormat.yMMMMd('ja').format(dateTime);
+  Widget _selectButton() {
+    final startDate = ref.watch(startDateProvider);
+    final text = DateFormat.yMMMMd('ja').format(startDate);
 
     return GestureDetector(
-      onTap: () {
-        showCupertinoModalPopup(
-          context: context,
-          builder: (_) {
-            return Container(
-              height: 200.h,
-              color: Colors.white,
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      SizedBox(width: 15.w),
-                      _cancelButton(context),
-                      const Spacer(),
-                      _saveButton(context, ref),
-                      SizedBox(width: 15.w),
-                    ],
-                  ),
-                  Expanded(
-                    child: CupertinoDatePicker(
-                      initialDateTime: dateTime,
-                      mode: CupertinoDatePickerMode.date,
-                      onDateTimeChanged: (value) {
-                        ref.watch(selectStartDateProvider.notifier).state =
-                            value;
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            );
-          },
-        );
-      },
+      onTap: () => _onTap(),
       child: Row(
         children: [
           Text(text),
@@ -74,29 +38,32 @@ class StartDateForm extends ConsumerWidget {
     );
   }
 
-  /// 変更をキャンセルして閉じるボタン
-  Widget _cancelButton(BuildContext context) {
-    const text = 'キャンセル';
+  /// 利用開始日を選択するPickerを呼び出す
+  void _onTap() {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (_) {
+        return CupertinoPickerSheet(
+          picker: _picker(),
+          saveOnPressed: () {
+            // 変更内容をプロバイダに保存
+            ref.watch(startDateProvider.notifier).state = _selectedDateTime;
 
-    return CupertinoTextButton(
-      text: text,
-      color: Colors.grey.shade800,
-      onPressed: () => Navigator.pop(context),
+            // Pickerを閉じる
+            Navigator.pop(context);
+          },
+        );
+      },
     );
   }
 
-  /// 変更を保存するボタン
-  Widget _saveButton(BuildContext context, WidgetRef ref) {
-    const text = '完了';
-
-    return CupertinoTextButton(
-      text: text,
-      color: configs.appColor,
-      onPressed: () {
-        final dateTime = ref.watch(selectStartDateProvider);
-        ref.watch(resultStartDateProvider.notifier).state = dateTime;
-
-        Navigator.pop(context);
+  /// 利用開始日を選択するPicker
+  Widget _picker() {
+    return CupertinoDatePicker(
+      initialDateTime: _selectedDateTime,
+      mode: CupertinoDatePickerMode.date,
+      onDateTimeChanged: (value) {
+        _selectedDateTime = value;
       },
     );
   }

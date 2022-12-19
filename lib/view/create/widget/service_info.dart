@@ -1,16 +1,15 @@
+import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// サービス情報を表示する
-class ServiceInfo extends ConsumerWidget {
+class ServiceInfo extends StatelessWidget {
   const ServiceInfo({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // final isDark = ref.watch(darkModeProvider);
-
+  Widget build(BuildContext context) {
     return Column(
       children: [
-        const ItemsTitle(title: 'サービス情報'),
+        const ItemsTitle(title: texts.serviceInfoTitle),
         Container(
           width: double.infinity,
           decoration: const BoxDecoration(

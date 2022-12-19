@@ -21,15 +21,11 @@ final priceProvider = StateProvider.autoDispose((ref) => '');
 final priceControllerProvider =
     StateProvider.autoDispose((ref) => TextEditingController(text: ''));
 
-final selectPaymentCycleProvider = StateProvider.autoDispose((ref) => 2);
+final paymentCycleProvider = StateProvider.autoDispose((ref) => 2);
 
-final resultPaymentCycleProvider = StateProvider.autoDispose((ref) => 2);
+final paymentMethodProvider = StateProvider.autoDispose((ref) => 0);
 
-final selectStartDateProvider =
-    StateProvider.autoDispose((ref) => DateTime.now());
-
-final resultStartDateProvider =
-    StateProvider.autoDispose((ref) => DateTime.now());
+final startDateProvider = StateProvider.autoDispose((ref) => DateTime.now());
 
 final notificationProvider = StateProvider.autoDispose((ref) => false);
 

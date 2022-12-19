@@ -1,4 +1,4 @@
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/colors.dart' as colors;
 import '../../../importer.dart';
 
 /// サブスクリプションリストのアイテムを表示する
@@ -64,7 +64,7 @@ class SubscriptionItem extends ConsumerWidget {
     if (imagePath == '') imagePath = 'images/icon/squirrel.png';
 
     return ColorFiltered(
-      colorFilter: const ColorFilter.mode(configs.appColor, BlendMode.srcIn),
+      colorFilter: const ColorFilter.mode(colors.appColor, BlendMode.srcIn),
       child: Image.asset(
         imagePath,
         height: 40.h,
@@ -94,7 +94,7 @@ class SubscriptionItem extends ConsumerWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: 15.sp,
+        fontSize: 16.sp,
         fontWeight: FontWeight.w500,
       ),
     );

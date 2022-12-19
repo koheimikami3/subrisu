@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/colors.dart' as colors;
 import '../../../importer.dart';
 
 class CupertinoTextButton extends ConsumerWidget {
   const CupertinoTextButton({
     Key? key,
     required this.text,
-    this.color = configs.appColor,
+    this.color = colors.appColor,
     required this.onPressed,
   }) : super(key: key);
 

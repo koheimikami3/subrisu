@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/colors.dart' as colors;
 import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
@@ -23,7 +23,7 @@ class CreateAnonymousUserButton extends ConsumerWidget {
       texts.createAnonymousUserButton,
       style: TextStyle(
         fontSize: 15.sp,
-        color: configs.appColor,
+        color: colors.appColor,
       ),
     );
   }

@@ -15,6 +15,8 @@ const createAnonymousUserButton = 'アカウント登録しないで始める';
 
 // 登録画面ボタンテキスト
 const saveIconButton = '保存';
+const pickerCancelButton = 'キャンセル';
+const pickerSaveButton = '完了';
 const createSubscriptionButton = '登録';
 
 // 設定画面ボタンテキスト
@@ -23,6 +25,19 @@ const deleteUserButton = 'すべてのデータを削除';
 // アカウント連携画面ボタンテキスト
 const linkAppleUserButton = 'Appleで続ける';
 const linkGoogleUserButton = 'Googleで続ける';
+
+// 登録・編集画面項目タイトル
+const serviceInfoTitle = 'サービス情報';
+const detailInfoTitle = '詳細情報';
+const paymentCycleTitle = '支払い周期';
+const paymentMethodTitle = '支払い方法';
+const startDateTitle = '利用開始日';
+const notificationTitle = '支払い前日に通知';
+const memoTitle = 'メモ';
+
+// 登録・編集画面ヒントテキスト
+const serviceNameHint = 'サービス名*';
+const priceHint = '料金*';
 
 // 設定画面項目リストタイトル
 const paidPlanTitle = '有料プラン';
@@ -63,4 +78,13 @@ const paymentCycleList = [
   '3ヶ月に1回',
   '6ヶ月に1回',
   '年に1回',
+];
+
+// 支払い方法テキストリスト
+const paymentMethodList = [
+  '未選択',
+  'クレジットカード',
+  'App Store',
+  'Google Play Store',
+  'その他',
 ];

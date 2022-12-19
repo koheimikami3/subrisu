@@ -1,4 +1,4 @@
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// サービス名フォームを表示する
@@ -7,16 +7,8 @@ class ServiceNameForm extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return TextField(
-      cursorColor: configs.appColor,
-      decoration: InputDecoration(
-        hintText: 'サービス名',
-        hintStyle: TextStyle(fontSize: 14.sp),
-        isDense: true,
-        filled: true,
-        fillColor: Colors.white,
-        border: const OutlineInputBorder(borderSide: BorderSide.none),
-      ),
+    return MyTextField(
+      hintText: texts.serviceNameHint,
       onChanged: (value) {
         ref.watch(serviceNameProvider.notifier).state = value;
       },

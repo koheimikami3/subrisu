@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../constant/configs.dart' as configs;
 import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
@@ -15,8 +14,6 @@ class EditPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
-
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -43,9 +40,6 @@ class EditPage extends ConsumerWidget {
             ),
           ],
         ),
-        backgroundColor: isDark
-            ? configs.darkBackgroundColor
-            : configs.settingsBackgroundColor,
         body: SingleChildScrollView(
           child: Row(
             children: [

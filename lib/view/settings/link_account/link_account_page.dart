@@ -1,4 +1,3 @@
-import '../../../constant/configs.dart' as configs;
 import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
@@ -8,38 +7,31 @@ class LinkAccountPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(texts.linkAccountPage),
       ),
-      body: Material(
-        color: isDark
-            ? configs.darkBackgroundColor
-            : configs.settingsBackgroundColor,
-        child: Row(
-          children: [
-            SizedBox(width: 25.w),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 30.h),
-                  const Text('アカウント連携を行うことで'),
-                  const Text('①アプリを削除してもデータを復元できます'),
-                  const Text('②機種変更した際にデータを移行できます'),
-                  const Text('③複数端末でのデータ管理が可能です'),
-                  SizedBox(height: 30.h),
-                  const CreateAppleUserButton(),
-                  SizedBox(height: 20.h),
-                  const LinkGoogleUserButton(),
-                ],
-              ),
+      body: Row(
+        children: [
+          SizedBox(width: 25.w),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 30.h),
+                const Text('アカウント連携を行うことで'),
+                const Text('①アプリを削除してもデータを復元できます'),
+                const Text('②機種変更した際にデータを移行できます'),
+                const Text('③複数端末でのデータ管理が可能です'),
+                SizedBox(height: 30.h),
+                const CreateAppleUserButton(),
+                SizedBox(height: 20.h),
+                const LinkGoogleUserButton(),
+              ],
             ),
-            SizedBox(width: 25.w),
-          ],
-        ),
+          ),
+          SizedBox(width: 25.w),
+        ],
       ),
     );
   }

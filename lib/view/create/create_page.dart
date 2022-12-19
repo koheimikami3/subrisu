@@ -1,4 +1,3 @@
-import '../../constant/configs.dart' as configs;
 import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
@@ -8,15 +7,10 @@ class CreatePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
-
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: AppBar(title: const Text(texts.createPage)),
-        backgroundColor: isDark
-            ? configs.darkBackgroundColor
-            : configs.settingsBackgroundColor,
         body: SingleChildScrollView(
           child: Row(
             children: [

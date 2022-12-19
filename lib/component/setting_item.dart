@@ -1,4 +1,4 @@
-import '../constant/configs.dart' as configs;
+import '../constant/colors.dart' as colors;
 import '../importer.dart';
 
 /// 設定項目のUIを作成する
@@ -40,7 +40,7 @@ class SettingItem extends ConsumerWidget {
                   : bottomItem
                       ? _bottomRadius()
                       : null,
-      color: isDark ? configs.darkItemColor : Colors.white,
+      color: isDark ? colors.darkItemColor : Colors.white,
       child: InkWell(
         onTap: onTap,
         borderRadius: independenceItem

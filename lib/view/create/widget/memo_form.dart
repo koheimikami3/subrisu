@@ -1,4 +1,4 @@
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// メモフォームを表示する
@@ -7,23 +7,11 @@ class MemoForm extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final isDark = ref.watch(darkModeProvider);
-
     return Column(
       children: [
-        const ItemsTitle(title: 'メモ'),
-        TextField(
-          cursorColor: configs.appColor,
-          maxLines: 4,
-          decoration: const InputDecoration(
-            isDense: true,
-            filled: true,
-            fillColor: Colors.white,
-            border: OutlineInputBorder(
-              borderSide: BorderSide.none,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-          ),
+        const ItemsTitle(title: texts.memoTitle),
+        MyTextField(
+          maxLines: 3,
           onChanged: (value) {
             ref.watch(memoProvider.notifier).state = value;
           },

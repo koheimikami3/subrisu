@@ -1,10 +1,11 @@
-import 'constant/configs.dart' as configs;
+import 'constant/colors.dart' as colors;
 import 'importer.dart';
 
 class AppTheme {
   /// ライトモードのテーマ設定を行う
   static ThemeData lightTheme() {
     return ThemeData(
+      scaffoldBackgroundColor: colors.lightBackgroundColor,
       brightness: Brightness.light,
       splashColor: Colors.transparent,
       iconTheme: const IconThemeData(color: Colors.black54),
@@ -19,7 +20,7 @@ class AppTheme {
   static ThemeData darkTheme() {
     return ThemeData(
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: configs.darkBackgroundColor,
+      scaffoldBackgroundColor: colors.darkBackgroundColor,
       iconTheme: const IconThemeData(color: Colors.white),
       splashColor: Colors.transparent,
       appBarTheme: _darkAppBarTheme(),
@@ -33,10 +34,10 @@ class AppTheme {
   static AppBarTheme _lightAppBarTheme() {
     return AppBarTheme(
       elevation: 0,
-      backgroundColor: configs.appColor,
+      backgroundColor: colors.appColor,
       iconTheme: const IconThemeData(color: Colors.white),
       titleTextStyle: TextStyle(
-        fontSize: 17.sp,
+        fontSize: 16.sp,
         fontWeight: FontWeight.bold,
         color: Colors.white,
       ),
@@ -49,7 +50,7 @@ class AppTheme {
       elevation: 0,
       iconTheme: const IconThemeData(color: Colors.white),
       titleTextStyle: TextStyle(
-        fontSize: 17.sp,
+        fontSize: 16.sp,
         fontWeight: FontWeight.bold,
         color: Colors.white,
       ),
@@ -74,7 +75,7 @@ class AppTheme {
       unselectedIconTheme: const IconThemeData(size: 30),
       selectedLabelStyle: TextStyle(fontSize: 12.sp),
       unselectedLabelStyle: TextStyle(fontSize: 12.sp),
-      selectedItemColor: configs.appColor,
+      selectedItemColor: colors.appColor,
     );
   }
 
@@ -83,7 +84,7 @@ class AppTheme {
     return const FloatingActionButtonThemeData(
       elevation: 2,
       highlightElevation: 2,
-      backgroundColor: configs.appColor,
+      backgroundColor: colors.appColor,
       splashColor: Colors.transparent,
     );
   }

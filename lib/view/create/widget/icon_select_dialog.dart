@@ -1,4 +1,4 @@
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/colors.dart' as colors;
 import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
@@ -26,7 +26,7 @@ class IconSelectDialog extends ConsumerWidget {
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
-                color: configs.appColor,
+                color: colors.appColor,
               ),
               child: Stack(
                 children: [
@@ -76,7 +76,7 @@ class IconSelectDialog extends ConsumerWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: 17.sp,
+        fontSize: 16.sp,
         fontWeight: FontWeight.bold,
         color: Colors.white,
       ),

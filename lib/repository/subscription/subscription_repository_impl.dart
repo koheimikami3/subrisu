@@ -13,7 +13,7 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
           .collection('users')
           .doc(userId)
           .collection('subscriptions')
-          .orderBy('createdAt', descending: true)
+          .orderBy('createdAt')
           .snapshots();
       return stream;
     } catch (_) {

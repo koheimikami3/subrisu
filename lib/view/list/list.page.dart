@@ -1,4 +1,3 @@
-import '../../constant/configs.dart' as configs;
 import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
@@ -9,7 +8,6 @@ class ListPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isUserDataLoaded = ref.watch(isUserDataLoadedProvider);
-    final isDark = ref.watch(darkModeProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -17,9 +15,6 @@ class ListPage extends ConsumerWidget {
         automaticallyImplyLeading: false,
       ),
       floatingActionButton: const CreatePageButton(),
-      backgroundColor: isDark
-          ? configs.darkBackgroundColor
-          : configs.settingsBackgroundColor,
       body: !isUserDataLoaded
           ? const Center(child: LoadingIndicator())
           : SingleChildScrollView(

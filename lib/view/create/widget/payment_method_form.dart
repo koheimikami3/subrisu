@@ -3,29 +3,29 @@ import 'package:flutter/cupertino.dart';
 import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
-/// 支払い周期フォームを表示する
-class PaymentCycleForm extends ConsumerStatefulWidget {
-  const PaymentCycleForm({Key? key}) : super(key: key);
+/// 支払い方法フォームを表示する
+class PaymentMethodForm extends ConsumerStatefulWidget {
+  const PaymentMethodForm({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<PaymentCycleForm> createState() => _PaymentCycleFormState();
+  ConsumerState<PaymentMethodForm> createState() => _PaymentMethodFormState();
 }
 
-class _PaymentCycleFormState extends ConsumerState<PaymentCycleForm> {
-  final _textList = texts.paymentCycleList;
-  int _selectedIndex = 2;
+class _PaymentMethodFormState extends ConsumerState<PaymentMethodForm> {
+  final _textList = texts.paymentMethodList;
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return DetailItem(
-      title: texts.paymentCycleTitle,
+      title: texts.paymentMethodTitle,
       content: _selectButton(),
     );
   }
 
-  /// 支払い周期を選択するボタン
+  /// 支払い方法を選択するボタン
   Widget _selectButton() {
-    final index = ref.watch(paymentCycleProvider);
+    final index = ref.watch(paymentMethodProvider);
 
     return GestureDetector(
       onTap: () => _onTap(),
@@ -38,7 +38,7 @@ class _PaymentCycleFormState extends ConsumerState<PaymentCycleForm> {
     );
   }
 
-  /// 支払い周期を選択するPickerを呼び出す
+  /// 支払い方法を選択するPickerを呼び出す
   void _onTap() {
     showCupertinoModalPopup(
       context: context,
@@ -47,7 +47,7 @@ class _PaymentCycleFormState extends ConsumerState<PaymentCycleForm> {
           picker: _picker(),
           saveOnPressed: () {
             // 変更内容をプロバイダに保存
-            ref.watch(paymentCycleProvider.notifier).state = _selectedIndex;
+            ref.watch(paymentMethodProvider.notifier).state = _selectedIndex;
 
             // Pickerを閉じる
             Navigator.pop(context);
@@ -57,7 +57,7 @@ class _PaymentCycleFormState extends ConsumerState<PaymentCycleForm> {
     );
   }
 
-  /// 支払い周期を選択するPicker
+  /// 支払い方法を選択するPicker
   Widget _picker() {
     return CupertinoPicker(
       itemExtent: 40.h,

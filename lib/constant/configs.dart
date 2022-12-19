@@ -1,5 +1,3 @@
-import '../importer.dart';
-
 // iOSリリース用広告ID
 const iOSReleaseAdId = 'ca-app-pub-3768273762534884/8719323691';
 
@@ -11,18 +9,6 @@ const androidReleaseAdId = '';
 
 // Androidデバッグ用広告ID
 const androidDebugAdId = 'ca-app-pub-3940256099942544/6300978111';
-
-// アプリカラー
-const appColor = Color.fromARGB(255, 0, 200, 180);
-
-// ダークモード時の背景色
-const darkBackgroundColor = Color(0xFF212121);
-
-// ダークモード時の項目色
-const darkItemColor = Color(0xFF303030);
-
-// 設定画面の背景色
-const settingsBackgroundColor = Color.fromRGBO(240, 240, 245, 1);
 
 // ダイアログタイトルフォントサイズ
 const dialogTitleFontSize = 14;

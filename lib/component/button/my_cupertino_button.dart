@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/colors.dart' as colors;
 import '../../../importer.dart';
 
 class MyCupertinoButton extends ConsumerWidget {
@@ -24,7 +24,7 @@ class MyCupertinoButton extends ConsumerWidget {
       child: CupertinoButton(
         borderRadius: const BorderRadius.all(Radius.circular(30)),
         padding: EdgeInsets.zero,
-        color: configs.appColor,
+        color: colors.appColor,
         disabledColor: Colors.grey.shade300,
         onPressed: onPressed,
         child: _text(),

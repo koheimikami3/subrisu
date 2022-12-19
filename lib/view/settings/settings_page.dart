@@ -1,4 +1,3 @@
-import '../../constant/configs.dart' as configs;
 import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
@@ -8,16 +7,11 @@ class SettingsPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(texts.settingsPage),
         automaticallyImplyLeading: false,
       ),
-      backgroundColor: isDark
-          ? configs.darkBackgroundColor
-          : configs.settingsBackgroundColor,
       body: SingleChildScrollView(
         child: Row(
           children: [

@@ -1,4 +1,4 @@
-import '../../../constant/configs.dart' as configs;
+import '../../../constant/colors.dart' as colors;
 import '../../../importer.dart';
 
 /// アイコン画像選択ダイアログを呼び出すボタン
@@ -19,7 +19,7 @@ class IconSelectButton extends ConsumerWidget {
       child: iconImagePath == ''
           ? DottedBorder(
               padding: EdgeInsets.zero,
-              color: configs.appColor,
+              color: colors.appColor,
               borderType: BorderType.Circle,
               dashPattern: const [8, 4],
               child: SizedBox(
@@ -27,7 +27,7 @@ class IconSelectButton extends ConsumerWidget {
                 width: 60.h,
                 child: const Icon(
                   Icons.add,
-                  color: configs.appColor,
+                  color: colors.appColor,
                 ),
               ),
             )
@@ -36,12 +36,12 @@ class IconSelectButton extends ConsumerWidget {
               width: 60.h,
               padding: EdgeInsets.all(10.w),
               decoration: BoxDecoration(
-                border: Border.all(color: configs.appColor),
+                border: Border.all(color: colors.appColor),
                 shape: BoxShape.circle,
               ),
               child: ColorFiltered(
                 colorFilter:
-                    const ColorFilter.mode(configs.appColor, BlendMode.srcIn),
+                    const ColorFilter.mode(colors.appColor, BlendMode.srcIn),
                 child: Image.asset(
                   iconImagePath,
                 ),

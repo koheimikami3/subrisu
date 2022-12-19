@@ -1,3 +1,4 @@
+import '../../../constant/colors.dart' as colors;
 import '../../../constant/configs.dart' as configs;
 import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
@@ -16,9 +17,8 @@ class DarkModePage extends ConsumerWidget {
         title: const Text(texts.darkModePage),
       ),
       body: Material(
-        color: isDark
-            ? configs.darkBackgroundColor
-            : configs.settingsBackgroundColor,
+        color:
+            isDark ? colors.darkBackgroundColor : colors.lightBackgroundColor,
         child: Row(
           children: [
             SizedBox(width: 20.w),
@@ -66,7 +66,7 @@ class DarkModePage extends ConsumerWidget {
     return const Icon(
       Icons.check,
       size: 22,
-      color: configs.appColor,
+      color: colors.appColor,
     );
   }
 
