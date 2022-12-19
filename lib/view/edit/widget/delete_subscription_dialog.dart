@@ -26,12 +26,16 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
   /// サブスクリプションを削除し、リスト画面に戻る
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final repository = ref.watch(subscriptionViewModelProvider.notifier);
+    final notificationId = subscriptionDoc.get('notificationId');
     String err = '';
 
     // プログレスダイアログを表示
     ProgressDialog.show(context);
 
     try {
+      // 通知をキャンセル
+      await NotificationScheduler.cancel(notificationId);
+
       // サブスクリプションを削除
       await repository.delete(subscriptionDoc.id);
     } catch (e) {

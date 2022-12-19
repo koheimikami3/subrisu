@@ -80,8 +80,8 @@ class SubscriptionItem extends ConsumerWidget {
     return Text(
       serviceName,
       style: TextStyle(
-        fontSize: 16.sp,
-        fontWeight: FontWeight.w600,
+        fontSize: 16.5.sp,
+        fontWeight: FontWeight.w500,
       ),
     );
   }
@@ -94,8 +94,8 @@ class SubscriptionItem extends ConsumerWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: 16.sp,
-        fontWeight: FontWeight.w500,
+        fontSize: 16.5.sp,
+        fontWeight: FontWeight.w400,
       ),
     );
   }

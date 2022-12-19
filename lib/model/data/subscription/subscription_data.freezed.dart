@@ -28,6 +28,7 @@ mixin _$SubscriptionData {
   @StartedAtField()
   DateTime? get startedAt => throw _privateConstructorUsedError;
   bool get notification => throw _privateConstructorUsedError;
+  int? get notificationId => throw _privateConstructorUsedError;
   String get memo => throw _privateConstructorUsedError;
   @CreatedAtField()
   DateTime? get createdAt => throw _privateConstructorUsedError;
@@ -54,6 +55,7 @@ abstract class $SubscriptionDataCopyWith<$Res> {
       int paymentMethod,
       @StartedAtField() DateTime? startedAt,
       bool notification,
+      int? notificationId,
       String memo,
       @CreatedAtField() DateTime? createdAt,
       @UpdatedAtField() DateTime? updatedAt});
@@ -79,6 +81,7 @@ class _$SubscriptionDataCopyWithImpl<$Res, $Val extends SubscriptionData>
     Object? paymentMethod = null,
     Object? startedAt = freezed,
     Object? notification = null,
+    Object? notificationId = freezed,
     Object? memo = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
@@ -112,6 +115,10 @@ class _$SubscriptionDataCopyWithImpl<$Res, $Val extends SubscriptionData>
           ? _value.notification
           : notification // ignore: cast_nullable_to_non_nullable
               as bool,
+      notificationId: freezed == notificationId
+          ? _value.notificationId
+          : notificationId // ignore: cast_nullable_to_non_nullable
+              as int?,
       memo: null == memo
           ? _value.memo
           : memo // ignore: cast_nullable_to_non_nullable
@@ -144,6 +151,7 @@ abstract class _$$_SubscriptionDataCopyWith<$Res>
       int paymentMethod,
       @StartedAtField() DateTime? startedAt,
       bool notification,
+      int? notificationId,
       String memo,
       @CreatedAtField() DateTime? createdAt,
       @UpdatedAtField() DateTime? updatedAt});
@@ -167,6 +175,7 @@ class __$$_SubscriptionDataCopyWithImpl<$Res>
     Object? paymentMethod = null,
     Object? startedAt = freezed,
     Object? notification = null,
+    Object? notificationId = freezed,
     Object? memo = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
@@ -200,6 +209,10 @@ class __$$_SubscriptionDataCopyWithImpl<$Res>
           ? _value.notification
           : notification // ignore: cast_nullable_to_non_nullable
               as bool,
+      notificationId: freezed == notificationId
+          ? _value.notificationId
+          : notificationId // ignore: cast_nullable_to_non_nullable
+              as int?,
       memo: null == memo
           ? _value.memo
           : memo // ignore: cast_nullable_to_non_nullable
@@ -227,6 +240,7 @@ class _$_SubscriptionData extends _SubscriptionData {
       required this.paymentMethod,
       @StartedAtField() this.startedAt,
       required this.notification,
+      required this.notificationId,
       required this.memo,
       @CreatedAtField() this.createdAt,
       @UpdatedAtField() this.updatedAt})
@@ -252,6 +266,8 @@ class _$_SubscriptionData extends _SubscriptionData {
   @override
   final bool notification;
   @override
+  final int? notificationId;
+  @override
   final String memo;
   @override
   @CreatedAtField()
@@ -262,7 +278,7 @@ class _$_SubscriptionData extends _SubscriptionData {
 
   @override
   String toString() {
-    return 'SubscriptionData(serviceName: $serviceName, price: $price, iconImagePath: $iconImagePath, paymentCycle: $paymentCycle, paymentMethod: $paymentMethod, startedAt: $startedAt, notification: $notification, memo: $memo, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'SubscriptionData(serviceName: $serviceName, price: $price, iconImagePath: $iconImagePath, paymentCycle: $paymentCycle, paymentMethod: $paymentMethod, startedAt: $startedAt, notification: $notification, notificationId: $notificationId, memo: $memo, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -283,6 +299,8 @@ class _$_SubscriptionData extends _SubscriptionData {
                 other.startedAt == startedAt) &&
             (identical(other.notification, notification) ||
                 other.notification == notification) &&
+            (identical(other.notificationId, notificationId) ||
+                other.notificationId == notificationId) &&
             (identical(other.memo, memo) || other.memo == memo) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -301,6 +319,7 @@ class _$_SubscriptionData extends _SubscriptionData {
       paymentMethod,
       startedAt,
       notification,
+      notificationId,
       memo,
       createdAt,
       updatedAt);
@@ -328,6 +347,7 @@ abstract class _SubscriptionData extends SubscriptionData {
       required final int paymentMethod,
       @StartedAtField() final DateTime? startedAt,
       required final bool notification,
+      required final int? notificationId,
       required final String memo,
       @CreatedAtField() final DateTime? createdAt,
       @UpdatedAtField() final DateTime? updatedAt}) = _$_SubscriptionData;
@@ -351,6 +371,8 @@ abstract class _SubscriptionData extends SubscriptionData {
   DateTime? get startedAt;
   @override
   bool get notification;
+  @override
+  int? get notificationId;
   @override
   String get memo;
   @override

@@ -18,6 +18,7 @@ export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:flutter_localizations/flutter_localizations.dart';
 export 'package:google_mobile_ads/google_mobile_ads.dart';
 export 'package:dotted_border/dotted_border.dart';
+export 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 // app
 export 'package:subrisu/app.dart';
@@ -93,3 +94,4 @@ export 'package:subrisu/view/edit/widget/delete_subscription_dialog.dart';
 export 'package:subrisu/component/my_text_field.dart';
 export 'package:subrisu/view/create/widget/detail_item.dart';
 export 'package:subrisu/component/cupertino_picker_sheet.dart';
+export 'package:subrisu/core/notification_scheduler.dart';

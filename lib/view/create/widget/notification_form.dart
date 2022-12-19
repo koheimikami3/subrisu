@@ -10,25 +10,31 @@ class NotificationForm extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final nextPaymentDate = ref.watch(nextPaymentDateProvider);
+
     return DetailItem(
       title: texts.notificationTitle,
       content: _switch(ref),
+      active: nextPaymentDate != null,
     );
   }
 
   /// プッシュ通知のオン・オフを選択するSwitch
   Widget _switch(WidgetRef ref) {
     final isOn = ref.watch(notificationProvider);
+    final nextPaymentDate = ref.watch(nextPaymentDateProvider);
 
     return SizedBox(
       height: 15.h,
       child: CupertinoSwitch(
         value: isOn,
         activeColor: colors.appColor,
-        onChanged: (value) {
-          // 変更内容をプロバイダに保存
-          ref.watch(notificationProvider.notifier).state = value;
-        },
+        onChanged: nextPaymentDate == null
+            ? null
+            : (value) {
+                // 変更内容をプロバイダに保存
+                ref.watch(notificationProvider.notifier).state = value;
+              },
       ),
     );
   }

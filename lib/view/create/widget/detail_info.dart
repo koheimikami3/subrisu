@@ -1,3 +1,4 @@
+import 'package:subrisu/view/create/widget/next_payment_date.dart';
 import 'package:subrisu/view/create/widget/payment_method_form.dart';
 
 import '../../../constant/texts.dart' as texts;
@@ -26,9 +27,11 @@ class DetailInfo extends StatelessWidget {
                   children: const [
                     PaymentCycleForm(),
                     ItemDivider(),
-                    PaymentMethodForm(),
-                    ItemDivider(),
+                    // PaymentMethodForm(),
+                    // ItemDivider(),
                     StartDateForm(),
+                    ItemDivider(),
+                    NextPaymentDateForm(),
                     ItemDivider(),
                     NotificationForm(),
                   ],

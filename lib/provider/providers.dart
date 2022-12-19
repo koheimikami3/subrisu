@@ -25,7 +25,10 @@ final paymentCycleProvider = StateProvider.autoDispose((ref) => 2);
 
 final paymentMethodProvider = StateProvider.autoDispose((ref) => 0);
 
-final startDateProvider = StateProvider.autoDispose((ref) => DateTime.now());
+final startDateProvider = StateProvider.autoDispose<DateTime?>((ref) => null);
+
+final nextPaymentDateProvider =
+    StateProvider.autoDispose<DateTime?>((ref) => null);
 
 final notificationProvider = StateProvider.autoDispose((ref) => false);
 

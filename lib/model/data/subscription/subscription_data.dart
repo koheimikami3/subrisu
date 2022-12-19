@@ -18,6 +18,7 @@ abstract class SubscriptionData implements _$SubscriptionData {
     required int paymentMethod,
     @StartedAtField() DateTime? startedAt,
     required bool notification,
+    required int? notificationId,
     required String memo,
     @CreatedAtField() DateTime? createdAt,
     @UpdatedAtField() DateTime? updatedAt,

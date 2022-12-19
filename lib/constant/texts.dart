@@ -32,6 +32,7 @@ const detailInfoTitle = '詳細情報';
 const paymentCycleTitle = '支払い周期';
 const paymentMethodTitle = '支払い方法';
 const startDateTitle = '利用開始日';
+const nextPaymentDateTitle = '次回支払い日';
 const notificationTitle = '支払い前日に通知';
 const memoTitle = 'メモ';
 
@@ -73,11 +74,9 @@ const shareText = 'サブリス\n${urls.appStoreUrl}';
 // 支払い周期テキストリスト
 const paymentCycleList = [
   '毎日',
-  '週に1回',
-  '1ヶ月に1回',
-  '3ヶ月に1回',
-  '6ヶ月に1回',
-  '年に1回',
+  '毎週',
+  '毎月',
+  '毎年',
 ];
 
 // 支払い方法テキストリスト

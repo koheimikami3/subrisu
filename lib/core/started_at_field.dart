@@ -13,7 +13,9 @@ class StartedAtField implements JsonConverter<DateTime?, dynamic> {
   }
 
   @override
-  Timestamp toJson(DateTime? date) {
-    return Timestamp.fromDate(date!);
+  Timestamp? toJson(DateTime? date) {
+    if (date == null) return null;
+
+    return Timestamp.fromDate(date);
   }
 }

@@ -26,6 +26,7 @@ class CreatePage extends ConsumerWidget {
                     const MemoForm(),
                     SizedBox(height: 30.h),
                     const RegisterButton(),
+                    SizedBox(height: 30.h),
                   ],
                 ),
               ),

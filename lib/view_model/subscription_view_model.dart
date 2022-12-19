@@ -20,7 +20,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
     }
   }
 
-  Future<void> create() async {
+  Future<void> create(int? notificationId) async {
     final userId = ref.watch(userViewModelProvider).userId;
     final serviceName = ref.read(serviceNameProvider);
     final price = ref.read(priceProvider);
@@ -41,6 +41,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
         paymentMethod: paymentMethod,
         startedAt: startedAt,
         notification: notification,
+        notificationId: notificationId,
         memo: memo,
       );
 

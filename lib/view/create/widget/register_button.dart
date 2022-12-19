@@ -20,6 +20,8 @@ class RegisterButton extends ConsumerWidget {
 
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final repository = ref.watch(subscriptionViewModelProvider.notifier);
+    final notification = ref.watch(notificationProvider);
+    int? notificationId;
     String err = '';
 
     // TextFieldのフォーカスを解除
@@ -29,8 +31,11 @@ class RegisterButton extends ConsumerWidget {
     ProgressDialog.show(context);
 
     try {
+      // 通知のスケジュールを行う
+      if (notification) notificationId = await NotificationScheduler.set(ref);
+
       // サブスクリプションを登録
-      await repository.create();
+      await repository.create(notificationId);
     } catch (e) {
       err = ErrorHandler.selectMessage(e.toString());
     }

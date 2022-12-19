@@ -24,8 +24,10 @@ class _StartDateFormState extends ConsumerState<StartDateForm> {
   }
 
   Widget _selectButton() {
-    final startDate = ref.watch(startDateProvider);
-    final text = DateFormat.yMMMMd('ja').format(startDate);
+    final dateTime = ref.watch(startDateProvider);
+    late String text = '未選択';
+
+    if (dateTime != null) text = DateFormat.yMMMMd('ja').format(dateTime);
 
     return GestureDetector(
       onTap: () => _onTap(),
@@ -46,8 +48,41 @@ class _StartDateFormState extends ConsumerState<StartDateForm> {
         return CupertinoPickerSheet(
           picker: _picker(),
           saveOnPressed: () {
+            final paymentCycle = ref.watch(paymentCycleProvider);
+
             // 変更内容をプロバイダに保存
             ref.watch(startDateProvider.notifier).state = _selectedDateTime;
+
+            switch (paymentCycle) {
+              case 0:
+                ref.watch(nextPaymentDateProvider.notifier).state = DateTime(
+                  _selectedDateTime.year,
+                  _selectedDateTime.month,
+                  _selectedDateTime.day + 1,
+                );
+                break;
+              case 1:
+                ref.watch(nextPaymentDateProvider.notifier).state = DateTime(
+                  _selectedDateTime.year,
+                  _selectedDateTime.month,
+                  _selectedDateTime.day + 7,
+                );
+                break;
+              case 2:
+                ref.watch(nextPaymentDateProvider.notifier).state = DateTime(
+                  _selectedDateTime.year,
+                  _selectedDateTime.month + 1,
+                  _selectedDateTime.day,
+                );
+                break;
+              case 3:
+                ref.watch(nextPaymentDateProvider.notifier).state = DateTime(
+                  _selectedDateTime.year + 1,
+                  _selectedDateTime.month,
+                  _selectedDateTime.day,
+                );
+                break;
+            }
 
             // Pickerを閉じる
             Navigator.pop(context);
