@@ -15,10 +15,10 @@ void main() async {
   tz.setLocalLocation(tz.getLocation('Asia/Tokyo'));
 
   // プッシュ通知ダイアログを呼び出す
-  final flnp = FlutterLocalNotificationsPlugin();
-  const iOS = DarwinInitializationSettings();
-  const initSettings = InitializationSettings(iOS: iOS);
-  await flnp.initialize(initSettings);
+  // final flnp = FlutterLocalNotificationsPlugin();
+  // const iOS = DarwinInitializationSettings();
+  // const initSettings = InitializationSettings(iOS: iOS);
+  // await flnp.initialize(initSettings);
 
   // アプリ画面を縦固定に設定
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);

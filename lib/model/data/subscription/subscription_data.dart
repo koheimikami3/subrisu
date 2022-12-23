@@ -1,5 +1,5 @@
 import 'package:subrisu/core/created_at_field.dart';
-import 'package:subrisu/core/started_at_field.dart';
+import 'package:subrisu/core/first_paid_at_field.dart';
 import 'package:subrisu/core/updated_at_field.dart';
 import 'package:subrisu/importer.dart';
 
@@ -15,10 +15,8 @@ abstract class SubscriptionData implements _$SubscriptionData {
     required String price,
     @Default('') String iconImagePath,
     required int paymentCycle,
-    required int paymentMethod,
-    @StartedAtField() DateTime? startedAt,
+    @FirstPaidAtField() DateTime? firstPaidAt,
     required bool notification,
-    required int? notificationId,
     required String memo,
     @CreatedAtField() DateTime? createdAt,
     @UpdatedAtField() DateTime? updatedAt,

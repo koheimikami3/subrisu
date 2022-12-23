@@ -1,9 +1,11 @@
-import '../../../constant/colors.dart' as colors;
-import '../../../constant/texts.dart' as texts;
-import '../../../importer.dart';
+import '../../constant/colors.dart' as colors;
+import '../../constant/texts.dart' as texts;
+import '../../importer.dart';
 
 class IconSelectDialog extends ConsumerWidget {
-  const IconSelectDialog({Key? key}) : super(key: key);
+  const IconSelectDialog({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -20,7 +20,7 @@ class SubscriptionItem extends ConsumerWidget {
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         highlightColor: Colors.grey.shade300,
         child: SizedBox(
-          height: 60.h,
+          height: 57.h,
           width: double.infinity,
           child: Column(
             children: [

@@ -1,9 +1,16 @@
-import '../../../constant/texts.dart' as texts;
-import '../../../importer.dart';
+import '../../constant/texts.dart' as texts;
+import '../../importer.dart';
 
 /// サービス情報を表示する
 class ServiceInfo extends StatelessWidget {
-  const ServiceInfo({Key? key}) : super(key: key);
+  const ServiceInfo({
+    Key? key,
+    this.serviceName = '',
+    this.price = '',
+  }) : super(key: key);
+
+  final String serviceName;
+  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +30,10 @@ class ServiceInfo extends StatelessWidget {
               SizedBox(width: 15.w),
               Expanded(
                 child: Column(
-                  children: const [
-                    ServiceNameForm(),
-                    ItemDivider(),
-                    PriceForm(),
+                  children: [
+                    ServiceNameForm(serviceName: serviceName),
+                    const ItemDivider(),
+                    PriceForm(price: price),
                   ],
                 ),
               ),

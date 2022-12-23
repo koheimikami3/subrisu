@@ -1,4 +1,4 @@
-import '../../../importer.dart';
+import '../../importer.dart';
 
 class DetailItem extends StatelessWidget {
   const DetailItem({
@@ -34,7 +34,7 @@ class DetailItem extends StatelessWidget {
   Widget _title() {
     return Text(
       title,
-      style: active ? null : const TextStyle(color: Colors.black54),
+      style: active ? null : const TextStyle(color: Colors.black38),
     );
   }
 }

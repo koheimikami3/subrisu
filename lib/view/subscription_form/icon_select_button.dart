@@ -42,9 +42,7 @@ class IconSelectButton extends ConsumerWidget {
               child: ColorFiltered(
                 colorFilter:
                     const ColorFilter.mode(colors.appColor, BlendMode.srcIn),
-                child: Image.asset(
-                  iconImagePath,
-                ),
+                child: Image.asset(iconImagePath),
               ),
             ),
     );

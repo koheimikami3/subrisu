@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../constant/texts.dart' as texts;
-import '../../../importer.dart';
+import '../../constant/texts.dart' as texts;
+import '../../importer.dart';
 
 /// 支払い周期フォームを表示する
 class PaymentCycleForm extends ConsumerStatefulWidget {

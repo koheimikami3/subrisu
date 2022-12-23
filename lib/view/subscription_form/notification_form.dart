@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../constant/colors.dart' as colors;
-import '../../../constant/texts.dart' as texts;
-import '../../../importer.dart';
+import '../../constant/colors.dart' as colors;
+import '../../constant/texts.dart' as texts;
+import '../../importer.dart';
 
 /// 通知フォームを表示する
 class NotificationForm extends ConsumerWidget {
@@ -10,31 +10,26 @@ class NotificationForm extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final nextPaymentDate = ref.watch(nextPaymentDateProvider);
-
     return DetailItem(
       title: texts.notificationTitle,
       content: _switch(ref),
-      active: nextPaymentDate != null,
+      active: true,
     );
   }
 
   /// プッシュ通知のオン・オフを選択するSwitch
   Widget _switch(WidgetRef ref) {
     final isOn = ref.watch(notificationProvider);
-    final nextPaymentDate = ref.watch(nextPaymentDateProvider);
 
     return SizedBox(
       height: 15.h,
       child: CupertinoSwitch(
         value: isOn,
         activeColor: colors.appColor,
-        onChanged: nextPaymentDate == null
-            ? null
-            : (value) {
-                // 変更内容をプロバイダに保存
-                ref.watch(notificationProvider.notifier).state = value;
-              },
+        onChanged: (value) {
+          // 変更内容をプロバイダに保存
+          ref.watch(notificationProvider.notifier).state = value;
+        },
       ),
     );
   }

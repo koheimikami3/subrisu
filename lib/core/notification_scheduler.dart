@@ -9,7 +9,7 @@ class NotificationScheduler {
     final flnp = FlutterLocalNotificationsPlugin();
     final serviceName = ref.watch(serviceNameProvider);
     final paymentCycle = ref.watch(paymentCycleProvider);
-    final nextPaymentDate = ref.watch(nextPaymentDateProvider);
+    final startDate = ref.watch(firstPaymentDateProvider);
     final notificationId = Random().nextInt(1000000);
     late final DateTimeComponents components;
 
@@ -28,14 +28,17 @@ class NotificationScheduler {
         break;
     }
 
-    // 取得した日時を日本タイムゾーンの日時に変換
-    final scheduleTime = tz.TZDateTime.from(nextPaymentDate!, tz.local);
+    // 初回支払日の前日を通知日に設定
+    final notificationDate = startDate.add(const Duration(days: -1));
+
+    // 通知ひを日本タイムゾーンの日時に変換
+    final scheduleDate = tz.TZDateTime.from(notificationDate, tz.local);
 
     await flnp.zonedSchedule(
       notificationId,
       'サブリス',
       '$serviceNameの支払い前日になりました。',
-      scheduleTime,
+      scheduleDate,
       const NotificationDetails(),
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,

@@ -10,6 +10,9 @@ const androidReleaseAdId = '';
 // Androidデバッグ用広告ID
 const androidDebugAdId = 'ca-app-pub-3940256099942544/6300978111';
 
+// テキストデフォルトフォントサイズ
+const defaultFontSize = 13.5;
+
 // ダイアログタイトルフォントサイズ
 const dialogTitleFontSize = 14;
 

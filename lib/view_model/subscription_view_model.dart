@@ -20,14 +20,13 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
     }
   }
 
-  Future<void> create(int? notificationId) async {
+  Future<void> create() async {
     final userId = ref.watch(userViewModelProvider).userId;
     final serviceName = ref.read(serviceNameProvider);
     final price = ref.read(priceProvider);
     final iconImagePath = ref.read(resultIconImagePathProvider);
     final paymentCycle = ref.read(paymentCycleProvider);
-    final paymentMethod = ref.read(paymentMethodProvider);
-    final startedAt = ref.read(startDateProvider);
+    final firstPaidAt = ref.read(firstPaymentDateProvider);
     final notification = ref.read(notificationProvider);
     final memo = ref.read(memoProvider);
 
@@ -38,15 +37,43 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
         price: price,
         iconImagePath: iconImagePath,
         paymentCycle: paymentCycle,
-        paymentMethod: paymentMethod,
-        startedAt: startedAt,
+        firstPaidAt: firstPaidAt,
         notification: notification,
-        notificationId: notificationId,
         memo: memo,
       );
 
       // SubscriptionDocumentを作成
       await repository.create(userId, data);
+    } catch (_) {
+      rethrow;
+    }
+  }
+
+  Future<void> update(String subscId, DateTime createdAt) async {
+    final userId = ref.watch(userViewModelProvider).userId;
+    final serviceName = ref.read(serviceNameProvider);
+    final price = ref.read(priceProvider);
+    final iconImagePath = ref.read(resultIconImagePathProvider);
+    final paymentCycle = ref.read(paymentCycleProvider);
+    final firstPaidAt = ref.read(firstPaymentDateProvider);
+    final notification = ref.read(notificationProvider);
+    final memo = ref.read(memoProvider);
+
+    try {
+      // SubscriptionDataを作成
+      final data = SubscriptionData(
+        serviceName: serviceName,
+        price: price,
+        iconImagePath: iconImagePath,
+        paymentCycle: paymentCycle,
+        firstPaidAt: firstPaidAt,
+        notification: notification,
+        memo: memo,
+        createdAt: createdAt,
+      );
+
+      // SubscriptionDocumentを更新
+      await repository.update(userId, subscId, data);
     } catch (_) {
       rethrow;
     }

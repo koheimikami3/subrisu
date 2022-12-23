@@ -1,10 +1,12 @@
 import '../constant/colors.dart' as colors;
+import '../constant/configs.dart' as configs;
 import '../importer.dart';
 
-class MyTextField extends StatelessWidget {
-  const MyTextField({
+class MyTextFormField extends StatelessWidget {
+  const MyTextFormField({
     Key? key,
-    this.controller,
+    this.initialValue,
+    this.minLines = 1,
     this.maxLines = 1,
     this.keyboardType,
     this.inputFormatters,
@@ -12,8 +14,9 @@ class MyTextField extends StatelessWidget {
     required this.onChanged,
   }) : super(key: key);
 
-  final TextEditingController? controller;
-  final int maxLines;
+  final String? initialValue;
+  final int minLines;
+  final int? maxLines;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
   final String? hintText;
@@ -21,16 +24,18 @@ class MyTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
+    return TextFormField(
+      initialValue: initialValue,
+      minLines: minLines,
       maxLines: maxLines,
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,
       cursorColor: colors.appColor,
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 10.w),
         isDense: true,
         hintText: hintText,
-        hintStyle: TextStyle(fontSize: 14.sp),
+        hintStyle: TextStyle(fontSize: configs.defaultFontSize.sp),
         filled: true,
         fillColor: Colors.white,
         border: const OutlineInputBorder(

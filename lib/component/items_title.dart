@@ -34,7 +34,7 @@ class ItemsTitle extends ConsumerWidget {
     return Text(
       title,
       style: TextStyle(
-        fontSize: 13.sp,
+        fontSize: 12.5.sp,
         color: color,
       ),
     );

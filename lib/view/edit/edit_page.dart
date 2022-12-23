@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
+import 'package:subrisu/view/subscription_form/delete_subscription_button.dart';
 
 import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// 編集画面のUIを作成する
-class EditPage extends ConsumerWidget {
+class EditPage extends ConsumerStatefulWidget {
   const EditPage({
     Key? key,
     required this.subscriptionDoc,
@@ -13,7 +13,35 @@ class EditPage extends ConsumerWidget {
   final DocumentSnapshot subscriptionDoc; // サブスクリプションドキュメント
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<EditPage> createState() => _EditPageState();
+}
+
+class _EditPageState extends ConsumerState<EditPage> {
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final data = widget.subscriptionDoc.data() as Map;
+
+      ref.watch(serviceNameProvider.notifier).state = data['serviceName'];
+      ref.watch(priceProvider.notifier).state = data['price'];
+      ref.watch(resultIconImagePathProvider.notifier).state =
+          data['iconImagePath'];
+      ref.watch(paymentCycleProvider.notifier).state = data['paymentCycle'];
+      ref.watch(firstPaymentDateProvider.notifier).state =
+          data['firstPaidAt'].toDate();
+      ref.watch(notificationProvider.notifier).state = data['notification'];
+      ref.watch(memoProvider.notifier).state = data['memo'];
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final data = widget.subscriptionDoc.data() as Map;
+    final serviceName = data['serviceName'];
+    final price = data['price'];
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -22,45 +50,19 @@ class EditPage extends ConsumerWidget {
           actions: [
             Row(
               children: [
-                IconButton(
-                  icon: const Icon(Icons.delete),
-                  splashRadius: 25.w,
-                  color: Colors.red,
-                  onPressed: () => {
-                    showCupertinoDialog(
-                      context: context,
-                      builder: (_) => DeleteSubscriptionDialog(
-                        subscriptionDoc: subscriptionDoc,
-                      ),
-                    ),
-                  },
+                DeleteSubscriptionButton(
+                  subscriptionDoc: widget.subscriptionDoc,
                 ),
-                SizedBox(width: 5.w),
+                SizedBox(width: 20.w),
               ],
-            ),
+            )
           ],
         ),
-        body: SingleChildScrollView(
-          child: Row(
-            children: [
-              SizedBox(width: 20.w),
-              // Expanded(
-              //   child: Column(
-              //     children: [
-              //       SizedBox(height: 20.h),
-              //       const ServiceInfo(),
-              //       SizedBox(height: 25.h),
-              //       const DetailInfo(),
-              //       SizedBox(height: 25.h),
-              //       const MemoForm(),
-              //       SizedBox(height: 30.h),
-              //       const RegisterButton(),
-              //     ],
-              //   ),
-              // ),
-              SizedBox(width: 20.w),
-            ],
-          ),
+        body: SubscriptionForm(
+          subscriptionDoc: widget.subscriptionDoc,
+          serviceName: serviceName,
+          price: price,
+          button: UpdateButton(subscriptionDoc: widget.subscriptionDoc),
         ),
       ),
     );

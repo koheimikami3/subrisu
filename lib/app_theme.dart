@@ -1,3 +1,4 @@
+import 'constant/configs.dart' as configs;
 import 'constant/colors.dart' as colors;
 import 'importer.dart';
 
@@ -92,7 +93,7 @@ class AppTheme {
   /// ライトモードTextのUI設定を行う
   static TextTheme _lightTextTheme() {
     return TextTheme(
-      bodyText2: TextStyle(fontSize: 14.sp),
+      bodyText2: TextStyle(fontSize: configs.defaultFontSize.sp),
     );
   }
 
@@ -100,7 +101,7 @@ class AppTheme {
   static TextTheme _darkTextTheme() {
     return TextTheme(
       bodyText2: TextStyle(
-        fontSize: 14.sp,
+        fontSize: configs.defaultFontSize.sp.sp,
         color: Colors.white,
       ),
     );

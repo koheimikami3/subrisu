@@ -1,5 +1,5 @@
-import '../../../constant/texts.dart' as texts;
-import '../../../importer.dart';
+import '../../constant/texts.dart' as texts;
+import '../../importer.dart';
 
 /// メモフォームを表示する
 class MemoForm extends ConsumerWidget {
@@ -10,8 +10,9 @@ class MemoForm extends ConsumerWidget {
     return Column(
       children: [
         const ItemsTitle(title: texts.memoTitle),
-        MyTextField(
-          maxLines: 3,
+        MyTextFormField(
+          minLines: 4,
+          maxLines: null,
           onChanged: (value) {
             ref.watch(memoProvider.notifier).state = value;
           },

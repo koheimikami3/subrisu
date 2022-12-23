@@ -35,6 +35,24 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
   }
 
   @override
+  Future<void> update(
+    String userId,
+    String subscId,
+    SubscriptionData data,
+  ) async {
+    try {
+      await _db
+          .collection('users')
+          .doc(userId)
+          .collection('subscriptions')
+          .doc(subscId)
+          .update(data.toJson());
+    } catch (e) {
+      throw errors.createSubscriptionErr;
+    }
+  }
+
+  @override
   Future<void> delete(String userId, String subscriptionId) async {
     try {
       await _db

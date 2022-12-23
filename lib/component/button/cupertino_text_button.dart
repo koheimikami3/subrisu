@@ -29,7 +29,7 @@ class CupertinoTextButton extends ConsumerWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: 16.sp,
+        fontSize: 15.5.sp,
         color: color,
       ),
     );

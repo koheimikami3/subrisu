@@ -13,11 +13,12 @@ const createAppleUserButton = 'Appleでサインイン';
 const createGoogleUserButton = 'Googleでサインイン';
 const createAnonymousUserButton = 'アカウント登録しないで始める';
 
-// 登録画面ボタンテキスト
+// 登録・編集画面ボタンテキスト
 const saveIconButton = '保存';
 const pickerCancelButton = 'キャンセル';
 const pickerSaveButton = '完了';
 const createSubscriptionButton = '登録';
+const updateSubscriptionButton = '更新';
 
 // 設定画面ボタンテキスト
 const deleteUserButton = 'すべてのデータを削除';
@@ -31,9 +32,8 @@ const serviceInfoTitle = 'サービス情報';
 const detailInfoTitle = '詳細情報';
 const paymentCycleTitle = '支払い周期';
 const paymentMethodTitle = '支払い方法';
-const startDateTitle = '利用開始日';
-const nextPaymentDateTitle = '次回支払い日';
-const notificationTitle = '支払い前日に通知';
+const firstPaymentDateTitle = '初回支払い日';
+const notificationTitle = '前日に通知する';
 const memoTitle = 'メモ';
 
 // 登録・編集画面ヒントテキスト

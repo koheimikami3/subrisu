@@ -24,11 +24,9 @@ mixin _$SubscriptionData {
   String get price => throw _privateConstructorUsedError;
   String get iconImagePath => throw _privateConstructorUsedError;
   int get paymentCycle => throw _privateConstructorUsedError;
-  int get paymentMethod => throw _privateConstructorUsedError;
-  @StartedAtField()
-  DateTime? get startedAt => throw _privateConstructorUsedError;
+  @FirstPaidAtField()
+  DateTime? get firstPaidAt => throw _privateConstructorUsedError;
   bool get notification => throw _privateConstructorUsedError;
-  int? get notificationId => throw _privateConstructorUsedError;
   String get memo => throw _privateConstructorUsedError;
   @CreatedAtField()
   DateTime? get createdAt => throw _privateConstructorUsedError;
@@ -52,10 +50,8 @@ abstract class $SubscriptionDataCopyWith<$Res> {
       String price,
       String iconImagePath,
       int paymentCycle,
-      int paymentMethod,
-      @StartedAtField() DateTime? startedAt,
+      @FirstPaidAtField() DateTime? firstPaidAt,
       bool notification,
-      int? notificationId,
       String memo,
       @CreatedAtField() DateTime? createdAt,
       @UpdatedAtField() DateTime? updatedAt});
@@ -78,10 +74,8 @@ class _$SubscriptionDataCopyWithImpl<$Res, $Val extends SubscriptionData>
     Object? price = null,
     Object? iconImagePath = null,
     Object? paymentCycle = null,
-    Object? paymentMethod = null,
-    Object? startedAt = freezed,
+    Object? firstPaidAt = freezed,
     Object? notification = null,
-    Object? notificationId = freezed,
     Object? memo = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
@@ -103,22 +97,14 @@ class _$SubscriptionDataCopyWithImpl<$Res, $Val extends SubscriptionData>
           ? _value.paymentCycle
           : paymentCycle // ignore: cast_nullable_to_non_nullable
               as int,
-      paymentMethod: null == paymentMethod
-          ? _value.paymentMethod
-          : paymentMethod // ignore: cast_nullable_to_non_nullable
-              as int,
-      startedAt: freezed == startedAt
-          ? _value.startedAt
-          : startedAt // ignore: cast_nullable_to_non_nullable
+      firstPaidAt: freezed == firstPaidAt
+          ? _value.firstPaidAt
+          : firstPaidAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       notification: null == notification
           ? _value.notification
           : notification // ignore: cast_nullable_to_non_nullable
               as bool,
-      notificationId: freezed == notificationId
-          ? _value.notificationId
-          : notificationId // ignore: cast_nullable_to_non_nullable
-              as int?,
       memo: null == memo
           ? _value.memo
           : memo // ignore: cast_nullable_to_non_nullable
@@ -148,10 +134,8 @@ abstract class _$$_SubscriptionDataCopyWith<$Res>
       String price,
       String iconImagePath,
       int paymentCycle,
-      int paymentMethod,
-      @StartedAtField() DateTime? startedAt,
+      @FirstPaidAtField() DateTime? firstPaidAt,
       bool notification,
-      int? notificationId,
       String memo,
       @CreatedAtField() DateTime? createdAt,
       @UpdatedAtField() DateTime? updatedAt});
@@ -172,10 +156,8 @@ class __$$_SubscriptionDataCopyWithImpl<$Res>
     Object? price = null,
     Object? iconImagePath = null,
     Object? paymentCycle = null,
-    Object? paymentMethod = null,
-    Object? startedAt = freezed,
+    Object? firstPaidAt = freezed,
     Object? notification = null,
-    Object? notificationId = freezed,
     Object? memo = null,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
@@ -197,22 +179,14 @@ class __$$_SubscriptionDataCopyWithImpl<$Res>
           ? _value.paymentCycle
           : paymentCycle // ignore: cast_nullable_to_non_nullable
               as int,
-      paymentMethod: null == paymentMethod
-          ? _value.paymentMethod
-          : paymentMethod // ignore: cast_nullable_to_non_nullable
-              as int,
-      startedAt: freezed == startedAt
-          ? _value.startedAt
-          : startedAt // ignore: cast_nullable_to_non_nullable
+      firstPaidAt: freezed == firstPaidAt
+          ? _value.firstPaidAt
+          : firstPaidAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       notification: null == notification
           ? _value.notification
           : notification // ignore: cast_nullable_to_non_nullable
               as bool,
-      notificationId: freezed == notificationId
-          ? _value.notificationId
-          : notificationId // ignore: cast_nullable_to_non_nullable
-              as int?,
       memo: null == memo
           ? _value.memo
           : memo // ignore: cast_nullable_to_non_nullable
@@ -237,10 +211,8 @@ class _$_SubscriptionData extends _SubscriptionData {
       required this.price,
       this.iconImagePath = '',
       required this.paymentCycle,
-      required this.paymentMethod,
-      @StartedAtField() this.startedAt,
+      @FirstPaidAtField() this.firstPaidAt,
       required this.notification,
-      required this.notificationId,
       required this.memo,
       @CreatedAtField() this.createdAt,
       @UpdatedAtField() this.updatedAt})
@@ -259,14 +231,10 @@ class _$_SubscriptionData extends _SubscriptionData {
   @override
   final int paymentCycle;
   @override
-  final int paymentMethod;
-  @override
-  @StartedAtField()
-  final DateTime? startedAt;
+  @FirstPaidAtField()
+  final DateTime? firstPaidAt;
   @override
   final bool notification;
-  @override
-  final int? notificationId;
   @override
   final String memo;
   @override
@@ -278,7 +246,7 @@ class _$_SubscriptionData extends _SubscriptionData {
 
   @override
   String toString() {
-    return 'SubscriptionData(serviceName: $serviceName, price: $price, iconImagePath: $iconImagePath, paymentCycle: $paymentCycle, paymentMethod: $paymentMethod, startedAt: $startedAt, notification: $notification, notificationId: $notificationId, memo: $memo, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'SubscriptionData(serviceName: $serviceName, price: $price, iconImagePath: $iconImagePath, paymentCycle: $paymentCycle, firstPaidAt: $firstPaidAt, notification: $notification, memo: $memo, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -293,14 +261,10 @@ class _$_SubscriptionData extends _SubscriptionData {
                 other.iconImagePath == iconImagePath) &&
             (identical(other.paymentCycle, paymentCycle) ||
                 other.paymentCycle == paymentCycle) &&
-            (identical(other.paymentMethod, paymentMethod) ||
-                other.paymentMethod == paymentMethod) &&
-            (identical(other.startedAt, startedAt) ||
-                other.startedAt == startedAt) &&
+            (identical(other.firstPaidAt, firstPaidAt) ||
+                other.firstPaidAt == firstPaidAt) &&
             (identical(other.notification, notification) ||
                 other.notification == notification) &&
-            (identical(other.notificationId, notificationId) ||
-                other.notificationId == notificationId) &&
             (identical(other.memo, memo) || other.memo == memo) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -316,10 +280,8 @@ class _$_SubscriptionData extends _SubscriptionData {
       price,
       iconImagePath,
       paymentCycle,
-      paymentMethod,
-      startedAt,
+      firstPaidAt,
       notification,
-      notificationId,
       memo,
       createdAt,
       updatedAt);
@@ -344,10 +306,8 @@ abstract class _SubscriptionData extends SubscriptionData {
       required final String price,
       final String iconImagePath,
       required final int paymentCycle,
-      required final int paymentMethod,
-      @StartedAtField() final DateTime? startedAt,
+      @FirstPaidAtField() final DateTime? firstPaidAt,
       required final bool notification,
-      required final int? notificationId,
       required final String memo,
       @CreatedAtField() final DateTime? createdAt,
       @UpdatedAtField() final DateTime? updatedAt}) = _$_SubscriptionData;
@@ -365,14 +325,10 @@ abstract class _SubscriptionData extends SubscriptionData {
   @override
   int get paymentCycle;
   @override
-  int get paymentMethod;
-  @override
-  @StartedAtField()
-  DateTime? get startedAt;
+  @FirstPaidAtField()
+  DateTime? get firstPaidAt;
   @override
   bool get notification;
-  @override
-  int? get notificationId;
   @override
   String get memo;
   @override

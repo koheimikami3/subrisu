@@ -1,8 +1,5 @@
-import 'package:subrisu/view/create/widget/next_payment_date.dart';
-import 'package:subrisu/view/create/widget/payment_method_form.dart';
-
-import '../../../constant/texts.dart' as texts;
-import '../../../importer.dart';
+import '../../constant/texts.dart' as texts;
+import '../../importer.dart';
 
 /// 詳細情報を表示する
 class DetailInfo extends StatelessWidget {
@@ -27,11 +24,7 @@ class DetailInfo extends StatelessWidget {
                   children: const [
                     PaymentCycleForm(),
                     ItemDivider(),
-                    // PaymentMethodForm(),
-                    // ItemDivider(),
-                    StartDateForm(),
-                    ItemDivider(),
-                    NextPaymentDateForm(),
+                    FirstPaymentDateForm(),
                     ItemDivider(),
                     NotificationForm(),
                   ],
