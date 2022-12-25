@@ -1,5 +1,3 @@
-import 'package:subrisu/view/subscription_form/delete_subscription_button.dart';
-
 import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
@@ -29,8 +27,8 @@ class _EditPageState extends ConsumerState<EditPage> {
       ref.watch(resultIconImagePathProvider.notifier).state =
           data['iconImagePath'];
       ref.watch(paymentCycleProvider.notifier).state = data['paymentCycle'];
-      ref.watch(firstPaymentDateProvider.notifier).state =
-          data['firstPaidAt'].toDate();
+      ref.watch(firstPaidOnProvider.notifier).state =
+          data['firstPaidOn'].toDate();
       ref.watch(notificationProvider.notifier).state = data['notification'];
       ref.watch(memoProvider.notifier).state = data['memo'];
     });
@@ -41,6 +39,8 @@ class _EditPageState extends ConsumerState<EditPage> {
     final data = widget.subscriptionDoc.data() as Map;
     final serviceName = data['serviceName'];
     final price = data['price'];
+    final paymentCycle = data['paymentCycle'];
+    final firstPaidOn = data['firstPaidOn'].toDate();
 
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -62,6 +62,8 @@ class _EditPageState extends ConsumerState<EditPage> {
           subscriptionDoc: widget.subscriptionDoc,
           serviceName: serviceName,
           price: price,
+          paymentCycle: paymentCycle,
+          firstPaidOn: firstPaidOn,
           button: UpdateButton(subscriptionDoc: widget.subscriptionDoc),
         ),
       ),

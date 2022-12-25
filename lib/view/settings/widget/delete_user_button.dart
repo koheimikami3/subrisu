@@ -24,8 +24,9 @@ class DeleteUserButton extends StatelessWidget {
 
   /// アイコンを表示する
   Icon _icon() {
-    return const Icon(
-      Icons.delete_outline,
+    return Icon(
+      CupertinoIcons.delete,
+      size: 16.h,
       color: Colors.red,
     );
   }
