@@ -3,7 +3,14 @@ import '../../importer.dart';
 
 /// 詳細情報を表示する
 class DetailInfo extends StatelessWidget {
-  const DetailInfo({Key? key}) : super(key: key);
+  const DetailInfo({
+    Key? key,
+    this.paymentCycle,
+    this.firstPaidOn,
+  }) : super(key: key);
+
+  final int? paymentCycle;
+  final DateTime? firstPaidOn;
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +28,10 @@ class DetailInfo extends StatelessWidget {
               SizedBox(width: 15.w),
               Expanded(
                 child: Column(
-                  children: const [
-                    PaymentCycleForm(),
-                    ItemDivider(),
-                    FirstPaymentDateForm(),
-                    ItemDivider(),
-                    NotificationForm(),
+                  children: [
+                    PaymentCycleForm(paymentCycle: paymentCycle),
+                    const ItemDivider(),
+                    FirstPaidOnForm(firstPaidOn: firstPaidOn),
                   ],
                 ),
               ),

@@ -33,7 +33,7 @@ const detailInfoTitle = '詳細情報';
 const paymentCycleTitle = '支払い周期';
 const paymentMethodTitle = '支払い方法';
 const firstPaymentDateTitle = '初回支払い日';
-const notificationTitle = '前日に通知する';
+const notificationTitle = '支払い前日に通知する';
 const memoTitle = 'メモ';
 
 // 登録・編集画面ヒントテキスト

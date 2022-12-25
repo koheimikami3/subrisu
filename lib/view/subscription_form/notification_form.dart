@@ -10,10 +10,45 @@ class NotificationForm extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return DetailItem(
-      title: texts.notificationTitle,
-      content: _switch(ref),
-      active: true,
+    return Column(
+      children: [
+        const ItemsTitle(title: '通知'),
+        Container(
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            color: Colors.white,
+          ),
+          child: Row(
+            children: [
+              SizedBox(width: 15.w),
+              Expanded(
+                child: DetailItem(
+                  title: texts.notificationTitle,
+                  content: _switch(ref),
+                  active: true,
+                ),
+              ),
+            ],
+          ),
+        ),
+        // SizedBox(height: 5.h),
+        // Row(
+        //   children: [
+        //     SizedBox(width: 15.w),
+        //     Expanded(
+        //       child: Text(
+        //         '支払い周期と初回支払い日から通知日を計算します。',
+        //         style: TextStyle(
+        //           fontSize: 12.5.sp,
+        //           color: Colors.black54,
+        //         ),
+        //       ),
+        //     ),
+        //     SizedBox(width: 15.w),
+        //   ],
+        // ),
+      ],
     );
   }
 

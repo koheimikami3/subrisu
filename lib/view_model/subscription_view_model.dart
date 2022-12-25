@@ -26,7 +26,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
     final price = ref.read(priceProvider);
     final iconImagePath = ref.read(resultIconImagePathProvider);
     final paymentCycle = ref.read(paymentCycleProvider);
-    final firstPaidAt = ref.read(firstPaymentDateProvider);
+    final firstPaidOn = ref.read(firstPaidOnProvider);
     final notification = ref.read(notificationProvider);
     final memo = ref.read(memoProvider);
 
@@ -37,7 +37,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
         price: price,
         iconImagePath: iconImagePath,
         paymentCycle: paymentCycle,
-        firstPaidAt: firstPaidAt,
+        firstPaidOn: firstPaidOn,
         notification: notification,
         memo: memo,
       );
@@ -55,7 +55,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
     final price = ref.read(priceProvider);
     final iconImagePath = ref.read(resultIconImagePathProvider);
     final paymentCycle = ref.read(paymentCycleProvider);
-    final firstPaidAt = ref.read(firstPaymentDateProvider);
+    final firstPaidOn = ref.read(firstPaidOnProvider);
     final notification = ref.read(notificationProvider);
     final memo = ref.read(memoProvider);
 
@@ -66,7 +66,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
         price: price,
         iconImagePath: iconImagePath,
         paymentCycle: paymentCycle,
-        firstPaidAt: firstPaidAt,
+        firstPaidOn: firstPaidOn,
         notification: notification,
         memo: memo,
         createdAt: createdAt,

@@ -11,7 +11,7 @@ class MemoForm extends ConsumerWidget {
       children: [
         const ItemsTitle(title: texts.memoTitle),
         MyTextFormField(
-          minLines: 4,
+          minLines: 3,
           maxLines: null,
           onChanged: (value) {
             ref.watch(memoProvider.notifier).state = value;

@@ -25,10 +25,8 @@ class UpdateButton extends ConsumerWidget {
 
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final repository = ref.watch(subscriptionViewModelProvider.notifier);
-    // final notification = ref.watch(notificationProvider);
     final subscriptionId = subscriptionDoc.id;
     final createdAt = subscriptionDoc.get('createdAt').toDate();
-    int? notificationId;
     String err = '';
 
     // TextFieldのフォーカスを解除
@@ -38,8 +36,6 @@ class UpdateButton extends ConsumerWidget {
     ProgressDialog.show(context);
 
     try {
-      await NotificationScheduler.cancel(notificationId);
-
       // サブスクリプションを更新
       await repository.update(subscriptionId, createdAt);
     } catch (e) {

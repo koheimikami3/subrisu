@@ -19,7 +19,6 @@ export 'package:flutter_localizations/flutter_localizations.dart';
 export 'package:google_mobile_ads/google_mobile_ads.dart';
 export 'package:dotted_border/dotted_border.dart';
 export 'package:firebase_messaging/firebase_messaging.dart';
-export 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 // app
 export 'package:subrisu/app.dart';
@@ -81,7 +80,7 @@ export 'package:subrisu/view/create/create_page.dart';
 export 'package:subrisu/component/item_divider.dart';
 export 'package:subrisu/view/subscription_form/service_info.dart';
 export 'package:subrisu/view/subscription_form/detail_info.dart';
-export 'package:subrisu/view/subscription_form/first_payment_date_form.dart';
+export 'package:subrisu/view/subscription_form/first_paid_on_form.dart';
 export 'package:subrisu/view/subscription_form/payment_cycle_form.dart';
 export 'package:subrisu/view/subscription_form/notification_form.dart';
 export 'package:subrisu/component/button/my_cupertino_button.dart';
@@ -94,7 +93,7 @@ export 'package:subrisu/view/subscription_form/delete_subscription_dialog.dart';
 export 'package:subrisu/component/my_text_field.dart';
 export 'package:subrisu/view/subscription_form/detail_item.dart';
 export 'package:subrisu/component/cupertino_picker_sheet.dart';
-export 'package:subrisu/core/notification_scheduler.dart';
 export 'package:subrisu/view/subscription_form/icon_select_button.dart';
 export 'package:subrisu/view/edit/widget/update_button.dart';
 export 'package:subrisu/view/subscription_form/subscription_form.dart';
+export 'package:subrisu/view/subscription_form/delete_subscription_button.dart';

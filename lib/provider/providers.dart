@@ -23,8 +23,7 @@ final priceControllerProvider =
 
 final paymentCycleProvider = StateProvider.autoDispose((ref) => 2);
 
-final firstPaymentDateProvider =
-    StateProvider.autoDispose((ref) => DateTime.now());
+final firstPaidOnProvider = StateProvider.autoDispose((ref) => DateTime.now());
 
 final notificationProvider = StateProvider.autoDispose((ref) => false);
 

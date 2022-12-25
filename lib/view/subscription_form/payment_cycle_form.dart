@@ -5,7 +5,12 @@ import '../../importer.dart';
 
 /// 支払い周期フォームを表示する
 class PaymentCycleForm extends ConsumerStatefulWidget {
-  const PaymentCycleForm({Key? key}) : super(key: key);
+  const PaymentCycleForm({
+    Key? key,
+    this.paymentCycle,
+  }) : super(key: key);
+
+  final int? paymentCycle;
 
   @override
   ConsumerState<PaymentCycleForm> createState() => _PaymentCycleFormState();
@@ -14,6 +19,13 @@ class PaymentCycleForm extends ConsumerStatefulWidget {
 class _PaymentCycleFormState extends ConsumerState<PaymentCycleForm> {
   final _textList = texts.paymentCycleList;
   int _selectedIndex = 2;
+
+  @override
+  void initState() {
+    super.initState();
+
+    if (widget.paymentCycle != null) _selectedIndex = widget.paymentCycle!;
+  }
 
   @override
   Widget build(BuildContext context) {

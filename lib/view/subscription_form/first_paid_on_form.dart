@@ -5,16 +5,27 @@ import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// 利用開始日フォームを表示する
-class FirstPaymentDateForm extends ConsumerStatefulWidget {
-  const FirstPaymentDateForm({Key? key}) : super(key: key);
+class FirstPaidOnForm extends ConsumerStatefulWidget {
+  const FirstPaidOnForm({
+    Key? key,
+    this.firstPaidOn,
+  }) : super(key: key);
+
+  final DateTime? firstPaidOn;
 
   @override
-  ConsumerState<FirstPaymentDateForm> createState() =>
-      _FirstPaymentDateFormState();
+  ConsumerState<FirstPaidOnForm> createState() => _FirstPaidOnFormState();
 }
 
-class _FirstPaymentDateFormState extends ConsumerState<FirstPaymentDateForm> {
+class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
   DateTime _selectedDateTime = DateTime.now();
+
+  @override
+  void initState() {
+    super.initState();
+
+    if (widget.firstPaidOn != null) _selectedDateTime = widget.firstPaidOn!;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +36,7 @@ class _FirstPaymentDateFormState extends ConsumerState<FirstPaymentDateForm> {
   }
 
   Widget _selectButton() {
-    final dateTime = ref.watch(firstPaymentDateProvider);
+    final dateTime = ref.watch(firstPaidOnProvider);
     final text = DateFormat.yMMMMd('ja').format(dateTime);
 
     return GestureDetector(
@@ -54,20 +65,14 @@ class _FirstPaymentDateFormState extends ConsumerState<FirstPaymentDateForm> {
 
   /// 変更内容をプロバイダに保存し、画面に反映する
   void _saveOnPressed() {
-    final result = DateTime(
-      _selectedDateTime.year,
-      _selectedDateTime.month,
-      _selectedDateTime.day,
-    );
-
     // 変更内容をプロバイダに保存
-    ref.watch(firstPaymentDateProvider.notifier).state = result;
+    ref.watch(firstPaidOnProvider.notifier).state = _selectedDateTime;
 
     // Pickerを閉じる
     Navigator.pop(context);
   }
 
-  /// 利用開始日を選択するPicker
+  /// 初回支払い日を選択するPicker
   Widget _picker() {
     return CupertinoDatePicker(
       initialDateTime: _selectedDateTime,
