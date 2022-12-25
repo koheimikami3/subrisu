@@ -19,8 +19,8 @@ const dialogTitleFontSize = 14;
 // ダイアログ内容フォントサイズ
 const dialogContentFontSize = 12;
 
-// ユーザーIDキー
-const userIdKey = 'userId';
+// 通知設定ダイアログキー
+const notificationKey = 'isNotifidationDialogShowed';
 
 // テーマ設定キー
 const themeKey = 'theme';

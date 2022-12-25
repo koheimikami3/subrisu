@@ -18,6 +18,7 @@ export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:flutter_localizations/flutter_localizations.dart';
 export 'package:google_mobile_ads/google_mobile_ads.dart';
 export 'package:dotted_border/dotted_border.dart';
+export 'package:firebase_messaging/firebase_messaging.dart';
 export 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 // app

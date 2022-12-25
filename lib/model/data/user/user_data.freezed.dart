@@ -22,6 +22,7 @@ UserData _$UserDataFromJson(Map<String, dynamic> json) {
 mixin _$UserData {
   String get userId => throw _privateConstructorUsedError;
   String get os => throw _privateConstructorUsedError;
+  String get token => throw _privateConstructorUsedError;
   @CreatedAtField()
   DateTime? get createdAt => throw _privateConstructorUsedError;
 
@@ -36,7 +37,11 @@ abstract class $UserDataCopyWith<$Res> {
   factory $UserDataCopyWith(UserData value, $Res Function(UserData) then) =
       _$UserDataCopyWithImpl<$Res, UserData>;
   @useResult
-  $Res call({String userId, String os, @CreatedAtField() DateTime? createdAt});
+  $Res call(
+      {String userId,
+      String os,
+      String token,
+      @CreatedAtField() DateTime? createdAt});
 }
 
 /// @nodoc
@@ -54,6 +59,7 @@ class _$UserDataCopyWithImpl<$Res, $Val extends UserData>
   $Res call({
     Object? userId = null,
     Object? os = null,
+    Object? token = null,
     Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
@@ -64,6 +70,10 @@ class _$UserDataCopyWithImpl<$Res, $Val extends UserData>
       os: null == os
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
+              as String,
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -80,7 +90,11 @@ abstract class _$$_UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
       __$$_UserDataCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String userId, String os, @CreatedAtField() DateTime? createdAt});
+  $Res call(
+      {String userId,
+      String os,
+      String token,
+      @CreatedAtField() DateTime? createdAt});
 }
 
 /// @nodoc
@@ -96,6 +110,7 @@ class __$$_UserDataCopyWithImpl<$Res>
   $Res call({
     Object? userId = null,
     Object? os = null,
+    Object? token = null,
     Object? createdAt = freezed,
   }) {
     return _then(_$_UserData(
@@ -106,6 +121,10 @@ class __$$_UserDataCopyWithImpl<$Res>
       os: null == os
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
+              as String,
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -119,7 +138,10 @@ class __$$_UserDataCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserData extends _UserData {
   const _$_UserData(
-      {this.userId = '', required this.os, @CreatedAtField() this.createdAt})
+      {this.userId = '',
+      required this.os,
+      required this.token,
+      @CreatedAtField() this.createdAt})
       : super._();
 
   factory _$_UserData.fromJson(Map<String, dynamic> json) =>
@@ -131,12 +153,14 @@ class _$_UserData extends _UserData {
   @override
   final String os;
   @override
+  final String token;
+  @override
   @CreatedAtField()
   final DateTime? createdAt;
 
   @override
   String toString() {
-    return 'UserData(userId: $userId, os: $os, createdAt: $createdAt)';
+    return 'UserData(userId: $userId, os: $os, token: $token, createdAt: $createdAt)';
   }
 
   @override
@@ -146,13 +170,14 @@ class _$_UserData extends _UserData {
             other is _$_UserData &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.os, os) || other.os == os) &&
+            (identical(other.token, token) || other.token == token) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, userId, os, createdAt);
+  int get hashCode => Object.hash(runtimeType, userId, os, token, createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -172,6 +197,7 @@ abstract class _UserData extends UserData {
   const factory _UserData(
       {final String userId,
       required final String os,
+      required final String token,
       @CreatedAtField() final DateTime? createdAt}) = _$_UserData;
   const _UserData._() : super._();
 
@@ -181,6 +207,8 @@ abstract class _UserData extends UserData {
   String get userId;
   @override
   String get os;
+  @override
+  String get token;
   @override
   @CreatedAtField()
   DateTime? get createdAt;

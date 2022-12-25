@@ -11,6 +11,7 @@ abstract class UserData implements _$UserData {
   const factory UserData({
     @Default('') String userId,
     required String os,
+    required String token,
     @CreatedAtField() DateTime? createdAt,
   }) = _UserData;
 

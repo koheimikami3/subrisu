@@ -27,17 +27,24 @@ class UserViewModel extends StateNotifier<UserState> {
   }
 
   Future<void> create(String userId) async {
+    final subscriptionRepository =
+        ref.watch(subscriptionViewModelProvider.notifier);
+    final messaging = FirebaseMessaging.instance;
     late final String os;
 
     // 端末のOSを取得
     if (Platform.isIOS) os = 'iOS';
     if (Platform.isAndroid) os = 'Android';
 
+    // 端末のFCMトークンを取得
+    final token = await messaging.getToken();
+
     try {
       // UserDataを作成
       final data = UserData(
         userId: userId,
         os: os,
+        token: token!,
       );
 
       // UserDocumentを作成
@@ -48,6 +55,9 @@ class UserViewModel extends StateNotifier<UserState> {
         userId: data.userId,
         os: data.os,
       );
+
+      // SubscriptionStreamの取得を開始
+      subscriptionRepository.getSubscriptions();
 
       ref.watch(isUserDataLoadedProvider.notifier).state = true;
     } catch (_) {

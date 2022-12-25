@@ -6,11 +6,12 @@ class AppDataManager {
   /// ユーザードキュメントを取得する
   static Future<void> getUser(WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
-    final repository = ref.read(userViewModelProvider.notifier);
-    final repo = ref.read(subscriptionViewModelProvider.notifier);
+    final userRepository = ref.read(userViewModelProvider.notifier);
+    final subscriptionRepository =
+        ref.read(subscriptionViewModelProvider.notifier);
 
-    await repository.getUser(auth.currentUser!.uid);
-    repo.getSubscriptions();
+    await userRepository.getUser(auth.currentUser!.uid);
+    subscriptionRepository.getSubscriptions();
 
     ref.watch(isUserDataLoadedProvider.notifier).state = true;
   }
