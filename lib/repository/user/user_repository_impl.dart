@@ -12,7 +12,7 @@ class UserRepositoryImpl implements UserRepository {
     try {
       final doc = await _db.collection('users').doc(userId).get();
       return doc;
-    } catch (_) {
+    } on Exception catch (_) {
       throw errors.getUserErr;
     }
   }
@@ -22,7 +22,16 @@ class UserRepositoryImpl implements UserRepository {
   Future<void> create(UserData userData) async {
     try {
       await _db.collection('users').doc(userData.userId).set(userData.toJson());
-    } catch (_) {
+    } on Exception catch (_) {
+      throw errors.createUserErr;
+    }
+  }
+
+  @override
+  Future<void> updateToken(String userId, String token) async {
+    try {
+      await _db.collection('users').doc(userId).update({'token': token});
+    } on Exception catch (_) {
       throw errors.createUserErr;
     }
   }

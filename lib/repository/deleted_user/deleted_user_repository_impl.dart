@@ -24,7 +24,7 @@ class DeletedUserRepositoryImpl implements DeletedUserRepository {
       );
 
       await batch.commit();
-    } catch (_) {
+    } on Exception catch (_) {
       throw errors.deleteUserErr;
     }
   }

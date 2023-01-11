@@ -5,9 +5,9 @@ import '../../importer.dart';
 /// ユーザー削除ダイアログを呼び出すボタン
 class DeleteSubscriptionButton extends StatelessWidget {
   const DeleteSubscriptionButton({
-    Key? key,
+    super.key,
     required this.subscriptionDoc,
-  }) : super(key: key);
+  });
 
   final DocumentSnapshot subscriptionDoc; // サブスクリプションドキュメント
 
@@ -15,7 +15,7 @@ class DeleteSubscriptionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        showCupertinoDialog(
+        showCupertinoDialog<void>(
           context: context,
           builder: (_) => DeleteSubscriptionDialog(
             subscriptionDoc: subscriptionDoc,

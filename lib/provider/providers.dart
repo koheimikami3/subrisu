@@ -30,11 +30,14 @@ final notificationProvider = StateProvider.autoDispose((ref) => false);
 final memoProvider = StateProvider.autoDispose((ref) => '');
 
 final userViewModelProvider = StateNotifierProvider<UserViewModel, UserState>(
-    (ref) => UserViewModel(UserRepositoryImpl(), ref));
+  (ref) => UserViewModel(UserRepositoryImpl(), ref),
+);
 
 final subscriptionViewModelProvider =
     StateNotifierProvider<SubscriptionViewModel, List<QueryDocumentSnapshot>>(
-        (ref) => SubscriptionViewModel(SubscriptionRepositoryImpl(), ref));
+  (ref) => SubscriptionViewModel(SubscriptionRepositoryImpl(), ref),
+);
 
 final deletedUserViewModelProvider = Provider<DeletedUserViewModel>(
-    (ref) => DeletedUserViewModel(DeletedUserRepositoryImpl(), ref));
+  (ref) => DeletedUserViewModel(DeletedUserRepositoryImpl(), ref),
+);

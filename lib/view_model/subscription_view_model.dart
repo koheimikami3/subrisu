@@ -15,7 +15,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
       stream.listen((query) {
         state = query.docs;
       });
-    } catch (_) {
+    } on Exception catch (_) {
       rethrow;
     }
   }
@@ -44,7 +44,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
 
       // SubscriptionDocumentを作成
       await repository.create(userId, data);
-    } catch (_) {
+    } on Exception catch (_) {
       rethrow;
     }
   }
@@ -74,7 +74,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
 
       // SubscriptionDocumentを更新
       await repository.update(userId, subscId, data);
-    } catch (_) {
+    } on Exception catch (_) {
       rethrow;
     }
   }
@@ -85,7 +85,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
     try {
       // SubscriptionDocumentを削除
       await repository.delete(userId, subscriptionId);
-    } catch (_) {
+    } on Exception catch (_) {
       rethrow;
     }
   }

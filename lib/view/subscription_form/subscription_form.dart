@@ -2,20 +2,22 @@ import '../../importer.dart';
 
 class SubscriptionForm extends StatelessWidget {
   const SubscriptionForm({
-    Key? key,
+    super.key,
     this.subscriptionDoc,
-    this.serviceName = '',
-    this.price = '',
+    this.serviceName,
+    this.price,
     this.paymentCycle,
     this.firstPaidOn,
+    this.memo,
     required this.button,
-  }) : super(key: key);
+  });
 
   final DocumentSnapshot? subscriptionDoc; // サブスクリプションドキュメント
-  final String serviceName;
-  final String price;
+  final String? serviceName;
+  final String? price;
   final int? paymentCycle;
   final DateTime? firstPaidOn;
+  final String? memo;
   final Widget button; // 登録・更新ボタン
 
   @override
@@ -37,7 +39,7 @@ class SubscriptionForm extends StatelessWidget {
                 SizedBox(height: 25.h),
                 const NotificationForm(),
                 SizedBox(height: 25.h),
-                const MemoForm(),
+                MemoForm(memo: memo),
                 SizedBox(height: 30.h),
                 button,
                 SizedBox(height: 30.h),

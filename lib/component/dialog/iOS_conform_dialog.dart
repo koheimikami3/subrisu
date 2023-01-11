@@ -4,12 +4,12 @@ import '../../importer.dart';
 
 class IOSConformDialog extends StatelessWidget {
   const IOSConformDialog({
-    Key? key,
+    super.key,
     required this.title,
     required this.content,
     required this.actionText,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   final String title; // タイトル
   final String content; // 内容

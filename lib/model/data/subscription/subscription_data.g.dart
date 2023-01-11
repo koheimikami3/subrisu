@@ -6,6 +6,7 @@ part of 'subscription_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+// ignore: non_constant_identifier_names
 _$_SubscriptionData _$$_SubscriptionDataFromJson(Map<String, dynamic> json) =>
     _$_SubscriptionData(
       serviceName: json['serviceName'] as String,
@@ -19,6 +20,7 @@ _$_SubscriptionData _$$_SubscriptionDataFromJson(Map<String, dynamic> json) =>
       updatedAt: const UpdatedAtField().fromJson(json['updatedAt']),
     );
 
+// ignore: non_constant_identifier_names
 Map<String, dynamic> _$$_SubscriptionDataToJson(_$_SubscriptionData instance) =>
     <String, dynamic>{
       'serviceName': instance.serviceName,

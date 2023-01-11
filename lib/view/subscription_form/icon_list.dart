@@ -2,7 +2,7 @@ import '../../constant/colors.dart' as colors;
 import '../../importer.dart';
 
 class IconList extends ConsumerWidget {
-  const IconList({Key? key}) : super(key: key);
+  const IconList({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

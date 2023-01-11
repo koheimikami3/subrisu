@@ -3,7 +3,7 @@ import '../../../importer.dart';
 
 /// アイコン画像選択ダイアログを呼び出すボタン
 class IconSelectButton extends ConsumerWidget {
-  const IconSelectButton({Key? key}) : super(key: key);
+  const IconSelectButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -11,7 +11,7 @@ class IconSelectButton extends ConsumerWidget {
 
     return GestureDetector(
       onTap: () {
-        showDialog(
+        showDialog<void>(
           context: context,
           builder: (_) => const IconSelectDialog(),
         );

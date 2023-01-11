@@ -2,9 +2,7 @@ import '../../../importer.dart';
 
 /// 作成画面に遷移するボタン
 class CreatePageButton extends StatelessWidget {
-  const CreatePageButton({
-    Key? key,
-  }) : super(key: key);
+  const CreatePageButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +10,7 @@ class CreatePageButton extends StatelessWidget {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
+          MaterialPageRoute<void>(
             builder: (_) => const CreatePage(),
             fullscreenDialog: true,
           ),

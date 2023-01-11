@@ -3,7 +3,7 @@ import '../../../importer.dart';
 
 /// 有料プラン項目のUIを作成する
 class PaidPlan extends StatelessWidget {
-  const PaidPlan({Key? key}) : super(key: key);
+  const PaidPlan({super.key});
 
   @override
   Widget build(BuildContext context) {

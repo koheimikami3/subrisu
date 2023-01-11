@@ -8,8 +8,6 @@ part 'subscription_data.g.dart';
 
 @freezed
 abstract class SubscriptionData implements _$SubscriptionData {
-  const SubscriptionData._();
-
   const factory SubscriptionData({
     required String serviceName,
     required String price,
@@ -21,6 +19,8 @@ abstract class SubscriptionData implements _$SubscriptionData {
     @CreatedAtField() DateTime? createdAt,
     @UpdatedAtField() DateTime? updatedAt,
   }) = _SubscriptionData;
+
+  const SubscriptionData._();
 
   factory SubscriptionData.fromJson(Map<String, dynamic> json) =>
       _$SubscriptionDataFromJson(json);

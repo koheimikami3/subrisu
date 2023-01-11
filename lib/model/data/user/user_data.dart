@@ -6,14 +6,14 @@ part 'user_data.g.dart';
 
 @freezed
 abstract class UserData implements _$UserData {
-  const UserData._();
-
   const factory UserData({
     @Default('') String userId,
     required String os,
     required String token,
     @CreatedAtField() DateTime? createdAt,
   }) = _UserData;
+
+  const UserData._();
 
   factory UserData.fromJson(Map<String, dynamic> json) =>
       _$UserDataFromJson(json);

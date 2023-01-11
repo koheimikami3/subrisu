@@ -2,7 +2,7 @@ import '../importer.dart';
 
 /// 項目の境界線
 class ItemDivider extends StatelessWidget {
-  const ItemDivider({Key? key}) : super(key: key);
+  const ItemDivider({super.key});
 
   @override
   Widget build(BuildContext context) {

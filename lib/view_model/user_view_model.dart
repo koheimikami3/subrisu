@@ -12,16 +12,20 @@ class UserViewModel extends StateNotifier<UserState> {
       final userDoc = await repository.getUser(userId);
 
       // Documentが存在しない場合、NULLを返す
-      if (!userDoc.exists) return null;
+      if (!userDoc.exists) {
+        return null;
+      }
 
       // stateを更新
+      final data = userDoc.data()! as Map;
       state = state.copyWith(
         userId: userDoc.id,
-        os: userDoc.get('os'),
+        token: data['token'] as String,
+        os: data['os'] as String,
       );
 
       return userDoc;
-    } catch (_) {
+    } on Exception catch (_) {
       rethrow;
     }
   }
@@ -33,8 +37,12 @@ class UserViewModel extends StateNotifier<UserState> {
     late final String os;
 
     // 端末のOSを取得
-    if (Platform.isIOS) os = 'iOS';
-    if (Platform.isAndroid) os = 'Android';
+    if (Platform.isIOS) {
+      os = 'iOS';
+    }
+    if (Platform.isAndroid) {
+      os = 'Android';
+    }
 
     // 端末のFCMトークンを取得
     final token = await messaging.getToken();
@@ -53,6 +61,7 @@ class UserViewModel extends StateNotifier<UserState> {
       // stateを更新
       state = state.copyWith(
         userId: data.userId,
+        token: token,
         os: data.os,
       );
 
@@ -60,7 +69,15 @@ class UserViewModel extends StateNotifier<UserState> {
       subscriptionRepository.getSubscriptions();
 
       ref.watch(isUserDataLoadedProvider.notifier).state = true;
-    } catch (_) {
+    } on Exception catch (_) {
+      rethrow;
+    }
+  }
+
+  Future<void> updateToken(String token) async {
+    try {
+      await repository.updateToken(state.userId, token);
+    } on Exception catch (_) {
       rethrow;
     }
   }

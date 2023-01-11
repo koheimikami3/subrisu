@@ -4,10 +4,10 @@ import '../importer.dart';
 
 class CupertinoPickerSheet extends StatelessWidget {
   const CupertinoPickerSheet({
-    Key? key,
+    super.key,
     required this.picker,
     required this.saveOnPressed,
-  }) : super(key: key);
+  });
 
   final Widget picker;
   final VoidCallback saveOnPressed;

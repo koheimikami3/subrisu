@@ -3,7 +3,7 @@ import '../../importer.dart';
 
 /// 作成画面のUIを作成する
 class CreatePage extends StatelessWidget {
-  const CreatePage({Key? key}) : super(key: key);
+  const CreatePage({super.key});
 
   @override
   Widget build(BuildContext context) {

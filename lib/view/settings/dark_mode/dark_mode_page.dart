@@ -5,7 +5,7 @@ import '../../../importer.dart';
 
 /// ダークモード画面のUIを作成する
 class DarkModePage extends ConsumerWidget {
-  const DarkModePage({Key? key}) : super(key: key);
+  const DarkModePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -75,7 +75,7 @@ class DarkModePage extends ConsumerWidget {
     final prefs = await SharedPreferences.getInstance();
 
     // 設定を保存
-    prefs.setInt(configs.themeKey, configs.deviceTheme);
+    await prefs.setInt(configs.themeKey, configs.deviceTheme);
     ref.watch(themeSettingProvider.notifier).state = configs.deviceTheme;
 
     // 端末のテーマ設定を取得し、ダークモードか判定
@@ -90,7 +90,7 @@ class DarkModePage extends ConsumerWidget {
     final prefs = await SharedPreferences.getInstance();
 
     // 設定を保存
-    prefs.setInt(configs.themeKey, configs.lightTheme);
+    await prefs.setInt(configs.themeKey, configs.lightTheme);
     ref.watch(themeSettingProvider.notifier).state = configs.lightTheme;
     ref.watch(darkModeProvider.notifier).state = false;
   }
@@ -100,7 +100,7 @@ class DarkModePage extends ConsumerWidget {
     final prefs = await SharedPreferences.getInstance();
 
     // 設定を保存
-    prefs.setInt(configs.themeKey, configs.darkTheme);
+    await prefs.setInt(configs.themeKey, configs.darkTheme);
     ref.watch(themeSettingProvider.notifier).state = configs.darkTheme;
     ref.watch(darkModeProvider.notifier).state = true;
   }

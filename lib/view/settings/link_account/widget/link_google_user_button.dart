@@ -4,14 +4,14 @@ import '../../../../importer.dart';
 /// 匿名ユーザーからGoogleユーザーに移行するボタン
 class LinkGoogleUserButton extends ConsumerWidget {
   const LinkGoogleUserButton({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GoogleSignInButton(
       text: texts.linkGoogleUserButton,
-      onPressed: () async => await _onPressed(context, ref),
+      onPressed: () => _onPressed(context, ref),
     );
   }
 
@@ -19,8 +19,10 @@ class LinkGoogleUserButton extends ConsumerWidget {
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
 
-    final credential = await UserManager.googleSingnIn();
-    if (credential == null) return;
+    final credential = await googleSingnIn();
+    if (credential == null) {
+      return;
+    }
 
     // プログレスダイアログを表示
     ProgressDialog.show(context);
@@ -35,7 +37,11 @@ class LinkGoogleUserButton extends ConsumerWidget {
 
     // ボトムナビゲーションバーを経由してリスト画面に遷移
     // 今までの画面を全てウィジェットツリーから削除
-    Navigator.pushNamedAndRemoveUntil(context, '/bottomNav', (_) => false);
+    await Navigator.pushNamedAndRemoveUntil(
+      context,
+      '/bottomNav',
+      (_) => false,
+    );
 
     IOSAlertDialog.show(context, false, 'アカウント連携が完了しました。');
   }

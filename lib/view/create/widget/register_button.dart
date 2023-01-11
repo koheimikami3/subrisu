@@ -3,7 +3,7 @@ import '../../../importer.dart';
 
 /// 新規登録を行うボタン
 class RegisterButton extends ConsumerWidget {
-  const RegisterButton({Key? key}) : super(key: key);
+  const RegisterButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -14,15 +14,13 @@ class RegisterButton extends ConsumerWidget {
       text: texts.createSubscriptionButton,
       onPressed: serviceName == '' || price == ''
           ? null
-          : () async => await _onPressed(context, ref),
+          : () => _onPressed(context, ref),
     );
   }
 
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final repository = ref.watch(subscriptionViewModelProvider.notifier);
-    // final notification = ref.watch(notificationProvider);
-    // int? notificationId;
-    String err = '';
+    var err = '';
 
     // TextFieldのフォーカスを解除
     FocusScope.of(context).unfocus();
@@ -31,13 +29,10 @@ class RegisterButton extends ConsumerWidget {
     ProgressDialog.show(context);
 
     try {
-      // 通知のスケジュールを行う
-      // if (notification) notificationId = await NotificationScheduler.set(ref);
-
       // サブスクリプションを登録
       await repository.create();
-    } catch (e) {
-      err = ErrorHandler.selectMessage(e.toString());
+    } on Exception catch (e) {
+      err = selectMessage(e.toString());
     }
 
     // プログレスダイアログを閉じる

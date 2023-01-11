@@ -1,11 +1,11 @@
 import '../importer.dart';
 
 class DateTimeConverter {
-  static Timestamp fromDateTime(DateTime dateTime) {
+  Timestamp fromDateTime(DateTime dateTime) {
     return Timestamp.fromDate(dateTime);
   }
 
-  static DateTime toDateTime(dynamic timestamp) {
+  DateTime toDateTime(Timestamp timestamp) {
     return timestamp.toDate();
   }
 }

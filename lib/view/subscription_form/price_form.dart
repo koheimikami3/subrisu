@@ -4,11 +4,11 @@ import '../../importer.dart';
 /// 料金フォームを表示する
 class PriceForm extends ConsumerWidget {
   const PriceForm({
-    Key? key,
-    required this.price,
-  }) : super(key: key);
+    super.key,
+    this.price,
+  });
 
-  final String price;
+  final String? price;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

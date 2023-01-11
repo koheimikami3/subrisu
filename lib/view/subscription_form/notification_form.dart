@@ -6,7 +6,7 @@ import '../../importer.dart';
 
 /// 通知フォームを表示する
 class NotificationForm extends ConsumerWidget {
-  const NotificationForm({Key? key}) : super(key: key);
+  const NotificationForm({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -26,7 +26,6 @@ class NotificationForm extends ConsumerWidget {
                 child: DetailItem(
                   title: texts.notificationTitle,
                   content: _switch(ref),
-                  active: true,
                 ),
               ),
             ],

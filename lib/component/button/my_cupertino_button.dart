@@ -5,10 +5,10 @@ import '../../../importer.dart';
 
 class MyCupertinoButton extends ConsumerWidget {
   const MyCupertinoButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   final String text;
   final VoidCallback? onPressed;

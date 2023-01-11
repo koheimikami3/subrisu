@@ -3,7 +3,12 @@ import '../../importer.dart';
 
 /// メモフォームを表示する
 class MemoForm extends ConsumerWidget {
-  const MemoForm({Key? key}) : super(key: key);
+  const MemoForm({
+    super.key,
+    this.memo,
+  });
+
+  final String? memo;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -11,6 +16,7 @@ class MemoForm extends ConsumerWidget {
       children: [
         const ItemsTitle(title: texts.memoTitle),
         MyTextFormField(
+          initialValue: memo,
           minLines: 3,
           maxLines: null,
           onChanged: (value) {

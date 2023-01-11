@@ -3,9 +3,9 @@ import 'importer.dart';
 
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({
-    Key? key,
+    super.key,
     required this.user,
-  }) : super(key: key);
+  });
 
   final User? user; // ユーザー
 
@@ -21,17 +21,17 @@ class _MyAppState extends ConsumerState<MyApp> {
     // サインインしてる場合
     if (widget.user != null) {
       // ユーザードキュメントを取得
-      AppDataManager.getUser(ref);
+      AppDataManager().getUser(ref);
 
       // アカウント連携状況を取得
       // プロバイダの値を更新するため画面描画に処理を行う
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        UserManager.getUserProvider(ref, widget.user!);
+        getUserProvider(ref, widget.user!);
       });
     }
 
     // 現在の設定内容をアプリに反映
-    AppDataManager.getSettings(context, ref);
+    AppDataManager().getSettings(context, ref);
   }
 
   @override
@@ -42,7 +42,7 @@ class _MyAppState extends ConsumerState<MyApp> {
       designSize: const Size(360, 690),
       builder: (_, __) {
         return MaterialApp(
-          theme: isDark ? AppTheme.darkTheme() : AppTheme.lightTheme(),
+          theme: isDark ? AppTheme().darkTheme() : AppTheme().lightTheme(),
           debugShowCheckedModeBanner: false,
           locale: const Locale('ja', 'JP'),
           supportedLocales: const [Locale('ja', 'JP')],

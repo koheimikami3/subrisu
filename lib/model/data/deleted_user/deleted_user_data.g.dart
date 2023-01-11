@@ -6,6 +6,7 @@ part of 'deleted_user_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+// ignore: non_constant_identifier_names
 _$_DeletedUserData _$$_DeletedUserDataFromJson(Map<String, dynamic> json) =>
     _$_DeletedUserData(
       userId: json['userId'] as String,
@@ -13,6 +14,7 @@ _$_DeletedUserData _$$_DeletedUserDataFromJson(Map<String, dynamic> json) =>
       deletedAt: const CreatedAtField().fromJson(json['deletedAt']),
     );
 
+// ignore: non_constant_identifier_names
 Map<String, dynamic> _$$_DeletedUserDataToJson(_$_DeletedUserData instance) =>
     <String, dynamic>{
       'userId': instance.userId,

@@ -16,7 +16,7 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
           .orderBy('createdAt')
           .snapshots();
       return stream;
-    } catch (_) {
+    } on Exception catch (_) {
       throw '';
     }
   }
@@ -29,7 +29,7 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
           .doc(userId)
           .collection('subscriptions')
           .add(data.toJson());
-    } catch (_) {
+    } on Exception catch (_) {
       throw errors.createSubscriptionErr;
     }
   }
@@ -47,7 +47,7 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
           .collection('subscriptions')
           .doc(subscId)
           .update(data.toJson());
-    } catch (e) {
+    } on Exception catch (_) {
       throw errors.createSubscriptionErr;
     }
   }
@@ -61,7 +61,7 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
           .collection('subscriptions')
           .doc(subscriptionId)
           .delete();
-    } catch (_) {
+    } on Exception catch (_) {
       throw errors.deleteSubscriptionErr;
     }
   }

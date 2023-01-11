@@ -1,24 +1,32 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../constant/configs.dart' as configs;
+import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// アプリ設定項目リストのUIを作成する
 class AppSettings extends ConsumerWidget {
-  const AppSettings({Key? key}) : super(key: key);
+  const AppSettings({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeSettingProvider);
     final account = ref.watch(accountProvider);
-    String accountText = 'ゲスト';
-    String themeText = '';
+    var accountText = 'ゲスト';
+    var themeText = '';
 
-    if (account == 'Google') accountText = 'Google';
+    if (account == 'Google') {
+      accountText = 'Google';
+    }
 
     // テーマ設定状況を取得
-    if (theme == configs.deviceTheme) themeText = texts.deviceSettingItem;
-    if (theme == configs.lightTheme) themeText = texts.lightSettingItem;
-    if (theme == configs.darkTheme) themeText = texts.darkSettingItem;
+    if (theme == configs.deviceTheme) {
+      themeText = texts.deviceSettingItem;
+    }
+    if (theme == configs.lightTheme) {
+      themeText = texts.lightSettingItem;
+    }
+    if (theme == configs.darkTheme) {
+      themeText = texts.darkSettingItem;
+    }
 
     return Column(
       children: [

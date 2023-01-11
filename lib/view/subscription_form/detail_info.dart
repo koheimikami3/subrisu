@@ -4,10 +4,10 @@ import '../../importer.dart';
 /// 詳細情報を表示する
 class DetailInfo extends StatelessWidget {
   const DetailInfo({
-    Key? key,
+    super.key,
     this.paymentCycle,
     this.firstPaidOn,
-  }) : super(key: key);
+  });
 
   final int? paymentCycle;
   final DateTime? firstPaidOn;

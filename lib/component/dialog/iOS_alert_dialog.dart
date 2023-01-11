@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 
 /// iOS：実行結果を表示するダイアログ
 class IOSAlertDialog {
-  const IOSAlertDialog({Key? key});
+  const IOSAlertDialog();
 
   static void show(BuildContext context, bool isErr, String content) {
-    showCupertinoDialog(
+    showCupertinoDialog<void>(
       context: context,
       builder: (context) {
         return CupertinoAlertDialog(
@@ -21,8 +21,11 @@ class IOSAlertDialog {
   static Text _title(bool isErr) {
     late final String text;
 
-    if (isErr) text = 'エラー';
-    if (!isErr) text = '実行結果';
+    if (isErr) {
+      text = 'エラー';
+    } else {
+      text = '実行結果';
+    }
 
     return Text(text);
   }

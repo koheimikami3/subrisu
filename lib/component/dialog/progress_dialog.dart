@@ -4,7 +4,7 @@ import '../../importer.dart';
 ///
 /// ダイアログは表示されたらユーザーの操作で閉じることができない
 class ProgressDialog {
-  const ProgressDialog({Key? key});
+  const ProgressDialog();
 
   static void show(BuildContext context) {
     showGeneralDialog(

@@ -1,10 +1,9 @@
 import '../../constant/configs.dart' as configs;
-import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// リスト画面のUIを作成する
 class ListPage extends ConsumerStatefulWidget {
-  const ListPage({Key? key}) : super(key: key);
+  const ListPage({super.key});
 
   @override
   ConsumerState<ListPage> createState() => _ListPageState();
@@ -37,10 +36,7 @@ class _ListPageState extends ConsumerState<ListPage> {
     final isUserDataLoaded = ref.watch(isUserDataLoadedProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(texts.listPage),
-        automaticallyImplyLeading: false,
-      ),
+      appBar: AppBar(automaticallyImplyLeading: false),
       floatingActionButton: const CreatePageButton(),
       body: !isUserDataLoaded
           ? const Center(child: LoadingIndicator())

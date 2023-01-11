@@ -7,9 +7,9 @@ import '../../importer.dart';
 /// 利用開始日フォームを表示する
 class FirstPaidOnForm extends ConsumerStatefulWidget {
   const FirstPaidOnForm({
-    Key? key,
+    super.key,
     this.firstPaidOn,
-  }) : super(key: key);
+  });
 
   final DateTime? firstPaidOn;
 
@@ -24,7 +24,9 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
   void initState() {
     super.initState();
 
-    if (widget.firstPaidOn != null) _selectedDateTime = widget.firstPaidOn!;
+    if (widget.firstPaidOn != null) {
+      _selectedDateTime = widget.firstPaidOn!;
+    }
   }
 
   @override
@@ -40,11 +42,14 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
     final text = DateFormat.yMMMMd('ja').format(dateTime);
 
     return GestureDetector(
-      onTap: () => _onTap(),
+      onTap: _onTap,
       child: Row(
         children: [
           Text(text),
-          const Icon(Icons.unfold_more),
+          Icon(
+            Icons.unfold_more,
+            color: Colors.grey.shade600,
+          ),
         ],
       ),
     );
@@ -52,12 +57,12 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
 
   /// 利用開始日を選択するPickerを呼び出す
   void _onTap() {
-    showCupertinoModalPopup(
+    showCupertinoModalPopup<void>(
       context: context,
       builder: (_) {
         return CupertinoPickerSheet(
           picker: _picker(),
-          saveOnPressed: () => _saveOnPressed(),
+          saveOnPressed: _saveOnPressed,
         );
       },
     );

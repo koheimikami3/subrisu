@@ -4,9 +4,9 @@ import '../../../importer.dart';
 /// サブスクリプションリストのアイテムを表示する
 class SubscriptionItem extends ConsumerWidget {
   const SubscriptionItem({
-    Key? key,
+    super.key,
     required this.subscriptionDoc,
-  }) : super(key: key);
+  });
 
   final DocumentSnapshot subscriptionDoc; // サブスクリプションドキュメント
 
@@ -32,7 +32,14 @@ class SubscriptionItem extends ConsumerWidget {
                     _iconImage(),
                     SizedBox(width: 15.w),
                     Expanded(child: _serviceName()),
-                    _price(),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        _price(),
+                        _nextPaymentDate(),
+                      ],
+                    ),
                     SizedBox(width: 15.w),
                   ],
                 ),
@@ -49,7 +56,7 @@ class SubscriptionItem extends ConsumerWidget {
   void _onTap(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(
+      MaterialPageRoute<void>(
         builder: (_) => EditPage(subscriptionDoc: subscriptionDoc),
         fullscreenDialog: true,
       ),
@@ -59,9 +66,11 @@ class SubscriptionItem extends ConsumerWidget {
   /// アイコン画像を表示する
   Widget _iconImage() {
     late String imagePath;
-    imagePath = subscriptionDoc.get('iconImagePath');
+    imagePath = subscriptionDoc.get('iconImagePath') as String;
 
-    if (imagePath == '') imagePath = 'images/icon/squirrel.png';
+    if (imagePath == '') {
+      imagePath = 'images/icon/squirrel.png';
+    }
 
     return ColorFiltered(
       colorFilter: const ColorFilter.mode(colors.appColor, BlendMode.srcIn),
@@ -75,12 +84,12 @@ class SubscriptionItem extends ConsumerWidget {
 
   /// サービス名を表示する
   Widget _serviceName() {
-    final serviceName = subscriptionDoc.get('serviceName');
+    final serviceName = subscriptionDoc.get('serviceName') as String;
 
     return Text(
       serviceName,
       style: TextStyle(
-        fontSize: 16.5.sp,
+        fontSize: 17.sp,
         fontWeight: FontWeight.w500,
       ),
     );
@@ -94,8 +103,86 @@ class SubscriptionItem extends ConsumerWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: 16.5.sp,
+        fontSize: 17.sp,
         fontWeight: FontWeight.w400,
+      ),
+    );
+  }
+
+  /// 次回支払い日を表示する
+  Widget _nextPaymentDate() {
+    final data = subscriptionDoc.data()! as Map;
+    final timestamp = data['firstPaidOn'] as Timestamp;
+    final firstPaidOn = timestamp.toDate();
+    final paymentCycle = data['paymentCycle'];
+    var now = DateTime.now();
+    now = DateTime(now.year, now.month, now.day);
+    late final String text;
+
+    switch (paymentCycle) {
+      case 0:
+        text = '今日';
+        break;
+      case 1:
+        final nowWeekday = now.weekday;
+        final firstWeekday = firstPaidOn.weekday;
+        var day = firstWeekday - nowWeekday;
+        if (day < 0) {
+          day = day.abs();
+          day = 7 - day;
+        }
+
+        if (nowWeekday == firstWeekday) {
+          text = '今日';
+        } else {
+          text = 'あと$day日';
+        }
+        break;
+      case 2:
+        var nextPaidOn = DateTime(now.year, now.month, firstPaidOn.day);
+
+        // 差分の日数を計算
+        // マイナスになった場合はプラスに変換
+        var difference = nextPaidOn.difference(now);
+        var day = difference.inDays;
+        if (day < 0) {
+          nextPaidOn = DateTime(now.year, now.month + 1, firstPaidOn.day);
+          difference = nextPaidOn.difference(now);
+          day = difference.inDays;
+        }
+
+        if (day == 0) {
+          text = '今日';
+        } else {
+          text = 'あと$day日';
+        }
+        break;
+      case 3:
+        var nextPaidOn = DateTime(now.year, firstPaidOn.month, firstPaidOn.day);
+
+        // 差分の日数を計算
+        // マイナスになった場合はプラスに変換
+        var difference = nextPaidOn.difference(now);
+        var day = difference.inDays;
+        if (day < 0) {
+          nextPaidOn =
+              DateTime(now.year + 1, firstPaidOn.month, firstPaidOn.day);
+          difference = nextPaidOn.difference(now);
+          day = difference.inDays;
+        }
+
+        if (day == 0) {
+          text = '今日';
+        } else {
+          text = 'あと$day日';
+        }
+        break;
+    }
+
+    return Text(
+      text,
+      style: TextStyle(
+        color: text == '今日' ? Colors.red : Colors.black,
       ),
     );
   }

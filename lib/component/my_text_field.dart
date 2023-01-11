@@ -4,7 +4,7 @@ import '../importer.dart';
 
 class MyTextFormField extends StatelessWidget {
   const MyTextFormField({
-    Key? key,
+    super.key,
     this.initialValue,
     this.minLines = 1,
     this.maxLines = 1,
@@ -12,7 +12,7 @@ class MyTextFormField extends StatelessWidget {
     this.inputFormatters,
     this.hintText,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final String? initialValue;
   final int minLines;

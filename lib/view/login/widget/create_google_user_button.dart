@@ -4,14 +4,14 @@ import '../../../importer.dart';
 /// GoogleでFirebaseのユーザーを作成するボタン
 class CreateGoogleUserButton extends ConsumerWidget {
   const CreateGoogleUserButton({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GoogleSignInButton(
       text: texts.createGoogleUserButton,
-      onPressed: () async => await _onPressed(context, ref),
+      onPressed: () => _onPressed(context, ref),
     );
   }
 
@@ -19,11 +19,13 @@ class CreateGoogleUserButton extends ConsumerWidget {
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
     final repository = ref.watch(userViewModelProvider.notifier);
-    String err = '';
+    var err = '';
 
     try {
-      final credential = await UserManager.googleSingnIn();
-      if (credential == null) return;
+      final credential = await googleSingnIn();
+      if (credential == null) {
+        return;
+      }
 
       // プログレスダイアログを表示
       ProgressDialog.show(context);
@@ -40,12 +42,14 @@ class CreateGoogleUserButton extends ConsumerWidget {
 
       // 存在しない場合、新たに作成
       // ユーザーIDをドキュメントIDにする
-      if (userDoc == null) await repository.create(userId);
+      if (userDoc == null) {
+        await repository.create(userId);
+      }
 
       // アカウント名をプロバイダに保存
       ref.watch(accountProvider.notifier).state = 'Google';
-    } catch (e) {
-      err = ErrorHandler.selectMessage(e.toString());
+    } on Exception catch (e) {
+      err = selectMessage(e.toString());
     }
 
     // プログレスダイアログを閉じる
@@ -57,6 +61,6 @@ class CreateGoogleUserButton extends ConsumerWidget {
     }
 
     // ボトムナビゲーションバーを経由してリスト画面に遷移
-    Navigator.pushNamed(context, '/bottomNav');
+    await Navigator.pushNamed(context, '/bottomNav');
   }
 }

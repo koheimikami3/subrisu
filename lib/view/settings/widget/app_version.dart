@@ -3,7 +3,7 @@ import '../../../importer.dart';
 
 /// アプリバージョン項目のUIを作成する
 class AppVersion extends ConsumerWidget {
-  const AppVersion({Key? key}) : super(key: key);
+  const AppVersion({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

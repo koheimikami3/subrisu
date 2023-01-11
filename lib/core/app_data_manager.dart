@@ -1,23 +1,30 @@
-import '../importer.dart';
-// import '../constant/errors.dart' as errors;
 import '../constant/configs.dart' as configs;
+import '../importer.dart';
 
 class AppDataManager {
   /// ユーザードキュメントを取得する
-  static Future<void> getUser(WidgetRef ref) async {
+  Future<void> getUser(WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
+    final messaging = FirebaseMessaging.instance;
     final userRepository = ref.read(userViewModelProvider.notifier);
     final subscriptionRepository =
         ref.read(subscriptionViewModelProvider.notifier);
 
-    await userRepository.getUser(auth.currentUser!.uid);
+    final userDoc = await userRepository.getUser(auth.currentUser!.uid);
     subscriptionRepository.getSubscriptions();
+
+    final userToken = userDoc!.get('token');
+    final deviceToken = await messaging.getToken();
+
+    if (userToken != deviceToken) {
+      await userRepository.updateToken(deviceToken!);
+    }
 
     ref.watch(isUserDataLoadedProvider.notifier).state = true;
   }
 
   /// 現在の設定内容を取得し、アプリに反映する
-  static Future<void> getSettings(BuildContext context, WidgetRef ref) async {
+  Future<void> getSettings(BuildContext context, WidgetRef ref) async {
     // アプリバージョンを取得し、プロバイダに保存
     final packageInfo = await PackageInfo.fromPlatform();
     final version = packageInfo.version;

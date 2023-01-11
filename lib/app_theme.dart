@@ -1,15 +1,15 @@
-import 'constant/configs.dart' as configs;
 import 'constant/colors.dart' as colors;
+import 'constant/configs.dart' as configs;
 import 'importer.dart';
 
 class AppTheme {
   /// ライトモードのテーマ設定を行う
-  static ThemeData lightTheme() {
+  ThemeData lightTheme() {
     return ThemeData(
       scaffoldBackgroundColor: colors.lightBackgroundColor,
       brightness: Brightness.light,
       splashColor: Colors.transparent,
-      iconTheme: const IconThemeData(color: Colors.black54),
+      iconTheme: const IconThemeData(color: Color.fromARGB(137, 234, 153, 153)),
       appBarTheme: _lightAppBarTheme(),
       bottomNavigationBarTheme: _lightBottomNavTheme(),
       floatingActionButtonTheme: _floatingButtonTheme(),
@@ -18,7 +18,7 @@ class AppTheme {
   }
 
   /// ダークモードのテーマ設定を行う
-  static ThemeData darkTheme() {
+  ThemeData darkTheme() {
     return ThemeData(
       brightness: Brightness.dark,
       scaffoldBackgroundColor: colors.darkBackgroundColor,
@@ -32,7 +32,7 @@ class AppTheme {
   }
 
   /// ライトモードAppBarのUI設定を行う
-  static AppBarTheme _lightAppBarTheme() {
+  AppBarTheme _lightAppBarTheme() {
     return AppBarTheme(
       elevation: 0,
       backgroundColor: colors.appColor,
@@ -46,7 +46,7 @@ class AppTheme {
   }
 
   /// ダークモードAppBarのUI設定を行う
-  static AppBarTheme _darkAppBarTheme() {
+  AppBarTheme _darkAppBarTheme() {
     return AppBarTheme(
       elevation: 0,
       iconTheme: const IconThemeData(color: Colors.white),
@@ -59,7 +59,7 @@ class AppTheme {
   }
 
   /// ライトモードBottomNavigationBarのUI設定を行う
-  static BottomNavigationBarThemeData _lightBottomNavTheme() {
+  BottomNavigationBarThemeData _lightBottomNavTheme() {
     return BottomNavigationBarThemeData(
       selectedIconTheme: const IconThemeData(size: 30),
       unselectedIconTheme: const IconThemeData(size: 30),
@@ -70,7 +70,7 @@ class AppTheme {
   }
 
   /// ダークモードBottomNavigationBarのUI設定を行う
-  static BottomNavigationBarThemeData _darkBottomNavTheme() {
+  BottomNavigationBarThemeData _darkBottomNavTheme() {
     return BottomNavigationBarThemeData(
       selectedIconTheme: const IconThemeData(size: 30),
       unselectedIconTheme: const IconThemeData(size: 30),
@@ -81,7 +81,7 @@ class AppTheme {
   }
 
   /// FloatingActionButtonのUI設定を行う
-  static FloatingActionButtonThemeData _floatingButtonTheme() {
+  FloatingActionButtonThemeData _floatingButtonTheme() {
     return const FloatingActionButtonThemeData(
       elevation: 2,
       highlightElevation: 2,
@@ -91,17 +91,17 @@ class AppTheme {
   }
 
   /// ライトモードTextのUI設定を行う
-  static TextTheme _lightTextTheme() {
+  TextTheme _lightTextTheme() {
     return TextTheme(
       bodyText2: TextStyle(fontSize: configs.defaultFontSize.sp),
     );
   }
 
   /// ダークモードTextのUI設定を行う
-  static TextTheme _darkTextTheme() {
+  TextTheme _darkTextTheme() {
     return TextTheme(
       bodyText2: TextStyle(
-        fontSize: configs.defaultFontSize.sp.sp,
+        fontSize: configs.defaultFontSize.sp,
         color: Colors.white,
       ),
     );

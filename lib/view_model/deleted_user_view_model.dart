@@ -22,7 +22,7 @@ class DeletedUserViewModel {
       await repository.create(data);
 
       ref.watch(isUserDataLoadedProvider.notifier).state = false;
-    } catch (_) {
+    } on Exception catch (_) {
       rethrow;
     }
   }

@@ -3,9 +3,9 @@ import '../../importer.dart';
 /// サブスクリプションの削除確認を行うダイアログ
 class DeleteSubscriptionDialog extends ConsumerWidget {
   const DeleteSubscriptionDialog({
-    Key? key,
+    super.key,
     required this.subscriptionDoc,
-  }) : super(key: key);
+  });
 
   final DocumentSnapshot subscriptionDoc; // サブスクリプションドキュメント
 
@@ -19,14 +19,14 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
       title: title,
       content: content,
       actionText: actionText,
-      onPressed: () async => await _onPressed(context, ref),
+      onPressed: () => _onPressed(context, ref),
     );
   }
 
   /// サブスクリプションを削除し、リスト画面に戻る
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final repository = ref.watch(subscriptionViewModelProvider.notifier);
-    String err = '';
+    var err = '';
 
     // プログレスダイアログを表示
     ProgressDialog.show(context);
@@ -34,9 +34,11 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
     try {
       // サブスクリプションを削除
       await repository.delete(subscriptionDoc.id);
-    } catch (e) {
-      err = ErrorHandler.selectMessage(e.toString());
+    } on Exception catch (e) {
+      err = selectMessage(e.toString());
     }
+
+    // if (!context.mounted)
 
     // プログレスダイアログを閉じる
     Navigator.pop(context);

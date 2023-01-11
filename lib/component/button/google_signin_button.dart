@@ -4,10 +4,10 @@ import '../../importer.dart';
 /// Googleでサインインするボタン
 class GoogleSignInButton extends StatelessWidget {
   const GoogleSignInButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   final String text; // ボタンテキスト
   final VoidCallback onPressed; // ボタンタップ時の動作

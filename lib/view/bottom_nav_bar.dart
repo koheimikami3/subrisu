@@ -6,9 +6,7 @@ import '../constant/texts.dart' as texts;
 
 /// ボトムナビゲーションバーのUIを作成する
 class BottomNavBar extends ConsumerStatefulWidget {
-  const BottomNavBar({
-    Key? key,
-  }) : super(key: key);
+  const BottomNavBar({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -62,7 +60,7 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
-        onTap: (index) => _onItemTapped(index),
+        onTap: _onItemTapped,
         items: [_list(), _settings()],
       ),
     );

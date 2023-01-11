@@ -4,7 +4,7 @@ import '../importer.dart';
 /// 設定項目のUIを作成する
 class SettingItem extends ConsumerWidget {
   const SettingItem({
-    Key? key,
+    super.key,
     this.independenceItem = false,
     this.topItem = false,
     this.middleItem = false,
@@ -14,7 +14,7 @@ class SettingItem extends ConsumerWidget {
     this.settingText = '',
     this.trailing = const ArrowIcon(),
     required this.onTap,
-  }) : super(key: key);
+  });
 
   final bool independenceItem; // 独立項目か
   final bool topItem; // リスト最上部項目か
@@ -112,15 +112,18 @@ class SettingItem extends ConsumerWidget {
     return Icon(
       leadingIcon,
       size: 21,
+      color: Colors.grey.shade600,
     );
   }
 
   /// 設定内容を表示する
   Text _settings(WidgetRef ref) {
     final isDark = ref.watch(darkModeProvider);
-    Color color = Colors.black54;
+    var color = Colors.black54;
 
-    if (isDark) color = Colors.grey.shade400;
+    if (isDark) {
+      color = Colors.grey.shade400;
+    }
 
     return Text(
       settingText,

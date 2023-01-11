@@ -3,7 +3,7 @@ import '../../../importer.dart';
 
 /// アカウント連携画面のUIを作成する
 class LinkAccountPage extends ConsumerWidget {
-  const LinkAccountPage({Key? key}) : super(key: key);
+  const LinkAccountPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

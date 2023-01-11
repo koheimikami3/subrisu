@@ -3,7 +3,7 @@ import '../../importer.dart';
 
 /// 設定画面のUIを作成する
 class SettingsPage extends ConsumerWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

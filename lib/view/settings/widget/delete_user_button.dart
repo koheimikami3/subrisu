@@ -5,7 +5,7 @@ import '../../../importer.dart';
 
 /// ユーザー削除ダイアログを呼び出すボタン
 class DeleteUserButton extends StatelessWidget {
-  const DeleteUserButton({Key? key}) : super(key: key);
+  const DeleteUserButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class DeleteUserButton extends StatelessWidget {
 
   /// ユーザー削除ダイアログを呼び出す
   void _onPressed(BuildContext context) {
-    showCupertinoDialog(
+    showCupertinoDialog<void>(
       context: context,
       builder: (_) => const DeleteUserDialog(),
     );

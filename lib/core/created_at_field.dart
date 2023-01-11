@@ -14,7 +14,10 @@ class CreatedAtField implements JsonConverter<DateTime?, dynamic> {
 
   @override
   dynamic toJson(DateTime? dateTime) {
-    if (dateTime == null) return FieldValue.serverTimestamp();
+    if (dateTime == null) {
+      return FieldValue.serverTimestamp();
+    }
+
     return dateTime;
   }
 }

@@ -4,9 +4,7 @@ import '../importer.dart';
 
 /// データ処理の実行中を知らせるインジケーター
 class CircularIndicator extends ConsumerWidget {
-  const CircularIndicator({
-    Key? key,
-  }) : super(key: key);
+  const CircularIndicator({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

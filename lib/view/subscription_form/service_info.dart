@@ -4,13 +4,13 @@ import '../../importer.dart';
 /// サービス情報を表示する
 class ServiceInfo extends StatelessWidget {
   const ServiceInfo({
-    Key? key,
-    this.serviceName = '',
-    this.price = '',
-  }) : super(key: key);
+    super.key,
+    this.serviceName,
+    this.price,
+  });
 
-  final String serviceName;
-  final String price;
+  final String? serviceName;
+  final String? price;
 
   @override
   Widget build(BuildContext context) {

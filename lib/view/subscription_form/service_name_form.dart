@@ -4,11 +4,11 @@ import '../../importer.dart';
 /// サービス名フォームを表示する
 class ServiceNameForm extends ConsumerWidget {
   const ServiceNameForm({
-    Key? key,
-    required this.serviceName,
-  }) : super(key: key);
+    super.key,
+    this.serviceName,
+  });
 
-  final String serviceName;
+  final String? serviceName;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

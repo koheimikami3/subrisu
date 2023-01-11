@@ -5,11 +5,11 @@ import '../../../importer.dart';
 
 class CupertinoTextButton extends ConsumerWidget {
   const CupertinoTextButton({
-    Key? key,
+    super.key,
     required this.text,
     this.color = colors.appColor,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   final String text;
   final Color? color;

@@ -4,10 +4,10 @@ import '../../importer.dart';
 /// Appleでサインインするボタン
 class AppleSignInButton extends StatelessWidget {
   const AppleSignInButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   final String text; // ボタンテキスト
   final VoidCallback onPressed; // ボタンタップ時の動作

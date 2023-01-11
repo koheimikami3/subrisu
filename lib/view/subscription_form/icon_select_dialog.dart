@@ -3,9 +3,7 @@ import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 class IconSelectDialog extends ConsumerWidget {
-  const IconSelectDialog({
-    Key? key,
-  }) : super(key: key);
+  const IconSelectDialog({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

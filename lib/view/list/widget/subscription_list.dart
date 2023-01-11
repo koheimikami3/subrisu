@@ -2,7 +2,7 @@ import '../../../importer.dart';
 
 /// リスト画面のUIを作成する
 class SubscriptionList extends ConsumerWidget {
-  const SubscriptionList({Key? key}) : super(key: key);
+  const SubscriptionList({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

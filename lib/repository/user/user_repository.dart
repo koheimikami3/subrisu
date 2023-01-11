@@ -4,4 +4,6 @@ abstract class UserRepository {
   Future<DocumentSnapshot> getUser(String userId);
 
   Future<void> create(UserData data);
+
+  Future<void> updateToken(String userId, String token);
 }

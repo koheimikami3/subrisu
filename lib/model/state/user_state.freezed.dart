@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UserState {
   String get userId => throw _privateConstructorUsedError;
+  String get token => throw _privateConstructorUsedError;
   String get os => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +30,7 @@ abstract class $UserStateCopyWith<$Res> {
   factory $UserStateCopyWith(UserState value, $Res Function(UserState) then) =
       _$UserStateCopyWithImpl<$Res, UserState>;
   @useResult
-  $Res call({String userId, String os});
+  $Res call({String userId, String token, String os});
 }
 
 /// @nodoc
@@ -46,12 +47,17 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
   @override
   $Res call({
     Object? userId = null,
+    Object? token = null,
     Object? os = null,
   }) {
     return _then(_value.copyWith(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
               as String,
       os: null == os
           ? _value.os
@@ -68,7 +74,7 @@ abstract class _$$_UserStateCopyWith<$Res> implements $UserStateCopyWith<$Res> {
       __$$_UserStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String userId, String os});
+  $Res call({String userId, String token, String os});
 }
 
 /// @nodoc
@@ -83,12 +89,17 @@ class __$$_UserStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? userId = null,
+    Object? token = null,
     Object? os = null,
   }) {
     return _then(_$_UserState(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      token: null == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
               as String,
       os: null == os
           ? _value.os
@@ -101,18 +112,22 @@ class __$$_UserStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UserState extends _UserState {
-  const _$_UserState({this.userId = '', this.os = ''}) : super._();
+  const _$_UserState({this.userId = '', this.token = '', this.os = ''})
+      : super._();
 
   @override
   @JsonKey()
   final String userId;
   @override
   @JsonKey()
+  final String token;
+  @override
+  @JsonKey()
   final String os;
 
   @override
   String toString() {
-    return 'UserState(userId: $userId, os: $os)';
+    return 'UserState(userId: $userId, token: $token, os: $os)';
   }
 
   @override
@@ -121,11 +136,12 @@ class _$_UserState extends _UserState {
         (other.runtimeType == runtimeType &&
             other is _$_UserState &&
             (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.token, token) || other.token == token) &&
             (identical(other.os, os) || other.os == os));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userId, os);
+  int get hashCode => Object.hash(runtimeType, userId, token, os);
 
   @JsonKey(ignore: true)
   @override
@@ -135,12 +151,16 @@ class _$_UserState extends _UserState {
 }
 
 abstract class _UserState extends UserState {
-  const factory _UserState({final String userId, final String os}) =
-      _$_UserState;
+  const factory _UserState(
+      {final String userId,
+      final String token,
+      final String os}) = _$_UserState;
   const _UserState._() : super._();
 
   @override
   String get userId;
+  @override
+  String get token;
   @override
   String get os;
   @override

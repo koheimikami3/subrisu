@@ -2,7 +2,7 @@ import '../../../importer.dart';
 
 /// ユーザー削除確認を行うダイアログ
 class DeleteUserDialog extends ConsumerWidget {
-  const DeleteUserDialog({Key? key}) : super(key: key);
+  const DeleteUserDialog({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -14,7 +14,7 @@ class DeleteUserDialog extends ConsumerWidget {
       title: title,
       content: content,
       actionText: actionText,
-      onPressed: () async => await _onPressed(context, ref),
+      onPressed: () => _onPressed(context, ref),
     );
   }
 
@@ -24,7 +24,7 @@ class DeleteUserDialog extends ConsumerWidget {
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final auth = FirebaseAuth.instance;
     final repository = ref.watch(deletedUserViewModelProvider);
-    String err = '';
+    var err = '';
 
     // プログレスダイアログを表示
     ProgressDialog.show(context);
@@ -35,8 +35,8 @@ class DeleteUserDialog extends ConsumerWidget {
 
       // Firebaseからサインアウト
       await auth.signOut();
-    } catch (e) {
-      err = ErrorHandler.selectMessage(e.toString());
+    } on Exception catch (e) {
+      err = selectMessage(e.toString());
     }
 
     // プログレスダイアログを閉じる
@@ -52,6 +52,6 @@ class DeleteUserDialog extends ConsumerWidget {
 
     // ログイン画面に遷移
     // 今までの画面を全てウィジェットツリーから削除
-    Navigator.pushNamedAndRemoveUntil(context, '/login', (_) => false);
+    await Navigator.pushNamedAndRemoveUntil(context, '/login', (_) => false);
   }
 }

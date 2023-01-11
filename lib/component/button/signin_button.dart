@@ -5,14 +5,14 @@ import '../../importer.dart';
 /// サインインボタンのUIを作成する
 class SignInButton extends StatelessWidget {
   const SignInButton({
-    Key? key,
+    super.key,
     required this.iconImagePath,
     required this.text,
     required this.textColor,
     required this.backgroundColor,
     required this.border,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   final String iconImagePath; // アイコン画像のパス
   final String text; // ボタンのテキスト

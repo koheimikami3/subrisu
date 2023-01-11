@@ -3,9 +3,7 @@ import '../../../importer.dart';
 
 /// AppleでFirebaseのユーザーを作成するボタン
 class CreateAppleUserButton extends ConsumerWidget {
-  const CreateAppleUserButton({
-    Key? key,
-  }) : super(key: key);
+  const CreateAppleUserButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

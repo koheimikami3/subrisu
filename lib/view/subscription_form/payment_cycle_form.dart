@@ -6,9 +6,9 @@ import '../../importer.dart';
 /// 支払い周期フォームを表示する
 class PaymentCycleForm extends ConsumerStatefulWidget {
   const PaymentCycleForm({
-    Key? key,
+    super.key,
     this.paymentCycle,
-  }) : super(key: key);
+  });
 
   final int? paymentCycle;
 
@@ -24,7 +24,9 @@ class _PaymentCycleFormState extends ConsumerState<PaymentCycleForm> {
   void initState() {
     super.initState();
 
-    if (widget.paymentCycle != null) _selectedIndex = widget.paymentCycle!;
+    if (widget.paymentCycle != null) {
+      _selectedIndex = widget.paymentCycle!;
+    }
   }
 
   @override
@@ -40,11 +42,14 @@ class _PaymentCycleFormState extends ConsumerState<PaymentCycleForm> {
     final index = ref.watch(paymentCycleProvider);
 
     return GestureDetector(
-      onTap: () => _onTap(),
+      onTap: _onTap,
       child: Row(
         children: [
           Text(_textList[index]),
-          const Icon(Icons.unfold_more),
+          Icon(
+            Icons.unfold_more,
+            color: Colors.grey.shade600,
+          ),
         ],
       ),
     );
@@ -52,7 +57,7 @@ class _PaymentCycleFormState extends ConsumerState<PaymentCycleForm> {
 
   /// 支払い周期を選択するPickerを呼び出す
   void _onTap() {
-    showCupertinoModalPopup(
+    showCupertinoModalPopup<void>(
       context: context,
       builder: (_) {
         return CupertinoPickerSheet(

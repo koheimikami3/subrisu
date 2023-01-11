@@ -6,12 +6,12 @@ import '../../../importer.dart';
 
 /// 匿名ユーザーで始めるボタン
 class CreateAnonymousUserButton extends ConsumerWidget {
-  const CreateAnonymousUserButton({Key? key}) : super(key: key);
+  const CreateAnonymousUserButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return CupertinoButton(
-      onPressed: () async => await _onTap(context, ref),
+      onPressed: () => _onTap(context, ref),
       padding: EdgeInsets.zero,
       child: _text(),
     );
@@ -31,14 +31,14 @@ class CreateAnonymousUserButton extends ConsumerWidget {
   /// 匿名ユーザーを作成し、ボトムナビゲーションバーを経由してリスト画面に遷移する
   Future<void> _onTap(BuildContext context, WidgetRef ref) async {
     final repository = ref.watch(userViewModelProvider.notifier);
-    String err = '';
+    var err = '';
 
     // プログレスダイアログを表示
     ProgressDialog.show(context);
 
     try {
       // 匿名サインインを実施し、結果から匿名ユーザーIDを取得
-      final userId = await UserManager.anonymousSingnIn();
+      final userId = await anonymousSingnIn();
 
       // ユーザーを作成
       // 匿名ユーザーIDをドキュメントIDとする
@@ -46,8 +46,8 @@ class CreateAnonymousUserButton extends ConsumerWidget {
 
       // プロバイダ名をプロバイダに保存
       ref.watch(accountProvider.notifier).state = 'Anonymous';
-    } catch (e) {
-      err = ErrorHandler.selectMessage(e.toString());
+    } on Exception catch (e) {
+      err = selectMessage(e.toString());
     }
 
     // プログレスダイアログを閉じる
@@ -60,6 +60,6 @@ class CreateAnonymousUserButton extends ConsumerWidget {
     }
 
     // ボトムナビゲーションバーを経由してリスト画面に遷移
-    Navigator.pushNamed(context, '/bottomNav');
+    await Navigator.pushNamed(context, '/bottomNav');
   }
 }
