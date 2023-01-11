@@ -15,6 +15,8 @@ class MyCupertinoButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+
     return Container(
       height: 40.h,
       width: double.infinity,
@@ -25,7 +27,7 @@ class MyCupertinoButton extends ConsumerWidget {
         borderRadius: const BorderRadius.all(Radius.circular(30)),
         padding: EdgeInsets.zero,
         color: colors.appColor,
-        disabledColor: Colors.grey.shade300,
+        disabledColor: isDark ? Colors.grey.shade600 : Colors.grey.shade300,
         onPressed: onPressed,
         child: _text(),
       ),

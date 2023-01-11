@@ -1,15 +1,17 @@
 import 'package:flutter/cupertino.dart';
 
 /// iOS：実行結果を表示するダイアログ
-class IOSAlertDialog {
-  const IOSAlertDialog();
+class MyAlertDialog {
+  const MyAlertDialog();
 
-  static void show(BuildContext context, bool isErr, String content) {
+  static void showCompleted(BuildContext context, String content) {
+    const text = '実行結果';
+
     showCupertinoDialog<void>(
       context: context,
       builder: (context) {
         return CupertinoAlertDialog(
-          title: _title(isErr),
+          title: const Text(text),
           content: Text(content),
           actions: [_closeButton(context)],
         );
@@ -17,17 +19,19 @@ class IOSAlertDialog {
     );
   }
 
-  /// タイトルを表示する
-  static Text _title(bool isErr) {
-    late final String text;
+  static void showError(BuildContext context, String content) {
+    const text = 'エラー';
 
-    if (isErr) {
-      text = 'エラー';
-    } else {
-      text = '実行結果';
-    }
-
-    return Text(text);
+    showCupertinoDialog<void>(
+      context: context,
+      builder: (context) {
+        return CupertinoAlertDialog(
+          title: const Text(text),
+          content: Text(content),
+          actions: [_closeButton(context)],
+        );
+      },
+    );
   }
 
   /// 閉じるボタンを表示する

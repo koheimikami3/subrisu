@@ -1,18 +1,13 @@
-import '../../importer.dart';
+import '../../../importer.dart';
 
-/// サブスクリプションの削除確認を行うダイアログ
-class DeleteSubscriptionDialog extends ConsumerWidget {
-  const DeleteSubscriptionDialog({
-    super.key,
-    required this.subscriptionDoc,
-  });
-
-  final DocumentSnapshot subscriptionDoc; // サブスクリプションドキュメント
+/// 全サブスクリプションの削除確認を行うダイアログ
+class DeleteAllSubscriptionsDialog extends ConsumerWidget {
+  const DeleteAllSubscriptionsDialog({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    const title = 'サブスクリプション削除';
-    const content = 'データを削除してもよろしいですか？';
+    const title = 'データ削除';
+    const content = 'すべてのサブスクリプションデータを削除します。よろしいですか？';
     const actionText = '削除';
 
     return MyConformDialog(
@@ -23,7 +18,7 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
     );
   }
 
-  /// サブスクリプションを削除し、リスト画面に戻る
+  /// 全てのサブスクリプションデータを削除する
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final repository = ref.watch(subscriptionViewModelProvider.notifier);
     var err = '';
@@ -32,8 +27,8 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
     ProgressDialog.show(context);
 
     try {
-      // サブスクリプションを削除
-      await repository.delete(subscriptionDoc.id);
+      // 全てのサブスクリプションを削除
+      await repository.allDelete();
     } on Exception catch (e) {
       err = selectMessage(e.toString());
     }
@@ -41,7 +36,7 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
     // プログレスダイアログを閉じる
     Navigator.pop(context);
 
-    // サブスクリプション削除ダイアログを閉じる
+    // 全サブスクリプション削除ダイアログを閉じる
     Navigator.pop(context);
 
     // エラーが発生した場合、ダイアログを表示
@@ -50,7 +45,8 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
       return;
     }
 
-    // リスト画面に戻る
-    Navigator.pop(context);
+    // 完了ダイアログを表示
+    const text = '削除が完了しました。';
+    MyAlertDialog.showCompleted(context, text);
   }
 }

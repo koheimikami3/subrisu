@@ -2,7 +2,7 @@ import '../constant/colors.dart' as colors;
 import '../constant/configs.dart' as configs;
 import '../importer.dart';
 
-class MyTextFormField extends StatelessWidget {
+class MyTextFormField extends ConsumerWidget {
   const MyTextFormField({
     super.key,
     this.initialValue,
@@ -20,10 +20,12 @@ class MyTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
   final String? hintText;
-  final Function(String) onChanged;
+  final void Function(String) onChanged;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+
     return TextFormField(
       initialValue: initialValue,
       minLines: minLines,
@@ -37,7 +39,7 @@ class MyTextFormField extends StatelessWidget {
         hintText: hintText,
         hintStyle: TextStyle(fontSize: configs.defaultFontSize.sp),
         filled: true,
-        fillColor: Colors.white,
+        fillColor: isDark ? colors.darkItemColor : Colors.white,
         border: const OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.all(Radius.circular(10)),

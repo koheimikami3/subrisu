@@ -1,4 +1,4 @@
-import '../../constant/configs.dart' as configs;
+import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// リスト画面のUIを作成する
@@ -14,21 +14,8 @@ class _ListPageState extends ConsumerState<ListPage> {
   void initState() {
     super.initState();
 
-    notification();
-  }
-
-  Future<void> notification() async {
-    final messaging = FirebaseMessaging.instance;
-
-    // プッシュ通知の設定状況を取得
-    final prefs = await SharedPreferences.getInstance();
-    final notification = prefs.getBool(configs.notificationKey) ?? false;
-
-    if (!notification) {
-      await messaging.requestPermission();
-
-      await prefs.setBool(configs.notificationKey, true);
-    }
+    // プッシュ通知設定ダイアログの表示状況を取得し、初めての場合は表示する
+    AppManager.getNotification();
   }
 
   @override
@@ -36,7 +23,10 @@ class _ListPageState extends ConsumerState<ListPage> {
     final isUserDataLoaded = ref.watch(isUserDataLoadedProvider);
 
     return Scaffold(
-      appBar: AppBar(automaticallyImplyLeading: false),
+      appBar: AppBar(
+        title: const Text(texts.listPage),
+        automaticallyImplyLeading: false,
+      ),
       floatingActionButton: const CreatePageButton(),
       body: !isUserDataLoaded
           ? const Center(child: LoadingIndicator())

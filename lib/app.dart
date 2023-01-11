@@ -17,32 +17,35 @@ class _MyAppState extends ConsumerState<MyApp> {
   @override
   void initState() {
     super.initState();
+    final userManager = UserManager();
 
-    // サインインしてる場合
-    if (widget.user != null) {
-      // ユーザードキュメントを取得
-      AppDataManager().getUser(ref);
+    // テーマ設定状況を取得し、アプリに反映
+    AppManager.getTheme(context, ref);
 
-      // アカウント連携状況を取得
-      // プロバイダの値を更新するため画面描画に処理を行う
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        getUserProvider(ref, widget.user!);
-      });
+    // アプリバージョンを取得
+    AppManager.getVersion(ref);
+
+    // サインインしていない場合、匿名サインインを行い、ユーザーデータを作成
+    if (widget.user == null) {
+      userManager.anonymousSingnIn(ref);
     }
 
-    // 現在の設定内容をアプリに反映
-    AppDataManager().getSettings(context, ref);
+    // サインインしてる場合、ユーザーデータを取得
+    if (widget.user != null) {
+      userManager.getUserData(ref);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    final appTheme = AppTheme();
     final isDark = ref.watch(darkModeProvider);
 
     return ScreenUtilInit(
       designSize: const Size(360, 690),
       builder: (_, __) {
         return MaterialApp(
-          theme: isDark ? AppTheme().darkTheme() : AppTheme().lightTheme(),
+          theme: isDark ? appTheme.darkTheme() : appTheme.lightTheme(),
           debugShowCheckedModeBanner: false,
           locale: const Locale('ja', 'JP'),
           supportedLocales: const [Locale('ja', 'JP')],
@@ -54,13 +57,11 @@ class _MyAppState extends ConsumerState<MyApp> {
           ],
           initialRoute: '/',
           routes: {
-            '/login': (_) => const LoginPage(),
             '/settings': (_) => const SettingsPage(),
-            '/linkAccount': (_) => const LinkAccountPage(),
             '/darkMode': (_) => const DarkModePage(),
             '/bottomNav': (_) => const BottomNavBar(),
           },
-          home: widget.user == null ? const LoginPage() : const BottomNavBar(),
+          home: const BottomNavBar(),
         );
       },
     );

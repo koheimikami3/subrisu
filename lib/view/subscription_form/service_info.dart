@@ -1,8 +1,9 @@
+import '../../constant/colors.dart' as colors;
 import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// サービス情報を表示する
-class ServiceInfo extends StatelessWidget {
+class ServiceInfo extends ConsumerWidget {
   const ServiceInfo({
     super.key,
     this.serviceName,
@@ -13,15 +14,17 @@ class ServiceInfo extends StatelessWidget {
   final String? price;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+
     return Column(
       children: [
         const ItemsTitle(title: texts.serviceInfoTitle),
         Container(
           width: double.infinity,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            color: Colors.white,
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            color: isDark ? colors.darkItemColor : Colors.white,
           ),
           child: Row(
             children: [

@@ -48,7 +48,7 @@ class UpdateButton extends ConsumerWidget {
 
     // エラーが発生した場合、ダイアログを表示
     if (err != '') {
-      IOSAlertDialog.show(context, true, err);
+      MyAlertDialog.showError(context, err);
       return;
     }
 

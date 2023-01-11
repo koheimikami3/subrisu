@@ -1,12 +1,14 @@
 import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
-/// アプリバージョン項目のUIを作成する
+/// アプリバージョン項目を表示する
 class AppVersion extends ConsumerWidget {
   const AppVersion({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final version = ref.watch(appVersionProvider);
+
     return Column(
       children: [
         const ItemsTitle(title: texts.appVersionTitle),
@@ -14,17 +16,10 @@ class AppVersion extends ConsumerWidget {
           independenceItem: true,
           leadingIcon: Icons.info_outline,
           itemName: texts.appVersionItem,
-          trailing: _appVersion(ref),
+          trailing: Text(version),
           onTap: null,
         ),
       ],
     );
-  }
-
-  /// アプリバージョンを表示する
-  Text _appVersion(WidgetRef ref) {
-    final version = ref.watch(appVersionProvider);
-
-    return Text(version);
   }
 }

@@ -2,7 +2,7 @@ import '../constant/colors.dart' as colors;
 import '../constant/texts.dart' as texts;
 import '../importer.dart';
 
-class CupertinoPickerSheet extends StatelessWidget {
+class CupertinoPickerSheet extends ConsumerWidget {
   const CupertinoPickerSheet({
     super.key,
     required this.picker,
@@ -13,16 +13,18 @@ class CupertinoPickerSheet extends StatelessWidget {
   final VoidCallback saveOnPressed;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+
     return Container(
       height: 200.h,
-      color: Colors.white,
+      color: isDark ? colors.darkItemColor : Colors.white,
       child: Column(
         children: [
           Row(
             children: [
               SizedBox(width: 15.w),
-              _cancelButton(context),
+              _cancelButton(context, isDark),
               const Spacer(),
               _saveButton(),
               SizedBox(width: 15.w),
@@ -35,10 +37,10 @@ class CupertinoPickerSheet extends StatelessWidget {
   }
 
   /// 変更をキャンセルしてPickerを閉じるボタン
-  Widget _cancelButton(BuildContext context) {
+  Widget _cancelButton(BuildContext context, bool isDark) {
     return CupertinoTextButton(
       text: texts.pickerCancelButton,
-      color: Colors.grey.shade800,
+      color: isDark ? Colors.white : Colors.grey.shade800,
       onPressed: () => Navigator.pop(context),
     );
   }

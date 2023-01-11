@@ -1,8 +1,9 @@
+import '../../constant/colors.dart' as colors;
 import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// 詳細情報を表示する
-class DetailInfo extends StatelessWidget {
+class DetailInfo extends ConsumerWidget {
   const DetailInfo({
     super.key,
     this.paymentCycle,
@@ -13,15 +14,17 @@ class DetailInfo extends StatelessWidget {
   final DateTime? firstPaidOn;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+
     return Column(
       children: [
         const ItemsTitle(title: texts.detailInfoTitle),
         Container(
           width: double.infinity,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            color: Colors.white,
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            color: isDark ? colors.darkItemColor : Colors.white,
           ),
           child: Row(
             children: [

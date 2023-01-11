@@ -12,6 +12,7 @@ class IconList extends ConsumerWidget {
       'images/icon/amazon_prime.png',
       'images/icon/disney_plus.png',
     ];
+    final isDark = ref.watch(darkModeProvider);
 
     final selectImagePath = ref.watch(selectIconImagePathProvider);
 
@@ -39,7 +40,11 @@ class IconList extends ConsumerWidget {
             ),
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
-                isSelected ? colors.appColor : Colors.black,
+                isSelected
+                    ? colors.appColor
+                    : isDark
+                        ? Colors.grey.shade100
+                        : Colors.black,
                 BlendMode.srcIn,
               ),
               child: Image.asset(list[index]),

@@ -1,14 +1,16 @@
 import '../importer.dart';
 
 /// 項目の境界線
-class ItemDivider extends StatelessWidget {
+class ItemDivider extends ConsumerWidget {
   const ItemDivider({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+
     return Container(
-      height: 1.h,
-      color: Colors.grey.shade300,
+      height: 0.5.h,
+      color: isDark ? Colors.grey.shade600 : Colors.black12,
     );
   }
 }

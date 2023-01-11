@@ -2,18 +2,20 @@ import 'package:flutter/cupertino.dart';
 
 import '../../importer.dart';
 
-class IOSConformDialog extends StatelessWidget {
-  const IOSConformDialog({
+class MyConformDialog extends StatelessWidget {
+  const MyConformDialog({
     super.key,
     required this.title,
     required this.content,
     required this.actionText,
+    this.isCaution = true,
     required this.onPressed,
   });
 
   final String title; // タイトル
   final String content; // 内容
   final String actionText; // 実行ボタンテキスト
+  final bool isCaution; //　実行ボタンテキストを赤色にするか
   final VoidCallback onPressed; // 実行ボタン押下時の動作
 
   @override
@@ -44,7 +46,7 @@ class IOSConformDialog extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         actionText,
-        style: const TextStyle(color: Colors.red),
+        style: TextStyle(color: isCaution ? Colors.red : null),
       ),
     );
   }

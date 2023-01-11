@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
-/// ユーザー削除ダイアログを呼び出すボタン
-class DeleteUserButton extends StatelessWidget {
-  const DeleteUserButton({super.key});
+/// 全サブスクリプション削除ダイアログを呼び出すボタン
+class DeleteAllSubscriptionsButton extends StatelessWidget {
+  const DeleteAllSubscriptionsButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +19,14 @@ class DeleteUserButton extends StatelessWidget {
           _text(),
         ],
       ),
+    );
+  }
+
+  /// 全サブスクリプション削除ダイアログを呼び出す
+  void _onPressed(BuildContext context) {
+    showCupertinoDialog<void>(
+      context: context,
+      builder: (_) => const DeleteAllSubscriptionsDialog(),
     );
   }
 
@@ -39,14 +47,6 @@ class DeleteUserButton extends StatelessWidget {
         fontSize: 15.sp,
         color: Colors.red,
       ),
-    );
-  }
-
-  /// ユーザー削除ダイアログを呼び出す
-  void _onPressed(BuildContext context) {
-    showCupertinoDialog<void>(
-      context: context,
-      builder: (_) => const DeleteUserDialog(),
     );
   }
 }

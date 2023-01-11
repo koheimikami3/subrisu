@@ -9,8 +9,6 @@ const linkAccountPage = 'アカウント連携';
 const darkModePage = 'ダークモード';
 
 // ログイン画面ボタンテキスト
-const createAppleUserButton = 'Appleでサインイン';
-const createGoogleUserButton = 'Googleでサインイン';
 const createAnonymousUserButton = 'アカウント登録しないで始める';
 
 // 登録・編集画面ボタンテキスト
@@ -49,9 +47,7 @@ const userDataTitle = 'ユーザー';
 
 // 設定画面項目名
 const paidPlanItem = '広告の非表示';
-const linkAccountItem = 'アカウント連携';
 const notificationItem = 'プッシュ通知';
-const appColorItem = 'テーマカラー';
 const darkModeItem = 'ダークモード';
 const reviewItem = 'レビューを書く';
 const shareItem = 'アプリをシェア';

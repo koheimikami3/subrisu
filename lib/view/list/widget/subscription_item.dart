@@ -12,13 +12,15 @@ class SubscriptionItem extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+
     return Material(
       borderRadius: const BorderRadius.all(Radius.circular(10)),
-      color: Colors.white,
+      color: isDark ? colors.darkItemColor : Colors.white,
       child: InkWell(
         onTap: () => _onTap(context),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
-        highlightColor: Colors.grey.shade300,
+        highlightColor: isDark ? Colors.grey.shade700 : Colors.grey.shade300,
         child: SizedBox(
           height: 57.h,
           width: double.infinity,

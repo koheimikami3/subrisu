@@ -6,15 +6,10 @@ class UserViewModel extends StateNotifier<UserState> {
   final UserRepository repository;
   final Ref ref;
 
-  Future<DocumentSnapshot?> getUser(String userId) async {
+  Future<void> getUser(String userId) async {
     try {
       // UserDocumentを取得
       final userDoc = await repository.getUser(userId);
-
-      // Documentが存在しない場合、NULLを返す
-      if (!userDoc.exists) {
-        return null;
-      }
 
       // stateを更新
       final data = userDoc.data()! as Map;
@@ -23,24 +18,19 @@ class UserViewModel extends StateNotifier<UserState> {
         token: data['token'] as String,
         os: data['os'] as String,
       );
-
-      return userDoc;
     } on Exception catch (_) {
       rethrow;
     }
   }
 
   Future<void> create(String userId) async {
-    final subscriptionRepository =
-        ref.watch(subscriptionViewModelProvider.notifier);
     final messaging = FirebaseMessaging.instance;
     late final String os;
 
     // 端末のOSを取得
     if (Platform.isIOS) {
       os = 'iOS';
-    }
-    if (Platform.isAndroid) {
+    } else {
       os = 'Android';
     }
 
@@ -64,11 +54,6 @@ class UserViewModel extends StateNotifier<UserState> {
         token: token,
         os: data.os,
       );
-
-      // SubscriptionStreamの取得を開始
-      subscriptionRepository.getSubscriptions();
-
-      ref.watch(isUserDataLoadedProvider.notifier).state = true;
     } on Exception catch (_) {
       rethrow;
     }
@@ -77,6 +62,9 @@ class UserViewModel extends StateNotifier<UserState> {
   Future<void> updateToken(String token) async {
     try {
       await repository.updateToken(state.userId, token);
+
+      // stateを更新
+      state = state.copyWith(token: token);
     } on Exception catch (_) {
       rethrow;
     }

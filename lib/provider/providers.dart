@@ -1,14 +1,12 @@
 import 'package:subrisu/importer.dart';
 
-final accountProvider = StateProvider((ref) => '');
+final isUserDataLoadedProvider = StateProvider((ref) => false);
 
 final appVersionProvider = StateProvider((ref) => '');
 
-final themeSettingProvider = StateProvider((ref) => 0);
+final themeProvider = StateProvider((ref) => 0);
 
 final darkModeProvider = StateProvider((ref) => false);
-
-final isUserDataLoadedProvider = StateProvider((ref) => false);
 
 final serviceNameProvider = StateProvider.autoDispose((ref) => '');
 
@@ -17,9 +15,6 @@ final selectIconImagePathProvider = StateProvider.autoDispose((ref) => '');
 final resultIconImagePathProvider = StateProvider.autoDispose((ref) => '');
 
 final priceProvider = StateProvider.autoDispose((ref) => '');
-
-final priceControllerProvider =
-    StateProvider.autoDispose((ref) => TextEditingController(text: ''));
 
 final paymentCycleProvider = StateProvider.autoDispose((ref) => 2);
 
@@ -36,8 +31,4 @@ final userViewModelProvider = StateNotifierProvider<UserViewModel, UserState>(
 final subscriptionViewModelProvider =
     StateNotifierProvider<SubscriptionViewModel, List<QueryDocumentSnapshot>>(
   (ref) => SubscriptionViewModel(SubscriptionRepositoryImpl(), ref),
-);
-
-final deletedUserViewModelProvider = Provider<DeletedUserViewModel>(
-  (ref) => DeletedUserViewModel(DeletedUserRepositoryImpl(), ref),
 );

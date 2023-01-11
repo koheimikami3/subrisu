@@ -9,7 +9,7 @@ class DarkModePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final mode = ref.watch(themeSettingProvider);
+    final mode = ref.watch(themeProvider);
     final isDark = ref.watch(darkModeProvider);
 
     return Scaffold(
@@ -76,7 +76,7 @@ class DarkModePage extends ConsumerWidget {
 
     // 設定を保存
     await prefs.setInt(configs.themeKey, configs.deviceTheme);
-    ref.watch(themeSettingProvider.notifier).state = configs.deviceTheme;
+    ref.watch(themeProvider.notifier).state = configs.deviceTheme;
 
     // 端末のテーマ設定を取得し、ダークモードか判定
     // ignore: use_build_context_synchronously
@@ -91,7 +91,7 @@ class DarkModePage extends ConsumerWidget {
 
     // 設定を保存
     await prefs.setInt(configs.themeKey, configs.lightTheme);
-    ref.watch(themeSettingProvider.notifier).state = configs.lightTheme;
+    ref.watch(themeProvider.notifier).state = configs.lightTheme;
     ref.watch(darkModeProvider.notifier).state = false;
   }
 
@@ -101,7 +101,7 @@ class DarkModePage extends ConsumerWidget {
 
     // 設定を保存
     await prefs.setInt(configs.themeKey, configs.darkTheme);
-    ref.watch(themeSettingProvider.notifier).state = configs.darkTheme;
+    ref.watch(themeProvider.notifier).state = configs.darkTheme;
     ref.watch(darkModeProvider.notifier).state = true;
   }
 }

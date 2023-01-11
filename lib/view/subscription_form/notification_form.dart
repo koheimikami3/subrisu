@@ -10,14 +10,16 @@ class NotificationForm extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+
     return Column(
       children: [
         const ItemsTitle(title: '通知'),
         Container(
           width: double.infinity,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            color: Colors.white,
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            color: isDark ? colors.darkItemColor : Colors.white,
           ),
           child: Row(
             children: [
@@ -25,34 +27,19 @@ class NotificationForm extends ConsumerWidget {
               Expanded(
                 child: DetailItem(
                   title: texts.notificationTitle,
-                  content: _switch(ref),
+                  content: _switch(context, ref),
                 ),
               ),
             ],
           ),
         ),
-        // SizedBox(height: 5.h),
-        // Row(
-        //   children: [
-        //     SizedBox(width: 15.w),
-        //     Expanded(
-        //       child: Text(
-        //         '支払い周期と初回支払い日から通知日を計算します。',
-        //         style: TextStyle(
-        //           fontSize: 12.5.sp,
-        //           color: Colors.black54,
-        //         ),
-        //       ),
-        //     ),
-        //     SizedBox(width: 15.w),
-        //   ],
-        // ),
       ],
     );
   }
 
   /// プッシュ通知のオン・オフを選択するSwitch
-  Widget _switch(WidgetRef ref) {
+  Widget _switch(BuildContext context, WidgetRef ref) {
+    final messaging = FirebaseMessaging.instance;
     final isOn = ref.watch(notificationProvider);
 
     return SizedBox(
@@ -60,9 +47,21 @@ class NotificationForm extends ConsumerWidget {
       child: CupertinoSwitch(
         value: isOn,
         activeColor: colors.appColor,
-        onChanged: (value) {
-          // 変更内容をプロバイダに保存
-          ref.watch(notificationProvider.notifier).state = value;
+        onChanged: (value) async {
+          // プッシュ通知の設定状況を取得
+          final result = await messaging.getNotificationSettings();
+          final status = result.authorizationStatus;
+
+          // スイッチをオンにしようとしているかつ
+          // プッシュ通知の設定がオフになっている場合、通知設定ダイアログを表示
+          if (value == true && status == AuthorizationStatus.denied) {
+            await showCupertinoDialog<void>(
+              context: context,
+              builder: (_) => const NotificationSettingDialog(),
+            );
+          } else {
+            ref.watch(notificationProvider.notifier).state = value;
+          }
         },
       ),
     );

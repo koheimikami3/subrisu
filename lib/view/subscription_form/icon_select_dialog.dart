@@ -7,6 +7,8 @@ class IconSelectDialog extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = ref.watch(darkModeProvider);
+
     return AlertDialog(
       insetPadding: EdgeInsets.all(20.w),
       contentPadding: EdgeInsets.zero,
@@ -21,12 +23,12 @@ class IconSelectDialog extends ConsumerWidget {
             Container(
               height: 45.h,
               width: double.infinity,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
-                color: colors.appColor,
+                color: isDark ? colors.darkBackgroundColor : colors.appColor,
               ),
               child: Stack(
                 children: [

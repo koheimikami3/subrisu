@@ -89,4 +89,15 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
       rethrow;
     }
   }
+
+  Future<void> allDelete() async {
+    final userId = ref.watch(userViewModelProvider).userId;
+
+    try {
+      // 全てのSubscriptionDocumentを削除
+      await repository.allDelete(userId);
+    } on Exception catch (_) {
+      rethrow;
+    }
+  }
 }

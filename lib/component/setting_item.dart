@@ -52,7 +52,7 @@ class SettingItem extends ConsumerWidget {
                     : bottomItem
                         ? _bottomRadius()
                         : null,
-        highlightColor: Colors.black26,
+        highlightColor: isDark ? Colors.grey.shade700 : Colors.black26,
         splashFactory: NoSplash.splashFactory,
         child: Row(
           children: [
@@ -78,7 +78,7 @@ class SettingItem extends ConsumerWidget {
                     ],
                   ),
                   SizedBox(height: 10.w),
-                  if (topItem || middleItem) _divider(),
+                  if (topItem || middleItem) const ItemDivider(),
                 ],
               ),
             ),
@@ -131,14 +131,6 @@ class SettingItem extends ConsumerWidget {
         fontSize: 13.sp,
         color: color,
       ),
-    );
-  }
-
-  /// 項目境界線を表示する
-  Container _divider() {
-    return Container(
-      height: 0.5.h,
-      color: Colors.black12,
     );
   }
 }
