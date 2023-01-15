@@ -5,7 +5,7 @@ const listPage = 'リスト';
 const createPage = '新規登録';
 const editPage = '編集';
 const settingsPage = '設定';
-const linkAccountPage = 'アカウント連携';
+const billingPage = '広告の非表示';
 const darkModePage = 'ダークモード';
 
 // ログイン画面ボタンテキスト
@@ -54,6 +54,10 @@ const shareItem = 'アプリをシェア';
 const tosItem = '利用規約';
 const privacyPolicyItem = 'プライバシーポリシー';
 const appVersionItem = 'アプリのバージョン';
+
+// 課金画面項目名
+const removeAdsItem = '広告を非表示にする';
+const restoreItem = '購入を復元する';
 
 // ダークモード画面項目名
 const deviceSettingItem = '端末設定と同じ';

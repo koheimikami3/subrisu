@@ -122,7 +122,7 @@ class SettingItem extends ConsumerWidget {
     var color = Colors.black54;
 
     if (isDark) {
-      color = Colors.grey.shade400;
+      color = Colors.grey.shade300;
     }
 
     return Text(

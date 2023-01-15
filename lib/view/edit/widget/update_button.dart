@@ -15,6 +15,9 @@ class UpdateButton extends ConsumerWidget {
     final serviceName = ref.watch(serviceNameProvider);
     final price = ref.watch(priceProvider);
 
+    // 変更を正常に監視するために処理を行う
+    ref.watch(memoProvider);
+
     return MyCupertinoButton(
       text: texts.updateSubscriptionButton,
       onPressed: serviceName == '' || price == ''

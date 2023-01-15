@@ -14,12 +14,9 @@ class PaidPlan extends StatelessWidget {
           independenceItem: true,
           leadingIcon: Icons.hide_image_outlined,
           itemName: texts.paidPlanItem,
-          onTap: () => _onTap(context),
+          onTap: () => Navigator.pushNamed(context, '/billing'),
         ),
       ],
     );
   }
-
-  /// 有料プラン画面に遷移する
-  void _onTap(BuildContext context) {}
 }

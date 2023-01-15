@@ -184,7 +184,7 @@ class SubscriptionItem extends ConsumerWidget {
     return Text(
       text,
       style: TextStyle(
-        color: text == '今日' ? Colors.red : Colors.black,
+        color: text == '今日' ? Colors.red : null,
       ),
     );
   }

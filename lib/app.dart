@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+
 import 'importer.dart';
 
 class MyApp extends ConsumerStatefulWidget {
@@ -58,6 +59,7 @@ class _MyAppState extends ConsumerState<MyApp> {
           initialRoute: '/',
           routes: {
             '/settings': (_) => const SettingsPage(),
+            '/billing': (_) => const BillingPage(),
             '/darkMode': (_) => const DarkModePage(),
             '/bottomNav': (_) => const BottomNavBar(),
           },
