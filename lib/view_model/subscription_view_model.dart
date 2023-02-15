@@ -7,21 +7,19 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
   final Ref ref;
 
   void getSubscriptions() {
-    final userId = ref.watch(userViewModelProvider).userId;
+    // watchを使用すると初回起動時に例外が発生
+    final userId = ref.read(userViewModelProvider).userId;
 
-    try {
-      final stream = repository.getSubscriptions(userId);
+    repository.getSubscriptions(userId).listen((subscriptions) {
+      state = subscriptions.docs;
 
-      stream.listen((query) {
-        state = query.docs;
-      });
-    } on Exception catch (_) {
-      rethrow;
-    }
+      // リスト画面のプログレスダイアログを閉じる
+      ref.read(isUserLoadedProvider.notifier).state = true;
+    });
   }
 
   Future<void> create() async {
-    final userId = ref.watch(userViewModelProvider).userId;
+    final userId = ref.read(userViewModelProvider).userId;
     final serviceName = ref.read(serviceNameProvider);
     final price = ref.read(priceProvider);
     final iconImagePath = ref.read(resultIconImagePathProvider);
@@ -50,7 +48,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
   }
 
   Future<void> update(String subscId, DateTime createdAt) async {
-    final userId = ref.watch(userViewModelProvider).userId;
+    final userId = ref.read(userViewModelProvider).userId;
     final serviceName = ref.read(serviceNameProvider);
     final price = ref.read(priceProvider);
     final iconImagePath = ref.read(resultIconImagePathProvider);
@@ -80,7 +78,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
   }
 
   Future<void> delete(String subscriptionId) async {
-    final userId = ref.watch(userViewModelProvider).userId;
+    final userId = ref.read(userViewModelProvider).userId;
 
     try {
       // SubscriptionDocumentを削除
@@ -91,7 +89,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
   }
 
   Future<void> allDelete() async {
-    final userId = ref.watch(userViewModelProvider).userId;
+    final userId = ref.read(userViewModelProvider).userId;
 
     try {
       // 全てのSubscriptionDocumentを削除

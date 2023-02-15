@@ -2,11 +2,11 @@ import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// 設定画面のUIを作成する
-class SettingsPage extends ConsumerWidget {
+class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(texts.settingsPage),
@@ -27,9 +27,7 @@ class SettingsPage extends ConsumerWidget {
                   const Supports(),
                   SizedBox(height: 25.h),
                   const AppVersion(),
-                  SizedBox(height: 15.h),
-                  const DeleteAllSubscriptionsButton(),
-                  SizedBox(height: 15.h),
+                  SizedBox(height: 30.h),
                 ],
               ),
             ),

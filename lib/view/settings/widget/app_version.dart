@@ -2,12 +2,12 @@ import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// アプリバージョン項目を表示する
-class AppVersion extends ConsumerWidget {
+class AppVersion extends StatelessWidget {
   const AppVersion({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final version = ref.watch(appVersionProvider);
+  Widget build(BuildContext context) {
+    final packageInfo = GetIt.I<PackageInfo>();
 
     return Column(
       children: [
@@ -16,7 +16,7 @@ class AppVersion extends ConsumerWidget {
           independenceItem: true,
           leadingIcon: Icons.info_outline,
           itemName: texts.appVersionItem,
-          trailing: Text(version),
+          trailing: Text(packageInfo.version),
           onTap: null,
         ),
       ],

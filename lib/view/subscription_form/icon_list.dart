@@ -7,13 +7,12 @@ class IconList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     const list = [
-      'images/icon/squirrel.png',
+      'images/icon/subrisu.png',
       'images/icon/netflix.png',
       'images/icon/amazon_prime.png',
       'images/icon/disney_plus.png',
     ];
     final isDark = ref.watch(darkModeProvider);
-
     final selectImagePath = ref.watch(selectIconImagePathProvider);
 
     return GridView.builder(

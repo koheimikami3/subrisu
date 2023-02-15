@@ -9,6 +9,9 @@ class IconSelectButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final iconImagePath = ref.watch(resultIconImagePathProvider);
 
+    //「icon_list」で初期値を反映できるようにこちらで監視する
+    ref.watch(selectIconImagePathProvider);
+
     return GestureDetector(
       onTap: () {
         showDialog<void>(

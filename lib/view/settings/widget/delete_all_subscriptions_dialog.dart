@@ -20,7 +20,7 @@ class DeleteAllSubscriptionsDialog extends ConsumerWidget {
 
   /// 全てのサブスクリプションデータを削除する
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
-    final repository = ref.watch(subscriptionViewModelProvider.notifier);
+    final repository = ref.read(subscriptionViewModelProvider.notifier);
     var err = '';
 
     // プログレスダイアログを表示

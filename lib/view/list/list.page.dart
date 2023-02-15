@@ -1,7 +1,7 @@
 import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
-/// リスト画面のUIを作成する
+/// リスト画面
 class ListPage extends ConsumerStatefulWidget {
   const ListPage({super.key});
 
@@ -14,13 +14,22 @@ class _ListPageState extends ConsumerState<ListPage> {
   void initState() {
     super.initState();
 
-    // プッシュ通知設定ダイアログの表示状況を取得し、初めての場合は表示する
-    AppManager.getNotification();
+    // 例外が発生しないように画面描画後に処理を実行
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // 強制アップデート対象の場合、ダイアログを表示
+      AppManager.checkForceAppVersion(context);
+
+      // アップデート内容表示対象の場合、ダイアログを表示
+      AppManager.checkUpdateContents(context);
+
+      // 初回起動の場合、プッシュ通知設定ダイアログを表示
+      AppManager.checkNotificationSetting();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final isUserDataLoaded = ref.watch(isUserDataLoadedProvider);
+    final isUserLoaded = ref.watch(isUserLoadedProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -28,17 +37,9 @@ class _ListPageState extends ConsumerState<ListPage> {
         automaticallyImplyLeading: false,
       ),
       floatingActionButton: const CreatePageButton(),
-      body: !isUserDataLoaded
+      body: !isUserLoaded
           ? const Center(child: LoadingIndicator())
-          : SingleChildScrollView(
-              child: Row(
-                children: [
-                  SizedBox(width: 20.w),
-                  const Expanded(child: SubscriptionList()),
-                  SizedBox(width: 20.w),
-                ],
-              ),
-            ),
+          : const SubscriptionList(),
     );
   }
 }

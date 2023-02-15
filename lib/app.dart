@@ -18,35 +18,31 @@ class _MyAppState extends ConsumerState<MyApp> {
   @override
   void initState() {
     super.initState();
-    final userManager = UserManager();
-
     // テーマ設定状況を取得し、アプリに反映
     AppManager.getTheme(context, ref);
 
-    // アプリバージョンを取得
-    AppManager.getVersion(ref);
+    // 購入処理機能を初期化
+    AppManager.initPurchases();
 
     // サインインしていない場合、匿名サインインを行い、ユーザーデータを作成
     if (widget.user == null) {
-      userManager.anonymousSingnIn(ref);
+      UserManager.anonymousSingnIn(ref);
     }
 
     // サインインしてる場合、ユーザーデータを取得
     if (widget.user != null) {
-      userManager.getUserData(ref);
+      UserManager.getUserData(ref);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final appTheme = AppTheme();
     final isDark = ref.watch(darkModeProvider);
 
     return ScreenUtilInit(
-      designSize: const Size(360, 690),
       builder: (_, __) {
         return MaterialApp(
-          theme: isDark ? appTheme.darkTheme() : appTheme.lightTheme(),
+          theme: isDark ? AppTheme.dark() : AppTheme.light(),
           debugShowCheckedModeBanner: false,
           locale: const Locale('ja', 'JP'),
           supportedLocales: const [Locale('ja', 'JP')],
@@ -61,6 +57,8 @@ class _MyAppState extends ConsumerState<MyApp> {
             '/settings': (_) => const SettingsPage(),
             '/billing': (_) => const BillingPage(),
             '/darkMode': (_) => const DarkModePage(),
+            '/tos': (_) => const TosPage(),
+            '/privacyPolicy': (_) => const PrivacyPolicyPage(),
             '/bottomNav': (_) => const BottomNavBar(),
           },
           home: const BottomNavBar(),

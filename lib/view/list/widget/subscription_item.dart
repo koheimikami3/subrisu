@@ -71,7 +71,7 @@ class SubscriptionItem extends ConsumerWidget {
     imagePath = subscriptionDoc.get('iconImagePath') as String;
 
     if (imagePath == '') {
-      imagePath = 'images/icon/squirrel.png';
+      imagePath = 'images/icon/subrisu.png';
     }
 
     return ColorFiltered(

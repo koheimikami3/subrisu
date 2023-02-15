@@ -7,6 +7,8 @@ const editPage = '編集';
 const settingsPage = '設定';
 const billingPage = '広告の非表示';
 const darkModePage = 'ダークモード';
+const tosPage = '利用規約';
+const privacyPolicyPage = 'プライバシーポリシー';
 
 // ログイン画面ボタンテキスト
 const createAnonymousUserButton = 'アカウント登録しないで始める';

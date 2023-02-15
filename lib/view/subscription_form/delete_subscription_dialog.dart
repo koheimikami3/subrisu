@@ -11,8 +11,8 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    const title = 'サブスクリプション削除';
-    const content = 'データを削除してもよろしいですか？';
+    const title = '確認';
+    const content = 'サブスクリプションデータを削除してもよろしいですか？';
     const actionText = '削除';
 
     return MyConformDialog(
@@ -25,7 +25,7 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
 
   /// サブスクリプションを削除し、リスト画面に戻る
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
-    final repository = ref.watch(subscriptionViewModelProvider.notifier);
+    final repository = ref.read(subscriptionViewModelProvider.notifier);
     var err = '';
 
     // プログレスダイアログを表示

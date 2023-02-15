@@ -11,7 +11,7 @@ class Apps extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(themeProvider);
-    var themeText = '';
+    late final String themeText;
 
     // テーマ設定状況を取得
     if (theme == configs.deviceTheme) {

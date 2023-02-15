@@ -1,14 +1,30 @@
+import 'dart:async';
+import 'package:flutter/cupertino.dart';
+
 import '../constant/configs.dart' as configs;
 import '../importer.dart';
 
 class AppManager {
-  const AppManager();
+  AppManager();
 
-  /// アプリバージョンを取得し、プロバイダに保存する
-  static Future<void> getVersion(WidgetRef ref) async {
-    final packageInfo = await PackageInfo.fromPlatform();
+  /// 購入処理で使用するRevenueCatAPIを初期化する
+  static Future<void> initPurchases() async {
+    await Purchases.setLogLevel(LogLevel.debug);
+    late final String apiKey;
 
-    ref.watch(appVersionProvider.notifier).state = packageInfo.version;
+    // OSに対応したAPIKeyを取得
+    if (Platform.isIOS) {
+      apiKey = configs.revenueCatIOSKey;
+    } else if (Platform.isAndroid) {
+      apiKey = configs.revenueCatAndroidKey;
+    }
+
+    // RevenueCatAPIを初期化
+    await Purchases.configure(PurchasesConfiguration(apiKey));
+
+    // final customerInfo = await Purchases.getCustomerInfo();
+    // customerInfo.entitlements.all;
+    // final offerings = await Purchases.getOfferings();
   }
 
   /// テーマの設定状況を取得し、アプリに反映する
@@ -20,30 +36,87 @@ class AppManager {
 
     // 「端末設定と同じ」の場合、端末のテーマ設定を取得し、ダークモードか判定
     if (theme == configs.deviceTheme) {
-      ref.watch(themeProvider.notifier).state = configs.deviceTheme;
+      ref.read(themeProvider.notifier).state = configs.deviceTheme;
 
       final brightness = MediaQuery.platformBrightnessOf(context);
       final isDark = brightness == Brightness.dark;
-      ref.watch(darkModeProvider.notifier).state = isDark;
+      ref.read(darkModeProvider.notifier).state = isDark;
     }
 
     // 「ライトモード」の場合
     if (theme == configs.lightTheme) {
-      ref.watch(themeProvider.notifier).state = configs.lightTheme;
-      ref.watch(darkModeProvider.notifier).state = false;
+      ref.read(themeProvider.notifier).state = configs.lightTheme;
+      ref.read(darkModeProvider.notifier).state = false;
     }
 
     // 「ダークモード」の場合
     if (theme == configs.darkTheme) {
-      ref.watch(themeProvider.notifier).state = configs.darkTheme;
-      ref.watch(darkModeProvider.notifier).state = true;
+      ref.read(themeProvider.notifier).state = configs.darkTheme;
+      ref.read(darkModeProvider.notifier).state = true;
+    }
+  }
+
+  static void checkForceAppVersion(BuildContext context) {
+    final remoteConfig = FirebaseRemoteConfig.instance;
+    final packageInfo = GetIt.I<PackageInfo>();
+    late final String strForceAppVersion;
+
+    // 強制アップデートバージョンを取得
+    if (Platform.isIOS) {
+      strForceAppVersion = remoteConfig.getString('forceAppVersionIOS');
+    } else {
+      strForceAppVersion = remoteConfig.getString('forceAppVersionAndroid');
+    }
+    final forceAppVersion = Version.parse(strForceAppVersion);
+
+    // アプリの現在バージョンを取得
+    final currentVersion = Version.parse(packageInfo.version);
+
+    // 現在バージョンが強制アップデートバージョンより低い場合、
+    // 強制アップデートダイアログを表示
+    if (currentVersion < forceAppVersion) {
+      ForceUpdateDialog.show(context, strForceAppVersion);
+    }
+  }
+
+  static Future<void> checkUpdateContents(BuildContext context) async {
+    final remoteConfig = FirebaseRemoteConfig.instance;
+    final packageInfo = GetIt.I<PackageInfo>();
+    late final String strInfoVersion;
+    late final String updateContents;
+
+    // アップデート内容と表示するバージョンを取得
+    if (Platform.isIOS) {
+      strInfoVersion = remoteConfig.getString('infoVersionIOS');
+      updateContents = remoteConfig.getString('updateContentsIOS');
+    } else {
+      strInfoVersion = remoteConfig.getString('infoVersionAndroid');
+      updateContents = remoteConfig.getString('updateContentsAndroid');
+    }
+    final infoVersion = Version.parse(strInfoVersion);
+
+    // アプリの現在バージョンを取得
+    final currentVersion = Version.parse(packageInfo.version);
+
+    // 現在バージョンが表示バージョン以上の場合、
+    // アップデート内容ダイアログを表示
+    if (currentVersion >= infoVersion) {
+      unawaited(
+        showCupertinoDialog<void>(
+          context: context,
+          builder: (_) => UpdateContentsDialog(
+            version: strInfoVersion,
+            contents: updateContents,
+          ),
+        ),
+      );
     }
   }
 
   /// プッシュ通知設定ダイアログの表示状況を取得し、初めての場合は表示する
-  static Future<void> getNotification() async {
+  static Future<void> checkNotificationSetting() async {
+    final prefs = GetIt.I<SharedPreferences>();
     final messaging = FirebaseMessaging.instance;
-    final prefs = await SharedPreferences.getInstance();
 
     // プッシュ通知設定ダイアログの表示状況を取得
     final notification = prefs.getBool(configs.notificationKey) ?? false;

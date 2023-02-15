@@ -39,15 +39,16 @@ class _EditPageState extends ConsumerState<EditPage> {
     memo = data['memo'] as String;
 
     // 取得したデータを各プロバイダの初期値として保存
-    // エラーが発生しないよう画面描画後に処理を行う
+    // 例外が発生しないように画面描画後に処理を実行
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref.watch(serviceNameProvider.notifier).state = serviceName;
-      ref.watch(priceProvider.notifier).state = price;
-      ref.watch(resultIconImagePathProvider.notifier).state = iconImagePath;
-      ref.watch(paymentCycleProvider.notifier).state = paymentCycle;
-      ref.watch(firstPaidOnProvider.notifier).state = firstPaidOn;
-      ref.watch(notificationProvider.notifier).state = notification;
-      ref.watch(memoProvider.notifier).state = memo;
+      ref.read(serviceNameProvider.notifier).state = serviceName;
+      ref.read(priceProvider.notifier).state = price;
+      ref.read(selectIconImagePathProvider.notifier).state = iconImagePath;
+      ref.read(resultIconImagePathProvider.notifier).state = iconImagePath;
+      ref.read(paymentCycleProvider.notifier).state = paymentCycle;
+      ref.read(firstPaidOnProvider.notifier).state = firstPaidOn;
+      ref.read(notificationProvider.notifier).state = notification;
+      ref.read(memoProvider.notifier).state = memo;
     });
   }
 

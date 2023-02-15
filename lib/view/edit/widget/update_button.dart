@@ -27,7 +27,7 @@ class UpdateButton extends ConsumerWidget {
   }
 
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
-    final repository = ref.watch(subscriptionViewModelProvider.notifier);
+    final repository = ref.read(subscriptionViewModelProvider.notifier);
     final subscriptionId = subscriptionDoc.id;
     final timestamp = subscriptionDoc.get('createdAt') as Timestamp;
     final createdAt = timestamp.toDate();

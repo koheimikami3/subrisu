@@ -1,8 +1,6 @@
 import 'package:subrisu/importer.dart';
 
-final isUserDataLoadedProvider = StateProvider((ref) => false);
-
-final appVersionProvider = StateProvider((ref) => '');
+final isUserLoadedProvider = StateProvider((ref) => false);
 
 final themeProvider = StateProvider((ref) => 0);
 

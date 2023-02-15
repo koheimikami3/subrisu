@@ -112,7 +112,6 @@ class SettingItem extends ConsumerWidget {
     return Icon(
       leadingIcon,
       size: 21,
-      color: Colors.grey.shade600,
     );
   }
 

@@ -10,6 +10,15 @@ const androidReleaseAdId = '';
 // Androidデバッグ用広告ID
 const androidDebugAdId = 'ca-app-pub-3940256099942544/6300978111';
 
+// RevenueCatのiOSのAPIキー
+const revenueCatIOSKey = 'appl_yORKVOBsdmCjJuxAtNvpitjFsuD';
+
+// RevenueCatのAndroidのAPIキー
+const revenueCatAndroidKey = '';
+
+// RevenueCatのEntitlementID
+const entitlementId = 'remove_ads';
+
 // テキストデフォルトフォントサイズ
 const defaultFontSize = 13.5;
 

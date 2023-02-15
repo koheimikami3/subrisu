@@ -19,7 +19,7 @@ class RegisterButton extends ConsumerWidget {
   }
 
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
-    final repository = ref.watch(subscriptionViewModelProvider.notifier);
+    final repository = ref.read(subscriptionViewModelProvider.notifier);
     var err = '';
 
     // TextFieldのフォーカスを解除
