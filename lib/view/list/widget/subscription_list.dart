@@ -19,7 +19,7 @@ class SubscriptionList extends ConsumerWidget {
                     colors.appColor,
                     BlendMode.srcIn,
                   ),
-                  child: Image.asset('images/icon/subrisu.png'),
+                  child: Image.asset('images/subscription/subrisu.png'),
                 ),
                 _noData(),
               ],

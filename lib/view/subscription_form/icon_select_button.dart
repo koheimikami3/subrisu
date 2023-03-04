@@ -14,6 +14,12 @@ class IconSelectButton extends ConsumerWidget {
 
     return GestureDetector(
       onTap: () {
+        if (iconImagePath == '') {
+          ref.read(selectIconImagePathProvider.notifier).state = '';
+        } else {
+          ref.read(selectIconImagePathProvider.notifier).state = iconImagePath;
+        }
+
         showDialog<void>(
           context: context,
           builder: (_) => const IconSelectDialog(),

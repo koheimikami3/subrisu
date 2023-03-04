@@ -18,15 +18,40 @@ class FirstPaidOnForm extends ConsumerStatefulWidget {
 }
 
 class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
-  DateTime _selectedDateTime = DateTime.now();
+  late int _selectedYear;
+  late int _selectedMonth;
+  late int _selectedDay;
+  late final List<int> _yearList = [];
+  late final List<int> _monthList = [];
+  late final List<int> _dayList = [];
+
+  // final _thirtyDayList = [4, 6, 9, 11];
 
   @override
   void initState() {
     super.initState();
+    late DateTime datetime;
 
-    if (widget.firstPaidOn != null) {
-      _selectedDateTime = widget.firstPaidOn!;
+    // 年月日リストを作成
+    for (var i = 1990; i < 2031; i++) {
+      _yearList.add(i);
     }
+    for (var i = 1; i < 13; i++) {
+      _monthList.add(i);
+    }
+    for (var i = 1; i < 32; i++) {
+      _dayList.add(i);
+    }
+
+    // 初期値を作成
+    if (widget.firstPaidOn != null) {
+      datetime = widget.firstPaidOn!;
+    } else {
+      datetime = DateTime.now();
+    }
+    _selectedYear = _yearList.indexOf(datetime.year);
+    _selectedMonth = _monthList.indexOf(datetime.month);
+    _selectedDay = _dayList.indexOf(datetime.day);
   }
 
   @override
@@ -38,7 +63,10 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
   }
 
   Widget _selectButton() {
-    final dateTime = ref.watch(firstPaidOnProvider);
+    final year = ref.watch(firstPaidYearProvider);
+    final month = ref.watch(firstPaidMonthProvider);
+    final day = ref.watch(firstPaidDayProvider);
+    final dateTime = DateTime(year, month, day);
     final text = DateFormat.yMMMMd('ja').format(dateTime);
 
     return GestureDetector(
@@ -61,7 +89,13 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
       context: context,
       builder: (_) {
         return CupertinoPickerSheet(
-          picker: _picker(),
+          picker: Row(
+            children: [
+              Expanded(child: _yearPicker()),
+              Expanded(child: _monthPicker()),
+              Expanded(child: _datePicker()),
+            ],
+          ),
           saveOnPressed: _saveOnPressed,
         );
       },
@@ -70,21 +104,71 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
 
   /// 変更内容をプロバイダに保存し、画面に反映する
   void _saveOnPressed() {
-    // 変更内容をプロバイダに保存
-    ref.watch(firstPaidOnProvider.notifier).state = _selectedDateTime;
+    // 選択した年月日を取得
+    final year = _yearList[_selectedYear];
+    final month = _monthList[_selectedMonth];
+    final day = _dayList[_selectedDay];
+
+    // 選択内容をプロバイダに保存
+    ref.read(firstPaidYearProvider.notifier).state = year;
+    ref.read(firstPaidMonthProvider.notifier).state = month;
+    ref.read(firstPaidDayProvider.notifier).state = day;
 
     // Pickerを閉じる
     Navigator.pop(context);
   }
 
-  /// 初回支払い日を選択するPicker
-  Widget _picker() {
-    return CupertinoDatePicker(
-      initialDateTime: _selectedDateTime,
-      mode: CupertinoDatePickerMode.date,
-      onDateTimeChanged: (value) {
-        _selectedDateTime = value;
+  /// 年を選択するPicker
+  Widget _yearPicker() {
+    return CupertinoPicker(
+      itemExtent: 40.h,
+      scrollController: FixedExtentScrollController(
+        initialItem: _selectedYear,
+      ),
+      onSelectedItemChanged: (value) {
+        _selectedYear = value;
       },
+      children: [
+        for (int i = 0; i < _yearList.length; i++) ...{
+          Center(child: Text('${_yearList[i]}年')),
+        },
+      ],
+    );
+  }
+
+  /// 月を選択するPicker
+  Widget _monthPicker() {
+    return CupertinoPicker(
+      itemExtent: 40.h,
+      scrollController: FixedExtentScrollController(
+        initialItem: _selectedMonth,
+      ),
+      onSelectedItemChanged: (value) {
+        _selectedMonth = value;
+      },
+      children: [
+        for (int i = 0; i < _monthList.length; i++) ...{
+          Center(child: Text('${_monthList[i]}月')),
+        },
+      ],
+    );
+  }
+
+  /// 日を選択するPicker
+  Widget _datePicker() {
+    return CupertinoPicker(
+      itemExtent: 40.h,
+      scrollController: FixedExtentScrollController(
+        initialItem: _selectedDay,
+      ),
+      onSelectedItemChanged: (value) {
+        _selectedDay = value;
+      },
+      children: [
+        for (int i = 0; i < _dayList.length; i++) ...{
+          Center(child: Text('${_dayList[i]}日')),
+        },
+      ],
     );
   }
 }

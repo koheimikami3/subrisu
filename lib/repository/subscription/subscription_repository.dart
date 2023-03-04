@@ -8,6 +8,4 @@ abstract class SubscriptionRepository {
   Future<void> update(String userId, String subscId, SubscriptionData data);
 
   Future<void> delete(String userId, String subscriptionId);
-
-  Future<void> allDelete(String userId);
 }

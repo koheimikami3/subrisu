@@ -46,7 +46,9 @@ class _EditPageState extends ConsumerState<EditPage> {
       ref.read(selectIconImagePathProvider.notifier).state = iconImagePath;
       ref.read(resultIconImagePathProvider.notifier).state = iconImagePath;
       ref.read(paymentCycleProvider.notifier).state = paymentCycle;
-      ref.read(firstPaidOnProvider.notifier).state = firstPaidOn;
+      ref.read(firstPaidYearProvider.notifier).state = firstPaidOn.year;
+      ref.read(firstPaidMonthProvider.notifier).state = firstPaidOn.month;
+      ref.read(firstPaidDayProvider.notifier).state = firstPaidOn.day;
       ref.read(notificationProvider.notifier).state = notification;
       ref.read(memoProvider.notifier).state = memo;
     });

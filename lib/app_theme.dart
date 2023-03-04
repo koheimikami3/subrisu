@@ -2,6 +2,7 @@ import 'constant/colors.dart' as colors;
 import 'constant/configs.dart' as configs;
 import 'importer.dart';
 
+/// アプリのテーマ設定
 class AppTheme {
   const AppTheme();
 

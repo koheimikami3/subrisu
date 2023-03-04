@@ -79,10 +79,8 @@ class DarkModePage extends ConsumerWidget {
     ref.read(themeProvider.notifier).state = configs.deviceTheme;
 
     // 端末のテーマ設定を取得し、ダークモードか判定
-    // ignore: use_build_context_synchronously
     final brightness = MediaQuery.platformBrightnessOf(context);
-    final isDark = brightness == Brightness.dark;
-    ref.read(darkModeProvider.notifier).state = isDark;
+    ref.read(darkModeProvider.notifier).state = brightness == Brightness.dark;
   }
 
   /// テーマ設定をライトモードにする

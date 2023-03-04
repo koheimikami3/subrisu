@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 
 import '../constant/configs.dart' as configs;
@@ -8,23 +9,32 @@ class AppManager {
   AppManager();
 
   /// 購入処理で使用するRevenueCatAPIを初期化する
-  static Future<void> initPurchases() async {
+  ///
+  /// 課金ユーザーの場合はバナー広告を非表示にする
+  static Future<void> initPurchases(WidgetRef ref) async {
     await Purchases.setLogLevel(LogLevel.debug);
-    late final String apiKey;
-
-    // OSに対応したAPIKeyを取得
-    if (Platform.isIOS) {
-      apiKey = configs.revenueCatIOSKey;
-    } else if (Platform.isAndroid) {
-      apiKey = configs.revenueCatAndroidKey;
-    }
+    final apiKey = Platform.isIOS
+        ? configs.revenueCatIOSKey
+        : configs.revenueCatAndroidKey;
 
     // RevenueCatAPIを初期化
     await Purchases.configure(PurchasesConfiguration(apiKey));
 
-    // final customerInfo = await Purchases.getCustomerInfo();
-    // customerInfo.entitlements.all;
-    // final offerings = await Purchases.getOfferings();
+    // 課金ユーザーか判定
+    final customerInfo = await Purchases.getCustomerInfo();
+    final entitlementInfo =
+        customerInfo.entitlements.all[configs.entitlementId];
+
+    // 課金ユーザーの場合、バナー広告を非表示にする
+    if (entitlementInfo != null && entitlementInfo.isActive) {
+      ref.read(isPurchasedProvider.notifier).state = true;
+    }
+  }
+
+  /// 端末設定がダークモードか判定する
+  static bool isDarkMode(BuildContext context) {
+    final brightness = MediaQuery.platformBrightnessOf(context);
+    return brightness == Brightness.dark;
   }
 
   /// テーマの設定状況を取得し、アプリに反映する
@@ -37,10 +47,7 @@ class AppManager {
     // 「端末設定と同じ」の場合、端末のテーマ設定を取得し、ダークモードか判定
     if (theme == configs.deviceTheme) {
       ref.read(themeProvider.notifier).state = configs.deviceTheme;
-
-      final brightness = MediaQuery.platformBrightnessOf(context);
-      final isDark = brightness == Brightness.dark;
-      ref.read(darkModeProvider.notifier).state = isDark;
+      ref.read(darkModeProvider.notifier).state = isDarkMode(context);
     }
 
     // 「ライトモード」の場合

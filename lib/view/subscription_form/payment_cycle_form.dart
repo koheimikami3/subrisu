@@ -64,7 +64,7 @@ class _PaymentCycleFormState extends ConsumerState<PaymentCycleForm> {
           picker: _picker(),
           saveOnPressed: () {
             // 変更内容をプロバイダに保存
-            ref.watch(paymentCycleProvider.notifier).state = _selectedIndex;
+            ref.read(paymentCycleProvider.notifier).state = _selectedIndex;
 
             // Pickerを閉じる
             Navigator.pop(context);

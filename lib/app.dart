@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-
 import 'importer.dart';
 
 class MyApp extends ConsumerStatefulWidget {
@@ -8,7 +7,7 @@ class MyApp extends ConsumerStatefulWidget {
     required this.user,
   });
 
-  final User? user; // ユーザー
+  final User? user; // Firebaseにサインインしているユーザー
 
   @override
   ConsumerState<MyApp> createState() => _MyAppState();
@@ -18,21 +17,63 @@ class _MyAppState extends ConsumerState<MyApp> {
   @override
   void initState() {
     super.initState();
-    // テーマ設定状況を取得し、アプリに反映
-    AppManager.getTheme(context, ref);
 
-    // 購入処理機能を初期化
-    AppManager.initPurchases();
+    // 購入処理機能を初期化し、課金状況をアプリに反映
+    AppManager.initPurchases(ref);
 
-    // サインインしていない場合、匿名サインインを行い、ユーザーデータを作成
-    if (widget.user == null) {
-      UserManager.anonymousSingnIn(ref);
+    // ログインする
+    // 例外発生時のプロバイダ処理を正常に行うため、
+    // 画面描画後に処理を実行
+    WidgetsBinding.instance.addPostFrameCallback((_) => login());
+  }
+
+  /// アプリの使用に必要なユーザーデータを取得する
+  Future<void> login() async {
+    final auth = FirebaseAuth.instance;
+    final messaging = FirebaseMessaging.instance;
+    final userRepository = ref.read(userViewModelProvider.notifier);
+    final subscriptionRepository =
+        ref.read(subscriptionViewModelProvider.notifier);
+
+    try {
+      // Firebaseにサインインしていない場合
+      if (widget.user == null) {
+        // 匿名サインインを実施
+        final credential = await auth.signInAnonymously();
+
+        // 結果から認証IDを取得
+        final userId = credential.user!.uid;
+
+        // UserDocumentを作成
+        // 認証IDをドキュメントIDとする
+        await userRepository.create(userId);
+      }
+
+      // Firebaseにサインインしている場合、
+      // UserDocumentを取得
+      if (widget.user != null) {
+        await userRepository.getUser(auth.currentUser!.uid);
+      }
+    } on Exception {
+      // リスト画面にログインエラーメッセージを表示
+      ref.read(loginErrorProvider.notifier).state = true;
+      return;
     }
 
-    // サインインしてる場合、ユーザーデータを取得
-    if (widget.user != null) {
-      UserManager.getUserData(ref);
+    // SubscriptionStreamの取得を開始
+    subscriptionRepository.getSubscriptions();
+
+    // UserDocumentと端末のFCMTokenを取得
+    final userToken = ref.read(userViewModelProvider).token;
+    final deviceToken = await messaging.getToken();
+
+    // Tokenが一致しない場合、UserDocumentのtokenを更新
+    if (userToken != deviceToken) {
+      userRepository.updateToken(deviceToken!);
     }
+
+    // Tokenが何らかの原因で更新された場合、UserDocumentのtokenを更新
+    messaging.onTokenRefresh.listen(userRepository.updateToken);
   }
 
   @override

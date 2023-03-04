@@ -30,16 +30,33 @@ class _ListPageState extends ConsumerState<ListPage> {
   @override
   Widget build(BuildContext context) {
     final isUserLoaded = ref.watch(isUserLoadedProvider);
+    final loginError = ref.watch(loginErrorProvider);
 
     return Scaffold(
       appBar: AppBar(
         title: const Text(texts.listPage),
         automaticallyImplyLeading: false,
       ),
-      floatingActionButton: const CreatePageButton(),
-      body: !isUserLoaded
-          ? const Center(child: LoadingIndicator())
-          : const SubscriptionList(),
+      floatingActionButton: loginError ? null : const CreatePageButton(),
+      body: loginError
+          ? Center(child: _loginError())
+          : !isUserLoaded
+              ? const Center(child: LoadingIndicator())
+              : const SubscriptionList(),
+    );
+  }
+
+  /// ログインエラーのテキスト
+  Widget _loginError() {
+    const text = 'ログインに失敗しました。\n時間をおいて再度お試しください。';
+
+    return Text(
+      text,
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontSize: 15.sp,
+        color: Colors.red,
+      ),
     );
   }
 }

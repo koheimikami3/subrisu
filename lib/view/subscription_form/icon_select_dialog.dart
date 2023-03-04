@@ -16,7 +16,7 @@ class IconSelectDialog extends ConsumerWidget {
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       content: SizedBox(
-        height: 500.h,
+        height: 550.h,
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
@@ -49,7 +49,7 @@ class IconSelectDialog extends ConsumerWidget {
             Expanded(
               child: Row(
                 children: [
-                  SizedBox(width: 20.w),
+                  SizedBox(width: 15.w),
                   Expanded(
                     child: Column(
                       children: [
@@ -61,7 +61,7 @@ class IconSelectDialog extends ConsumerWidget {
                       ],
                     ),
                   ),
-                  SizedBox(width: 20.w),
+                  SizedBox(width: 15.w),
                 ],
               ),
             ),
@@ -105,7 +105,7 @@ class IconSelectDialog extends ConsumerWidget {
       onPressed: imagePath == ''
           ? null
           : () {
-              ref.watch(resultIconImagePathProvider.notifier).state = imagePath;
+              ref.read(resultIconImagePathProvider.notifier).state = imagePath;
 
               Navigator.pop(context);
             },

@@ -1,4 +1,5 @@
 import '../../../../constant/configs.dart' as configs;
+import '../../../../constant/exceptions.dart' as exceptions;
 import '../../../../constant/texts.dart' as texts;
 import '../../../../importer.dart';
 
@@ -13,7 +14,7 @@ class PurchaseItem extends ConsumerWidget {
       itemName: texts.removeAdsItem,
       leadingIcon: null,
       trailing: _price(ref),
-      onTap: () => _onTap(context),
+      onTap: () => _onTap(context, ref),
     );
   }
 
@@ -29,26 +30,73 @@ class PurchaseItem extends ConsumerWidget {
     );
   }
 
-  Future<void> _onTap(BuildContext context) async {
-    final offerings = await Purchases.getOfferings();
-    final offering = offerings.current;
+  Future<void> _onTap(BuildContext context, WidgetRef ref) async {
+    late final Offerings offerings;
+    late final Package? package;
 
-    if (offering != null) {
-      final package = offering.lifetime;
+    // プログレスダイアログを表示
+    ProgressDialog.show(context);
 
-      if (package != null) {
-        // 購入処理を実行
-        final customerInfo = await Purchases.purchasePackage(package);
+    try {
+      // RevenueCatでStateがCurrentになっているofferingを取得
+      offerings = await Purchases.getOfferings();
+      final offering = offerings.current;
 
-        // 購入に成功したかチェック
-        final isSucceeded =
-            customerInfo.entitlements.all[configs.entitlementId]!.isActive;
+      // 取得したofferingの存在チェック
+      if (offering == null) {
+        throw PlatformException(code: '');
+      }
 
-        // 成功している場合、完了ダイアログを表示
-        if (isSucceeded) {
-          const content = '購入が完了しました。';
-          MyAlertDialog.showCompleted(context, content);
-        }
+      // 購入するpackageを取得
+      package = offering.lifetime;
+
+      // 取得したpackageの存在チェック
+      if (package == null) {
+        throw PlatformException(code: '');
+      }
+    } on PlatformException {
+      // プログレスダイアログを閉じる
+      Navigator.pop(context);
+
+      // エラーダイアログを表示
+      final message = exceptions.messageMap[exceptions.noPurchaseItem];
+      MyAlertDialog.showError(context, message!);
+      return;
+    }
+
+    try {
+      // 購入処理を実行
+      final customerInfo = await Purchases.purchasePackage(package);
+
+      // 購入情報を取得
+      final entitlementInfo =
+          customerInfo.entitlements.all[configs.entitlementId];
+
+      // 購入に成功している場合
+      if (entitlementInfo != null && entitlementInfo.isActive) {
+        // バナー広告を非表示にする
+        ref.read(isPurchasedProvider.notifier).state = true;
+
+        // プログレスダイアログを閉じる
+        Navigator.pop(context);
+
+        // 完了ダイアログを表示
+        const content = '購入が完了しました。';
+        MyAlertDialog.showCompleted(context, content);
+      }
+    } on PlatformException catch (e) {
+      final code = PurchasesErrorHelper.getErrorCode(e);
+
+      // プログレスダイアログを閉じる
+      Navigator.pop(context);
+
+      // 購入がキャンセルされた場合は何もしない
+      if (code == PurchasesErrorCode.purchaseCancelledError) {
+        return;
+      } else {
+        // エラーダイアログを表示
+        final message = exceptions.messageMap[exceptions.purchase];
+        MyAlertDialog.showError(context, message!);
       }
     }
   }

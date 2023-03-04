@@ -9,25 +9,49 @@ class UserManager {
   static final auth = FirebaseAuth.instance;
 
   /// アプリの使用に必要なユーザーデータを取得する
-  static Future<void> getUserData(WidgetRef ref) async {
+  static Future<void> getUserData(
+    BuildContext context,
+    WidgetRef ref,
+    User? user,
+  ) async {
     final messaging = FirebaseMessaging.instance;
     final userRepository = ref.read(userViewModelProvider.notifier);
     final subscriptionRepository =
         ref.read(subscriptionViewModelProvider.notifier);
 
-    // UserDocumentを取得
-    await userRepository.getUser(auth.currentUser!.uid);
+    try {
+      // Firebaseにサインインしていない場合
+      if (user == null) {
+        // 匿名サインインを実施
+        final credential = await auth.signInAnonymously();
 
-    // SubscriptionStreamの取得を開始
-    subscriptionRepository.getSubscriptions();
+        // 結果から認証IDを取得
+        final userId = credential.user!.uid;
 
-    // UserDocumentと端末のFCMTokenを取得
-    final docToken = ref.read(userViewModelProvider).token;
-    final deviceToken = await messaging.getToken();
+        // UserDocumentを作成
+        // 認証IDをドキュメントIDとする
+        await userRepository.create(userId);
+      }
 
-    // Tokenが一致しない場合、端末のTokenでUserDocumentを更新
-    if (docToken != deviceToken) {
-      unawaited(userRepository.updateToken(deviceToken!));
+      // Firebaseにサインインしている場合、
+      // UserDocumentを取得
+      if (user != null) {
+        await userRepository.getUser(auth.currentUser!.uid);
+      }
+
+      // SubscriptionStreamの取得を開始
+      subscriptionRepository.getSubscriptions();
+
+      // UserDocumentと端末のFCMTokenを取得
+      final docToken = ref.read(userViewModelProvider).token;
+      final deviceToken = await messaging.getToken();
+
+      // Tokenが一致しない場合、端末のTokenでUserDocumentを更新
+      if (docToken != deviceToken) {
+        userRepository.updateToken(deviceToken!);
+      }
+    } on Exception {
+      // ref.read(loginErrorProvider.notifier).state = true;
     }
   }
 

@@ -17,7 +17,7 @@ const revenueCatIOSKey = 'appl_yORKVOBsdmCjJuxAtNvpitjFsuD';
 const revenueCatAndroidKey = '';
 
 // RevenueCatのEntitlementID
-const entitlementId = 'remove_ads';
+const entitlementId = 'no_ads';
 
 // テキストデフォルトフォントサイズ
 const defaultFontSize = 13.5;

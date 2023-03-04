@@ -6,7 +6,7 @@ class UserRepositoryImpl implements UserRepository {
 
   final _db = FirebaseFirestore.instance;
 
-  // UserDocumentを取得
+  /// UserDocumentを取得する
   @override
   Future<DocumentSnapshot> getUser(String userId) async {
     try {
@@ -17,7 +17,7 @@ class UserRepositoryImpl implements UserRepository {
     }
   }
 
-  // UserDocumentを作成
+  /// UserDocumentを作成する
   @override
   Future<void> create(UserData userData) async {
     try {
@@ -27,12 +27,11 @@ class UserRepositoryImpl implements UserRepository {
     }
   }
 
+  /// UserDocumentのtokenを更新する
+  ///
+  /// 非同期で処理を実行する
   @override
-  Future<void> updateToken(String userId, String token) async {
-    try {
-      await _db.collection('users').doc(userId).update({'token': token});
-    } on Exception catch (_) {
-      throw errors.createUserErr;
-    }
+  void updateToken(String userId, String token) {
+    _db.collection('users').doc(userId).update({'token': token});
   }
 }

@@ -5,5 +5,5 @@ abstract class UserRepository {
 
   Future<void> create(UserData data);
 
-  Future<void> updateToken(String userId, String token);
+  void updateToken(String userId, String token);
 }

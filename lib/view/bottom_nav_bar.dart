@@ -9,8 +9,7 @@ class BottomNavBar extends ConsumerStatefulWidget {
   const BottomNavBar({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _BottomNavBarState createState() => _BottomNavBarState();
+  ConsumerState<BottomNavBar> createState() => _BottomNavBarState();
 }
 
 class _BottomNavBarState extends ConsumerState<BottomNavBar> {
@@ -45,17 +44,22 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
   void initState() {
     super.initState();
 
+    // テーマ設定状況を取得し、アプリに反映
+    AppManager.getTheme(context, ref);
+
     // バナー広告を読み込む
     _myBanner.load();
   }
 
   @override
   Widget build(BuildContext context) {
+    final isPurchased = ref.watch(isPurchasedProvider);
+
     return Scaffold(
       body: Column(
         children: [
           Expanded(child: _pageList.elementAt(_selectedIndex)),
-          _bannerAd(),
+          isPurchased ? const SizedBox.shrink() : _bannerAd(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

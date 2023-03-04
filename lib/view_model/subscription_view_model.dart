@@ -6,29 +6,46 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
   final SubscriptionRepository repository;
   final Ref ref;
 
+  /// サブスクリプションデータをリアルタイムで取得する
   void getSubscriptions() {
-    // watchを使用すると初回起動時に例外が発生
     final userId = ref.read(userViewModelProvider).userId;
 
-    repository.getSubscriptions(userId).listen((subscriptions) {
-      state = subscriptions.docs;
+    repository.getSubscriptions(userId).listen(
+      (subscriptions) {
+        state = subscriptions.docs;
 
-      // リスト画面のプログレスダイアログを閉じる
-      ref.read(isUserLoadedProvider.notifier).state = true;
-    });
+        // リスト画面のプログレスダイアログを閉じる
+        ref.read(isUserLoadedProvider.notifier).state = true;
+      },
+      onError: (_) {
+        // リスト画面にログインエラーメッセージを表示
+        ref.read(loginErrorProvider.notifier).state = true;
+      },
+    );
   }
 
+  /// サブスクリプションデータを作成する
   Future<void> create() async {
     final userId = ref.read(userViewModelProvider).userId;
     final serviceName = ref.read(serviceNameProvider);
     final price = ref.read(priceProvider);
-    final iconImagePath = ref.read(resultIconImagePathProvider);
+    var iconImagePath = ref.read(resultIconImagePathProvider);
     final paymentCycle = ref.read(paymentCycleProvider);
-    final firstPaidOn = ref.read(firstPaidOnProvider);
     final notification = ref.read(notificationProvider);
     final memo = ref.read(memoProvider);
 
     try {
+      // アイコン画像未設定の場合、サブリスアイコンにする
+      if (iconImagePath.isEmpty) {
+        iconImagePath = Assets.images.subscription.subrisu.path;
+      }
+
+      // 初回支払日を作成
+      final year = ref.read(firstPaidYearProvider);
+      final month = ref.read(firstPaidMonthProvider);
+      final day = ref.read(firstPaidDayProvider);
+      final firstPaidOn = DateTime(year, month, day);
+
       // SubscriptionDataを作成
       final data = SubscriptionData(
         serviceName: serviceName,
@@ -42,22 +59,28 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
 
       // SubscriptionDocumentを作成
       await repository.create(userId, data);
-    } on Exception catch (_) {
+    } on Exception {
       rethrow;
     }
   }
 
+  /// サブスクリプションデータを更新する
   Future<void> update(String subscId, DateTime createdAt) async {
     final userId = ref.read(userViewModelProvider).userId;
     final serviceName = ref.read(serviceNameProvider);
     final price = ref.read(priceProvider);
     final iconImagePath = ref.read(resultIconImagePathProvider);
     final paymentCycle = ref.read(paymentCycleProvider);
-    final firstPaidOn = ref.read(firstPaidOnProvider);
     final notification = ref.read(notificationProvider);
     final memo = ref.read(memoProvider);
 
     try {
+      // 初回支払日を作成
+      final year = ref.read(firstPaidYearProvider);
+      final month = ref.read(firstPaidMonthProvider);
+      final day = ref.read(firstPaidDayProvider);
+      final firstPaidOn = DateTime(year, month, day);
+
       // SubscriptionDataを作成
       final data = SubscriptionData(
         serviceName: serviceName,
@@ -72,29 +95,19 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
 
       // SubscriptionDocumentを更新
       await repository.update(userId, subscId, data);
-    } on Exception catch (_) {
+    } on Exception {
       rethrow;
     }
   }
 
+  /// サブスクリプションデータを削除する
   Future<void> delete(String subscriptionId) async {
     final userId = ref.read(userViewModelProvider).userId;
 
     try {
       // SubscriptionDocumentを削除
       await repository.delete(userId, subscriptionId);
-    } on Exception catch (_) {
-      rethrow;
-    }
-  }
-
-  Future<void> allDelete() async {
-    final userId = ref.read(userViewModelProvider).userId;
-
-    try {
-      // 全てのSubscriptionDocumentを削除
-      await repository.allDelete(userId);
-    } on Exception catch (_) {
+    } on Exception {
       rethrow;
     }
   }

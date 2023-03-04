@@ -65,25 +65,4 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
       throw errors.deleteSubscriptionErr;
     }
   }
-
-  @override
-  Future<void> allDelete(String userId) async {
-    final batch = _db.batch();
-
-    try {
-      final subscriptions = await _db
-          .collection('users')
-          .doc(userId)
-          .collection('subscriptions')
-          .get();
-
-      for (final doc in subscriptions.docs) {
-        batch.delete(doc.reference);
-      }
-
-      await batch.commit();
-    } on Exception catch (_) {
-      throw errors.deleteSubscriptionErr;
-    }
-  }
 }
