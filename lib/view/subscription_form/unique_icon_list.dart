@@ -1,27 +1,25 @@
 import '../../constant/colors.dart' as colors;
 import '../../importer.dart';
 
-final list = [
-  Assets.images.subscription.subrisu.path,
-  Assets.images.subscription.netflix.path,
-  Assets.images.subscription.primeVideo.path,
-  Assets.images.subscription.disneyPlus.path,
-  Assets.images.subscription.spotify.path,
-  Assets.images.subscription.appleMusic.path,
-  Assets.images.subscription.hulu.path,
-  Assets.images.subscription.playStation.path,
-  Assets.images.subscription.uberEats.path,
-  Assets.images.subscription.foodDrink.path,
-];
-
-class IconList extends ConsumerWidget {
-  const IconList({super.key});
+class UniqueIconList extends ConsumerWidget {
+  const UniqueIconList({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isDark = ref.watch(darkModeProvider);
     final selectImagePath = ref.watch(selectIconImagePathProvider);
-    final iconList = Assets.images.subscription.values;
+    // final iconList = Assets.images.subscription.values;
+    final iconList = [
+      Assets.images.subscription.subrisu,
+      Assets.images.subscription.netflix,
+      Assets.images.subscription.primeVideo,
+      Assets.images.subscription.disneyPlus,
+      Assets.images.subscription.spotify,
+      Assets.images.subscription.appleMusic,
+      Assets.images.subscription.hulu,
+      Assets.images.subscription.playStation,
+      Assets.images.subscription.uberEats,
+    ];
 
     return GridView.builder(
       itemCount: iconList.length,

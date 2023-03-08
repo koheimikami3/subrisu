@@ -28,15 +28,21 @@ class Supports extends StatelessWidget {
         ),
         SettingItem(
           middleItem: true,
+          leadingIcon: Icons.mail_outline,
+          itemName: texts.inquiryItem,
+          onTap: () => launchUrl(Uri.parse(urls.inquiryUrl)),
+        ),
+        SettingItem(
+          middleItem: true,
           leadingIcon: Icons.description_outlined,
           itemName: texts.tosItem,
-          onTap: () => Navigator.pushNamed(context, '/tos'),
+          onTap: () => launchUrl(Uri.parse(urls.tosUrl)),
         ),
         SettingItem(
           bottomItem: true,
           leadingIcon: Icons.verified_user_outlined,
           itemName: texts.privacyPolicyItem,
-          onTap: () => Navigator.pushNamed(context, '/privacyPolicy'),
+          onTap: () => launchUrl(Uri.parse(urls.privacyPolicyUrl)),
         ),
       ],
     );

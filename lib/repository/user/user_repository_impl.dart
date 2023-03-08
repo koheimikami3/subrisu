@@ -1,5 +1,4 @@
-import 'package:subrisu/importer.dart';
-import '../../constant/errors.dart' as errors;
+import '../../importer.dart';
 
 class UserRepositoryImpl implements UserRepository {
   UserRepositoryImpl();
@@ -13,7 +12,7 @@ class UserRepositoryImpl implements UserRepository {
       final doc = await _db.collection('users').doc(userId).get();
       return doc;
     } on Exception catch (_) {
-      throw errors.getUserErr;
+      rethrow;
     }
   }
 
@@ -23,7 +22,7 @@ class UserRepositoryImpl implements UserRepository {
     try {
       await _db.collection('users').doc(userData.userId).set(userData.toJson());
     } on Exception catch (_) {
-      throw errors.createUserErr;
+      rethrow;
     }
   }
 

@@ -11,7 +11,7 @@ const androidReleaseAdId = '';
 const androidDebugAdId = 'ca-app-pub-3940256099942544/6300978111';
 
 // RevenueCatのiOSのAPIキー
-const revenueCatIOSKey = 'appl_yORKVOBsdmCjJuxAtNvpitjFsuD';
+const revenueCatIOSKey = 'appl_hhhpvBGgItKJonroRqVgUVBcIYA';
 
 // RevenueCatのAndroidのAPIキー
 const revenueCatAndroidKey = '';
@@ -39,3 +39,7 @@ const themeKey = 'theme';
 const deviceTheme = 0;
 const lightTheme = 1;
 const darkTheme = 2;
+
+// RemoteConfigキー
+const forceAppVersionIOSRemoteKey = 'forceAppVersionIOS';
+const forceAppVersionAndroidRemoteKey = 'forceAppVersionAndroid';

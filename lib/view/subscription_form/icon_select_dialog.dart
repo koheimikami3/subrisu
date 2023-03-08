@@ -54,7 +54,9 @@ class IconSelectDialog extends ConsumerWidget {
                     child: Column(
                       children: [
                         SizedBox(height: 10.h),
-                        const Expanded(child: IconList()),
+                        const Expanded(child: CommonIconList()),
+                        SizedBox(height: 10.h),
+                        // const Expanded(child: CommonIconList()),
                         SizedBox(height: 20.h),
                         _saveButton(context, ref),
                         SizedBox(height: 20.h),

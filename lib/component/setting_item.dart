@@ -67,7 +67,7 @@ class SettingItem extends ConsumerWidget {
             Expanded(
               child: Column(
                 children: [
-                  SizedBox(height: 10.w),
+                  SizedBox(height: 11.w),
                   Row(
                     children: [
                       Expanded(child: Text(itemName)),
@@ -77,7 +77,7 @@ class SettingItem extends ConsumerWidget {
                       SizedBox(width: 15.w),
                     ],
                   ),
-                  SizedBox(height: 10.w),
+                  SizedBox(height: 11.w),
                   if (topItem || middleItem) const ItemDivider(),
                 ],
               ),
@@ -111,7 +111,7 @@ class SettingItem extends ConsumerWidget {
   Icon _leadingIcon() {
     return Icon(
       leadingIcon,
-      size: 21,
+      size: 20.w,
     );
   }
 

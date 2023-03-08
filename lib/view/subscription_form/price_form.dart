@@ -14,6 +14,7 @@ class PriceForm extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MyTextFormField(
       initialValue: price,
+      maxLength: 7,
       keyboardType: TextInputType.number,
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       hintText: texts.priceHint,

@@ -1,5 +1,6 @@
 import UIKit
 import Flutter
+import Firebase
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -7,11 +8,12 @@ import Flutter
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-    /*　ローカルプッシュ通知に必要　*/
-    if #available(iOS 10.0, *) {
-      UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
-    }
-    /*　ローカルプッシュ通知に必要　*/
+    // AppCheckのデバッグトークンをXcodeのコンソールに表示するために必要
+    // デバッグしたい端末が新たに出てきた場合使用する
+#if DEBUG
+    let providerFactory = AppCheckDebugProviderFactory()
+    AppCheck.setAppCheckProviderFactory(providerFactory)
+#endif
 
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)

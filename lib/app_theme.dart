@@ -64,8 +64,8 @@ class AppTheme {
   /// ライトモードBottomNavigationBarのUI設定を行う
   static BottomNavigationBarThemeData _lightBottomNavTheme() {
     return BottomNavigationBarThemeData(
-      selectedIconTheme: const IconThemeData(size: 30),
-      unselectedIconTheme: const IconThemeData(size: 30),
+      selectedIconTheme: IconThemeData(size: 28.w),
+      unselectedIconTheme: IconThemeData(size: 28.w),
       selectedLabelStyle: TextStyle(fontSize: 12.sp),
       unselectedLabelStyle: TextStyle(fontSize: 12.sp),
       selectedItemColor: Colors.black,
@@ -75,8 +75,8 @@ class AppTheme {
   /// ダークモードBottomNavigationBarのUI設定を行う
   static BottomNavigationBarThemeData _darkBottomNavTheme() {
     return BottomNavigationBarThemeData(
-      selectedIconTheme: const IconThemeData(size: 30),
-      unselectedIconTheme: const IconThemeData(size: 30),
+      selectedIconTheme: IconThemeData(size: 28.w),
+      unselectedIconTheme: IconThemeData(size: 28.w),
       selectedLabelStyle: TextStyle(fontSize: 12.sp),
       unselectedLabelStyle: TextStyle(fontSize: 12.sp),
       selectedItemColor: colors.appColor,
@@ -96,7 +96,10 @@ class AppTheme {
   /// ライトモードTextのUI設定を行う
   static TextTheme _lightTextTheme() {
     return TextTheme(
-      bodyText2: TextStyle(fontSize: configs.defaultFontSize.sp),
+      bodyText2: TextStyle(
+        fontSize: configs.defaultFontSize.sp,
+        color: Colors.black87,
+      ),
     );
   }
 

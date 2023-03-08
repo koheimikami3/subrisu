@@ -49,10 +49,11 @@ const userDataTitle = 'ユーザー';
 
 // 設定画面項目名
 const paidPlanItem = '広告の非表示';
-const notificationItem = 'プッシュ通知';
+const notificationItem = 'リマインド通知';
 const darkModeItem = 'ダークモード';
 const reviewItem = 'レビューを書く';
 const shareItem = 'アプリをシェア';
+const inquiryItem = 'お問い合わせ';
 const tosItem = '利用規約';
 const privacyPolicyItem = 'プライバシーポリシー';
 const appVersionItem = 'アプリのバージョン';

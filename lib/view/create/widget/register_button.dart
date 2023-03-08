@@ -1,3 +1,4 @@
+import '../../../constant/exceptions.dart' as exceptions;
 import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
@@ -20,7 +21,7 @@ class RegisterButton extends ConsumerWidget {
 
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
     final repository = ref.read(subscriptionViewModelProvider.notifier);
-    var err = '';
+    var message = '';
 
     // TextFieldのフォーカスを解除
     FocusScope.of(context).unfocus();
@@ -31,16 +32,16 @@ class RegisterButton extends ConsumerWidget {
     try {
       // サブスクリプションを登録
       await repository.create();
-    } on Exception catch (e) {
-      err = selectMessage(e.toString());
+    } on Exception {
+      message = exceptions.messageMap[exceptions.createSubscription]!;
     }
 
     // プログレスダイアログを閉じる
     Navigator.pop(context);
 
-    // エラーが発生した場合、ダイアログを表示
-    if (err != '') {
-      MyAlertDialog.showError(context, err);
+    // 例外が発生した場合、エラーダイアログを表示
+    if (message != '') {
+      MyAlertDialog.showError(context, message);
       return;
     }
 

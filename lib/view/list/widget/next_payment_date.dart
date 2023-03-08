@@ -31,7 +31,6 @@ class NextPaymentDate extends ConsumerWidget {
       // 「毎日」の場合
       case 0:
         text = today;
-
         break;
 
       // 「毎週」の場合
@@ -54,41 +53,50 @@ class NextPaymentDate extends ConsumerWidget {
 
       // 「毎月」の場合
       case 2:
-        // 今月の初回支払日付を作成
-        var nextPaidOn = DateTime(now.year, now.month, firstPaidOn.day);
+        var nextPaidOn = firstPaidOn; // 次回支払日付
+        const month = 1; // 加える月数
 
-        // 差分の日数を計算
-        // マイナスになった場合はプラスに変換
-        var difference = nextPaidOn.difference(now);
-        day = difference.inDays;
-        if (day < 0) {
-          nextPaidOn = DateTime(now.year, now.month + 1, firstPaidOn.day);
-          difference = nextPaidOn.difference(now);
-          day = difference.inDays;
+        // 次回支払日付を作成
+        // 今日より後の日付になるまで
+        // 初回支払日付を初期値として1ヶ月ずつ加える
+        while (nextPaidOn.isBefore(now)) {
+          nextPaidOn = DateTime(
+            nextPaidOn.year,
+            nextPaidOn.month + month,
+            nextPaidOn.day,
+          );
         }
+
+        // 今日と次回の支払日付の差分の日数を計算
+        final difference = nextPaidOn.difference(now);
+        day = difference.inDays;
 
         if (day == 0) {
           text = today;
         } else {
           text = 'あと$day日';
         }
-
         break;
 
-      // 「毎月」の場合
+      // 「3ヶ月」の場合
       case 3:
-        // 今月の初回支払日付に3ヶ月加えた日付を作成
-        var nextPaidOn = DateTime(now.year, now.month + 3, firstPaidOn.day);
+        var nextPaidOn = firstPaidOn; // 次回支払日付
+        const month = 3; // 加える月数
 
-        // 差分の日数を計算
-        // マイナスになった場合はプラスに変換
-        var difference = nextPaidOn.difference(now);
-        day = difference.inDays;
-        if (day < 0) {
-          nextPaidOn = DateTime(now.year, now.month + 1, firstPaidOn.day);
-          difference = nextPaidOn.difference(now);
-          day = difference.inDays;
+        // 次回支払日付を作成
+        // 今日より後の日付になるまで
+        // 初回支払日付を初期値として3ヶ月ずつ加える
+        while (nextPaidOn.isBefore(now)) {
+          nextPaidOn = DateTime(
+            nextPaidOn.year,
+            nextPaidOn.month + month,
+            nextPaidOn.day,
+          );
         }
+
+        // 今日と次回の支払日付の差分の日数を計算
+        final difference = nextPaidOn.difference(now);
+        day = difference.inDays;
 
         if (day == 0) {
           text = today;
@@ -99,18 +107,23 @@ class NextPaymentDate extends ConsumerWidget {
 
       // 「6ヶ月」の場合
       case 4:
-        // 今月の初回支払日付に6ヶ月加えた日付を作成
-        var nextPaidOn = DateTime(now.year, now.month + 6, firstPaidOn.day);
+        var nextPaidOn = firstPaidOn; // 次回支払日付
+        const month = 6; // 加える月数
 
-        // 差分の日数を計算
-        // マイナスになった場合はプラスに変換
-        var difference = nextPaidOn.difference(now);
-        day = difference.inDays;
-        if (day < 0) {
-          nextPaidOn = DateTime(now.year, now.month + 1, firstPaidOn.day);
-          difference = nextPaidOn.difference(now);
-          day = difference.inDays;
+        // 次回支払日付を作成
+        // 今日より後の日付になるまで
+        // 初回支払日付を初期値として6ヶ月ずつ加える
+        while (nextPaidOn.isBefore(now)) {
+          nextPaidOn = DateTime(
+            nextPaidOn.year,
+            nextPaidOn.month + month,
+            nextPaidOn.day,
+          );
         }
+
+        // 今日と次回の支払日付の差分の日数を計算
+        final difference = nextPaidOn.difference(now);
+        day = difference.inDays;
 
         if (day == 0) {
           text = today;
@@ -121,18 +134,23 @@ class NextPaymentDate extends ConsumerWidget {
 
       // 「毎年」の場合
       case 5:
-        var nextPaidOn = DateTime(now.year, firstPaidOn.month, firstPaidOn.day);
+        var nextPaidOn = firstPaidOn; // 次回支払日付
+        const year = 1; // 加える月数
 
-        // 差分の日数を計算
-        // マイナスになった場合はプラスに変換
-        var difference = nextPaidOn.difference(now);
-        day = difference.inDays;
-        if (day < 0) {
-          nextPaidOn =
-              DateTime(now.year + 1, firstPaidOn.month, firstPaidOn.day);
-          difference = nextPaidOn.difference(now);
-          day = difference.inDays;
+        // 次回支払日付を作成
+        // 今日より後の日付になるまで
+        // 初回支払日付を初期値として1年ずつ加える
+        while (nextPaidOn.isBefore(now)) {
+          nextPaidOn = DateTime(
+            nextPaidOn.year + year,
+            nextPaidOn.month,
+            nextPaidOn.day,
+          );
         }
+
+        // 今日と次回の支払日付の差分の日数を計算
+        final difference = nextPaidOn.difference(now);
+        day = difference.inDays;
 
         if (day == 0) {
           text = today;
@@ -147,7 +165,7 @@ class NextPaymentDate extends ConsumerWidget {
         color: text == today
             ? Colors.red
             : day == 1
-                ? Colors.orange.shade800
+                ? Colors.orange.shade700
                 : null,
       ),
     );

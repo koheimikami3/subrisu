@@ -8,6 +8,7 @@ class MyTextFormField extends ConsumerWidget {
     this.initialValue,
     this.minLines = 1,
     this.maxLines = 1,
+    this.maxLength,
     this.keyboardType,
     this.inputFormatters,
     this.hintText,
@@ -17,6 +18,7 @@ class MyTextFormField extends ConsumerWidget {
   final String? initialValue;
   final int minLines;
   final int? maxLines;
+  final int? maxLength;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
   final String? hintText;
@@ -30,6 +32,7 @@ class MyTextFormField extends ConsumerWidget {
       initialValue: initialValue,
       minLines: minLines,
       maxLines: maxLines,
+      maxLength: maxLength,
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,
       cursorColor: colors.appColor,
@@ -38,6 +41,7 @@ class MyTextFormField extends ConsumerWidget {
         isDense: true,
         hintText: hintText,
         hintStyle: TextStyle(fontSize: configs.defaultFontSize.sp),
+        counterText: '',
         filled: true,
         fillColor: isDark ? colors.darkItemColor : Colors.white,
         border: const OutlineInputBorder(

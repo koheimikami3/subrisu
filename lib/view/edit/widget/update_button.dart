@@ -1,3 +1,4 @@
+import '../../../constant/exceptions.dart' as exceptions;
 import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
@@ -31,7 +32,7 @@ class UpdateButton extends ConsumerWidget {
     final subscriptionId = subscriptionDoc.id;
     final timestamp = subscriptionDoc.get('createdAt') as Timestamp;
     final createdAt = timestamp.toDate();
-    var err = '';
+    var message = '';
 
     // TextFieldのフォーカスを解除
     FocusScope.of(context).unfocus();
@@ -42,16 +43,16 @@ class UpdateButton extends ConsumerWidget {
     try {
       // サブスクリプションを更新
       await repository.update(subscriptionId, createdAt);
-    } on Exception catch (e) {
-      err = selectMessage(e.toString());
+    } on Exception {
+      message = exceptions.messageMap[exceptions.updateSubscription]!;
     }
 
     // プログレスダイアログを閉じる
     Navigator.pop(context);
 
-    // エラーが発生した場合、ダイアログを表示
-    if (err != '') {
-      MyAlertDialog.showError(context, err);
+    // 例外が発生した場合、エラーダイアログを表示
+    if (message != '') {
+      MyAlertDialog.showError(context, message);
       return;
     }
 

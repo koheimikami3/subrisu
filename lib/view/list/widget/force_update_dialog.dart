@@ -35,19 +35,13 @@ class ForceUpdateDialog {
   }
 
   static Future<void> _onPressed(BuildContext context) async {
-    late final String storeUrl;
-
-    if (Platform.isIOS) {
-      storeUrl = urls.appStoreUrl;
-    } else {
-      storeUrl = urls.googlePlayStoreUrl;
-    }
-
-    // URIを作成
+    // URLを作成
+    final storeUrl =
+        Platform.isIOS ? urls.appStoreUrl : urls.googlePlayStoreUrl;
     final url = Uri.parse(storeUrl);
 
     // ストアページを開く
-    if (await canLaunchUrl(url)) {
+    if (await canLaunchUrl(Uri.parse(storeUrl))) {
       await launchUrl(url);
     } else {
       const content = '指定されたURLのページを開けませんでした。';

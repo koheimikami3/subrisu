@@ -45,6 +45,8 @@ dependencies:
   url_launcher: ^6.1.7
   version: ^3.0.2
   webview_flutter: ^3.0.4
+  keyboard_actions: ^4.2.0
+  firebase_app_check: ^0.0.9+1
 
 dev_dependencies:
   flutter_test:

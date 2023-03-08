@@ -1,4 +1,3 @@
-import '../../constant/errors.dart' as errors;
 import '../../importer.dart';
 
 class SubscriptionRepositoryImpl implements SubscriptionRepository {
@@ -8,17 +7,13 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
 
   @override
   Stream<QuerySnapshot> getSubscriptions(String userId) {
-    try {
-      final stream = _db
-          .collection('users')
-          .doc(userId)
-          .collection('subscriptions')
-          .orderBy('createdAt')
-          .snapshots();
-      return stream;
-    } on Exception catch (_) {
-      throw '';
-    }
+    final stream = _db
+        .collection('users')
+        .doc(userId)
+        .collection('subscriptions')
+        .orderBy('createdAt')
+        .snapshots();
+    return stream;
   }
 
   @override
@@ -29,8 +24,8 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
           .doc(userId)
           .collection('subscriptions')
           .add(data.toJson());
-    } on Exception catch (_) {
-      throw errors.createSubscriptionErr;
+    } on Exception {
+      rethrow;
     }
   }
 
@@ -47,8 +42,8 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
           .collection('subscriptions')
           .doc(subscId)
           .update(data.toJson());
-    } on Exception catch (_) {
-      throw errors.createSubscriptionErr;
+    } on Exception {
+      rethrow;
     }
   }
 
@@ -61,8 +56,8 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
           .collection('subscriptions')
           .doc(subscriptionId)
           .delete();
-    } on Exception catch (_) {
-      throw errors.deleteSubscriptionErr;
+    } on Exception {
+      rethrow;
     }
   }
 }

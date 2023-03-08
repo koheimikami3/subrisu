@@ -82,7 +82,10 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
   /// 「リスト」を表示する
   BottomNavigationBarItem _list() {
     return const BottomNavigationBarItem(
-      icon: Icon(Icons.list),
+      icon: Icon(
+        Icons.list,
+        // size: 35,
+      ),
       label: texts.listNavi,
     );
   }

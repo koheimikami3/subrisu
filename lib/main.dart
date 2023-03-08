@@ -4,8 +4,19 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await MobileAds.instance.initialize();
   await Firebase.initializeApp();
-  final auth = FirebaseAuth.instance;
   final remoteConfig = FirebaseRemoteConfig.instance;
+
+  // アプリチェックを実行
+  await FirebaseAppCheck.instance.activate();
+
+  // RemoteConfigの設定
+  // 値の変更が即反映されるようfetchIntervalを1秒に設定
+  await remoteConfig.setConfigSettings(
+    RemoteConfigSettings(
+      fetchTimeout: const Duration(minutes: 1),
+      minimumFetchInterval: const Duration(seconds: 1),
+    ),
+  );
 
   // RemoteConfigの各値を取得
   await remoteConfig.fetchAndActivate();
@@ -19,7 +30,7 @@ void main() async {
     ..registerSingleton(await PackageInfo.fromPlatform());
 
   // Firebaseにサインインしているユーザーを取得
-  final user = auth.currentUser;
+  final user = FirebaseAuth.instance.currentUser;
 
   runApp(
     ProviderScope(

@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
-
 import '../constant/configs.dart' as configs;
 import '../importer.dart';
 
@@ -64,16 +62,14 @@ class AppManager {
   }
 
   static void checkForceAppVersion(BuildContext context) {
-    final remoteConfig = FirebaseRemoteConfig.instance;
     final packageInfo = GetIt.I<PackageInfo>();
-    late final String strForceAppVersion;
+    final remoteKey = Platform.isIOS
+        ? configs.forceAppVersionIOSRemoteKey
+        : configs.forceAppVersionAndroidRemoteKey;
 
     // 強制アップデートバージョンを取得
-    if (Platform.isIOS) {
-      strForceAppVersion = remoteConfig.getString('forceAppVersionIOS');
-    } else {
-      strForceAppVersion = remoteConfig.getString('forceAppVersionAndroid');
-    }
+    final strForceAppVersion =
+        FirebaseRemoteConfig.instance.getString(remoteKey);
     final forceAppVersion = Version.parse(strForceAppVersion);
 
     // アプリの現在バージョンを取得
@@ -83,40 +79,6 @@ class AppManager {
     // 強制アップデートダイアログを表示
     if (currentVersion < forceAppVersion) {
       ForceUpdateDialog.show(context, strForceAppVersion);
-    }
-  }
-
-  static Future<void> checkUpdateContents(BuildContext context) async {
-    final remoteConfig = FirebaseRemoteConfig.instance;
-    final packageInfo = GetIt.I<PackageInfo>();
-    late final String strInfoVersion;
-    late final String updateContents;
-
-    // アップデート内容と表示するバージョンを取得
-    if (Platform.isIOS) {
-      strInfoVersion = remoteConfig.getString('infoVersionIOS');
-      updateContents = remoteConfig.getString('updateContentsIOS');
-    } else {
-      strInfoVersion = remoteConfig.getString('infoVersionAndroid');
-      updateContents = remoteConfig.getString('updateContentsAndroid');
-    }
-    final infoVersion = Version.parse(strInfoVersion);
-
-    // アプリの現在バージョンを取得
-    final currentVersion = Version.parse(packageInfo.version);
-
-    // 現在バージョンが表示バージョン以上の場合、
-    // アップデート内容ダイアログを表示
-    if (currentVersion >= infoVersion) {
-      unawaited(
-        showCupertinoDialog<void>(
-          context: context,
-          builder: (_) => UpdateContentsDialog(
-            version: strInfoVersion,
-            contents: updateContents,
-          ),
-        ),
-      );
     }
   }
 
@@ -135,4 +97,39 @@ class AppManager {
       await prefs.setBool(configs.notificationKey, true);
     }
   }
+
+  // static Future<void> checkUpdateContents(BuildContext context) async {
+  //   final remoteConfig = FirebaseRemoteConfig.instance;
+  //   final packageInfo = GetIt.I<PackageInfo>();
+  //   late final String strInfoVersion;
+  //   late final String updateContents;
+
+  //   // アップデート内容と表示するバージョンを取得
+  //   if (Platform.isIOS) {
+  //     strInfoVersion = remoteConfig.getString('infoVersionIOS');
+  //     updateContents = remoteConfig.getString('updateContentsIOS');
+  //   } else {
+  //     strInfoVersion = remoteConfig.getString('infoVersionAndroid');
+  //     updateContents = remoteConfig.getString('updateContentsAndroid');
+  //   }
+  //   final infoVersion = Version.parse(strInfoVersion);
+
+  //   // アプリの現在バージョンを取得
+  //   final currentVersion = Version.parse(packageInfo.version);
+
+  //   // 現在バージョンが表示バージョン以上の場合、
+  //   // アップデート内容ダイアログを表示
+  //   if (currentVersion >= infoVersion) {
+  //     unawaited(
+  //       showCupertinoDialog<void>(
+  //         context: context,
+  //         builder: (_) => UpdateContentsDialog(
+  //           version: strInfoVersion,
+  //           contents: updateContents,
+  //         ),
+  //       ),
+  //     );
+  //   }
+  // }
+
 }

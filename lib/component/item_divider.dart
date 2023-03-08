@@ -9,7 +9,7 @@ class ItemDivider extends ConsumerWidget {
     final isDark = ref.watch(darkModeProvider);
 
     return Container(
-      height: 0.5.h,
+      height: 0.3.h,
       color: isDark ? Colors.grey.shade600 : Colors.black12,
     );
   }

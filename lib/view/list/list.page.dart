@@ -20,7 +20,9 @@ class _ListPageState extends ConsumerState<ListPage> {
       AppManager.checkForceAppVersion(context);
 
       // アップデート内容表示対象の場合、ダイアログを表示
-      AppManager.checkUpdateContents(context);
+      // 次バージョン以降で実装
+      // 何度も表示されないようにする
+      // AppManager.checkUpdateContents(context);
 
       // 初回起動の場合、プッシュ通知設定ダイアログを表示
       AppManager.checkNotificationSetting();

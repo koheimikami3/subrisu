@@ -34,6 +34,7 @@ class SubscriptionItem extends ConsumerWidget {
                     _iconImage(),
                     SizedBox(width: 15.w),
                     Expanded(child: _serviceName()),
+                    SizedBox(width: 5.w),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -78,8 +79,8 @@ class SubscriptionItem extends ConsumerWidget {
       colorFilter: const ColorFilter.mode(colors.appColor, BlendMode.srcIn),
       child: Image.asset(
         imagePath,
-        height: 40.h,
-        width: 40.h,
+        height: 33.h,
+        width: 33.h,
       ),
     );
   }
@@ -90,10 +91,9 @@ class SubscriptionItem extends ConsumerWidget {
 
     return Text(
       serviceName,
-      style: TextStyle(
-        fontSize: 17.sp,
-        fontWeight: FontWeight.w500,
-      ),
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+      style: TextStyle(fontSize: 17.sp),
     );
   }
 
@@ -105,7 +105,7 @@ class SubscriptionItem extends ConsumerWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: 17.sp,
+        fontSize: 16.sp,
         fontWeight: FontWeight.w400,
       ),
     );

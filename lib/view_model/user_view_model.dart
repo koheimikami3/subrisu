@@ -12,7 +12,7 @@ class UserViewModel extends StateNotifier<UserState> {
       // UserDocumentを取得
       final userDoc = await repository.getUser(userId);
 
-      // stateを更新
+      // stateを更新s
       final data = userDoc.data()! as Map<String, dynamic>;
       state = state.copyWith(
         userId: userDoc.id,
