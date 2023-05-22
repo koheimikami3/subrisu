@@ -1,3 +1,5 @@
+import 'package:in_app_review/in_app_review.dart';
+
 import '../../../constant/exceptions.dart' as exceptions;
 import '../../../constant/texts.dart' as texts;
 import '../../../constant/urls.dart' as urls;

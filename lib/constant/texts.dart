@@ -72,7 +72,7 @@ const listNavi = 'リスト';
 const settingsNavi = '設定';
 
 // シェアテキスト
-const shareText = 'サブリス\n${urls.appStoreUrl}';
+const shareText = 'サブリス - サブスクと固定費をリストで管理\n${urls.appStoreUrl}';
 
 // 支払い周期テキストリスト
 const paymentCycleList = [

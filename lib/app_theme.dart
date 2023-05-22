@@ -96,7 +96,7 @@ class AppTheme {
   /// ライトモードTextのUI設定を行う
   static TextTheme _lightTextTheme() {
     return TextTheme(
-      bodyText2: TextStyle(
+      bodyMedium: TextStyle(
         fontSize: configs.defaultFontSize.sp,
         color: Colors.black87,
       ),
@@ -106,7 +106,7 @@ class AppTheme {
   /// ダークモードTextのUI設定を行う
   static TextTheme _darkTextTheme() {
     return TextTheme(
-      bodyText2: TextStyle(
+      bodyMedium: TextStyle(
         fontSize: configs.defaultFontSize.sp,
         color: Colors.white,
       ),

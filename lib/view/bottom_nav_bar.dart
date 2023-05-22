@@ -15,10 +15,10 @@ class BottomNavBar extends ConsumerStatefulWidget {
 class _BottomNavBarState extends ConsumerState<BottomNavBar> {
   int _selectedIndex = 0;
 
-  final BannerAd _myBanner = BannerAd(
+  final _myBanner = BannerAd(
     adUnitId: Platform.isIOS
         ? kReleaseMode
-            ? configs.iOSDebugAdId
+            ? configs.iOSReleaseAdId
             : configs.iOSDebugAdId
         : kReleaseMode
             ? configs.androidDebugAdId

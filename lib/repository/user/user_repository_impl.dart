@@ -11,7 +11,7 @@ class UserRepositoryImpl implements UserRepository {
     try {
       final doc = await _db.collection('users').doc(userId).get();
       return doc;
-    } on Exception catch (_) {
+    } on Exception {
       rethrow;
     }
   }
@@ -21,7 +21,7 @@ class UserRepositoryImpl implements UserRepository {
   Future<void> create(UserData userData) async {
     try {
       await _db.collection('users').doc(userData.userId).set(userData.toJson());
-    } on Exception catch (_) {
+    } on Exception {
       rethrow;
     }
   }

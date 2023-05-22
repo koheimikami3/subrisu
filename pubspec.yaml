@@ -3,10 +3,10 @@ description: A new Flutter project.
 
 publish_to: 'none' 
 
-version: 1.0.0+1
+version: 1.1.5+1
 
 environment:
-  sdk: '>=2.18.2 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   flutter:
@@ -16,13 +16,13 @@ dependencies:
     sdk: flutter
 
   app_settings: ^4.2.0
-  cloud_firestore: ^3.5.1
+  cloud_firestore: ^4.7.1
   cupertino_icons: ^1.0.2
   dotted_border: ^2.0.0+3
-  firebase_auth: ^3.11.2
-  firebase_core: ^1.24.0
-  firebase_messaging: ^13.1.0
-  firebase_remote_config: ^2.0.20
+  firebase_auth: ^4.6.1
+  firebase_core: ^2.13.0
+  firebase_messaging: ^14.6.1
+  firebase_remote_config: ^4.2.1
   flutter_launcher_icons: ^0.11.0
   flutter_native_splash: ^2.2.16
   flutter_riverpod: ^2.0.2
@@ -33,7 +33,7 @@ dependencies:
   google_mobile_ads: ^2.2.0
   google_sign_in: ^5.4.2
   in_app_review: ^2.0.6
-  intl: ^0.17.0
+  intl: ^0.18.0
   json_serializable: ^6.5.4
   package_info_plus: ^3.0.1
   pedantic_mono: ^1.20.1
@@ -46,7 +46,9 @@ dependencies:
   version: ^3.0.2
   webview_flutter: ^3.0.4
   keyboard_actions: ^4.2.0
-  firebase_app_check: ^0.0.9+1
+  firebase_app_check: ^0.1.4+1
+  app_tracking_transparency: ^2.0.3
+  pull_down_button: ^0.8.3
 
 dev_dependencies:
   flutter_test:

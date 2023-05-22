@@ -82,6 +82,15 @@ class AppManager {
     }
   }
 
+  /// 広告のトラッキングダイアログを表示する
+  static Future<void> showAppTrackingTransparency() async {
+    await AppTrackingTransparency.getAdvertisingIdentifier();
+    final status = await AppTrackingTransparency.trackingAuthorizationStatus;
+    if (status == TrackingStatus.notDetermined) {
+      await AppTrackingTransparency.requestTrackingAuthorization();
+    }
+  }
+
   /// プッシュ通知設定ダイアログの表示状況を取得し、初めての場合は表示する
   static Future<void> checkNotificationSetting() async {
     final prefs = GetIt.I<SharedPreferences>();
@@ -131,5 +140,4 @@ class AppManager {
   //     );
   //   }
   // }
-
 }
