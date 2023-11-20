@@ -61,6 +61,14 @@ class AppManager {
     }
   }
 
+  /// リストの並び替え設定状況を取得し、アプリに反映する
+  static Future<void> getListSort(WidgetRef ref) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    ref.read(listSortProvider.notifier).state =
+        prefs.getInt(configs.listSortKey) ?? 0;
+  }
+
   static void checkForceAppVersion(BuildContext context) {
     final packageInfo = GetIt.I<PackageInfo>();
     final remoteKey = Platform.isIOS

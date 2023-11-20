@@ -43,3 +43,4 @@ const darkTheme = 2;
 // RemoteConfigキー
 const forceAppVersionIOSRemoteKey = 'forceAppVersionIOS';
 const forceAppVersionAndroidRemoteKey = 'forceAppVersionAndroid';
+const listSortKey = 'listSort';

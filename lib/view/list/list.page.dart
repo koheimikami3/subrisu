@@ -1,5 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 
+import 'package:subrisu/view/list/widget/sort_button.dart';
+
 import '../../importer.dart';
 
 /// リスト画面
@@ -42,49 +44,7 @@ class _ListPageState extends ConsumerState<ListPage> {
       appBar: AppBar(
         title: _title(),
         automaticallyImplyLeading: false,
-        // actions: [
-        //   Row(
-        //     children: [
-        //       PullDownButton(
-        //         itemBuilder: (context) {
-        //           return [
-        //             const PullDownMenuTitle(title: Text('並び替え')),
-        //             const PullDownMenuDivider(),
-        //             PullDownMenuItem(
-        //               title: '名前順（昇順）',
-        //               onTap: () {},
-        //             ),
-        //             const PullDownMenuDivider(),
-        //             PullDownMenuItem(
-        //               title: '名前順（降順）',
-        //               onTap: () {},
-        //             ),
-        //             const PullDownMenuDivider(),
-        //             PullDownMenuItem(
-        //               title: '料金が安い順',
-        //               onTap: () {},
-        //             ),
-        //             const PullDownMenuDivider(),
-        //             PullDownMenuItem(
-        //               title: '料金が高い順',
-        //               onTap: () {},
-        //             ),
-        //           ];
-        //         },
-        //         buttonBuilder: (context, showMenu) {
-        //           return GestureDetector(
-        //             onTap: () => showMenu(),
-        //             child: Icon(
-        //               Icons.sort,
-        //               size: 22.h,
-        //             ),
-        //           );
-        //         },
-        //       ),
-        //       SizedBox(width: 20.w),
-        //     ],
-        //   )
-        // ],
+        actions: const [SortButton()],
       ),
       floatingActionButton: loginError ? null : const CreatePageButton(),
       body: loginError

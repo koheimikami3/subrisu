@@ -1,9 +1,9 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'subscription_data.dart';
+part of 'create_subscription_data.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,13 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-SubscriptionData _$SubscriptionDataFromJson(Map<String, dynamic> json) {
-  return _SubscriptionData.fromJson(json);
+CreateSubscriptionData _$CreateSubscriptionDataFromJson(
+    Map<String, dynamic> json) {
+  return _CreateSubscriptionData.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SubscriptionData {
+mixin _$CreateSubscriptionData {
   String get serviceName => throw _privateConstructorUsedError;
   String get price => throw _privateConstructorUsedError;
   String get iconImagePath => throw _privateConstructorUsedError;
@@ -35,15 +36,15 @@ mixin _$SubscriptionData {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SubscriptionDataCopyWith<SubscriptionData> get copyWith =>
+  $CreateSubscriptionDataCopyWith<CreateSubscriptionData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubscriptionDataCopyWith<$Res> {
-  factory $SubscriptionDataCopyWith(
-          SubscriptionData value, $Res Function(SubscriptionData) then) =
-      _$SubscriptionDataCopyWithImpl<$Res, SubscriptionData>;
+abstract class $CreateSubscriptionDataCopyWith<$Res> {
+  factory $CreateSubscriptionDataCopyWith(CreateSubscriptionData value,
+          $Res Function(CreateSubscriptionData) then) =
+      _$CreateSubscriptionDataCopyWithImpl<$Res, CreateSubscriptionData>;
   @useResult
   $Res call(
       {String serviceName,
@@ -58,9 +59,10 @@ abstract class $SubscriptionDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SubscriptionDataCopyWithImpl<$Res, $Val extends SubscriptionData>
-    implements $SubscriptionDataCopyWith<$Res> {
-  _$SubscriptionDataCopyWithImpl(this._value, this._then);
+class _$CreateSubscriptionDataCopyWithImpl<$Res,
+        $Val extends CreateSubscriptionData>
+    implements $CreateSubscriptionDataCopyWith<$Res> {
+  _$CreateSubscriptionDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -122,11 +124,11 @@ class _$SubscriptionDataCopyWithImpl<$Res, $Val extends SubscriptionData>
 }
 
 /// @nodoc
-abstract class _$$_SubscriptionDataCopyWith<$Res>
-    implements $SubscriptionDataCopyWith<$Res> {
-  factory _$$_SubscriptionDataCopyWith(
-          _$_SubscriptionData value, $Res Function(_$_SubscriptionData) then) =
-      __$$_SubscriptionDataCopyWithImpl<$Res>;
+abstract class _$$_CreateSubscriptionDataCopyWith<$Res>
+    implements $CreateSubscriptionDataCopyWith<$Res> {
+  factory _$$_CreateSubscriptionDataCopyWith(_$_CreateSubscriptionData value,
+          $Res Function(_$_CreateSubscriptionData) then) =
+      __$$_CreateSubscriptionDataCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -142,11 +144,12 @@ abstract class _$$_SubscriptionDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SubscriptionDataCopyWithImpl<$Res>
-    extends _$SubscriptionDataCopyWithImpl<$Res, _$_SubscriptionData>
-    implements _$$_SubscriptionDataCopyWith<$Res> {
-  __$$_SubscriptionDataCopyWithImpl(
-      _$_SubscriptionData _value, $Res Function(_$_SubscriptionData) _then)
+class __$$_CreateSubscriptionDataCopyWithImpl<$Res>
+    extends _$CreateSubscriptionDataCopyWithImpl<$Res,
+        _$_CreateSubscriptionData>
+    implements _$$_CreateSubscriptionDataCopyWith<$Res> {
+  __$$_CreateSubscriptionDataCopyWithImpl(_$_CreateSubscriptionData _value,
+      $Res Function(_$_CreateSubscriptionData) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -162,7 +165,7 @@ class __$$_SubscriptionDataCopyWithImpl<$Res>
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
-    return _then(_$_SubscriptionData(
+    return _then(_$_CreateSubscriptionData(
       serviceName: null == serviceName
           ? _value.serviceName
           : serviceName // ignore: cast_nullable_to_non_nullable
@@ -205,8 +208,8 @@ class __$$_SubscriptionDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SubscriptionData extends _SubscriptionData {
-  const _$_SubscriptionData(
+class _$_CreateSubscriptionData extends _CreateSubscriptionData {
+  const _$_CreateSubscriptionData(
       {required this.serviceName,
       required this.price,
       this.iconImagePath = '',
@@ -218,8 +221,8 @@ class _$_SubscriptionData extends _SubscriptionData {
       @UpdatedAtField() this.updatedAt})
       : super._();
 
-  factory _$_SubscriptionData.fromJson(Map<String, dynamic> json) =>
-      _$$_SubscriptionDataFromJson(json);
+  factory _$_CreateSubscriptionData.fromJson(Map<String, dynamic> json) =>
+      _$$_CreateSubscriptionDataFromJson(json);
 
   @override
   final String serviceName;
@@ -246,14 +249,14 @@ class _$_SubscriptionData extends _SubscriptionData {
 
   @override
   String toString() {
-    return 'SubscriptionData(serviceName: $serviceName, price: $price, iconImagePath: $iconImagePath, paymentCycle: $paymentCycle, firstPaidOn: $firstPaidOn, notification: $notification, memo: $memo, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'CreateSubscriptionData(serviceName: $serviceName, price: $price, iconImagePath: $iconImagePath, paymentCycle: $paymentCycle, firstPaidOn: $firstPaidOn, notification: $notification, memo: $memo, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SubscriptionData &&
+            other is _$_CreateSubscriptionData &&
             (identical(other.serviceName, serviceName) ||
                 other.serviceName == serviceName) &&
             (identical(other.price, price) || other.price == price) &&
@@ -289,19 +292,20 @@ class _$_SubscriptionData extends _SubscriptionData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SubscriptionDataCopyWith<_$_SubscriptionData> get copyWith =>
-      __$$_SubscriptionDataCopyWithImpl<_$_SubscriptionData>(this, _$identity);
+  _$$_CreateSubscriptionDataCopyWith<_$_CreateSubscriptionData> get copyWith =>
+      __$$_CreateSubscriptionDataCopyWithImpl<_$_CreateSubscriptionData>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SubscriptionDataToJson(
+    return _$$_CreateSubscriptionDataToJson(
       this,
     );
   }
 }
 
-abstract class _SubscriptionData extends SubscriptionData {
-  const factory _SubscriptionData(
+abstract class _CreateSubscriptionData extends CreateSubscriptionData {
+  const factory _CreateSubscriptionData(
       {required final String serviceName,
       required final String price,
       final String iconImagePath,
@@ -310,11 +314,11 @@ abstract class _SubscriptionData extends SubscriptionData {
       required final bool notification,
       required final String memo,
       @CreatedAtField() final DateTime? createdAt,
-      @UpdatedAtField() final DateTime? updatedAt}) = _$_SubscriptionData;
-  const _SubscriptionData._() : super._();
+      @UpdatedAtField() final DateTime? updatedAt}) = _$_CreateSubscriptionData;
+  const _CreateSubscriptionData._() : super._();
 
-  factory _SubscriptionData.fromJson(Map<String, dynamic> json) =
-      _$_SubscriptionData.fromJson;
+  factory _CreateSubscriptionData.fromJson(Map<String, dynamic> json) =
+      _$_CreateSubscriptionData.fromJson;
 
   @override
   String get serviceName;
@@ -339,6 +343,6 @@ abstract class _SubscriptionData extends SubscriptionData {
   DateTime? get updatedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_SubscriptionDataCopyWith<_$_SubscriptionData> get copyWith =>
+  _$$_CreateSubscriptionDataCopyWith<_$_CreateSubscriptionData> get copyWith =>
       throw _privateConstructorUsedError;
 }

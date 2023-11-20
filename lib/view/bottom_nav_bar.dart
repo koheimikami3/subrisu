@@ -47,6 +47,8 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
     // テーマ設定状況を取得し、アプリに反映
     AppManager.getTheme(context, ref);
 
+    AppManager.getListSort(ref);
+
     // バナー広告を読み込む
     _myBanner.load();
   }

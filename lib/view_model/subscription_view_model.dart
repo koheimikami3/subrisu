@@ -46,7 +46,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
     final firstPaidOn = DateTime(year, month, day);
 
     // SubscriptionDataを作成
-    final data = SubscriptionData(
+    final data = CreateSubscriptionData(
       serviceName: serviceName,
       price: price,
       iconImagePath: iconImagePath,
@@ -80,7 +80,7 @@ class SubscriptionViewModel extends StateNotifier<List<QueryDocumentSnapshot>> {
     final firstPaidOn = DateTime(year, month, day);
 
     // SubscriptionDataを作成
-    final data = SubscriptionData(
+    final data = CreateSubscriptionData(
       serviceName: serviceName,
       price: price,
       iconImagePath: iconImagePath,

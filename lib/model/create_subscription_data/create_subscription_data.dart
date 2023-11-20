@@ -3,12 +3,12 @@ import 'package:subrisu/core/first_paid_on_field.dart';
 import 'package:subrisu/core/updated_at_field.dart';
 import 'package:subrisu/importer.dart';
 
-part 'subscription_data.freezed.dart';
-part 'subscription_data.g.dart';
+part 'create_subscription_data.freezed.dart';
+part 'create_subscription_data.g.dart';
 
 @freezed
-abstract class SubscriptionData implements _$SubscriptionData {
-  const factory SubscriptionData({
+abstract class CreateSubscriptionData implements _$CreateSubscriptionData {
+  const factory CreateSubscriptionData({
     required String serviceName,
     required String price,
     @Default('') String iconImagePath,
@@ -18,10 +18,10 @@ abstract class SubscriptionData implements _$SubscriptionData {
     required String memo,
     @CreatedAtField() DateTime? createdAt,
     @UpdatedAtField() DateTime? updatedAt,
-  }) = _SubscriptionData;
+  }) = _CreateSubscriptionData;
 
-  const SubscriptionData._();
+  const CreateSubscriptionData._();
 
-  factory SubscriptionData.fromJson(Map<String, dynamic> json) =>
-      _$SubscriptionDataFromJson(json);
+  factory CreateSubscriptionData.fromJson(Map<String, dynamic> json) =>
+      _$CreateSubscriptionDataFromJson(json);
 }

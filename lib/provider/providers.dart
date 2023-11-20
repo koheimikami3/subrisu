@@ -10,6 +10,8 @@ final themeProvider = StateProvider((ref) => 0);
 
 final darkModeProvider = StateProvider((ref) => false);
 
+final listSortProvider = StateProvider((ref) => 0);
+
 final serviceNameProvider = StateProvider.autoDispose((ref) => '');
 
 final selectIconImagePathProvider = StateProvider.autoDispose((ref) => '');

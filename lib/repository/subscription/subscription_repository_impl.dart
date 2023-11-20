@@ -1,5 +1,6 @@
 import '../../importer.dart';
 
+/// SubscriptionRepositoryの実装クラス
 class SubscriptionRepositoryImpl implements SubscriptionRepository {
   SubscriptionRepositoryImpl();
 
@@ -17,7 +18,7 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
   }
 
   @override
-  Future<void> create(String userId, SubscriptionData data) async {
+  Future<void> create(String userId, CreateSubscriptionData data) async {
     try {
       await _db
           .collection('users')
@@ -33,7 +34,7 @@ class SubscriptionRepositoryImpl implements SubscriptionRepository {
   Future<void> update(
     String userId,
     String subscId,
-    SubscriptionData data,
+    CreateSubscriptionData data,
   ) async {
     try {
       await _db

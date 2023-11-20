@@ -81,6 +81,7 @@ class _MyAppState extends ConsumerState<MyApp> {
     final isDark = ref.watch(darkModeProvider);
 
     return ScreenUtilInit(
+      useInheritedMediaQuery: true,
       builder: (_, __) {
         return MaterialApp(
           theme: isDark ? AppTheme.dark() : AppTheme.light(),

@@ -1,3 +1,5 @@
+import 'package:subrisu/core/next_payment_days_calculator.dart';
+
 import '../../../constant/colors.dart' as colors;
 import '../../../importer.dart';
 
@@ -8,6 +10,53 @@ class SubscriptionList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final docList = ref.watch(subscriptionViewModelProvider);
+    final sortIndex = ref.watch(listSortProvider);
+
+    switch (sortIndex) {
+      case 0:
+        docList.sort((a, b) {
+          final aDays = NextPaymentDaysCalculator.calculateDays(a);
+          final bDays = NextPaymentDaysCalculator.calculateDays(b);
+
+          return aDays.compareTo(bDays);
+        });
+      case 1:
+        docList.sort((a, b) {
+          final aPrice = int.parse(a.get('price') as String);
+          final bPrice = int.parse(b.get('price') as String);
+
+          return aPrice.compareTo(bPrice);
+        });
+      case 2:
+        docList.sort((a, b) {
+          final aPrice = int.parse(a.get('price') as String);
+          final bPrice = int.parse(b.get('price') as String);
+
+          return -aPrice.compareTo(bPrice);
+        });
+      case 3:
+        docList.sort((a, b) {
+          final aServiceName = a.get('serviceName') as String;
+          final bServiceName = b.get('serviceName') as String;
+
+          return aServiceName.compareTo(bServiceName);
+        });
+      case 4:
+        docList.sort((a, b) {
+          final aServiceName = a.get('serviceName') as String;
+          final bServiceName = b.get('serviceName') as String;
+
+          return -aServiceName.compareTo(bServiceName);
+        });
+
+      default:
+        docList.sort((a, b) {
+          final aDays = NextPaymentDaysCalculator.calculateDays(a);
+          final bDays = NextPaymentDaysCalculator.calculateDays(b);
+
+          return aDays.compareTo(bDays);
+        });
+    }
 
     return docList.isEmpty
         ? Center(
