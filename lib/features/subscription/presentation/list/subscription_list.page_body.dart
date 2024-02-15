@@ -1,3 +1,4 @@
+import '../../../../../constant/texts.dart' as texts;
 import '../../../../../importer.dart';
 
 /// サブスクリプション一覧画面のScaffoldBody
@@ -6,24 +7,35 @@ class SubscriptionListPageBody extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncLogin = ref.watch(loginProvider);
+    final asyncSubscriptions = ref.watch(subscriptionsProvider);
 
-    return asyncLogin.when(
+    return asyncSubscriptions.when(
       loading: () => const Center(child: LoadingIndicator()),
-      error: (_, __) => const Center(child: LoginError()),
-      data: (_) {
-        final asyncSubscriptions = ref.watch(subscriptionsProvider);
-
-        return asyncSubscriptions.when(
-          loading: () => const Center(child: LoadingIndicator()),
-          error: (_, __) => const Center(child: LoginError()),
-          data: (subscriptions) {
-            return subscriptions.isEmpty
-                ? const Center(child: NoSubscription())
-                : SubscriptionList(subscriptions: subscriptions);
-          },
-        );
+      error: (_, __) => _error(),
+      data: (subscriptions) {
+        return subscriptions.isEmpty
+            ? const Center(child: NoSubscription())
+            : SubscriptionList(subscriptions: subscriptions);
       },
+    );
+  }
+
+  Widget _error() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SubrisuImage(color: Colors.red),
+          Text(
+            texts.fetchSubscriptionsError,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 15.sp,
+              color: Colors.red,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

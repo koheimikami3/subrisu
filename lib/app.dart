@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:subrisu/features/subscription/presentation/login_error/login_error_page.dart';
 import 'importer.dart';
 
 class MyApp extends ConsumerStatefulWidget {
@@ -20,6 +21,7 @@ class _MyAppState extends ConsumerState<MyApp> {
   @override
   Widget build(BuildContext context) {
     final isDarkMode = ref.watch(darkModeNotifierProvider);
+    ref.watch(themeSettingNotifierProvider);
 
     return ScreenUtilInit(
       useInheritedMediaQuery: true,
@@ -44,7 +46,18 @@ class _MyAppState extends ConsumerState<MyApp> {
             '/privacyPolicy': (_) => const PrivacyPolicyPage(),
             '/bottomNav': (_) => const MyBottomNavigationBar(),
           },
-          home: const MyBottomNavigationBar(),
+          home: Consumer(
+            builder: (_, ref, __) {
+              final asyncLogin = ref.watch(loginProvider);
+
+              return asyncLogin.when(
+                loading: () =>
+                    const Scaffold(body: Center(child: LoadingIndicator())),
+                error: (_, __) => const LoginErrorPage(),
+                data: (_) => const MyBottomNavigationBar(),
+              );
+            },
+          ),
         );
       },
     );

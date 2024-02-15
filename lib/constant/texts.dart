@@ -11,6 +11,7 @@ const billingPage = '広告の非表示';
 const darkModePage = 'ダークモード';
 const tosPage = '利用規約';
 const privacyPolicyPage = 'プライバシーポリシー';
+const loginErrorPage = 'ログインエラー';
 
 // ログイン画面ボタンテキスト
 const createAnonymousUserButton = 'アカウント登録しないで始める';
@@ -99,6 +100,7 @@ const paymentMethodList = [
   Error
 ============================================= */
 const loginError = 'ログインに失敗しました。\n時間をおいて再度お試しください。';
+const fetchSubscriptionsError = 'サブスクリプションの取得に失敗しました。\n時間をおいて再度お試しください。';
 
 /* =============================================
   サブスクリプション一覧画面

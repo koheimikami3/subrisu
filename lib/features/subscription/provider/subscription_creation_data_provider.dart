@@ -9,6 +9,7 @@ SubscriptionCreationData subscriptionCreationData(
 ) {
   final formState = ref.read(subscriptionFormNotifierProvider);
   var iconImagePath = formState.resultIconImagePath;
+  late final DateTime firstPaidOn;
 
   // アイコン画像未設定の場合、サブリスアイコンにする
   if (iconImagePath.isEmpty) {
@@ -16,11 +17,15 @@ SubscriptionCreationData subscriptionCreationData(
   }
 
   // 初回支払日を作成
-  final firstPaidOn = DateTime(
-    formState.firstPaidYear!,
-    formState.firstPaidMonth!,
-    formState.firstPaidDay!,
-  );
+  if (formState.firstPaidYear == null) {
+    firstPaidOn = DateTime.now();
+  } else {
+    firstPaidOn = DateTime(
+      formState.firstPaidYear!,
+      formState.firstPaidMonth!,
+      formState.firstPaidDay!,
+    );
+  }
 
   // SubscriptionDocumentの作成データ
   final creationData = SubscriptionCreationData(
