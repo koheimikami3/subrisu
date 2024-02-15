@@ -26,10 +26,10 @@ class ItemsTitle extends ConsumerWidget {
 
   /// タイトルテキストを表示する
   Text _title(WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
+    final isDarkMode = ref.watch(darkModeNotifierProvider);
     var color = Colors.grey.shade700;
 
-    if (isDark) {
+    if (isDarkMode) {
       color = Colors.grey.shade400;
     }
 

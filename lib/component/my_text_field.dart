@@ -26,7 +26,7 @@ class MyTextFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
+    final isDarkMode = ref.watch(darkModeNotifierProvider);
 
     return TextFormField(
       initialValue: initialValue,
@@ -43,7 +43,7 @@ class MyTextFormField extends ConsumerWidget {
         hintStyle: TextStyle(fontSize: configs.defaultFontSize.sp),
         counterText: '',
         filled: true,
-        fillColor: isDark ? colors.darkItemColor : Colors.white,
+        fillColor: isDarkMode ? colors.darkItemColor : Colors.white,
         border: const OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.all(Radius.circular(10)),

@@ -8,13 +8,13 @@ class CircularIndicator extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
+    final isDarkMode = ref.watch(darkModeNotifierProvider);
 
     return Platform.isAndroid
         ? const CircularProgressIndicator()
         : CupertinoActivityIndicator(
             radius: 17,
-            color: isDark ? Colors.black : null,
+            color: isDarkMode ? Colors.black : null,
           );
   }
 }

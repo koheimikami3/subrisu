@@ -34,12 +34,6 @@ const notificationKey = 'isNotifidationDialogShowed';
 // テーマ設定キー
 const themeKey = 'theme';
 
-// テーマ設定インデックス
-// ０：端末設定 １：ライドモード　　２：ダークモード
-const deviceTheme = 0;
-const lightTheme = 1;
-const darkTheme = 2;
-
 // RemoteConfigキー
 const forceAppVersionIOSRemoteKey = 'forceAppVersionIOS';
 const forceAppVersionAndroidRemoteKey = 'forceAppVersionAndroid';

@@ -6,11 +6,11 @@ class ItemDivider extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
+    final isDarkMode = ref.watch(darkModeNotifierProvider);
 
     return Container(
       height: 0.3.h,
-      color: isDark ? Colors.grey.shade600 : Colors.black12,
+      color: isDarkMode ? Colors.grey.shade600 : Colors.black12,
     );
   }
 }

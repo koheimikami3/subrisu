@@ -28,7 +28,7 @@ class SettingItem extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
+    final isDarkMode = ref.watch(darkModeNotifierProvider);
 
     return Material(
       borderRadius: independenceItem
@@ -40,7 +40,7 @@ class SettingItem extends ConsumerWidget {
                   : bottomItem
                       ? _bottomRadius()
                       : null,
-      color: isDark ? colors.darkItemColor : Colors.white,
+      color: isDarkMode ? colors.darkItemColor : Colors.white,
       child: InkWell(
         onTap: onTap,
         borderRadius: independenceItem
@@ -52,7 +52,7 @@ class SettingItem extends ConsumerWidget {
                     : bottomItem
                         ? _bottomRadius()
                         : null,
-        highlightColor: isDark ? Colors.grey.shade700 : Colors.black26,
+        highlightColor: isDarkMode ? Colors.grey.shade700 : Colors.black26,
         splashFactory: NoSplash.splashFactory,
         child: Row(
           children: [
@@ -117,10 +117,10 @@ class SettingItem extends ConsumerWidget {
 
   /// 設定内容を表示する
   Text _settings(WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
+    final isDarkMode = ref.watch(darkModeNotifierProvider);
     var color = Colors.black54;
 
-    if (isDark) {
+    if (isDarkMode) {
       color = Colors.grey.shade300;
     }
 

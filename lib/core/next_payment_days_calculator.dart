@@ -3,9 +3,8 @@ import '../importer.dart';
 class NextPaymentDaysCalculator {
   const NextPaymentDaysCalculator();
 
-  static int calculateDays(DocumentSnapshot subscriptionDoc) {
-    final data = subscriptionDoc.data()! as Map<String, dynamic>;
-    final paymentCycle = data['paymentCycle'];
+  static int calculateDays(Subscription subscription) {
+    final paymentCycle = subscription.paymentCycle;
     var day = 0;
 
     // 現在日付を取得
@@ -13,8 +12,7 @@ class NextPaymentDaysCalculator {
     now = DateTime(now.year, now.month, now.day);
 
     // 初回支払日を取得
-    final timestamp = data['firstPaidOn'] as Timestamp;
-    final firstPaidOn = timestamp.toDate();
+    final firstPaidOn = subscription.firstPaidOn.toDate();
 
     switch (paymentCycle) {
       // 「毎日」の場合
@@ -111,7 +109,6 @@ class NextPaymentDaysCalculator {
         final difference = nextPaidOn.difference(now);
         day = difference.inDays;
     }
-
     return day;
   }
 }

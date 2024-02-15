@@ -1,0 +1,21 @@
+import '../../../../../importer.dart';
+
+part 'delete_subscription_provider.g.dart';
+
+/// SubscriptionDocumentを削除するFutureProvider
+@riverpod
+Future<void> deleteSubscription(
+  DeleteSubscriptionRef ref,
+  String subscriptionId,
+) async {
+  final userId = ref.read(userIdProvider);
+
+  // SubscriptionDocumentを更新
+  await ref
+      .read(firebaseFirestoreProvider)
+      .collection('users')
+      .doc(userId)
+      .collection('subscriptions')
+      .doc(subscriptionId)
+      .delete();
+}

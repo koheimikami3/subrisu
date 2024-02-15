@@ -9,6 +9,7 @@ class AppTheme {
   /// ライトモードのテーマ設定を行う
   static ThemeData light() {
     return ThemeData(
+      useMaterial3: false,
       scaffoldBackgroundColor: colors.lightBackgroundColor,
       brightness: Brightness.light,
       splashColor: Colors.transparent,
@@ -23,6 +24,7 @@ class AppTheme {
   /// ダークモードのテーマ設定を行う
   static ThemeData dark() {
     return ThemeData(
+      useMaterial3: false,
       brightness: Brightness.dark,
       scaffoldBackgroundColor: colors.darkBackgroundColor,
       iconTheme: IconThemeData(color: Colors.grey.shade400),

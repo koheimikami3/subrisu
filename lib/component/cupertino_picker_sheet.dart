@@ -14,17 +14,17 @@ class CupertinoPickerSheet extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
+    final isDarkMode = ref.watch(darkModeNotifierProvider);
 
     return Container(
       height: 200.h,
-      color: isDark ? colors.darkItemColor : Colors.white,
+      color: isDarkMode ? colors.darkItemColor : Colors.white,
       child: Column(
         children: [
           Row(
             children: [
               SizedBox(width: 15.w),
-              _cancelButton(context, isDark),
+              _cancelButton(context, isDarkMode),
               const Spacer(),
               _saveButton(),
               SizedBox(width: 15.w),
@@ -37,10 +37,10 @@ class CupertinoPickerSheet extends ConsumerWidget {
   }
 
   /// 変更をキャンセルしてPickerを閉じるボタン
-  Widget _cancelButton(BuildContext context, bool isDark) {
+  Widget _cancelButton(BuildContext context, bool isDarkMode) {
     return CupertinoTextButton(
       text: texts.pickerCancelButton,
-      color: isDark ? Colors.white : Colors.grey.shade800,
+      color: isDarkMode ? Colors.white : Colors.grey.shade800,
       onPressed: () => Navigator.pop(context),
     );
   }

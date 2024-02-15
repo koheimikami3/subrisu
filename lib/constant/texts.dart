@@ -1,9 +1,11 @@
 import 'urls.dart' as urls;
 
-// 画面タイトル
+/* =============================================
+  AppBarTitle
+============================================= */
 const listPage = 'リスト';
-const createPage = '新規登録';
-const editPage = '編集';
+const createSubscriptionPageTitle = '新規登録';
+const editSubscriptionPage = '編集';
 const settingsPage = '設定';
 const billingPage = '広告の非表示';
 const darkModePage = 'ダークモード';
@@ -34,7 +36,7 @@ const paymentCycleTitle = '支払い周期';
 const paymentMethodTitle = '支払い方法';
 const firstPaymentDateTitle = '初回支払い日';
 const notificationTitle = '支払い前日に通知する';
-const memoTitle = 'メモ';
+const memoFormTitle = 'メモ';
 
 // 登録・編集画面ヒントテキスト
 const serviceNameHint = 'サービス名*';
@@ -68,7 +70,7 @@ const lightSettingItem = 'ライトモード';
 const darkSettingItem = 'ダークモード';
 
 // ボトムナビゲーションバーテキスト
-const listNavi = 'リスト';
+const subscriptionListNavi = 'リスト';
 const settingsNavi = '設定';
 
 // シェアテキスト
@@ -92,3 +94,13 @@ const paymentMethodList = [
   'Google Play Store',
   'その他',
 ];
+
+/* =============================================
+  Error
+============================================= */
+const loginError = 'ログインに失敗しました。\n時間をおいて再度お試しください。';
+
+/* =============================================
+  サブスクリプション一覧画面
+============================================= */
+const noSubscription = 'サブスクリプションはありません\n右下の＋ボタンで登録できます';

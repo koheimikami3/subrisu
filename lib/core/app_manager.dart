@@ -25,7 +25,7 @@ class AppManager {
 
     // 課金ユーザーの場合、バナー広告を非表示にする
     if (entitlementInfo != null && entitlementInfo.isActive) {
-      ref.read(isPurchasedProvider.notifier).state = true;
+      ref.read(purchaseStatusNotifierProvider.notifier).active();
     }
   }
 
@@ -42,31 +42,31 @@ class AppManager {
     // テーマの設定状況を取得
     final theme = prefs.getInt(configs.themeKey) ?? 0;
 
-    // 「端末設定と同じ」の場合、端末のテーマ設定を取得し、ダークモードか判定
-    if (theme == configs.deviceTheme) {
-      ref.read(themeProvider.notifier).state = configs.deviceTheme;
-      ref.read(darkModeProvider.notifier).state = isDarkMode(context);
-    }
-
-    // 「ライトモード」の場合
-    if (theme == configs.lightTheme) {
-      ref.read(themeProvider.notifier).state = configs.lightTheme;
-      ref.read(darkModeProvider.notifier).state = false;
-    }
-
-    // 「ダークモード」の場合
-    if (theme == configs.darkTheme) {
-      ref.read(themeProvider.notifier).state = configs.darkTheme;
-      ref.read(darkModeProvider.notifier).state = true;
+    if (theme == ThemeSetting.device.index) {
+      // 「端末設定と同じ」の場合、端末のテーマ設定を取得し、ダークモードか判定
+      ref.read(themeSettingNotifierProvider.notifier).setDevice();
+      ref
+          .read(darkModeNotifierProvider.notifier)
+          .setSetting(isDarkMode: isDarkMode(context));
+    } else if (theme == ThemeSetting.light.index) {
+      // 「ライトモード」の場合
+      ref.read(themeSettingNotifierProvider.notifier).setLight();
+      ref.read(darkModeNotifierProvider.notifier).setSetting(isDarkMode: false);
+    } else if (theme == ThemeSetting.dark.index) {
+      // 「ダークモード」の場合
+      ref.read(themeSettingNotifierProvider.notifier).setDark();
+      ref.read(darkModeNotifierProvider.notifier).setSetting(isDarkMode: true);
     }
   }
 
   /// リストの並び替え設定状況を取得し、アプリに反映する
   static Future<void> getListSort(WidgetRef ref) async {
     final prefs = await SharedPreferences.getInstance();
+    final sortIndex = prefs.getInt(configs.listSortKey) ?? 0;
 
-    ref.read(listSortProvider.notifier).state =
-        prefs.getInt(configs.listSortKey) ?? 0;
+    ref
+        .read(subscriptionSortNotifierProvider.notifier)
+        .setSetting(SubscriptionSort.values[sortIndex]);
   }
 
   static void checkForceAppVersion(BuildContext context) {

@@ -5,7 +5,7 @@ class LoadingIndicator extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDark = ref.watch(darkModeProvider);
+    final isDarkMode = ref.watch(darkModeNotifierProvider);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -14,7 +14,7 @@ class LoadingIndicator extends ConsumerWidget {
           padding: EdgeInsets.all(25.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: isDark ? Colors.grey.shade400 : Colors.white,
+            color: isDarkMode ? Colors.grey.shade400 : Colors.white,
           ),
           child: const CircularIndicator(),
         ),

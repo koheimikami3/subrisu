@@ -10,12 +10,14 @@ class NotificationSettingDialog extends ConsumerWidget {
     const content = '支払い前日に通知を受け取るには、アプリの通知設定をオンにする必要があります。';
     const actionText = '設定する';
 
-    return const MyConformDialog(
+    return MyConformDialog(
       title: title,
       content: content,
       actionText: actionText,
       isCaution: false,
-      onPressed: AppSettings.openNotificationSettings,
+      onPressed: () async {
+        await AppSettings.openAppSettings(type: AppSettingsType.notification);
+      },
     );
   }
 }
