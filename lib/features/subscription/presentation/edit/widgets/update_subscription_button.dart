@@ -1,4 +1,3 @@
-import '../../../../../constant/exceptions.dart' as exceptions;
 import '../../../../../constant/texts.dart' as texts;
 import '../../../../../importer.dart';
 
@@ -15,7 +14,7 @@ class UpdateSubscriptionButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final formState = ref.watch(subscriptionFormNotifierProvider);
 
-    return MyCupertinoButton(
+    return MyFilledButton(
       text: texts.updateSubscriptionButton,
       onPressed: formState.serviceName.isEmpty || formState.price.isEmpty
           ? null
@@ -31,14 +30,14 @@ class UpdateSubscriptionButton extends ConsumerWidget {
     FocusScope.of(context).unfocus();
 
     // プログレスダイアログを表示
-    ProgressDialog.show(context);
+    showProgressDialog(context);
 
     try {
       // サブスクリプションを更新
       await ref.read(updateSubscriptionProvider(subscriptionId).future);
     } on Exception {
       // エラーメッセージを取得
-      errorMessage = exceptions.messageMap[exceptions.updateSubscription];
+      errorMessage = texts.updateSubscritpionError;
     }
 
     // プログレスダイアログを閉じる

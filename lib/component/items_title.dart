@@ -1,6 +1,6 @@
 import 'package:subrisu/importer.dart';
 
-/// 項目リストタイトルのUIを作成する
+/// 項目リストのタイトル
 class ItemsTitle extends ConsumerWidget {
   const ItemsTitle({
     super.key,
@@ -16,7 +16,7 @@ class ItemsTitle extends ConsumerWidget {
         Row(
           children: [
             SizedBox(width: 15.w),
-            _title(ref),
+            _title(context, ref),
           ],
         ),
         SizedBox(height: 5.h),
@@ -24,20 +24,20 @@ class ItemsTitle extends ConsumerWidget {
     );
   }
 
-  /// タイトルテキストを表示する
-  Text _title(WidgetRef ref) {
-    final isDarkMode = ref.watch(darkModeNotifierProvider);
-    var color = Colors.grey.shade700;
-
-    if (isDarkMode) {
-      color = Colors.grey.shade400;
-    }
+  /// タイトル
+  Widget _title(BuildContext context, WidgetRef ref) {
+    final themeSetting = ref.watch(themeSettingNotifierProvider);
 
     return Text(
       title,
       style: TextStyle(
         fontSize: 12.5.sp,
-        color: color,
+        color: selectColor(
+          context: context,
+          themeSetting: themeSetting,
+          lightColor: Colors.grey.shade700,
+          darkColor: Colors.grey.shade400,
+        ),
       ),
     );
   }

@@ -7,8 +7,13 @@ part 'user_creation_data.g.dart';
 @freezed
 abstract class UserCreationData implements _$UserCreationData {
   const factory UserCreationData({
+    // 端末のOS
     required String os,
+
+    // FCMトークン
     required String token,
+
+    // 作成日時
     @CreatedAtField() DateTime? createdAt,
   }) = _UserCreationData;
 

@@ -20,8 +20,9 @@ UserCreationData _$UserCreationDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserCreationData {
-  String get os => throw _privateConstructorUsedError;
-  String get token => throw _privateConstructorUsedError;
+// 端末のOS
+  String get os => throw _privateConstructorUsedError; // FCMトークン
+  String get token => throw _privateConstructorUsedError; // 作成日時
   @CreatedAtField()
   DateTime? get createdAt => throw _privateConstructorUsedError;
 
@@ -127,10 +128,13 @@ class _$UserCreationDataImpl extends _UserCreationData {
   factory _$UserCreationDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserCreationDataImplFromJson(json);
 
+// 端末のOS
   @override
   final String os;
+// FCMトークン
   @override
   final String token;
+// 作成日時
   @override
   @CreatedAtField()
   final DateTime? createdAt;
@@ -180,11 +184,11 @@ abstract class _UserCreationData extends UserCreationData {
   factory _UserCreationData.fromJson(Map<String, dynamic> json) =
       _$UserCreationDataImpl.fromJson;
 
-  @override
+  @override // 端末のOS
   String get os;
-  @override
+  @override // FCMトークン
   String get token;
-  @override
+  @override // 作成日時
   @CreatedAtField()
   DateTime? get createdAt;
   @override

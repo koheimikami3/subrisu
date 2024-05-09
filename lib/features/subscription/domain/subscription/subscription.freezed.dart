@@ -21,7 +21,7 @@ mixin _$Subscription {
   String get serviceName => throw _privateConstructorUsedError; // 価格
   String get price => throw _privateConstructorUsedError; // アイコン画像パス
   String get iconImagePath => throw _privateConstructorUsedError; // 支払い周期
-  int get paymentCycle => throw _privateConstructorUsedError; // 初回支払日
+  PaymentCycle get paymentCycle => throw _privateConstructorUsedError; // 初回支払日
   Timestamp get firstPaidOn => throw _privateConstructorUsedError; // 通知フラグ
   bool get notification => throw _privateConstructorUsedError; // メモ
   String get memo => throw _privateConstructorUsedError; // 作成日
@@ -43,7 +43,7 @@ abstract class $SubscriptionCopyWith<$Res> {
       String serviceName,
       String price,
       String iconImagePath,
-      int paymentCycle,
+      PaymentCycle paymentCycle,
       Timestamp firstPaidOn,
       bool notification,
       String memo,
@@ -93,7 +93,7 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
       paymentCycle: null == paymentCycle
           ? _value.paymentCycle
           : paymentCycle // ignore: cast_nullable_to_non_nullable
-              as int,
+              as PaymentCycle,
       firstPaidOn: null == firstPaidOn
           ? _value.firstPaidOn
           : firstPaidOn // ignore: cast_nullable_to_non_nullable
@@ -127,7 +127,7 @@ abstract class _$$SubscriptionImplCopyWith<$Res>
       String serviceName,
       String price,
       String iconImagePath,
-      int paymentCycle,
+      PaymentCycle paymentCycle,
       Timestamp firstPaidOn,
       bool notification,
       String memo,
@@ -175,7 +175,7 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
       paymentCycle: null == paymentCycle
           ? _value.paymentCycle
           : paymentCycle // ignore: cast_nullable_to_non_nullable
-              as int,
+              as PaymentCycle,
       firstPaidOn: null == firstPaidOn
           ? _value.firstPaidOn
           : firstPaidOn // ignore: cast_nullable_to_non_nullable
@@ -225,7 +225,7 @@ class _$SubscriptionImpl extends _Subscription {
   final String iconImagePath;
 // 支払い周期
   @override
-  final int paymentCycle;
+  final PaymentCycle paymentCycle;
 // 初回支払日
   @override
   final Timestamp firstPaidOn;
@@ -283,7 +283,7 @@ abstract class _Subscription extends Subscription {
       required final String serviceName,
       required final String price,
       required final String iconImagePath,
-      required final int paymentCycle,
+      required final PaymentCycle paymentCycle,
       required final Timestamp firstPaidOn,
       required final bool notification,
       required final String memo,
@@ -299,7 +299,7 @@ abstract class _Subscription extends Subscription {
   @override // アイコン画像パス
   String get iconImagePath;
   @override // 支払い周期
-  int get paymentCycle;
+  PaymentCycle get paymentCycle;
   @override // 初回支払日
   Timestamp get firstPaidOn;
   @override // 通知フラグ

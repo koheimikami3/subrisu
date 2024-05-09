@@ -1,17 +1,16 @@
-import 'package:flutter/cupertino.dart';
+import '../../constant/texts.dart' as texts;
+import '../../importer.dart';
 
-/// iOS：実行結果を表示するダイアログ
+/// カスタムAlertDialog
 class MyAlertDialog {
   const MyAlertDialog();
 
+  /// 実行完了を伝えるダイアログを表示する
   static void showCompleted(BuildContext context, String content) {
-    const text = '実行結果';
-
-    showCupertinoDialog<void>(
+    showDialog<void>(
       context: context,
       builder: (context) {
-        return CupertinoAlertDialog(
-          title: const Text(text),
+        return AlertDialog(
           content: Text(content),
           actions: [_closeButton(context)],
         );
@@ -19,14 +18,13 @@ class MyAlertDialog {
     );
   }
 
+  /// エラー発生を伝えるダイアログを表示する
   static void showError(BuildContext context, String content) {
-    const text = 'エラー';
-
-    showCupertinoDialog<void>(
+    showDialog<void>(
       context: context,
       builder: (context) {
-        return CupertinoAlertDialog(
-          title: const Text(text),
+        return AlertDialog(
+          title: const Text(texts.errorDialogTitle),
           content: Text(content),
           actions: [_closeButton(context)],
         );
@@ -34,12 +32,10 @@ class MyAlertDialog {
     );
   }
 
-  /// 閉じるボタンを表示する
-  static CupertinoDialogAction _closeButton(BuildContext context) {
-    const text = '閉じる';
-
-    return CupertinoDialogAction(
-      child: const Text(text),
+  /// 閉じるボタン
+  static Widget _closeButton(BuildContext context) {
+    return TextButton(
+      child: const Text(texts.closeDialogButton),
       onPressed: () => Navigator.pop(context),
     );
   }

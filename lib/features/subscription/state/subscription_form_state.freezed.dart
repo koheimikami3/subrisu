@@ -22,7 +22,7 @@ mixin _$SubscriptionFormState {
   String get selectedIconImagePath =>
       throw _privateConstructorUsedError; // 選択確定アイコン画像パス
   String get resultIconImagePath => throw _privateConstructorUsedError; // 支払い周期
-  int get paymentCycle => throw _privateConstructorUsedError; // 初回支払い年
+  PaymentCycle get paymentCycle => throw _privateConstructorUsedError; // 初回支払い年
   int? get firstPaidYear => throw _privateConstructorUsedError; // 初回支払い月
   int? get firstPaidMonth => throw _privateConstructorUsedError; // 初回支払い日
   int? get firstPaidDay => throw _privateConstructorUsedError; // 通知フラグ
@@ -45,7 +45,7 @@ abstract class $SubscriptionFormStateCopyWith<$Res> {
       String price,
       String selectedIconImagePath,
       String resultIconImagePath,
-      int paymentCycle,
+      PaymentCycle paymentCycle,
       int? firstPaidYear,
       int? firstPaidMonth,
       int? firstPaidDay,
@@ -98,7 +98,7 @@ class _$SubscriptionFormStateCopyWithImpl<$Res,
       paymentCycle: null == paymentCycle
           ? _value.paymentCycle
           : paymentCycle // ignore: cast_nullable_to_non_nullable
-              as int,
+              as PaymentCycle,
       firstPaidYear: freezed == firstPaidYear
           ? _value.firstPaidYear
           : firstPaidYear // ignore: cast_nullable_to_non_nullable
@@ -137,7 +137,7 @@ abstract class _$$SubscriptionFormStateImplCopyWith<$Res>
       String price,
       String selectedIconImagePath,
       String resultIconImagePath,
-      int paymentCycle,
+      PaymentCycle paymentCycle,
       int? firstPaidYear,
       int? firstPaidMonth,
       int? firstPaidDay,
@@ -188,7 +188,7 @@ class __$$SubscriptionFormStateImplCopyWithImpl<$Res>
       paymentCycle: null == paymentCycle
           ? _value.paymentCycle
           : paymentCycle // ignore: cast_nullable_to_non_nullable
-              as int,
+              as PaymentCycle,
       firstPaidYear: freezed == firstPaidYear
           ? _value.firstPaidYear
           : firstPaidYear // ignore: cast_nullable_to_non_nullable
@@ -221,7 +221,7 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
       this.price = '',
       this.selectedIconImagePath = '',
       this.resultIconImagePath = '',
-      this.paymentCycle = 2,
+      this.paymentCycle = PaymentCycle.monthly,
       this.firstPaidYear = null,
       this.firstPaidMonth = null,
       this.firstPaidDay = null,
@@ -248,7 +248,7 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
 // 支払い周期
   @override
   @JsonKey()
-  final int paymentCycle;
+  final PaymentCycle paymentCycle;
 // 初回支払い年
   @override
   @JsonKey()
@@ -328,7 +328,7 @@ abstract class _SubscriptionFormState extends SubscriptionFormState {
       final String price,
       final String selectedIconImagePath,
       final String resultIconImagePath,
-      final int paymentCycle,
+      final PaymentCycle paymentCycle,
       final int? firstPaidYear,
       final int? firstPaidMonth,
       final int? firstPaidDay,
@@ -345,7 +345,7 @@ abstract class _SubscriptionFormState extends SubscriptionFormState {
   @override // 選択確定アイコン画像パス
   String get resultIconImagePath;
   @override // 支払い周期
-  int get paymentCycle;
+  PaymentCycle get paymentCycle;
   @override // 初回支払い年
   int? get firstPaidYear;
   @override // 初回支払い月

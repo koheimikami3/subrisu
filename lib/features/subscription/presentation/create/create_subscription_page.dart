@@ -10,9 +10,7 @@ class CreateSubscriptionPage extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text(texts.createSubscriptionPageTitle),
-        ),
+        appBar: AppBar(title: const Text(texts.createSubscriptionPageTitle)),
         body: const CreateSubscriptionPageBody(),
       ),
     );

@@ -1,11 +1,10 @@
 import 'package:flutter/foundation.dart';
-import 'package:subrisu/enums/purchase_status.dart';
 
 import 'constant/configs.dart' as configs;
 import 'constant/texts.dart' as texts;
 import 'importer.dart';
 
-/// MyBottomNavigationBar
+/// BottomNavigationBar
 class MyBottomNavigationBar extends ConsumerStatefulWidget {
   const MyBottomNavigationBar({super.key});
 
@@ -39,11 +38,6 @@ class _MyBottomNavigationBarState extends ConsumerState<MyBottomNavigationBar> {
   void initState() {
     super.initState();
 
-    // テーマ設定状況を取得し、アプリに反映
-    AppManager.getTheme(context, ref);
-
-    AppManager.getListSort(ref);
-
     // バナー広告を読み込む
     _myBanner.load();
   }
@@ -55,10 +49,13 @@ class _MyBottomNavigationBarState extends ConsumerState<MyBottomNavigationBar> {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(child: _pages.elementAt(_selectedIndex)),
-          purchaseStatus == PurchaseStatus.active
-              ? const SizedBox.shrink()
-              : _bannerAd(),
+          Expanded(
+            child: IndexedStack(
+              index: _selectedIndex,
+              children: _pages,
+            ),
+          ),
+          if (purchaseStatus == PurchaseStatus.inactive) _bannerAd(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

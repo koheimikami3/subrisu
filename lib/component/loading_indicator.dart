@@ -1,11 +1,14 @@
+import 'package:flutter/cupertino.dart';
+
 import '../importer.dart';
 
+/// データ取得中を知らせるインジケーター
 class LoadingIndicator extends ConsumerWidget {
   const LoadingIndicator({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkMode = ref.watch(darkModeNotifierProvider);
+    final themeSetting = ref.watch(themeSettingNotifierProvider);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -14,9 +17,24 @@ class LoadingIndicator extends ConsumerWidget {
           padding: EdgeInsets.all(25.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: isDarkMode ? Colors.grey.shade400 : Colors.white,
+            color: selectColor(
+              context: context,
+              themeSetting: themeSetting,
+              lightColor: Colors.grey.shade100,
+              darkColor: Colors.grey.shade400,
+            ),
           ),
-          child: const CircularIndicator(),
+          child: Platform.isAndroid
+              ? const CircularProgressIndicator()
+              : CupertinoActivityIndicator(
+                  radius: 17,
+                  color: selectColor(
+                    context: context,
+                    themeSetting: themeSetting,
+                    lightColor: null,
+                    darkColor: Colors.black,
+                  ),
+                ),
         ),
       ],
     );

@@ -10,7 +10,7 @@ class PaymentCycleSelectionForm extends ConsumerStatefulWidget {
     this.paymentCycle,
   });
 
-  final int? paymentCycle;
+  final PaymentCycle? paymentCycle;
 
   @override
   ConsumerState<PaymentCycleSelectionForm> createState() =>
@@ -19,15 +19,14 @@ class PaymentCycleSelectionForm extends ConsumerStatefulWidget {
 
 class _PaymentCycleSelectionFormState
     extends ConsumerState<PaymentCycleSelectionForm> {
-  final _textList = texts.paymentCycleList;
-  int _selectedIndex = 2;
+  PaymentCycle _selectedItem = PaymentCycle.monthly;
 
   @override
   void initState() {
     super.initState();
 
     if (widget.paymentCycle != null) {
-      _selectedIndex = widget.paymentCycle!;
+      _selectedItem = widget.paymentCycle!;
     }
   }
 
@@ -41,13 +40,14 @@ class _PaymentCycleSelectionFormState
 
   /// 支払い周期を選択するボタン
   Widget _selectButton() {
-    final index = ref.watch(subscriptionFormNotifierProvider).paymentCycle;
+    final paymentCycle =
+        ref.watch(subscriptionFormNotifierProvider).paymentCycle;
 
     return GestureDetector(
       onTap: _onTap,
       child: Row(
         children: [
-          Text(_textList[index]),
+          Text(paymentCycle.name),
           Icon(
             Icons.unfold_more,
             color: Colors.grey.shade600,
@@ -68,7 +68,7 @@ class _PaymentCycleSelectionFormState
             // 変更内容をプロバイダに保存
             ref
                 .read(subscriptionFormNotifierProvider.notifier)
-                .setPaymentCycle(_selectedIndex);
+                .setPaymentCycle(_selectedItem);
 
             // Pickerを閉じる
             Navigator.pop(context);
@@ -83,14 +83,14 @@ class _PaymentCycleSelectionFormState
     return CupertinoPicker(
       itemExtent: 40.h,
       scrollController: FixedExtentScrollController(
-        initialItem: _selectedIndex,
+        initialItem: _selectedItem.index,
       ),
-      onSelectedItemChanged: (value) {
-        _selectedIndex = value;
+      onSelectedItemChanged: (index) {
+        _selectedItem = PaymentCycle.values[index];
       },
       children: [
-        for (int i = 0; i < _textList.length; i++) ...{
-          Center(child: Text(_textList[i])),
+        for (final paymentCycle in PaymentCycle.values) ...{
+          Center(child: Text(paymentCycle.name)),
         },
       ],
     );

@@ -1,6 +1,7 @@
 import '../../../../../constant/colors.dart' as colors;
 import '../../../../../importer.dart';
 
+/// アップデート内容を知らせるダイアログ
 class UpdateContentsDialog extends ConsumerWidget {
   const UpdateContentsDialog({
     super.key,
@@ -13,7 +14,7 @@ class UpdateContentsDialog extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkMode = ref.watch(darkModeNotifierProvider);
+    final themeSetting = ref.watch(themeSettingNotifierProvider);
 
     return AlertDialog(
       insetPadding: EdgeInsets.all(20.w),
@@ -22,7 +23,7 @@ class UpdateContentsDialog extends ConsumerWidget {
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       content: SizedBox(
-        height: 300.h,
+        height: 200.h,
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: [
@@ -34,38 +35,40 @@ class UpdateContentsDialog extends ConsumerWidget {
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
-                color:
-                    isDarkMode ? colors.darkBackgroundColor : colors.appColor,
+                color: selectColor(
+                  context: context,
+                  themeSetting: themeSetting,
+                  lightColor: colors.appColor,
+                  darkColor: colors.darkBackgroundColor,
+                ),
               ),
               child: Center(child: _title()),
             ),
-            Expanded(
-              child: Row(
-                children: [
-                  SizedBox(width: 20.w),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 10.h),
-                        Text('バージョン$version'),
-                        SizedBox(height: 10.h),
-                        Text(contents),
-                        SizedBox(height: 20.h),
-                        const Text('引き続きサブリスをよろしくお願いします。'),
-                        SizedBox(height: 20.h),
-                        _closeButton(context, ref),
-                        SizedBox(height: 20.h),
-                      ],
-                    ),
+            Row(
+              children: [
+                SizedBox(width: 20.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 10.h),
+                      Text('バージョン$version'),
+                      SizedBox(height: 10.h),
+                      Text(contents),
+                      SizedBox(height: 20.h),
+                      const Text('引き続きサブリスをよろしくお願いします。'),
+                    ],
                   ),
-                  SizedBox(width: 20.w),
-                ],
-              ),
+                ),
+                SizedBox(width: 20.w),
+              ],
             ),
           ],
         ),
       ),
+      actions: [
+        _closeButton(context, ref),
+      ],
     );
   }
 
@@ -84,7 +87,7 @@ class UpdateContentsDialog extends ConsumerWidget {
   }
 
   Widget _closeButton(BuildContext context, WidgetRef ref) {
-    return MyCupertinoButton(
+    return MyFilledButton(
       text: '閉じる',
       onPressed: () => Navigator.pop(context),
     );

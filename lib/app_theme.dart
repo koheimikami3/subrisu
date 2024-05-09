@@ -9,37 +9,55 @@ class AppTheme {
   /// ライトモードのテーマ設定を行う
   static ThemeData light() {
     return ThemeData(
-      useMaterial3: false,
-      scaffoldBackgroundColor: colors.lightBackgroundColor,
+      useMaterial3: true,
       brightness: Brightness.light,
+      colorSchemeSeed: colors.appColor,
       splashColor: Colors.transparent,
       iconTheme: IconThemeData(color: Colors.grey.shade600),
       appBarTheme: _lightAppBarTheme(),
       bottomNavigationBarTheme: _lightBottomNavTheme(),
       floatingActionButtonTheme: _floatingButtonTheme(),
       textTheme: _lightTextTheme(),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          textStyle: TextStyle(
+            fontSize: configs.defaultFontSize.sp,
+            color: colors.appColor,
+          ),
+        ),
+      ),
+      dialogTheme: const DialogTheme(
+        surfaceTintColor: Colors.white,
+      ),
     );
   }
 
   /// ダークモードのテーマ設定を行う
   static ThemeData dark() {
     return ThemeData(
-      useMaterial3: false,
+      useMaterial3: true,
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: colors.darkBackgroundColor,
+      colorSchemeSeed: colors.appColor,
       iconTheme: IconThemeData(color: Colors.grey.shade400),
       splashColor: Colors.transparent,
       appBarTheme: _darkAppBarTheme(),
       bottomNavigationBarTheme: _darkBottomNavTheme(),
       floatingActionButtonTheme: _floatingButtonTheme(),
       textTheme: _darkTextTheme(),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          textStyle: TextStyle(
+            fontSize: configs.defaultFontSize.sp,
+            color: colors.appColor,
+          ),
+        ),
+      ),
     );
   }
 
   /// ライトモードAppBarのUI設定を行う
   static AppBarTheme _lightAppBarTheme() {
     return AppBarTheme(
-      elevation: 0,
       backgroundColor: colors.appColor,
       iconTheme: const IconThemeData(color: Colors.white),
       titleTextStyle: TextStyle(
@@ -53,7 +71,7 @@ class AppTheme {
   /// ダークモードAppBarのUI設定を行う
   static AppBarTheme _darkAppBarTheme() {
     return AppBarTheme(
-      elevation: 0,
+      elevation: 1,
       iconTheme: const IconThemeData(color: Colors.white),
       titleTextStyle: TextStyle(
         fontSize: 16.sp,
@@ -91,7 +109,6 @@ class AppTheme {
       elevation: 2,
       highlightElevation: 2,
       backgroundColor: colors.appColor,
-      splashColor: Colors.transparent,
     );
   }
 
@@ -100,7 +117,7 @@ class AppTheme {
     return TextTheme(
       bodyMedium: TextStyle(
         fontSize: configs.defaultFontSize.sp,
-        color: Colors.black87,
+        // color: Colors.black87,
       ),
     );
   }
@@ -110,7 +127,7 @@ class AppTheme {
     return TextTheme(
       bodyMedium: TextStyle(
         fontSize: configs.defaultFontSize.sp,
-        color: Colors.white,
+        // color: Colors.white,
       ),
     );
   }

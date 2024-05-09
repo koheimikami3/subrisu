@@ -30,7 +30,7 @@ class _EditSubscriptionPageState extends ConsumerState<EditSubscriptionPage> {
             paymentCycle: widget.subscription.paymentCycle,
             firstPaidOn: widget.subscription.firstPaidOn.toDate(),
             notification: widget.subscription.notification,
-            memo: widget.subscription.serviceName,
+            memo: widget.subscription.memo,
           );
     });
   }
@@ -41,7 +41,7 @@ class _EditSubscriptionPageState extends ConsumerState<EditSubscriptionPage> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(texts.editSubscriptionPage),
+          title: const Text(texts.editSubscriptionPageTitle),
           actions: [
             Row(
               children: [

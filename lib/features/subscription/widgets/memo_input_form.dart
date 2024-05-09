@@ -15,14 +15,23 @@ class MemoInputForm extends ConsumerWidget {
     return Column(
       children: [
         const ItemsTitle(title: texts.memoFormTitle),
-        MyTextFormField(
-          initialValue: memo,
-          minLines: 3,
-          maxLines: null,
-          onChanged: (value) {
-            // メモの状態を更新
-            ref.read(subscriptionFormNotifierProvider.notifier).setMemo(value);
-          },
+        // ignore: use_decorated_box
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            border: Border.all(color: Colors.grey.shade400),
+          ),
+          child: MyTextFormField(
+            initialValue: memo,
+            minLines: 3,
+            maxLines: null,
+            onChanged: (value) {
+              // メモの状態を更新
+              ref
+                  .read(subscriptionFormNotifierProvider.notifier)
+                  .setMemo(value);
+            },
+          ),
         ),
       ],
     );

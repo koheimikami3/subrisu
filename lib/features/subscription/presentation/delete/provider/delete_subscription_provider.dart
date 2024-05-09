@@ -10,7 +10,7 @@ Future<void> deleteSubscription(
 ) async {
   final userId = ref.read(userIdProvider);
 
-  // SubscriptionDocumentを更新
+  // SubscriptionDocumentを削除
   await ref
       .read(firebaseFirestoreProvider)
       .collection('users')

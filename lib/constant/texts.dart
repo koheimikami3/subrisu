@@ -3,32 +3,25 @@ import 'urls.dart' as urls;
 /* =============================================
   AppBarTitle
 ============================================= */
-const listPage = 'リスト';
 const createSubscriptionPageTitle = '新規登録';
-const editSubscriptionPage = '編集';
-const settingsPage = '設定';
-const billingPage = '広告の非表示';
-const darkModePage = 'ダークモード';
-const tosPage = '利用規約';
-const privacyPolicyPage = 'プライバシーポリシー';
-const loginErrorPage = 'ログインエラー';
+const editSubscriptionPageTitle = '編集';
+const settingsPageTitle = '設定';
+const billingPageTitle = '広告の非表示';
+const themeSettingPageTitle = 'テーマ設定';
+const loginErrorPageTitle = 'ログインエラー';
 
-// ログイン画面ボタンテキスト
-const createAnonymousUserButton = 'アカウント登録しないで始める';
-
-// 登録・編集画面ボタンテキスト
+/* =============================================
+  Button
+============================================= */
 const saveIconButton = '保存';
 const pickerCancelButton = 'キャンセル';
 const pickerSaveButton = '完了';
 const createSubscriptionButton = '登録';
 const updateSubscriptionButton = '更新';
 
-// 設定画面ボタンテキスト
-const deleteUserButton = 'すべてのデータを削除';
-
-// アカウント連携画面ボタンテキスト
-const linkAppleUserButton = 'Appleで続ける';
-const linkGoogleUserButton = 'Googleで続ける';
+const openStoreUrlButton = 'アップデート';
+const closeDialogButton = '閉じる';
+const cancelButton = 'キャンセル';
 
 // 登録・編集画面項目タイトル
 const serviceInfoTitle = 'サービス情報';
@@ -44,18 +37,18 @@ const serviceNameHint = 'サービス名*';
 const priceHint = '料金*';
 
 // 設定画面項目リストタイトル
-const paidPlanTitle = '有料プラン';
+const billingItemsTitle = '有料プラン';
 const appSettingsTitle = 'アプリ';
-const supportsTitle = 'サポート';
+const supportItemsTitle = 'サポート';
 const appVersionTitle = 'バージョン';
 const userDataTitle = 'ユーザー';
 
 // 設定画面項目名
-const paidPlanItem = '広告の非表示';
+const billingItem = '広告の非表示';
 const notificationItem = 'リマインド通知';
-const darkModeItem = 'ダークモード';
+const themeItem = 'テーマ設定';
 const reviewItem = 'レビューを書く';
-const shareItem = 'アプリをシェア';
+const shareItem = 'アプリをシェアする';
 const inquiryItem = 'お問い合わせ';
 const tosItem = '利用規約';
 const privacyPolicyItem = 'プライバシーポリシー';
@@ -65,11 +58,6 @@ const appVersionItem = 'アプリのバージョン';
 const removeAdsItem = '広告を非表示にする';
 const restoreItem = '購入を復元する';
 
-// ダークモード画面項目名
-const deviceSettingItem = '端末設定と同じ';
-const lightSettingItem = 'ライトモード';
-const darkSettingItem = 'ダークモード';
-
 // ボトムナビゲーションバーテキスト
 const subscriptionListNavi = 'リスト';
 const settingsNavi = '設定';
@@ -77,32 +65,33 @@ const settingsNavi = '設定';
 // シェアテキスト
 const shareText = 'サブリス - サブスクと固定費をリストで管理\n${urls.appStoreUrl}';
 
-// 支払い周期テキストリスト
-const paymentCycleList = [
-  '毎日',
-  '毎週',
-  '毎月',
-  '3ヶ月',
-  '6ヶ月',
-  '毎年',
-];
-
-// 支払い方法テキストリスト
-const paymentMethodList = [
-  '未選択',
-  'クレジットカード',
-  'App Store',
-  'Google Play Store',
-  'その他',
-];
+const errorDialogTitle = 'エラー';
+const restoreCompletedDialogContent = '復元が完了しました。';
 
 /* =============================================
   Error
 ============================================= */
 const loginError = 'ログインに失敗しました。\n時間をおいて再度お試しください。';
 const fetchSubscriptionsError = 'サブスクリプションの取得に失敗しました。\n時間をおいて再度お試しください。';
+const createSubscriptionError = 'サブスクリプションデータを登録できませんでした。時間をおいて再度お試しください。';
+const updateSubscritpionError = 'サブスクリプションデータを更新できませんでした。時間をおいて再度お試しください。';
+const deleteSubscriptionError = 'サブスクリプションデータを削除できませんでした。時間をおいて再度お試しください。';
+const noPurchaseItemError = '購入可能なアイテムが見つかりませんでした。';
+const noPurchaseInfoError = '過去の購入情報が見つかりませんでした。購入を行ったアカウントをご確認ください。';
+const openReviewError = 'レビュー画面を開けませんでした。';
+const purchaseError = '購入処理を完了できませんでした。';
+const restoreError = '復元処理を完了できませんでした。';
+const openUrlError = '指定されたURLのページを開けませんでした。';
 
 /* =============================================
   サブスクリプション一覧画面
 ============================================= */
 const noSubscription = 'サブスクリプションはありません\n右下の＋ボタンで登録できます';
+const sortPullDownTitle = '並び替え';
+const today = '今日';
+
+/* =============================================
+  課金画面
+============================================= */
+const alreadyPurchased = '購入済み';
+const billingSupplement = '*広告の非表示は買い切りです。';
