@@ -12,7 +12,7 @@ class SubscriptionItem extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkMode = ref.watch(darkModeNotifierProvider);
+    final themeSetting = ref.watch(themeSettingNotifierProvider);
 
     return Row(
       children: [
@@ -20,15 +20,24 @@ class SubscriptionItem extends ConsumerWidget {
         Expanded(
           child: Material(
             borderRadius: const BorderRadius.all(Radius.circular(10)),
-            color: isDarkMode ? colors.darkItemColor : Colors.white,
+            color: selectColor(
+              context: context,
+              themeSetting: themeSetting,
+              lightColor: Colors.white,
+              darkColor: colors.darkItemColor,
+            ),
             child: InkWell(
               onTap: () => _onTap(context),
               borderRadius: const BorderRadius.all(Radius.circular(10)),
-              highlightColor:
-                  isDarkMode ? Colors.grey.shade700 : Colors.grey.shade300,
-              child: SizedBox(
+              // highlightColor:
+              //     isDarkMode ? Colors.grey.shade700 : Colors.grey.shade300,
+              child: Container(
                 height: 57.h,
                 width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade400),
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                ),
                 child: Column(
                   children: [
                     SizedBox(height: 5.h),
@@ -45,7 +54,11 @@ class SubscriptionItem extends ConsumerWidget {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               _price(),
-                              NextPaymentDate(subscription: subscription),
+                              NextPaymentDate(
+                                paymentCycle: subscription.paymentCycle,
+                                firstPaidDate:
+                                    subscription.firstPaidOn.toDate(),
+                              ),
                             ],
                           ),
                           SizedBox(width: 15.w),

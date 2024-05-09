@@ -14,7 +14,7 @@ class SubscriptionForm extends StatelessWidget {
 
   final String? serviceName; // サービス名の初期値
   final String? price; // 価格の初期値
-  final int? paymentCycle; // 支払い周期の初期値
+  final PaymentCycle? paymentCycle; // 支払い周期の初期値
   final DateTime? firstPaidOn; // 初回支払日の初期値
   final String? memo; // メモの初期値
   final Widget button; // 作成または更新ボタン

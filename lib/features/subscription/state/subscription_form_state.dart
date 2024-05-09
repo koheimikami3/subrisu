@@ -19,7 +19,7 @@ abstract class SubscriptionFormState implements _$SubscriptionFormState {
     @Default('') String resultIconImagePath,
 
     // 支払い周期
-    @Default(2) int paymentCycle,
+    @Default(PaymentCycle.monthly) PaymentCycle paymentCycle,
 
     // 初回支払い年
     @Default(null) int? firstPaidYear,

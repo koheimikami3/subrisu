@@ -8,18 +8,17 @@ void main() async {
   // AppCheckを実施
   await FirebaseAppCheck.instance.activate();
 
-  // RemoteConfigを取得
-  await FirebaseRemoteConfig.instance.fetchAndActivate();
-
   // アプリ画面を縦固定に設定
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-  // インスタンス化が非同期のクラスのシングルトンを作成
-  GetIt.I
-    ..registerSingleton(await SharedPreferences.getInstance())
-    ..registerSingleton(await PackageInfo.fromPlatform());
-
   runApp(
-    const ProviderScope(child: MyApp()),
+    ProviderScope(
+      overrides: [
+        sharedPreferencesProvider
+            .overrideWithValue(await SharedPreferences.getInstance()),
+        packageInfoProvider.overrideWithValue(await PackageInfo.fromPlatform()),
+      ],
+      child: const MyApp(),
+    ),
   );
 }

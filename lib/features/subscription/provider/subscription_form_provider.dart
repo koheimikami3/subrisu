@@ -13,7 +13,7 @@ class SubscriptionFormNotifier extends _$SubscriptionFormNotifier {
     required String serviceName,
     required String price,
     required String iconImagePath,
-    required int paymentCycle,
+    required PaymentCycle paymentCycle,
     required DateTime firstPaidOn,
     required bool notification,
     required String memo,
@@ -53,7 +53,7 @@ class SubscriptionFormNotifier extends _$SubscriptionFormNotifier {
   }
 
   // 支払い周期の状態を更新する
-  void setPaymentCycle(int value) {
+  void setPaymentCycle(PaymentCycle value) {
     state = state.copyWith(paymentCycle: value);
   }
 

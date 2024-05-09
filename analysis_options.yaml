@@ -3,7 +3,7 @@ include: package:pedantic_mono/analysis_options.yaml
 
 anylyzer:
   exclude:
-    - lib/*.g.dart
+    - lib/**/*.g.dart
     - lib/**/*.freezed.dart
 
 linter:

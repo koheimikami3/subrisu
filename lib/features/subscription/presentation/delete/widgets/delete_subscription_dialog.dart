@@ -1,4 +1,4 @@
-import '../../../../../constant/exceptions.dart' as exceptions;
+import '../../../../../constant/texts.dart' as texts;
 import '../../../../../importer.dart';
 
 /// サブスクリプション削除の確認を行うダイアログ
@@ -16,7 +16,7 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
     const content = 'データを削除してもよろしいですか？';
     const actionText = '削除';
 
-    return MyConformDialog(
+    return ConfirmationDialog(
       title: title,
       content: content,
       actionText: actionText,
@@ -29,14 +29,14 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
     String? errorMessge; // エラーメッセージ
 
     // プログレスダイアログを表示
-    ProgressDialog.show(context);
+    showProgressDialog(context);
 
     try {
       // サブスクリプションを削除
       await ref.read(deleteSubscriptionProvider(subscriptionId).future);
     } on Exception {
       // エラーメッセージを取得
-      errorMessge = exceptions.messageMap[exceptions.deleteSubscription];
+      errorMessge = texts.deleteSubscriptionError;
     }
 
     // プログレスダイアログを閉じる

@@ -1,21 +1,17 @@
 import '../../importer.dart';
 
-/// データ処理の実行中を知らせるダイアログ
+/// 処理の実行中を知らせるダイアログを表示する
 ///
 /// ダイアログは表示されたらユーザーの操作で閉じることができない
-class ProgressDialog {
-  const ProgressDialog();
-
-  static void show(BuildContext context) {
-    showGeneralDialog(
-      context: context,
-      barrierDismissible: false,
-      barrierColor: Colors.transparent,
-      pageBuilder: (_, __, ___) {
-        return const SafeArea(
-          child: LoadingIndicator(),
-        );
-      },
-    );
-  }
+void showProgressDialog(BuildContext context) {
+  showGeneralDialog(
+    context: context,
+    barrierDismissible: false,
+    barrierColor: Colors.transparent,
+    pageBuilder: (_, __, ___) {
+      return const SafeArea(
+        child: LoadingIndicator(),
+      );
+    },
+  );
 }

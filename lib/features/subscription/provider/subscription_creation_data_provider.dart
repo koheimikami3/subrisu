@@ -32,7 +32,7 @@ SubscriptionCreationData subscriptionCreationData(
     serviceName: formState.serviceName,
     price: formState.price,
     iconImagePath: iconImagePath,
-    paymentCycle: formState.paymentCycle,
+    paymentCycle: formState.paymentCycle.index,
     firstPaidOn: firstPaidOn,
     notification: formState.notification,
     memo: formState.memo,

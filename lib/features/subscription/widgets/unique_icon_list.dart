@@ -6,7 +6,7 @@ class UniqueIconList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkMode = ref.watch(darkModeNotifierProvider);
+    final themeSetting = ref.watch(themeSettingNotifierProvider);
     final selectedIconImagePath =
         ref.watch(subscriptionFormNotifierProvider).selectedIconImagePath;
     // final iconList = Assets.images.subscription.values;
@@ -50,9 +50,12 @@ class UniqueIconList extends ConsumerWidget {
               colorFilter: ColorFilter.mode(
                 isSelected
                     ? colors.appColor
-                    : isDarkMode
-                        ? Colors.grey.shade100
-                        : Colors.black,
+                    : selectColor(
+                        context: context,
+                        themeSetting: themeSetting,
+                        lightColor: Colors.black,
+                        darkColor: Colors.grey.shade100,
+                      )!,
                 BlendMode.srcIn,
               ),
               child: Image.asset(iconList[index].path),

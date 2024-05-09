@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:subrisu/features/subscription/presentation/login_error/login_error_page.dart';
+import 'constant/configs.dart' as configs;
 import 'importer.dart';
 
 class MyApp extends ConsumerStatefulWidget {
@@ -15,19 +15,36 @@ class _MyAppState extends ConsumerState<MyApp> {
     super.initState();
 
     // 購入処理機能を初期化し、課金状況をアプリに反映
-    AppManager.initPurchases(ref);
+    ref.read(purchaseStatusNotifierProvider.notifier).initStatus();
+
+    // 起動回数をインクリメント
+    _incrementLaunchCount();
+  }
+
+  /// 起動回数をインクリメントして保存する
+  Future<void> _incrementLaunchCount() async {
+    final pref = ref.read(sharedPreferencesProvider);
+    var launchCount = pref.getInt(configs.launchCountShareKey) ?? 0;
+    launchCount++;
+    await pref.setInt(configs.launchCountShareKey, launchCount);
   }
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = ref.watch(darkModeNotifierProvider);
-    ref.watch(themeSettingNotifierProvider);
+    final theme = ref.watch(themeSettingNotifierProvider);
+    ref.watch(purchaseStatusNotifierProvider);
 
     return ScreenUtilInit(
       useInheritedMediaQuery: true,
       builder: (_, __) {
         return MaterialApp(
-          theme: isDarkMode ? AppTheme.dark() : AppTheme.light(),
+          theme: AppTheme.light(),
+          themeMode: theme == ThemeSetting.device
+              ? ThemeMode.system
+              : theme == ThemeSetting.light
+                  ? ThemeMode.light
+                  : ThemeMode.dark,
+          darkTheme: AppTheme.dark(),
           debugShowCheckedModeBanner: false,
           locale: const Locale('ja', 'JP'),
           supportedLocales: const [Locale('ja', 'JP')],
@@ -40,10 +57,6 @@ class _MyAppState extends ConsumerState<MyApp> {
           initialRoute: '/',
           routes: {
             '/settings': (_) => const SettingsPage(),
-            '/billing': (_) => const BillingPage(),
-            '/darkMode': (_) => const DarkModePage(),
-            '/tos': (_) => const TosPage(),
-            '/privacyPolicy': (_) => const PrivacyPolicyPage(),
             '/bottomNav': (_) => const MyBottomNavigationBar(),
           },
           home: Consumer(

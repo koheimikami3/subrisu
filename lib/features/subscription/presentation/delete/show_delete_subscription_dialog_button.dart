@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 import '../../../../importer.dart';
 
 /// サブスクリプション削除ダイアログを呼び出すボタン
@@ -13,9 +11,9 @@ class ShowDeleteSubscriptionDialogButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
-        showCupertinoDialog<void>(
+        showDialog<void>(
           context: context,
           builder: (_) {
             return DeleteSubscriptionDialog(subscriptionId: subscriptionId);
@@ -30,9 +28,9 @@ class ShowDeleteSubscriptionDialogButton extends StatelessWidget {
           color: Colors.red,
         ),
         child: Icon(
-          CupertinoIcons.delete_solid,
-          color: Colors.white,
+          Icons.delete,
           size: 16.h,
+          color: Colors.white,
         ),
       ),
     );

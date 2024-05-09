@@ -2,6 +2,7 @@ import '../constant/colors.dart' as colors;
 import '../constant/configs.dart' as configs;
 import '../importer.dart';
 
+/// カスタムTextFormField
 class MyTextFormField extends ConsumerWidget {
   const MyTextFormField({
     super.key,
@@ -15,18 +16,18 @@ class MyTextFormField extends ConsumerWidget {
     required this.onChanged,
   });
 
-  final String? initialValue;
-  final int minLines;
-  final int? maxLines;
-  final int? maxLength;
-  final TextInputType? keyboardType;
-  final List<TextInputFormatter>? inputFormatters;
-  final String? hintText;
-  final void Function(String) onChanged;
+  final String? initialValue; // 初期値
+  final int minLines; // 最小行数
+  final int? maxLines; // 最大行数
+  final int? maxLength; // 最大文字数
+  final TextInputType? keyboardType; // キーボードの種類
+  final List<TextInputFormatter>? inputFormatters; // 入力制限
+  final String? hintText; // ヒントテキスト
+  final void Function(String) onChanged; // 入力時の動作
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkMode = ref.watch(darkModeNotifierProvider);
+    final themeSetting = ref.watch(themeSettingNotifierProvider);
 
     return TextFormField(
       initialValue: initialValue,
@@ -43,7 +44,12 @@ class MyTextFormField extends ConsumerWidget {
         hintStyle: TextStyle(fontSize: configs.defaultFontSize.sp),
         counterText: '',
         filled: true,
-        fillColor: isDarkMode ? colors.darkItemColor : Colors.white,
+        fillColor: selectColor(
+          context: context,
+          themeSetting: themeSetting,
+          lightColor: Colors.white,
+          darkColor: colors.darkItemColor,
+        ),
         border: const OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.all(Radius.circular(10)),

@@ -15,7 +15,7 @@ class ServiceInfo extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkMode = ref.watch(darkModeNotifierProvider);
+    final themeSetting = ref.watch(themeSettingNotifierProvider);
 
     return Column(
       children: [
@@ -24,7 +24,13 @@ class ServiceInfo extends ConsumerWidget {
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(10)),
-            color: isDarkMode ? colors.darkItemColor : Colors.white,
+            border: Border.all(color: Colors.grey.shade400),
+            color: selectColor(
+              context: context,
+              themeSetting: themeSetting,
+              lightColor: Colors.white,
+              darkColor: colors.darkItemColor,
+            ),
           ),
           child: Row(
             children: [

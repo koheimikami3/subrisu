@@ -19,7 +19,7 @@ abstract class Subscription implements _$Subscription {
     required String iconImagePath,
 
     // 支払い周期
-    required int paymentCycle,
+    required PaymentCycle paymentCycle,
 
     // 初回支払日
     required Timestamp firstPaidOn,
@@ -45,7 +45,7 @@ abstract class Subscription implements _$Subscription {
       serviceName: snapshot['serviceName'] as String,
       price: data['price'] as String,
       iconImagePath: data['iconImagePath'] as String,
-      paymentCycle: data['paymentCycle'] as int,
+      paymentCycle: PaymentCycle.values[data['paymentCycle'] as int],
       firstPaidOn: data['firstPaidOn'] as Timestamp,
       notification: data['notification'] as bool,
       memo: data['memo'] as String,

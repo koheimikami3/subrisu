@@ -10,12 +10,12 @@ class DetailInfo extends ConsumerWidget {
     this.firstPaidOn,
   });
 
-  final int? paymentCycle; // 支払い周期
+  final PaymentCycle? paymentCycle; // 支払い周期
   final DateTime? firstPaidOn; // 初回支払日
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkMode = ref.watch(darkModeNotifierProvider);
+    final themeSetting = ref.watch(themeSettingNotifierProvider);
 
     return Column(
       children: [
@@ -24,7 +24,13 @@ class DetailInfo extends ConsumerWidget {
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(10)),
-            color: isDarkMode ? colors.darkItemColor : Colors.white,
+            border: Border.all(color: Colors.grey.shade400),
+            color: selectColor(
+              context: context,
+              themeSetting: themeSetting,
+              lightColor: Colors.white,
+              darkColor: colors.darkItemColor,
+            ),
           ),
           child: Row(
             children: [

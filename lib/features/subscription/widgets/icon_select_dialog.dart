@@ -7,7 +7,7 @@ class IconSelectDialog extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isDarkMode = ref.watch(darkModeNotifierProvider);
+    final themeSetting = ref.watch(themeSettingNotifierProvider);
 
     return AlertDialog(
       insetPadding: EdgeInsets.all(20.w),
@@ -28,8 +28,12 @@ class IconSelectDialog extends ConsumerWidget {
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
-                color:
-                    isDarkMode ? colors.darkBackgroundColor : colors.appColor,
+                color: selectColor(
+                  context: context,
+                  themeSetting: themeSetting,
+                  lightColor: colors.appColor,
+                  darkColor: colors.darkBackgroundColor,
+                ),
               ),
               child: Stack(
                 children: [
@@ -104,7 +108,7 @@ class IconSelectDialog extends ConsumerWidget {
     final selectedIconImagePath =
         ref.watch(subscriptionFormNotifierProvider).selectedIconImagePath;
 
-    return MyCupertinoButton(
+    return MyFilledButton(
       text: texts.saveIconButton,
       onPressed: selectedIconImagePath.isEmpty
           ? null

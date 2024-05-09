@@ -21,16 +21,17 @@ SubscriptionCreationData _$SubscriptionCreationDataFromJson(
 
 /// @nodoc
 mixin _$SubscriptionCreationData {
-  String get serviceName => throw _privateConstructorUsedError;
-  String get price => throw _privateConstructorUsedError;
-  String get iconImagePath => throw _privateConstructorUsedError;
-  int get paymentCycle => throw _privateConstructorUsedError;
+// サービス名
+  String get serviceName => throw _privateConstructorUsedError; // 価格
+  String get price => throw _privateConstructorUsedError; // アイコン画像パス
+  String get iconImagePath => throw _privateConstructorUsedError; // 支払い周期
+  int get paymentCycle => throw _privateConstructorUsedError; // 初回支払日
   @FirstPaidOnField()
-  DateTime? get firstPaidOn => throw _privateConstructorUsedError;
-  bool get notification => throw _privateConstructorUsedError;
-  String get memo => throw _privateConstructorUsedError;
+  DateTime? get firstPaidOn => throw _privateConstructorUsedError; // 通知フラグ
+  bool get notification => throw _privateConstructorUsedError; // メモ
+  String get memo => throw _privateConstructorUsedError; // 作成日時
   @CreatedAtField()
-  DateTime? get createdAt => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError; // 更新日時
   @UpdatedAtField()
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
@@ -226,25 +227,34 @@ class _$SubscriptionCreationDataImpl extends _SubscriptionCreationData {
   factory _$SubscriptionCreationDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$SubscriptionCreationDataImplFromJson(json);
 
+// サービス名
   @override
   final String serviceName;
+// 価格
   @override
   final String price;
+// アイコン画像パス
   @override
   @JsonKey()
   final String iconImagePath;
+// 支払い周期
   @override
   final int paymentCycle;
+// 初回支払日
   @override
   @FirstPaidOnField()
   final DateTime? firstPaidOn;
+// 通知フラグ
   @override
   final bool notification;
+// メモ
   @override
   final String memo;
+// 作成日時
   @override
   @CreatedAtField()
   final DateTime? createdAt;
+// 更新日時
   @override
   @UpdatedAtField()
   final DateTime? updatedAt;
@@ -323,25 +333,25 @@ abstract class _SubscriptionCreationData extends SubscriptionCreationData {
   factory _SubscriptionCreationData.fromJson(Map<String, dynamic> json) =
       _$SubscriptionCreationDataImpl.fromJson;
 
-  @override
+  @override // サービス名
   String get serviceName;
-  @override
+  @override // 価格
   String get price;
-  @override
+  @override // アイコン画像パス
   String get iconImagePath;
-  @override
+  @override // 支払い周期
   int get paymentCycle;
-  @override
+  @override // 初回支払日
   @FirstPaidOnField()
   DateTime? get firstPaidOn;
-  @override
+  @override // 通知フラグ
   bool get notification;
-  @override
+  @override // メモ
   String get memo;
-  @override
+  @override // 作成日時
   @CreatedAtField()
   DateTime? get createdAt;
-  @override
+  @override // 更新日時
   @UpdatedAtField()
   DateTime? get updatedAt;
   @override

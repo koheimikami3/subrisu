@@ -6,10 +6,11 @@ part of 'login_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$loginHash() => r'2441a54e76c44d372a90421c95896c975b87604a';
+String _$loginHash() => r'b09457c93445bbdf44c2623e3856e14bcdc6cad5';
 
 /// ログインを実施するFutureProvider
 ///
+/// RemoteConfigを取得する
 /// 初回はFirebaseに匿名サインインする
 /// 以降はUserDocumentのtokenを更新することでログイン完了とする
 ///

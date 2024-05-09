@@ -3,7 +3,6 @@ const appStoreId = '1661226530';
 
 // AppStore
 const appStoreUrl = 'https://apps.apple.com/jp/app/id$appStoreId?mt=8';
-// const appStoreUrl = 'https://apps.apple.com/jp/app/id$appStoreId';
 
 // GooglePlayStore
 const googlePlayStoreUrl = '';

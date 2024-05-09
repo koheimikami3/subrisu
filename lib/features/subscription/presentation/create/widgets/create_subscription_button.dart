@@ -1,38 +1,38 @@
-import '../../../../../constant/exceptions.dart' as exceptions;
 import '../../../../../constant/texts.dart' as texts;
 import '../../../../../importer.dart';
 
 /// サブスクリプションを作成するボタン
-class CreateButton extends ConsumerWidget {
-  const CreateButton({super.key});
+class CreateSubscriptionButton extends ConsumerWidget {
+  const CreateSubscriptionButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final formState = ref.watch(subscriptionFormNotifierProvider);
 
-    return MyCupertinoButton(
+    return MyFilledButton(
       text: texts.createSubscriptionButton,
-      onPressed: formState.serviceName == '' || formState.price == ''
+      onPressed: formState.serviceName.isEmpty || formState.price.isEmpty
           ? null
           : () => _onPressed(context, ref),
     );
   }
 
-  /// サブスクリプションを作成して一覧画面に戻る
+  /// サブスクリプションを作成してサブスクリプション一覧画面に戻る
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
-    String? errorMessage;
+    String? errorMessage; // エラーメッセージ
 
-    // 各入力フォームのフォーカスを解除
+    // 入力フォームのフォーカスを解除
     FocusScope.of(context).unfocus();
 
     // プログレスダイアログを表示
-    ProgressDialog.show(context);
+    showProgressDialog(context);
 
     try {
       // サブスクリプションを作成
       await ref.read(createSubscriptionProvider.future);
     } on Exception {
-      errorMessage = exceptions.messageMap[exceptions.createSubscription];
+      // エラーメッセージを取得
+      errorMessage = texts.createSubscriptionError;
     }
 
     // プログレスダイアログを閉じる
@@ -44,7 +44,7 @@ class CreateButton extends ConsumerWidget {
       return;
     }
 
-    // 一覧画面に戻る
+    // サブスクリプション一覧画面に戻る
     Navigator.pop(context);
   }
 }

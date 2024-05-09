@@ -7,7 +7,7 @@ part of 'theme_setting_provider.dart';
 // **************************************************************************
 
 String _$themeSettingNotifierHash() =>
-    r'8fdcb31d24ca92c946754e5a16dad68e0b6f768b';
+    r'3b6d7b2a798ac4698dbd02f1975f3b661f55d1e6';
 
 /// テーマ設定のNotifierProvider
 ///

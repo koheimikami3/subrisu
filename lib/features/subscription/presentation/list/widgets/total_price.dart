@@ -14,6 +14,7 @@ class TotalPrice extends ConsumerWidget {
       data: (subscriptions) {
         var totalPrice = 0; // 合計金額
 
+        //
         for (final subscription in subscriptions) {
           final price = int.parse(subscription.price);
 
@@ -31,8 +32,7 @@ class TotalPrice extends ConsumerWidget {
           final lastDay = DateTime(now.year, now.month + 1, 0);
 
           switch (subscription.paymentCycle) {
-            // 「毎日」の場合
-            case 0:
+            case PaymentCycle.daily:
               var dateTime = firstDay;
 
               // 今月の日数分料金を加算
@@ -51,8 +51,7 @@ class TotalPrice extends ConsumerWidget {
                 totalPrice -= price;
               }
 
-            // 「毎週」の場合
-            case 1:
+            case PaymentCycle.weekly:
               // 今月の週数を計算
               final weeksInMonth =
                   ((lastDay.difference(firstDay).inDays) / 7).ceil();
@@ -62,24 +61,19 @@ class TotalPrice extends ConsumerWidget {
                 totalPrice += price;
               }
 
-            // 「毎月」の場合
-            case 2:
+            case PaymentCycle.monthly:
               totalPrice += price;
 
-            // 「3ヶ月」の場合
-            case 3:
+            case PaymentCycle.threeMonths:
               totalPrice += price ~/ 3;
 
-            // 「6ヶ月」の場合
-            case 4:
+            case PaymentCycle.sixMonths:
               totalPrice += price ~/ 6;
 
-            // 「毎年」の場合
-            case 5:
+            case PaymentCycle.yearly:
               totalPrice += price ~/ 12;
           }
         }
-
         return Text('今月の合計：¥$totalPrice');
       },
     );
