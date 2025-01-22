@@ -8,7 +8,7 @@ Future<void> updateToken(UpdateTokenRef ref) async {
   final userId = ref.read(userIdProvider);
 
   // 端末のFCMトークンを取得
-  final token = await ref.read(firebaseMessagingProvider).getToken();
+  final token = await ref.read(firebaseMessagingProvider).getAPNSToken();
 
   // UserDocumentのtokenを更新
   await ref

@@ -15,7 +15,7 @@ Future<void> createUser(CreateUserRef ref, String userId) async {
   }
 
   // 端末のFCMトークンを取得
-  final token = await ref.read(firebaseMessagingProvider).getToken();
+  final token = await ref.read(firebaseMessagingProvider).getAPNSToken();
 
   // UserDocumentの作成データ
   final creationData = UserCreationData(
