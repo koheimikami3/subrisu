@@ -156,6 +156,7 @@ class UpdateSubscriptionProvider extends AutoDisposeFutureProvider<void> {
   }
 }
 
+// ignore: deprecated_member_use
 mixin UpdateSubscriptionRef on AutoDisposeFutureProviderRef<void> {
   /// The parameter `subscriptionId` of this provider.
   String get subscriptionId;
