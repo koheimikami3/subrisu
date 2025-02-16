@@ -52,7 +52,7 @@ class NotificationSelectionForm extends ConsumerWidget {
       height: 15.h,
       child: CupertinoSwitch(
         value: notification,
-        activeColor: colors.appColor,
+        activeTrackColor: colors.appColor,
         onChanged: (value) async {
           // プッシュ通知の設定状況を取得
           final result = await ref
