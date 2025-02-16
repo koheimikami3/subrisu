@@ -47,7 +47,7 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
 
     // 例外が発生した場合、エラーダイアログを表示
     if (errorMessge != null) {
-      MyAlertDialog.showError(context, errorMessge);
+      showErrorDialog(context, errorMessge);
       return;
     }
 

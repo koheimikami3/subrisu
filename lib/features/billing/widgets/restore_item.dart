@@ -36,7 +36,7 @@ class RestoreItem extends ConsumerWidget {
         Navigator.pop(context);
 
         // 完了ダイアログを表示
-        MyAlertDialog.showCompleted(
+        showCompletedDialog(
           context,
           texts.restoreCompletedDialogContent,
         );
@@ -45,14 +45,14 @@ class RestoreItem extends ConsumerWidget {
         Navigator.pop(context);
 
         // エラーダイアログを表示
-        MyAlertDialog.showError(context, texts.noPurchaseInfoError);
+        showErrorDialog(context, texts.noPurchaseInfoError);
       }
     } on PlatformException {
       // プログレスダイアログを閉じる
       Navigator.pop(context);
 
       // エラーダイアログを表示
-      MyAlertDialog.showError(context, texts.restoreError);
+      showErrorDialog(context, texts.restoreError);
     }
   }
 }

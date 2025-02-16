@@ -45,7 +45,7 @@ class UpdateSubscriptionButton extends ConsumerWidget {
 
     // 例外が発生した場合、エラーダイアログを表示
     if (errorMessage != null) {
-      MyAlertDialog.showError(context, errorMessage);
+      showErrorDialog(context, errorMessage);
       return;
     }
 
