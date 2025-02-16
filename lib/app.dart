@@ -38,13 +38,13 @@ class _MyAppState extends ConsumerState<MyApp> {
       useInheritedMediaQuery: true,
       builder: (_, __) {
         return MaterialApp(
-          theme: AppTheme.light(),
+          theme: appThemeLight(),
           themeMode: theme == ThemeSetting.device
               ? ThemeMode.system
               : theme == ThemeSetting.light
                   ? ThemeMode.light
                   : ThemeMode.dark,
-          darkTheme: AppTheme.dark(),
+          darkTheme: appThemeDark(),
           debugShowCheckedModeBanner: false,
           locale: const Locale('ja', 'JP'),
           supportedLocales: const [Locale('ja', 'JP')],
