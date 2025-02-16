@@ -154,6 +154,7 @@ class CreateUserProvider extends AutoDisposeFutureProvider<void> {
   }
 }
 
+// ignore: deprecated_member_use
 mixin CreateUserRef on AutoDisposeFutureProviderRef<void> {
   /// The parameter `userId` of this provider.
   String get userId;
