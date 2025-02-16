@@ -38,7 +38,7 @@ class ForcedUpdateDialog extends StatelessWidget {
         if (await canLaunchUrl(url)) {
           await launchUrl(url);
         } else {
-          MyAlertDialog.showError(context, texts.openUrlError);
+          showErrorDialog(context, texts.openUrlError);
         }
       },
     );

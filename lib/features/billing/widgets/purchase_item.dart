@@ -61,7 +61,7 @@ class PurchaseItem extends ConsumerWidget {
       Navigator.pop(context);
 
       // エラーダイアログを表示
-      MyAlertDialog.showError(context, texts.noPurchaseItemError);
+      showErrorDialog(context, texts.noPurchaseItemError);
       return;
     }
 
@@ -84,7 +84,7 @@ class PurchaseItem extends ConsumerWidget {
         return;
       } else {
         // エラーダイアログを表示
-        MyAlertDialog.showError(context, texts.purchaseError);
+        showErrorDialog(context, texts.purchaseError);
         return;
       }
     }

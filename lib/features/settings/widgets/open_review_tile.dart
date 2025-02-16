@@ -18,7 +18,7 @@ class OpenReviewTile extends ConsumerWidget {
         if (await inAppReview.isAvailable()) {
           await inAppReview.openStoreListing(appStoreId: urls.appStoreId);
         } else {
-          MyAlertDialog.showError(context, texts.openReviewError);
+          showErrorDialog(context, texts.openReviewError);
         }
       },
     );
