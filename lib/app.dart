@@ -46,14 +46,9 @@ class _MyAppState extends ConsumerState<MyApp> {
                   : ThemeMode.dark,
           darkTheme: appThemeDark(),
           debugShowCheckedModeBanner: false,
-          locale: const Locale('ja', 'JP'),
-          supportedLocales: const [Locale('ja', 'JP')],
-          localizationsDelegates: const [
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-            DefaultCupertinoLocalizations.delegate,
-          ],
+          locale: const Locale('en'),
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
           initialRoute: '/',
           routes: {
             '/settings': (_) => const SettingsPage(),

@@ -13,6 +13,7 @@ export 'package:firebase_messaging/firebase_messaging.dart';
 export 'package:firebase_remote_config/firebase_remote_config.dart';
 export 'package:flutter/material.dart';
 export 'package:flutter/services.dart';
+export 'package:flutter_gen/gen_l10n/app_localizations.dart';
 export 'package:flutter_localizations/flutter_localizations.dart';
 export 'package:flutter_riverpod/flutter_riverpod.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
