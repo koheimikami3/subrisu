@@ -4,6 +4,7 @@ export 'package:app_settings/app_settings.dart';
 export 'package:app_tracking_transparency/app_tracking_transparency.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:dotted_border/dotted_border.dart';
+export 'package:firebase_analytics/firebase_analytics.dart';
 export 'package:firebase_app_check/firebase_app_check.dart';
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:firebase_core/firebase_core.dart';

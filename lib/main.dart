@@ -11,6 +11,10 @@ void main() async {
   // アプリ画面を縦固定に設定
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
+  // Analyticsを実行
+  // app_openのログを取る
+  await FirebaseAnalytics.instance.logAppOpen();
+
   // Crashlyticsを実行
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
