@@ -3,7 +3,7 @@ description: An app to manage subscriptions.
 
 publish_to: 'none' 
 
-version: 2.1.0+1
+version: 2.2.0+1
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -33,7 +33,7 @@ dependencies:
   get_it: ^7.2.0
   google_mobile_ads: ^3.1.0
   in_app_review: ^2.0.6
-  intl: ^0.19.0
+  intl: any
   json_serializable: ^6.5.4
   package_info_plus: ^4.2.0
   pedantic_mono: ^1.20.1
@@ -72,6 +72,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  generate: true
 
   assets:
     - images/subscription/
