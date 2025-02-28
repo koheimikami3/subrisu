@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// ログインエラー画面のScaffoldBody
@@ -12,16 +11,16 @@ class LoginErrorPageBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SubrisuImage(color: Colors.red),
-          _text(),
+          _text(context),
         ],
       ),
     );
   }
 
   /// テキスト
-  Widget _text() {
+  Widget _text(BuildContext context) {
     return Text(
-      texts.loginError,
+      AppLocalizations.of(context)!.loginError,
       textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: 15.sp,

@@ -1,4 +1,3 @@
-import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// 課金画面のScaffoldBody
@@ -29,7 +28,7 @@ class BillingPageBody extends ConsumerWidget {
     final themeSetting = ref.watch(themeSettingNotifierProvider);
 
     return Text(
-      texts.billingSupplement,
+      AppLocalizations.of(context)!.billingSupplement,
       style: TextStyle(
         fontSize: 13.sp,
         color: selectColor(

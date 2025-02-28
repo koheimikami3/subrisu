@@ -1,5 +1,4 @@
 import '../../../constant/configs.dart' as configs;
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 復元処理を行う項目
@@ -10,7 +9,7 @@ class RestoreItem extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MyListTile(
       position: ItemPosition.bottom,
-      name: texts.restoreItem,
+      name: AppLocalizations.of(context)!.restoreItem,
       trailing: const SizedBox.shrink(),
       onTap: () => _onTap(context, ref),
     );
@@ -38,21 +37,24 @@ class RestoreItem extends ConsumerWidget {
         // 完了ダイアログを表示
         showCompletedDialog(
           context,
-          texts.restoreCompletedDialogContent,
+          AppLocalizations.of(context)!.restoreCompletedDialogContent,
         );
       } else {
         // プログレスダイアログを閉じる
         Navigator.pop(context);
 
         // エラーダイアログを表示
-        showErrorDialog(context, texts.noPurchaseInfoError);
+        showErrorDialog(
+          context,
+          AppLocalizations.of(context)!.noPurchaseInfoError,
+        );
       }
     } on PlatformException {
       // プログレスダイアログを閉じる
       Navigator.pop(context);
 
       // エラーダイアログを表示
-      showErrorDialog(context, texts.restoreError);
+      showErrorDialog(context, AppLocalizations.of(context)!.restoreError);
     }
   }
 }

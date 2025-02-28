@@ -1,5 +1,4 @@
 import '../../../constant/configs.dart' as configs;
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 購入処理を行う項目
@@ -12,7 +11,7 @@ class PurchaseItem extends ConsumerWidget {
 
     return MyListTile(
       position: ItemPosition.top,
-      name: texts.removeAdsItem,
+      name: AppLocalizations.of(context)!.removeAdsItem,
       trailing: _price(context, ref, purchaseStatus),
       onTap: () =>
           purchaseStatus == PurchaseStatus.active ? null : _onTap(context, ref),
@@ -32,7 +31,7 @@ class PurchaseItem extends ConsumerWidget {
 
     return Text(
       purchaseStatus == PurchaseStatus.active
-          ? texts.alreadyPurchased
+          ? AppLocalizations.of(context)!.alreadyPurchased
           : '¥$price',
       style: TextStyle(
         color: selectColor(
@@ -61,7 +60,10 @@ class PurchaseItem extends ConsumerWidget {
       Navigator.pop(context);
 
       // エラーダイアログを表示
-      showErrorDialog(context, texts.noPurchaseItemError);
+      showErrorDialog(
+        context,
+        AppLocalizations.of(context)!.noPurchaseItemError,
+      );
       return;
     }
 
@@ -84,7 +86,7 @@ class PurchaseItem extends ConsumerWidget {
         return;
       } else {
         // エラーダイアログを表示
-        showErrorDialog(context, texts.purchaseError);
+        showErrorDialog(context, AppLocalizations.of(context)!.purchaseError);
         return;
       }
     }

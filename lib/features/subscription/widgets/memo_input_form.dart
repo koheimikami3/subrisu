@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// メモを入力するフォーム
@@ -14,7 +13,7 @@ class MemoInputForm extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
-        const ItemsTitle(title: texts.memoFormTitle),
+        ItemsTitle(title: AppLocalizations.of(context)!.memoFormTitle),
         // ignore: use_decorated_box
         Container(
           decoration: BoxDecoration(

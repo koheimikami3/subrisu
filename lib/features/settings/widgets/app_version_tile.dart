@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// アプリバージョンを表示するタイル
@@ -11,11 +10,11 @@ class AppVersionTile extends ConsumerWidget {
 
     return Column(
       children: [
-        const ItemsTitle(title: texts.appVersionTitle),
+        ItemsTitle(title: AppLocalizations.of(context)!.appVersionTitle),
         MyListTile(
           position: ItemPosition.independence,
           leadingIcon: Icons.info_outline,
-          name: texts.appVersionItem,
+          name: AppLocalizations.of(context)!.appVersionItem,
           trailing: Text(packageInfo.version),
         ),
       ],

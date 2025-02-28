@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// テーマ設定画面に遷移するタイル
@@ -9,7 +8,7 @@ class MoveThemeSettingPageTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyListTile(
       position: ItemPosition.bottom,
-      name: texts.themeItem,
+      name: AppLocalizations.of(context)!.themeItem,
       leadingIcon: Icons.dark_mode_outlined,
       onTap: () {
         Navigator.push(

@@ -42,7 +42,6 @@ export 'package:subrisu/component/my_filled_button.dart';
 export 'package:subrisu/component/my_list_tile.dart';
 export 'package:subrisu/component/my_text_field.dart';
 export 'package:subrisu/constant/configs.dart';
-export 'package:subrisu/constant/texts.dart';
 export 'package:subrisu/constant/urls.dart';
 export 'package:subrisu/enums/item_position.dart';
 export 'package:subrisu/enums/payment_cycle.dart';

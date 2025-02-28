@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 課金画面に遷移するタイル
@@ -9,11 +8,11 @@ class MoveBillingPageTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const ItemsTitle(title: texts.billingItemsTitle),
+        ItemsTitle(title: AppLocalizations.of(context)!.billingItemsTitle),
         MyListTile(
           position: ItemPosition.independence,
           leadingIcon: Icons.hide_image_outlined,
-          name: texts.billingItem,
+          name: AppLocalizations.of(context)!.billingItem,
           onTap: () {
             Navigator.push(
               context,

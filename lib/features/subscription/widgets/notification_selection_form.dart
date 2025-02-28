@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
 import '../../../constant/colors.dart' as colors;
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 通知を選択するフォーム
@@ -32,7 +31,7 @@ class NotificationSelectionForm extends ConsumerWidget {
               SizedBox(width: 15.w),
               Expanded(
                 child: DetailItem(
-                  title: texts.notificationTitle,
+                  title: AppLocalizations.of(context)!.notificationTitle,
                   content: _switch(context, ref),
                 ),
               ),

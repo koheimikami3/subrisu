@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 
 import 'constant/configs.dart' as configs;
-import 'constant/texts.dart' as texts;
 import 'importer.dart';
 
 /// BottomNavigationBar
@@ -84,17 +83,17 @@ class _MyBottomNavigationBarState extends ConsumerState<MyBottomNavigationBar> {
 
   /// 「リスト」のナビゲーション
   BottomNavigationBarItem _list() {
-    return const BottomNavigationBarItem(
-      icon: Icon(Icons.list),
-      label: texts.subscriptionListNavi,
+    return BottomNavigationBarItem(
+      icon: const Icon(Icons.list),
+      label: AppLocalizations.of(context)!.subscriptionListNavi,
     );
   }
 
   /// 「設定」のナビゲーション
   BottomNavigationBarItem _settings() {
-    return const BottomNavigationBarItem(
-      icon: Icon(Icons.settings),
-      label: texts.settingsNavi,
+    return BottomNavigationBarItem(
+      icon: const Icon(Icons.settings),
+      label: AppLocalizations.of(context)!.settingsNavi,
     );
   }
 }

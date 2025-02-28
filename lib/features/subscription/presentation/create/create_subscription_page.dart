@@ -1,4 +1,3 @@
-import '../../../../constant/texts.dart' as texts;
 import '../../../../importer.dart';
 
 /// サブスクリプション作成画面
@@ -10,7 +9,10 @@ class CreateSubscriptionPage extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-        appBar: AppBar(title: const Text(texts.createSubscriptionPageTitle)),
+        appBar: AppBar(
+          title:
+              Text(AppLocalizations.of(context)!.createSubscriptionPageTitle),
+        ),
         body: const CreateSubscriptionPageBody(),
       ),
     );

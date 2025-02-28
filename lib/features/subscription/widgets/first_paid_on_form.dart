@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 利用開始日フォームを表示する
@@ -57,7 +56,7 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
   @override
   Widget build(BuildContext context) {
     return DetailItem(
-      title: texts.firstPaymentDateTitle,
+      title: AppLocalizations.of(context)!.firstPaymentDateTitle,
       content: _selectButton(),
     );
   }

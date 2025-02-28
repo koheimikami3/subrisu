@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../constant/urls.dart' as urls;
 import '../../../importer.dart';
 
@@ -11,7 +10,7 @@ class OpenPrivacyPolicyTile extends StatelessWidget {
     return MyListTile(
       position: ItemPosition.bottom,
       leadingIcon: Icons.verified_user_outlined,
-      name: texts.privacyPolicyItem,
+      name: AppLocalizations.of(context)!.privacyPolicyItem,
       onTap: () => launchUrl(Uri.parse(urls.privacyPolicyUrl)),
     );
   }

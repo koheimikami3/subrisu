@@ -1,5 +1,4 @@
 import '../../../../../constant/colors.dart' as colors;
-import '../../../../../constant/texts.dart' as texts;
 import '../../../../../importer.dart';
 
 /// サブスクリプションが1つも登録されていないことを示すテキストとサブリス画像
@@ -12,7 +11,7 @@ class NoSubscription extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         _image(),
-        _text(),
+        _text(context),
       ],
     );
   }
@@ -35,9 +34,9 @@ class NoSubscription extends StatelessWidget {
   }
 
   /// テキスト
-  Widget _text() {
-    return const Text(
-      texts.noSubscription,
+  Widget _text(BuildContext context) {
+    return Text(
+      AppLocalizations.of(context)!.noSubscription,
       textAlign: TextAlign.center,
     );
   }

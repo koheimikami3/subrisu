@@ -1,5 +1,4 @@
 import '../../../constant/colors.dart' as colors;
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// サブスクリプションの詳細情報
@@ -19,7 +18,7 @@ class DetailInfo extends ConsumerWidget {
 
     return Column(
       children: [
-        const ItemsTitle(title: texts.detailInfoTitle),
+        ItemsTitle(title: AppLocalizations.of(context)!.detailInfoTitle),
         Container(
           width: double.infinity,
           decoration: BoxDecoration(

@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../constant/urls.dart' as urls;
 import '../../../importer.dart';
 
@@ -10,7 +9,7 @@ class OpenInquiryTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyListTile(
       position: ItemPosition.middle,
-      name: texts.inquiryItem,
+      name: AppLocalizations.of(context)!.inquiryItem,
       leadingIcon: Icons.mail_outline,
       onTap: () => launchUrl(Uri.parse(urls.inquiryUrl)),
     );

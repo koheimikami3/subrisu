@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 料金を入力するフォーム
@@ -17,7 +16,7 @@ class PriceInputForm extends ConsumerWidget {
       maxLength: 7,
       keyboardType: TextInputType.number,
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-      hintText: texts.priceHint,
+      hintText: AppLocalizations.of(context)!.priceHint,
       onChanged: (value) {
         // 料金の状態を更新
         ref.read(subscriptionFormNotifierProvider.notifier).setPrice(value);

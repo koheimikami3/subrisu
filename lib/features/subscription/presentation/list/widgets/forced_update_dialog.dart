@@ -1,4 +1,3 @@
-import '../../../../../constant/texts.dart' as texts;
 import '../../../../../constant/urls.dart' as urls;
 import '../../../../../importer.dart';
 
@@ -29,7 +28,7 @@ class ForcedUpdateDialog extends StatelessWidget {
   /// ストアのアプリページを開く
   Widget _openStoreUrlButton(BuildContext context) {
     return MyFilledButton(
-      text: texts.openStoreUrlButton,
+      text: AppLocalizations.of(context)!.openStoreUrlButton,
       onPressed: () async {
         final url = Uri.parse(
           Platform.isIOS ? urls.appStoreUrl : urls.googlePlayStoreUrl,
@@ -38,7 +37,7 @@ class ForcedUpdateDialog extends StatelessWidget {
         if (await canLaunchUrl(url)) {
           await launchUrl(url);
         } else {
-          showErrorDialog(context, texts.openUrlError);
+          showErrorDialog(context, AppLocalizations.of(context)!.openUrlError);
         }
       },
     );

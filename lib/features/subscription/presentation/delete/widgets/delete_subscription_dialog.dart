@@ -1,4 +1,3 @@
-import '../../../../../constant/texts.dart' as texts;
 import '../../../../../importer.dart';
 
 /// サブスクリプション削除の確認を行うダイアログ
@@ -36,7 +35,7 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
       await ref.read(deleteSubscriptionProvider(subscriptionId).future);
     } on Exception {
       // エラーメッセージを取得
-      errorMessge = texts.deleteSubscriptionError;
+      errorMessge = AppLocalizations.of(context)!.deleteSubscriptionError;
     }
 
     // プログレスダイアログを閉じる

@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../constant/urls.dart' as urls;
 import '../../../importer.dart';
 
@@ -10,7 +9,7 @@ class OpenReviewTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MyListTile(
       position: ItemPosition.top,
-      name: texts.reviewItem,
+      name: AppLocalizations.of(context)!.reviewItem,
       leadingIcon: Icons.rate_review_outlined,
       onTap: () async {
         final inAppReview = ref.read(inAppReviewProvider);
@@ -18,7 +17,10 @@ class OpenReviewTile extends ConsumerWidget {
         if (await inAppReview.isAvailable()) {
           await inAppReview.openStoreListing(appStoreId: urls.appStoreId);
         } else {
-          showErrorDialog(context, texts.openReviewError);
+          showErrorDialog(
+            context,
+            AppLocalizations.of(context)!.openReviewError,
+          );
         }
       },
     );

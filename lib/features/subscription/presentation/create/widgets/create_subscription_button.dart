@@ -1,4 +1,3 @@
-import '../../../../../constant/texts.dart' as texts;
 import '../../../../../importer.dart';
 
 /// サブスクリプションを作成するボタン
@@ -10,7 +9,7 @@ class CreateSubscriptionButton extends ConsumerWidget {
     final formState = ref.watch(subscriptionFormNotifierProvider);
 
     return MyFilledButton(
-      text: texts.createSubscriptionButton,
+      text: AppLocalizations.of(context)!.createSubscriptionButton,
       onPressed: formState.serviceName.isEmpty || formState.price.isEmpty
           ? null
           : () => _onPressed(context, ref),
@@ -32,7 +31,7 @@ class CreateSubscriptionButton extends ConsumerWidget {
       await ref.read(createSubscriptionProvider.future);
     } on Exception {
       // エラーメッセージを取得
-      errorMessage = texts.createSubscriptionError;
+      errorMessage = AppLocalizations.of(context)!.createSubscriptionError;
     }
 
     // プログレスダイアログを閉じる

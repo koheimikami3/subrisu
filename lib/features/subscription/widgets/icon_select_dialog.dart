@@ -1,5 +1,4 @@
 import '../../../constant/colors.dart' as colors;
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 class IconSelectDialog extends ConsumerWidget {
@@ -109,7 +108,7 @@ class IconSelectDialog extends ConsumerWidget {
         ref.watch(subscriptionFormNotifierProvider).selectedIconImagePath;
 
     return MyFilledButton(
-      text: texts.saveIconButton,
+      text: AppLocalizations.of(context)!.saveIconButton,
       onPressed: selectedIconImagePath.isEmpty
           ? null
           : () {
