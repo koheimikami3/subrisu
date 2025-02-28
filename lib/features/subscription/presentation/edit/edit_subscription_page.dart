@@ -1,4 +1,3 @@
-import '../../../../constant/texts.dart' as texts;
 import '../../../../importer.dart';
 
 /// サブスクリプション編集画面
@@ -41,7 +40,7 @@ class _EditSubscriptionPageState extends ConsumerState<EditSubscriptionPage> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(texts.editSubscriptionPageTitle),
+          title: Text(AppLocalizations.of(context)!.editSubscriptionPageTitle),
           actions: [
             Row(
               children: [

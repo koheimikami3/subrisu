@@ -1,5 +1,4 @@
 import '../../../../../constant/configs.dart' as configs;
-import '../../../../../constant/texts.dart' as texts;
 import '../../../../../importer.dart';
 
 /// サブスクリプションを並び替えるボタン
@@ -13,7 +12,9 @@ class SortSubscriptionButton extends ConsumerWidget {
     return PullDownButton(
       itemBuilder: (context) {
         return [
-          const PullDownMenuTitle(title: Text(texts.sortPullDownTitle)),
+          PullDownMenuTitle(
+            title: Text(AppLocalizations.of(context)!.sortPullDownTitle),
+          ),
           for (final sortSetting in SortSetting.values)
             PullDownMenuItem.selectable(
               title: sortSetting.name,

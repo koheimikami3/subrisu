@@ -1,5 +1,4 @@
 import '../../../constant/colors.dart' as colors;
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// サービス情報を表示する
@@ -19,7 +18,7 @@ class ServiceInfo extends ConsumerWidget {
 
     return Column(
       children: [
-        const ItemsTitle(title: texts.serviceInfoTitle),
+        ItemsTitle(title: AppLocalizations.of(context)!.serviceInfoTitle),
         Container(
           width: double.infinity,
           decoration: BoxDecoration(

@@ -1,4 +1,3 @@
-import '../../../../../constant/texts.dart' as texts;
 import '../../../../../importer.dart';
 
 /// 次回支払日までの日数を表示する
@@ -26,7 +25,7 @@ class NextPaymentDate extends StatelessWidget {
 
     switch (paymentCycle) {
       case PaymentCycle.daily:
-        text = texts.today;
+        text = AppLocalizations.of(context)!.today;
 
       case PaymentCycle.weekly:
         final nowWeekday = now.weekday;
@@ -38,7 +37,7 @@ class NextPaymentDate extends StatelessWidget {
         }
 
         if (nowWeekday == firstWeekday) {
-          text = texts.today;
+          text = AppLocalizations.of(context)!.today;
         } else {
           text = 'あと$day日';
         }
@@ -63,7 +62,7 @@ class NextPaymentDate extends StatelessWidget {
         day = difference.inDays;
 
         if (day == 0) {
-          text = texts.today;
+          text = AppLocalizations.of(context)!.today;
         } else {
           text = 'あと$day日';
         }
@@ -88,7 +87,7 @@ class NextPaymentDate extends StatelessWidget {
         day = difference.inDays;
 
         if (day == 0) {
-          text = texts.today;
+          text = AppLocalizations.of(context)!.today;
         } else {
           text = 'あと$day日';
         }
@@ -113,7 +112,7 @@ class NextPaymentDate extends StatelessWidget {
         day = difference.inDays;
 
         if (day == 0) {
-          text = texts.today;
+          text = AppLocalizations.of(context)!.today;
         } else {
           text = 'あと$day日';
         }
@@ -138,7 +137,7 @@ class NextPaymentDate extends StatelessWidget {
         day = difference.inDays;
 
         if (day == 0) {
-          text = texts.today;
+          text = AppLocalizations.of(context)!.today;
         } else {
           text = 'あと$day日';
         }
@@ -147,7 +146,7 @@ class NextPaymentDate extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        color: text == today
+        color: text == AppLocalizations.of(context)!.today
             ? Colors.red
             : day == 1
                 ? Colors.orange.shade700

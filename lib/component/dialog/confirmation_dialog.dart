@@ -1,4 +1,3 @@
-import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// 実行確認を行うダイアログ
@@ -34,7 +33,7 @@ class ConfirmationDialog extends StatelessWidget {
   Widget _cancelButton(BuildContext context) {
     return TextButton(
       onPressed: () => Navigator.pop(context),
-      child: const Text(texts.cancelButton),
+      child: Text(AppLocalizations.of(context)!.cancelButton),
     );
   }
 

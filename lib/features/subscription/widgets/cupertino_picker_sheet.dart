@@ -1,5 +1,4 @@
 import '../../../constant/colors.dart' as colors;
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 class CupertinoPickerSheet extends ConsumerWidget {
@@ -31,7 +30,7 @@ class CupertinoPickerSheet extends ConsumerWidget {
               SizedBox(width: 10.w),
               _cancelButton(context, themeSetting),
               const Spacer(),
-              _saveButton(),
+              _saveButton(context),
               SizedBox(width: 10.w),
             ],
           ),
@@ -46,7 +45,7 @@ class CupertinoPickerSheet extends ConsumerWidget {
     return TextButton(
       onPressed: () => Navigator.pop(context),
       child: Text(
-        texts.pickerCancelButton,
+        AppLocalizations.of(context)!.cancelButton,
         style: TextStyle(
           fontSize: 15.5.sp,
           color: selectColor(
@@ -61,11 +60,11 @@ class CupertinoPickerSheet extends ConsumerWidget {
   }
 
   /// 変更を保存するボタン
-  Widget _saveButton() {
+  Widget _saveButton(BuildContext context) {
     return TextButton(
       onPressed: saveOnPressed,
       child: Text(
-        texts.pickerSaveButton,
+        AppLocalizations.of(context)!.pickerSaveButton,
         style: TextStyle(
           fontSize: 15.5.sp,
           color: colors.appColor,

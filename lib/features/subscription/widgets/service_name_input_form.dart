@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// サービス名を入力するフォーム
@@ -14,7 +13,7 @@ class ServiceNameInputForm extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MyTextFormField(
       initialValue: serviceName,
-      hintText: texts.serviceNameHint,
+      hintText: AppLocalizations.of(context)!.serviceNameHint,
       onChanged: (value) {
         // サービス名の状態を更新
         ref

@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// サポート項目リスト
@@ -7,18 +6,18 @@ class SupportItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        ItemsTitle(title: texts.supportItemsTitle),
-        OpenReviewTile(),
-        ItemDivider(),
-        ShowShareSheetTile(),
-        ItemDivider(),
-        OpenInquiryTile(),
-        ItemDivider(),
-        OpenTosTile(),
-        ItemDivider(),
-        OpenPrivacyPolicyTile(),
+        ItemsTitle(title: AppLocalizations.of(context)!.supportItemsTitle),
+        const OpenReviewTile(),
+        const ItemDivider(),
+        const ShowShareSheetTile(),
+        const ItemDivider(),
+        const OpenInquiryTile(),
+        const ItemDivider(),
+        const OpenTosTile(),
+        const ItemDivider(),
+        const OpenPrivacyPolicyTile(),
       ],
     );
   }

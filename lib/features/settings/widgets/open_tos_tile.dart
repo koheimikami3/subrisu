@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../constant/urls.dart' as urls;
 import '../../../importer.dart';
 
@@ -10,7 +9,7 @@ class OpenTosTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyListTile(
       position: ItemPosition.middle,
-      name: texts.tosItem,
+      name: AppLocalizations.of(context)!.tosItem,
       leadingIcon: Icons.description_outlined,
       onTap: () => launchUrl(Uri.parse(urls.tosUrl)),
     );

@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// アプリ設定項目リスト
@@ -7,12 +6,12 @@ class AppItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
-        ItemsTitle(title: texts.appSettingsTitle),
-        ShowOpenNotificationSettingsDialogTile(),
-        ItemDivider(),
-        MoveThemeSettingPageTile(),
+        ItemsTitle(title: AppLocalizations.of(context)!.appSettingsTitle),
+        const ShowOpenNotificationSettingsDialogTile(),
+        const ItemDivider(),
+        const MoveThemeSettingPageTile(),
       ],
     );
   }

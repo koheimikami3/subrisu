@@ -1,4 +1,3 @@
-import '../../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// ログインエラー画面
@@ -8,7 +7,9 @@ class LoginErrorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(texts.loginErrorPageTitle)),
+      appBar: AppBar(
+        title: Text(AppLocalizations.of(context)!.loginErrorPageTitle),
+      ),
       body: const LoginErrorPageBody(),
     );
   }

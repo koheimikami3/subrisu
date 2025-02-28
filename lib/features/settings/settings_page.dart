@@ -1,4 +1,3 @@
-import '../../constant/texts.dart' as texts;
 import '../../importer.dart';
 
 /// 設定画面
@@ -8,7 +7,8 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(texts.settingsPageTitle)),
+      appBar:
+          AppBar(title: Text(AppLocalizations.of(context)!.settingsPageTitle)),
       body: const SettingsPageBody(),
     );
   }

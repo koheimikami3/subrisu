@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../constant/texts.dart' as texts;
 import '../../../importer.dart';
 
 /// 支払い周期を選択するフォーム
@@ -33,7 +32,7 @@ class _PaymentCycleSelectionFormState
   @override
   Widget build(BuildContext context) {
     return DetailItem(
-      title: texts.paymentCycleTitle,
+      title: AppLocalizations.of(context)!.paymentCycleTitle,
       content: _selectButton(),
     );
   }
