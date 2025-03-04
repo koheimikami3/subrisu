@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 
 import '../../../importer.dart';
 
@@ -94,13 +95,21 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
       context: context,
       builder: (_) {
         return CupertinoPickerSheet(
-          picker: Row(
-            children: [
-              Expanded(child: _yearPicker()),
-              Expanded(child: _monthPicker()),
-              Expanded(child: _datePicker()),
-            ],
-          ),
+          picker: Localizations.localeOf(context) == const Locale('en')
+              ? Row(
+                  children: [
+                    Expanded(child: _monthPicker(context)),
+                    Expanded(child: _datePicker(context)),
+                    Expanded(child: _yearPicker(context)),
+                  ],
+                )
+              : Row(
+                  children: [
+                    Expanded(child: _yearPicker(context)),
+                    Expanded(child: _monthPicker(context)),
+                    Expanded(child: _datePicker(context)),
+                  ],
+                ),
           saveOnPressed: _saveOnPressed,
         );
       },
@@ -125,7 +134,7 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
   }
 
   /// 年を選択するPicker
-  Widget _yearPicker() {
+  Widget _yearPicker(BuildContext context) {
     return CupertinoPicker(
       itemExtent: 40.h,
       scrollController: FixedExtentScrollController(
@@ -136,14 +145,20 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
       },
       children: [
         for (int i = 0; i < _yearList.length; i++) ...{
-          Center(child: Text('${_yearList[i]}年')),
+          Center(
+            child: Text(
+              Localizations.localeOf(context) == const Locale('en')
+                  ? '${_yearList[i]}'
+                  : '${_yearList[i]}年',
+            ),
+          ),
         },
       ],
     );
   }
 
   /// 月を選択するPicker
-  Widget _monthPicker() {
+  Widget _monthPicker(BuildContext context) {
     return CupertinoPicker(
       itemExtent: 40.h,
       scrollController: FixedExtentScrollController(
@@ -154,14 +169,21 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
       },
       children: [
         for (int i = 0; i < _monthList.length; i++) ...{
-          Center(child: Text('${_monthList[i]}月')),
+          Center(
+            child: Text(
+              Localizations.localeOf(context) == const Locale('en')
+                  ? DateFormat.MMMM()
+                      .format(DateTime(_yearList[i], _monthList[i]))
+                  : '${_monthList[i]}月',
+            ),
+          ),
         },
       ],
     );
   }
 
   /// 日を選択するPicker
-  Widget _datePicker() {
+  Widget _datePicker(BuildContext context) {
     return CupertinoPicker(
       itemExtent: 40.h,
       scrollController: FixedExtentScrollController(
@@ -172,7 +194,13 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
       },
       children: [
         for (int i = 0; i < _dayList.length; i++) ...{
-          Center(child: Text('${_dayList[i]}日')),
+          Center(
+            child: Text(
+              Localizations.localeOf(context) == const Locale('en')
+                  ? '${_dayList[i]}'
+                  : '${_dayList[i]}日',
+            ),
+          ),
         },
       ],
     );
