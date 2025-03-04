@@ -6,14 +6,10 @@ class OpenNotificationSettingsDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const title = '確認';
-    const content = '支払い前日に通知を受け取るには、アプリの通知設定をオンにする必要があります。';
-    const actionText = '設定する';
-
     return ConfirmationDialog(
-      title: title,
-      content: content,
-      actionText: actionText,
+      content: AppLocalizations.of(context)!
+          .showOpenNotificationSettingsDialogContent,
+      actionText: AppLocalizations.of(context)!.openNotificationSettingsButton,
       isCaution: false,
       onPressed: () async {
         await AppSettings.openAppSettings(type: AppSettingsType.notification);
