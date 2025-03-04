@@ -11,7 +11,7 @@ class SwitchDeviceThemeTile extends ConsumerWidget {
 
     return MyListTile(
       position: ItemPosition.top,
-      name: ThemeSetting.device.name,
+      name: AppLocalizations.of(context)!.theme(ThemeSetting.device.name),
       leadingIcon: Icons.phone_iphone_outlined,
       trailing: themeSetting == ThemeSetting.device
           ? const CheckIcon()

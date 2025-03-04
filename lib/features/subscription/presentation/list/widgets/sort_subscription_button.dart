@@ -17,7 +17,7 @@ class SortSubscriptionButton extends ConsumerWidget {
           ),
           for (final sortSetting in SortSetting.values)
             PullDownMenuItem.selectable(
-              title: sortSetting.name,
+              title: AppLocalizations.of(context)!.sort(sortSetting.name),
               selected: selectedSortSetting == sortSetting,
               itemTheme: const PullDownMenuItemTheme(checkmark: Icons.check),
               onTap: () {
