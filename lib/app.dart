@@ -45,7 +45,6 @@ class _MyAppState extends ConsumerState<MyApp> {
                   : ThemeMode.dark,
           darkTheme: appThemeDark(),
           debugShowCheckedModeBanner: false,
-          locale: const Locale('en'),
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           initialRoute: '/',
