@@ -36,7 +36,7 @@ class IconSelectDialog extends ConsumerWidget {
               ),
               child: Stack(
                 children: [
-                  Center(child: _title()),
+                  Center(child: _title(context)),
                   Align(
                     alignment: Alignment.centerRight,
                     child: Row(
@@ -78,11 +78,9 @@ class IconSelectDialog extends ConsumerWidget {
   }
 
   /// ダイアログのタイトルを表示する
-  Widget _title() {
-    const text = 'アイコン選択';
-
+  Widget _title(BuildContext context) {
     return Text(
-      text,
+      AppLocalizations.of(context)!.iconSelectDialogTitle,
       style: TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeight.bold,

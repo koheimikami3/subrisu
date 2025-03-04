@@ -13,13 +13,27 @@
     "closeDialogButton": "閉じる",
     "cancelButton": "キャンセル",
     "serviceInfoTitle": "サービス情報",
+    "iconSelectDialogTitle": "アイコン選択",
     "detailInfoTitle": "詳細情報",
     "paymentCycleTitle": "支払い周期",
     "firstPaymentDateTitle": "初回支払い日",
-    "notificationTitle": "支払い前日に通知する",
+    "firstPaidOn": "{date}",
+    "@firstPaidOn": {
+        "description": "A message with a date parameter",
+        "placeholders": {
+            "date": {
+                "type": "DateTime",
+                "format": "yMMMMd"
+            }
+        }
+    },
+    "notificationTitle": "通知",
+    "reminderTitle": "支払い前日に通知する",
     "memoFormTitle": "メモ",
     "serviceNameHint": "サービス名*",
     "priceHint": "料金*",
+    "deleteSubscriptionDialogContent": "データを削除してもよろしいですか？",
+    "deleteSubscriptionButton": "削除",
     "billingItemsTitle": "有料プラン",
     "appSettingsTitle": "アプリ",
     "supportItemsTitle": "サポート",
@@ -55,6 +69,10 @@
     "today": "今日",
     "alreadyPurchased": "購入済み",
     "billingSupplement": "*広告の非表示は買い切りです。",
+    "total": "今月:¥",
+    "confirmationDialogTitle": "確認",
+    "showOpenNotificationSettingsDialogContent": "支払い前日に通知を受け取るには、アプリの通知設定をオンにする必要があります。",
+    "openNotificationSettingsButton": "設定する",
     "theme": "{theme, select, device{端末設定と同じ} light{ライトモード} dark{ダークモード} other{error}}",
     "sort": "{sort, select, ascendingNextPaymentDays{支払い日が近い順} ascendingPrice{料金が安い順} descendingPrice{料金が高い順} ascendingServiceName{名前順（昇順）} descendingServiceName{名前順（降順）} other{error}}",
     "paymentCycle": "{paymentCycle, select, daily{毎日} weekly{毎週} monthly{毎月} threeMonths{3ヶ月} sixMonths{6ヶ月} yearly{毎年} other{error}}"

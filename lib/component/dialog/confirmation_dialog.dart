@@ -4,14 +4,12 @@ import '../../importer.dart';
 class ConfirmationDialog extends StatelessWidget {
   const ConfirmationDialog({
     super.key,
-    required this.title,
     required this.content,
     required this.actionText,
     this.isCaution = true,
     required this.onPressed,
   });
 
-  final String title; // タイトル
   final String content; // 内容
   final String actionText; // 実行ボタンテキスト
   final bool isCaution; //　実行ボタンテキストを赤色にするかどうか
@@ -20,7 +18,7 @@ class ConfirmationDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(title),
+      title: Text(AppLocalizations.of(context)!.confirmationDialogTitle),
       content: Text(content),
       actions: [
         _cancelButton(context),

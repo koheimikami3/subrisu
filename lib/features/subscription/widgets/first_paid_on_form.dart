@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:intl/intl.dart';
 
 import '../../../importer.dart';
 
@@ -74,13 +73,12 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
         formState.firstPaidDay!,
       );
     }
-    final text = DateFormat.yMMMMd('ja').format(dateTime);
 
     return GestureDetector(
       onTap: _onTap,
       child: Row(
         children: [
-          Text(text),
+          Text(AppLocalizations.of(context)!.firstPaidOn(dateTime)),
           Icon(
             Icons.unfold_more,
             color: Colors.grey.shade600,

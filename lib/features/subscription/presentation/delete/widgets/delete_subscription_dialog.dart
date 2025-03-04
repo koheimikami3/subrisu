@@ -11,14 +11,9 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    const title = '確認';
-    const content = 'データを削除してもよろしいですか？';
-    const actionText = '削除';
-
     return ConfirmationDialog(
-      title: title,
-      content: content,
-      actionText: actionText,
+      content: AppLocalizations.of(context)!.deleteSubscriptionDialogContent,
+      actionText: AppLocalizations.of(context)!.deleteSubscriptionButton,
       onPressed: () => _onPressed(context, ref),
     );
   }

@@ -74,7 +74,7 @@ class TotalPrice extends ConsumerWidget {
               totalPrice += price ~/ 12;
           }
         }
-        return Text('今月の合計：¥$totalPrice');
+        return Text('${AppLocalizations.of(context)!.total}$totalPrice');
       },
     );
   }

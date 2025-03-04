@@ -13,7 +13,7 @@ class NotificationSelectionForm extends ConsumerWidget {
 
     return Column(
       children: [
-        const ItemsTitle(title: '通知'),
+        ItemsTitle(title: AppLocalizations.of(context)!.notificationTitle),
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
@@ -31,7 +31,7 @@ class NotificationSelectionForm extends ConsumerWidget {
               SizedBox(width: 15.w),
               Expanded(
                 child: DetailItem(
-                  title: AppLocalizations.of(context)!.notificationTitle,
+                  title: AppLocalizations.of(context)!.reminderTitle,
                   content: _switch(context, ref),
                 ),
               ),

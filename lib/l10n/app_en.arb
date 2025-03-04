@@ -13,13 +13,27 @@
     "closeDialogButton": "Close",
     "cancelButton": "Cancel",
     "serviceInfoTitle": "Service Information",
+    "iconSelectDialogTitle": "Select Icon",
     "detailInfoTitle": "Detail Information",
     "paymentCycleTitle": "Payment Cycle",
     "firstPaymentDateTitle": "First Payment Date",
-    "notificationTitle": "Notifications a day before a payment date",
+    "firstPaidOn": "{date}",
+    "@firstPaidOn": {
+        "description": "A message with a date parameter",
+        "placeholders": {
+            "date": {
+                "type": "DateTime",
+                "format": "yMMMMd"
+            }
+        }
+    },
+    "notificationTitle": "Notification",
+    "reminderTitle": "Notify the day before payment",
     "memoFormTitle": "Note",
     "serviceNameHint": "Service Name*",
     "priceHint": "Price*",
+    "deleteSubscriptionDialogContent": "Are you sure you want to delete this subscription?",
+    "deleteSubscriptionButton": "Delete",
     "billingItemsTitle": "Paid Plan",
     "appSettingsTitle": "App",
     "supportItemsTitle": "Support",
@@ -55,6 +69,10 @@
     "today": "today",
     "alreadyPurchased": "Purchased",
     "billingSupplement": "*Ad removal is a one-time purchase.",
+    "total": "This month:$",
+    "confirmationDialogTitle": "Confirm",
+    "showOpenNotificationSettingsDialogContent": "To receive a notification the day before payment, you need to enable app notifications.",
+    "openNotificationSettingsButton": "Set up",
     "theme": "{theme, select, device{System} light{Light Mode} dark{Dark Mode} other{error}}",
     "sort": "{sort, select, ascendingNextPaymentDays{Payment date} ascendingPrice{Price ↓} descendingPrice{Price ↑} ascendingServiceName{Alphabet ↓} descendingServiceName{Alphabet ↑} other{error}}",
     "paymentCycle": "{paymentCycle, select, daily{every day} weekly{every week} monthly{every month} threeMonths{every three months} sixMonths{every six months} yearly{every year} other{error}}"
