@@ -11,7 +11,7 @@ class SwitchDarkThemeTile extends ConsumerWidget {
 
     return MyListTile(
       position: ItemPosition.bottom,
-      name: ThemeSetting.dark.name,
+      name: AppLocalizations.of(context)!.theme(ThemeSetting.dark.name),
       leadingIcon: Icons.dark_mode_outlined,
       trailing: themeSetting == ThemeSetting.dark
           ? const CheckIcon()

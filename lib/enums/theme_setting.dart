@@ -1,16 +1,11 @@
 /// テーマ設定
 enum ThemeSetting {
   /// 端末モード
-  device('端末設定と同じ'),
+  device,
 
   /// ライトモード
-  light('ライトモード'),
+  light,
 
   /// ダークモード
-  dark('ダークモード'),
-  ;
-
-  const ThemeSetting(this.name);
-
-  final String name;
+  dark,
 }

@@ -11,7 +11,7 @@ class SwitchLightThemeTile extends ConsumerWidget {
 
     return MyListTile(
       position: ItemPosition.middle,
-      name: ThemeSetting.light.name,
+      name: AppLocalizations.of(context)!.theme(ThemeSetting.light.name),
       leadingIcon: Icons.light_mode_outlined,
       trailing: themeSetting == ThemeSetting.light
           ? const CheckIcon()

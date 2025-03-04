@@ -46,7 +46,7 @@ class _PaymentCycleSelectionFormState
       onTap: _onTap,
       child: Row(
         children: [
-          Text(paymentCycle.name),
+          Text(AppLocalizations.of(context)!.paymentCycle(paymentCycle.name)),
           Icon(
             Icons.unfold_more,
             color: Colors.grey.shade600,
@@ -89,7 +89,11 @@ class _PaymentCycleSelectionFormState
       },
       children: [
         for (final paymentCycle in PaymentCycle.values) ...{
-          Center(child: Text(paymentCycle.name)),
+          Center(
+            child: Text(
+              AppLocalizations.of(context)!.paymentCycle(paymentCycle.name),
+            ),
+          ),
         },
       ],
     );

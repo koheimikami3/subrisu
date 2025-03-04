@@ -54,5 +54,8 @@
     "sortPullDownTitle": "並び替え",
     "today": "今日",
     "alreadyPurchased": "購入済み",
-    "billingSupplement": "*広告の非表示は買い切りです。"
+    "billingSupplement": "*広告の非表示は買い切りです。",
+    "theme": "{theme, select, device{端末設定と同じ} light{ライトモード} dark{ダークモード} other{error}}",
+    "sort": "{sort, select, ascendingNextPaymentDays{支払い日が近い順} ascendingPrice{料金が安い順} descendingPrice{料金が高い順} ascendingServiceName{名前順（昇順）} descendingServiceName{名前順（降順）} other{error}}",
+    "paymentCycle": "{paymentCycle, select, daily{毎日} weekly{毎週} monthly{毎月} threeMonths{3ヶ月} sixMonths{6ヶ月} yearly{毎年} other{error}}"
 }

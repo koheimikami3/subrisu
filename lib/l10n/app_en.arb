@@ -54,5 +54,8 @@
     "sortPullDownTitle": "Sort",
     "today": "today",
     "alreadyPurchased": "Purchased",
-    "billingSupplement": "*Ad removal is a one-time purchase."
+    "billingSupplement": "*Ad removal is a one-time purchase.",
+    "theme": "{theme, select, device{System} light{Light Mode} dark{Dark Mode} other{error}}",
+    "sort": "{sort, select, ascendingNextPaymentDays{Payment date} ascendingPrice{Price ↓} descendingPrice{Price ↑} ascendingServiceName{Alphabet ↓} descendingServiceName{Alphabet ↑} other{error}}",
+    "paymentCycle": "{paymentCycle, select, daily{every day} weekly{every week} monthly{every month} threeMonths{every three months} sixMonths{every six months} yearly{every year} other{error}}"
 }
