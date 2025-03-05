@@ -28,6 +28,8 @@
             }
         }
     },
+    "price": "¥{price}",
+    "daysLeft": "あと{day}日",
     "notificationTitle": "通知",
     "reminderTitle": "支払い前日に通知する",
     "memoFormTitle": "メモ",
@@ -71,8 +73,11 @@
     "today": "今日",
     "alreadyPurchased": "購入済み",
     "billingSupplement": "*広告の非表示は買い切りです。",
-    "total": "今月:¥",
+    "total": "今月 ¥",
     "confirmationDialogTitle": "確認",
+    "updateContentsDialogTitle": "アップデート内容",
+    "newVersion": "バージョン{newVersion}",
+    "thankYouMessage": "引き続きサブリスをよろしくお願いします。",
     "showOpenNotificationSettingsDialogContent": "支払い前日に通知を受け取るには、アプリの通知設定をオンにする必要があります。",
     "openNotificationSettingsButton": "設定する",
     "theme": "{theme, select, device{端末設定と同じ} light{ライトモード} dark{ダークモード} other{error}}",

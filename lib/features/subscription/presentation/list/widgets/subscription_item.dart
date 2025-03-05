@@ -53,7 +53,7 @@ class SubscriptionItem extends ConsumerWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              _price(),
+                              _price(context),
                               NextPaymentDate(
                                 paymentCycle: subscription.paymentCycle,
                                 firstPaidDate:
@@ -118,9 +118,9 @@ class SubscriptionItem extends ConsumerWidget {
   }
 
   /// 料金
-  Widget _price() {
+  Widget _price(BuildContext context) {
     return Text(
-      '¥${subscription.price}',
+      AppLocalizations.of(context)!.price(subscription.price),
       style: TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeight.w400,
