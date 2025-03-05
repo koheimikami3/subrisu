@@ -7,13 +7,12 @@ part of 'subscription_creation_data.dart';
 // **************************************************************************
 
 _$SubscriptionCreationDataImpl _$$SubscriptionCreationDataImplFromJson(
-  Map<String, dynamic> json,
-) =>
+        Map<String, dynamic> json) =>
     _$SubscriptionCreationDataImpl(
       serviceName: json['serviceName'] as String,
       price: json['price'] as String,
       iconImagePath: json['iconImagePath'] as String? ?? '',
-      paymentCycle: json['paymentCycle'] as int,
+      paymentCycle: (json['paymentCycle'] as num).toInt(),
       firstPaidOn: const FirstPaidOnField().fromJson(json['firstPaidOn']),
       notification: json['notification'] as bool,
       memo: json['memo'] as String,
@@ -22,8 +21,7 @@ _$SubscriptionCreationDataImpl _$$SubscriptionCreationDataImplFromJson(
     );
 
 Map<String, dynamic> _$$SubscriptionCreationDataImplToJson(
-  _$SubscriptionCreationDataImpl instance,
-) =>
+        _$SubscriptionCreationDataImpl instance) =>
     <String, dynamic>{
       'serviceName': instance.serviceName,
       'price': instance.price,

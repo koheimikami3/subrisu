@@ -12,7 +12,7 @@ part of 'subscription.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Subscription {
@@ -27,7 +27,9 @@ mixin _$Subscription {
   String get memo => throw _privateConstructorUsedError; // 作成日
   Timestamp get createdAt => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Subscription
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SubscriptionCopyWith<Subscription> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +62,8 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Subscription
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -142,6 +146,8 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
       _$SubscriptionImpl _value, $Res Function(_$SubscriptionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Subscription
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -270,7 +276,9 @@ class _$SubscriptionImpl extends _Subscription {
   int get hashCode => Object.hash(runtimeType, id, serviceName, price,
       iconImagePath, paymentCycle, firstPaidOn, notification, memo, createdAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Subscription
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SubscriptionImplCopyWith<_$SubscriptionImpl> get copyWith =>
@@ -290,26 +298,30 @@ abstract class _Subscription extends Subscription {
       required final Timestamp createdAt}) = _$SubscriptionImpl;
   const _Subscription._() : super._();
 
-  @override // ドキュメントID
-  String get id;
-  @override // サービス名
-  String get serviceName;
-  @override // 価格
-  String get price;
-  @override // アイコン画像パス
-  String get iconImagePath;
-  @override // 支払い周期
-  PaymentCycle get paymentCycle;
-  @override // 初回支払日
-  Timestamp get firstPaidOn;
-  @override // 通知フラグ
-  bool get notification;
-  @override // メモ
-  String get memo;
-  @override // 作成日
-  Timestamp get createdAt;
+// ドキュメントID
   @override
-  @JsonKey(ignore: true)
+  String get id; // サービス名
+  @override
+  String get serviceName; // 価格
+  @override
+  String get price; // アイコン画像パス
+  @override
+  String get iconImagePath; // 支払い周期
+  @override
+  PaymentCycle get paymentCycle; // 初回支払日
+  @override
+  Timestamp get firstPaidOn; // 通知フラグ
+  @override
+  bool get notification; // メモ
+  @override
+  String get memo; // 作成日
+  @override
+  Timestamp get createdAt;
+
+  /// Create a copy of Subscription
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SubscriptionImplCopyWith<_$SubscriptionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

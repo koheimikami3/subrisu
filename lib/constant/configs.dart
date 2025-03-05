@@ -31,6 +31,9 @@ const dialogContentFontSize = 12;
 // テーマ設定キー
 const themeKey = 'theme';
 
+// 言語設定キー
+const languageKey = 'language';
+
 // RemoteConfigキー
 const forceAppVersionIOSRemoteKey = 'forceAppVersionIOS';
 const forceAppVersionAndroidRemoteKey = 'forceAppVersionAndroid';

@@ -7,7 +7,7 @@ class MoveThemeSettingPageTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyListTile(
-      position: ItemPosition.bottom,
+      position: ItemPosition.middle,
       name: AppLocalizations.of(context)!.themeItem,
       leadingIcon: Icons.dark_mode_outlined,
       onTap: () {

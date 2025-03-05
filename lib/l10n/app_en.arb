@@ -4,6 +4,7 @@
     "settingsPageTitle": "Settings",
     "billingPageTitle": "Go ad-free",
     "themeSettingPageTitle": "Theme",
+    "languageSettingPageTitle": "Language",
     "loginErrorPageTitle": "Login Error",
     "saveIconButton": "Save",
     "pickerSaveButton": "Complete",
@@ -41,6 +42,7 @@
     "billingItem": "Remove ads",
     "notificationItem": "Reminder",
     "themeItem": "Theme",
+    "languageItem": "Language",
     "reviewItem": "App Review",
     "shareItem": "Share",
     "inquiryItem": "Inquiry",
@@ -74,6 +76,7 @@
     "showOpenNotificationSettingsDialogContent": "To receive a notification the day before payment, you need to enable app notifications.",
     "openNotificationSettingsButton": "Set up",
     "theme": "{theme, select, device{System} light{Light Mode} dark{Dark Mode} other{error}}",
+    "language": "{language, select, japanese{日本語} english{English} other{error}}",
     "sort": "{sort, select, ascendingNextPaymentDays{Payment date} ascendingPrice{Price ↓} descendingPrice{Price ↑} ascendingServiceName{Alphabet ↓} descendingServiceName{Alphabet ↑} other{error}}",
     "paymentCycle": "{paymentCycle, select, daily{every day} weekly{every week} monthly{every month} threeMonths{every three months} sixMonths{every six months} yearly{every year} other{error}}"
 }

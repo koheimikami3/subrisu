@@ -12,7 +12,7 @@ part of 'subscription_form_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SubscriptionFormState {
@@ -29,7 +29,9 @@ mixin _$SubscriptionFormState {
   bool get notification => throw _privateConstructorUsedError; // メモ
   String get memo => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SubscriptionFormState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SubscriptionFormStateCopyWith<SubscriptionFormState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -64,6 +66,8 @@ class _$SubscriptionFormStateCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SubscriptionFormState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -154,6 +158,8 @@ class __$$SubscriptionFormStateImplCopyWithImpl<$Res>
       $Res Function(_$SubscriptionFormStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SubscriptionFormState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -314,7 +320,9 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
       notification,
       memo);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SubscriptionFormState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SubscriptionFormStateImplCopyWith<_$SubscriptionFormStateImpl>
@@ -336,28 +344,32 @@ abstract class _SubscriptionFormState extends SubscriptionFormState {
       final String memo}) = _$SubscriptionFormStateImpl;
   const _SubscriptionFormState._() : super._();
 
-  @override // サービス名
-  String get serviceName;
-  @override // 価格
-  String get price;
-  @override // 選択中アイコン画像パス
-  String get selectedIconImagePath;
-  @override // 選択確定アイコン画像パス
-  String get resultIconImagePath;
-  @override // 支払い周期
-  PaymentCycle get paymentCycle;
-  @override // 初回支払い年
-  int? get firstPaidYear;
-  @override // 初回支払い月
-  int? get firstPaidMonth;
-  @override // 初回支払い日
-  int? get firstPaidDay;
-  @override // 通知フラグ
-  bool get notification;
-  @override // メモ
-  String get memo;
+// サービス名
   @override
-  @JsonKey(ignore: true)
+  String get serviceName; // 価格
+  @override
+  String get price; // 選択中アイコン画像パス
+  @override
+  String get selectedIconImagePath; // 選択確定アイコン画像パス
+  @override
+  String get resultIconImagePath; // 支払い周期
+  @override
+  PaymentCycle get paymentCycle; // 初回支払い年
+  @override
+  int? get firstPaidYear; // 初回支払い月
+  @override
+  int? get firstPaidMonth; // 初回支払い日
+  @override
+  int? get firstPaidDay; // 通知フラグ
+  @override
+  bool get notification; // メモ
+  @override
+  String get memo;
+
+  /// Create a copy of SubscriptionFormState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SubscriptionFormStateImplCopyWith<_$SubscriptionFormStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

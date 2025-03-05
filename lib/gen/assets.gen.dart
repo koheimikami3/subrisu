@@ -12,6 +12,7 @@ import 'package:flutter/widgets.dart';
 class $ImagesGen {
   const $ImagesGen();
 
+  /// Directory path: images/subscription
   $ImagesSubscriptionGen get subscription => const $ImagesSubscriptionGen();
 }
 
@@ -195,66 +196,69 @@ class $ImagesSubscriptionGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        account,
-        adobe,
-        amazon,
-        apple,
-        appleMusic,
-        beer,
-        book,
-        cafe,
-        camera,
-        car,
-        cloth,
-        disneyPlus,
-        dropbox,
-        electricity,
-        foodDrink,
-        game,
-        gas,
-        google,
-        home,
-        hulu,
-        illustrator,
-        love,
-        medicalCare,
-        music,
-        netflix,
-        nintendoSwitch,
-        pc,
-        pet,
-        photoshop,
-        playStation,
-        premierePro,
-        primeVideo,
-        restaurant,
-        saving,
-        smartPhone,
-        sns,
-        spotify,
-        streaming,
-        study,
-        subrisu,
-        train,
-        training,
-        twitter,
-        uberEats,
-        water,
-        wifi,
-        youTube
-      ];
+    account,
+    adobe,
+    amazon,
+    apple,
+    appleMusic,
+    beer,
+    book,
+    cafe,
+    camera,
+    car,
+    cloth,
+    disneyPlus,
+    dropbox,
+    electricity,
+    foodDrink,
+    game,
+    gas,
+    google,
+    home,
+    hulu,
+    illustrator,
+    love,
+    medicalCare,
+    music,
+    netflix,
+    nintendoSwitch,
+    pc,
+    pet,
+    photoshop,
+    playStation,
+    premierePro,
+    primeVideo,
+    restaurant,
+    saving,
+    smartPhone,
+    sns,
+    spotify,
+    streaming,
+    study,
+    subrisu,
+    train,
+    training,
+    twitter,
+    uberEats,
+    water,
+    wifi,
+    youTube,
+  ];
 }
 
 class Assets {
-  Assets._();
+  const Assets._();
 
   static const $ImagesGen images = $ImagesGen();
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(this._assetName, {this.size, this.flavors = const {}});
 
   final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
 
   Image image({
     Key? key,
@@ -274,10 +278,10 @@ class AssetGenImage {
     ImageRepeat repeat = ImageRepeat.noRepeat,
     Rect? centerSlice,
     bool matchTextDirection = false,
-    bool gaplessPlayback = false,
+    bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
-    FilterQuality filterQuality = FilterQuality.low,
+    FilterQuality filterQuality = FilterQuality.medium,
     int? cacheWidth,
     int? cacheHeight,
   }) {
@@ -309,15 +313,8 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({
-    AssetBundle? bundle,
-    String? package,
-  }) {
-    return AssetImage(
-      _assetName,
-      bundle: bundle,
-      package: package,
-    );
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
   }
 
   String get path => _assetName;
