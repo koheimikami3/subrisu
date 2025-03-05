@@ -39,7 +39,7 @@ class NextPaymentDate extends StatelessWidget {
         if (nowWeekday == firstWeekday) {
           text = AppLocalizations.of(context)!.today;
         } else {
-          text = 'あと$day日';
+          text = AppLocalizations.of(context)!.daysLeft(day);
         }
 
       case PaymentCycle.monthly:
@@ -64,7 +64,7 @@ class NextPaymentDate extends StatelessWidget {
         if (day == 0) {
           text = AppLocalizations.of(context)!.today;
         } else {
-          text = 'あと$day日';
+          text = AppLocalizations.of(context)!.daysLeft(day);
         }
 
       case PaymentCycle.threeMonths:
@@ -89,7 +89,7 @@ class NextPaymentDate extends StatelessWidget {
         if (day == 0) {
           text = AppLocalizations.of(context)!.today;
         } else {
-          text = 'あと$day日';
+          text = AppLocalizations.of(context)!.daysLeft(day);
         }
 
       case PaymentCycle.sixMonths:
@@ -114,7 +114,7 @@ class NextPaymentDate extends StatelessWidget {
         if (day == 0) {
           text = AppLocalizations.of(context)!.today;
         } else {
-          text = 'あと$day日';
+          text = AppLocalizations.of(context)!.daysLeft(day);
         }
 
       case PaymentCycle.yearly:
@@ -139,7 +139,7 @@ class NextPaymentDate extends StatelessWidget {
         if (day == 0) {
           text = AppLocalizations.of(context)!.today;
         } else {
-          text = 'あと$day日';
+          text = AppLocalizations.of(context)!.daysLeft(day);
         }
     }
 

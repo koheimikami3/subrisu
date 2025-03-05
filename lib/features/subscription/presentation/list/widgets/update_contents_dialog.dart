@@ -42,7 +42,7 @@ class UpdateContentsDialog extends ConsumerWidget {
                   darkColor: colors.darkBackgroundColor,
                 ),
               ),
-              child: Center(child: _title()),
+              child: Center(child: _title(context)),
             ),
             Row(
               children: [
@@ -52,11 +52,11 @@ class UpdateContentsDialog extends ConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: 10.h),
-                      Text('バージョン$version'),
+                      Text(AppLocalizations.of(context)!.newVersion(version)),
                       SizedBox(height: 10.h),
                       Text(contents),
                       SizedBox(height: 20.h),
-                      const Text('引き続きサブリスをよろしくお願いします。'),
+                      Text(AppLocalizations.of(context)!.thankYouMessage),
                     ],
                   ),
                 ),
@@ -73,11 +73,9 @@ class UpdateContentsDialog extends ConsumerWidget {
   }
 
   /// ダイアログのタイトルを表示する
-  Widget _title() {
-    const text = 'アップデート内容';
-
+  Widget _title(BuildContext context) {
     return Text(
-      text,
+      AppLocalizations.of(context)!.updateContentsDialogTitle,
       style: TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeight.bold,
@@ -88,7 +86,7 @@ class UpdateContentsDialog extends ConsumerWidget {
 
   Widget _closeButton(BuildContext context, WidgetRef ref) {
     return MyFilledButton(
-      text: '閉じる',
+      text: AppLocalizations.of(context)!.closeDialogButton,
       onPressed: () => Navigator.pop(context),
     );
   }

@@ -28,6 +28,8 @@
             }
         }
     },
+    "price": "${price}",
+    "daysLeft": "{day} days left",
     "notificationTitle": "Notification",
     "reminderTitle": "Notify the day before payment",
     "memoFormTitle": "Note",
@@ -71,10 +73,13 @@
     "today": "today",
     "alreadyPurchased": "Purchased",
     "billingSupplement": "*Ad removal is a one-time purchase.",
-    "total": "This month:$",
+    "total": "This Month $",
     "confirmationDialogTitle": "Confirm",
     "showOpenNotificationSettingsDialogContent": "To receive a notification the day before payment, you need to enable app notifications.",
     "openNotificationSettingsButton": "Set up",
+    "updateContentsDialogTitle": "Update details",
+    "newVersion": "version{newVersion}",
+    "thankYouMessage": "Thank you for your continued support of Subrisu.",
     "theme": "{theme, select, device{System} light{Light Mode} dark{Dark Mode} other{error}}",
     "language": "{language, select, japanese{日本語} english{English} other{error}}",
     "sort": "{sort, select, ascendingNextPaymentDays{Payment date} ascendingPrice{Price ↓} descendingPrice{Price ↑} ascendingServiceName{Alphabet ↓} descendingServiceName{Alphabet ↑} other{error}}",
