@@ -31,6 +31,7 @@ class _MyAppState extends ConsumerState<MyApp> {
   @override
   Widget build(BuildContext context) {
     final theme = ref.watch(themeSettingNotifierProvider);
+    final language = ref.watch(languageSettingNotifierProvider);
     ref.watch(purchaseStatusNotifierProvider);
 
     return ScreenUtilInit(
@@ -45,6 +46,9 @@ class _MyAppState extends ConsumerState<MyApp> {
                   : ThemeMode.dark,
           darkTheme: appThemeDark(),
           debugShowCheckedModeBanner: false,
+          locale: language == LanguageSetting.english
+              ? const Locale('en')
+              : const Locale('ja'),
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           initialRoute: '/',

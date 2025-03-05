@@ -12,7 +12,7 @@ part of 'subscription_creation_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SubscriptionCreationData _$SubscriptionCreationDataFromJson(
     Map<String, dynamic> json) {
@@ -35,8 +35,12 @@ mixin _$SubscriptionCreationData {
   @UpdatedAtField()
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this SubscriptionCreationData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SubscriptionCreationData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SubscriptionCreationDataCopyWith<SubscriptionCreationData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -70,6 +74,8 @@ class _$SubscriptionCreationDataCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SubscriptionCreationData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -155,6 +161,8 @@ class __$$SubscriptionCreationDataImplCopyWithImpl<$Res>
       $Res Function(_$SubscriptionCreationDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SubscriptionCreationData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -287,7 +295,7 @@ class _$SubscriptionCreationDataImpl extends _SubscriptionCreationData {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -301,7 +309,9 @@ class _$SubscriptionCreationDataImpl extends _SubscriptionCreationData {
       createdAt,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SubscriptionCreationData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SubscriptionCreationDataImplCopyWith<_$SubscriptionCreationDataImpl>
@@ -333,29 +343,33 @@ abstract class _SubscriptionCreationData extends SubscriptionCreationData {
   factory _SubscriptionCreationData.fromJson(Map<String, dynamic> json) =
       _$SubscriptionCreationDataImpl.fromJson;
 
-  @override // サービス名
-  String get serviceName;
-  @override // 価格
-  String get price;
-  @override // アイコン画像パス
-  String get iconImagePath;
-  @override // 支払い周期
-  int get paymentCycle;
-  @override // 初回支払日
+// サービス名
+  @override
+  String get serviceName; // 価格
+  @override
+  String get price; // アイコン画像パス
+  @override
+  String get iconImagePath; // 支払い周期
+  @override
+  int get paymentCycle; // 初回支払日
+  @override
   @FirstPaidOnField()
-  DateTime? get firstPaidOn;
-  @override // 通知フラグ
-  bool get notification;
-  @override // メモ
-  String get memo;
-  @override // 作成日時
+  DateTime? get firstPaidOn; // 通知フラグ
+  @override
+  bool get notification; // メモ
+  @override
+  String get memo; // 作成日時
+  @override
   @CreatedAtField()
-  DateTime? get createdAt;
-  @override // 更新日時
+  DateTime? get createdAt; // 更新日時
+  @override
   @UpdatedAtField()
   DateTime? get updatedAt;
+
+  /// Create a copy of SubscriptionCreationData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SubscriptionCreationDataImplCopyWith<_$SubscriptionCreationDataImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

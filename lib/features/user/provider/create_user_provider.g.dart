@@ -6,7 +6,7 @@ part of 'create_user_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$createUserHash() => r'afc48048eafe469042d9facc378a9ba589a1f5bb';
+String _$createUserHash() => r'70a4bc457887467f13124922ca9700b62a33591d';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -154,7 +154,8 @@ class CreateUserProvider extends AutoDisposeFutureProvider<void> {
   }
 }
 
-// ignore: deprecated_member_use
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin CreateUserRef on AutoDisposeFutureProviderRef<void> {
   /// The parameter `userId` of this provider.
   String get userId;
@@ -168,4 +169,4 @@ class _CreateUserProviderElement extends AutoDisposeFutureProviderElement<void>
   String get userId => (origin as CreateUserProvider).userId;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

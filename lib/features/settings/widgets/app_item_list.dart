@@ -12,6 +12,8 @@ class AppItemList extends StatelessWidget {
         const ShowOpenNotificationSettingsDialogTile(),
         const ItemDivider(),
         const MoveThemeSettingPageTile(),
+        const ItemDivider(),
+        const MoveLanguageSettingPageTile(),
       ],
     );
   }

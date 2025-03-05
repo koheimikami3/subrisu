@@ -4,6 +4,7 @@
     "settingsPageTitle": "設定",
     "billingPageTitle": "広告の非表示",
     "themeSettingPageTitle": "テーマ設定",
+    "languageSettingPageTitle": "言語設定",
     "loginErrorPageTitle": "ログインエラー",
     "saveIconButton": "保存",
     "pickerSaveButton": "完了",
@@ -41,6 +42,7 @@
     "billingItem": "広告の非表示",
     "notificationItem": "リマインド通知",
     "themeItem": "テーマ設定",
+    "languageItem": "言語設定",
     "reviewItem": "レビューを書く",
     "shareItem": "アプリをシェアする",
     "inquiryItem": "お問い合わせ",
@@ -74,6 +76,7 @@
     "showOpenNotificationSettingsDialogContent": "支払い前日に通知を受け取るには、アプリの通知設定をオンにする必要があります。",
     "openNotificationSettingsButton": "設定する",
     "theme": "{theme, select, device{端末設定と同じ} light{ライトモード} dark{ダークモード} other{error}}",
+    "language": "{language, select, japanese{日本語} english{English} other{error}}",
     "sort": "{sort, select, ascendingNextPaymentDays{支払い日が近い順} ascendingPrice{料金が安い順} descendingPrice{料金が高い順} ascendingServiceName{名前順（昇順）} descendingServiceName{名前順（降順）} other{error}}",
     "paymentCycle": "{paymentCycle, select, daily{毎日} weekly{毎週} monthly{毎月} threeMonths{3ヶ月} sixMonths{6ヶ月} yearly{毎年} other{error}}"
 }

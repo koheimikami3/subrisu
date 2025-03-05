@@ -12,7 +12,7 @@ part of 'user_creation_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UserCreationData _$UserCreationDataFromJson(Map<String, dynamic> json) {
   return _UserCreationData.fromJson(json);
@@ -26,8 +26,12 @@ mixin _$UserCreationData {
   @CreatedAtField()
   DateTime? get createdAt => throw _privateConstructorUsedError;
 
+  /// Serializes this UserCreationData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UserCreationData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserCreationDataCopyWith<UserCreationData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$UserCreationDataCopyWithImpl<$Res, $Val extends UserCreationData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserCreationData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -94,6 +100,8 @@ class __$$UserCreationDataImplCopyWithImpl<$Res>
       $Res Function(_$UserCreationDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserCreationData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -155,11 +163,13 @@ class _$UserCreationDataImpl extends _UserCreationData {
                 other.createdAt == createdAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, os, token, createdAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserCreationData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserCreationDataImplCopyWith<_$UserCreationDataImpl> get copyWith =>
@@ -184,15 +194,19 @@ abstract class _UserCreationData extends UserCreationData {
   factory _UserCreationData.fromJson(Map<String, dynamic> json) =
       _$UserCreationDataImpl.fromJson;
 
-  @override // 端末のOS
-  String get os;
-  @override // FCMトークン
-  String get token;
-  @override // 作成日時
+// 端末のOS
+  @override
+  String get os; // FCMトークン
+  @override
+  String get token; // 作成日時
+  @override
   @CreatedAtField()
   DateTime? get createdAt;
+
+  /// Create a copy of UserCreationData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserCreationDataImplCopyWith<_$UserCreationDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
