@@ -4,6 +4,6 @@ part 'package_info_provider.g.dart';
 
 /// PackageInfoのProvider
 @riverpod
-PackageInfo packageInfo(PackageInfoRef ref) {
+PackageInfo packageInfo(Ref ref) {
   return throw UnimplementedError();
 }

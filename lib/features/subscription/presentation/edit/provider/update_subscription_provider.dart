@@ -4,10 +4,7 @@ part 'update_subscription_provider.g.dart';
 
 /// SubscriptionDocumentを更新するFutureProvider
 @riverpod
-Future<void> updateSubscription(
-  UpdateSubscriptionRef ref,
-  String subscriptionId,
-) async {
+Future<void> updateSubscription(Ref ref, String subscriptionId) async {
   final userId = ref.read(userIdProvider);
   final creationData = ref.read(subscriptionCreationDataProvider);
 

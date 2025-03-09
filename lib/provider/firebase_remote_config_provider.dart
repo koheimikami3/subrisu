@@ -4,6 +4,6 @@ part 'firebase_remote_config_provider.g.dart';
 
 /// FirebaseRemoteConfigのProvider
 @riverpod
-FirebaseRemoteConfig firebaseRemoteConfig(FirebaseRemoteConfigRef ref) {
+FirebaseRemoteConfig firebaseRemoteConfig(Ref ref) {
   return FirebaseRemoteConfig.instance;
 }

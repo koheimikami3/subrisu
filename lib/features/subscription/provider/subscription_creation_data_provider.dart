@@ -4,9 +4,7 @@ part 'subscription_creation_data_provider.g.dart';
 
 /// SubscriptionCreationDataを作成するProvider
 @riverpod
-SubscriptionCreationData subscriptionCreationData(
-  SubscriptionCreationDataRef ref,
-) {
+SubscriptionCreationData subscriptionCreationData(Ref ref) {
   final formState = ref.read(subscriptionFormNotifierProvider);
   var iconImagePath = formState.resultIconImagePath;
   late final DateTime firstPaidOn;

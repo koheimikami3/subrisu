@@ -8,7 +8,7 @@ part 'login_provider.g.dart';
 /// 初回はFirebaseに匿名サインインする
 /// 以降はUserDocumentのtokenを更新することでログイン完了とする
 @riverpod
-Future<void> login(LoginRef ref) async {
+Future<void> login(Ref ref) async {
   final auth = ref.read(firebaseAuthProvider);
   final user = auth.currentUser;
 

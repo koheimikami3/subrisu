@@ -4,7 +4,7 @@ part 'create_subscription_provider.g.dart';
 
 /// SubscriptionDocumentを作成するFutureProvider
 @riverpod
-Future<void> createSubscription(CreateSubscriptionRef ref) async {
+Future<void> createSubscription(Ref ref) async {
   final userId = ref.read(userIdProvider);
   final creationData = ref.read(subscriptionCreationDataProvider);
 

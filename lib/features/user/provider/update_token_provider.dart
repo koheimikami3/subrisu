@@ -4,7 +4,7 @@ part 'update_token_provider.g.dart';
 
 /// UserDocumentのtokenを更新するFutureProvider
 @riverpod
-Future<void> updateToken(UpdateTokenRef ref) async {
+Future<void> updateToken(Ref ref) async {
   final userId = ref.read(userIdProvider);
 
   // 端末のFCMトークンを取得

@@ -6,7 +6,7 @@ part 'subscriptions_provider.g.dart';
 ///
 /// 作成日時を基準に昇順に並び替える
 @riverpod
-Stream<List<Subscription>> subscriptions(SubscriptionsRef ref) {
+Stream<List<Subscription>> subscriptions(Ref ref) {
   final userId = ref.read(userIdProvider);
   return ref
       .read(firebaseFirestoreProvider)
