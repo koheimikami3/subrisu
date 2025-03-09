@@ -4,6 +4,6 @@ part 'user_id_provider.g.dart';
 
 /// FirebaseAuthのCurrentUserIdを取得するProvider
 @riverpod
-String userId(UserIdRef ref) {
+String userId(Ref ref) {
   return ref.read(firebaseAuthProvider).currentUser!.uid;
 }

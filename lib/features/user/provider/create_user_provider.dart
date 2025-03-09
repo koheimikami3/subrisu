@@ -4,7 +4,7 @@ part 'create_user_provider.g.dart';
 
 /// UserDocumentを作成するFutureProvider
 @riverpod
-Future<void> createUser(CreateUserRef ref, String userId) async {
+Future<void> createUser(Ref ref, String userId) async {
   late final String os;
 
   // 端末のOSを取得

@@ -4,6 +4,6 @@ part 'firebase_messaging_provider.g.dart';
 
 /// FirebaseMessagingのProvider
 @riverpod
-FirebaseMessaging firebaseMessaging(FirebaseMessagingRef ref) {
+FirebaseMessaging firebaseMessaging(Ref ref) {
   return FirebaseMessaging.instance;
 }

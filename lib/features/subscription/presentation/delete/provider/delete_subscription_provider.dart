@@ -4,10 +4,7 @@ part 'delete_subscription_provider.g.dart';
 
 /// SubscriptionDocumentを削除するFutureProvider
 @riverpod
-Future<void> deleteSubscription(
-  DeleteSubscriptionRef ref,
-  String subscriptionId,
-) async {
+Future<void> deleteSubscription(Ref ref, String subscriptionId) async {
   final userId = ref.read(userIdProvider);
 
   // SubscriptionDocumentを削除

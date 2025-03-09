@@ -4,4 +4,4 @@ part 'firebase_auth_provider.g.dart';
 
 /// FirebaseAuthのProvider
 @riverpod
-FirebaseAuth firebaseAuth(FirebaseAuthRef ref) => FirebaseAuth.instance;
+FirebaseAuth firebaseAuth(Ref ref) => FirebaseAuth.instance;
