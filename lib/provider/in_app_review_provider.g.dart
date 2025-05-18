@@ -6,7 +6,7 @@ part of 'in_app_review_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$inAppReviewHash() => r'e4a81de941378fc21b9690e55d12aad3923b492c';
+String _$inAppReviewHash() => r'fa958cdddad020aac2efd3620dcc2aededf90da0';
 
 /// InAppReviewのProvider
 ///

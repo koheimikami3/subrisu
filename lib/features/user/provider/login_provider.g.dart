@@ -6,7 +6,7 @@ part of 'login_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$loginHash() => r'b09457c93445bbdf44c2623e3856e14bcdc6cad5';
+String _$loginHash() => r'd1b8c0a87182c11bfddbb941f00a93c95f738daa';
 
 /// ログインを実施するFutureProvider
 ///

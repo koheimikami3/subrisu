@@ -7,8 +7,7 @@ part of 'user_creation_data.dart';
 // **************************************************************************
 
 _$UserCreationDataImpl _$$UserCreationDataImplFromJson(
-  Map<String, dynamic> json,
-) =>
+        Map<String, dynamic> json) =>
     _$UserCreationDataImpl(
       os: json['os'] as String,
       token: json['token'] as String,
@@ -16,8 +15,7 @@ _$UserCreationDataImpl _$$UserCreationDataImplFromJson(
     );
 
 Map<String, dynamic> _$$UserCreationDataImplToJson(
-  _$UserCreationDataImpl instance,
-) =>
+        _$UserCreationDataImpl instance) =>
     <String, dynamic>{
       'os': instance.os,
       'token': instance.token,

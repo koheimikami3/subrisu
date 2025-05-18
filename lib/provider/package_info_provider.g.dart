@@ -6,7 +6,7 @@ part of 'package_info_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$packageInfoHash() => r'380f46480025d3c599e7146e8cb790842fc1a918';
+String _$packageInfoHash() => r'd218113089c7628455d87e06a7b333fb71122c5f';
 
 /// PackageInfoのProvider
 ///
