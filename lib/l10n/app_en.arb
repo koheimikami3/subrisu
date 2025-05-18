@@ -1,26 +1,84 @@
 {
+    "@@locale": "en",
     "createSubscriptionPageTitle": "Add Subscription",
+    "@createSubscriptionPageTitle": {
+        "description": "The title displayed in the AppBar on the Create Subscription Page"
+    },
     "editSubscriptionPageTitle": "Edit",
+    "@editSubscriptionPageTitle": {
+        "description": "The title displayed in the AppBar on the Edit Subscription Page"
+    },
     "settingsPageTitle": "Settings",
+    "@settingsPageTitle": {
+        "description": "The title displayed in the AppBar on the Settings Page"
+    },
     "billingPageTitle": "Go ad-free",
+    "@billingPageTitle": {
+        "description": "The title displayed in the AppBar on the Billing Page"
+    },
     "themeSettingPageTitle": "Theme",
+    "@themeSettingPageTitle": {
+        "description": "The title displayed in the AppBar on the Theme Setting Page"
+    },
     "languageSettingPageTitle": "Language",
+    "@languageSettingPageTitle": {
+        "description": "The title displayed in the AppBar on the Language Setting Page"
+    },
     "loginErrorPageTitle": "Login Error",
+    "@loginErrorPageTitle": {
+        "description": "The title displayed in the AppBar on the Login Error Page"
+    },
     "saveIconButton": "Save",
+    "@saveIconButton": {
+        "description": "A button that saves the selected icon"
+    },
     "pickerSaveButton": "Complete",
+    "@pickerSaveButton": {
+        "description": "A button that saves the date selected in the picker"
+    },
     "createSubscriptionButton": "Add",
+    "@createSubscriptionButton": {
+        "description": "A button that creates a new subscription data"
+    },
     "updateSubscriptionButton": "Update",
+    "@updateSubscriptionButton": {
+        "description": "A button that updates the subscription data"
+    },
     "openStoreUrlButton": "Update",
+    "@openStoreUrlButton": {
+        "description": "A button that opens the app store URL"
+    },
     "closeDialogButton": "Close",
+    "@closeDialogButton": {
+        "description": "A button that closes the dialog"
+    },
     "cancelButton": "Cancel",
+    "@cancelButton": {
+        "description": "A button that cancels the operation and closes the dialog"
+    },
     "serviceInfoTitle": "Service Information",
+    "@serviceInfoTitle": {
+        "description": ""
+    },
     "iconSelectDialogTitle": "Select Icon",
+    "@iconSelectDialogTitle": {
+        "description": ""
+    },
     "detailInfoTitle": "Detail Information",
+    "@detailInfoTitle": {
+        "description": ""
+    },
     "paymentCycleTitle": "Payment Cycle",
+    "@paymentCycleTitle": {
+        "description": ""
+    },
     "firstPaymentDateTitle": "First Payment Date",
+    "@firstPaymentDateTitle": {
+        "description": ""
+    },
     "firstPaidOn": "{date}",
     "@firstPaidOn": {
-        "description": "A message with a date parameter",
+        "description": "",
         "placeholders": {
             "date": {
                 "type": "DateTime",
@@ -28,60 +86,266 @@
             }
         }
     },
-    "price": "${price}",
+    "price": "¥{price}",
+    "@price": {
+        "description": "",
+        "placeholders": {
+            "price": {
+                "type": "String",
+                "example": "980"
+            }
+        }
+    },
     "daysLeft": "{day} days left",
+    "@daysLeft": {
+        "description": "",
+        "placeholders": {
+            "day": {
+                "type": "int",
+                "example": "3"
+            }
+        }
+    },
     "notificationTitle": "Notification",
+    "@notificationTitle": {
+        "description": ""
+    },
     "reminderTitle": "Notify the day before payment",
+    "@reminderTitle": {
+        "description": ""
+    },
     "memoFormTitle": "Note",
+    "@memoFormTitle": {
+        "description": ""
+    },
     "serviceNameHint": "Service Name*",
+    "@serviceNameHint": {
+        "description": ""
+    },
     "priceHint": "Price*",
+    "@priceHint": {
+        "description": ""
+    },
     "deleteSubscriptionDialogContent": "Are you sure you want to delete this subscription?",
+    "@deleteSubscriptionDialogContent": {
+        "description": ""
+    },
     "deleteSubscriptionButton": "Delete",
+    "@deleteSubscriptionButton": {
+        "description": ""
+    },
     "billingItemsTitle": "Paid Plan",
+    "@billingItemsTitle": {
+        "description": ""
+    },
     "appSettingsTitle": "App",
+    "@appSettingsTitle": {
+        "description": ""
+    },
     "supportItemsTitle": "Support",
+    "@supportItemsTitle": {
+        "description": ""
+    },
     "appVersionTitle": "Version",
+    "@appVersionTitle": {
+        "description": ""
+    },
     "billingItem": "Remove ads",
+    "@billingItem": {
+        "description": ""
+    },
     "notificationItem": "Reminder",
+    "@notificationItem": {
+        "description": ""
+    },
     "themeItem": "Theme",
+    "@themeItem": {
+        "description": ""
+    },
     "languageItem": "Language",
+    "@languageItem": {
+        "description": ""
+    },
     "reviewItem": "App Review",
+    "@reviewItem": {
+        "description": ""
+    },
     "shareItem": "Share",
+    "@shareItem": {
+        "description": ""
+    },
     "inquiryItem": "Inquiry",
+    "@inquiryItem": {
+        "description": ""
+    },
     "tosItem": "Terms of Service",
+    "@tosItem": {
+        "description": ""
+    },
     "privacyPolicyItem": "Privacy Policy",
+    "@privacyPolicyItem": {
+        "description": ""
+    },
     "appVersionItem": "Version",
+    "@appVersionItem": {
+        "description": ""
+    },
     "removeAdsItem": "Remove ads",
+    "@removeAdsItem": {
+        "description": ""
+    },
     "restoreItem": "Restore purchases",
+    "@restoreItem": {
+        "description": ""
+    },
     "subscriptionListNavi": "List",
+    "@subscriptionListNavi": {
+        "description": ""
+    },
     "settingsNavi": "Settings",
+    "@settingsNavi": {
+        "description": ""
+    },
     "errorDialogTitle": "Error",
+    "@errorDialogTitle": {
+        "description": ""
+    },
     "restoreCompletedDialogContent": "Restoration is complete.",
+    "@restoreCompletedDialogContent": {
+        "description": ""
+    },
     "loginError": "Login failed.\nPlease try again after some time.",
+    "@loginError": {
+        "description": ""
+    },
     "fetchSubscriptionsError": "Failed to retrieve subscription.\nPlease try again after some time.",
+    "@fetchSubscriptionsError": {
+        "description": ""
+    },
     "createSubscriptionError": "Failed to register subscription data. Please try again after some time.",
+    "@createSubscriptionError": {
+        "description": ""
+    },
     "updateSubscritpionError": "Failed to update subscription data. Please try again after some time.",
+    "@updateSubscritpionError": {
+        "description": ""
+    },
     "deleteSubscriptionError": "Failed to delete subscription data. Please try again after some time.",
+    "@deleteSubscriptionError": {
+        "description": ""
+    },
     "noPurchaseItemError": "No purchasable items were found.",
+    "@noPurchaseItemError": {
+        "description": ""
+    },
     "noPurchaseInfoError": "Past purchase information was not found. Please check the account used for the purchase.",
+    "@noPurchaseInfoError": {
+        "description": ""
+    },
     "openReviewError": "Failed to open the review page.",
+    "@openReviewError": {
+        "description": ""
+    },
     "purchaseError": "Failed to complete the purchase process.",
+    "@purchaseError": {
+        "description": ""
+    },
     "restoreError": "Failed to complete the restoration process.",
+    "@restoreError": {
+        "description": ""
+    },
     "openUrlError": "Failed to open the page for the specified URL.",
+    "@openUrlError": {
+        "description": ""
+    },
     "noSubscription": "No subscriptions available.\nYou can add subscription using the + button at the bottom right.",
+    "@noSubscription": {
+        "description": ""
+    },
     "sortPullDownTitle": "Sort",
+    "@sortPullDownTitle": {
+        "description": ""
+    },
     "today": "today",
+    "@today": {
+        "description": ""
+    },
     "alreadyPurchased": "Purchased",
+    "@alreadyPurchased": {
+        "description": ""
+    },
     "billingSupplement": "*Ad removal is a one-time purchase.",
+    "@billingSupplement": {
+        "description": ""
+    },
     "total": "This Month $",
+    "@total": {
+        "description": ""
+    },
     "confirmationDialogTitle": "Confirm",
-    "showOpenNotificationSettingsDialogContent": "To receive a notification the day before payment, you need to enable app notifications.",
-    "openNotificationSettingsButton": "Set up",
+    "@confirmationDialogTitle": {
+        "description": ""
+    },
     "updateContentsDialogTitle": "Update details",
+    "@updateContentsDialogTitle": {
+        "description": ""
+    },
     "newVersion": "version{newVersion}",
+    "@newVersion": {
+        "description": "",
+        "placeholders": {
+            "newVersion": {
+                "type": "String",
+                "example": "2.5.0"
+            }
+        }
+    },
     "thankYouMessage": "Thank you for your continued support of Subrisu.",
+    "@thankYouMessage": {
+        "description": ""
+    },
+    "showOpenNotificationSettingsDialogContent": "To receive a notification the day before payment, you need to enable app notifications.",
+    "@showOpenNotificationSettingsDialogContent": {
+        "description": ""
+    },
+    "openNotificationSettingsButton": "Set up",
+    "@openNotificationSettingsButton": {
+        "description": ""
+    },
     "theme": "{theme, select, device{System} light{Light Mode} dark{Dark Mode} other{error}}",
+    "@theme": {
+        "description": "",
+        "placeholders": {
+            "theme": {
+                "type": "String"
+            }
+        }
+    },
     "language": "{language, select, japanese{日本語} english{English} other{error}}",
+    "@language": {
+        "description": "",
+        "placeholders": {
+            "language": {
+                "type": "String"
+            }
+        }
+    },
     "sort": "{sort, select, ascendingNextPaymentDays{Payment date} ascendingPrice{Price ↓} descendingPrice{Price ↑} ascendingServiceName{Alphabet ↓} descendingServiceName{Alphabet ↑} other{error}}",
-    "paymentCycle": "{paymentCycle, select, daily{every day} weekly{every week} monthly{every month} threeMonths{every three months} sixMonths{every six months} yearly{every year} other{error}}"
+    "@sort": {
+        "description": "",
+        "placeholders": {
+            "sort": {
+                "type": "String"
+            }
+        }
+    },
+    "paymentCycle": "{paymentCycle, select, daily{every day} weekly{every week} monthly{every month} threeMonths{every three months} sixMonths{every six months} yearly{every year} other{error}}",
+    "@paymentCycle": {
+        "description": "",
+        "placeholders": {
+            "paymentCycle": {
+                "type": "String"
+            }
+        }
+    }
 }

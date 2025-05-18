@@ -1,26 +1,84 @@
 {
+    "@@locale": "ja",
     "createSubscriptionPageTitle": "新規登録",
+    "@createSubscriptionPageTitle": {
+        "description": "The title displayed in the AppBar on the Create Subscription Page"
+    },
     "editSubscriptionPageTitle": "編集",
+    "@editSubscriptionPageTitle": {
+        "description": "The title displayed in the AppBar on the Edit Subscription Page"
+    },
     "settingsPageTitle": "設定",
+    "@settingsPageTitle": {
+        "description": "The title displayed in the AppBar on the Settings Page"
+    },
     "billingPageTitle": "広告の非表示",
+    "@billingPageTitle": {
+        "description": "The title displayed in the AppBar on the Billing Page"
+    },
     "themeSettingPageTitle": "テーマ設定",
+    "@themeSettingPageTitle": {
+        "description": "The title displayed in the AppBar on the Theme Setting Page"
+    },
     "languageSettingPageTitle": "言語設定",
+    "@languageSettingPageTitle": {
+        "description": "The title displayed in the AppBar on the Language Setting Page"
+    },
     "loginErrorPageTitle": "ログインエラー",
+    "@loginErrorPageTitle": {
+        "description": "The title displayed in the AppBar on the Login Error Page"
+    },
     "saveIconButton": "保存",
+    "@saveIconButton": {
+        "description": "A button that saves the selected icon"
+    },
     "pickerSaveButton": "完了",
+    "@pickerSaveButton": {
+        "description": "A button that saves the date selected in the picker"
+    },
     "createSubscriptionButton": "登録",
+    "@createSubscriptionButton": {
+        "description": "A button that creates a new subscription data"
+    },
     "updateSubscriptionButton": "更新",
+    "@updateSubscriptionButton": {
+        "description": "A button that updates the subscription data"
+    },
     "openStoreUrlButton": "アップデート",
+    "@openStoreUrlButton": {
+        "description": "A button that opens the app store URL"
+    },
     "closeDialogButton": "閉じる",
+    "@closeDialogButton": {
+        "description": "A button that closes the dialog"
+    },
     "cancelButton": "キャンセル",
+    "@cancelButton": {
+        "description": "A button that cancels the operation and closes the dialog"
+    },
     "serviceInfoTitle": "サービス情報",
+    "@serviceInfoTitle": {
+        "description": ""
+    },
     "iconSelectDialogTitle": "アイコン選択",
+    "@iconSelectDialogTitle": {
+        "description": ""
+    },
     "detailInfoTitle": "詳細情報",
+    "@detailInfoTitle": {
+        "description": ""
+    },
     "paymentCycleTitle": "支払い周期",
+    "@paymentCycleTitle": {
+        "description": ""
+    },
     "firstPaymentDateTitle": "初回支払い日",
+    "@firstPaymentDateTitle": {
+        "description": ""
+    },
     "firstPaidOn": "{date}",
     "@firstPaidOn": {
-        "description": "A message with a date parameter",
+        "description": "",
         "placeholders": {
             "date": {
                 "type": "DateTime",
@@ -29,59 +87,265 @@
         }
     },
     "price": "¥{price}",
+    "@price": {
+        "description": "",
+        "placeholders": {
+            "price": {
+                "type": "String",
+                "example": "980"
+            }
+        }
+    },
     "daysLeft": "あと{day}日",
+    "@daysLeft": {
+        "description": "",
+        "placeholders": {
+            "day": {
+                "type": "int",
+                "example": "3"
+            }
+        }
+    },
     "notificationTitle": "通知",
+    "@notificationTitle": {
+        "description": ""
+    },
     "reminderTitle": "支払い前日に通知する",
+    "@reminderTitle": {
+        "description": ""
+    },
     "memoFormTitle": "メモ",
+    "@memoFormTitle": {
+        "description": ""
+    },
     "serviceNameHint": "サービス名*",
+    "@serviceNameHint": {
+        "description": ""
+    },
     "priceHint": "料金*",
+    "@priceHint": {
+        "description": ""
+    },
     "deleteSubscriptionDialogContent": "データを削除してもよろしいですか？",
+    "@deleteSubscriptionDialogContent": {
+        "description": ""
+    },
     "deleteSubscriptionButton": "削除",
+    "@deleteSubscriptionButton": {
+        "description": ""
+    },
     "billingItemsTitle": "有料プラン",
+    "@billingItemsTitle": {
+        "description": ""
+    },
     "appSettingsTitle": "アプリ",
+    "@appSettingsTitle": {
+        "description": ""
+    },
     "supportItemsTitle": "サポート",
+    "@supportItemsTitle": {
+        "description": ""
+    },
     "appVersionTitle": "バージョン",
+    "@appVersionTitle": {
+        "description": ""
+    },
     "billingItem": "広告の非表示",
+    "@billingItem": {
+        "description": ""
+    },
     "notificationItem": "リマインド通知",
+    "@notificationItem": {
+        "description": ""
+    },
     "themeItem": "テーマ設定",
+    "@themeItem": {
+        "description": ""
+    },
     "languageItem": "言語設定",
+    "@languageItem": {
+        "description": ""
+    },
     "reviewItem": "レビューを書く",
+    "@reviewItem": {
+        "description": ""
+    },
     "shareItem": "アプリをシェアする",
+    "@shareItem": {
+        "description": ""
+    },
     "inquiryItem": "お問い合わせ",
+    "@inquiryItem": {
+        "description": ""
+    },
     "tosItem": "利用規約",
+    "@tosItem": {
+        "description": ""
+    },
     "privacyPolicyItem": "プライバシーポリシー",
+    "@privacyPolicyItem": {
+        "description": ""
+    },
     "appVersionItem": "アプリのバージョン",
+    "@appVersionItem": {
+        "description": ""
+    },
     "removeAdsItem": "広告を非表示にする",
+    "@removeAdsItem": {
+        "description": ""
+    },
     "restoreItem": "購入を復元する",
+    "@restoreItem": {
+        "description": ""
+    },
     "subscriptionListNavi": "リスト",
+    "@subscriptionListNavi": {
+        "description": ""
+    },
     "settingsNavi": "設定",
+    "@settingsNavi": {
+        "description": ""
+    },
     "errorDialogTitle": "エラー",
+    "@errorDialogTitle": {
+        "description": ""
+    },
     "restoreCompletedDialogContent": "復元が完了しました。",
+    "@restoreCompletedDialogContent": {
+        "description": ""
+    },
     "loginError": "ログインに失敗しました。\n時間をおいて再度お試しください。",
+    "@loginError": {
+        "description": ""
+    },
     "fetchSubscriptionsError": "サブスクリプションの取得に失敗しました。\n時間をおいて再度お試しください。",
+    "@fetchSubscriptionsError": {
+        "description": ""
+    },
     "createSubscriptionError": "サブスクリプションデータを登録できませんでした。時間をおいて再度お試しください。",
+    "@createSubscriptionError": {
+        "description": ""
+    },
     "updateSubscritpionError": "サブスクリプションデータを更新できませんでした。時間をおいて再度お試しください。",
+    "@updateSubscritpionError": {
+        "description": ""
+    },
     "deleteSubscriptionError": "サブスクリプションデータを削除できませんでした。時間をおいて再度お試しください。",
+    "@deleteSubscriptionError": {
+        "description": ""
+    },
     "noPurchaseItemError": "購入可能なアイテムが見つかりませんでした。",
+    "@noPurchaseItemError": {
+        "description": ""
+    },
     "noPurchaseInfoError": "過去の購入情報が見つかりませんでした。購入を行ったアカウントをご確認ください。",
+    "@noPurchaseInfoError": {
+        "description": ""
+    },
     "openReviewError": "レビュー画面を開けませんでした。",
+    "@openReviewError": {
+        "description": ""
+    },
     "purchaseError": "購入処理を完了できませんでした。",
+    "@purchaseError": {
+        "description": ""
+    },
     "restoreError": "復元処理を完了できませんでした。",
+    "@restoreError": {
+        "description": ""
+    },
     "openUrlError": "指定されたURLのページを開けませんでした。",
+    "@openUrlError": {
+        "description": ""
+    },
     "noSubscription": "サブスクリプションはありません\n右下の＋ボタンで登録できます",
+    "@noSubscription": {
+        "description": ""
+    },
     "sortPullDownTitle": "並び替え",
+    "@sortPullDownTitle": {
+        "description": ""
+    },
     "today": "今日",
+    "@today": {
+        "description": ""
+    },
     "alreadyPurchased": "購入済み",
+    "@alreadyPurchased": {
+        "description": ""
+    },
     "billingSupplement": "*広告の非表示は買い切りです。",
+    "@billingSupplement": {
+        "description": ""
+    },
     "total": "今月 ¥",
+    "@total": {
+        "description": ""
+    },
     "confirmationDialogTitle": "確認",
+    "@confirmationDialogTitle": {
+        "description": ""
+    },
     "updateContentsDialogTitle": "アップデート内容",
+    "@updateContentsDialogTitle": {
+        "description": ""
+    },
     "newVersion": "バージョン{newVersion}",
+    "@newVersion": {
+        "description": "",
+        "placeholders": {
+            "newVersion": {
+                "type": "String",
+                "example": "2.5.0"
+            }
+        }
+    },
     "thankYouMessage": "引き続きサブリスをよろしくお願いします。",
+    "@thankYouMessage": {
+        "description": ""
+    },
     "showOpenNotificationSettingsDialogContent": "支払い前日に通知を受け取るには、アプリの通知設定をオンにする必要があります。",
+    "@showOpenNotificationSettingsDialogContent": {
+        "description": ""
+    },
     "openNotificationSettingsButton": "設定する",
+    "@openNotificationSettingsButton": {
+        "description": ""
+    },
     "theme": "{theme, select, device{端末設定と同じ} light{ライトモード} dark{ダークモード} other{error}}",
+    "@theme": {
+        "description": "",
+        "placeholders": {
+            "theme": {
+                "type": "String"
+            }
+        }
+    },
     "language": "{language, select, japanese{日本語} english{English} other{error}}",
+    "@language": {
+        "description": "",
+        "placeholders": {
+            "language": {
+                "type": "String"
+            }
+        }
+    },
     "sort": "{sort, select, ascendingNextPaymentDays{支払い日が近い順} ascendingPrice{料金が安い順} descendingPrice{料金が高い順} ascendingServiceName{名前順（昇順）} descendingServiceName{名前順（降順）} other{error}}",
-    "paymentCycle": "{paymentCycle, select, daily{毎日} weekly{毎週} monthly{毎月} threeMonths{3ヶ月} sixMonths{6ヶ月} yearly{毎年} other{error}}"
+    "@sort": {
+        "description": "",
+        "placeholders": {
+            "sort": {
+                "type": "String"
+            }
+        }
+    },
+    "paymentCycle": "{paymentCycle, select, daily{毎日} weekly{毎週} monthly{毎月} threeMonths{3ヶ月} sixMonths{6ヶ月} yearly{毎年} other{error}}",
+    "@paymentCycle": {
+        "description": "",
+        "placeholders": {
+            "paymentCycle": {
+                "type": "String"
+            }
+        }
+    }
 }

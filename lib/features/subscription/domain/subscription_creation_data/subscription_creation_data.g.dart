@@ -7,8 +7,7 @@ part of 'subscription_creation_data.dart';
 // **************************************************************************
 
 _$SubscriptionCreationDataImpl _$$SubscriptionCreationDataImplFromJson(
-  Map<String, dynamic> json,
-) =>
+        Map<String, dynamic> json) =>
     _$SubscriptionCreationDataImpl(
       serviceName: json['serviceName'] as String,
       price: json['price'] as String,
@@ -22,8 +21,7 @@ _$SubscriptionCreationDataImpl _$$SubscriptionCreationDataImplFromJson(
     );
 
 Map<String, dynamic> _$$SubscriptionCreationDataImplToJson(
-  _$SubscriptionCreationDataImpl instance,
-) =>
+        _$SubscriptionCreationDataImpl instance) =>
     <String, dynamic>{
       'serviceName': instance.serviceName,
       'price': instance.price,
