@@ -8,6 +8,7 @@ ThemeData appThemeLight() {
     useMaterial3: true,
     brightness: Brightness.light,
     colorSchemeSeed: colors.appColor,
+    scaffoldBackgroundColor: Colors.grey.shade50,
     splashColor: Colors.transparent,
     iconTheme: IconThemeData(color: Colors.grey.shade600),
     appBarTheme: _lightAppBarTheme(),
