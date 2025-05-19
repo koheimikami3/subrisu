@@ -10,7 +10,7 @@ class AppVersionTile extends ConsumerWidget {
 
     return Column(
       children: [
-        ItemsTitle(title: AppLocalizations.of(context)!.appVersionTitle),
+        SizedBox(height: 10.h),
         MyListTile(
           position: ItemPosition.independence,
           leadingIcon: Icons.info_outline,
