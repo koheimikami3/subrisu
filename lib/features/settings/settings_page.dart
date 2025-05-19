@@ -9,7 +9,12 @@ class SettingsPage extends StatelessWidget {
     return Scaffold(
       appBar:
           AppBar(title: Text(AppLocalizations.of(context)!.settingsPageTitle)),
-      body: const SettingsPageBody(),
+      body: const Column(
+        children: [
+          Expanded(child: SettingsPageBody()),
+          MyBannerAd(),
+        ],
+      ),
     );
   }
 }

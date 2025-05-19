@@ -54,7 +54,6 @@ class _MyAppState extends ConsumerState<MyApp> {
           initialRoute: '/',
           routes: {
             '/settings': (_) => const SettingsPage(),
-            '/bottomNav': (_) => const MyBottomNavigationBar(),
           },
           home: Consumer(
             builder: (_, ref, __) {
@@ -64,7 +63,7 @@ class _MyAppState extends ConsumerState<MyApp> {
                 loading: () =>
                     const Scaffold(body: Center(child: LoadingIndicator())),
                 error: (_, __) => const LoginErrorPage(),
-                data: (_) => const MyBottomNavigationBar(),
+                data: (_) => const SubscriptionListPage(),
               );
             },
           ),
