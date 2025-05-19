@@ -119,7 +119,13 @@ class _SubscriptionListPageState extends ConsumerState<SubscriptionListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const TotalPrice(),
+        title: Row(
+          children: [
+            SizedBox(width: 10.w),
+            const TotalPrice(),
+          ],
+        ),
+        centerTitle: false,
         actions: [
           Row(
             children: [
