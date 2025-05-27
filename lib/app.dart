@@ -51,10 +51,6 @@ class _MyAppState extends ConsumerState<MyApp> {
               : const Locale('ja'),
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
-          initialRoute: '/',
-          routes: {
-            '/settings': (_) => const SettingsPage(),
-          },
           home: Consumer(
             builder: (_, ref, __) {
               final asyncLogin = ref.watch(loginProvider);
