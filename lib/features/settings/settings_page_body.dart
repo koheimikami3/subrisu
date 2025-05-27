@@ -19,8 +19,6 @@ class SettingsPageBody extends StatelessWidget {
                 SizedBox(height: 25.h),
                 const SupportItemList(),
                 SizedBox(height: 25.h),
-                const AppVersionTile(),
-                SizedBox(height: 30.h),
               ],
             ),
           ),

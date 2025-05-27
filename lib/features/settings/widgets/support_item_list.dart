@@ -18,6 +18,8 @@ class SupportItemList extends StatelessWidget {
         const OpenTosTile(),
         const ItemDivider(),
         const OpenPrivacyPolicyTile(),
+        const ItemDivider(),
+        const AppVersionTile(),
       ],
     );
   }

@@ -8,16 +8,11 @@ class AppVersionTile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final packageInfo = ref.read(packageInfoProvider);
 
-    return Column(
-      children: [
-        SizedBox(height: 10.h),
-        MyListTile(
-          position: ItemPosition.independence,
-          leadingIcon: Icons.info_outline,
-          name: AppLocalizations.of(context)!.appVersionItem,
-          trailing: Text(packageInfo.version),
-        ),
-      ],
+    return MyListTile(
+      position: ItemPosition.bottom,
+      leadingIcon: Icons.info_outline,
+      name: AppLocalizations.of(context)!.appVersionItem,
+      trailing: Text(packageInfo.version),
     );
   }
 }
