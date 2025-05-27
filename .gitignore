@@ -103,9 +103,9 @@ unlinked_spec.ds
 **/ios/Runner/GeneratedPluginRegistrant.*
 
 # Firebase　related
-GoogleService-Info.plist
-google-services.json
-firebase_options.dart
+/lib/firebase_options.dart
+/ios/Runner/GoogleService-Info.plist
+/android/app/google-services.json
 firebase.json
 
 # Coverage
