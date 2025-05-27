@@ -21,7 +21,6 @@ class _SubscriptionListPageState extends ConsumerState<SubscriptionListPage> {
       _showAppTrackingTransparencyDialog();
       _showNotificationDialog();
       _showRequestReviewDialog();
-      // _showUpdateContentsDialog();
     });
   }
 
@@ -82,38 +81,6 @@ class _SubscriptionListPageState extends ConsumerState<SubscriptionListPage> {
       await inAppReview.requestReview();
     }
   }
-
-  // Future<void> _showUpdateContentsDialog() async {
-  //   final remoteConfig = ref.read(firebaseRemoteConfigProvider);
-  //   final packageInfo = ref.read(packageInfoProvider);
-  //   late final String strInfoVersion;
-  //   late final String updateContents;
-
-  //   // アップデート内容と表示するバージョンを取得
-  //   if (Platform.isIOS) {
-  //     strInfoVersion = remoteConfig.getString('infoVersionIOS');
-  //     updateContents = remoteConfig.getString('updateContentsIOS');
-  //   } else {
-  //     strInfoVersion = remoteConfig.getString('infoVersionAndroid');
-  //     updateContents = remoteConfig.getString('updateContentsAndroid');
-  //   }
-  //   final infoVersion = Version.parse(strInfoVersion);
-
-  //   // アプリの現在バージョンを取得
-  //   final currentVersion = Version.parse(packageInfo.version);
-
-  //   // 現在バージョンが表示バージョン以上の場合、
-  //   // アップデート内容ダイアログを表示
-  //   if (currentVersion >= infoVersion) {
-  //     await showDialog<void>(
-  //       context: context,
-  //       builder: (_) => UpdateContentsDialog(
-  //         version: strInfoVersion,
-  //         contents: updateContents,
-  //       ),
-  //     );
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
