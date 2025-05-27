@@ -1,17 +1,9 @@
-# subrisu
+# サブリス
 
-A new Flutter project.
+![Image](https://github.com/user-attachments/assets/f1ec0c5d-e894-4e7d-aecc-6ef94b43178b)
 
-## Getting Started
+iOS：https://apps.apple.com/jp/app/id1661226530
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# sublis
+◼️**概要**：個人で開発し、リリースから約2年間継続的な改善・保守を実施中  
+◼️**使用技術**：Flutter / Dart（V2→V3）、Firebase、Google Cloud Platform  
+◼️**主な機能**：アプリ内課金、バナー広告表示、プッシュ通知、多言語対応（日本語・英語）など
