@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 import '../importer.dart';
 
 /// データ取得中を知らせるインジケーター
@@ -20,21 +18,11 @@ class LoadingIndicator extends ConsumerWidget {
             color: selectColor(
               context: context,
               themeSetting: themeSetting,
-              lightColor: Colors.grey.shade100,
+              lightColor: Colors.grey.shade200,
               darkColor: Colors.grey.shade400,
             ),
           ),
-          child: Platform.isAndroid
-              ? const CircularProgressIndicator()
-              : CupertinoActivityIndicator(
-                  radius: 17,
-                  color: selectColor(
-                    context: context,
-                    themeSetting: themeSetting,
-                    lightColor: null,
-                    darkColor: Colors.black,
-                  ),
-                ),
+          child: const CircularProgressIndicator(),
         ),
       ],
     );
