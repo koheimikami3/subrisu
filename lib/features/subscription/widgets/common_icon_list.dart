@@ -4,7 +4,7 @@ import '../../../importer.dart';
 class CommonIconList extends ConsumerWidget {
   const CommonIconList({super.key});
 
-  static final iconList = [
+  static final List<AssetGenImage> iconList = [
     Assets.images.subscription.subrisu,
     Assets.images.subscription.foodDrink,
     Assets.images.subscription.restaurant,
