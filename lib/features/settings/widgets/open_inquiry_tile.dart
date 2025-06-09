@@ -1,4 +1,4 @@
-import '../../../constant/urls.dart' as urls;
+import '../../../constants/urls.dart' as urls;
 import '../../../importer.dart';
 
 /// お問い合わせをブラウザで開くタイル
