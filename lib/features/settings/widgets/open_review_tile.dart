@@ -1,4 +1,4 @@
-import '../../../constant/urls.dart' as urls;
+import '../../../constants/urls.dart' as urls;
 import '../../../importer.dart';
 
 /// アプリのレビュー画面を開くタイル

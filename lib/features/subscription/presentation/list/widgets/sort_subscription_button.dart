@@ -1,4 +1,4 @@
-import '../../../../../constant/configs.dart' as configs;
+import '../../../../../constants/configs.dart' as configs;
 import '../../../../../importer.dart';
 
 /// サブスクリプションを並び替えるボタン

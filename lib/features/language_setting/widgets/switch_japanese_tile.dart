@@ -1,4 +1,4 @@
-import '../../../constant/configs.dart' as configs;
+import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
 /// 日本語に変更するタイル

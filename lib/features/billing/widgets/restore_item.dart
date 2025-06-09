@@ -1,4 +1,4 @@
-import '../../../constant/configs.dart' as configs;
+import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
 /// 復元処理を行う項目

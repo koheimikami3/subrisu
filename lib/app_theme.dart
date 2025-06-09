@@ -1,5 +1,5 @@
-import 'constant/colors.dart' as colors;
-import 'constant/configs.dart' as configs;
+import 'constants/colors.dart' as colors;
+import 'constants/configs.dart' as configs;
 import 'importer.dart';
 
 /// ライトモードのテーマ設定を行う
