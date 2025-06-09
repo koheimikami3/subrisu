@@ -1,4 +1,4 @@
-import '../../../constant/colors.dart' as colors;
+import '../../../constants/colors.dart' as colors;
 import '../../../importer.dart';
 
 /// 項目を選択していることを示すアイコン

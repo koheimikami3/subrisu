@@ -1,4 +1,4 @@
-import '../../../../../constant/colors.dart' as colors;
+import '../../../../../constants/colors.dart' as colors;
 import '../../../../../importer.dart';
 
 /// サブスクリプションリストのアイテム
