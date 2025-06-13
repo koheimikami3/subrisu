@@ -1,8 +1,8 @@
 import '../../../../../importer.dart';
 
 /// サブスクリプション作成画面に遷移するボタン
-class MoveCreateSubscriptionPageButton extends ConsumerWidget {
-  const MoveCreateSubscriptionPageButton({super.key});
+class GoToCreateSubscriptionPageButton extends ConsumerWidget {
+  const GoToCreateSubscriptionPageButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

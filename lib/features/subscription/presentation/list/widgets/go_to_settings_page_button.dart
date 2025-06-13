@@ -1,8 +1,8 @@
 import '../../../../../importer.dart';
 
 /// 設定画面に遷移するボタン
-class MoveSettingsPageButton extends StatelessWidget {
-  const MoveSettingsPageButton({super.key});
+class GoToSettingsPageButton extends StatelessWidget {
+  const GoToSettingsPageButton({super.key});
 
   @override
   Widget build(BuildContext context) {

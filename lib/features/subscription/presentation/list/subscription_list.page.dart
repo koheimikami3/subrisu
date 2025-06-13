@@ -97,13 +97,13 @@ class _SubscriptionListPageState extends ConsumerState<SubscriptionListPage> {
           Row(
             children: [
               const SortSubscriptionButton(),
-              const MoveSettingsPageButton(),
+              const GoToSettingsPageButton(),
               SizedBox(width: 10.w),
             ],
           ),
         ],
       ),
-      floatingActionButton: const MoveCreateSubscriptionPageButton(),
+      floatingActionButton: const GoToCreateSubscriptionPageButton(),
       body: const Column(
         children: [
           Expanded(child: SubscriptionListPageBody()),
