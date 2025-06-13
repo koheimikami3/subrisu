@@ -70,7 +70,7 @@ export 'package:subrisu/features/settings/widgets/go_to_theme_settings_page_tile
 export 'package:subrisu/features/settings/widgets/open_inquiry_tile.dart';
 export 'package:subrisu/features/settings/widgets/open_privacy_policy_tile.dart';
 export 'package:subrisu/features/settings/widgets/open_review_tile.dart';
-export 'package:subrisu/features/settings/widgets/open_tos_tile.dart';
+export 'package:subrisu/features/settings/widgets/open_terms_of_service_tile.dart';
 export 'package:subrisu/features/settings/widgets/show_open_notification_settings_dialog_tile.dart';
 export 'package:subrisu/features/settings/widgets/show_share_sheet_tile.dart';
 export 'package:subrisu/features/settings/widgets/support_item_list.dart';

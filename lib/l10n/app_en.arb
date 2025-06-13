@@ -178,8 +178,8 @@
     "@inquiryItem": {
         "description": ""
     },
-    "tosItem": "Terms of Service",
-    "@tosItem": {
+    "termsOfServiceItem": "Terms of Service",
+    "@termsOfServiceItem": {
         "description": ""
     },
     "privacyPolicyItem": "Privacy Policy",
