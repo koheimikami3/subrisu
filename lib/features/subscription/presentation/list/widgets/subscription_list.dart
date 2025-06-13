@@ -11,7 +11,7 @@ class SubscriptionList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final sortSetting = ref.watch(sortSettingNotifierProvider);
+    final sortSetting = ref.watch(sortSettingsNotifierProvider);
 
     switch (sortSetting) {
       case SortSetting.ascendingNextPaymentDays:

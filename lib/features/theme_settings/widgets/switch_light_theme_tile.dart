@@ -7,7 +7,7 @@ class SwitchLightThemeTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingNotifierProvider);
+    final themeSetting = ref.watch(themeSettingsNotifierProvider);
 
     return MyListTile(
       position: ItemPosition.middle,
@@ -20,7 +20,7 @@ class SwitchLightThemeTile extends ConsumerWidget {
         await ref
             .read(sharedPreferencesProvider)
             .setInt(configs.themeKey, ThemeSetting.light.index);
-        ref.read(themeSettingNotifierProvider.notifier).setLight();
+        ref.read(themeSettingsNotifierProvider.notifier).setLight();
       },
     );
   }

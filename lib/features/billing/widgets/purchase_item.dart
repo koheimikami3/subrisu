@@ -24,7 +24,7 @@ class PurchaseItem extends ConsumerWidget {
     WidgetRef ref,
     PurchaseStatus purchaseStatus,
   ) {
-    final themeSetting = ref.watch(themeSettingNotifierProvider);
+    final themeSetting = ref.watch(themeSettingsNotifierProvider);
     final price = ref
         .read(firebaseRemoteConfigProvider)
         .getString(configs.purchasePriceRemoteKey);

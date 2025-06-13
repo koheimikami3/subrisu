@@ -6,7 +6,7 @@ class IconSelectDialog extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingNotifierProvider);
+    final themeSetting = ref.watch(themeSettingsNotifierProvider);
 
     return AlertDialog(
       insetPadding: EdgeInsets.all(20.w),
