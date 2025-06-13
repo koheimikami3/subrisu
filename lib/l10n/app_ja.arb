@@ -178,8 +178,8 @@
     "@inquiryItem": {
         "description": ""
     },
-    "tosItem": "利用規約",
-    "@tosItem": {
+    "termsOfServiceItem": "利用規約",
+    "@termsOfServiceItem": {
         "description": ""
     },
     "privacyPolicyItem": "プライバシーポリシー",
