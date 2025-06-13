@@ -1,8 +1,8 @@
 import '../../../importer.dart';
 
 /// 課金画面に遷移するタイル
-class MoveBillingPageTile extends StatelessWidget {
-  const MoveBillingPageTile({super.key});
+class GoToBillingPageTile extends StatelessWidget {
+  const GoToBillingPageTile({super.key});
 
   @override
   Widget build(BuildContext context) {
