@@ -1,11 +1,11 @@
 import '../../../importer.dart';
 import '../constants/configs.dart' as configs;
 
-part 'sort_setting_provider.g.dart';
+part 'sort_settings_provider.g.dart';
 
 /// サブスクリプションの並び替え設定のNotifierProvider
 @riverpod
-class SortSettingNotifier extends _$SortSettingNotifier {
+class SortSettingsNotifier extends _$SortSettingsNotifier {
   @override
   SortSetting build() {
     final index =

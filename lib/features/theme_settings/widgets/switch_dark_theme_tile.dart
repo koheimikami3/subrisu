@@ -7,7 +7,7 @@ class SwitchDarkThemeTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingNotifierProvider);
+    final themeSetting = ref.watch(themeSettingsNotifierProvider);
 
     return MyListTile(
       position: ItemPosition.bottom,
@@ -20,7 +20,7 @@ class SwitchDarkThemeTile extends ConsumerWidget {
         await ref
             .read(sharedPreferencesProvider)
             .setInt(configs.themeKey, ThemeSetting.dark.index);
-        ref.read(themeSettingNotifierProvider.notifier).setDark();
+        ref.read(themeSettingsNotifierProvider.notifier).setDark();
       },
     );
   }

@@ -25,7 +25,7 @@ class BillingPageBody extends ConsumerWidget {
 
   /// 補足説明
   Widget _supplement(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingNotifierProvider);
+    final themeSetting = ref.watch(themeSettingsNotifierProvider);
 
     return Text(
       AppLocalizations.of(context)!.billingSupplement,

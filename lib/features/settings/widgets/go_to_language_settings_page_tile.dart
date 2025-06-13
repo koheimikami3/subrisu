@@ -1,8 +1,8 @@
 import '../../../importer.dart';
 
 /// 言語設定画面に遷移するタイル
-class GoToLanguageSettingPageTile extends StatelessWidget {
-  const GoToLanguageSettingPageTile({super.key});
+class GoToLanguageSettingsPageTile extends StatelessWidget {
+  const GoToLanguageSettingsPageTile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class GoToLanguageSettingPageTile extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute<void>(builder: (_) => const LanguageSettingPage()),
+          MaterialPageRoute<void>(builder: (_) => const LanguageSettingsPage()),
         );
       },
     );
