@@ -13,9 +13,7 @@ class SwitchDeviceThemeTile extends ConsumerWidget {
       position: ItemPosition.top,
       name: AppLocalizations.of(context)!.theme(ThemeSetting.device.name),
       leadingIcon: Icons.phone_iphone_outlined,
-      trailing: themeSetting == ThemeSetting.device
-          ? const CheckIcon()
-          : const SizedBox.shrink(),
+      trailing: CheckedIcon(isChecked: themeSetting == ThemeSetting.device),
       onTap: () async {
         await ref
             .read(sharedPreferencesProvider)

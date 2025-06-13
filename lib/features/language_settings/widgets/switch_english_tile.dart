@@ -13,9 +13,8 @@ class SwitchEnglishTile extends ConsumerWidget {
       position: ItemPosition.bottom,
       name:
           AppLocalizations.of(context)!.language(LanguageSetting.english.name),
-      trailing: languageSetting == LanguageSetting.english
-          ? const CheckIcon()
-          : const SizedBox.shrink(),
+      trailing:
+          CheckedIcon(isChecked: languageSetting == LanguageSetting.english),
       onTap: () async {
         await ref
             .read(sharedPreferencesProvider)
