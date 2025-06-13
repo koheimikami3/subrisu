@@ -13,9 +13,8 @@ class SwitchJapaneseTile extends ConsumerWidget {
       position: ItemPosition.top,
       name:
           AppLocalizations.of(context)!.language(LanguageSetting.japanese.name),
-      trailing: languageSetting == LanguageSetting.japanese
-          ? const CheckIcon()
-          : const SizedBox.shrink(),
+      trailing:
+          CheckedIcon(isChecked: languageSetting == LanguageSetting.japanese),
       onTap: () async {
         await ref
             .read(sharedPreferencesProvider)
