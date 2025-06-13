@@ -30,7 +30,7 @@ class _MyAppState extends ConsumerState<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = ref.watch(themeSettingNotifierProvider);
+    final theme = ref.watch(themeSettingsNotifierProvider);
     final language = ref.watch(languageSettingNotifierProvider);
     ref.watch(purchaseStatusNotifierProvider);
 

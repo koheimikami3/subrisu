@@ -6,7 +6,7 @@ class UniqueIconList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingNotifierProvider);
+    final themeSetting = ref.watch(themeSettingsNotifierProvider);
     final selectedIconImagePath =
         ref.watch(subscriptionFormNotifierProvider).selectedIconImagePath;
     // final iconList = Assets.images.subscription.values;

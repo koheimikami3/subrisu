@@ -1,8 +1,8 @@
 import '../../importer.dart';
 
 /// テーマ設定画面のScaffoldBody
-class ThemeSettingPageBody extends StatelessWidget {
-  const ThemeSettingPageBody({super.key});
+class ThemeSettingsPageBody extends StatelessWidget {
+  const ThemeSettingsPageBody({super.key});
 
   @override
   Widget build(BuildContext context) {

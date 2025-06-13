@@ -1,11 +1,11 @@
 import '../../../importer.dart';
 import '../constants/configs.dart' as configs;
 
-part 'theme_setting_provider.g.dart';
+part 'theme_settings_provider.g.dart';
 
 /// テーマ設定のNotifierProvider
 @riverpod
-class ThemeSettingNotifier extends _$ThemeSettingNotifier {
+class ThemeSettingsNotifier extends _$ThemeSettingsNotifier {
   @override
   ThemeSetting build() {
     final prefs = ref.read(sharedPreferencesProvider);

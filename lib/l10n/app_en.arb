@@ -16,12 +16,12 @@
     "@billingPageTitle": {
         "description": "The title displayed in the AppBar on the Billing Page"
     },
-    "themeSettingPageTitle": "Theme",
-    "@themeSettingPageTitle": {
+    "themeSettingsPageTitle": "Theme",
+    "@themeSettingsPageTitle": {
         "description": "The title displayed in the AppBar on the Theme Setting Page"
     },
-    "languageSettingPageTitle": "Language",
-    "@languageSettingPageTitle": {
+    "languageSettingsPageTitle": "Language",
+    "@languageSettingsPageTitle": {
         "description": "The title displayed in the AppBar on the Language Setting Page"
     },
     "loginErrorPageTitle": "Login Error",

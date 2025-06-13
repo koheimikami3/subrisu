@@ -11,9 +11,9 @@ class AppItemList extends StatelessWidget {
         ItemsTitle(title: AppLocalizations.of(context)!.appSettingsTitle),
         const ShowOpenNotificationSettingsDialogTile(),
         const ItemDivider(),
-        const GoToThemeSettingPageTile(),
+        const GoToThemeSettingsPageTile(),
         const ItemDivider(),
-        const GoToLanguageSettingPageTile(),
+        const GoToLanguageSettingsPageTile(),
       ],
     );
   }

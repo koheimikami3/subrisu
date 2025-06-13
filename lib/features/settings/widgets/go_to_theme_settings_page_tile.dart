@@ -1,8 +1,8 @@
 import '../../../importer.dart';
 
 /// テーマ設定画面に遷移するタイル
-class GoToThemeSettingPageTile extends StatelessWidget {
-  const GoToThemeSettingPageTile({super.key});
+class GoToThemeSettingsPageTile extends StatelessWidget {
+  const GoToThemeSettingsPageTile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class GoToThemeSettingPageTile extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute<void>(builder: (_) => const ThemeSettingPage()),
+          MaterialPageRoute<void>(builder: (_) => const ThemeSettingsPage()),
         );
       },
     );

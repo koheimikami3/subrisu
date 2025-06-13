@@ -7,7 +7,7 @@ class SortSubscriptionButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selectedSortSetting = ref.watch(sortSettingNotifierProvider);
+    final selectedSortSetting = ref.watch(sortSettingsNotifierProvider);
 
     return PullDownButton(
       itemBuilder: (context) {
@@ -25,7 +25,7 @@ class SortSubscriptionButton extends ConsumerWidget {
                     .read(sharedPreferencesProvider)
                     .setInt(configs.listSortKey, sortSetting.index);
                 ref
-                    .read(sortSettingNotifierProvider.notifier)
+                    .read(sortSettingsNotifierProvider.notifier)
                     .setSetting(sortSetting);
               },
             ),
