@@ -30,6 +30,7 @@ export 'package:share_plus/share_plus.dart';
 export 'package:shared_preferences/shared_preferences.dart';
 export 'package:subrisu/app.dart';
 export 'package:subrisu/app_theme.dart';
+export 'package:subrisu/components/checked_icon.dart';
 export 'package:subrisu/components/dialog/confirmation_dialog.dart';
 export 'package:subrisu/components/dialog/my_alert_dialog.dart';
 export 'package:subrisu/components/dialog/open_notification_settings_dialog.dart';
@@ -120,7 +121,6 @@ export 'package:subrisu/features/subscription/presentation/widgets/service_name_
 export 'package:subrisu/features/subscription/presentation/widgets/subscription_form.dart';
 export 'package:subrisu/features/theme_settings/theme_settings_page.dart';
 export 'package:subrisu/features/theme_settings/theme_settings_page_body.dart';
-export 'package:subrisu/features/theme_settings/widgets/check_icon.dart';
 export 'package:subrisu/features/theme_settings/widgets/switch_dark_theme_tile.dart';
 export 'package:subrisu/features/theme_settings/widgets/switch_device_theme_tile.dart';
 export 'package:subrisu/features/theme_settings/widgets/switch_light_theme_tile.dart';

@@ -13,9 +13,7 @@ class SwitchDarkThemeTile extends ConsumerWidget {
       position: ItemPosition.bottom,
       name: AppLocalizations.of(context)!.theme(ThemeSetting.dark.name),
       leadingIcon: Icons.dark_mode_outlined,
-      trailing: themeSetting == ThemeSetting.dark
-          ? const CheckIcon()
-          : const SizedBox.shrink(),
+      trailing: CheckedIcon(isChecked: themeSetting == ThemeSetting.dark),
       onTap: () async {
         await ref
             .read(sharedPreferencesProvider)

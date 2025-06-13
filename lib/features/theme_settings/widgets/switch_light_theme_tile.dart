@@ -13,9 +13,7 @@ class SwitchLightThemeTile extends ConsumerWidget {
       position: ItemPosition.middle,
       name: AppLocalizations.of(context)!.theme(ThemeSetting.light.name),
       leadingIcon: Icons.light_mode_outlined,
-      trailing: themeSetting == ThemeSetting.light
-          ? const CheckIcon()
-          : const SizedBox.shrink(),
+      trailing: CheckedIcon(isChecked: themeSetting == ThemeSetting.light),
       onTap: () async {
         await ref
             .read(sharedPreferencesProvider)
