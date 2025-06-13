@@ -8,7 +8,7 @@ const appStoreUrl = 'https://apps.apple.com/jp/app/id$appStoreId?mt=8';
 const googlePlayStoreUrl = '';
 
 // 利用規約
-const tosUrl = 'https://koheimikami3.github.io/subrisu-tos/';
+const termsOfServiceUrl = 'https://koheimikami3.github.io/subrisu-tos/';
 
 // プライバシーポリシー
 const privacyPolicyUrl = 'https://koheimikami3.github.io/subrisu-privacy/';

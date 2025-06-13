@@ -15,7 +15,7 @@ class SupportItemList extends StatelessWidget {
         const ItemDivider(),
         const OpenInquiryTile(),
         const ItemDivider(),
-        const OpenTosTile(),
+        const OpenTermsOfServiceTile(),
         const ItemDivider(),
         const OpenPrivacyPolicyTile(),
         const ItemDivider(),
