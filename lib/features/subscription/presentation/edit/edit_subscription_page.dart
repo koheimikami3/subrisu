@@ -44,7 +44,7 @@ class _EditSubscriptionPageState extends ConsumerState<EditSubscriptionPage> {
           actions: [
             Row(
               children: [
-                ShowDeleteSubscriptionDialogButton(
+                DeleteSubscriptionButton(
                   subscriptionId: widget.subscription.id,
                 ),
                 SizedBox(width: 20.w),
