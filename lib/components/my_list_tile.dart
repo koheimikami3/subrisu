@@ -8,14 +8,14 @@ class MyListTile extends ConsumerWidget {
     required this.position,
     required this.name,
     this.leadingIcon,
-    this.trailing = const ArrowIcon(),
+    this.trailing,
     this.onTap,
   });
 
   final ItemPosition position; // リスト内の位置
   final String name; // 項目名
   final IconData? leadingIcon; // 前方アイコン
-  final Widget trailing; // 後方コンテンツ
+  final Widget? trailing; // 後方コンテンツ
   final VoidCallback? onTap; // ボタンタップ時の動作
 
   @override
@@ -62,7 +62,13 @@ class MyListTile extends ConsumerWidget {
                     children: [
                       Expanded(child: Text(name)),
                       SizedBox(width: 3.w),
-                      trailing,
+                      trailing == null
+                          ? Icon(
+                              Icons.arrow_forward_ios,
+                              size: 17,
+                              color: Colors.grey.shade500,
+                            )
+                          : trailing!,
                       SizedBox(width: 15.w),
                     ],
                   ),

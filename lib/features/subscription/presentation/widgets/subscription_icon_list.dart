@@ -1,8 +1,8 @@
 import '../../../../constants/colors.dart' as colors;
 import '../../../../importer.dart';
 
-class CommonIconList extends ConsumerWidget {
-  const CommonIconList({super.key});
+class SubscriptionIconList extends ConsumerWidget {
+  const SubscriptionIconList({super.key});
 
   static final List<AssetGenImage> iconList = [
     Assets.images.subscription.subrisu,

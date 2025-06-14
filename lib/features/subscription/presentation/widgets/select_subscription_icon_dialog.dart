@@ -58,10 +58,8 @@ class SelectSubscriptionIconDialog extends ConsumerWidget {
                     child: Column(
                       children: [
                         SizedBox(height: 10.h),
-                        const Expanded(child: CommonIconList()),
-                        SizedBox(height: 10.h),
-                        // const Expanded(child: CommonIconList()),
-                        SizedBox(height: 20.h),
+                        const Expanded(child: SubscriptionIconList()),
+                        SizedBox(height: 30.h),
                         _saveButton(context, ref),
                         SizedBox(height: 20.h),
                       ],

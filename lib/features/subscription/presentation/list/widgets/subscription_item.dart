@@ -29,8 +29,6 @@ class SubscriptionItem extends ConsumerWidget {
             child: InkWell(
               onTap: () => _onTap(context),
               borderRadius: const BorderRadius.all(Radius.circular(10)),
-              // highlightColor:
-              //     isDarkMode ? Colors.grey.shade700 : Colors.grey.shade300,
               child: Container(
                 height: 57.h,
                 width: double.infinity,

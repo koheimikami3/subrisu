@@ -39,7 +39,6 @@ class SubscriptionList extends ConsumerWidget {
     }
 
     return ListView.separated(
-      // shrinkWrap: true,
       itemCount: subscriptions.length,
       separatorBuilder: (_, __) => SizedBox(height: 15.h),
       itemBuilder: (_, index) {

@@ -14,7 +14,6 @@ class TotalPrice extends ConsumerWidget {
       data: (subscriptions) {
         var totalPrice = 0; // 合計金額
 
-        //
         for (final subscription in subscriptions) {
           final price = int.parse(subscription.price);
 
