@@ -17,7 +17,6 @@ class NextPaymentDate extends StatelessWidget {
   Widget build(BuildContext context) {
     late final String text;
     late int day;
-    // const today = texts.today;
 
     // 現在日付を取得
     var now = DateTime.now();
