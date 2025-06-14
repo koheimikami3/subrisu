@@ -1,8 +1,8 @@
 import '../../../../importer.dart';
 
-/// サブスクリプション削除ダイアログを呼び出すボタン
-class ShowDeleteSubscriptionDialogButton extends StatelessWidget {
-  const ShowDeleteSubscriptionDialogButton({
+/// サブスクリプション削除の確認ダイアログを表示するタイル
+class DeleteSubscriptionButton extends StatelessWidget {
+  const DeleteSubscriptionButton({
     super.key,
     required this.subscriptionId,
   });

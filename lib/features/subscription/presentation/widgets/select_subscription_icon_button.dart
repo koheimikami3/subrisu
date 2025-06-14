@@ -2,8 +2,8 @@ import '../../../../../importer.dart';
 import '../../../../constants/colors.dart' as colors;
 
 /// アイコン画像選択ダイアログを呼び出すボタン
-class IconSelectButton extends ConsumerWidget {
-  const IconSelectButton({super.key});
+class SelectSubscriptionIconButton extends ConsumerWidget {
+  const SelectSubscriptionIconButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -24,7 +24,7 @@ class IconSelectButton extends ConsumerWidget {
 
         showDialog<void>(
           context: context,
-          builder: (_) => const IconSelectDialog(),
+          builder: (_) => const SelectSubscriptionIconDialog(),
         );
       },
       child: resultIconImagePath.isEmpty

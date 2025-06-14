@@ -2,8 +2,8 @@ import '../../../constants/urls.dart' as urls;
 import '../../../importer.dart';
 
 /// アプリのレビュー画面を開くタイル
-class OpenReviewTile extends ConsumerWidget {
-  const OpenReviewTile({super.key});
+class OpenAppReviewTile extends ConsumerWidget {
+  const OpenAppReviewTile({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
