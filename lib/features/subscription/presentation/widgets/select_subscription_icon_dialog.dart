@@ -1,8 +1,8 @@
 import '../../../../constants/colors.dart' as colors;
 import '../../../../importer.dart';
 
-class IconSelectDialog extends ConsumerWidget {
-  const IconSelectDialog({super.key});
+class SelectSubscriptionIconDialog extends ConsumerWidget {
+  const SelectSubscriptionIconDialog({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -2,8 +2,8 @@ import '../../../constants/urls.dart' as urls;
 import '../../../importer.dart';
 
 /// アプリのシェアシートを呼び出すタイル
-class ShowShareSheetTile extends StatelessWidget {
-  const ShowShareSheetTile({super.key});
+class ShareAppTile extends StatelessWidget {
+  const ShareAppTile({super.key});
 
   @override
   Widget build(BuildContext context) {

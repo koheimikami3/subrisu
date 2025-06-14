@@ -9,9 +9,9 @@ class SupportItemList extends StatelessWidget {
     return Column(
       children: [
         ItemsTitle(title: AppLocalizations.of(context)!.supportItemsTitle),
-        const OpenReviewTile(),
+        const OpenAppReviewTile(),
         const ItemDivider(),
-        const ShowShareSheetTile(),
+        const ShareAppTile(),
         const ItemDivider(),
         const OpenInquiryTile(),
         const ItemDivider(),

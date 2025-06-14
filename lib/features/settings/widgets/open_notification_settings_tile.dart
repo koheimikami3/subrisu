@@ -1,8 +1,8 @@
 import '../../../importer.dart';
 
-/// 端末の通知設定画面遷移の確認を行うダイアログを呼び出すタイル
-class ShowOpenNotificationSettingsDialogTile extends StatelessWidget {
-  const ShowOpenNotificationSettingsDialogTile({super.key});
+/// 端末の通知設定画面を開く確認ダイアログを表示するタイル
+class OpenNotificationSettingsTile extends StatelessWidget {
+  const OpenNotificationSettingsTile({super.key});
 
   @override
   Widget build(BuildContext context) {

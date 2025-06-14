@@ -1,6 +1,6 @@
 import '../../importer.dart';
 
-/// 端末の通知設定画面遷移の確認を行うダイアログ
+/// 端末の通知設定画面を開く確認ダイアログ
 class OpenNotificationSettingsDialog extends StatelessWidget {
   const OpenNotificationSettingsDialog({super.key});
 

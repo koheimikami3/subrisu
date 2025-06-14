@@ -34,7 +34,7 @@ class ServiceInfo extends ConsumerWidget {
           child: Row(
             children: [
               SizedBox(width: 15.w),
-              const IconSelectButton(),
+              const SelectSubscriptionIconButton(),
               SizedBox(width: 15.w),
               Expanded(
                 child: Column(
