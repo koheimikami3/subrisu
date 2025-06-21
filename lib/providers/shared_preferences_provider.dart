@@ -2,8 +2,6 @@ import '../../../importer.dart';
 
 part 'shared_preferences_provider.g.dart';
 
-/// SharedPreferencesのProvider
+/// SharedPreferencesのインスタンスを提供するProvider
 @riverpod
-SharedPreferences sharedPreferences(Ref ref) {
-  return throw UnimplementedError();
-}
+SharedPreferences sharedPreferences(Ref ref) => throw UnimplementedError();

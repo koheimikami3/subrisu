@@ -30,22 +30,22 @@ class _SystemHash {
   }
 }
 
-/// SubscriptionDocumentを削除するFutureProvider
+/// ユーザーのSubscriptionDocumentを削除するFutureProvider
 ///
 /// Copied from [deleteSubscription].
 @ProviderFor(deleteSubscription)
 const deleteSubscriptionProvider = DeleteSubscriptionFamily();
 
-/// SubscriptionDocumentを削除するFutureProvider
+/// ユーザーのSubscriptionDocumentを削除するFutureProvider
 ///
 /// Copied from [deleteSubscription].
 class DeleteSubscriptionFamily extends Family<AsyncValue<void>> {
-  /// SubscriptionDocumentを削除するFutureProvider
+  /// ユーザーのSubscriptionDocumentを削除するFutureProvider
   ///
   /// Copied from [deleteSubscription].
   const DeleteSubscriptionFamily();
 
-  /// SubscriptionDocumentを削除するFutureProvider
+  /// ユーザーのSubscriptionDocumentを削除するFutureProvider
   ///
   /// Copied from [deleteSubscription].
   DeleteSubscriptionProvider call(
@@ -80,11 +80,11 @@ class DeleteSubscriptionFamily extends Family<AsyncValue<void>> {
   String? get name => r'deleteSubscriptionProvider';
 }
 
-/// SubscriptionDocumentを削除するFutureProvider
+/// ユーザーのSubscriptionDocumentを削除するFutureProvider
 ///
 /// Copied from [deleteSubscription].
 class DeleteSubscriptionProvider extends AutoDisposeFutureProvider<void> {
-  /// SubscriptionDocumentを削除するFutureProvider
+  /// ユーザーのSubscriptionDocumentを削除するFutureProvider
   ///
   /// Copied from [deleteSubscription].
   DeleteSubscriptionProvider(
