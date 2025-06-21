@@ -6,9 +6,9 @@ part of 'firebase_messaging_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$firebaseMessagingHash() => r'6abf9bf6d98c4ba311760139587b2995df4c1508';
+String _$firebaseMessagingHash() => r'5e9baf830c916e075321e6c66ba316573c77e98f';
 
-/// FirebaseMessagingのProvider
+/// FirebaseMessagingのインスタンスを提供するProvider
 ///
 /// Copied from [firebaseMessaging].
 @ProviderFor(firebaseMessaging)

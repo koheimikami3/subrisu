@@ -6,7 +6,7 @@ part 'login_provider.g.dart';
 ///
 /// RemoteConfigを取得する
 /// 初回はFirebaseに匿名サインインする
-/// 以降はUserDocumentのtokenを更新することでログイン完了とする
+/// 以降はUserDocumentのtoken(FCMトークン)を更新することでログイン完了とする
 @riverpod
 Future<void> login(Ref ref) async {
   final auth = ref.read(firebaseAuthProvider);

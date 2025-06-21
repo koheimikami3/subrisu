@@ -8,7 +8,7 @@ part of 'firebase_auth_provider.dart';
 
 String _$firebaseAuthHash() => r'8f84097cccd00af817397c1715c5f537399ba780';
 
-/// FirebaseAuthのProvider
+/// FirebaseAuthのインスタンスを提供するProvider
 ///
 /// Copied from [firebaseAuth].
 @ProviderFor(firebaseAuth)

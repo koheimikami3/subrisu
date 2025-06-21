@@ -9,7 +9,7 @@ part of 'firebase_remote_config_provider.dart';
 String _$firebaseRemoteConfigHash() =>
     r'b4934addd7f70f1ef946eb7f5cd075db58728bfb';
 
-/// FirebaseRemoteConfigのProvider
+/// FirebaseRemoteConfigのインスタンスを提供するProvider
 ///
 /// Copied from [firebaseRemoteConfig].
 @ProviderFor(firebaseRemoteConfig)

@@ -2,7 +2,7 @@ import '../../../importer.dart';
 
 part 'delete_subscription_provider.g.dart';
 
-/// SubscriptionDocumentを削除するFutureProvider
+/// ユーザーのSubscriptionDocumentを削除するFutureProvider
 @riverpod
 Future<void> deleteSubscription(Ref ref, String subscriptionId) async {
   final userId = ref.read(userIdProvider);

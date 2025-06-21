@@ -2,8 +2,6 @@ import '../../../importer.dart';
 
 part 'user_id_provider.g.dart';
 
-/// FirebaseAuthのCurrentUserIdを取得するProvider
+/// FirebaseAuthのCurrentUserIdを提供するProvider
 @riverpod
-String userId(Ref ref) {
-  return ref.read(firebaseAuthProvider).currentUser!.uid;
-}
+String userId(Ref ref) => ref.read(firebaseAuthProvider).currentUser!.uid;

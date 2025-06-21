@@ -9,7 +9,7 @@ part of 'create_subscription_provider.dart';
 String _$createSubscriptionHash() =>
     r'b89f2e522ef36b962153b927b8dfc7c46890f3dd';
 
-/// SubscriptionDocumentを作成するFutureProvider
+/// ユーザーのSubscriptionDocumentを作成するFutureProvider
 ///
 /// Copied from [createSubscription].
 @ProviderFor(createSubscription)

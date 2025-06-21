@@ -29,22 +29,22 @@ class _SystemHash {
   }
 }
 
-/// UserDocumentを作成するFutureProvider
+/// 指定されたユーザーIDでUserDocumentを作成するFutureProvider
 ///
 /// Copied from [createUser].
 @ProviderFor(createUser)
 const createUserProvider = CreateUserFamily();
 
-/// UserDocumentを作成するFutureProvider
+/// 指定されたユーザーIDでUserDocumentを作成するFutureProvider
 ///
 /// Copied from [createUser].
 class CreateUserFamily extends Family<AsyncValue<void>> {
-  /// UserDocumentを作成するFutureProvider
+  /// 指定されたユーザーIDでUserDocumentを作成するFutureProvider
   ///
   /// Copied from [createUser].
   const CreateUserFamily();
 
-  /// UserDocumentを作成するFutureProvider
+  /// 指定されたユーザーIDでUserDocumentを作成するFutureProvider
   ///
   /// Copied from [createUser].
   CreateUserProvider call(
@@ -79,11 +79,11 @@ class CreateUserFamily extends Family<AsyncValue<void>> {
   String? get name => r'createUserProvider';
 }
 
-/// UserDocumentを作成するFutureProvider
+/// 指定されたユーザーIDでUserDocumentを作成するFutureProvider
 ///
 /// Copied from [createUser].
 class CreateUserProvider extends AutoDisposeFutureProvider<void> {
-  /// UserDocumentを作成するFutureProvider
+  /// 指定されたユーザーIDでUserDocumentを作成するFutureProvider
   ///
   /// Copied from [createUser].
   CreateUserProvider(

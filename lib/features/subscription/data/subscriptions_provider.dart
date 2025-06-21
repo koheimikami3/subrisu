@@ -2,7 +2,7 @@ import '../../../importer.dart';
 
 part 'subscriptions_provider.g.dart';
 
-/// サブスクリプションリストを取得するStreamProvider
+/// ユーザーのSubscriptionリストを取得するStreamProvider
 ///
 /// 作成日時を基準に昇順に並び替える
 @riverpod

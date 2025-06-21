@@ -2,7 +2,7 @@ import '../../../importer.dart';
 
 part 'create_subscription_provider.g.dart';
 
-/// SubscriptionDocumentを作成するFutureProvider
+/// ユーザーのSubscriptionDocumentを作成するFutureProvider
 @riverpod
 Future<void> createSubscription(Ref ref) async {
   final userId = ref.read(userIdProvider);

@@ -2,7 +2,7 @@ import '../../../importer.dart';
 
 part 'create_user_provider.g.dart';
 
-/// UserDocumentを作成するFutureProvider
+/// 指定されたユーザーIDでUserDocumentを作成するFutureProvider
 @riverpod
 Future<void> createUser(Ref ref, String userId) async {
   late final String os;
