@@ -1,9 +1,9 @@
 import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
-/// 復元処理を行う項目
-class RestoreItem extends ConsumerWidget {
-  const RestoreItem({super.key});
+/// 復元処理を行うタイル
+class RestoreTile extends ConsumerWidget {
+  const RestoreTile({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
