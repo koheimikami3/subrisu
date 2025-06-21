@@ -1,4 +1,3 @@
-import '../../../constants/urls.dart' as urls;
 import '../../../importer.dart';
 
 /// アプリのレビュー画面を開くタイル
@@ -15,7 +14,7 @@ class OpenAppReviewTile extends ConsumerWidget {
         final inAppReview = ref.read(inAppReviewProvider);
 
         if (await inAppReview.isAvailable()) {
-          await inAppReview.openStoreListing(appStoreId: urls.appStoreId);
+          await inAppReview.openStoreListing(appStoreId: AppUrls.appStoreId);
         } else {
           showErrorDialog(
             context,
