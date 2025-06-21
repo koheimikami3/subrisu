@@ -1,4 +1,3 @@
-import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
 /// テーマをダークに変更するタイル
@@ -14,10 +13,7 @@ class SelectDarkThemeTile extends ConsumerWidget {
       name: AppLocalizations.of(context)!.theme(ThemeSettings.dark.name),
       leadingIcon: Icons.dark_mode_outlined,
       trailing: CheckedIcon(isChecked: themeSettings == ThemeSettings.dark),
-      onTap: () async {
-        await ref
-            .read(sharedPreferencesProvider)
-            .setInt(configs.themeKey, ThemeSettings.dark.index);
+      onTap: () {
         ref.read(themeSettingsNotifierProvider.notifier).setDark();
       },
     );

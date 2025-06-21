@@ -1,4 +1,3 @@
-import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
 /// テーマをライトに変更するタイル
@@ -7,17 +6,14 @@ class SelectLightThemeTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return MyListTile(
       position: ItemPosition.middle,
-      name: AppLocalizations.of(context)!.theme(ThemeSetting.light.name),
+      name: AppLocalizations.of(context)!.theme(ThemeSettings.light.name),
       leadingIcon: Icons.light_mode_outlined,
-      trailing: CheckedIcon(isChecked: themeSetting == ThemeSetting.light),
-      onTap: () async {
-        await ref
-            .read(sharedPreferencesProvider)
-            .setInt(configs.themeKey, ThemeSetting.light.index);
+      trailing: CheckedIcon(isChecked: themeSettings == ThemeSettings.light),
+      onTap: () {
         ref.read(themeSettingsNotifierProvider.notifier).setLight();
       },
     );
