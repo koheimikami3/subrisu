@@ -1,17 +1,17 @@
 import '../../importer.dart';
 
 /// 課金画面のScaffoldBody
-class BillingPageBody extends ConsumerWidget {
-  const BillingPageBody({super.key});
+class PurchasePageBody extends ConsumerWidget {
+  const PurchasePageBody({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       children: [
         SizedBox(height: 25.h),
-        const PurchaseItem(),
+        const PurchaseTile(),
         const ItemDivider(),
-        const RestoreItem(),
+        const RestoreTile(),
         SizedBox(height: 10.h),
         Row(
           children: [
@@ -28,7 +28,7 @@ class BillingPageBody extends ConsumerWidget {
     final themeSetting = ref.watch(themeSettingsNotifierProvider);
 
     return Text(
-      AppLocalizations.of(context)!.billingSupplement,
+      AppLocalizations.of(context)!.purchaseSupplement,
       style: TextStyle(
         fontSize: 13.sp,
         color: selectColor(
