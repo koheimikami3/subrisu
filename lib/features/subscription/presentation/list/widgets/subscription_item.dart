@@ -90,8 +90,8 @@ class SubscriptionItem extends ConsumerWidget {
     late String imagePath;
     imagePath = subscription.iconImagePath;
 
-    if (imagePath == '') {
-      imagePath = 'images/subscription/subrisu.png';
+    if (imagePath.isEmpty) {
+      imagePath = Assets.images.subscription.subrisu.path;
     }
 
     return ColorFiltered(
