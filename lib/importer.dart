@@ -126,7 +126,7 @@ export 'package:subrisu/features/user/data/create_user_provider.dart';
 export 'package:subrisu/features/user/data/firebase_auth_provider.dart';
 export 'package:subrisu/features/user/data/login_provider.dart';
 export 'package:subrisu/features/user/data/update_token_provider.dart';
-export 'package:subrisu/features/user/domain/user_creation_data.dart';
+export 'package:subrisu/features/user/domain/create_user_data.dart';
 export 'package:subrisu/gen/assets.gen.dart';
 export 'package:subrisu/providers/firebase_firestore_provider.dart';
 export 'package:subrisu/providers/firebase_messaging_provider.dart';
