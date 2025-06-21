@@ -1,10 +1,12 @@
 import '../importer.dart';
 
-// アプリカラー
-const appColor = Color.fromARGB(255, 0, 200, 180);
+/// アプリケーション全体で使用される色定数を管理するクラス
+class AppColors {
+  AppColors._();
 
-// ダークモード時の画面背景色
-const darkBackgroundColor = Color(0xFF212121);
+  // アプリカラー
+  static const primary = Color.fromARGB(255, 0, 200, 180);
 
-// ダークモード時の項目色
-const darkItemColor = Color(0xFF303030);
+  // ダークモード時のアイテム背景色
+  static const darkItem = Color(0xFF303030);
+}

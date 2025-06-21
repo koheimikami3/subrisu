@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../constants/colors.dart' as colors;
 import '../../../../importer.dart';
 
 /// 通知を選択するフォーム
@@ -23,7 +22,7 @@ class NotificationSelectionForm extends ConsumerWidget {
               context: context,
               themeSettings: themeSettings,
               lightColor: Colors.white,
-              darkColor: colors.darkItemColor,
+              darkColor: AppColors.darkItem,
             ),
           ),
           child: Row(
@@ -51,7 +50,7 @@ class NotificationSelectionForm extends ConsumerWidget {
       height: 15.h,
       child: CupertinoSwitch(
         value: notification,
-        activeTrackColor: colors.appColor,
+        activeTrackColor: AppColors.primary,
         onChanged: (value) async {
           // プッシュ通知の設定状況を取得
           final result = await ref

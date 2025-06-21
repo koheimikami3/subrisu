@@ -1,4 +1,3 @@
-import '../constants/colors.dart' as colors;
 import '../constants/configs.dart' as configs;
 import '../importer.dart';
 
@@ -36,7 +35,7 @@ class MyTextFormField extends ConsumerWidget {
       maxLength: maxLength,
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,
-      cursorColor: colors.appColor,
+      cursorColor: AppColors.primary,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 10.w),
         isDense: true,
@@ -48,7 +47,7 @@ class MyTextFormField extends ConsumerWidget {
           context: context,
           themeSettings: themeSettings,
           lightColor: Colors.white,
-          darkColor: colors.darkItemColor,
+          darkColor: AppColors.darkItem,
         ),
         border: const OutlineInputBorder(
           borderSide: BorderSide.none,

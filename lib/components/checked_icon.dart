@@ -1,4 +1,3 @@
-import '../constants/colors.dart' as colors;
 import '../importer.dart';
 
 /// 項目が選択済みであることを示すアイコン
@@ -16,7 +15,7 @@ class CheckedIcon extends StatelessWidget {
         ? const Icon(
             Icons.check,
             size: 22,
-            color: colors.appColor,
+            color: AppColors.primary,
           )
         : const SizedBox.shrink();
   }

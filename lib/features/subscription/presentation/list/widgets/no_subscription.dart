@@ -1,4 +1,3 @@
-import '../../../../../constants/colors.dart' as colors;
 import '../../../../../importer.dart';
 
 /// サブスクリプションが1つも登録されていないことを示すテキストとサブリス画像
@@ -22,7 +21,7 @@ class NoSubscription extends StatelessWidget {
   ColorFiltered _image() {
     return ColorFiltered(
       colorFilter: const ColorFilter.mode(
-        colors.appColor,
+        AppColors.primary,
         BlendMode.srcIn,
       ),
       child: Image.asset(

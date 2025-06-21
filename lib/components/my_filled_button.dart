@@ -1,5 +1,4 @@
 import '../../importer.dart';
-import '../constants/colors.dart' as colors;
 import '../constants/configs.dart' as configs;
 
 /// カスタムFilledButton
@@ -23,7 +22,7 @@ class MyFilledButton extends ConsumerWidget {
       child: FilledButton(
         onPressed: onPressed,
         style: FilledButton.styleFrom(
-          backgroundColor: colors.appColor,
+          backgroundColor: AppColors.primary,
           disabledBackgroundColor: selectColor(
             context: context,
             themeSettings: themeSettings,

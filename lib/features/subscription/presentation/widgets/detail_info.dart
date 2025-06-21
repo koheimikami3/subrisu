@@ -1,4 +1,3 @@
-import '../../../../constants/colors.dart' as colors;
 import '../../../../importer.dart';
 
 /// サブスクリプションの詳細情報
@@ -28,7 +27,7 @@ class DetailInfo extends ConsumerWidget {
               context: context,
               themeSettings: themeSettings,
               lightColor: Colors.white,
-              darkColor: colors.darkItemColor,
+              darkColor: AppColors.darkItem,
             ),
           ),
           child: Row(

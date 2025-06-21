@@ -1,4 +1,3 @@
-import '../../../../constants/colors.dart' as colors;
 import '../../../../importer.dart';
 
 class SelectSubscriptionIconDialog extends ConsumerWidget {
@@ -30,8 +29,8 @@ class SelectSubscriptionIconDialog extends ConsumerWidget {
                 color: selectColor(
                   context: context,
                   themeSettings: themeSettings,
-                  lightColor: colors.appColor,
-                  darkColor: colors.darkBackgroundColor,
+                  lightColor: AppColors.primary,
+                  darkColor: const Color(0xFF212121),
                 ),
               ),
               child: Stack(
