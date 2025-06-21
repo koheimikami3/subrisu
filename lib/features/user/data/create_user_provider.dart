@@ -18,7 +18,7 @@ Future<void> createUser(Ref ref, String userId) async {
   final token = await ref.read(firebaseMessagingProvider).getAPNSToken();
 
   // UserDocumentの作成データ
-  final creationData = UserCreationData(
+  final userData = CreateUserData(
     os: os,
     token: token!,
   );
@@ -28,5 +28,5 @@ Future<void> createUser(Ref ref, String userId) async {
       .read(firebaseFirestoreProvider)
       .collection('users')
       .doc(userId)
-      .set(creationData.toJson());
+      .set(userData.toJson());
 }
