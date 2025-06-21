@@ -1,9 +1,9 @@
 import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
-/// ライトテーマに変更するタイル
-class SwitchLightThemeTile extends ConsumerWidget {
-  const SwitchLightThemeTile({super.key});
+/// テーマをライトに変更するタイル
+class SelectLightThemeTile extends ConsumerWidget {
+  const SelectLightThemeTile({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

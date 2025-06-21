@@ -1,9 +1,9 @@
 import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
-/// 日本語に変更するタイル
-class SwitchJapaneseTile extends ConsumerWidget {
-  const SwitchJapaneseTile({super.key});
+/// 言語を日本語に変更するタイル
+class SelectJapaneseTile extends ConsumerWidget {
+  const SelectJapaneseTile({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

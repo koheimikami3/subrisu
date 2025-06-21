@@ -1,9 +1,9 @@
 import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
-/// 端末テーマに変更するタイル
-class SwitchDeviceThemeTile extends ConsumerWidget {
-  const SwitchDeviceThemeTile({super.key});
+/// テーマを端末設定に変更するタイル
+class SelectDeviceThemeTile extends ConsumerWidget {
+  const SelectDeviceThemeTile({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
