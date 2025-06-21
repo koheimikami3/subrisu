@@ -1,9 +1,9 @@
 import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
-/// ダークテーマに変更するタイル
-class SwitchDarkThemeTile extends ConsumerWidget {
-  const SwitchDarkThemeTile({super.key});
+/// テーマをダークに変更するタイル
+class SelectDarkThemeTile extends ConsumerWidget {
+  const SelectDarkThemeTile({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

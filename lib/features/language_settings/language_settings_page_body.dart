@@ -9,9 +9,9 @@ class LanguageSettingsPageBody extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 25.h),
-        const SwitchJapaneseTile(),
+        const SelectJapaneseTile(),
         const ItemDivider(),
-        const SwitchEnglishTile(),
+        const SelectEnglishTile(),
       ],
     );
   }
