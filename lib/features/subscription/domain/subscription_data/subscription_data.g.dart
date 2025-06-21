@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'subscription_creation_data.dart';
+part of 'subscription_data.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SubscriptionCreationDataImpl _$$SubscriptionCreationDataImplFromJson(
+_$SubscriptionDataImpl _$$SubscriptionDataImplFromJson(
         Map<String, dynamic> json) =>
-    _$SubscriptionCreationDataImpl(
+    _$SubscriptionDataImpl(
       serviceName: json['serviceName'] as String,
       price: json['price'] as String,
       iconImagePath: json['iconImagePath'] as String? ?? '',
@@ -20,8 +20,8 @@ _$SubscriptionCreationDataImpl _$$SubscriptionCreationDataImplFromJson(
       updatedAt: const UpdatedAtField().fromJson(json['updatedAt']),
     );
 
-Map<String, dynamic> _$$SubscriptionCreationDataImplToJson(
-        _$SubscriptionCreationDataImpl instance) =>
+Map<String, dynamic> _$$SubscriptionDataImplToJson(
+        _$SubscriptionDataImpl instance) =>
     <String, dynamic>{
       'serviceName': instance.serviceName,
       'price': instance.price,
