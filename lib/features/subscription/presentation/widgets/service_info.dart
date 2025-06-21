@@ -14,7 +14,7 @@ class ServiceInfo extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return Column(
       children: [
@@ -26,7 +26,7 @@ class ServiceInfo extends ConsumerWidget {
             border: Border.all(color: Colors.grey.shade400),
             color: selectColor(
               context: context,
-              themeSetting: themeSetting,
+              themeSettings: themeSettings,
               lightColor: Colors.white,
               darkColor: colors.darkItemColor,
             ),

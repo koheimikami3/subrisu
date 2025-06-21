@@ -1,5 +1,5 @@
 /// 言語設定
-enum LanguageSetting {
+enum LanguageSettings {
   /// 日本語
   japanese,
 

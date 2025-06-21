@@ -6,13 +6,13 @@ class ItemDivider extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return Container(
       height: 0.7.h,
       color: selectColor(
         context: context,
-        themeSetting: themeSetting,
+        themeSettings: themeSettings,
         lightColor: Colors.grey.shade400,
         darkColor: Colors.grey.shade600,
       ),

@@ -24,7 +24,7 @@ class PurchaseTile extends ConsumerWidget {
     WidgetRef ref,
     PurchaseStatus purchaseStatus,
   ) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
     final price = ref
         .read(firebaseRemoteConfigProvider)
         .getString(configs.purchasePriceRemoteKey);
@@ -36,7 +36,7 @@ class PurchaseTile extends ConsumerWidget {
       style: TextStyle(
         color: selectColor(
           context: context,
-          themeSetting: themeSetting,
+          themeSettings: themeSettings,
           lightColor: Colors.grey.shade600,
           darkColor: Colors.grey.shade300,
         ),

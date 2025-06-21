@@ -1,5 +1,5 @@
 /// テーマ設定
-enum ThemeSetting {
+enum ThemeSettings {
   /// 端末モード
   device,
 

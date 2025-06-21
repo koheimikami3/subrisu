@@ -6,7 +6,7 @@ class SelectSubscriptionIconDialog extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return AlertDialog(
       insetPadding: EdgeInsets.all(20.w),
@@ -29,7 +29,7 @@ class SelectSubscriptionIconDialog extends ConsumerWidget {
                 ),
                 color: selectColor(
                   context: context,
-                  themeSetting: themeSetting,
+                  themeSettings: themeSettings,
                   lightColor: colors.appColor,
                   darkColor: colors.darkBackgroundColor,
                 ),
