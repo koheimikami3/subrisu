@@ -9,7 +9,7 @@ class SelectDarkThemeTile extends ConsumerWidget {
     final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return MyListTile(
-      position: ItemPosition.bottom,
+      position: TilePosition.bottom,
       name: AppLocalizations.of(context)!.theme(ThemeSettings.dark.name),
       leadingIcon: Icons.dark_mode_outlined,
       trailing: CheckedIcon(isChecked: themeSettings == ThemeSettings.dark),

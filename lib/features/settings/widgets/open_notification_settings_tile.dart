@@ -7,7 +7,7 @@ class OpenNotificationSettingsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyListTile(
-      position: ItemPosition.top,
+      position: TilePosition.top,
       name: AppLocalizations.of(context)!.notificationItem,
       leadingIcon: Icons.notifications_outlined,
       onTap: () {

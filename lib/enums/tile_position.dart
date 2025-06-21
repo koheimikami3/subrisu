@@ -1,5 +1,5 @@
-/// 項目のリスト内の位置
-enum ItemPosition {
+/// リストビューにおけるタイルの配置位置
+enum TilePosition {
   /// 最上部
   top,
 

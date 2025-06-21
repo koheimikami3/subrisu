@@ -8,7 +8,7 @@ class OpenInquiryTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyListTile(
-      position: ItemPosition.middle,
+      position: TilePosition.middle,
       name: AppLocalizations.of(context)!.inquiryItem,
       leadingIcon: Icons.mail_outline,
       onTap: () => launchUrl(Uri.parse(urls.inquiryUrl)),
