@@ -9,7 +9,7 @@ class SelectDeviceThemeTile extends ConsumerWidget {
     final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return MyListTile(
-      position: ItemPosition.top,
+      position: TilePosition.top,
       name: AppLocalizations.of(context)!.theme(ThemeSettings.device.name),
       leadingIcon: Icons.phone_iphone_outlined,
       trailing: CheckedIcon(isChecked: themeSettings == ThemeSettings.device),

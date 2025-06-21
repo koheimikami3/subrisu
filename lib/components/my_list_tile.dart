@@ -12,7 +12,7 @@ class MyListTile extends ConsumerWidget {
     this.onTap,
   });
 
-  final ItemPosition position; // リスト内の位置
+  final TilePosition position; // タイルの配置位置
   final String name; // 項目名
   final IconData? leadingIcon; // 前方アイコン
   final Widget? trailing; // 後方コンテンツ
@@ -29,14 +29,14 @@ class MyListTile extends ConsumerWidget {
         lightColor: Colors.white,
         darkColor: colors.darkItemColor,
       ),
-      shape: position == ItemPosition.independence
+      shape: position == TilePosition.independence
           ? Border(
               top: BorderSide(color: Colors.grey.shade400),
               bottom: BorderSide(color: Colors.grey.shade400),
             )
-          : position == ItemPosition.top
+          : position == TilePosition.top
               ? Border(top: BorderSide(color: Colors.grey.shade400))
-              : position == ItemPosition.bottom
+              : position == TilePosition.bottom
                   ? Border(bottom: BorderSide(color: Colors.grey.shade400))
                   : null,
       child: InkWell(

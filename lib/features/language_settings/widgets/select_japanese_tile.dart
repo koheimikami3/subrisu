@@ -9,7 +9,7 @@ class SelectJapaneseTile extends ConsumerWidget {
     final languageSettings = ref.watch(languageSettingsNotifierProvider);
 
     return MyListTile(
-      position: ItemPosition.top,
+      position: TilePosition.top,
       name: AppLocalizations.of(context)!
           .language(LanguageSettings.japanese.name),
       trailing:

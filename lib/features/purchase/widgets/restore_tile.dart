@@ -8,7 +8,7 @@ class RestoreTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MyListTile(
-      position: ItemPosition.bottom,
+      position: TilePosition.bottom,
       name: AppLocalizations.of(context)!.restoreItem,
       trailing: const SizedBox.shrink(),
       onTap: () => _onTap(context, ref),

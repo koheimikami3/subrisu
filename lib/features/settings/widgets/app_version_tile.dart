@@ -9,7 +9,7 @@ class AppVersionTile extends ConsumerWidget {
     final packageInfo = ref.read(packageInfoProvider);
 
     return MyListTile(
-      position: ItemPosition.bottom,
+      position: TilePosition.bottom,
       leadingIcon: Icons.info_outline,
       name: AppLocalizations.of(context)!.appVersionItem,
       trailing: Text(packageInfo.version),

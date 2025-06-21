@@ -8,7 +8,7 @@ class OpenPrivacyPolicyTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyListTile(
-      position: ItemPosition.middle,
+      position: TilePosition.middle,
       leadingIcon: Icons.verified_user_outlined,
       name: AppLocalizations.of(context)!.privacyPolicyItem,
       onTap: () => launchUrl(Uri.parse(urls.privacyPolicyUrl)),

@@ -8,7 +8,7 @@ class OpenTermsOfServiceTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyListTile(
-      position: ItemPosition.middle,
+      position: TilePosition.middle,
       name: AppLocalizations.of(context)!.termsOfServiceItem,
       leadingIcon: Icons.description_outlined,
       onTap: () => launchUrl(Uri.parse(urls.termsOfServiceUrl)),
