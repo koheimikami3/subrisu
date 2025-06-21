@@ -13,7 +13,7 @@ class SettingsPageBody extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 25.h),
-                const GoToBillingPageTile(),
+                const GoToPurchasePageTile(),
                 SizedBox(height: 25.h),
                 const AppItemList(),
                 SizedBox(height: 25.h),

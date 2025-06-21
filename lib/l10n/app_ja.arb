@@ -12,9 +12,9 @@
     "@settingsPageTitle": {
         "description": "The title displayed in the AppBar on the Settings Page"
     },
-    "billingPageTitle": "広告の非表示",
-    "@billingPageTitle": {
-        "description": "The title displayed in the AppBar on the Billing Page"
+    "purchasePageTitle": "広告の非表示",
+    "@purchasePageTitle": {
+        "description": "The title displayed in the AppBar on the Purchase Page"
     },
     "themeSettingsPageTitle": "テーマ設定",
     "@themeSettingsPageTitle": {
@@ -134,8 +134,8 @@
     "@deleteSubscriptionButton": {
         "description": ""
     },
-    "billingItemsTitle": "有料プラン",
-    "@billingItemsTitle": {
+    "purchaseItemsTitle": "有料プラン",
+    "@purchaseItemsTitle": {
         "description": ""
     },
     "appSettingsTitle": "アプリ",
@@ -150,8 +150,8 @@
     "@appVersionTitle": {
         "description": ""
     },
-    "billingItem": "広告の非表示",
-    "@billingItem": {
+    "purchaseItem": "広告の非表示",
+    "@purchaseItem": {
         "description": ""
     },
     "notificationItem": "リマインド通知",
@@ -274,8 +274,8 @@
     "@alreadyPurchased": {
         "description": ""
     },
-    "billingSupplement": "*広告の非表示は買い切りです。",
-    "@billingSupplement": {
+    "purchaseSupplement": "*広告の非表示は買い切りです。",
+    "@purchaseSupplement": {
         "description": ""
     },
     "total": "今月 ¥",

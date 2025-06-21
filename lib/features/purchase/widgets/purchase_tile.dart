@@ -1,9 +1,9 @@
 import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
-/// 購入処理を行う項目
-class PurchaseItem extends ConsumerWidget {
-  const PurchaseItem({super.key});
+/// 購入処理を行うタイル
+class PurchaseTile extends ConsumerWidget {
+  const PurchaseTile({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
