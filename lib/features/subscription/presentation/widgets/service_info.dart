@@ -1,4 +1,3 @@
-import '../../../../constants/colors.dart' as colors;
 import '../../../../importer.dart';
 
 /// サービス情報を表示する
@@ -28,7 +27,7 @@ class ServiceInfo extends ConsumerWidget {
               context: context,
               themeSettings: themeSettings,
               lightColor: Colors.white,
-              darkColor: colors.darkItemColor,
+              darkColor: AppColors.darkItem,
             ),
           ),
           child: Row(

@@ -1,4 +1,3 @@
-import '../../../../constants/colors.dart' as colors;
 import '../../../../importer.dart';
 
 class SubscriptionIconList extends ConsumerWidget {
@@ -78,14 +77,14 @@ class SubscriptionIconList extends ConsumerWidget {
             padding: EdgeInsets.all(5.w),
             decoration: BoxDecoration(
               border: Border.all(
-                color: isSelected ? colors.appColor : Colors.grey.shade400,
+                color: isSelected ? AppColors.primary : Colors.grey.shade400,
               ),
               borderRadius: const BorderRadius.all(Radius.circular(10)),
             ),
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
                 isSelected
-                    ? colors.appColor
+                    ? AppColors.primary
                     : selectColor(
                         context: context,
                         themeSettings: themeSettings,

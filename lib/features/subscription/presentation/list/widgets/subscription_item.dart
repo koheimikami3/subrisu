@@ -1,4 +1,3 @@
-import '../../../../../constants/colors.dart' as colors;
 import '../../../../../importer.dart';
 
 /// サブスクリプションリストのアイテム
@@ -24,7 +23,7 @@ class SubscriptionItem extends ConsumerWidget {
               context: context,
               themeSettings: themeSettings,
               lightColor: Colors.white,
-              darkColor: colors.darkItemColor,
+              darkColor: AppColors.darkItem,
             ),
             child: InkWell(
               onTap: () => _onTap(context),
@@ -96,7 +95,7 @@ class SubscriptionItem extends ConsumerWidget {
     }
 
     return ColorFiltered(
-      colorFilter: const ColorFilter.mode(colors.appColor, BlendMode.srcIn),
+      colorFilter: const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
       child: Image.asset(
         imagePath,
         height: 33.h,

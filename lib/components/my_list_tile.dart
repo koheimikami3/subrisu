@@ -1,4 +1,3 @@
-import '../constants/colors.dart' as colors;
 import '../importer.dart';
 
 /// カスタムListTile
@@ -27,7 +26,7 @@ class MyListTile extends ConsumerWidget {
         context: context,
         themeSettings: themeSettings,
         lightColor: Colors.white,
-        darkColor: colors.darkItemColor,
+        darkColor: AppColors.darkItem,
       ),
       shape: position == TilePosition.independence
           ? Border(
