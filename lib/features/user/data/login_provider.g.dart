@@ -12,7 +12,7 @@ String _$loginHash() => r'dfad3c018e35176468a572b43bdbf7573eddb27f';
 ///
 /// RemoteConfigを取得する
 /// 初回はFirebaseに匿名サインインする
-/// 以降はUserDocumentのtokenを更新することでログイン完了とする
+/// 以降はUserDocumentのtoken(FCMトークン)を更新することでログイン完了とする
 ///
 /// Copied from [login].
 @ProviderFor(login)

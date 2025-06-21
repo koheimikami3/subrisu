@@ -2,7 +2,7 @@ import '../../../importer.dart';
 
 part 'update_subscription_provider.g.dart';
 
-/// SubscriptionDocumentを更新するFutureProvider
+/// ユーザーのSubscriptionDocumentを更新するFutureProvider
 @riverpod
 Future<void> updateSubscription(Ref ref, String subscriptionId) async {
   final userId = ref.read(userIdProvider);

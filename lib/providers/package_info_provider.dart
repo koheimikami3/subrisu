@@ -2,8 +2,6 @@ import '../../../importer.dart';
 
 part 'package_info_provider.g.dart';
 
-/// PackageInfoのProvider
+/// PackageInfoのインスタンスを提供するProvider
 @riverpod
-PackageInfo packageInfo(Ref ref) {
-  return throw UnimplementedError();
-}
+PackageInfo packageInfo(Ref ref) => throw UnimplementedError();

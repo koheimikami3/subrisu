@@ -8,7 +8,7 @@ part of 'subscriptions_provider.dart';
 
 String _$subscriptionsHash() => r'553fc9133464bd175fb41ba06e8c6abce055e3e0';
 
-/// サブスクリプションリストを取得するStreamProvider
+/// ユーザーのSubscriptionリストを取得するStreamProvider
 ///
 /// 作成日時を基準に昇順に並び替える
 ///

@@ -30,22 +30,22 @@ class _SystemHash {
   }
 }
 
-/// SubscriptionDocumentを更新するFutureProvider
+/// ユーザーのSubscriptionDocumentを更新するFutureProvider
 ///
 /// Copied from [updateSubscription].
 @ProviderFor(updateSubscription)
 const updateSubscriptionProvider = UpdateSubscriptionFamily();
 
-/// SubscriptionDocumentを更新するFutureProvider
+/// ユーザーのSubscriptionDocumentを更新するFutureProvider
 ///
 /// Copied from [updateSubscription].
 class UpdateSubscriptionFamily extends Family<AsyncValue<void>> {
-  /// SubscriptionDocumentを更新するFutureProvider
+  /// ユーザーのSubscriptionDocumentを更新するFutureProvider
   ///
   /// Copied from [updateSubscription].
   const UpdateSubscriptionFamily();
 
-  /// SubscriptionDocumentを更新するFutureProvider
+  /// ユーザーのSubscriptionDocumentを更新するFutureProvider
   ///
   /// Copied from [updateSubscription].
   UpdateSubscriptionProvider call(
@@ -80,11 +80,11 @@ class UpdateSubscriptionFamily extends Family<AsyncValue<void>> {
   String? get name => r'updateSubscriptionProvider';
 }
 
-/// SubscriptionDocumentを更新するFutureProvider
+/// ユーザーのSubscriptionDocumentを更新するFutureProvider
 ///
 /// Copied from [updateSubscription].
 class UpdateSubscriptionProvider extends AutoDisposeFutureProvider<void> {
-  /// SubscriptionDocumentを更新するFutureProvider
+  /// ユーザーのSubscriptionDocumentを更新するFutureProvider
   ///
   /// Copied from [updateSubscription].
   UpdateSubscriptionProvider(
