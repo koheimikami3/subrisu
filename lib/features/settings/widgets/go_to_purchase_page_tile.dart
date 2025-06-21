@@ -10,7 +10,7 @@ class GoToPurchasePageTile extends StatelessWidget {
       children: [
         ItemsTitle(title: AppLocalizations.of(context)!.purchaseItemsTitle),
         MyListTile(
-          position: ItemPosition.independence,
+          position: TilePosition.independence,
           leadingIcon: Icons.hide_image_outlined,
           name: AppLocalizations.of(context)!.purchaseItem,
           onTap: () {

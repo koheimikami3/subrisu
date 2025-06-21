@@ -9,7 +9,7 @@ class SelectLightThemeTile extends ConsumerWidget {
     final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return MyListTile(
-      position: ItemPosition.middle,
+      position: TilePosition.middle,
       name: AppLocalizations.of(context)!.theme(ThemeSettings.light.name),
       leadingIcon: Icons.light_mode_outlined,
       trailing: CheckedIcon(isChecked: themeSettings == ThemeSettings.light),

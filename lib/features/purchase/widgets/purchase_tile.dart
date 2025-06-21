@@ -10,7 +10,7 @@ class PurchaseTile extends ConsumerWidget {
     final purchaseStatus = ref.watch(purchaseStatusNotifierProvider);
 
     return MyListTile(
-      position: ItemPosition.top,
+      position: TilePosition.top,
       name: AppLocalizations.of(context)!.removeAdsItem,
       trailing: _price(context, ref, purchaseStatus),
       onTap: () =>

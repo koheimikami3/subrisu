@@ -8,7 +8,7 @@ class OpenAppReviewTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MyListTile(
-      position: ItemPosition.top,
+      position: TilePosition.top,
       name: AppLocalizations.of(context)!.reviewItem,
       leadingIcon: Icons.rate_review_outlined,
       onTap: () async {

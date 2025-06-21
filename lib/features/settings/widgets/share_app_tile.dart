@@ -8,7 +8,7 @@ class ShareAppTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyListTile(
-      position: ItemPosition.middle,
+      position: TilePosition.middle,
       name: AppLocalizations.of(context)!.shareItem,
       leadingIcon: Icons.share_outlined,
       onTap: () => Share.share('サブリス - サブスクと固定費をリストで管理\n${urls.appStoreUrl}'),
