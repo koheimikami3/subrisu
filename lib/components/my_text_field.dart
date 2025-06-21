@@ -27,7 +27,7 @@ class MyTextFormField extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return TextFormField(
       initialValue: initialValue,
@@ -46,7 +46,7 @@ class MyTextFormField extends ConsumerWidget {
         filled: true,
         fillColor: selectColor(
           context: context,
-          themeSetting: themeSetting,
+          themeSettings: themeSettings,
           lightColor: Colors.white,
           darkColor: colors.darkItemColor,
         ),

@@ -7,19 +7,19 @@ class SelectEnglishTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final languageSetting = ref.watch(languageSettingNotifierProvider);
+    final languageSetting = ref.watch(languageSettingsNotifierProvider);
 
     return MyListTile(
       position: ItemPosition.bottom,
       name:
-          AppLocalizations.of(context)!.language(LanguageSetting.english.name),
+          AppLocalizations.of(context)!.language(LanguageSettings.english.name),
       trailing:
-          CheckedIcon(isChecked: languageSetting == LanguageSetting.english),
+          CheckedIcon(isChecked: languageSetting == LanguageSettings.english),
       onTap: () async {
         await ref
             .read(sharedPreferencesProvider)
-            .setInt(configs.languageKey, LanguageSetting.english.index);
-        ref.read(languageSettingNotifierProvider.notifier).setEnglish();
+            .setInt(configs.languageKey, LanguageSettings.english.index);
+        ref.read(languageSettingsNotifierProvider.notifier).setEnglish();
       },
     );
   }

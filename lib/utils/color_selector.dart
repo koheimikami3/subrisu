@@ -3,11 +3,11 @@ import '../importer.dart';
 /// テーマ設定に応じた色を返す
 Color? selectColor({
   required BuildContext context,
-  required ThemeSetting themeSetting,
+  required ThemeSettings themeSettings,
   required Color? lightColor,
   required Color? darkColor,
 }) {
-  if (themeSetting == ThemeSetting.device) {
+  if (themeSettings == ThemeSettings.device) {
     final brightness = MediaQuery.platformBrightnessOf(context);
 
     if (brightness == Brightness.dark) {
@@ -15,7 +15,7 @@ Color? selectColor({
     } else {
       return lightColor;
     }
-  } else if (themeSetting == ThemeSetting.light) {
+  } else if (themeSettings == ThemeSettings.light) {
     return lightColor;
   } else {
     return darkColor;

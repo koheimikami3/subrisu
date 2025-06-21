@@ -54,7 +54,7 @@ class SubscriptionIconList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
     final selectedIconImagePath =
         ref.watch(subscriptionFormNotifierProvider).selectedIconImagePath;
 
@@ -88,7 +88,7 @@ class SubscriptionIconList extends ConsumerWidget {
                     ? colors.appColor
                     : selectColor(
                         context: context,
-                        themeSetting: themeSetting,
+                        themeSettings: themeSettings,
                         lightColor: Colors.black,
                         darkColor: Colors.grey.shade100,
                       )!,

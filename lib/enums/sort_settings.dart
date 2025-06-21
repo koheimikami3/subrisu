@@ -1,5 +1,5 @@
 /// サブスウリプションの並び替え設定
-enum SortSetting {
+enum SortSettings {
   /// 次回支払日までの日数を基準に昇順
   ascendingNextPaymentDays,
 

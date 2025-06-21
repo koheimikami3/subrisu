@@ -31,7 +31,7 @@ class _MyAppState extends ConsumerState<MyApp> {
   @override
   Widget build(BuildContext context) {
     final theme = ref.watch(themeSettingsNotifierProvider);
-    final language = ref.watch(languageSettingNotifierProvider);
+    final language = ref.watch(languageSettingsNotifierProvider);
     ref.watch(purchaseStatusNotifierProvider);
 
     return ScreenUtilInit(
@@ -39,14 +39,14 @@ class _MyAppState extends ConsumerState<MyApp> {
       builder: (_, __) {
         return MaterialApp(
           theme: appThemeLight(),
-          themeMode: theme == ThemeSetting.device
+          themeMode: theme == ThemeSettings.device
               ? ThemeMode.system
-              : theme == ThemeSetting.light
+              : theme == ThemeSettings.light
                   ? ThemeMode.light
                   : ThemeMode.dark,
           darkTheme: appThemeDark(),
           debugShowCheckedModeBanner: false,
-          locale: language == LanguageSetting.english
+          locale: language == LanguageSettings.english
               ? const Locale('en')
               : const Locale('ja'),
           supportedLocales: AppLocalizations.supportedLocales,

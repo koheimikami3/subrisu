@@ -12,7 +12,7 @@ class SubscriptionItem extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return Row(
       children: [
@@ -22,7 +22,7 @@ class SubscriptionItem extends ConsumerWidget {
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             color: selectColor(
               context: context,
-              themeSetting: themeSetting,
+              themeSettings: themeSettings,
               lightColor: Colors.white,
               darkColor: colors.darkItemColor,
             ),

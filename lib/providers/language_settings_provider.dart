@@ -1,13 +1,13 @@
 import '../../../importer.dart';
 import '../constants/configs.dart' as configs;
 
-part 'language_setting_provider.g.dart';
+part 'language_settings_provider.g.dart';
 
-/// 言語設定のNotifierProvider
+/// アプリケーションの言語設定を管理するNotifierProvider
 @riverpod
-class LanguageSettingNotifier extends _$LanguageSettingNotifier {
+class LanguageSettingsNotifier extends _$LanguageSettingsNotifier {
   @override
-  LanguageSetting build() {
+  LanguageSettings build() {
     final prefs = ref.read(sharedPreferencesProvider);
 
     // 言語の設定状況を取得
@@ -19,20 +19,20 @@ class LanguageSettingNotifier extends _$LanguageSettingNotifier {
             ? 0
             : 1;
 
-    if (language == LanguageSetting.japanese.index) {
-      return LanguageSetting.japanese;
+    if (language == LanguageSettings.japanese.index) {
+      return LanguageSettings.japanese;
     } else {
-      return LanguageSetting.english;
+      return LanguageSettings.english;
     }
   }
 
   /// 状態をjapaneseに更新
   void setJapanese() {
-    state = LanguageSetting.japanese;
+    state = LanguageSettings.japanese;
   }
 
   /// 状態をenglishに更新
   void setEnglish() {
-    state = LanguageSetting.english;
+    state = LanguageSettings.english;
   }
 }

@@ -26,7 +26,7 @@ class ItemsTitle extends ConsumerWidget {
 
   /// タイトル
   Widget _title(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return Text(
       title,
@@ -34,7 +34,7 @@ class ItemsTitle extends ConsumerWidget {
         fontSize: 12.5.sp,
         color: selectColor(
           context: context,
-          themeSetting: themeSetting,
+          themeSettings: themeSettings,
           lightColor: Colors.grey.shade700,
           darkColor: Colors.grey.shade400,
         ),

@@ -7,14 +7,14 @@ part of 'sort_settings_provider.dart';
 // **************************************************************************
 
 String _$sortSettingsNotifierHash() =>
-    r'487b2c30d9aeccc2803e7611f0acc6658a5afb34';
+    r'0b96aea1b75edf9a4e1e786d97c1af2cd512348a';
 
-/// サブスクリプションの並び替え設定のNotifierProvider
+/// サブスクリプションリストの並び替え設定を管理するNotifierProvider
 ///
 /// Copied from [SortSettingsNotifier].
 @ProviderFor(SortSettingsNotifier)
 final sortSettingsNotifierProvider =
-    AutoDisposeNotifierProvider<SortSettingsNotifier, SortSetting>.internal(
+    AutoDisposeNotifierProvider<SortSettingsNotifier, SortSettings>.internal(
   SortSettingsNotifier.new,
   name: r'sortSettingsNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -24,6 +24,6 @@ final sortSettingsNotifierProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$SortSettingsNotifier = AutoDisposeNotifier<SortSetting>;
+typedef _$SortSettingsNotifier = AutoDisposeNotifier<SortSettings>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

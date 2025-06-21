@@ -14,25 +14,25 @@ class SubscriptionList extends ConsumerWidget {
     final sortSetting = ref.watch(sortSettingsNotifierProvider);
 
     switch (sortSetting) {
-      case SortSetting.ascendingNextPaymentDays:
+      case SortSettings.ascendingNextPaymentDays:
         subscriptions.sort((a, b) {
           final aDays = _calculateNextPaymentDays(a);
           final bDays = _calculateNextPaymentDays(b);
           return aDays.compareTo(bDays);
         });
-      case SortSetting.ascendingPrice:
+      case SortSettings.ascendingPrice:
         subscriptions.sort((a, b) {
           return int.parse(a.price).compareTo(int.parse(b.price));
         });
-      case SortSetting.descendingPrice:
+      case SortSettings.descendingPrice:
         subscriptions.sort((a, b) {
           return -int.parse(a.price).compareTo(int.parse(b.price));
         });
-      case SortSetting.ascendingServiceName:
+      case SortSettings.ascendingServiceName:
         subscriptions.sort((a, b) {
           return a.serviceName.compareTo(b.serviceName);
         });
-      case SortSetting.descendingServiceName:
+      case SortSettings.descendingServiceName:
         subscriptions.sort((a, b) {
           return -a.serviceName.compareTo(b.serviceName);
         });

@@ -6,7 +6,7 @@ class LoadingIndicator extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -17,7 +17,7 @@ class LoadingIndicator extends ConsumerWidget {
             borderRadius: BorderRadius.circular(10),
             color: selectColor(
               context: context,
-              themeSetting: themeSetting,
+              themeSettings: themeSettings,
               lightColor: Colors.grey.shade200,
               darkColor: Colors.grey.shade400,
             ),

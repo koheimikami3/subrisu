@@ -7,17 +7,17 @@ class SelectDarkThemeTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return MyListTile(
       position: ItemPosition.bottom,
-      name: AppLocalizations.of(context)!.theme(ThemeSetting.dark.name),
+      name: AppLocalizations.of(context)!.theme(ThemeSettings.dark.name),
       leadingIcon: Icons.dark_mode_outlined,
-      trailing: CheckedIcon(isChecked: themeSetting == ThemeSetting.dark),
+      trailing: CheckedIcon(isChecked: themeSettings == ThemeSettings.dark),
       onTap: () async {
         await ref
             .read(sharedPreferencesProvider)
-            .setInt(configs.themeKey, ThemeSetting.dark.index);
+            .setInt(configs.themeKey, ThemeSettings.dark.index);
         ref.read(themeSettingsNotifierProvider.notifier).setDark();
       },
     );
