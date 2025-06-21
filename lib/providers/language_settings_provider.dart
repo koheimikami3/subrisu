@@ -29,10 +29,18 @@ class LanguageSettingsNotifier extends _$LanguageSettingsNotifier {
   /// 状態をjapaneseに更新
   void setJapanese() {
     state = LanguageSettings.japanese;
+    _saveLanguageSettings(LanguageSettings.japanese.index);
   }
 
   /// 状態をenglishに更新
   void setEnglish() {
     state = LanguageSettings.english;
+    _saveLanguageSettings(LanguageSettings.english.index);
+  }
+
+  /// 言語設定をSharedPreferencesに保存
+  void _saveLanguageSettings(int languageIndex) {
+    final prefs = ref.read(sharedPreferencesProvider);
+    prefs.setInt(configs.languageKey, languageIndex);
   }
 }

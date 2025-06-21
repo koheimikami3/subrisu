@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import '../../../importer.dart';
 import '../constants/configs.dart' as configs;
 
@@ -15,8 +17,11 @@ class SortSettingsNotifier extends _$SortSettingsNotifier {
   }
 
   /// 設定の状態を更新
-  // ignore: use_setters_to_change_properties
-  void setSettings(SortSettings value) {
+  ///
+  /// 並び替え設定をSharedPreferencesに保存
+  void setSortSettings(SortSettings value) {
+    final prefs = ref.read(sharedPreferencesProvider);
     state = value;
+    unawaited(prefs.setInt(configs.listSortKey, value.index));
   }
 }

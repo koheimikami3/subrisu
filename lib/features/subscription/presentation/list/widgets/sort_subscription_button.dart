@@ -1,4 +1,3 @@
-import '../../../../../constants/configs.dart' as configs;
 import '../../../../../importer.dart';
 
 /// サブスクリプションを並び替えるボタン
@@ -22,11 +21,8 @@ class SortSubscriptionButton extends ConsumerWidget {
               itemTheme: const PullDownMenuItemTheme(checkmark: Icons.check),
               onTap: () {
                 ref
-                    .read(sharedPreferencesProvider)
-                    .setInt(configs.listSortKey, sortSettings.index);
-                ref
                     .read(sortSettingsNotifierProvider.notifier)
-                    .setSettings(sortSettings);
+                    .setSortSettings(sortSettings);
               },
             ),
         ];
