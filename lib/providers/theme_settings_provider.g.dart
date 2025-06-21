@@ -7,14 +7,14 @@ part of 'theme_settings_provider.dart';
 // **************************************************************************
 
 String _$themeSettingsNotifierHash() =>
-    r'65b4c41319719785bd2caf9a7535033b68e71ff1';
+    r'0bfb739dc9f173abf148d9dad5c791c28105081d';
 
-/// テーマ設定のNotifierProvider
+/// アプリケーションのテーマ設定を管理するNotifierProvider
 ///
 /// Copied from [ThemeSettingsNotifier].
 @ProviderFor(ThemeSettingsNotifier)
 final themeSettingsNotifierProvider =
-    AutoDisposeNotifierProvider<ThemeSettingsNotifier, ThemeSetting>.internal(
+    AutoDisposeNotifierProvider<ThemeSettingsNotifier, ThemeSettings>.internal(
   ThemeSettingsNotifier.new,
   name: r'themeSettingsNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -24,6 +24,6 @@ final themeSettingsNotifierProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$ThemeSettingsNotifier = AutoDisposeNotifier<ThemeSetting>;
+typedef _$ThemeSettingsNotifier = AutoDisposeNotifier<ThemeSettings>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

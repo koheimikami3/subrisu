@@ -15,7 +15,7 @@ class MyFilledButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return SizedBox(
       height: 40.h,
@@ -26,7 +26,7 @@ class MyFilledButton extends ConsumerWidget {
           backgroundColor: colors.appColor,
           disabledBackgroundColor: selectColor(
             context: context,
-            themeSetting: themeSetting,
+            themeSettings: themeSettings,
             lightColor: Colors.grey.shade300,
             darkColor: Colors.grey.shade600,
           ),

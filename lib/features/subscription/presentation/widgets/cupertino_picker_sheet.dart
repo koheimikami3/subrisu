@@ -13,13 +13,13 @@ class CupertinoPickerSheet extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeSetting = ref.watch(themeSettingsNotifierProvider);
+    final themeSettings = ref.watch(themeSettingsNotifierProvider);
 
     return Container(
       height: 200.h,
       color: selectColor(
         context: context,
-        themeSetting: themeSetting,
+        themeSettings: themeSettings,
         lightColor: Colors.white,
         darkColor: colors.darkItemColor,
       ),
@@ -28,7 +28,7 @@ class CupertinoPickerSheet extends ConsumerWidget {
           Row(
             children: [
               SizedBox(width: 10.w),
-              _cancelButton(context, themeSetting),
+              _cancelButton(context, themeSettings),
               const Spacer(),
               _saveButton(context),
               SizedBox(width: 10.w),
@@ -41,7 +41,7 @@ class CupertinoPickerSheet extends ConsumerWidget {
   }
 
   /// 変更をキャンセルしてPickerを閉じるボタン
-  Widget _cancelButton(BuildContext context, ThemeSetting themeSetting) {
+  Widget _cancelButton(BuildContext context, ThemeSettings themeSettings) {
     return TextButton(
       onPressed: () => Navigator.pop(context),
       child: Text(
@@ -50,7 +50,7 @@ class CupertinoPickerSheet extends ConsumerWidget {
           fontSize: 15.5.sp,
           color: selectColor(
             context: context,
-            themeSetting: themeSetting,
+            themeSettings: themeSettings,
             lightColor: Colors.grey.shade800,
             darkColor: Colors.white,
           ),
