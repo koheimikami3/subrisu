@@ -1,4 +1,3 @@
-import '../../../../../constants/urls.dart' as urls;
 import '../../../../../importer.dart';
 
 /// アップデートを促すダイアログ
@@ -31,7 +30,7 @@ class ForcedUpdateDialog extends StatelessWidget {
       text: AppLocalizations.of(context)!.openStoreUrlButton,
       onPressed: () async {
         final url = Uri.parse(
-          Platform.isIOS ? urls.appStoreUrl : urls.googlePlayStoreUrl,
+          Platform.isIOS ? AppUrls.appStore : AppUrls.googlePlayStore,
         );
 
         if (await canLaunchUrl(url)) {

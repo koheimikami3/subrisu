@@ -1,18 +1,24 @@
-// AppStoreのアプリID
-const appStoreId = '1661226530';
+/// アプリケーション全体で使用される外部URLを管理する定数クラス
+class AppUrls {
+  AppUrls._();
 
-// AppStore
-const appStoreUrl = 'https://apps.apple.com/jp/app/id$appStoreId?mt=8';
+  // AppStoreのアプリID
+  static const appStoreId = '1661226530';
 
-// GooglePlayStore
-const googlePlayStoreUrl = '';
+  // AppStore
+  static const appStore = 'https://apps.apple.com/jp/app/id$appStoreId?mt=8';
 
-// 利用規約
-const termsOfServiceUrl = 'https://koheimikami3.github.io/subrisu-tos/';
+  // GooglePlayStore
+  static const googlePlayStore = '';
 
-// プライバシーポリシー
-const privacyPolicyUrl = 'https://koheimikami3.github.io/subrisu-privacy/';
+  // プライバシーポリシー
+  static const privacyPolicy =
+      'https://koheimikami3.github.io/subrisu-privacy/';
 
-// お問い合わせフォーム
-const inquiryUrl =
-    'https://docs.google.com/forms/d/e/1FAIpQLScJbWjUZPj62IYlygoLyh8_4hHbOK9D1H_7sVhPOlwev9499g/viewform?usp=sf_link';
+  // 利用規約
+  static const termsOfService = 'https://koheimikami3.github.io/subrisu-tos/';
+
+  // お問い合わせフォーム
+  static const inquiry =
+      'https://docs.google.com/forms/d/e/1FAIpQLScJbWjUZPj62IYlygoLyh8_4hHbOK9D1H_7sVhPOlwev9499g/viewform?usp=sf_link';
+}
