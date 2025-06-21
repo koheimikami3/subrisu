@@ -79,8 +79,8 @@ export 'package:subrisu/features/subscription/data/delete_subscription_provider.
 export 'package:subrisu/features/subscription/data/subscriptions_provider.dart';
 export 'package:subrisu/features/subscription/data/update_subscription_provider.dart';
 export 'package:subrisu/features/subscription/domain/subscription/subscription.dart';
-export 'package:subrisu/features/subscription/domain/subscription_creation_data/subscription_creation_data.dart';
-export 'package:subrisu/features/subscription/domain/subscription_creation_data/subscription_creation_data_provider.dart';
+export 'package:subrisu/features/subscription/domain/subscription_data/subscription_data.dart';
+export 'package:subrisu/features/subscription/domain/subscription_data/subscription_data_provider.dart';
 export 'package:subrisu/features/subscription/presentation/create/create_subscription_page.dart';
 export 'package:subrisu/features/subscription/presentation/create/create_subscription_page_body.dart';
 export 'package:subrisu/features/subscription/presentation/create/widgets/create_subscription_button.dart';

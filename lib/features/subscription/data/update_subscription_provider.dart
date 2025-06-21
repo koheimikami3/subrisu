@@ -6,7 +6,7 @@ part 'update_subscription_provider.g.dart';
 @riverpod
 Future<void> updateSubscription(Ref ref, String subscriptionId) async {
   final userId = ref.read(userIdProvider);
-  final creationData = ref.read(subscriptionCreationDataProvider);
+  final subscriptionData = ref.read(subscriptionDataProvider);
 
   // SubscriptionDocumentを更新
   await ref
@@ -15,5 +15,5 @@ Future<void> updateSubscription(Ref ref, String subscriptionId) async {
       .doc(userId)
       .collection('subscriptions')
       .doc(subscriptionId)
-      .update(creationData.toJson());
+      .update(subscriptionData.toJson());
 }

@@ -1,12 +1,12 @@
 import 'package:subrisu/importer.dart';
 
-part 'subscription_creation_data.freezed.dart';
-part 'subscription_creation_data.g.dart';
+part 'subscription_data.freezed.dart';
+part 'subscription_data.g.dart';
 
-/// SubscriptionDocumentの作成（更新）データ
+/// SubscriptionDocumentを作成または更新するためのDTOクラス
 @freezed
-abstract class SubscriptionCreationData implements _$SubscriptionCreationData {
-  const factory SubscriptionCreationData({
+abstract class SubscriptionData implements _$SubscriptionData {
+  const factory SubscriptionData({
     // サービス名
     required String serviceName,
 
@@ -33,10 +33,10 @@ abstract class SubscriptionCreationData implements _$SubscriptionCreationData {
 
     // 更新日時
     @UpdatedAtField() DateTime? updatedAt,
-  }) = _SubscriptionCreationData;
+  }) = _SubscriptionData;
 
-  const SubscriptionCreationData._();
+  const SubscriptionData._();
 
-  factory SubscriptionCreationData.fromJson(Map<String, dynamic> json) =>
-      _$SubscriptionCreationDataFromJson(json);
+  factory SubscriptionData.fromJson(Map<String, dynamic> json) =>
+      _$SubscriptionDataFromJson(json);
 }

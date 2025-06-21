@@ -1,10 +1,10 @@
 import '../../../../../importer.dart';
 
-part 'subscription_creation_data_provider.g.dart';
+part 'subscription_data_provider.g.dart';
 
-/// SubscriptionCreationDataを作成するProvider
+/// SubscriptionDataを作成するProvider
 @riverpod
-SubscriptionCreationData subscriptionCreationData(Ref ref) {
+SubscriptionData subscriptionData(Ref ref) {
   final formState = ref.read(subscriptionFormNotifierProvider);
   var iconImagePath = formState.resultIconImagePath;
   late final DateTime firstPaidOn;
@@ -25,8 +25,8 @@ SubscriptionCreationData subscriptionCreationData(Ref ref) {
     );
   }
 
-  // SubscriptionDocumentの作成データ
-  final creationData = SubscriptionCreationData(
+  // SubscriptionDocumentの作成または更新データ
+  final subscriptionData = SubscriptionData(
     serviceName: formState.serviceName,
     price: formState.price,
     iconImagePath: iconImagePath,
@@ -35,5 +35,5 @@ SubscriptionCreationData subscriptionCreationData(Ref ref) {
     notification: formState.notification,
     memo: formState.memo,
   );
-  return creationData;
+  return subscriptionData;
 }
