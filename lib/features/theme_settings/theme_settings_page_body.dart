@@ -9,11 +9,11 @@ class ThemeSettingsPageBody extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 25.h),
-        const SwitchDeviceThemeTile(),
+        const SelectDeviceThemeTile(),
         const ItemDivider(),
-        const SwitchLightThemeTile(),
+        const SelectLightThemeTile(),
         const ItemDivider(),
-        const SwitchDarkThemeTile(),
+        const SelectDarkThemeTile(),
       ],
     );
   }

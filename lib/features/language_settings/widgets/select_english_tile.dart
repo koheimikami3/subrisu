@@ -1,9 +1,9 @@
 import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
-/// 英語に変更するタイル
-class SwitchEnglishTile extends ConsumerWidget {
-  const SwitchEnglishTile({super.key});
+/// 言語を英語に変更するタイル
+class SelectEnglishTile extends ConsumerWidget {
+  const SelectEnglishTile({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
