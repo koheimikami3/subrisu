@@ -1,4 +1,3 @@
-import 'constants/colors.dart' as colors;
 import 'constants/configs.dart' as configs;
 import 'importer.dart';
 
@@ -7,7 +6,7 @@ ThemeData appThemeLight() {
   return ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
-    colorSchemeSeed: colors.appColor,
+    colorSchemeSeed: AppColors.primary,
     scaffoldBackgroundColor: Colors.grey.shade50,
     splashColor: Colors.transparent,
     iconTheme: IconThemeData(color: Colors.grey.shade600),
@@ -19,13 +18,13 @@ ThemeData appThemeLight() {
       style: TextButton.styleFrom(
         textStyle: TextStyle(
           fontSize: configs.defaultFontSize.sp,
-          color: colors.appColor,
+          color: AppColors.primary,
         ),
       ),
     ),
     dialogTheme: const DialogTheme(surfaceTintColor: Colors.white),
     progressIndicatorTheme:
-        const ProgressIndicatorThemeData(color: colors.appColor),
+        const ProgressIndicatorThemeData(color: AppColors.primary),
   );
 }
 
@@ -34,7 +33,7 @@ ThemeData appThemeDark() {
   return ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
-    colorSchemeSeed: colors.appColor,
+    colorSchemeSeed: AppColors.primary,
     iconTheme: IconThemeData(color: Colors.grey.shade400),
     splashColor: Colors.transparent,
     appBarTheme: _darkAppBarTheme(),
@@ -45,7 +44,7 @@ ThemeData appThemeDark() {
       style: TextButton.styleFrom(
         textStyle: TextStyle(
           fontSize: configs.defaultFontSize.sp,
-          color: colors.appColor,
+          color: AppColors.primary,
         ),
       ),
     ),
@@ -55,7 +54,7 @@ ThemeData appThemeDark() {
 /// ライトモードAppBarのUI設定を行う
 AppBarTheme _lightAppBarTheme() {
   return AppBarTheme(
-    backgroundColor: colors.appColor,
+    backgroundColor: AppColors.primary,
     iconTheme: const IconThemeData(color: Colors.white),
     titleTextStyle: TextStyle(
       fontSize: 16.sp,
@@ -96,7 +95,7 @@ BottomNavigationBarThemeData _darkBottomNavTheme() {
     unselectedIconTheme: IconThemeData(size: 28.w),
     selectedLabelStyle: TextStyle(fontSize: 12.sp),
     unselectedLabelStyle: TextStyle(fontSize: 12.sp),
-    selectedItemColor: colors.appColor,
+    selectedItemColor: AppColors.primary,
   );
 }
 
@@ -105,7 +104,7 @@ FloatingActionButtonThemeData _floatingButtonTheme() {
   return const FloatingActionButtonThemeData(
     elevation: 2,
     highlightElevation: 2,
-    backgroundColor: colors.appColor,
+    backgroundColor: AppColors.primary,
   );
 }
 
@@ -122,9 +121,6 @@ TextTheme _lightTextTheme() {
 /// ダークモードTextのUI設定を行う
 TextTheme _darkTextTheme() {
   return TextTheme(
-    bodyMedium: TextStyle(
-      fontSize: configs.defaultFontSize.sp,
-      // color: Colors.white,
-    ),
+    bodyMedium: TextStyle(fontSize: configs.defaultFontSize.sp),
   );
 }

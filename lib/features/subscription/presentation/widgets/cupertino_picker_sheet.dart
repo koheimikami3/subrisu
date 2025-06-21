@@ -1,4 +1,3 @@
-import '../../../../constants/colors.dart' as colors;
 import '../../../../importer.dart';
 
 class CupertinoPickerSheet extends ConsumerWidget {
@@ -21,7 +20,7 @@ class CupertinoPickerSheet extends ConsumerWidget {
         context: context,
         themeSettings: themeSettings,
         lightColor: Colors.white,
-        darkColor: colors.darkItemColor,
+        darkColor: AppColors.darkItem,
       ),
       child: Column(
         children: [
@@ -67,7 +66,7 @@ class CupertinoPickerSheet extends ConsumerWidget {
         AppLocalizations.of(context)!.pickerSaveButton,
         style: TextStyle(
           fontSize: 15.5.sp,
-          color: colors.appColor,
+          color: AppColors.primary,
         ),
       ),
     );
