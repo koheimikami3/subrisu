@@ -7,7 +7,7 @@ part of 'create_subscription_provider.dart';
 // **************************************************************************
 
 String _$createSubscriptionHash() =>
-    r'5271677e7becbe609c9d75a21283779886ae8b49';
+    r'b89f2e522ef36b962153b927b8dfc7c46890f3dd';
 
 /// SubscriptionDocumentを作成するFutureProvider
 ///
