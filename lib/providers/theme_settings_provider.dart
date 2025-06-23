@@ -1,5 +1,4 @@
 import '../../../importer.dart';
-import '../constants/configs.dart' as configs;
 
 part 'theme_settings_provider.g.dart';
 
@@ -11,7 +10,7 @@ class ThemeSettingsNotifier extends _$ThemeSettingsNotifier {
     final prefs = ref.read(sharedPreferencesProvider);
 
     // テーマの設定状況を取得
-    final theme = prefs.getInt(configs.themeKey) ?? 0;
+    final theme = prefs.getInt(AppConfigs.themeSharedKey) ?? 0;
 
     if (theme == ThemeSettings.device.index) {
       return ThemeSettings.device;
@@ -43,6 +42,6 @@ class ThemeSettingsNotifier extends _$ThemeSettingsNotifier {
   /// テーマ設定をSharedPreferencesに保存
   void _saveThemeSettings(int themeIndex) {
     final prefs = ref.read(sharedPreferencesProvider);
-    prefs.setInt(configs.themeKey, themeIndex);
+    prefs.setInt(AppConfigs.themeSharedKey, themeIndex);
   }
 }

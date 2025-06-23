@@ -1,5 +1,4 @@
 import '../../importer.dart';
-import '../constants/configs.dart' as configs;
 
 /// カスタムFilledButton
 class MyFilledButton extends ConsumerWidget {
@@ -30,13 +29,13 @@ class MyFilledButton extends ConsumerWidget {
             darkColor: Colors.grey.shade600,
           ),
           textStyle: TextStyle(
-            fontSize: configs.defaultFontSize.sp,
+            fontSize: AppConfigs.defaultFontSize.sp,
           ),
         ),
         child: Text(
           text,
           style: TextStyle(
-            fontSize: configs.defaultFontSize.sp,
+            fontSize: AppConfigs.defaultFontSize.sp,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),

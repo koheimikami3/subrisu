@@ -1,4 +1,3 @@
-import 'constants/configs.dart' as configs;
 import 'importer.dart';
 
 class MyApp extends ConsumerStatefulWidget {
@@ -23,9 +22,9 @@ class _MyAppState extends ConsumerState<MyApp> {
   /// 起動回数をインクリメントして保存する
   Future<void> _incrementLaunchCount() async {
     final pref = ref.read(sharedPreferencesProvider);
-    var launchCount = pref.getInt(configs.launchCountShareKey) ?? 0;
+    var launchCount = pref.getInt(AppConfigs.launchCountSharedKey) ?? 0;
     launchCount++;
-    await pref.setInt(configs.launchCountShareKey, launchCount);
+    await pref.setInt(AppConfigs.launchCountSharedKey, launchCount);
   }
 
   @override

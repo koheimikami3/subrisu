@@ -1,4 +1,3 @@
-import '../constants/configs.dart' as configs;
 import '../importer.dart';
 
 /// カスタムTextFormField
@@ -40,7 +39,7 @@ class MyTextFormField extends ConsumerWidget {
         contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 10.w),
         isDense: true,
         hintText: hintText,
-        hintStyle: TextStyle(fontSize: configs.defaultFontSize.sp),
+        hintStyle: TextStyle(fontSize: AppConfigs.defaultFontSize.sp),
         counterText: '',
         filled: true,
         fillColor: selectColor(

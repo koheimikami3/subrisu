@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 
 import '../../importer.dart';
-import '../constants/configs.dart' as configs;
 
 /// バナー広告
 class MyBannerAd extends ConsumerStatefulWidget {
@@ -15,11 +14,11 @@ class _MyBannerAdState extends ConsumerState<MyBannerAd> {
   final _myBanner = BannerAd(
     adUnitId: Platform.isIOS
         ? kReleaseMode
-            ? configs.iOSReleaseAdId
-            : configs.iOSDebugAdId
+            ? Env.iOSReleaseAdId
+            : Env.iOSDebugAdId
         : kReleaseMode
-            ? configs.androidDebugAdId
-            : configs.androidDebugAdId,
+            ? Env.androidDebugAdId
+            : Env.androidDebugAdId,
     size: AdSize.fullBanner,
     request: const AdRequest(),
     listener: const BannerAdListener(),
@@ -45,11 +44,11 @@ class _MyBannerAdState extends ConsumerState<MyBannerAd> {
               height: BannerAd(
                 adUnitId: Platform.isIOS
                     ? kReleaseMode
-                        ? configs.iOSReleaseAdId
-                        : configs.iOSDebugAdId
+                        ? Env.iOSReleaseAdId
+                        : Env.iOSDebugAdId
                     : kReleaseMode
-                        ? configs.androidDebugAdId
-                        : configs.androidDebugAdId,
+                        ? Env.androidDebugAdId
+                        : Env.androidDebugAdId,
                 size: AdSize.fullBanner,
                 request: const AdRequest(),
                 listener: const BannerAdListener(),

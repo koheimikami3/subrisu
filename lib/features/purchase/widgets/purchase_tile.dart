@@ -1,4 +1,3 @@
-import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
 /// 購入処理を行うタイル
@@ -27,7 +26,7 @@ class PurchaseTile extends ConsumerWidget {
     final themeSettings = ref.watch(themeSettingsNotifierProvider);
     final price = ref
         .read(firebaseRemoteConfigProvider)
-        .getString(configs.purchasePriceRemoteKey);
+        .getString(AppConfigs.purchasePriceRemoteKey);
 
     return Text(
       purchaseStatus == PurchaseStatus.active
@@ -93,7 +92,7 @@ class PurchaseTile extends ConsumerWidget {
 
     // 購入情報を取得
     final entitlementInfo =
-        customerInfo.entitlements.all[configs.entitlementId];
+        customerInfo.entitlements.all[Env.revenueCatEntitlementId];
 
     // 購入に成功している場合
     if (entitlementInfo != null && entitlementInfo.isActive) {

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import '../../../importer.dart';
-import '../constants/configs.dart' as configs;
 
 part 'sort_settings_provider.g.dart';
 
@@ -10,8 +9,8 @@ part 'sort_settings_provider.g.dart';
 class SortSettingsNotifier extends _$SortSettingsNotifier {
   @override
   SortSettings build() {
-    final index =
-        ref.read(sharedPreferencesProvider).getInt(configs.listSortKey) ?? 0;
+    final prefs = ref.read(sharedPreferencesProvider);
+    final index = prefs.getInt(AppConfigs.subscriptionListSortKey) ?? 0;
 
     return SortSettings.values[index];
   }
@@ -22,6 +21,6 @@ class SortSettingsNotifier extends _$SortSettingsNotifier {
   void setSortSettings(SortSettings value) {
     final prefs = ref.read(sharedPreferencesProvider);
     state = value;
-    unawaited(prefs.setInt(configs.listSortKey, value.index));
+    unawaited(prefs.setInt(AppConfigs.subscriptionListSortKey, value.index));
   }
 }

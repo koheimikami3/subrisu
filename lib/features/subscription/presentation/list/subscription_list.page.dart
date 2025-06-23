@@ -1,4 +1,3 @@
-import '../../../../constants/configs.dart' as configs;
 import '../../../../importer.dart';
 
 /// サブスクリプション一覧画面
@@ -28,8 +27,8 @@ class _SubscriptionListPageState extends ConsumerState<SubscriptionListPage> {
   /// 強制アップデートダイアログを表示する
   void _showForcedUpdateDialog() {
     final remoteKey = Platform.isIOS
-        ? configs.forceAppVersionIOSRemoteKey
-        : configs.forceAppVersionAndroidRemoteKey;
+        ? AppConfigs.iOSForcedAppVersionRemoteKey
+        : AppConfigs.androidForcedAppVersionRemoteKey;
 
     // 強制アップデートバージョンを取得
     final strForcedUpdateVersion =
@@ -75,7 +74,7 @@ class _SubscriptionListPageState extends ConsumerState<SubscriptionListPage> {
   Future<void> _showRequestReviewDialog() async {
     final inAppReview = ref.read(inAppReviewProvider);
     final pref = ref.read(sharedPreferencesProvider);
-    final launchCount = pref.getInt(configs.launchCountShareKey) ?? 0;
+    final launchCount = pref.getInt(AppConfigs.launchCountSharedKey) ?? 0;
 
     if (launchCount == 5 && await inAppReview.isAvailable()) {
       await inAppReview.requestReview();

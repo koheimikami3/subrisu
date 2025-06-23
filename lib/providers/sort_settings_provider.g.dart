@@ -7,7 +7,7 @@ part of 'sort_settings_provider.dart';
 // **************************************************************************
 
 String _$sortSettingsNotifierHash() =>
-    r'0b96aea1b75edf9a4e1e786d97c1af2cd512348a';
+    r'c5acf4b3d9c95d995b0ea57815d96cfc6120a312';
 
 /// サブスクリプションリストの並び替え設定を管理するNotifierProvider
 ///
