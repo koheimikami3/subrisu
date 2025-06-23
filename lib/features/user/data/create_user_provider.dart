@@ -26,7 +26,7 @@ Future<void> createUser(Ref ref, String userId) async {
   // UserDocumentを作成
   await ref
       .read(firebaseFirestoreProvider)
-      .collection('users')
+      .collection(FirestoreConstants.usersCollection)
       .doc(userId)
       .set(userData.toJson());
 }

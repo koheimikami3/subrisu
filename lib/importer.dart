@@ -45,6 +45,7 @@ export 'package:subrisu/components/my_list_tile.dart';
 export 'package:subrisu/components/my_text_field.dart';
 export 'package:subrisu/constants/colors.dart';
 export 'package:subrisu/constants/configs.dart';
+export 'package:subrisu/constants/firestore_constants.dart';
 export 'package:subrisu/constants/urls.dart';
 export 'package:subrisu/enums/language_settings.dart';
 export 'package:subrisu/enums/payment_cycle.dart';

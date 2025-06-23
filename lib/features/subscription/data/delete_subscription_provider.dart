@@ -10,9 +10,9 @@ Future<void> deleteSubscription(Ref ref, String subscriptionId) async {
   // SubscriptionDocumentを削除
   await ref
       .read(firebaseFirestoreProvider)
-      .collection('users')
+      .collection(FirestoreConstants.usersCollection)
       .doc(userId)
-      .collection('subscriptions')
+      .collection(FirestoreConstants.subscriptionsCollection)
       .doc(subscriptionId)
       .delete();
 }

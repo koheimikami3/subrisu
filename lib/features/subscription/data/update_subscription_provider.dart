@@ -11,9 +11,9 @@ Future<void> updateSubscription(Ref ref, String subscriptionId) async {
   // SubscriptionDocumentを更新
   await ref
       .read(firebaseFirestoreProvider)
-      .collection('users')
+      .collection(FirestoreConstants.usersCollection)
       .doc(userId)
-      .collection('subscriptions')
+      .collection(FirestoreConstants.subscriptionsCollection)
       .doc(subscriptionId)
       .update(subscriptionData.toJson());
 }
