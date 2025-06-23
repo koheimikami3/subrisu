@@ -13,7 +13,7 @@ Future<void> updateToken(Ref ref) async {
   // UserDocumentのtokenを更新
   await ref
       .read(firebaseFirestoreProvider)
-      .collection('users')
+      .collection(FirestoreConstants.usersCollection)
       .doc(userId)
-      .update({'token': token});
+      .update({FirestoreConstants.tokenField: token});
 }

@@ -11,8 +11,8 @@ Future<void> createSubscription(Ref ref) async {
   // SubscriptionDocumentを作成
   await ref
       .read(firebaseFirestoreProvider)
-      .collection('users')
+      .collection(FirestoreConstants.usersCollection)
       .doc(userId)
-      .collection('subscriptions')
+      .collection(FirestoreConstants.subscriptionsCollection)
       .add(subscriptionData.toJson());
 }

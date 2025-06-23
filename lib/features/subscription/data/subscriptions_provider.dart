@@ -10,10 +10,10 @@ Stream<List<Subscription>> subscriptions(Ref ref) {
   final userId = ref.read(userIdProvider);
   return ref
       .read(firebaseFirestoreProvider)
-      .collection('users')
+      .collection(FirestoreConstants.usersCollection)
       .doc(userId)
-      .collection('subscriptions')
-      .orderBy('createdAt')
+      .collection(FirestoreConstants.subscriptionsCollection)
+      .orderBy(FirestoreConstants.createdAtField)
       .withConverter<Subscription>(
         fromFirestore: Subscription.fromFirestore,
         toFirestore: (subscription, _) => subscription.toFirestore(),
