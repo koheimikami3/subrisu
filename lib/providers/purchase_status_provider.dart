@@ -1,5 +1,4 @@
 import '../../../importer.dart';
-import '../constants/configs.dart' as configs;
 
 part 'purchase_status_provider.g.dart';
 
@@ -14,9 +13,8 @@ class PurchaseStatusNotifier extends _$PurchaseStatusNotifier {
   /// 課金ユーザーの場合はバナー広告を非表示にする
   Future<void> initStatus() async {
     await Purchases.setLogLevel(LogLevel.debug);
-    final apiKey = Platform.isIOS
-        ? configs.revenueCatIOSKey
-        : configs.revenueCatAndroidKey;
+    final apiKey =
+        Platform.isIOS ? Env.revenueCatIOSApiKey : Env.revenueCatAndroidApiKey;
 
     // RevenueCatAPIを初期化
     await Purchases.configure(PurchasesConfiguration(apiKey));
@@ -24,7 +22,7 @@ class PurchaseStatusNotifier extends _$PurchaseStatusNotifier {
     // 課金ユーザーか判定
     final customerInfo = await Purchases.getCustomerInfo();
     final entitlementInfo =
-        customerInfo.entitlements.all[configs.entitlementId];
+        customerInfo.entitlements.all[Env.revenueCatEntitlementId];
 
     // 課金ユーザーの場合、バナー広告を非表示にする
     if (entitlementInfo != null && entitlementInfo.isActive) {

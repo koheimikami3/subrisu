@@ -1,4 +1,3 @@
-import 'constants/configs.dart' as configs;
 import 'importer.dart';
 
 /// ライトモードのテーマ設定を行う
@@ -17,7 +16,7 @@ ThemeData appThemeLight() {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         textStyle: TextStyle(
-          fontSize: configs.defaultFontSize.sp,
+          fontSize: AppConfigs.defaultFontSize.sp,
           color: AppColors.primary,
         ),
       ),
@@ -43,7 +42,7 @@ ThemeData appThemeDark() {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         textStyle: TextStyle(
-          fontSize: configs.defaultFontSize.sp,
+          fontSize: AppConfigs.defaultFontSize.sp,
           color: AppColors.primary,
         ),
       ),
@@ -112,7 +111,7 @@ FloatingActionButtonThemeData _floatingButtonTheme() {
 TextTheme _lightTextTheme() {
   return TextTheme(
     bodyMedium: TextStyle(
-      fontSize: configs.defaultFontSize.sp,
+      fontSize: AppConfigs.defaultFontSize.sp,
       // color: Colors.black87,
     ),
   );
@@ -121,6 +120,6 @@ TextTheme _lightTextTheme() {
 /// ダークモードTextのUI設定を行う
 TextTheme _darkTextTheme() {
   return TextTheme(
-    bodyMedium: TextStyle(fontSize: configs.defaultFontSize.sp),
+    bodyMedium: TextStyle(fontSize: AppConfigs.defaultFontSize.sp),
   );
 }

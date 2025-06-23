@@ -1,5 +1,4 @@
 import '../../../importer.dart';
-import '../constants/configs.dart' as configs;
 
 part 'language_settings_provider.g.dart';
 
@@ -11,7 +10,7 @@ class LanguageSettingsNotifier extends _$LanguageSettingsNotifier {
     final prefs = ref.read(sharedPreferencesProvider);
 
     // 言語の設定状況を取得
-    var language = prefs.getInt(configs.languageKey);
+    var language = prefs.getInt(AppConfigs.languageSharedKey);
 
     // 未設定の場合、端末の言語設定が日本語の場合以外は英語に設定
     language ??=
@@ -41,6 +40,6 @@ class LanguageSettingsNotifier extends _$LanguageSettingsNotifier {
   /// 言語設定をSharedPreferencesに保存
   void _saveLanguageSettings(int languageIndex) {
     final prefs = ref.read(sharedPreferencesProvider);
-    prefs.setInt(configs.languageKey, languageIndex);
+    prefs.setInt(AppConfigs.languageSharedKey, languageIndex);
   }
 }

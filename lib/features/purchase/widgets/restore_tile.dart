@@ -1,4 +1,3 @@
-import '../../../constants/configs.dart' as configs;
 import '../../../importer.dart';
 
 /// 復元処理を行うタイル
@@ -24,7 +23,7 @@ class RestoreTile extends ConsumerWidget {
       // 過去の購入情報を取得
       final customerInfo = await Purchases.restorePurchases();
       final entitlementInfo =
-          customerInfo.entitlements.all[configs.entitlementId];
+          customerInfo.entitlements.all[Env.revenueCatEntitlementId];
 
       // 過去に購入している場合
       if (entitlementInfo != null && entitlementInfo.isActive) {
