@@ -7,7 +7,7 @@ part of 'purchase_status_provider.dart';
 // **************************************************************************
 
 String _$purchaseStatusNotifierHash() =>
-    r'6532ab8f42274a6aee18ef6c0d17bf0549b4fc67';
+    r'3539884b85ab5a4bed693229ff4cb04f42cd6a25';
 
 /// 画面テーマ設定のNotifierProvider
 ///

@@ -25,4 +25,14 @@ class AppConfigs {
 
   // 課金価格のRemoteConfigキー
   static const purchasePriceRemoteKey = 'purchasePrice';
+
+  // 日本語の言語コード
+  static const japaneseLanguageCode = 'ja';
+
+  // 英語の言語コード
+  static const englishLanguageCode = 'en';
+
+  // 各OS
+  static const iOS = 'iOS';
+  static const android = 'Android';
 }

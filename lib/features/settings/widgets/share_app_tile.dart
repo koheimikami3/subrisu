@@ -10,7 +10,9 @@ class ShareAppTile extends StatelessWidget {
       position: TilePosition.middle,
       name: AppLocalizations.of(context)!.shareItem,
       leadingIcon: Icons.share_outlined,
-      onTap: () => Share.share('サブリス - サブスクと固定費をリストで管理\n${AppUrls.appStore}'),
+      onTap: () => Share.share(
+        AppLocalizations.of(context)!.shareText(AppUrls.appStore),
+      ),
     );
   }
 }

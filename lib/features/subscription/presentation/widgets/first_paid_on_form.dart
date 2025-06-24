@@ -95,7 +95,8 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
       context: context,
       builder: (_) {
         return CupertinoPickerSheet(
-          picker: Localizations.localeOf(context) == const Locale('en')
+          picker: Localizations.localeOf(context) ==
+                  const Locale(AppConfigs.englishLanguageCode)
               ? Row(
                   children: [
                     Expanded(child: _monthPicker(context)),
@@ -147,9 +148,7 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
         for (int i = 0; i < _yearList.length; i++) ...{
           Center(
             child: Text(
-              Localizations.localeOf(context) == const Locale('en')
-                  ? '${_yearList[i]}'
-                  : '${_yearList[i]}年',
+              AppLocalizations.of(context)!.firstPaidYear(_yearList[i]),
             ),
           ),
         },
@@ -171,10 +170,11 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
         for (int i = 0; i < _monthList.length; i++) ...{
           Center(
             child: Text(
-              Localizations.localeOf(context) == const Locale('en')
+              Localizations.localeOf(context) ==
+                      const Locale(AppConfigs.englishLanguageCode)
                   ? DateFormat.MMMM()
                       .format(DateTime(_yearList[i], _monthList[i]))
-                  : '${_monthList[i]}月',
+                  : AppLocalizations.of(context)!.firstPaidMonth(_monthList[i]),
             ),
           ),
         },
@@ -196,9 +196,7 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
         for (int i = 0; i < _dayList.length; i++) ...{
           Center(
             child: Text(
-              Localizations.localeOf(context) == const Locale('en')
-                  ? '${_dayList[i]}'
-                  : '${_dayList[i]}日',
+              AppLocalizations.of(context)!.firstPaidDay(_dayList[i]),
             ),
           ),
         },
