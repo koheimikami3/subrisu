@@ -10,15 +10,11 @@ class ThemeSettingsNotifier extends _$ThemeSettingsNotifier {
     final prefs = ref.read(sharedPreferencesProvider);
 
     // テーマの設定状況を取得
-    final theme = prefs.getInt(AppConfigs.themeSharedKey) ?? 0;
+    // 未設定の場合、端末モードに設定
+    final themeIndex =
+        prefs.getInt(AppConfigs.themeSharedKey) ?? ThemeSettings.device.index;
 
-    if (theme == ThemeSettings.device.index) {
-      return ThemeSettings.device;
-    } else if (theme == ThemeSettings.light.index) {
-      return ThemeSettings.light;
-    } else {
-      return ThemeSettings.dark;
-    }
+    return ThemeSettings.values[themeIndex];
   }
 
   /// 状態をdeviceに更新
