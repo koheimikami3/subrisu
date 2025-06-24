@@ -7,7 +7,7 @@ part of 'language_settings_provider.dart';
 // **************************************************************************
 
 String _$languageSettingsNotifierHash() =>
-    r'8bfad01a27764f971bdfd99dc99e583ab52e22df';
+    r'9912890316a82d6b6a9a2df19bfd3f34d109d9e3';
 
 /// アプリケーションの言語設定を管理するNotifierProvider
 ///
