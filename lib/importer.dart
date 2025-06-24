@@ -60,6 +60,7 @@ export 'package:subrisu/features/language_settings/widgets/select_english_tile.d
 export 'package:subrisu/features/language_settings/widgets/select_japanese_tile.dart';
 export 'package:subrisu/features/login_error/login_error_page.dart';
 export 'package:subrisu/features/login_error/login_error_page_body.dart';
+export 'package:subrisu/features/purchase/providers/offerings_provider.dart';
 export 'package:subrisu/features/purchase/purchase_page.dart';
 export 'package:subrisu/features/purchase/purchase_page_body.dart';
 export 'package:subrisu/features/purchase/widgets/purchase_tile.dart';

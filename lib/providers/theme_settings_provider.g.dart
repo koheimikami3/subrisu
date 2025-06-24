@@ -7,7 +7,7 @@ part of 'theme_settings_provider.dart';
 // **************************************************************************
 
 String _$themeSettingsNotifierHash() =>
-    r'b497912ecf0d63a5f04c5d1190df64ed380e4a16';
+    r'cfef9d4e0ffcec6e23377ca19d9b0741dcaf7ba2';
 
 /// アプリケーションのテーマ設定を管理するNotifierProvider
 ///

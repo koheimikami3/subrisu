@@ -17,28 +17,46 @@ class PurchaseTile extends ConsumerWidget {
     );
   }
 
-  /// 価格を表示する
+  /// RevenueCatから取得した価格を表示する
   Widget _price(
     BuildContext context,
     WidgetRef ref,
     PurchaseStatus purchaseStatus,
   ) {
     final themeSettings = ref.watch(themeSettingsNotifierProvider);
-    final price = ref
-        .read(firebaseRemoteConfigProvider)
-        .getString(AppConfigs.purchasePriceRemoteKey);
+    final asyncOfferings = ref.watch(offeringsProvider);
 
-    return Text(
-      purchaseStatus == PurchaseStatus.active
-          ? AppLocalizations.of(context)!.alreadyPurchased
-          : '¥$price',
-      style: TextStyle(
-        color: selectColor(
-          context: context,
-          themeSettings: themeSettings,
-          lightColor: Colors.grey.shade600,
-          darkColor: Colors.grey.shade300,
-        ),
+    return asyncOfferings.when(
+      loading: _indicator,
+      error: (_, __) => const SizedBox.shrink(),
+      data: (offerings) {
+        final offering = offerings.current;
+        final package = offering!.lifetime;
+
+        return Text(
+          purchaseStatus == PurchaseStatus.active
+              ? AppLocalizations.of(context)!.alreadyPurchased
+              : package!.storeProduct.priceString,
+          style: TextStyle(
+            color: selectColor(
+              context: context,
+              themeSettings: themeSettings,
+              lightColor: Colors.grey.shade600,
+              darkColor: Colors.grey.shade300,
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  /// 価格を取得中の際に表示するインジケーター
+  CircularProgressIndicator _indicator() {
+    return CircularProgressIndicator(
+      strokeWidth: 2,
+      constraints: BoxConstraints(
+        minHeight: 13.h,
+        minWidth: 13.h,
       ),
     );
   }
@@ -53,7 +71,7 @@ class PurchaseTile extends ConsumerWidget {
 
     try {
       // RevenueCatのofferingsを取得
-      offerings = await Purchases.getOfferings();
+      offerings = await ref.read(offeringsProvider.future);
     } on PlatformException {
       // プログレスダイアログを閉じる
       Navigator.pop(context);
