@@ -86,6 +86,36 @@
             }
         }
     },
+    "firstPaidYear": "{year}",
+    "@firstPaidYear": {
+        "description": "",
+        "placeholders": {
+            "year": {
+                "type": "int",
+                "description": ""
+            }
+        }
+    },
+    "firstPaidMonth": "{month}",
+    "@firstPaidMonth": {
+        "description": "",
+        "placeholders": {
+            "month": {
+                "type": "int",
+                "description": ""
+            }
+        }
+    },
+    "firstPaidDay": "{day}",
+    "@firstPaidDay": {
+        "description": "",
+        "placeholders": {
+            "day": {
+                "type": "int",
+                "description": ""
+            }
+        }
+    },
     "price": "¥{price}",
     "@price": {
         "description": "",
@@ -173,6 +203,16 @@
     "shareItem": "Share",
     "@shareItem": {
         "description": ""
+    },
+    "shareText": "SUBRISU - Subscription & Recurring Expense Tracker\n{storeUrl}",
+    "@shareText": {
+        "description": "",
+        "placeholders": {
+            "storeUrl": {
+                "type": "String",
+                "description": ""
+            }
+        }
     },
     "inquiryItem": "Inquiry",
     "@inquiryItem": {
@@ -285,6 +325,20 @@
     "confirmationDialogTitle": "Confirm",
     "@confirmationDialogTitle": {
         "description": ""
+    },
+    "forcedUpdateDialogTitle": "Update Available",
+    "@forcedUpdateDialogTitle": {
+        "description": ""
+    },
+    "forcedUpdateDialogContent": "A new version of the app is available. Please update to version {version} now.",
+    "@forcedUpdateDialogContent": {
+        "description": "",
+        "placeholders": {
+            "version": {
+                "type": "String",
+                "description": ""
+            }
+        }
     },
     "updateContentsDialogTitle": "Update details",
     "@updateContentsDialogTitle": {

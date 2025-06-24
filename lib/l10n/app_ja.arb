@@ -86,6 +86,36 @@
             }
         }
     },
+    "firstPaidYear": "{year}年",
+    "@firstPaidYear": {
+        "description": "",
+        "placeholders": {
+            "year": {
+                "type": "int",
+                "description": ""
+            }
+        }
+    },
+    "firstPaidMonth": "{month}月",
+    "@firstPaidMonth": {
+        "description": "",
+        "placeholders": {
+            "month": {
+                "type": "int",
+                "description": ""
+            }
+        }
+    },
+    "firstPaidDay": "{day}日",
+    "@firstPaidDay": {
+        "description": "",
+        "placeholders": {
+            "day": {
+                "type": "int",
+                "description": ""
+            }
+        }
+    },
     "price": "¥{price}",
     "@price": {
         "description": "",
@@ -173,6 +203,16 @@
     "shareItem": "アプリをシェアする",
     "@shareItem": {
         "description": ""
+    },
+    "shareText": "サブリス - サブスクと固定費をリストで管理\n{storeUrl}",
+    "@shareText": {
+        "description": "",
+        "placeholders": {
+            "storeUrl": {
+                "type": "String",
+                "description": ""
+            }
+        }
     },
     "inquiryItem": "お問い合わせ",
     "@inquiryItem": {
@@ -285,6 +325,20 @@
     "confirmationDialogTitle": "確認",
     "@confirmationDialogTitle": {
         "description": ""
+    },
+    "forcedUpdateDialogTitle": "アップデートのお知らせ",
+    "@forcedUpdateDialogTitle": {
+        "description": ""
+    },
+    "forcedUpdateDialogContent": "新しいバージョンのアプリが利用可能です。今すぐバージョン{version}にアップデートしてください。",
+    "@forcedUpdateDialogContent": {
+        "description": "",
+        "placeholders": {
+            "version": {
+                "type": "String",
+                "description": ""
+            }
+        }
     },
     "updateContentsDialogTitle": "アップデート内容",
     "@updateContentsDialogTitle": {

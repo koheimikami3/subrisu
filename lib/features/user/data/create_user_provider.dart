@@ -9,9 +9,9 @@ Future<void> createUser(Ref ref, String userId) async {
 
   // 端末のOSを取得
   if (Platform.isIOS) {
-    os = 'iOS';
+    os = AppConfigs.iOS;
   } else if (Platform.isAndroid) {
-    os = 'Android';
+    os = AppConfigs.android;
   }
 
   // 端末のFCMトークンを取得

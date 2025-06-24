@@ -11,13 +11,10 @@ class ForcedUpdateDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const title = 'アップデートのお知らせ';
-    final content = '新しいバージョンのアプリが利用可能です。'
-        '今すぐバージョン$forcedUpdateVersionにアップデートしてください。';
-
     return AlertDialog(
-      title: const Text(title),
-      content: Text(content),
+      title: Text(AppLocalizations.of(context)!.forcedUpdateDialogTitle),
+      content: Text(AppLocalizations.of(context)!
+          .forcedUpdateDialogContent(forcedUpdateVersion)),
       actions: [
         _openStoreUrlButton(context),
       ],
