@@ -14,8 +14,10 @@ class PriceInputForm extends ConsumerWidget {
     return MyTextFormField(
       initialValue: price,
       maxLength: 7,
-      keyboardType: TextInputType.number,
-      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+      keyboardType: const TextInputType.numberWithOptions(decimal: true),
+      inputFormatters: [
+        FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*')),
+      ],
       hintText: AppLocalizations.of(context)!.priceHint,
       onChanged: (value) {
         // 料金の状態を更新
