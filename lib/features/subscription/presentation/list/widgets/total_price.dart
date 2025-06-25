@@ -7,6 +7,7 @@ class TotalPrice extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncSubscriptions = ref.watch(subscriptionsProvider);
+    final currencySettings = ref.watch(currencySettingsNotifierProvider);
 
     return asyncSubscriptions.when(
       loading: SizedBox.shrink,
@@ -73,7 +74,15 @@ class TotalPrice extends ConsumerWidget {
               totalPrice += price ~/ 12;
           }
         }
-        return Text('${AppLocalizations.of(context)!.total}$totalPrice');
+
+        // 合計金額を通貨形式にフォーマット
+        final totalText = AppLocalizations.of(context)!.total;
+        final totalPriceText =
+            currencySettings.formatAmount(totalPrice.toDouble());
+
+        return Text(
+          '$totalText $totalPriceText',
+        );
       },
     );
   }
