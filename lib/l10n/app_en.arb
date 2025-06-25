@@ -120,16 +120,6 @@
             }
         }
     },
-    "price": "¥{price}",
-    "@price": {
-        "description": "",
-        "placeholders": {
-            "price": {
-                "type": "String",
-                "example": "980"
-            }
-        }
-    },
     "daysLeft": "{day} days left",
     "@daysLeft": {
         "description": "",
@@ -326,7 +316,7 @@
     "@purchaseSupplement": {
         "description": ""
     },
-    "total": "This Month $",
+    "total": "This Month",
     "@total": {
         "description": ""
     },

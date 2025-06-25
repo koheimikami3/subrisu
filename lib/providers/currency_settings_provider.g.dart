@@ -7,7 +7,7 @@ part of 'currency_settings_provider.dart';
 // **************************************************************************
 
 String _$currencySettingsNotifierHash() =>
-    r'3a2bcd2576de455070484b0cecca3bd716d404a4';
+    r'df46c8e1bc9a7e5e7ee378e2ac359f1e1216ffc2';
 
 /// アプリケーションの通貨設定を管理するNotifierProvider
 ///

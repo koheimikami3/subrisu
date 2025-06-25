@@ -120,16 +120,6 @@
             }
         }
     },
-    "price": "¥{price}",
-    "@price": {
-        "description": "",
-        "placeholders": {
-            "price": {
-                "type": "String",
-                "example": "980"
-            }
-        }
-    },
     "daysLeft": "あと{day}日",
     "@daysLeft": {
         "description": "",
@@ -326,7 +316,7 @@
     "@purchaseSupplement": {
         "description": ""
     },
-    "total": "今月 ¥",
+    "total": "今月",
     "@total": {
         "description": ""
     },
