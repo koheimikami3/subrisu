@@ -11,6 +11,9 @@ class AppConfigs {
   // 言語設定のSharedPreferencesキー
   static const languageSharedKey = 'language';
 
+  // 通貨設定のSharedPreferencesキー
+  static const currencySharedKey = 'currency';
+
   // サブスクリプションリストの並び替え設定のSharedPreferencesキー
   static const subscriptionListSortKey = 'listSort';
 
