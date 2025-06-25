@@ -6,7 +6,7 @@ part of 'update_token_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$updateTokenHash() => r'1fab430e1dbf10c65a5485b3dad05ad41058d003';
+String _$updateTokenHash() => r'c0c9997325f0c7fc23d3e1a365555c2c17cd833e';
 
 /// UserDocumentのtokenを更新するFutureProvider
 ///

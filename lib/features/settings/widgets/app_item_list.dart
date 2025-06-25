@@ -14,6 +14,8 @@ class AppItemList extends StatelessWidget {
         const GoToThemeSettingsPageTile(),
         const ItemDivider(),
         const GoToLanguageSettingsPageTile(),
+        const ItemDivider(),
+        const GoToCurrencySettingsPageTile(),
       ],
     );
   }

@@ -24,6 +24,10 @@
     "@languageSettingsPageTitle": {
         "description": "The title displayed in the AppBar on the Language Setting Page"
     },
+    "currencySettingsPageTitle": "Currency",
+    "@currencySettingsPageTitle": {
+        "description": "The title displayed in the AppBar on the Currency Setting Page"
+    },
     "loginErrorPageTitle": "Login Error",
     "@loginErrorPageTitle": {
         "description": "The title displayed in the AppBar on the Login Error Page"
@@ -194,6 +198,10 @@
     },
     "languageItem": "Language",
     "@languageItem": {
+        "description": ""
+    },
+    "currencyItem": "Currency",
+    "@currencyItem": {
         "description": ""
     },
     "reviewItem": "App Review",
@@ -398,6 +406,15 @@
         "description": "",
         "placeholders": {
             "paymentCycle": {
+                "type": "String"
+            }
+        }
+    },
+    "currency": "{currency, select, USD{($) US Dollar} JPY{(¥) Japanese Yen} EUR{(€) Euro} GBP{(£) British Pound} CNY{(¥) Chinese Yuan} INR{(₹) Indian Rupee} CAD{(C$) Canadian Dollar} AUD{(A$) Australian Dollar} KRW{(₩) South Korean Won} other{Unknown currency}}",
+    "@currency": {
+        "description": "",
+        "placeholders": {
+            "currency": {
                 "type": "String"
             }
         }

@@ -23,7 +23,7 @@ class SubscriptionItem extends ConsumerWidget {
               context: context,
               themeSettings: themeSettings,
               lightColor: Colors.white,
-              darkColor: AppColors.darkItem,
+              darkColor: const Color.fromRGBO(48, 48, 48, 1),
             ),
             child: InkWell(
               onTap: () => _onTap(context),

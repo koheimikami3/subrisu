@@ -7,7 +7,7 @@ class GoToLanguageSettingsPageTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyListTile(
-      position: TilePosition.bottom,
+      position: TilePosition.middle,
       name: AppLocalizations.of(context)!.languageItem,
       leadingIcon: Icons.language_outlined,
       onTap: () {
