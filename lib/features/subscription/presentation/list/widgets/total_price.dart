@@ -13,10 +13,10 @@ class TotalPrice extends ConsumerWidget {
       loading: SizedBox.shrink,
       error: (_, __) => const SizedBox.shrink(),
       data: (subscriptions) {
-        var totalPrice = 0; // 合計金額
+        num totalPrice = 0; // 合計金額
 
         for (final subscription in subscriptions) {
-          final price = int.parse(subscription.price);
+          final price = num.parse(subscription.price);
 
           // 現在日付を取得
           var now = DateTime.now();
