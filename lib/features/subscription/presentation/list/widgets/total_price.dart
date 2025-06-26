@@ -17,7 +17,7 @@ class TotalPrice extends ConsumerWidget {
         final now = DateTime.now();
 
         for (final subscription in subscriptions) {
-          final price = num.parse(subscription.price);
+          final price = subscription.price;
           final firstPaidOn = subscription.firstPaidOn.toDate();
           final paymentCycle = subscription.paymentCycle;
           int? paymentCycleMonths; // 支払い周期（月単位）

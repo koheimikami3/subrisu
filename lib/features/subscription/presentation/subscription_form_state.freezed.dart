@@ -25,9 +25,9 @@ mixin _$SubscriptionFormState {
   PaymentCycle get paymentCycle => throw _privateConstructorUsedError; // 初回支払い年
   int? get firstPaidYear => throw _privateConstructorUsedError; // 初回支払い月
   int? get firstPaidMonth => throw _privateConstructorUsedError; // 初回支払い日
-  int? get firstPaidDay => throw _privateConstructorUsedError; // 通知フラグ
-  bool get notification => throw _privateConstructorUsedError; // メモ
-  String get memo => throw _privateConstructorUsedError;
+  int? get firstPaidDay => throw _privateConstructorUsedError; // 通知を有効にするかどうか
+  bool get isNotificationEnabled => throw _privateConstructorUsedError; // メモ
+  String get note => throw _privateConstructorUsedError;
 
   /// Create a copy of SubscriptionFormState
   /// with the given fields replaced by the non-null parameter values.
@@ -51,8 +51,8 @@ abstract class $SubscriptionFormStateCopyWith<$Res> {
       int? firstPaidYear,
       int? firstPaidMonth,
       int? firstPaidDay,
-      bool notification,
-      String memo});
+      bool isNotificationEnabled,
+      String note});
 }
 
 /// @nodoc
@@ -79,8 +79,8 @@ class _$SubscriptionFormStateCopyWithImpl<$Res,
     Object? firstPaidYear = freezed,
     Object? firstPaidMonth = freezed,
     Object? firstPaidDay = freezed,
-    Object? notification = null,
-    Object? memo = null,
+    Object? isNotificationEnabled = null,
+    Object? note = null,
   }) {
     return _then(_value.copyWith(
       serviceName: null == serviceName
@@ -115,13 +115,13 @@ class _$SubscriptionFormStateCopyWithImpl<$Res,
           ? _value.firstPaidDay
           : firstPaidDay // ignore: cast_nullable_to_non_nullable
               as int?,
-      notification: null == notification
-          ? _value.notification
-          : notification // ignore: cast_nullable_to_non_nullable
+      isNotificationEnabled: null == isNotificationEnabled
+          ? _value.isNotificationEnabled
+          : isNotificationEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      memo: null == memo
-          ? _value.memo
-          : memo // ignore: cast_nullable_to_non_nullable
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -145,8 +145,8 @@ abstract class _$$SubscriptionFormStateImplCopyWith<$Res>
       int? firstPaidYear,
       int? firstPaidMonth,
       int? firstPaidDay,
-      bool notification,
-      String memo});
+      bool isNotificationEnabled,
+      String note});
 }
 
 /// @nodoc
@@ -171,8 +171,8 @@ class __$$SubscriptionFormStateImplCopyWithImpl<$Res>
     Object? firstPaidYear = freezed,
     Object? firstPaidMonth = freezed,
     Object? firstPaidDay = freezed,
-    Object? notification = null,
-    Object? memo = null,
+    Object? isNotificationEnabled = null,
+    Object? note = null,
   }) {
     return _then(_$SubscriptionFormStateImpl(
       serviceName: null == serviceName
@@ -207,13 +207,13 @@ class __$$SubscriptionFormStateImplCopyWithImpl<$Res>
           ? _value.firstPaidDay
           : firstPaidDay // ignore: cast_nullable_to_non_nullable
               as int?,
-      notification: null == notification
-          ? _value.notification
-          : notification // ignore: cast_nullable_to_non_nullable
+      isNotificationEnabled: null == isNotificationEnabled
+          ? _value.isNotificationEnabled
+          : isNotificationEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      memo: null == memo
-          ? _value.memo
-          : memo // ignore: cast_nullable_to_non_nullable
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -231,8 +231,8 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
       this.firstPaidYear = null,
       this.firstPaidMonth = null,
       this.firstPaidDay = null,
-      this.notification = false,
-      this.memo = ''})
+      this.isNotificationEnabled = false,
+      this.note = ''})
       : super._();
 
 // サービス名
@@ -267,18 +267,18 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
   @override
   @JsonKey()
   final int? firstPaidDay;
-// 通知フラグ
+// 通知を有効にするかどうか
   @override
   @JsonKey()
-  final bool notification;
+  final bool isNotificationEnabled;
 // メモ
   @override
   @JsonKey()
-  final String memo;
+  final String note;
 
   @override
   String toString() {
-    return 'SubscriptionFormState(serviceName: $serviceName, price: $price, selectedIconImagePath: $selectedIconImagePath, resultIconImagePath: $resultIconImagePath, paymentCycle: $paymentCycle, firstPaidYear: $firstPaidYear, firstPaidMonth: $firstPaidMonth, firstPaidDay: $firstPaidDay, notification: $notification, memo: $memo)';
+    return 'SubscriptionFormState(serviceName: $serviceName, price: $price, selectedIconImagePath: $selectedIconImagePath, resultIconImagePath: $resultIconImagePath, paymentCycle: $paymentCycle, firstPaidYear: $firstPaidYear, firstPaidMonth: $firstPaidMonth, firstPaidDay: $firstPaidDay, isNotificationEnabled: $isNotificationEnabled, note: $note)';
   }
 
   @override
@@ -301,9 +301,9 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
                 other.firstPaidMonth == firstPaidMonth) &&
             (identical(other.firstPaidDay, firstPaidDay) ||
                 other.firstPaidDay == firstPaidDay) &&
-            (identical(other.notification, notification) ||
-                other.notification == notification) &&
-            (identical(other.memo, memo) || other.memo == memo));
+            (identical(other.isNotificationEnabled, isNotificationEnabled) ||
+                other.isNotificationEnabled == isNotificationEnabled) &&
+            (identical(other.note, note) || other.note == note));
   }
 
   @override
@@ -317,8 +317,8 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
       firstPaidYear,
       firstPaidMonth,
       firstPaidDay,
-      notification,
-      memo);
+      isNotificationEnabled,
+      note);
 
   /// Create a copy of SubscriptionFormState
   /// with the given fields replaced by the non-null parameter values.
@@ -340,8 +340,8 @@ abstract class _SubscriptionFormState extends SubscriptionFormState {
       final int? firstPaidYear,
       final int? firstPaidMonth,
       final int? firstPaidDay,
-      final bool notification,
-      final String memo}) = _$SubscriptionFormStateImpl;
+      final bool isNotificationEnabled,
+      final String note}) = _$SubscriptionFormStateImpl;
   const _SubscriptionFormState._() : super._();
 
 // サービス名
@@ -360,11 +360,11 @@ abstract class _SubscriptionFormState extends SubscriptionFormState {
   @override
   int? get firstPaidMonth; // 初回支払い日
   @override
-  int? get firstPaidDay; // 通知フラグ
+  int? get firstPaidDay; // 通知を有効にするかどうか
   @override
-  bool get notification; // メモ
+  bool get isNotificationEnabled; // メモ
   @override
-  String get memo;
+  String get note;
 
   /// Create a copy of SubscriptionFormState
   /// with the given fields replaced by the non-null parameter values.

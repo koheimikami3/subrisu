@@ -24,12 +24,12 @@ class _EditSubscriptionPageState extends ConsumerState<EditSubscriptionPage> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(subscriptionFormNotifierProvider.notifier).initFormState(
             serviceName: widget.subscription.serviceName,
-            price: widget.subscription.price,
+            price: widget.subscription.price.toString(),
             iconImagePath: widget.subscription.iconImagePath,
             paymentCycle: widget.subscription.paymentCycle,
             firstPaidOn: widget.subscription.firstPaidOn.toDate(),
-            notification: widget.subscription.notification,
-            memo: widget.subscription.memo,
+            isNotificationEnabled: widget.subscription.isNotificationEnabled,
+            note: widget.subscription.note ?? '',
           );
     });
   }

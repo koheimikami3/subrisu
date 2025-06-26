@@ -28,7 +28,7 @@ class MemoInputForm extends ConsumerWidget {
               // メモの状態を更新
               ref
                   .read(subscriptionFormNotifierProvider.notifier)
-                  .setMemo(value);
+                  .setNote(value);
             },
           ),
         ),

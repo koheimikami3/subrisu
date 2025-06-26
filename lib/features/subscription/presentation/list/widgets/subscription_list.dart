@@ -22,11 +22,11 @@ class SubscriptionList extends ConsumerWidget {
         });
       case SubscriptionSortOrder.priceAsc:
         subscriptions.sort((a, b) {
-          return num.parse(a.price).compareTo(num.parse(b.price));
+          return a.price.compareTo(b.price);
         });
       case SubscriptionSortOrder.priceDesc:
         subscriptions.sort((a, b) {
-          return -num.parse(a.price).compareTo(num.parse(b.price));
+          return -a.price.compareTo(b.price);
         });
       case SubscriptionSortOrder.serviceNameAsc:
         subscriptions.sort((a, b) {

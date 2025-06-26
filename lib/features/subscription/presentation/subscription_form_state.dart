@@ -30,11 +30,11 @@ abstract class SubscriptionFormState implements _$SubscriptionFormState {
     // 初回支払い日
     @Default(null) int? firstPaidDay,
 
-    // 通知フラグ
-    @Default(false) bool notification,
+    // 通知を有効にするかどうか
+    @Default(false) bool isNotificationEnabled,
 
     // メモ
-    @Default('') String memo,
+    @Default('') String note,
   }) = _SubscriptionFormState;
 
   const SubscriptionFormState._();

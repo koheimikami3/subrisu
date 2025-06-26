@@ -8,6 +8,7 @@ SubscriptionData subscriptionData(Ref ref) {
   final formState = ref.read(subscriptionFormNotifierProvider);
   var iconImagePath = formState.resultIconImagePath;
   late final DateTime firstPaidOn;
+  String? note = formState.note;
 
   // アイコン画像未設定の場合、サブリスアイコンにする
   if (iconImagePath.isEmpty) {
@@ -25,15 +26,20 @@ SubscriptionData subscriptionData(Ref ref) {
     );
   }
 
+  // メモが空の場合、nullに設定
+  if (note.isEmpty) {
+    note = null;
+  }
+
   // SubscriptionDocumentの作成または更新データ
   final subscriptionData = SubscriptionData(
     serviceName: formState.serviceName,
-    price: formState.price,
+    price: num.parse(formState.price),
     iconImagePath: iconImagePath,
-    paymentCycle: formState.paymentCycle.index,
+    paymentCycle: formState.paymentCycle.name,
     firstPaidOn: firstPaidOn,
-    notification: formState.notification,
-    memo: formState.memo,
+    isNotificationEnabled: formState.isNotificationEnabled,
+    note: note,
   );
   return subscriptionData;
 }

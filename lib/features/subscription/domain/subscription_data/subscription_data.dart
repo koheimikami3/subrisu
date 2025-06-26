@@ -11,22 +11,22 @@ abstract class SubscriptionData implements _$SubscriptionData {
     required String serviceName,
 
     // 価格
-    required String price,
+    required num price,
 
     // アイコン画像パス
     @Default('') String iconImagePath,
 
     // 支払い周期
-    required int paymentCycle,
+    required String paymentCycle,
 
     // 初回支払日
     @FirstPaidOnField() DateTime? firstPaidOn,
 
-    // 通知フラグ
-    required bool notification,
+    // 通知を有効にするかどうか
+    required bool isNotificationEnabled,
 
     // メモ
-    required String memo,
+    required String? note,
 
     // 作成日時
     @CreatedAtField() DateTime? createdAt,

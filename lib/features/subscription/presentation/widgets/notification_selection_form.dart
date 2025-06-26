@@ -43,13 +43,13 @@ class NotificationSelectionForm extends ConsumerWidget {
 
   /// プッシュ通知のオン・オフを選択するSwitch
   Widget _switch(BuildContext context, WidgetRef ref) {
-    final notification =
-        ref.watch(subscriptionFormNotifierProvider).notification;
+    final isNotificationEnabled =
+        ref.watch(subscriptionFormNotifierProvider).isNotificationEnabled;
 
     return SizedBox(
       height: 15.h,
       child: CupertinoSwitch(
-        value: notification,
+        value: isNotificationEnabled,
         activeTrackColor: AppColors.primary,
         onChanged: (value) async {
           // プッシュ通知の設定状況を取得
@@ -68,7 +68,7 @@ class NotificationSelectionForm extends ConsumerWidget {
           } else {
             ref
                 .watch(subscriptionFormNotifierProvider.notifier)
-                .setNotification(value);
+                .setIsNotificationEnabled(value);
           }
         },
       ),
