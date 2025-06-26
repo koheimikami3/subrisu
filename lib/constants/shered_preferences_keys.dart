@@ -2,18 +2,18 @@
 class SheredPreferencesKeys {
   SheredPreferencesKeys._();
 
-  // テーマ設定
-  static const themeSettingsSharedKey = 'themeSettings';
+  // アプリテーマ
+  static const appTheme = 'appTheme';
 
-  // 言語設定
-  static const languageSettingsSharedKey = 'languageSettings';
+  // 言語コード
+  static const languageCode = 'languageCode';
 
-  // 通貨設定
-  static const currencySharedKey = 'currency';
+  // 通貨コード
+  static const currencyCode = 'currencyCode';
 
-  // サブスクリプションリストの並び替え設定
-  static const subscriptionSortOrderSharedKey = 'subscriptionSortOrder';
+  // サブスクリプションリストの並び替え
+  static const subscriptionSortOrder = 'subscriptionSortOrder';
 
   // アプリの起動回数
-  static const launchCountSharedKey = 'launchCount';
+  static const launchCount = 'launchCount';
 }

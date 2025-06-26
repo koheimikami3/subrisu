@@ -10,8 +10,7 @@ class LanguageSettingsNotifier extends _$LanguageSettingsNotifier {
     final prefs = ref.read(sharedPreferencesProvider);
 
     // 言語の設定状況を取得
-    var languageCode =
-        prefs.getString(SheredPreferencesKeys.languageSettingsSharedKey);
+    var languageCode = prefs.getString(SheredPreferencesKeys.languageCode);
 
     // 未設定の場合、端末の言語設定が日本語の場合以外は英語に設定
     languageCode ??=
@@ -30,7 +29,6 @@ class LanguageSettingsNotifier extends _$LanguageSettingsNotifier {
     final prefs = ref.read(sharedPreferencesProvider);
 
     state = value;
-    prefs.setString(
-        SheredPreferencesKeys.languageSettingsSharedKey, value.code);
+    prefs.setString(SheredPreferencesKeys.languageCode, value.code);
   }
 }
