@@ -10,10 +10,10 @@ enum PaymentCycle {
   monthly,
 
   /// 3ヶ月
-  threeMonths,
+  quarterly,
 
   /// 6ヶ月
-  sixMonths,
+  semiAnnual,
 
   /// 毎年
   yearly,

@@ -31,9 +31,9 @@ class TotalPrice extends ConsumerWidget {
           switch (paymentCycle) {
             case PaymentCycle.monthly:
               paymentCycleMonths = 1;
-            case PaymentCycle.threeMonths:
+            case PaymentCycle.quarterly:
               paymentCycleMonths = 3;
-            case PaymentCycle.sixMonths:
+            case PaymentCycle.semiAnnual:
               paymentCycleMonths = 6;
             case PaymentCycle.yearly:
               paymentCycleMonths = 12;
