@@ -21,7 +21,7 @@ class AppConfigs {
   static const currencySharedKey = 'currency';
 
   // サブスクリプションリストの並び替え設定のSharedPreferencesキー
-  static const subscriptionListSortKey = 'listSort';
+  static const subscriptionSortOrderSharedKey = 'subscriptionSortOrder';
 
   // アプリの起動回数のSharedPreferencesキー
   static const launchCountSharedKey = 'launchCount';

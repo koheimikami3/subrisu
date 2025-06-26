@@ -6,7 +6,7 @@ class SortSubscriptionButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selectedSortSettings = ref.watch(sortSettingsNotifierProvider);
+    final selectedSortOrder = ref.watch(subscriptionSortOrderNotifierProvider);
 
     return PullDownButton(
       itemBuilder: (context) {
@@ -14,15 +14,15 @@ class SortSubscriptionButton extends ConsumerWidget {
           PullDownMenuTitle(
             title: Text(AppLocalizations.of(context)!.sortPullDownTitle),
           ),
-          for (final sortSettings in SortSettings.values)
+          for (final sortOrder in SubscriptionSortOrder.values)
             PullDownMenuItem.selectable(
-              title: AppLocalizations.of(context)!.sort(sortSettings.name),
-              selected: selectedSortSettings == sortSettings,
+              title: AppLocalizations.of(context)!.sort(sortOrder.name),
+              selected: selectedSortOrder == sortOrder,
               itemTheme: const PullDownMenuItemTheme(checkmark: Icons.check),
               onTap: () {
                 ref
-                    .read(sortSettingsNotifierProvider.notifier)
-                    .setSortSettings(sortSettings);
+                    .read(subscriptionSortOrderNotifierProvider.notifier)
+                    .set(sortOrder);
               },
             ),
         ];
