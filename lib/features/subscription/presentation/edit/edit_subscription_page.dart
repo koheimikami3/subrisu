@@ -30,6 +30,7 @@ class _EditSubscriptionPageState extends ConsumerState<EditSubscriptionPage> {
             firstPaidOn: widget.subscription.firstPaidOn.toDate(),
             isNotificationEnabled: widget.subscription.isNotificationEnabled,
             note: widget.subscription.note ?? '',
+            createdAt: widget.subscription.createdAt.toDate(),
           );
     });
   }

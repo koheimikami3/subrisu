@@ -40,6 +40,7 @@ SubscriptionData subscriptionData(Ref ref) {
     firstPaidOn: firstPaidOn,
     isNotificationEnabled: formState.isNotificationEnabled,
     note: note,
+    createdAt: formState.createdAt,
   );
   return subscriptionData;
 }
