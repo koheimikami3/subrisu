@@ -10,7 +10,8 @@ class CurrencySettingsNotifier extends _$CurrencySettingsNotifier {
     final prefs = ref.read(sharedPreferencesProvider);
 
     // 通貨コードの設定状況を取得
-    final currencyCode = prefs.getString(AppConfigs.currencySharedKey);
+    final currencyCode =
+        prefs.getString(SheredPreferencesKeys.currencySharedKey);
 
     // 通貨コードが未設定の場合、
     // 言語設定が日本語ならJPY、英語ならUSDを初期値に設定
@@ -33,6 +34,6 @@ class CurrencySettingsNotifier extends _$CurrencySettingsNotifier {
     final prefs = ref.read(sharedPreferencesProvider);
 
     state = value;
-    prefs.setString(AppConfigs.currencySharedKey, value.code);
+    prefs.setString(SheredPreferencesKeys.currencySharedKey, value.code);
   }
 }

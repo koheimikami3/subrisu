@@ -22,9 +22,10 @@ class _MyAppState extends ConsumerState<MyApp> {
   /// 起動回数をインクリメントして保存する
   Future<void> _incrementLaunchCount() async {
     final pref = ref.read(sharedPreferencesProvider);
-    var launchCount = pref.getInt(AppConfigs.launchCountSharedKey) ?? 0;
+    var launchCount =
+        pref.getInt(SheredPreferencesKeys.launchCountSharedKey) ?? 0;
     launchCount++;
-    await pref.setInt(AppConfigs.launchCountSharedKey, launchCount);
+    await pref.setInt(SheredPreferencesKeys.launchCountSharedKey, launchCount);
   }
 
   @override
