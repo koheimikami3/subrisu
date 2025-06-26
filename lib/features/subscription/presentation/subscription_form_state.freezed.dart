@@ -27,7 +27,8 @@ mixin _$SubscriptionFormState {
   int? get firstPaidMonth => throw _privateConstructorUsedError; // 初回支払い日
   int? get firstPaidDay => throw _privateConstructorUsedError; // 通知を有効にするかどうか
   bool get isNotificationEnabled => throw _privateConstructorUsedError; // メモ
-  String get note => throw _privateConstructorUsedError;
+  String get note => throw _privateConstructorUsedError; // 作成日時
+  DateTime? get createdAt => throw _privateConstructorUsedError;
 
   /// Create a copy of SubscriptionFormState
   /// with the given fields replaced by the non-null parameter values.
@@ -52,7 +53,8 @@ abstract class $SubscriptionFormStateCopyWith<$Res> {
       int? firstPaidMonth,
       int? firstPaidDay,
       bool isNotificationEnabled,
-      String note});
+      String note,
+      DateTime? createdAt});
 }
 
 /// @nodoc
@@ -81,6 +83,7 @@ class _$SubscriptionFormStateCopyWithImpl<$Res,
     Object? firstPaidDay = freezed,
     Object? isNotificationEnabled = null,
     Object? note = null,
+    Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
       serviceName: null == serviceName
@@ -123,6 +126,10 @@ class _$SubscriptionFormStateCopyWithImpl<$Res,
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as String,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -146,7 +153,8 @@ abstract class _$$SubscriptionFormStateImplCopyWith<$Res>
       int? firstPaidMonth,
       int? firstPaidDay,
       bool isNotificationEnabled,
-      String note});
+      String note,
+      DateTime? createdAt});
 }
 
 /// @nodoc
@@ -173,6 +181,7 @@ class __$$SubscriptionFormStateImplCopyWithImpl<$Res>
     Object? firstPaidDay = freezed,
     Object? isNotificationEnabled = null,
     Object? note = null,
+    Object? createdAt = freezed,
   }) {
     return _then(_$SubscriptionFormStateImpl(
       serviceName: null == serviceName
@@ -215,6 +224,10 @@ class __$$SubscriptionFormStateImplCopyWithImpl<$Res>
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
               as String,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -232,7 +245,8 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
       this.firstPaidMonth = null,
       this.firstPaidDay = null,
       this.isNotificationEnabled = false,
-      this.note = ''})
+      this.note = '',
+      this.createdAt = null})
       : super._();
 
 // サービス名
@@ -275,10 +289,14 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
   @override
   @JsonKey()
   final String note;
+// 作成日時
+  @override
+  @JsonKey()
+  final DateTime? createdAt;
 
   @override
   String toString() {
-    return 'SubscriptionFormState(serviceName: $serviceName, price: $price, selectedIconImagePath: $selectedIconImagePath, resultIconImagePath: $resultIconImagePath, paymentCycle: $paymentCycle, firstPaidYear: $firstPaidYear, firstPaidMonth: $firstPaidMonth, firstPaidDay: $firstPaidDay, isNotificationEnabled: $isNotificationEnabled, note: $note)';
+    return 'SubscriptionFormState(serviceName: $serviceName, price: $price, selectedIconImagePath: $selectedIconImagePath, resultIconImagePath: $resultIconImagePath, paymentCycle: $paymentCycle, firstPaidYear: $firstPaidYear, firstPaidMonth: $firstPaidMonth, firstPaidDay: $firstPaidDay, isNotificationEnabled: $isNotificationEnabled, note: $note, createdAt: $createdAt)';
   }
 
   @override
@@ -303,7 +321,9 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
                 other.firstPaidDay == firstPaidDay) &&
             (identical(other.isNotificationEnabled, isNotificationEnabled) ||
                 other.isNotificationEnabled == isNotificationEnabled) &&
-            (identical(other.note, note) || other.note == note));
+            (identical(other.note, note) || other.note == note) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
   }
 
   @override
@@ -318,7 +338,8 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
       firstPaidMonth,
       firstPaidDay,
       isNotificationEnabled,
-      note);
+      note,
+      createdAt);
 
   /// Create a copy of SubscriptionFormState
   /// with the given fields replaced by the non-null parameter values.
@@ -341,7 +362,8 @@ abstract class _SubscriptionFormState extends SubscriptionFormState {
       final int? firstPaidMonth,
       final int? firstPaidDay,
       final bool isNotificationEnabled,
-      final String note}) = _$SubscriptionFormStateImpl;
+      final String note,
+      final DateTime? createdAt}) = _$SubscriptionFormStateImpl;
   const _SubscriptionFormState._() : super._();
 
 // サービス名
@@ -364,7 +386,9 @@ abstract class _SubscriptionFormState extends SubscriptionFormState {
   @override
   bool get isNotificationEnabled; // メモ
   @override
-  String get note;
+  String get note; // 作成日時
+  @override
+  DateTime? get createdAt;
 
   /// Create a copy of SubscriptionFormState
   /// with the given fields replaced by the non-null parameter values.
