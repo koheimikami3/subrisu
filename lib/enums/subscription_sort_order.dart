@@ -1,17 +1,17 @@
-/// サブスウリプションの並び替え設定
-enum SortSettings {
+/// サブスウリプションリストの並び替え設定
+enum SubscriptionSortOrder {
   /// 次回支払日までの日数を基準に昇順
-  ascendingNextPaymentDays,
+  nextPaymentAsc,
 
   /// 価格を基準に昇順
-  ascendingPrice,
+  priceAsc,
 
   /// 価格を基準に降順
-  descendingPrice,
+  priceDesc,
 
   /// サービスを基準に昇順
-  ascendingServiceName,
+  serviceNameAsc,
 
   /// 価格を基準に降順
-  descendingServiceName,
+  serviceNameDesc,
 }
