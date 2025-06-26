@@ -3,8 +3,8 @@ class RemoteConfigKeys {
   RemoteConfigKeys._();
 
   // iOS版強制アップデートバージョン
-  static const iOSForcedAppVersionRemoteKey = 'forceAppVersionIOS';
+  static const iOSForcedAppVersion = 'forceAppVersionIOS';
 
   // Android版強制アップデートバージョン
-  static const androidForcedAppVersionRemoteKey = 'forceAppVersionAndroid';
+  static const androidForcedAppVersion = 'forceAppVersionAndroid';
 }

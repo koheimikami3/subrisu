@@ -27,8 +27,8 @@ class _SubscriptionListPageState extends ConsumerState<SubscriptionListPage> {
   /// 強制アップデートダイアログを表示する
   void _showForcedUpdateDialog() {
     final remoteKey = Platform.isIOS
-        ? RemoteConfigKeys.iOSForcedAppVersionRemoteKey
-        : RemoteConfigKeys.androidForcedAppVersionRemoteKey;
+        ? RemoteConfigKeys.iOSForcedAppVersion
+        : RemoteConfigKeys.androidForcedAppVersion;
 
     // 強制アップデートバージョンを取得
     final strForcedUpdateVersion =
@@ -74,8 +74,7 @@ class _SubscriptionListPageState extends ConsumerState<SubscriptionListPage> {
   Future<void> _showRequestReviewDialog() async {
     final inAppReview = ref.read(inAppReviewProvider);
     final pref = ref.read(sharedPreferencesProvider);
-    final launchCount =
-        pref.getInt(SheredPreferencesKeys.launchCountSharedKey) ?? 0;
+    final launchCount = pref.getInt(SheredPreferencesKeys.launchCount) ?? 0;
 
     if (launchCount == 5 && await inAppReview.isAvailable()) {
       await inAppReview.requestReview();
