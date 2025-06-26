@@ -25,13 +25,4 @@ class AppConfigs {
 
   // アプリの起動回数のSharedPreferencesキー
   static const launchCountSharedKey = 'launchCount';
-
-  // iOS版強制アップデートバージョンのRemoteConfigキー
-  static const iOSForcedAppVersionRemoteKey = 'forceAppVersionIOS';
-
-  // Android版強制アップデートバージョンのRemoteConfigキー
-  static const androidForcedAppVersionRemoteKey = 'forceAppVersionAndroid';
-
-  // 課金価格のRemoteConfigキー
-  static const purchasePriceRemoteKey = 'purchasePrice';
 }

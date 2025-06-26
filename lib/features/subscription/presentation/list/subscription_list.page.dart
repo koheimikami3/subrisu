@@ -27,8 +27,8 @@ class _SubscriptionListPageState extends ConsumerState<SubscriptionListPage> {
   /// 強制アップデートダイアログを表示する
   void _showForcedUpdateDialog() {
     final remoteKey = Platform.isIOS
-        ? AppConfigs.iOSForcedAppVersionRemoteKey
-        : AppConfigs.androidForcedAppVersionRemoteKey;
+        ? RemoteConfigKeys.iOSForcedAppVersionRemoteKey
+        : RemoteConfigKeys.androidForcedAppVersionRemoteKey;
 
     // 強制アップデートバージョンを取得
     final strForcedUpdateVersion =
