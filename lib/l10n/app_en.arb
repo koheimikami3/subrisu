@@ -382,7 +382,7 @@
             }
         }
     },
-    "sort": "{sort, select, ascendingNextPaymentDays{Payment date} ascendingPrice{Price ↓} descendingPrice{Price ↑} ascendingServiceName{Alphabet ↓} descendingServiceName{Alphabet ↑} other{error}}",
+    "sort": "{sort, select, nextPaymentAsc{Payment date} priceAsc{Price ↓} priceDesc{Price ↑} serviceNameAsc{Alphabet ↓} serviceNameDesc{Alphabet ↑} other{error}}",
     "@sort": {
         "description": "",
         "placeholders": {
