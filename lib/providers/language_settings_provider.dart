@@ -15,7 +15,7 @@ class LanguageSettingsNotifier extends _$LanguageSettingsNotifier {
     // 未設定の場合、端末の言語設定が日本語の場合以外は英語に設定
     languageIndex ??=
         WidgetsBinding.instance.platformDispatcher.locale.languageCode ==
-                AppConfigs.japaneseLanguageCode
+                LanguageSettings.japanese.code
             ? LanguageSettings.japanese.index
             : LanguageSettings.english.index;
 

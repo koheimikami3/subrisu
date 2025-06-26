@@ -46,8 +46,8 @@ class _MyAppState extends ConsumerState<MyApp> {
           darkTheme: appThemeDark(),
           debugShowCheckedModeBanner: false,
           locale: language == LanguageSettings.english
-              ? const Locale(AppConfigs.englishLanguageCode)
-              : const Locale(AppConfigs.japaneseLanguageCode),
+              ? Locale(LanguageSettings.english.code)
+              : Locale(LanguageSettings.japanese.code),
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           home: Consumer(
