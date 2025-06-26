@@ -22,21 +22,13 @@ class LanguageSettingsNotifier extends _$LanguageSettingsNotifier {
     return LanguageSettings.values[languageIndex];
   }
 
-  /// 状態をjapaneseに更新
-  void setJapanese() {
-    state = LanguageSettings.japanese;
-    _saveLanguageSettings(LanguageSettings.japanese.index);
-  }
-
-  /// 状態をenglishに更新
-  void setEnglish() {
-    state = LanguageSettings.english;
-    _saveLanguageSettings(LanguageSettings.english.index);
-  }
-
+  /// 状態を指定したLanguageSettingsに更新
+  ///
   /// 言語設定をSharedPreferencesに保存
-  void _saveLanguageSettings(int languageIndex) {
+  void set(LanguageSettings value) {
     final prefs = ref.read(sharedPreferencesProvider);
-    prefs.setInt(AppConfigs.languageSharedKey, languageIndex);
+
+    state = value;
+    prefs.setInt(AppConfigs.languageSharedKey, value.index);
   }
 }
