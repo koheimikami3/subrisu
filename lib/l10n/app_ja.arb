@@ -382,7 +382,7 @@
             }
         }
     },
-    "sort": "{sort, select, ascendingNextPaymentDays{支払い日が近い順} ascendingPrice{料金が安い順} descendingPrice{料金が高い順} ascendingServiceName{名前順（昇順）} descendingServiceName{名前順（降順）} other{error}}",
+    "sort": "{sort, select, nextPaymentAsc{支払い日が近い順} priceAsc{料金が安い順} priceDesc{料金が高い順} serviceNameAsc{名前順（昇順）} serviceNameDesc{名前順（降順）} other{error}}",
     "@sort": {
         "description": "",
         "placeholders": {
