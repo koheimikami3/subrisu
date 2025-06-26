@@ -11,8 +11,9 @@ class ThemeSettingsNotifier extends _$ThemeSettingsNotifier {
 
     // テーマの設定状況を取得
     // 未設定の場合、端末モードに設定
-    final theme = prefs.getString(AppConfigs.themeSettingsSharedKey) ??
-        ThemeSettings.device.name;
+    final theme =
+        prefs.getString(SheredPreferencesKeys.themeSettingsSharedKey) ??
+            ThemeSettings.device.name;
 
     return ThemeSettings.values.byName(theme);
   }
@@ -24,6 +25,6 @@ class ThemeSettingsNotifier extends _$ThemeSettingsNotifier {
     final prefs = ref.read(sharedPreferencesProvider);
 
     state = value;
-    prefs.setString(AppConfigs.themeSettingsSharedKey, value.name);
+    prefs.setString(SheredPreferencesKeys.themeSettingsSharedKey, value.name);
   }
 }

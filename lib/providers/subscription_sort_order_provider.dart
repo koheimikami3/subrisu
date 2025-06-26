@@ -12,7 +12,7 @@ class SubscriptionSortOrderNotifier extends _$SubscriptionSortOrderNotifier {
     // 並び替えの設定状況を取得
     // 未設定の場合、次回支払日までの日数を基準に昇順に設定
     final sortOrder =
-        prefs.getString(AppConfigs.subscriptionSortOrderSharedKey) ??
+        prefs.getString(SheredPreferencesKeys.subscriptionSortOrderSharedKey) ??
             SubscriptionSortOrder.nextPaymentAsc.name;
 
     return SubscriptionSortOrder.values.byName(sortOrder);
@@ -25,6 +25,9 @@ class SubscriptionSortOrderNotifier extends _$SubscriptionSortOrderNotifier {
     final prefs = ref.read(sharedPreferencesProvider);
 
     state = value;
-    prefs.setString(AppConfigs.subscriptionSortOrderSharedKey, value.name);
+    prefs.setString(
+      SheredPreferencesKeys.subscriptionSortOrderSharedKey,
+      value.name,
+    );
   }
 }

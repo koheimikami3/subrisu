@@ -74,7 +74,8 @@ class _SubscriptionListPageState extends ConsumerState<SubscriptionListPage> {
   Future<void> _showRequestReviewDialog() async {
     final inAppReview = ref.read(inAppReviewProvider);
     final pref = ref.read(sharedPreferencesProvider);
-    final launchCount = pref.getInt(AppConfigs.launchCountSharedKey) ?? 0;
+    final launchCount =
+        pref.getInt(SheredPreferencesKeys.launchCountSharedKey) ?? 0;
 
     if (launchCount == 5 && await inAppReview.isAvailable()) {
       await inAppReview.requestReview();
