@@ -17,27 +17,13 @@ class ThemeSettingsNotifier extends _$ThemeSettingsNotifier {
     return ThemeSettings.values[themeIndex];
   }
 
-  /// 状態をdeviceに更新
-  void setDevice() {
-    state = ThemeSettings.device;
-    _saveThemeSettings(ThemeSettings.device.index);
-  }
-
-  /// 状態をlightに更新
-  void setLight() {
-    state = ThemeSettings.light;
-    _saveThemeSettings(ThemeSettings.light.index);
-  }
-
-  /// 状態をdarkに更新
-  void setDark() {
-    state = ThemeSettings.dark;
-    _saveThemeSettings(ThemeSettings.dark.index);
-  }
-
+  /// 状態を指定したThemeSettingsに更新
+  ///
   /// テーマ設定をSharedPreferencesに保存
-  void _saveThemeSettings(int themeIndex) {
+  void set(ThemeSettings value) {
     final prefs = ref.read(sharedPreferencesProvider);
-    prefs.setInt(AppConfigs.themeSharedKey, themeIndex);
+
+    state = value;
+    prefs.setInt(AppConfigs.themeSharedKey, value.index);
   }
 }
