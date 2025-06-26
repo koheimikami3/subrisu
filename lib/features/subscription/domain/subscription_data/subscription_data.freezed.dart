@@ -22,13 +22,14 @@ SubscriptionData _$SubscriptionDataFromJson(Map<String, dynamic> json) {
 mixin _$SubscriptionData {
 // サービス名
   String get serviceName => throw _privateConstructorUsedError; // 価格
-  String get price => throw _privateConstructorUsedError; // アイコン画像パス
+  num get price => throw _privateConstructorUsedError; // アイコン画像パス
   String get iconImagePath => throw _privateConstructorUsedError; // 支払い周期
-  int get paymentCycle => throw _privateConstructorUsedError; // 初回支払日
+  String get paymentCycle => throw _privateConstructorUsedError; // 初回支払日
   @FirstPaidOnField()
-  DateTime? get firstPaidOn => throw _privateConstructorUsedError; // 通知フラグ
-  bool get notification => throw _privateConstructorUsedError; // メモ
-  String get memo => throw _privateConstructorUsedError; // 作成日時
+  DateTime? get firstPaidOn =>
+      throw _privateConstructorUsedError; // 通知を有効にするかどうか
+  bool get isNotificationEnabled => throw _privateConstructorUsedError; // メモ
+  String? get note => throw _privateConstructorUsedError; // 作成日時
   @CreatedAtField()
   DateTime? get createdAt => throw _privateConstructorUsedError; // 更新日時
   @UpdatedAtField()
@@ -52,12 +53,12 @@ abstract class $SubscriptionDataCopyWith<$Res> {
   @useResult
   $Res call(
       {String serviceName,
-      String price,
+      num price,
       String iconImagePath,
-      int paymentCycle,
+      String paymentCycle,
       @FirstPaidOnField() DateTime? firstPaidOn,
-      bool notification,
-      String memo,
+      bool isNotificationEnabled,
+      String? note,
       @CreatedAtField() DateTime? createdAt,
       @UpdatedAtField() DateTime? updatedAt});
 }
@@ -82,8 +83,8 @@ class _$SubscriptionDataCopyWithImpl<$Res, $Val extends SubscriptionData>
     Object? iconImagePath = null,
     Object? paymentCycle = null,
     Object? firstPaidOn = freezed,
-    Object? notification = null,
-    Object? memo = null,
+    Object? isNotificationEnabled = null,
+    Object? note = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -95,7 +96,7 @@ class _$SubscriptionDataCopyWithImpl<$Res, $Val extends SubscriptionData>
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String,
+              as num,
       iconImagePath: null == iconImagePath
           ? _value.iconImagePath
           : iconImagePath // ignore: cast_nullable_to_non_nullable
@@ -103,19 +104,19 @@ class _$SubscriptionDataCopyWithImpl<$Res, $Val extends SubscriptionData>
       paymentCycle: null == paymentCycle
           ? _value.paymentCycle
           : paymentCycle // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       firstPaidOn: freezed == firstPaidOn
           ? _value.firstPaidOn
           : firstPaidOn // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      notification: null == notification
-          ? _value.notification
-          : notification // ignore: cast_nullable_to_non_nullable
+      isNotificationEnabled: null == isNotificationEnabled
+          ? _value.isNotificationEnabled
+          : isNotificationEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      memo: null == memo
-          ? _value.memo
-          : memo // ignore: cast_nullable_to_non_nullable
-              as String,
+      note: freezed == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -138,12 +139,12 @@ abstract class _$$SubscriptionDataImplCopyWith<$Res>
   @useResult
   $Res call(
       {String serviceName,
-      String price,
+      num price,
       String iconImagePath,
-      int paymentCycle,
+      String paymentCycle,
       @FirstPaidOnField() DateTime? firstPaidOn,
-      bool notification,
-      String memo,
+      bool isNotificationEnabled,
+      String? note,
       @CreatedAtField() DateTime? createdAt,
       @UpdatedAtField() DateTime? updatedAt});
 }
@@ -166,8 +167,8 @@ class __$$SubscriptionDataImplCopyWithImpl<$Res>
     Object? iconImagePath = null,
     Object? paymentCycle = null,
     Object? firstPaidOn = freezed,
-    Object? notification = null,
-    Object? memo = null,
+    Object? isNotificationEnabled = null,
+    Object? note = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -179,7 +180,7 @@ class __$$SubscriptionDataImplCopyWithImpl<$Res>
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as String,
+              as num,
       iconImagePath: null == iconImagePath
           ? _value.iconImagePath
           : iconImagePath // ignore: cast_nullable_to_non_nullable
@@ -187,19 +188,19 @@ class __$$SubscriptionDataImplCopyWithImpl<$Res>
       paymentCycle: null == paymentCycle
           ? _value.paymentCycle
           : paymentCycle // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       firstPaidOn: freezed == firstPaidOn
           ? _value.firstPaidOn
           : firstPaidOn // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      notification: null == notification
-          ? _value.notification
-          : notification // ignore: cast_nullable_to_non_nullable
+      isNotificationEnabled: null == isNotificationEnabled
+          ? _value.isNotificationEnabled
+          : isNotificationEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      memo: null == memo
-          ? _value.memo
-          : memo // ignore: cast_nullable_to_non_nullable
-              as String,
+      note: freezed == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -221,8 +222,8 @@ class _$SubscriptionDataImpl extends _SubscriptionData {
       this.iconImagePath = '',
       required this.paymentCycle,
       @FirstPaidOnField() this.firstPaidOn,
-      required this.notification,
-      required this.memo,
+      required this.isNotificationEnabled,
+      required this.note,
       @CreatedAtField() this.createdAt,
       @UpdatedAtField() this.updatedAt})
       : super._();
@@ -235,24 +236,24 @@ class _$SubscriptionDataImpl extends _SubscriptionData {
   final String serviceName;
 // 価格
   @override
-  final String price;
+  final num price;
 // アイコン画像パス
   @override
   @JsonKey()
   final String iconImagePath;
 // 支払い周期
   @override
-  final int paymentCycle;
+  final String paymentCycle;
 // 初回支払日
   @override
   @FirstPaidOnField()
   final DateTime? firstPaidOn;
-// 通知フラグ
+// 通知を有効にするかどうか
   @override
-  final bool notification;
+  final bool isNotificationEnabled;
 // メモ
   @override
-  final String memo;
+  final String? note;
 // 作成日時
   @override
   @CreatedAtField()
@@ -264,7 +265,7 @@ class _$SubscriptionDataImpl extends _SubscriptionData {
 
   @override
   String toString() {
-    return 'SubscriptionData(serviceName: $serviceName, price: $price, iconImagePath: $iconImagePath, paymentCycle: $paymentCycle, firstPaidOn: $firstPaidOn, notification: $notification, memo: $memo, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'SubscriptionData(serviceName: $serviceName, price: $price, iconImagePath: $iconImagePath, paymentCycle: $paymentCycle, firstPaidOn: $firstPaidOn, isNotificationEnabled: $isNotificationEnabled, note: $note, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -281,9 +282,9 @@ class _$SubscriptionDataImpl extends _SubscriptionData {
                 other.paymentCycle == paymentCycle) &&
             (identical(other.firstPaidOn, firstPaidOn) ||
                 other.firstPaidOn == firstPaidOn) &&
-            (identical(other.notification, notification) ||
-                other.notification == notification) &&
-            (identical(other.memo, memo) || other.memo == memo) &&
+            (identical(other.isNotificationEnabled, isNotificationEnabled) ||
+                other.isNotificationEnabled == isNotificationEnabled) &&
+            (identical(other.note, note) || other.note == note) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -299,8 +300,8 @@ class _$SubscriptionDataImpl extends _SubscriptionData {
       iconImagePath,
       paymentCycle,
       firstPaidOn,
-      notification,
-      memo,
+      isNotificationEnabled,
+      note,
       createdAt,
       updatedAt);
 
@@ -324,12 +325,12 @@ class _$SubscriptionDataImpl extends _SubscriptionData {
 abstract class _SubscriptionData extends SubscriptionData {
   const factory _SubscriptionData(
       {required final String serviceName,
-      required final String price,
+      required final num price,
       final String iconImagePath,
-      required final int paymentCycle,
+      required final String paymentCycle,
       @FirstPaidOnField() final DateTime? firstPaidOn,
-      required final bool notification,
-      required final String memo,
+      required final bool isNotificationEnabled,
+      required final String? note,
       @CreatedAtField() final DateTime? createdAt,
       @UpdatedAtField() final DateTime? updatedAt}) = _$SubscriptionDataImpl;
   const _SubscriptionData._() : super._();
@@ -341,18 +342,18 @@ abstract class _SubscriptionData extends SubscriptionData {
   @override
   String get serviceName; // 価格
   @override
-  String get price; // アイコン画像パス
+  num get price; // アイコン画像パス
   @override
   String get iconImagePath; // 支払い周期
   @override
-  int get paymentCycle; // 初回支払日
+  String get paymentCycle; // 初回支払日
   @override
   @FirstPaidOnField()
-  DateTime? get firstPaidOn; // 通知フラグ
+  DateTime? get firstPaidOn; // 通知を有効にするかどうか
   @override
-  bool get notification; // メモ
+  bool get isNotificationEnabled; // メモ
   @override
-  String get memo; // 作成日時
+  String? get note; // 作成日時
   @override
   @CreatedAtField()
   DateTime? get createdAt; // 更新日時

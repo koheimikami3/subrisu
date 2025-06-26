@@ -13,10 +13,10 @@ class EditSubscriptionPageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SubscriptionForm(
       serviceName: subscription.serviceName,
-      price: subscription.price,
+      price: subscription.price.toString(),
       paymentCycle: subscription.paymentCycle,
       firstPaidOn: subscription.firstPaidOn.toDate(),
-      memo: subscription.memo,
+      memo: subscription.note,
       button: UpdateSubscriptionButton(subscriptionId: subscription.id),
     );
   }

@@ -119,7 +119,7 @@ class SubscriptionItem extends ConsumerWidget {
     final currencySettings = ref.watch(currencySettingsNotifierProvider);
 
     return Text(
-      currencySettings.formatAmount(double.parse(subscription.price)),
+      currencySettings.formatAmount(subscription.price.toDouble()),
       style: TextStyle(
         fontSize: 16.sp,
         fontWeight: FontWeight.w400,

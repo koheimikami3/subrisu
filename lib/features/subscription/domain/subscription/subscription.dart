@@ -13,7 +13,7 @@ abstract class Subscription implements _$Subscription {
     required String serviceName,
 
     // 価格
-    required String price,
+    required num price,
 
     // アイコン画像パス
     required String iconImagePath,
@@ -24,11 +24,11 @@ abstract class Subscription implements _$Subscription {
     // 初回支払日
     required Timestamp firstPaidOn,
 
-    // 通知フラグ
-    required bool notification,
+    // 通知を有効にするかどうか
+    required bool isNotificationEnabled,
 
     // メモ
-    required String memo,
+    required String? note,
 
     // 作成日
     required Timestamp createdAt,
@@ -43,12 +43,12 @@ abstract class Subscription implements _$Subscription {
     return Subscription(
       id: snapshot.id,
       serviceName: snapshot['serviceName'] as String,
-      price: data['price'] as String,
+      price: data['price'] as num,
       iconImagePath: data['iconImagePath'] as String,
-      paymentCycle: PaymentCycle.values[data['paymentCycle'] as int],
+      paymentCycle: PaymentCycle.values.byName(data['paymentCycle'] as String),
       firstPaidOn: data['firstPaidOn'] as Timestamp,
-      notification: data['notification'] as bool,
-      memo: data['memo'] as String,
+      isNotificationEnabled: data['isNotificationEnabled'] as bool,
+      note: data['note'] as String?,
       createdAt: data['createdAt'] as Timestamp,
     );
   }
@@ -61,8 +61,8 @@ abstract class Subscription implements _$Subscription {
       'iconImagePath': iconImagePath,
       'paymentCycle': paymentCycle,
       'firstPaidOn': firstPaidOn,
-      'notification': notification,
-      'memo': memo,
+      'isNotificationEnabled': isNotificationEnabled,
+      'note': note,
       'createdAt': createdAt,
     };
   }

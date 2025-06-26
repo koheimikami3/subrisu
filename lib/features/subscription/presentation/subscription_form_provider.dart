@@ -15,8 +15,8 @@ class SubscriptionFormNotifier extends _$SubscriptionFormNotifier {
     required String iconImagePath,
     required PaymentCycle paymentCycle,
     required DateTime firstPaidOn,
-    required bool notification,
-    required String memo,
+    required bool isNotificationEnabled,
+    required String note,
   }) {
     state = state.copyWith(
       serviceName: serviceName,
@@ -27,8 +27,8 @@ class SubscriptionFormNotifier extends _$SubscriptionFormNotifier {
       firstPaidYear: firstPaidOn.year,
       firstPaidMonth: firstPaidOn.month,
       firstPaidDay: firstPaidOn.day,
-      notification: notification,
-      memo: memo,
+      isNotificationEnabled: isNotificationEnabled,
+      note: note,
     );
   }
 
@@ -73,12 +73,12 @@ class SubscriptionFormNotifier extends _$SubscriptionFormNotifier {
   }
 
   // 通知フラグの状態を更新する
-  void setNotification(bool value) {
-    state = state.copyWith(notification: value);
+  void setIsNotificationEnabled(bool value) {
+    state = state.copyWith(isNotificationEnabled: value);
   }
 
   // メモの状態を更新する
-  void setMemo(String value) {
-    state = state.copyWith(memo: value);
+  void setNote(String value) {
+    state = state.copyWith(note: value);
   }
 }
