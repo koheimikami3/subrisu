@@ -8,6 +8,9 @@ class AppConfigs {
   // テーマ設定のSharedPreferencesキー
   static const themeSharedKey = 'theme';
 
+  // テーマ設定のSharedPreferencesキー
+  static const themeSettingsSharedKey = 'themeSettings';
+
   // 言語設定のSharedPreferencesキー
   static const languageSharedKey = 'language';
 
