@@ -9,11 +9,20 @@ class ThemeSettingsPageBody extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 25.h),
-        const SelectDeviceThemeTile(),
-        const ItemDivider(),
-        const SelectLightThemeTile(),
-        const ItemDivider(),
-        const SelectDarkThemeTile(),
+        for (int i = 0; i < ThemeSettings.values.length; i++)
+          Column(
+            children: [
+              SelectThemeTile(
+                position: i == ThemeSettings.values.length - 1
+                    ? TilePosition.bottom
+                    : i == 0
+                        ? TilePosition.top
+                        : TilePosition.middle,
+                themeSettings: ThemeSettings.values[i],
+              ),
+              if (i < ThemeSettings.values.length - 1) const ItemDivider(),
+            ],
+          ),
       ],
     );
   }
