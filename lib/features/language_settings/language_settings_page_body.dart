@@ -9,9 +9,20 @@ class LanguageSettingsPageBody extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 25.h),
-        const SelectJapaneseTile(),
-        const ItemDivider(),
-        const SelectEnglishTile(),
+        for (int i = 0; i < LanguageSettings.values.length; i++)
+          Column(
+            children: [
+              SelectLanguageTile(
+                position: i == LanguageSettings.values.length - 1
+                    ? TilePosition.bottom
+                    : i == 0
+                        ? TilePosition.top
+                        : TilePosition.middle,
+                languageSettings: LanguageSettings.values[i],
+              ),
+              if (i < LanguageSettings.values.length - 1) const ItemDivider(),
+            ],
+          ),
       ],
     );
   }

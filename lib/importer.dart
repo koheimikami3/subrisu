@@ -60,8 +60,7 @@ export 'package:subrisu/features/currency_settings/currency_settings_page_body.d
 export 'package:subrisu/features/currency_settings/widgets/select_currency_tile.dart';
 export 'package:subrisu/features/language_settings/language_settings_page.dart';
 export 'package:subrisu/features/language_settings/language_settings_page_body.dart';
-export 'package:subrisu/features/language_settings/widgets/select_english_tile.dart';
-export 'package:subrisu/features/language_settings/widgets/select_japanese_tile.dart';
+export 'package:subrisu/features/language_settings/widgets/select_language_tile.dart';
 export 'package:subrisu/features/login_error/login_error_page.dart';
 export 'package:subrisu/features/login_error/login_error_page_body.dart';
 export 'package:subrisu/features/purchase/providers/offerings_provider.dart';
