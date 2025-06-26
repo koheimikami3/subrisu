@@ -1,8 +1,9 @@
 /// 言語設定
 enum LanguageSettings {
-  /// 日本語
-  japanese,
+  japanese('ja'),
+  english('en');
 
-  /// 英語
-  english,
+  const LanguageSettings(this.code);
+
+  final String code;
 }

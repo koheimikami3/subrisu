@@ -16,7 +16,7 @@ class CurrencySettingsNotifier extends _$CurrencySettingsNotifier {
     // 言語設定が日本語ならJPY、英語ならUSDを初期値に設定
     if (currencyCode == null) {
       if (WidgetsBinding.instance.platformDispatcher.locale.languageCode ==
-          AppConfigs.japaneseLanguageCode) {
+          LanguageSettings.japanese.code) {
         return CurrencySettings.jpy;
       }
 

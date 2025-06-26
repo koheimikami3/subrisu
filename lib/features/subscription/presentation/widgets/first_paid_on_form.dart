@@ -96,7 +96,7 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
       builder: (_) {
         return CupertinoPickerSheet(
           picker: Localizations.localeOf(context) ==
-                  const Locale(AppConfigs.englishLanguageCode)
+                  Locale(LanguageSettings.english.code)
               ? Row(
                   children: [
                     Expanded(child: _monthPicker(context)),
@@ -171,7 +171,7 @@ class _FirstPaidOnFormState extends ConsumerState<FirstPaidOnForm> {
           Center(
             child: Text(
               Localizations.localeOf(context) ==
-                      const Locale(AppConfigs.englishLanguageCode)
+                      Locale(LanguageSettings.english.code)
                   ? DateFormat.MMMM()
                       .format(DateTime(_yearList[i], _monthList[i]))
                   : AppLocalizations.of(context)!.firstPaidMonth(_monthList[i]),
