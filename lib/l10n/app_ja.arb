@@ -391,7 +391,7 @@
             }
         }
     },
-    "paymentCycle": "{paymentCycle, select, daily{毎日} weekly{毎週} monthly{毎月} threeMonths{3ヶ月} sixMonths{6ヶ月} yearly{毎年} other{error}}",
+    "paymentCycle": "{paymentCycle, select, daily{毎日} weekly{毎週} monthly{毎月} quarterly{3ヶ月} semiAnnual{6ヶ月} yearly{毎年} other{error}}",
     "@paymentCycle": {
         "description": "",
         "placeholders": {

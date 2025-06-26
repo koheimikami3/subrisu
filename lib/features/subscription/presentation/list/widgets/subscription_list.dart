@@ -97,7 +97,7 @@ class SubscriptionList extends ConsumerWidget {
         final difference = nextPaidOn.difference(now);
         day = difference.inDays;
 
-      case PaymentCycle.threeMonths:
+      case PaymentCycle.quarterly:
         var nextPaidOn = firstPaidOn; // 次回支払日付
         const month = 3; // 加える月数
 
@@ -116,7 +116,7 @@ class SubscriptionList extends ConsumerWidget {
         final difference = nextPaidOn.difference(now);
         day = difference.inDays;
 
-      case PaymentCycle.sixMonths:
+      case PaymentCycle.semiAnnual:
         var nextPaidOn = firstPaidOn; // 次回支払日付
         const month = 6; // 加える月数
 

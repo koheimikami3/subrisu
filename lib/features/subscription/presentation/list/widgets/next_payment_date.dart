@@ -66,7 +66,7 @@ class NextPaymentDate extends StatelessWidget {
           text = AppLocalizations.of(context)!.daysLeft(day);
         }
 
-      case PaymentCycle.threeMonths:
+      case PaymentCycle.quarterly:
         var nextPaidOn = firstPaidDate; // 次回支払日付
         const month = 3; // 加える月数
 
@@ -91,7 +91,7 @@ class NextPaymentDate extends StatelessWidget {
           text = AppLocalizations.of(context)!.daysLeft(day);
         }
 
-      case PaymentCycle.sixMonths:
+      case PaymentCycle.semiAnnual:
         var nextPaidOn = firstPaidDate; // 次回支払日付
         const month = 6; // 加える月数
 
