@@ -11,6 +11,9 @@ class AppConfigs {
   // 言語設定のSharedPreferencesキー
   static const languageSharedKey = 'language';
 
+  // 言語設定のSharedPreferencesキー
+  static const languageSettingsSharedKey = 'languageSettings';
+
   // 通貨設定のSharedPreferencesキー
   static const currencySharedKey = 'currency';
 

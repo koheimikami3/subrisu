@@ -10,25 +10,25 @@ class LanguageSettingsNotifier extends _$LanguageSettingsNotifier {
     final prefs = ref.read(sharedPreferencesProvider);
 
     // 言語の設定状況を取得
-    var languageIndex = prefs.getInt(AppConfigs.languageSharedKey);
+    var languageCode = prefs.getString(AppConfigs.languageSettingsSharedKey);
 
     // 未設定の場合、端末の言語設定が日本語の場合以外は英語に設定
-    languageIndex ??=
+    languageCode ??=
         WidgetsBinding.instance.platformDispatcher.locale.languageCode ==
                 LanguageSettings.japanese.code
-            ? LanguageSettings.japanese.index
-            : LanguageSettings.english.index;
+            ? LanguageSettings.japanese.code
+            : LanguageSettings.english.code;
 
-    return LanguageSettings.values[languageIndex];
+    return LanguageSettings.fromCode(languageCode);
   }
 
   /// 状態を指定したLanguageSettingsに更新
   ///
-  /// 言語設定をSharedPreferencesに保存
+  /// 言語コードをSharedPreferencesに保存
   void set(LanguageSettings value) {
     final prefs = ref.read(sharedPreferencesProvider);
 
     state = value;
-    prefs.setInt(AppConfigs.languageSharedKey, value.index);
+    prefs.setString(AppConfigs.languageSettingsSharedKey, value.code);
   }
 }
