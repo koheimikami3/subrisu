@@ -34,8 +34,4 @@ class AppConfigs {
 
   // 課金価格のRemoteConfigキー
   static const purchasePriceRemoteKey = 'purchasePrice';
-
-  // 各OS
-  static const iOS = 'iOS';
-  static const android = 'Android';
 }
