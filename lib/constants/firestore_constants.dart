@@ -8,5 +8,6 @@ class FirestoreConstants {
 
   // フィールド名
   static const createdAtField = 'createdAt';
+  static const updatedAtField = 'updatedAt';
   static const tokenField = 'token';
 }

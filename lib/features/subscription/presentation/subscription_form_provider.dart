@@ -17,7 +17,6 @@ class SubscriptionFormNotifier extends _$SubscriptionFormNotifier {
     required DateTime firstPaidOn,
     required bool isNotificationEnabled,
     required String note,
-    required DateTime createdAt,
   }) {
     state = state.copyWith(
       serviceName: serviceName,
@@ -30,7 +29,6 @@ class SubscriptionFormNotifier extends _$SubscriptionFormNotifier {
       firstPaidDay: firstPaidOn.day,
       isNotificationEnabled: isNotificationEnabled,
       note: note,
-      createdAt: createdAt,
     );
   }
 
