@@ -14,25 +14,19 @@ abstract class SubscriptionData implements _$SubscriptionData {
     required num price,
 
     // アイコン画像パス
-    @Default('') String iconImagePath,
+    required String iconImagePath,
 
     // 支払い周期
     required String paymentCycle,
 
     // 初回支払日
-    @FirstPaidOnField() DateTime? firstPaidOn,
+    @FirstPaidOnField() required DateTime firstPaidOn,
 
     // 通知を有効にするかどうか
     required bool isNotificationEnabled,
 
     // メモ
     required String? note,
-
-    // 作成日時
-    @CreatedAtField() DateTime? createdAt,
-
-    // 更新日時
-    @UpdatedAtField() DateTime? updatedAt,
   }) = _SubscriptionData;
 
   const SubscriptionData._();

@@ -35,9 +35,6 @@ abstract class SubscriptionFormState implements _$SubscriptionFormState {
 
     // メモ
     @Default('') String note,
-
-    // 作成日時
-    @Default(null) DateTime? createdAt,
   }) = _SubscriptionFormState;
 
   const SubscriptionFormState._();

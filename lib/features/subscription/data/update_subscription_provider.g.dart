@@ -7,7 +7,7 @@ part of 'update_subscription_provider.dart';
 // **************************************************************************
 
 String _$updateSubscriptionHash() =>
-    r'137e008a672a1c4a42b2a77f028689e4908e584f';
+    r'fdb9deeab82fbb9c874cb817c92bdccfab761426';
 
 /// Copied from Dart SDK
 class _SystemHash {

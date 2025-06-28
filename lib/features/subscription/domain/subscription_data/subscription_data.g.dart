@@ -11,13 +11,11 @@ _$SubscriptionDataImpl _$$SubscriptionDataImplFromJson(
     _$SubscriptionDataImpl(
       serviceName: json['serviceName'] as String,
       price: json['price'] as num,
-      iconImagePath: json['iconImagePath'] as String? ?? '',
+      iconImagePath: json['iconImagePath'] as String,
       paymentCycle: json['paymentCycle'] as String,
       firstPaidOn: const FirstPaidOnField().fromJson(json['firstPaidOn']),
       isNotificationEnabled: json['isNotificationEnabled'] as bool,
       note: json['note'] as String?,
-      createdAt: const CreatedAtField().fromJson(json['createdAt']),
-      updatedAt: const UpdatedAtField().fromJson(json['updatedAt']),
     );
 
 Map<String, dynamic> _$$SubscriptionDataImplToJson(
@@ -30,6 +28,4 @@ Map<String, dynamic> _$$SubscriptionDataImplToJson(
       'firstPaidOn': const FirstPaidOnField().toJson(instance.firstPaidOn),
       'isNotificationEnabled': instance.isNotificationEnabled,
       'note': instance.note,
-      'createdAt': const CreatedAtField().toJson(instance.createdAt),
-      'updatedAt': const UpdatedAtField().toJson(instance.updatedAt),
     };
