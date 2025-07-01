@@ -7,7 +7,6 @@ class SubscriptionForm extends StatelessWidget {
     this.serviceName,
     this.price,
     this.paymentCycle,
-    this.firstPaidOn,
     this.memo,
     required this.button,
   });
@@ -15,7 +14,6 @@ class SubscriptionForm extends StatelessWidget {
   final String? serviceName; // サービス名の初期値
   final String? price; // 価格の初期値
   final PaymentCycle? paymentCycle; // 支払い周期の初期値
-  final DateTime? firstPaidOn; // 初回支払日の初期値
   final String? memo; // メモの初期値
   final Widget button; // 作成または更新ボタン
 
@@ -31,10 +29,7 @@ class SubscriptionForm extends StatelessWidget {
                 SizedBox(height: 20.h),
                 ServiceInfo(serviceName: serviceName, price: price),
                 SizedBox(height: 25.h),
-                DetailInfo(
-                  paymentCycle: paymentCycle,
-                  firstPaidOn: firstPaidOn,
-                ),
+                DetailInfo(paymentCycle: paymentCycle),
                 SizedBox(height: 25.h),
                 const NotificationSelectionForm(),
                 SizedBox(height: 25.h),

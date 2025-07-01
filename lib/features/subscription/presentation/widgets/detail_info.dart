@@ -5,11 +5,9 @@ class DetailInfo extends ConsumerWidget {
   const DetailInfo({
     super.key,
     this.paymentCycle,
-    this.firstPaidOn,
   });
 
   final PaymentCycle? paymentCycle; // 支払い周期
-  final DateTime? firstPaidOn; // 初回支払日
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -38,7 +36,7 @@ class DetailInfo extends ConsumerWidget {
                   children: [
                     PaymentCycleSelectionForm(paymentCycle: paymentCycle),
                     const ItemDivider(),
-                    FirstPaidOnForm(firstPaidOn: firstPaidOn),
+                    const FirstPaidOnForm(),
                   ],
                 ),
               ),

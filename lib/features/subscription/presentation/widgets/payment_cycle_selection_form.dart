@@ -63,15 +63,23 @@ class _PaymentCycleSelectionFormState
       builder: (_) {
         return CupertinoPickerSheet(
           picker: _picker(),
-          saveOnPressed: () {
-            // 変更内容をプロバイダに保存
-            ref
-                .read(subscriptionFormNotifierProvider.notifier)
-                .setPaymentCycle(_selectedItem);
+          saveButton: TextButton(
+            onPressed: () {
+              ref
+                  .read(subscriptionFormNotifierProvider.notifier)
+                  .setPaymentCycle(_selectedItem);
 
-            // Pickerを閉じる
-            Navigator.pop(context);
-          },
+              // Pickerを閉じる
+              Navigator.pop(context);
+            },
+            child: Text(
+              AppLocalizations.of(context)!.pickerSaveButton,
+              style: TextStyle(
+                fontSize: 15.5.sp,
+                color: AppColors.primary,
+              ),
+            ),
+          ),
         );
       },
     );

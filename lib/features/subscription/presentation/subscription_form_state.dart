@@ -21,14 +21,20 @@ abstract class SubscriptionFormState implements _$SubscriptionFormState {
     // 支払い周期
     @Default(PaymentCycle.monthly) PaymentCycle paymentCycle,
 
-    // 初回支払い年
-    @Default(null) int? firstPaidYear,
+    // Pickerで選択中の初回支払い年月に対応する日にちリスト
+    @Default([]) List<int> dayList,
 
-    // 初回支払い月
-    @Default(null) int? firstPaidMonth,
+    // Pickerで選択中の初回支払い年
+    required int selectedFirstPaidYear,
 
-    // 初回支払い日
-    @Default(null) int? firstPaidDay,
+    // Pickerで選択中の初回支払い月
+    required int selectedFirstPaidMonth,
+
+    // Pickerで選択中の初回支払い日にち
+    required int selectedFirstPaidDay,
+
+    // 選択確定初回支払い日
+    required DateTime resultFirstPaidDate,
 
     // 通知を有効にするかどうか
     @Default(false) bool isNotificationEnabled,

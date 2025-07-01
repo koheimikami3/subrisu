@@ -22,10 +22,18 @@ mixin _$SubscriptionFormState {
   String get selectedIconImagePath =>
       throw _privateConstructorUsedError; // 選択確定アイコン画像パス
   String get resultIconImagePath => throw _privateConstructorUsedError; // 支払い周期
-  PaymentCycle get paymentCycle => throw _privateConstructorUsedError; // 初回支払い年
-  int? get firstPaidYear => throw _privateConstructorUsedError; // 初回支払い月
-  int? get firstPaidMonth => throw _privateConstructorUsedError; // 初回支払い日
-  int? get firstPaidDay => throw _privateConstructorUsedError; // 通知を有効にするかどうか
+  PaymentCycle get paymentCycle =>
+      throw _privateConstructorUsedError; // Pickerで選択中の初回支払い年月に対応する日にちリスト
+  List<int> get dayList =>
+      throw _privateConstructorUsedError; // Pickerで選択中の初回支払い年
+  int get selectedFirstPaidYear =>
+      throw _privateConstructorUsedError; // Pickerで選択中の初回支払い月
+  int get selectedFirstPaidMonth =>
+      throw _privateConstructorUsedError; // Pickerで選択中の初回支払い日にち
+  int get selectedFirstPaidDay =>
+      throw _privateConstructorUsedError; // 選択確定初回支払い日
+  DateTime get resultFirstPaidDate =>
+      throw _privateConstructorUsedError; // 通知を有効にするかどうか
   bool get isNotificationEnabled => throw _privateConstructorUsedError; // メモ
   String get note => throw _privateConstructorUsedError;
 
@@ -48,9 +56,11 @@ abstract class $SubscriptionFormStateCopyWith<$Res> {
       String selectedIconImagePath,
       String resultIconImagePath,
       PaymentCycle paymentCycle,
-      int? firstPaidYear,
-      int? firstPaidMonth,
-      int? firstPaidDay,
+      List<int> dayList,
+      int selectedFirstPaidYear,
+      int selectedFirstPaidMonth,
+      int selectedFirstPaidDay,
+      DateTime resultFirstPaidDate,
       bool isNotificationEnabled,
       String note});
 }
@@ -76,9 +86,11 @@ class _$SubscriptionFormStateCopyWithImpl<$Res,
     Object? selectedIconImagePath = null,
     Object? resultIconImagePath = null,
     Object? paymentCycle = null,
-    Object? firstPaidYear = freezed,
-    Object? firstPaidMonth = freezed,
-    Object? firstPaidDay = freezed,
+    Object? dayList = null,
+    Object? selectedFirstPaidYear = null,
+    Object? selectedFirstPaidMonth = null,
+    Object? selectedFirstPaidDay = null,
+    Object? resultFirstPaidDate = null,
     Object? isNotificationEnabled = null,
     Object? note = null,
   }) {
@@ -103,18 +115,26 @@ class _$SubscriptionFormStateCopyWithImpl<$Res,
           ? _value.paymentCycle
           : paymentCycle // ignore: cast_nullable_to_non_nullable
               as PaymentCycle,
-      firstPaidYear: freezed == firstPaidYear
-          ? _value.firstPaidYear
-          : firstPaidYear // ignore: cast_nullable_to_non_nullable
-              as int?,
-      firstPaidMonth: freezed == firstPaidMonth
-          ? _value.firstPaidMonth
-          : firstPaidMonth // ignore: cast_nullable_to_non_nullable
-              as int?,
-      firstPaidDay: freezed == firstPaidDay
-          ? _value.firstPaidDay
-          : firstPaidDay // ignore: cast_nullable_to_non_nullable
-              as int?,
+      dayList: null == dayList
+          ? _value.dayList
+          : dayList // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      selectedFirstPaidYear: null == selectedFirstPaidYear
+          ? _value.selectedFirstPaidYear
+          : selectedFirstPaidYear // ignore: cast_nullable_to_non_nullable
+              as int,
+      selectedFirstPaidMonth: null == selectedFirstPaidMonth
+          ? _value.selectedFirstPaidMonth
+          : selectedFirstPaidMonth // ignore: cast_nullable_to_non_nullable
+              as int,
+      selectedFirstPaidDay: null == selectedFirstPaidDay
+          ? _value.selectedFirstPaidDay
+          : selectedFirstPaidDay // ignore: cast_nullable_to_non_nullable
+              as int,
+      resultFirstPaidDate: null == resultFirstPaidDate
+          ? _value.resultFirstPaidDate
+          : resultFirstPaidDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       isNotificationEnabled: null == isNotificationEnabled
           ? _value.isNotificationEnabled
           : isNotificationEnabled // ignore: cast_nullable_to_non_nullable
@@ -142,9 +162,11 @@ abstract class _$$SubscriptionFormStateImplCopyWith<$Res>
       String selectedIconImagePath,
       String resultIconImagePath,
       PaymentCycle paymentCycle,
-      int? firstPaidYear,
-      int? firstPaidMonth,
-      int? firstPaidDay,
+      List<int> dayList,
+      int selectedFirstPaidYear,
+      int selectedFirstPaidMonth,
+      int selectedFirstPaidDay,
+      DateTime resultFirstPaidDate,
       bool isNotificationEnabled,
       String note});
 }
@@ -168,9 +190,11 @@ class __$$SubscriptionFormStateImplCopyWithImpl<$Res>
     Object? selectedIconImagePath = null,
     Object? resultIconImagePath = null,
     Object? paymentCycle = null,
-    Object? firstPaidYear = freezed,
-    Object? firstPaidMonth = freezed,
-    Object? firstPaidDay = freezed,
+    Object? dayList = null,
+    Object? selectedFirstPaidYear = null,
+    Object? selectedFirstPaidMonth = null,
+    Object? selectedFirstPaidDay = null,
+    Object? resultFirstPaidDate = null,
     Object? isNotificationEnabled = null,
     Object? note = null,
   }) {
@@ -195,18 +219,26 @@ class __$$SubscriptionFormStateImplCopyWithImpl<$Res>
           ? _value.paymentCycle
           : paymentCycle // ignore: cast_nullable_to_non_nullable
               as PaymentCycle,
-      firstPaidYear: freezed == firstPaidYear
-          ? _value.firstPaidYear
-          : firstPaidYear // ignore: cast_nullable_to_non_nullable
-              as int?,
-      firstPaidMonth: freezed == firstPaidMonth
-          ? _value.firstPaidMonth
-          : firstPaidMonth // ignore: cast_nullable_to_non_nullable
-              as int?,
-      firstPaidDay: freezed == firstPaidDay
-          ? _value.firstPaidDay
-          : firstPaidDay // ignore: cast_nullable_to_non_nullable
-              as int?,
+      dayList: null == dayList
+          ? _value._dayList
+          : dayList // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+      selectedFirstPaidYear: null == selectedFirstPaidYear
+          ? _value.selectedFirstPaidYear
+          : selectedFirstPaidYear // ignore: cast_nullable_to_non_nullable
+              as int,
+      selectedFirstPaidMonth: null == selectedFirstPaidMonth
+          ? _value.selectedFirstPaidMonth
+          : selectedFirstPaidMonth // ignore: cast_nullable_to_non_nullable
+              as int,
+      selectedFirstPaidDay: null == selectedFirstPaidDay
+          ? _value.selectedFirstPaidDay
+          : selectedFirstPaidDay // ignore: cast_nullable_to_non_nullable
+              as int,
+      resultFirstPaidDate: null == resultFirstPaidDate
+          ? _value.resultFirstPaidDate
+          : resultFirstPaidDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       isNotificationEnabled: null == isNotificationEnabled
           ? _value.isNotificationEnabled
           : isNotificationEnabled // ignore: cast_nullable_to_non_nullable
@@ -228,12 +260,15 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
       this.selectedIconImagePath = '',
       this.resultIconImagePath = '',
       this.paymentCycle = PaymentCycle.monthly,
-      this.firstPaidYear = null,
-      this.firstPaidMonth = null,
-      this.firstPaidDay = null,
+      final List<int> dayList = const [],
+      required this.selectedFirstPaidYear,
+      required this.selectedFirstPaidMonth,
+      required this.selectedFirstPaidDay,
+      required this.resultFirstPaidDate,
       this.isNotificationEnabled = false,
       this.note = ''})
-      : super._();
+      : _dayList = dayList,
+        super._();
 
 // サービス名
   @override
@@ -255,18 +290,29 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
   @override
   @JsonKey()
   final PaymentCycle paymentCycle;
-// 初回支払い年
+// Pickerで選択中の初回支払い年月に対応する日にちリスト
+  final List<int> _dayList;
+// Pickerで選択中の初回支払い年月に対応する日にちリスト
   @override
   @JsonKey()
-  final int? firstPaidYear;
-// 初回支払い月
+  List<int> get dayList {
+    if (_dayList is EqualUnmodifiableListView) return _dayList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_dayList);
+  }
+
+// Pickerで選択中の初回支払い年
   @override
-  @JsonKey()
-  final int? firstPaidMonth;
-// 初回支払い日
+  final int selectedFirstPaidYear;
+// Pickerで選択中の初回支払い月
   @override
-  @JsonKey()
-  final int? firstPaidDay;
+  final int selectedFirstPaidMonth;
+// Pickerで選択中の初回支払い日にち
+  @override
+  final int selectedFirstPaidDay;
+// 選択確定初回支払い日
+  @override
+  final DateTime resultFirstPaidDate;
 // 通知を有効にするかどうか
   @override
   @JsonKey()
@@ -278,7 +324,7 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
 
   @override
   String toString() {
-    return 'SubscriptionFormState(serviceName: $serviceName, price: $price, selectedIconImagePath: $selectedIconImagePath, resultIconImagePath: $resultIconImagePath, paymentCycle: $paymentCycle, firstPaidYear: $firstPaidYear, firstPaidMonth: $firstPaidMonth, firstPaidDay: $firstPaidDay, isNotificationEnabled: $isNotificationEnabled, note: $note)';
+    return 'SubscriptionFormState(serviceName: $serviceName, price: $price, selectedIconImagePath: $selectedIconImagePath, resultIconImagePath: $resultIconImagePath, paymentCycle: $paymentCycle, dayList: $dayList, selectedFirstPaidYear: $selectedFirstPaidYear, selectedFirstPaidMonth: $selectedFirstPaidMonth, selectedFirstPaidDay: $selectedFirstPaidDay, resultFirstPaidDate: $resultFirstPaidDate, isNotificationEnabled: $isNotificationEnabled, note: $note)';
   }
 
   @override
@@ -295,12 +341,15 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
                 other.resultIconImagePath == resultIconImagePath) &&
             (identical(other.paymentCycle, paymentCycle) ||
                 other.paymentCycle == paymentCycle) &&
-            (identical(other.firstPaidYear, firstPaidYear) ||
-                other.firstPaidYear == firstPaidYear) &&
-            (identical(other.firstPaidMonth, firstPaidMonth) ||
-                other.firstPaidMonth == firstPaidMonth) &&
-            (identical(other.firstPaidDay, firstPaidDay) ||
-                other.firstPaidDay == firstPaidDay) &&
+            const DeepCollectionEquality().equals(other._dayList, _dayList) &&
+            (identical(other.selectedFirstPaidYear, selectedFirstPaidYear) ||
+                other.selectedFirstPaidYear == selectedFirstPaidYear) &&
+            (identical(other.selectedFirstPaidMonth, selectedFirstPaidMonth) ||
+                other.selectedFirstPaidMonth == selectedFirstPaidMonth) &&
+            (identical(other.selectedFirstPaidDay, selectedFirstPaidDay) ||
+                other.selectedFirstPaidDay == selectedFirstPaidDay) &&
+            (identical(other.resultFirstPaidDate, resultFirstPaidDate) ||
+                other.resultFirstPaidDate == resultFirstPaidDate) &&
             (identical(other.isNotificationEnabled, isNotificationEnabled) ||
                 other.isNotificationEnabled == isNotificationEnabled) &&
             (identical(other.note, note) || other.note == note));
@@ -314,9 +363,11 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
       selectedIconImagePath,
       resultIconImagePath,
       paymentCycle,
-      firstPaidYear,
-      firstPaidMonth,
-      firstPaidDay,
+      const DeepCollectionEquality().hash(_dayList),
+      selectedFirstPaidYear,
+      selectedFirstPaidMonth,
+      selectedFirstPaidDay,
+      resultFirstPaidDate,
       isNotificationEnabled,
       note);
 
@@ -337,9 +388,11 @@ abstract class _SubscriptionFormState extends SubscriptionFormState {
       final String selectedIconImagePath,
       final String resultIconImagePath,
       final PaymentCycle paymentCycle,
-      final int? firstPaidYear,
-      final int? firstPaidMonth,
-      final int? firstPaidDay,
+      final List<int> dayList,
+      required final int selectedFirstPaidYear,
+      required final int selectedFirstPaidMonth,
+      required final int selectedFirstPaidDay,
+      required final DateTime resultFirstPaidDate,
       final bool isNotificationEnabled,
       final String note}) = _$SubscriptionFormStateImpl;
   const _SubscriptionFormState._() : super._();
@@ -354,13 +407,17 @@ abstract class _SubscriptionFormState extends SubscriptionFormState {
   @override
   String get resultIconImagePath; // 支払い周期
   @override
-  PaymentCycle get paymentCycle; // 初回支払い年
+  PaymentCycle get paymentCycle; // Pickerで選択中の初回支払い年月に対応する日にちリスト
   @override
-  int? get firstPaidYear; // 初回支払い月
+  List<int> get dayList; // Pickerで選択中の初回支払い年
   @override
-  int? get firstPaidMonth; // 初回支払い日
+  int get selectedFirstPaidYear; // Pickerで選択中の初回支払い月
   @override
-  int? get firstPaidDay; // 通知を有効にするかどうか
+  int get selectedFirstPaidMonth; // Pickerで選択中の初回支払い日にち
+  @override
+  int get selectedFirstPaidDay; // 選択確定初回支払い日
+  @override
+  DateTime get resultFirstPaidDate; // 通知を有効にするかどうか
   @override
   bool get isNotificationEnabled; // メモ
   @override
