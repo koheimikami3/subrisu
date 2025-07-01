@@ -8,11 +8,6 @@ Future<void> updateSubscription(Ref ref, String subscriptionId) async {
   final userId = ref.read(userIdProvider);
   final formState = ref.read(subscriptionFormNotifierProvider);
   final note = formState.note.isEmpty ? null : formState.note;
-  final firstPaidOn = DateTime(
-    formState.firstPaidYear!,
-    formState.firstPaidMonth!,
-    formState.firstPaidDay!,
-  );
 
   // SubscriptionDocumentの更新データ
   final subscriptionData = SubscriptionData(
@@ -20,7 +15,7 @@ Future<void> updateSubscription(Ref ref, String subscriptionId) async {
     price: num.parse(formState.price),
     iconImagePath: formState.resultIconImagePath,
     paymentCycle: formState.paymentCycle.name,
-    firstPaidOn: firstPaidOn,
+    firstPaidOn: formState.resultFirstPaidDate,
     isNotificationEnabled: formState.isNotificationEnabled,
     note: note,
   );

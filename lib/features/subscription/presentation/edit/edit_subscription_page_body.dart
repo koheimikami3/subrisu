@@ -15,7 +15,6 @@ class EditSubscriptionPageBody extends StatelessWidget {
       serviceName: subscription.serviceName,
       price: subscription.price.toString(),
       paymentCycle: subscription.paymentCycle,
-      firstPaidOn: subscription.firstPaidOn.toDate(),
       memo: subscription.note,
       button: UpdateSubscriptionButton(subscriptionId: subscription.id),
     );

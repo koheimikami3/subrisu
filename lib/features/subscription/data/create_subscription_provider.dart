@@ -8,23 +8,11 @@ Future<void> createSubscription(Ref ref) async {
   final userId = ref.read(userIdProvider);
   final formState = ref.read(subscriptionFormNotifierProvider);
   final note = formState.note.isEmpty ? null : formState.note;
-  late final DateTime firstPaidOn;
 
   // アイコン画像が未設定の場合、サブリスアイコンを使用
   final iconImagePath = formState.resultIconImagePath.isEmpty
       ? Assets.images.subscription.subrisu.path
       : formState.resultIconImagePath;
-
-  // 初回支払日が未設定の場合、現在の日付を使用
-  if (formState.firstPaidYear == null) {
-    firstPaidOn = DateTime.now();
-  } else {
-    firstPaidOn = DateTime(
-      formState.firstPaidYear!,
-      formState.firstPaidMonth!,
-      formState.firstPaidDay!,
-    );
-  }
 
   // SubscriptionDocumentの作成データ
   final subscriptionData = SubscriptionData(
@@ -32,7 +20,7 @@ Future<void> createSubscription(Ref ref) async {
     price: num.parse(formState.price),
     iconImagePath: iconImagePath,
     paymentCycle: formState.paymentCycle.name,
-    firstPaidOn: firstPaidOn,
+    firstPaidOn: formState.resultFirstPaidDate,
     isNotificationEnabled: formState.isNotificationEnabled,
     note: note,
   );

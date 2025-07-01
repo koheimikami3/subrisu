@@ -4,11 +4,11 @@ class CupertinoPickerSheet extends ConsumerWidget {
   const CupertinoPickerSheet({
     super.key,
     required this.picker,
-    required this.saveOnPressed,
+    required this.saveButton,
   });
 
   final Widget picker;
-  final VoidCallback saveOnPressed;
+  final Widget saveButton;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -29,7 +29,7 @@ class CupertinoPickerSheet extends ConsumerWidget {
               SizedBox(width: 10.w),
               _cancelButton(context, themeSettings),
               const Spacer(),
-              _saveButton(context),
+              saveButton,
               SizedBox(width: 10.w),
             ],
           ),
@@ -53,20 +53,6 @@ class CupertinoPickerSheet extends ConsumerWidget {
             lightColor: Colors.grey.shade800,
             darkColor: Colors.white,
           ),
-        ),
-      ),
-    );
-  }
-
-  /// 変更を保存するボタン
-  Widget _saveButton(BuildContext context) {
-    return TextButton(
-      onPressed: saveOnPressed,
-      child: Text(
-        AppLocalizations.of(context)!.pickerSaveButton,
-        style: TextStyle(
-          fontSize: 15.5.sp,
-          color: AppColors.primary,
         ),
       ),
     );
