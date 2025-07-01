@@ -24,6 +24,7 @@ class MemoInputForm extends ConsumerWidget {
             initialValue: memo,
             minLines: 3,
             maxLines: null,
+            horizontalPadding: 9,
             onChanged: (value) {
               // メモの状態を更新
               ref

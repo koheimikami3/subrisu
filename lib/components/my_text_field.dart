@@ -11,6 +11,7 @@ class MyTextFormField extends ConsumerWidget {
     this.keyboardType,
     this.inputFormatters,
     this.hintText,
+    this.horizontalPadding = 3,
     required this.onChanged,
   });
 
@@ -21,6 +22,7 @@ class MyTextFormField extends ConsumerWidget {
   final TextInputType? keyboardType; // キーボードの種類
   final List<TextInputFormatter>? inputFormatters; // 入力制限
   final String? hintText; // ヒントテキスト
+  final int horizontalPadding; // 水平方向のパディング
   final void Function(String) onChanged; // 入力時の動作
 
   @override
@@ -36,7 +38,10 @@ class MyTextFormField extends ConsumerWidget {
       inputFormatters: inputFormatters,
       cursorColor: AppColors.primary,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 3.w),
+        contentPadding: EdgeInsets.symmetric(
+          vertical: 12.h,
+          horizontal: horizontalPadding.w,
+        ),
         isDense: true,
         hintText: hintText,
         hintStyle: TextStyle(fontSize: AppConfigs.defaultFontSize.sp),
