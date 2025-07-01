@@ -6,6 +6,9 @@ enum PaymentCycle {
   /// 毎週
   weekly,
 
+  /// 隔週
+  biweekly,
+
   /// 毎月
   monthly,
 

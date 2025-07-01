@@ -41,6 +41,8 @@ class TotalPrice extends ConsumerWidget {
               paymentCycleMonths = null;
             case PaymentCycle.weekly:
               paymentCycleMonths = null;
+            case PaymentCycle.biweekly:
+              paymentCycleMonths = null;
           }
 
           // 支払い周期が月単位で設定されている場合、
@@ -86,6 +88,34 @@ class TotalPrice extends ConsumerWidget {
               final weeksInMonth =
                   ((lastDay.difference(firstDay).inDays + 1) / 7).ceil();
               totalPrice += price * weeksInMonth;
+            }
+          } else if (paymentCycle == PaymentCycle.biweekly) {
+            // 今月の1日と最終日
+            final firstDay = DateTime(now.year, now.month, 1);
+            final lastDay = DateTime(now.year, now.month + 1, 0);
+
+            // 今月が初回支払月か判定
+            final isFirstPaidMonth =
+                firstPaidOn.year == now.year && firstPaidOn.month == now.month;
+
+            // 初回支払月の場合、初回支払日から月末までの週数分のみ加算
+            if (isFirstPaidMonth) {
+              // 初回支払日が属する週番号（0〜）を計算
+              final firstPaidWeek = ((firstPaidOn.day - 1) / 7).floor();
+              final weeksInMonth =
+                  ((lastDay.difference(firstDay).inDays + 1) / 7).ceil();
+
+              // 初回支払日が属する週から月末までの週数のみ加算
+              // 2週ごとに加算
+              final biweeksToAdd = ((weeksInMonth - firstPaidWeek) / 2).ceil();
+              if (biweeksToAdd > 0) {
+                totalPrice += price * biweeksToAdd;
+              }
+            } else {
+              final weeksInMonth =
+                  ((lastDay.difference(firstDay).inDays + 1) / 7).ceil();
+              final biweeksInMonth = (weeksInMonth / 2).ceil();
+              totalPrice += price * biweeksInMonth;
             }
           } else if (paymentCycle == PaymentCycle.daily) {
             // 今月の最終日

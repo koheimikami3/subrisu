@@ -78,6 +78,21 @@ class SubscriptionList extends ConsumerWidget {
           day = 7 - day;
         }
 
+      case PaymentCycle.biweekly:
+        var nextPaidOn = firstPaidOn;
+        const daysToAdd = 14; // 加える日数
+
+        // 次回支払日付を作成
+        // 今日より後の日付になるまで
+        // 初回支払日付を初期値として14日ずつ加える
+        while (nextPaidOn.isBefore(now)) {
+          nextPaidOn = nextPaidOn.add(const Duration(days: daysToAdd));
+        }
+
+        // 今日と次回の支払日付の差分の日数を計算
+        final difference = nextPaidOn.difference(now);
+        day = difference.inDays;
+
       case PaymentCycle.monthly:
         var nextPaidOn = firstPaidOn; // 次回支払日付
         const month = 1; // 加える月数
