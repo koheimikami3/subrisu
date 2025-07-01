@@ -391,7 +391,7 @@
             }
         }
     },
-    "paymentCycle": "{paymentCycle, select, daily{every day} weekly{every week} monthly{every month} quarterly{every three months} semiAnnual{every six months} yearly{every year} other{error}}",
+    "paymentCycle": "{paymentCycle, select, daily{every day} weekly{every week} biweekly{every two weeks} monthly{every month} quarterly{every three months} semiAnnual{every six months} yearly{every year} other{error}}",
     "@paymentCycle": {
         "description": "",
         "placeholders": {
