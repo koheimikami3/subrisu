@@ -36,7 +36,7 @@ class MyTextFormField extends ConsumerWidget {
       inputFormatters: inputFormatters,
       cursorColor: AppColors.primary,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 10.w),
+        contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 3.w),
         isDense: true,
         hintText: hintText,
         hintStyle: TextStyle(fontSize: AppConfigs.defaultFontSize.sp),
