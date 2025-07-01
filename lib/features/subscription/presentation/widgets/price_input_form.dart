@@ -11,18 +11,29 @@ class PriceInputForm extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MyTextFormField(
-      initialValue: price,
-      maxLength: 7,
-      keyboardType: const TextInputType.numberWithOptions(decimal: true),
-      inputFormatters: [
-        FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*')),
+    final currencySettings = ref.watch(currencySettingsNotifierProvider);
+
+    return Row(
+      children: [
+        Text(currencySettings.symbol),
+        Expanded(
+          child: MyTextFormField(
+            initialValue: price,
+            maxLength: 7,
+            keyboardType: const TextInputType.numberWithOptions(decimal: true),
+            inputFormatters: [
+              FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*')),
+            ],
+            hintText: AppLocalizations.of(context)!.priceHint,
+            onChanged: (value) {
+              // 料金の状態を更新
+              ref
+                  .read(subscriptionFormNotifierProvider.notifier)
+                  .setPrice(value);
+            },
+          ),
+        ),
       ],
-      hintText: AppLocalizations.of(context)!.priceHint,
-      onChanged: (value) {
-        // 料金の状態を更新
-        ref.read(subscriptionFormNotifierProvider.notifier).setPrice(value);
-      },
     );
   }
 }
