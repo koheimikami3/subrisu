@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:intl/intl.dart';
 
 import '../../../../importer.dart';
 
@@ -30,10 +29,7 @@ class FirstPaidMonthPicker extends ConsumerWidget {
         for (int i = 0; i < monthList.length; i++) ...{
           Center(
             child: Text(
-              Localizations.localeOf(context) ==
-                      Locale(LanguageSettings.english.code)
-                  ? DateFormat.MMMM().format(DateTime(monthList[i]))
-                  : AppLocalizations.of(context)!.firstPaidMonth(monthList[i]),
+              AppLocalizations.of(context)!.firstPaidMonth((i + 1).toString()),
             ),
           ),
         },
