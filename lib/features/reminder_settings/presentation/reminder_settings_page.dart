@@ -1,4 +1,4 @@
-import '../../importer.dart';
+import '../../../importer.dart';
 
 /// リマインダー設定画面
 class ReminderSettingsPage extends StatelessWidget {

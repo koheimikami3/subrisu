@@ -1,4 +1,4 @@
-import '../../importer.dart';
+import '../../../importer.dart';
 
 /// 言語設定画面のScaffoldBody
 class ReminderSettingsPageBody extends StatelessWidget {

@@ -1,4 +1,4 @@
-import '../../../importer.dart';
+import '../../../../importer.dart';
 
 /// リマインダーを受け取るかどうかを設定するタイル
 class NotificationSettingsTile extends StatelessWidget {
