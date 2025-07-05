@@ -25,7 +25,7 @@ mixin _$CreateUserData {
   String get token => throw _privateConstructorUsedError; // タイムゾーン
   Map<String, dynamic> get timezone =>
       throw _privateConstructorUsedError; // 支払いリマインダー
-  Map<String, dynamic> get paymentReminder =>
+  Map<String, dynamic> get reminder =>
       throw _privateConstructorUsedError; // 作成日時
   @CreatedAtField()
   DateTime? get createdAt => throw _privateConstructorUsedError;
@@ -50,7 +50,7 @@ abstract class $CreateUserDataCopyWith<$Res> {
       {String os,
       String token,
       Map<String, dynamic> timezone,
-      Map<String, dynamic> paymentReminder,
+      Map<String, dynamic> reminder,
       @CreatedAtField() DateTime? createdAt});
 }
 
@@ -72,7 +72,7 @@ class _$CreateUserDataCopyWithImpl<$Res, $Val extends CreateUserData>
     Object? os = null,
     Object? token = null,
     Object? timezone = null,
-    Object? paymentReminder = null,
+    Object? reminder = null,
     Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
@@ -88,9 +88,9 @@ class _$CreateUserDataCopyWithImpl<$Res, $Val extends CreateUserData>
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
-      paymentReminder: null == paymentReminder
-          ? _value.paymentReminder
-          : paymentReminder // ignore: cast_nullable_to_non_nullable
+      reminder: null == reminder
+          ? _value.reminder
+          : reminder // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -112,7 +112,7 @@ abstract class _$$CreateUserDataImplCopyWith<$Res>
       {String os,
       String token,
       Map<String, dynamic> timezone,
-      Map<String, dynamic> paymentReminder,
+      Map<String, dynamic> reminder,
       @CreatedAtField() DateTime? createdAt});
 }
 
@@ -132,7 +132,7 @@ class __$$CreateUserDataImplCopyWithImpl<$Res>
     Object? os = null,
     Object? token = null,
     Object? timezone = null,
-    Object? paymentReminder = null,
+    Object? reminder = null,
     Object? createdAt = freezed,
   }) {
     return _then(_$CreateUserDataImpl(
@@ -148,9 +148,9 @@ class __$$CreateUserDataImplCopyWithImpl<$Res>
           ? _value._timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
-      paymentReminder: null == paymentReminder
-          ? _value._paymentReminder
-          : paymentReminder // ignore: cast_nullable_to_non_nullable
+      reminder: null == reminder
+          ? _value._reminder
+          : reminder // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -167,10 +167,10 @@ class _$CreateUserDataImpl extends _CreateUserData {
       {required this.os,
       required this.token,
       required final Map<String, dynamic> timezone,
-      required final Map<String, dynamic> paymentReminder,
+      required final Map<String, dynamic> reminder,
       @CreatedAtField() this.createdAt})
       : _timezone = timezone,
-        _paymentReminder = paymentReminder,
+        _reminder = reminder,
         super._();
 
   factory _$CreateUserDataImpl.fromJson(Map<String, dynamic> json) =>
@@ -193,13 +193,13 @@ class _$CreateUserDataImpl extends _CreateUserData {
   }
 
 // 支払いリマインダー
-  final Map<String, dynamic> _paymentReminder;
+  final Map<String, dynamic> _reminder;
 // 支払いリマインダー
   @override
-  Map<String, dynamic> get paymentReminder {
-    if (_paymentReminder is EqualUnmodifiableMapView) return _paymentReminder;
+  Map<String, dynamic> get reminder {
+    if (_reminder is EqualUnmodifiableMapView) return _reminder;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_paymentReminder);
+    return EqualUnmodifiableMapView(_reminder);
   }
 
 // 作成日時
@@ -209,7 +209,7 @@ class _$CreateUserDataImpl extends _CreateUserData {
 
   @override
   String toString() {
-    return 'CreateUserData(os: $os, token: $token, timezone: $timezone, paymentReminder: $paymentReminder, createdAt: $createdAt)';
+    return 'CreateUserData(os: $os, token: $token, timezone: $timezone, reminder: $reminder, createdAt: $createdAt)';
   }
 
   @override
@@ -220,8 +220,7 @@ class _$CreateUserDataImpl extends _CreateUserData {
             (identical(other.os, os) || other.os == os) &&
             (identical(other.token, token) || other.token == token) &&
             const DeepCollectionEquality().equals(other._timezone, _timezone) &&
-            const DeepCollectionEquality()
-                .equals(other._paymentReminder, _paymentReminder) &&
+            const DeepCollectionEquality().equals(other._reminder, _reminder) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt));
   }
@@ -233,7 +232,7 @@ class _$CreateUserDataImpl extends _CreateUserData {
       os,
       token,
       const DeepCollectionEquality().hash(_timezone),
-      const DeepCollectionEquality().hash(_paymentReminder),
+      const DeepCollectionEquality().hash(_reminder),
       createdAt);
 
   /// Create a copy of CreateUserData
@@ -258,7 +257,7 @@ abstract class _CreateUserData extends CreateUserData {
       {required final String os,
       required final String token,
       required final Map<String, dynamic> timezone,
-      required final Map<String, dynamic> paymentReminder,
+      required final Map<String, dynamic> reminder,
       @CreatedAtField() final DateTime? createdAt}) = _$CreateUserDataImpl;
   const _CreateUserData._() : super._();
 
@@ -273,7 +272,7 @@ abstract class _CreateUserData extends CreateUserData {
   @override
   Map<String, dynamic> get timezone; // 支払いリマインダー
   @override
-  Map<String, dynamic> get paymentReminder; // 作成日時
+  Map<String, dynamic> get reminder; // 作成日時
   @override
   @CreatedAtField()
   DateTime? get createdAt;
