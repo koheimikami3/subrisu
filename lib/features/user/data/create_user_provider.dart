@@ -26,6 +26,7 @@ Future<void> createUser(Ref ref, String userId) async {
     token: token!,
     timezone: timezone,
     paymentReminder: {
+      FirestoreConstants.isEnabled: AppConfigs.defaultReminderIsEnabled,
       FirestoreConstants.daysBeforeField: AppConfigs.defaultReminderDaysBefore,
       FirestoreConstants.hourField: AppConfigs.defaultReminderHour,
     },

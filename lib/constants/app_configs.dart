@@ -6,6 +6,7 @@ class AppConfigs {
   static const defaultFontSize = 13.5;
 
   // 支払いリマインダーのデフォルト値
+  static const defaultReminderIsEnabled = true;
   static const defaultReminderDaysBefore = 1;
   static const defaultReminderHour = 20;
 }
