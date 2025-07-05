@@ -6,7 +6,7 @@ part of 'update_user_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$updateUserHash() => r'7eb97d0a798748718b49bb43e92e3e1c632adf8e';
+String _$updateUserHash() => r'e0eef96f05f4448bf1924dceb6fc7c0eb403c422';
 
 /// 指定されたユーザーIDでUserDocumentを更新するFutureProvider
 ///

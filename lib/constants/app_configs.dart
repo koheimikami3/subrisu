@@ -4,4 +4,8 @@ class AppConfigs {
 
   // テキストデフォルトフォントサイズ
   static const defaultFontSize = 13.5;
+
+  // 支払いリマインダーのデフォルト値
+  static const defaultReminderDaysBefore = 1;
+  static const defaultReminderHour = 20;
 }
