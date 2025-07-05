@@ -137,6 +137,7 @@ export 'package:subrisu/features/theme_settings/theme_settings_page.dart';
 export 'package:subrisu/features/theme_settings/theme_settings_page_body.dart';
 export 'package:subrisu/features/theme_settings/widgets/select_theme_tile.dart';
 export 'package:subrisu/features/user/data/create_user_provider.dart';
+export 'package:subrisu/features/user/data/fcm_token_provider.dart';
 export 'package:subrisu/features/user/data/firebase_auth_provider.dart';
 export 'package:subrisu/features/user/data/login_provider.dart';
 export 'package:subrisu/features/user/data/timezone_provider.dart';
