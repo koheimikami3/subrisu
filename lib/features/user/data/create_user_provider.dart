@@ -15,7 +15,7 @@ Future<void> createUser(Ref ref, String userId) async {
   }
 
   // 端末のFCMトークンを取得
-  final token = await ref.read(firebaseMessagingProvider).getAPNSToken();
+  final token = await ref.read(fcmTokenProvider.future);
 
   // 端末のタイムゾーン情報を取得
   final timezone = await ref.read(timezoneProvider.future);
