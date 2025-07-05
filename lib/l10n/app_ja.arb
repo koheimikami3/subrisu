@@ -16,6 +16,10 @@
     "@purchasePageTitle": {
         "description": "The title displayed in the AppBar on the Purchase Page"
     },
+    "reminderSettingsPageTitle": "リマインダー設定",
+    "@reminderSettingsPageTitle": {
+        "description": "The title displayed in the AppBar on the Reminder Setting Page"
+    },
     "themeSettingsPageTitle": "テーマ設定",
     "@themeSettingsPageTitle": {
         "description": "The title displayed in the AppBar on the Theme Setting Page"
@@ -178,7 +182,7 @@
     "@purchaseItem": {
         "description": ""
     },
-    "notificationItem": "リマインド通知",
+    "notificationItem": "リマインダー設定",
     "@notificationItem": {
         "description": ""
     },
@@ -362,6 +366,28 @@
     },
     "openNotificationSettingsButton": "設定する",
     "@openNotificationSettingsButton": {
+        "description": ""
+    },
+    "reminder": "支払いのリマインド通知",
+    "@reminder": {
+        "description": ""
+    },
+    "reminderDaysBeforeTitle": "日にち",
+    "@reminderDaysBeforeTitle": {
+        "description": ""
+    },
+    "reminderDaysBefore": "{days, select, 0{当日} other{{days}日前}}",
+    "@reminderDaysBefore": {
+        "description": "",
+        "placeholders": {
+            "days": {
+                "type": "String",
+                "description": ""
+            }
+        }
+    },
+    "reminderHourTitle": "時間",
+    "@reminderHourTitle": {
         "description": ""
     },
     "theme": "{theme, select, device{端末設定と同じ} light{ライトモード} dark{ダークモード} other{error}}",
