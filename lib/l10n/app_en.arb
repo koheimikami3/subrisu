@@ -16,6 +16,10 @@
     "@purchasePageTitle": {
         "description": "The title displayed in the AppBar on the Purchase Page"
     },
+    "reminderSettingsPageTitle": "Reminder",
+    "@reminderSettingsPageTitle": {
+        "description": "The title displayed in the AppBar on the Reminder Setting Page"
+    },
     "themeSettingsPageTitle": "Theme",
     "@themeSettingsPageTitle": {
         "description": "The title displayed in the AppBar on the Theme Setting Page"
@@ -362,6 +366,28 @@
     },
     "openNotificationSettingsButton": "Set up",
     "@openNotificationSettingsButton": {
+        "description": ""
+    },
+    "reminder": "recieve payment reminder",
+    "@reminder": {
+        "description": ""
+    },
+    "reminderDaysBeforeTitle": "days before payment",
+    "@reminderDaysBeforeTitle": {
+        "description": ""
+    },
+    "reminderDaysBefore": "{days, select, 0{payment day} 1{1 day} other{{days} days}}",
+    "@reminderDaysBefore": {
+        "description": "",
+        "placeholders": {
+            "days": {
+                "type": "String",
+                "description": ""
+            }
+        }
+    },
+    "reminderHourTitle": "hour",
+    "@reminderHourTitle": {
         "description": ""
     },
     "theme": "{theme, select, device{System} light{Light Mode} dark{Dark Mode} other{error}}",
