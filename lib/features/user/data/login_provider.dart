@@ -26,7 +26,7 @@ Future<void> login(Ref ref) async {
     // UserDocumentを作成
     await ref.read(createUserProvider(userId).future);
   } else {
-    // FCMトークンを更新
-    await ref.read(updateTokenProvider.future);
+    // UserDocumentを更新
+    await ref.read(updateUserProvider.future);
   }
 }

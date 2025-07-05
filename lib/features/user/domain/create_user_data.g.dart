@@ -10,6 +10,7 @@ _$CreateUserDataImpl _$$CreateUserDataImplFromJson(Map<String, dynamic> json) =>
     _$CreateUserDataImpl(
       os: json['os'] as String,
       token: json['token'] as String,
+      timezone: json['timezone'] as Map<String, dynamic>,
       createdAt: const CreatedAtField().fromJson(json['createdAt']),
     );
 
@@ -18,5 +19,6 @@ Map<String, dynamic> _$$CreateUserDataImplToJson(
     <String, dynamic>{
       'os': instance.os,
       'token': instance.token,
+      'timezone': instance.timezone,
       'createdAt': const CreatedAtField().toJson(instance.createdAt),
     };
