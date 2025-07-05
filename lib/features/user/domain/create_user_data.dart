@@ -17,7 +17,7 @@ abstract class CreateUserData implements _$CreateUserData {
     required Map<String, dynamic> timezone,
 
     // 支払いリマインダー
-    required Map<String, int> paymentReminder,
+    required Map<String, dynamic> paymentReminder,
 
     // 作成日時
     @CreatedAtField() DateTime? createdAt,

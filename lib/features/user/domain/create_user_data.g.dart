@@ -11,7 +11,7 @@ _$CreateUserDataImpl _$$CreateUserDataImplFromJson(Map<String, dynamic> json) =>
       os: json['os'] as String,
       token: json['token'] as String,
       timezone: json['timezone'] as Map<String, dynamic>,
-      paymentReminder: Map<String, int>.from(json['paymentReminder'] as Map),
+      paymentReminder: json['paymentReminder'] as Map<String, dynamic>,
       createdAt: const CreatedAtField().fromJson(json['createdAt']),
     );
 
