@@ -10,6 +10,9 @@ String _$fcmTokenHash() => r'665141e34e54e650bf24401d4b6e6a537fb37473';
 
 /// 端末のFCMトークンを取得するFutureProvider
 ///
+/// エミュレーターでgetToken()を使用するとエラーになるため、
+/// リリースモードではgetToken()を使用し、デバッグモードではgetAPNSToken()を使用する
+///
 /// Copied from [fcmToken].
 @ProviderFor(fcmToken)
 final fcmTokenProvider = AutoDisposeFutureProvider<String?>.internal(

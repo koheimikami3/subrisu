@@ -25,6 +25,10 @@ Future<void> createUser(Ref ref, String userId) async {
     os: os,
     token: token!,
     timezone: timezone,
+    paymentReminder: {
+      FirestoreConstants.daysBeforeField: AppConfigs.defaultReminderDaysBefore,
+      FirestoreConstants.hourField: AppConfigs.defaultReminderHour,
+    },
   );
 
   // UserDocumentを作成
