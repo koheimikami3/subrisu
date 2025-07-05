@@ -10,4 +10,7 @@ class FirestoreConstants {
   static const createdAtField = 'createdAt';
   static const updatedAtField = 'updatedAt';
   static const tokenField = 'token';
+  static const timezoneField = 'timezone';
+  static const timezoneNameField = 'name';
+  static const timezoneOffsetField = 'offset';
 }

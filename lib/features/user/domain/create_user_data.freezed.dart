@@ -22,7 +22,9 @@ CreateUserData _$CreateUserDataFromJson(Map<String, dynamic> json) {
 mixin _$CreateUserData {
 // 端末のOS
   String get os => throw _privateConstructorUsedError; // FCMトークン
-  String get token => throw _privateConstructorUsedError; // 作成日時
+  String get token => throw _privateConstructorUsedError; // タイムゾーン
+  Map<String, dynamic> get timezone =>
+      throw _privateConstructorUsedError; // 作成日時
   @CreatedAtField()
   DateTime? get createdAt => throw _privateConstructorUsedError;
 
@@ -42,7 +44,11 @@ abstract class $CreateUserDataCopyWith<$Res> {
           CreateUserData value, $Res Function(CreateUserData) then) =
       _$CreateUserDataCopyWithImpl<$Res, CreateUserData>;
   @useResult
-  $Res call({String os, String token, @CreatedAtField() DateTime? createdAt});
+  $Res call(
+      {String os,
+      String token,
+      Map<String, dynamic> timezone,
+      @CreatedAtField() DateTime? createdAt});
 }
 
 /// @nodoc
@@ -62,6 +68,7 @@ class _$CreateUserDataCopyWithImpl<$Res, $Val extends CreateUserData>
   $Res call({
     Object? os = null,
     Object? token = null,
+    Object? timezone = null,
     Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
@@ -73,6 +80,10 @@ class _$CreateUserDataCopyWithImpl<$Res, $Val extends CreateUserData>
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
+      timezone: null == timezone
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -89,7 +100,11 @@ abstract class _$$CreateUserDataImplCopyWith<$Res>
       __$$CreateUserDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String os, String token, @CreatedAtField() DateTime? createdAt});
+  $Res call(
+      {String os,
+      String token,
+      Map<String, dynamic> timezone,
+      @CreatedAtField() DateTime? createdAt});
 }
 
 /// @nodoc
@@ -107,6 +122,7 @@ class __$$CreateUserDataImplCopyWithImpl<$Res>
   $Res call({
     Object? os = null,
     Object? token = null,
+    Object? timezone = null,
     Object? createdAt = freezed,
   }) {
     return _then(_$CreateUserDataImpl(
@@ -118,6 +134,10 @@ class __$$CreateUserDataImplCopyWithImpl<$Res>
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
+      timezone: null == timezone
+          ? _value._timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -130,8 +150,12 @@ class __$$CreateUserDataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CreateUserDataImpl extends _CreateUserData {
   const _$CreateUserDataImpl(
-      {required this.os, required this.token, @CreatedAtField() this.createdAt})
-      : super._();
+      {required this.os,
+      required this.token,
+      required final Map<String, dynamic> timezone,
+      @CreatedAtField() this.createdAt})
+      : _timezone = timezone,
+        super._();
 
   factory _$CreateUserDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$CreateUserDataImplFromJson(json);
@@ -142,6 +166,16 @@ class _$CreateUserDataImpl extends _CreateUserData {
 // FCMトークン
   @override
   final String token;
+// タイムゾーン
+  final Map<String, dynamic> _timezone;
+// タイムゾーン
+  @override
+  Map<String, dynamic> get timezone {
+    if (_timezone is EqualUnmodifiableMapView) return _timezone;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_timezone);
+  }
+
 // 作成日時
   @override
   @CreatedAtField()
@@ -149,7 +183,7 @@ class _$CreateUserDataImpl extends _CreateUserData {
 
   @override
   String toString() {
-    return 'CreateUserData(os: $os, token: $token, createdAt: $createdAt)';
+    return 'CreateUserData(os: $os, token: $token, timezone: $timezone, createdAt: $createdAt)';
   }
 
   @override
@@ -159,13 +193,15 @@ class _$CreateUserDataImpl extends _CreateUserData {
             other is _$CreateUserDataImpl &&
             (identical(other.os, os) || other.os == os) &&
             (identical(other.token, token) || other.token == token) &&
+            const DeepCollectionEquality().equals(other._timezone, _timezone) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, os, token, createdAt);
+  int get hashCode => Object.hash(runtimeType, os, token,
+      const DeepCollectionEquality().hash(_timezone), createdAt);
 
   /// Create a copy of CreateUserData
   /// with the given fields replaced by the non-null parameter values.
@@ -188,6 +224,7 @@ abstract class _CreateUserData extends CreateUserData {
   const factory _CreateUserData(
       {required final String os,
       required final String token,
+      required final Map<String, dynamic> timezone,
       @CreatedAtField() final DateTime? createdAt}) = _$CreateUserDataImpl;
   const _CreateUserData._() : super._();
 
@@ -198,7 +235,9 @@ abstract class _CreateUserData extends CreateUserData {
   @override
   String get os; // FCMトークン
   @override
-  String get token; // 作成日時
+  String get token; // タイムゾーン
+  @override
+  Map<String, dynamic> get timezone; // 作成日時
   @override
   @CreatedAtField()
   DateTime? get createdAt;

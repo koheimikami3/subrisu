@@ -149,6 +149,8 @@ PODS:
   - Flutter (1.0.0)
   - flutter_native_splash (2.4.3):
     - Flutter
+  - flutter_timezone (0.0.1):
+    - Flutter
   - Google-Mobile-Ads-SDK (10.9.0):
     - GoogleAppMeasurement (< 11.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
@@ -258,6 +260,7 @@ DEPENDENCIES:
   - FirebaseFirestore (from `https://github.com/invertase/firestore-ios-sdk-frameworks.git`, tag `10.15.0`)
   - Flutter (from `Flutter`)
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
+  - flutter_timezone (from `.symlinks/plugins/flutter_timezone/ios`)
   - google_mobile_ads (from `.symlinks/plugins/google_mobile_ads/ios`)
   - in_app_review (from `.symlinks/plugins/in_app_review/ios`)
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
@@ -325,6 +328,8 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_native_splash:
     :path: ".symlinks/plugins/flutter_native_splash/ios"
+  flutter_timezone:
+    :path: ".symlinks/plugins/flutter_timezone/ios"
   google_mobile_ads:
     :path: ".symlinks/plugins/google_mobile_ads/ios"
   in_app_review:
@@ -350,17 +355,17 @@ CHECKOUT OPTIONS:
     :tag: 10.15.0
 
 SPEC CHECKSUMS:
-  app_settings: 58017cd26b604ae98c3e65acbdd8ba173703cc82
-  app_tracking_transparency: e169b653478da7bb15a6c61209015378ca73e375
-  cloud_firestore: 9c9fb3500360c9b338e9eb2fec40b38e7a004cac
+  app_settings: 5127ae0678de1dcc19f2293271c51d37c89428b2
+  app_tracking_transparency: 3d84f147f67ca82d3c15355c36b1fa6b66ca7c92
+  cloud_firestore: 0d484f6191126357dddd77947aedb5cf967373a5
   Firebase: 66043bd4579e5b73811f96829c694c7af8d67435
-  firebase_analytics: f153c564d6a7675e56e4f171454b9f1b3e7b6601
-  firebase_app_check: f2bf9b5802583b36eb68901a5793ed79f4f945dd
-  firebase_auth: b62e99e6ece589afe88ebe8919eb9563b52c384c
-  firebase_core: 28e84c2a4fcf6a50ef83f47b145ded8c1fa331e4
-  firebase_crashlytics: 36b8a72e23437dbb69bd97102661ce31b6721be5
-  firebase_messaging: 91ec967913a5d144f951b3c3ac17a57796d38735
-  firebase_remote_config: bcb36b69fdcb50397341c9d1c220a2a35fbd6c21
+  firebase_analytics: fd0e997e527ef523ebc44631450b6e38ebb65d71
+  firebase_app_check: e7701e0bcb213c73aeade502c5a4ff768ef43cd2
+  firebase_auth: ed634eac54cae965d7b1d9193a8a656f4d307347
+  firebase_core: 57b95c740b96d3bbb3d8b189eab85d5258f8e138
+  firebase_crashlytics: 56ba18e01a6866b72485cfad1c9ea54640092400
+  firebase_messaging: 171a17826d092abf0864ce518dd8cedb8c41af07
+  firebase_remote_config: a86e4602cc87b040e3b478d69d977bf64a1174fd
   FirebaseABTesting: d87f56707159bae64e269757a6e963d490f2eebe
   FirebaseAnalytics: 47cef43728f81a839cf1306576bdd77ffa2eac7e
   FirebaseAppCheck: 66eea1c882cddd1bce9d92a0a7efd596f7204782
@@ -370,34 +375,35 @@ SPEC CHECKSUMS:
   FirebaseCoreExtension: 705ca5b14bf71d2564a0ddc677df1fc86ffa600f
   FirebaseCoreInternal: df84dd300b561c27d5571684f389bf60b0a5c934
   FirebaseCrashlytics: a83f26fb922a3fe181eb738fb4dcf0c92bba6455
-  FirebaseFirestore: 58d92e3cc19fd1c93e279d466aaf148ce6dbf635
+  FirebaseFirestore: 83635108ed3ee1e0025e2225d646f686c4242dcc
   FirebaseInstallations: 913cf60d0400ebd5d6b63a28b290372ab44590dd
   FirebaseMessaging: 0c0ae1eb722ef0c07f7801e5ded8dccd1357d6d4
   FirebaseRemoteConfig: 64b6ada098c649304114a817effd7e5f87229b11
   FirebaseSessions: dbd14adac65ce996228652c1fc3a3f576bdf3ecc
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_native_splash: df59bb2e1421aa0282cb2e95618af4dcb0c56c29
+  flutter_native_splash: c32d145d68aeda5502d5f543ee38c192065986cf
+  flutter_timezone: 7c838e17ffd4645d261e87037e5bebf6d38fe544
   Google-Mobile-Ads-SDK: e81e8b009a182dc8dd14951782efdbb30a5e4510
-  google_mobile_ads: 035df0d095e1a196b52e3c91534d0718d3dacf98
+  google_mobile_ads: 60d7d35781c1f94c3d521a95cdf5a0998cd93122
   GoogleAppMeasurement: 722db6550d1e6d552b08398b69a975ac61039338
   GoogleDataTransport: 6c09b596d841063d76d4288cc2d2f42cc36e1e2a
   GoogleUserMessagingPlatform: f8d0cdad3ca835406755d0a69aa634f00e76d576
   GoogleUtilities: ea963c370a38a8069cc5f7ba4ca849a60b6d7d15
   GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
-  in_app_review: a31b5257259646ea78e0e35fc914979b0031d011
+  in_app_review: 5596fe56fab799e8edb3561c03d053363ab13457
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
-  package_info_plus: 115f4ad11e0698c8c1c5d8a689390df880f47e85
-  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
+  package_info_plus: 566e1b7a2f3900e4b0020914ad3fc051dcc95596
+  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   PromisesSwift: 9d77319bbe72ebf6d872900551f7eeba9bce2851
-  purchases_flutter: 474338fe3d5c6477a4188ecd258a9ee859c03b56
+  purchases_flutter: 4cf57c17c62108103a549ebe12b28a0203f0cf55
   PurchasesHybridCommon: 662aa1f4769ff4ef594e35adf1a5d0ad7b3d08b7
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
   RevenueCat: 2d3639d30b8a71cbfe3d99cef8243c602793e0ec
-  share_plus: c3fef564749587fc939ef86ffb283ceac0baf9f5
-  shared_preferences_foundation: fcdcbc04712aee1108ac7fda236f363274528f78
-  url_launcher_ios: 5334b05cef931de560670eeae103fd3e431ac3fe
-  webview_flutter_wkwebview: a4af96a051138e28e29f60101d094683b9f82188
+  share_plus: de6030e33b4e106470e09322d87cf2a4258d2d1d
+  shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
+  url_launcher_ios: 694010445543906933d732453a59da0a173ae33d
+  webview_flutter_wkwebview: 1821ceac936eba6f7984d89a9f3bcb4dea99ebb2
 
 PODFILE CHECKSUM: a8d8e127c09bc3b9999111febea6f26b5270a938
 

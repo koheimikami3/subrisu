@@ -13,6 +13,9 @@ abstract class CreateUserData implements _$CreateUserData {
     // FCMトークン
     required String token,
 
+    // タイムゾーン
+    required Map<String, dynamic> timezone,
+
     // 作成日時
     @CreatedAtField() DateTime? createdAt,
   }) = _CreateUserData;
