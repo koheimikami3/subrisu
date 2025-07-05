@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-import '../../../importer.dart';
+import '../../../../importer.dart';
 
 /// リマインダーの「何時に通知するか」を設定するタイル
 class ReminderHourTile extends ConsumerWidget {
