@@ -9,4 +9,7 @@ class AppConfigs {
   static const defaultReminderIsEnabled = true;
   static const defaultReminderDaysBefore = 1;
   static const defaultReminderHour = 20;
+
+  // 支払いリマインダーの「支払い日の何日前に通知するか」の選択値
+  static const reminderDaysBeforeOptions = [0, 1, 2, 3, 7];
 }
