@@ -23,7 +23,7 @@ class ReminderSettingsPageNotifer extends _$ReminderSettingsPageNotifer {
     );
   }
 
-  // UserDocumentのreminder.isEnabledを更新
+  // UserDocumentのnotification.paymentReminder.isEnabledを更新
   // リマインド通知の有効/無効の状態を更新する
   Future<void> setIsEnabled(bool value) async {
     ref.read(updateReminderIsEnabledProvider(value));
@@ -35,10 +35,10 @@ class ReminderSettingsPageNotifer extends _$ReminderSettingsPageNotifer {
     state = state.copyWith(selectedDaysBefore: value);
   }
 
-  // UserDocumentのreminder.daysBeforeを更新
+  // UserDocumentのnotification.paymentReminder.daysBeforeを更新
   // 選択確定した「支払い日の何日前に通知するか」の状態を更新する
   Future<void> setResultDaysBefore() async {
-    ref.read(updateReminderDaysBeforeProvider(state.selectedDaysBefore));
+    ref.read(updatePaymentReminderDaysBeforeProvider(state.selectedDaysBefore));
     state = state.copyWith(resultDaysBefore: state.selectedDaysBefore);
   }
 
@@ -47,10 +47,10 @@ class ReminderSettingsPageNotifer extends _$ReminderSettingsPageNotifer {
     state = state.copyWith(selectedHour: value);
   }
 
-  // UserDocumentのreminder.hourを更新
+  // UserDocumentのnotification.paymentReminder.hourを更新
   // 選択確定した「何時に通知するか」の状態を更新する
   Future<void> setResultHour() async {
-    ref.read(updateReminderHourProvider(state.selectedHour));
+    ref.read(updatePaymentReminderHourProvider(state.selectedHour));
     state = state.copyWith(resultHour: state.selectedHour);
   }
 }

@@ -6,7 +6,7 @@ class ReminderSettingsPageBody extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncSettings = ref.watch(reminderSettingsProvider);
+    final asyncSettings = ref.watch(paymentReminderSettingsProvider);
 
     return asyncSettings.when(
       loading: () => const Center(child: CircularProgressIndicator()),
