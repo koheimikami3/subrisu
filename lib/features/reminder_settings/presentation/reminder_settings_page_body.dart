@@ -30,6 +30,14 @@ class ReminderSettingsPageBody extends ConsumerWidget {
             const ReminderDaysBeforeTile(),
             const ItemDivider(),
             const ReminderHourTile(),
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                SizedBox(width: 15.w),
+                const Expanded(child: ReminderNoticeText()),
+                SizedBox(width: 15.w),
+              ],
+            ),
           ],
         );
       },

@@ -374,6 +374,18 @@
     "@reminderHourTitle": {
         "description": ""
     },
+    "reminderNoticePrefix": "リマインド通知を受け取るには、",
+    "@reminderNoticePrefix": {
+        "description": "リマインド通知の補足文の冒頭"
+    },
+    "reminderNoticeSettings": "端末の通知設定",
+    "@reminderNoticeSettings": {
+        "description": "リマインド通知の補足文の通知設定部分（タップ可能）"
+    },
+    "reminderNoticeSuffix": "をオンにしてください。",
+    "@reminderNoticeSuffix": {
+        "description": "リマインド通知の補足文の末尾"
+    },
     "theme": "{theme, select, device{端末設定と同じ} light{ライトモード} dark{ダークモード} other{error}}",
     "@theme": {
         "description": "",
