@@ -89,6 +89,7 @@ export 'package:subrisu/features/reminder_settings/presentation/widgets/reminder
 export 'package:subrisu/features/reminder_settings/presentation/widgets/reminder_days_before_tile.dart';
 export 'package:subrisu/features/reminder_settings/presentation/widgets/reminder_hour_picker.dart';
 export 'package:subrisu/features/reminder_settings/presentation/widgets/reminder_hour_tile.dart';
+export 'package:subrisu/features/reminder_settings/presentation/widgets/reminder_notice_text.dart';
 export 'package:subrisu/features/reminder_settings/presentation/widgets/save_reminder_days_before_button.dart';
 export 'package:subrisu/features/reminder_settings/presentation/widgets/save_reminder_hour_button.dart';
 export 'package:subrisu/features/reminder_settings/presentation/widgets/selecet_days_before_button.dart';

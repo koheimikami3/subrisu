@@ -374,6 +374,18 @@
     "@reminderHourTitle": {
         "description": ""
     },
+    "reminderNoticePrefix": "To receive reminder notifications, ",
+    "@reminderNoticePrefix": {
+        "description": "Prefix for the reminder notification supplement text"
+    },
+    "reminderNoticeSettings": "enable notification settings",
+    "@reminderNoticeSettings": {
+        "description": "The tappable part of the reminder notification supplement text (device notification settings)"
+    },
+    "reminderNoticeSuffix": ".",
+    "@reminderNoticeSuffix": {
+        "description": "Suffix for the reminder notification supplement text"
+    },
     "theme": "{theme, select, device{System} light{Light Mode} dark{Dark Mode} other{error}}",
     "@theme": {
         "description": "",
