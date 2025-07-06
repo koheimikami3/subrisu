@@ -8,38 +8,26 @@ class OpenNotificationSettingsSwitch extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncIsEnabled = ref.watch(reminderIsEnabledProvider);
+    final isEnabled = ref.watch(
+      reminderSettingsPageNotiferProvider.select((state) => state.isEnabled),
+    );
 
     return SizedBox(
       height: 15.h,
-      child: asyncIsEnabled.when(
-        loading: _indicator,
-        error: (_, __) => const SizedBox.shrink(),
-        data: (isEnabled) {
-          return CupertinoSwitch(
-            value: isEnabled ?? true,
-            activeTrackColor: AppColors.primary,
-            onChanged: (value) async {
-              // リマインド通知の有効/無効を更新
-              await ref.read(updateReminderIsEnabledProvider(value).future);
+      child: CupertinoSwitch(
+        value: isEnabled,
+        activeTrackColor: AppColors.primary,
+        onChanged: (value) {
+          // リマインド通知の有効/無効を更新
+          ref
+              .read(reminderSettingsPageNotiferProvider.notifier)
+              .setIsEnabled(value);
 
-              // 端末の通知設定画面を開く
-              // await AppSettings.openAppSettings(
-              //   type: AppSettingsType.notification,
-              // );
-            },
-          );
+          // 端末の通知設定画面を開く
+          // await AppSettings.openAppSettings(
+          //   type: AppSettingsType.notification,
+          // );
         },
-      ),
-    );
-  }
-
-  CircularProgressIndicator _indicator() {
-    return CircularProgressIndicator(
-      strokeWidth: 2,
-      constraints: BoxConstraints(
-        minHeight: 13.h,
-        minWidth: 13.h,
       ),
     );
   }
