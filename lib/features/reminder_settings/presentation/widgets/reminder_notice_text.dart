@@ -1,55 +1,34 @@
 import '../../../../importer.dart';
 
 /// リマインド通知に関する注意書きのテキスト
-class ReminderNoticeText extends ConsumerWidget {
+class ReminderNoticeText extends StatelessWidget {
   const ReminderNoticeText({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final themeSettings = ref.watch(themeSettingsNotifierProvider);
-
+  Widget build(BuildContext context) {
     return Wrap(
       children: [
-        Text(
-          AppLocalizations.of(context)!.reminderNoticePrefix,
-          style: TextStyle(
-            fontSize: 13.sp,
-            color: selectColor(
-              context: context,
-              themeSettings: themeSettings,
-              lightColor: Colors.grey.shade600,
-              darkColor: Colors.grey.shade300,
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () async {
-            await AppSettings.openAppSettings(
-              type: AppSettingsType.notification,
-            );
-          },
-          child: Text(
-            AppLocalizations.of(context)!.reminderNoticeSettings,
-            style: TextStyle(
-              fontSize: 13.sp,
-              fontWeight: FontWeight.bold,
-              color: Colors.blue,
-            ),
-          ),
-        ),
-        Text(
-          AppLocalizations.of(context)!.reminderNoticeSuffix,
-          style: TextStyle(
-            fontSize: 13.sp,
-            color: selectColor(
-              context: context,
-              themeSettings: themeSettings,
-              lightColor: Colors.grey.shade600,
-              darkColor: Colors.grey.shade300,
-            ),
-          ),
-        ),
+        NoticeText(text: AppLocalizations.of(context)!.reminderNoticePrefix),
+        _notificationSettingsText(context),
+        NoticeText(text: AppLocalizations.of(context)!.reminderNoticeSuffix),
       ],
+    );
+  }
+
+  /// 通知設定を行うテキスト
+  GestureDetector _notificationSettingsText(BuildContext context) {
+    return GestureDetector(
+      onTap: () async {
+        // 端末の通知設定画面を開く
+        await AppSettings.openAppSettings(
+          type: AppSettingsType.notification,
+        );
+      },
+      child: NoticeText(
+        text: AppLocalizations.of(context)!.reminderNoticeSettings,
+        isBold: true,
+        color: Colors.blue,
+      ),
     );
   }
 }

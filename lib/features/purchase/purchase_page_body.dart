@@ -16,28 +16,10 @@ class PurchasePageBody extends ConsumerWidget {
         Row(
           children: [
             SizedBox(width: 15.w),
-            _supplement(context, ref),
+            NoticeText(text: AppLocalizations.of(context)!.purchaseNotice),
           ],
         ),
       ],
-    );
-  }
-
-  /// 補足説明
-  Widget _supplement(BuildContext context, WidgetRef ref) {
-    final themeSettings = ref.watch(themeSettingsNotifierProvider);
-
-    return Text(
-      AppLocalizations.of(context)!.purchaseSupplement,
-      style: TextStyle(
-        fontSize: 13.sp,
-        color: selectColor(
-          context: context,
-          themeSettings: themeSettings,
-          lightColor: Colors.grey.shade600,
-          darkColor: Colors.grey.shade300,
-        ),
-      ),
     );
   }
 }
