@@ -28,7 +28,6 @@ class SubscriptionFormNotifier extends _$SubscriptionFormNotifier {
     required String iconImagePath,
     required PaymentCycle paymentCycle,
     required DateTime firstPaidOn,
-    required bool isNotificationEnabled,
     required String note,
   }) {
     // 初回支払い日の年月に対応する日にちリストを生成
@@ -45,7 +44,6 @@ class SubscriptionFormNotifier extends _$SubscriptionFormNotifier {
       selectedFirstPaidMonth: firstPaidOn.month,
       selectedFirstPaidDay: firstPaidOn.day,
       resultFirstPaidDate: firstPaidOn,
-      isNotificationEnabled: isNotificationEnabled,
       note: note,
     );
   }
@@ -119,11 +117,6 @@ class SubscriptionFormNotifier extends _$SubscriptionFormNotifier {
         state.selectedFirstPaidDay,
       ),
     );
-  }
-
-  // 通知フラグの状態を更新する
-  void setIsNotificationEnabled(bool value) {
-    state = state.copyWith(isNotificationEnabled: value);
   }
 
   // メモの状態を更新する

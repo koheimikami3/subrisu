@@ -31,8 +31,6 @@ class SubscriptionForm extends StatelessWidget {
                 SizedBox(height: 25.h),
                 DetailInfo(paymentCycle: paymentCycle),
                 SizedBox(height: 25.h),
-                const NotificationSelectionForm(),
-                SizedBox(height: 25.h),
                 MemoInputForm(memo: memo),
                 SizedBox(height: 30.h),
                 button,

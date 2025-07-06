@@ -28,7 +28,6 @@ class _EditSubscriptionPageState extends ConsumerState<EditSubscriptionPage> {
             iconImagePath: widget.subscription.iconImagePath,
             paymentCycle: widget.subscription.paymentCycle,
             firstPaidOn: widget.subscription.firstPaidOn.toDate(),
-            isNotificationEnabled: widget.subscription.isNotificationEnabled,
             note: widget.subscription.note ?? '',
           );
     });

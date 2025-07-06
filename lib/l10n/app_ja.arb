@@ -134,14 +134,6 @@
             }
         }
     },
-    "notificationTitle": "通知",
-    "@notificationTitle": {
-        "description": ""
-    },
-    "reminderTitle": "支払い前日に通知する",
-    "@reminderTitle": {
-        "description": ""
-    },
     "memoFormTitle": "メモ",
     "@memoFormTitle": {
         "description": ""
@@ -358,14 +350,6 @@
     },
     "thankYouMessage": "引き続きサブリスをよろしくお願いします。",
     "@thankYouMessage": {
-        "description": ""
-    },
-    "showOpenNotificationSettingsDialogContent": "支払い前日に通知を受け取るには、アプリの通知設定をオンにする必要があります。",
-    "@showOpenNotificationSettingsDialogContent": {
-        "description": ""
-    },
-    "openNotificationSettingsButton": "設定する",
-    "@openNotificationSettingsButton": {
         "description": ""
     },
     "reminder": "支払いのリマインド通知",

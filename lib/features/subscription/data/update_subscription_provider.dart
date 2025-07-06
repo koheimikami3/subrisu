@@ -16,7 +16,6 @@ Future<void> updateSubscription(Ref ref, String subscriptionId) async {
     iconImagePath: formState.resultIconImagePath,
     paymentCycle: formState.paymentCycle.name,
     firstPaidOn: formState.resultFirstPaidDate,
-    isNotificationEnabled: formState.isNotificationEnabled,
     note: note,
   );
 

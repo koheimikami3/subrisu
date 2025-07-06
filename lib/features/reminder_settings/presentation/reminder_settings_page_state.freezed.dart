@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ReminderSettingsPageState {
-// リマインダーを有効にするかどうか
+// リマインド通知の有効/無効
   bool get isEnabled =>
       throw _privateConstructorUsedError; // Pickerで選択中の「支払い日の何日前に通知するか」
   int get selectedDaysBefore =>
@@ -170,7 +170,7 @@ class _$ReminderSettingsPageStateImpl extends _ReminderSettingsPageState {
       this.resultHour = AppConfigs.defaultReminderHour})
       : super._();
 
-// リマインダーを有効にするかどうか
+// リマインド通知の有効/無効
   @override
   @JsonKey()
   final bool isEnabled;
@@ -237,7 +237,7 @@ abstract class _ReminderSettingsPageState extends ReminderSettingsPageState {
       final int resultHour}) = _$ReminderSettingsPageStateImpl;
   const _ReminderSettingsPageState._() : super._();
 
-// リマインダーを有効にするかどうか
+// リマインド通知の有効/無効
   @override
   bool get isEnabled; // Pickerで選択中の「支払い日の何日前に通知するか」
   @override

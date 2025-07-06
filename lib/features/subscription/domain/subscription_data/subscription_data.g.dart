@@ -14,7 +14,6 @@ _$SubscriptionDataImpl _$$SubscriptionDataImplFromJson(
       iconImagePath: json['iconImagePath'] as String,
       paymentCycle: json['paymentCycle'] as String,
       firstPaidOn: const FirstPaidOnField().fromJson(json['firstPaidOn']),
-      isNotificationEnabled: json['isNotificationEnabled'] as bool,
       note: json['note'] as String?,
     );
 
@@ -26,6 +25,5 @@ Map<String, dynamic> _$$SubscriptionDataImplToJson(
       'iconImagePath': instance.iconImagePath,
       'paymentCycle': instance.paymentCycle,
       'firstPaidOn': const FirstPaidOnField().toJson(instance.firstPaidOn),
-      'isNotificationEnabled': instance.isNotificationEnabled,
       'note': instance.note,
     };

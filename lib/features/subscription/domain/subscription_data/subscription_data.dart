@@ -22,9 +22,6 @@ abstract class SubscriptionData implements _$SubscriptionData {
     // 初回支払日
     @FirstPaidOnField() required DateTime firstPaidOn,
 
-    // 通知を有効にするかどうか
-    required bool isNotificationEnabled,
-
     // メモ
     required String? note,
   }) = _SubscriptionData;
