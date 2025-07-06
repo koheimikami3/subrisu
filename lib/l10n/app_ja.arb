@@ -16,9 +16,9 @@
     "@purchasePageTitle": {
         "description": "The title displayed in the AppBar on the Purchase Page"
     },
-    "reminderSettingsPageTitle": "リマインダー設定",
-    "@reminderSettingsPageTitle": {
-        "description": "The title displayed in the AppBar on the Reminder Setting Page"
+    "notificationSettingsPageTitle": "通知設定",
+    "@notificationSettingsPageTitle": {
+        "description": "The title displayed in the AppBar on the Notification Setting Page"
     },
     "themeSettingsPageTitle": "テーマ設定",
     "@themeSettingsPageTitle": {
@@ -174,7 +174,7 @@
     "@purchaseItem": {
         "description": ""
     },
-    "notificationItem": "リマインダー設定",
+    "notificationItem": "通知設定",
     "@notificationItem": {
         "description": ""
     },
@@ -374,17 +374,17 @@
     "@reminderHourTitle": {
         "description": ""
     },
-    "reminderNoticePrefix": "リマインド通知を受け取るには、",
-    "@reminderNoticePrefix": {
-        "description": "リマインド通知の補足文の冒頭"
+    "notificationNoticePrefix": "通知を受け取るには、",
+    "@notificationNoticePrefix": {
+        "description": "通知の補足文の冒頭"
     },
-    "reminderNoticeSettings": "端末の通知設定",
-    "@reminderNoticeSettings": {
-        "description": "リマインド通知の補足文の通知設定部分（タップ可能）"
+    "notificationNoticeSettings": "端末の通知設定",
+    "@notificationNoticeSettings": {
+        "description": "通知の補足文の通知設定部分（タップ可能）"
     },
-    "reminderNoticeSuffix": "をオンにしてください。",
-    "@reminderNoticeSuffix": {
-        "description": "リマインド通知の補足文の末尾"
+    "notificationNoticeSuffix": "をオンにしてください。",
+    "@notificationNoticeSuffix": {
+        "description": "通知の補足文の末尾"
     },
     "theme": "{theme, select, device{端末設定と同じ} light{ライトモード} dark{ダークモード} other{error}}",
     "@theme": {

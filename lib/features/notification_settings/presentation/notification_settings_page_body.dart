@@ -1,8 +1,8 @@
 import '../../../importer.dart';
 
-/// 言語設定画面のScaffoldBody
-class ReminderSettingsPageBody extends ConsumerWidget {
-  const ReminderSettingsPageBody({super.key});
+/// 通知設定画面のScaffoldBody
+class NotificationSettingsPageBody extends ConsumerWidget {
+  const NotificationSettingsPageBody({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -15,7 +15,7 @@ class ReminderSettingsPageBody extends ConsumerWidget {
         // 画面描画後に処理を実行
         // フォームに初期値を設定
         WidgetsBinding.instance.addPostFrameCallback((_) {
-          ref.read(reminderSettingsPageNotiferProvider.notifier).initState(
+          ref.read(notificationSettingsPageNotifierProvider.notifier).initState(
                 isEnabled: settings.isEnabled,
                 daysBefore: settings.daysBefore,
                 hour: settings.hour,
@@ -25,16 +25,16 @@ class ReminderSettingsPageBody extends ConsumerWidget {
         return Column(
           children: [
             SizedBox(height: 25.h),
-            const NotificationSettingsTile(),
+            const PaymentReminderSwitchTile(),
             const ItemDivider(),
-            const ReminderDaysBeforeTile(),
+            const PaymentReminderDaysBeforeTile(),
             const ItemDivider(),
-            const ReminderHourTile(),
+            const PaymentReminderHourTile(),
             SizedBox(height: 10.h),
             Row(
               children: [
                 SizedBox(width: 15.w),
-                const Expanded(child: ReminderNoticeText()),
+                const Expanded(child: NotificationNoticeText()),
                 SizedBox(width: 15.w),
               ],
             ),

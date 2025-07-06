@@ -9,7 +9,7 @@ class AppItemList extends StatelessWidget {
     return Column(
       children: [
         ItemsTitle(title: AppLocalizations.of(context)!.appSettingsTitle),
-        const GoToReminderSettingsPageTile(),
+        const GoToNotificationSettingsPageTile(),
         const ItemDivider(),
         const GoToThemeSettingsPageTile(),
         const ItemDivider(),

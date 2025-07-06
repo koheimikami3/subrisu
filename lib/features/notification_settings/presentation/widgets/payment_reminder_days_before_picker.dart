@@ -2,15 +2,15 @@ import 'package:flutter/cupertino.dart';
 
 import '../../../../importer.dart';
 
-/// リマインダーの「支払い日の何日前に通知するか」を選択するPicker
-class ReminderDaysBeforePicker extends ConsumerWidget {
-  const ReminderDaysBeforePicker({super.key});
+/// 支払いリマインダーの「何日前に通知するか」を選択するPicker
+class PaymentReminderDaysBeforePicker extends ConsumerWidget {
+  const PaymentReminderDaysBeforePicker({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     const options = AppConfigs.reminderDaysBeforeOptions;
     final resultDaysBefore = ref.watch(
-      reminderSettingsPageNotiferProvider
+      notificationSettingsPageNotifierProvider
           .select((state) => state.resultDaysBefore),
     );
 
@@ -21,7 +21,7 @@ class ReminderDaysBeforePicker extends ConsumerWidget {
       ),
       onSelectedItemChanged: (value) {
         ref
-            .read(reminderSettingsPageNotiferProvider.notifier)
+            .read(notificationSettingsPageNotifierProvider.notifier)
             .setSelectedDaysBefore(options[value]);
       },
       children: options.map((number) {
