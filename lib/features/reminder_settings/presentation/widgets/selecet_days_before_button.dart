@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 import '../../../../importer.dart';
 
 /// リマインダーの「何日前に通知するか」を選択するボタン
@@ -13,27 +11,11 @@ class SelecetDaysBeforeButton extends ConsumerWidget {
           .select((state) => state.resultDaysBefore),
     );
 
-    return GestureDetector(
-      onTap: () {
-        showCupertinoModalPopup<void>(
-          context: context,
-          builder: (_) {
-            return const CupertinoPickerSheet(
-              picker: ReminderDaysBeforePicker(),
-              saveButton: SaveReminderDaysBeforeButton(),
-            );
-          },
-        );
-      },
-      child: Row(
-        children: [
-          Text(AppLocalizations.of(context)!
-              .reminderDaysBefore(resultDaysBefore.toString())),
-          Icon(
-            Icons.unfold_more,
-            color: Colors.grey.shade600,
-          ),
-        ],
+    return ShowPickerButton(
+      picker: const ReminderDaysBeforePicker(),
+      saveButton: const SaveReminderDaysBeforeButton(),
+      text: AppLocalizations.of(context)!.reminderDaysBefore(
+        resultDaysBefore.toString(),
       ),
     );
   }

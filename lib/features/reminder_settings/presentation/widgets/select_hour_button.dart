@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../importer.dart';
@@ -13,27 +12,10 @@ class SelectHourButton extends ConsumerWidget {
       reminderSettingsPageNotiferProvider.select((state) => state.resultHour),
     );
 
-    return GestureDetector(
-      onTap: () {
-        showCupertinoModalPopup<void>(
-          context: context,
-          builder: (_) {
-            return const CupertinoPickerSheet(
-              picker: ReminderHourPicker(),
-              saveButton: SaveReminderHourButton(),
-            );
-          },
-        );
-      },
-      child: Row(
-        children: [
-          Text(DateFormat('HH:00').format(DateTime(0, 0, 0, resultHour))),
-          Icon(
-            Icons.unfold_more,
-            color: Colors.grey.shade600,
-          ),
-        ],
-      ),
+    return ShowPickerButton(
+      picker: const ReminderHourPicker(),
+      saveButton: const SaveReminderHourButton(),
+      text: DateFormat('HH:00').format(DateTime(0, 0, 0, resultHour)),
     );
   }
 }

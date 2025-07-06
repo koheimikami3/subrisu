@@ -1,5 +1,6 @@
-import '../../../../importer.dart';
+import '../importer.dart';
 
+/// CupertinoPickerのシートを表示するウィジェット
 class CupertinoPickerSheet extends ConsumerWidget {
   const CupertinoPickerSheet({
     super.key,
