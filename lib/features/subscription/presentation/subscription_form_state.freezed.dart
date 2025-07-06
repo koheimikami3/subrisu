@@ -32,9 +32,7 @@ mixin _$SubscriptionFormState {
       throw _privateConstructorUsedError; // Pickerで選択中の初回支払い日にち
   int get selectedFirstPaidDay =>
       throw _privateConstructorUsedError; // 選択確定初回支払い日
-  DateTime get resultFirstPaidDate =>
-      throw _privateConstructorUsedError; // 通知を有効にするかどうか
-  bool get isNotificationEnabled => throw _privateConstructorUsedError; // メモ
+  DateTime get resultFirstPaidDate => throw _privateConstructorUsedError; // メモ
   String get note => throw _privateConstructorUsedError;
 
   /// Create a copy of SubscriptionFormState
@@ -61,7 +59,6 @@ abstract class $SubscriptionFormStateCopyWith<$Res> {
       int selectedFirstPaidMonth,
       int selectedFirstPaidDay,
       DateTime resultFirstPaidDate,
-      bool isNotificationEnabled,
       String note});
 }
 
@@ -91,7 +88,6 @@ class _$SubscriptionFormStateCopyWithImpl<$Res,
     Object? selectedFirstPaidMonth = null,
     Object? selectedFirstPaidDay = null,
     Object? resultFirstPaidDate = null,
-    Object? isNotificationEnabled = null,
     Object? note = null,
   }) {
     return _then(_value.copyWith(
@@ -135,10 +131,6 @@ class _$SubscriptionFormStateCopyWithImpl<$Res,
           ? _value.resultFirstPaidDate
           : resultFirstPaidDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      isNotificationEnabled: null == isNotificationEnabled
-          ? _value.isNotificationEnabled
-          : isNotificationEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
       note: null == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
@@ -167,7 +159,6 @@ abstract class _$$SubscriptionFormStateImplCopyWith<$Res>
       int selectedFirstPaidMonth,
       int selectedFirstPaidDay,
       DateTime resultFirstPaidDate,
-      bool isNotificationEnabled,
       String note});
 }
 
@@ -195,7 +186,6 @@ class __$$SubscriptionFormStateImplCopyWithImpl<$Res>
     Object? selectedFirstPaidMonth = null,
     Object? selectedFirstPaidDay = null,
     Object? resultFirstPaidDate = null,
-    Object? isNotificationEnabled = null,
     Object? note = null,
   }) {
     return _then(_$SubscriptionFormStateImpl(
@@ -239,10 +229,6 @@ class __$$SubscriptionFormStateImplCopyWithImpl<$Res>
           ? _value.resultFirstPaidDate
           : resultFirstPaidDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      isNotificationEnabled: null == isNotificationEnabled
-          ? _value.isNotificationEnabled
-          : isNotificationEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
       note: null == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
@@ -265,7 +251,6 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
       required this.selectedFirstPaidMonth,
       required this.selectedFirstPaidDay,
       required this.resultFirstPaidDate,
-      this.isNotificationEnabled = false,
       this.note = ''})
       : _dayList = dayList,
         super._();
@@ -313,10 +298,6 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
 // 選択確定初回支払い日
   @override
   final DateTime resultFirstPaidDate;
-// 通知を有効にするかどうか
-  @override
-  @JsonKey()
-  final bool isNotificationEnabled;
 // メモ
   @override
   @JsonKey()
@@ -324,7 +305,7 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
 
   @override
   String toString() {
-    return 'SubscriptionFormState(serviceName: $serviceName, price: $price, selectedIconImagePath: $selectedIconImagePath, resultIconImagePath: $resultIconImagePath, paymentCycle: $paymentCycle, dayList: $dayList, selectedFirstPaidYear: $selectedFirstPaidYear, selectedFirstPaidMonth: $selectedFirstPaidMonth, selectedFirstPaidDay: $selectedFirstPaidDay, resultFirstPaidDate: $resultFirstPaidDate, isNotificationEnabled: $isNotificationEnabled, note: $note)';
+    return 'SubscriptionFormState(serviceName: $serviceName, price: $price, selectedIconImagePath: $selectedIconImagePath, resultIconImagePath: $resultIconImagePath, paymentCycle: $paymentCycle, dayList: $dayList, selectedFirstPaidYear: $selectedFirstPaidYear, selectedFirstPaidMonth: $selectedFirstPaidMonth, selectedFirstPaidDay: $selectedFirstPaidDay, resultFirstPaidDate: $resultFirstPaidDate, note: $note)';
   }
 
   @override
@@ -350,8 +331,6 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
                 other.selectedFirstPaidDay == selectedFirstPaidDay) &&
             (identical(other.resultFirstPaidDate, resultFirstPaidDate) ||
                 other.resultFirstPaidDate == resultFirstPaidDate) &&
-            (identical(other.isNotificationEnabled, isNotificationEnabled) ||
-                other.isNotificationEnabled == isNotificationEnabled) &&
             (identical(other.note, note) || other.note == note));
   }
 
@@ -368,7 +347,6 @@ class _$SubscriptionFormStateImpl extends _SubscriptionFormState {
       selectedFirstPaidMonth,
       selectedFirstPaidDay,
       resultFirstPaidDate,
-      isNotificationEnabled,
       note);
 
   /// Create a copy of SubscriptionFormState
@@ -393,7 +371,6 @@ abstract class _SubscriptionFormState extends SubscriptionFormState {
       required final int selectedFirstPaidMonth,
       required final int selectedFirstPaidDay,
       required final DateTime resultFirstPaidDate,
-      final bool isNotificationEnabled,
       final String note}) = _$SubscriptionFormStateImpl;
   const _SubscriptionFormState._() : super._();
 
@@ -417,9 +394,7 @@ abstract class _SubscriptionFormState extends SubscriptionFormState {
   @override
   int get selectedFirstPaidDay; // 選択確定初回支払い日
   @override
-  DateTime get resultFirstPaidDate; // 通知を有効にするかどうか
-  @override
-  bool get isNotificationEnabled; // メモ
+  DateTime get resultFirstPaidDate; // メモ
   @override
   String get note;
 

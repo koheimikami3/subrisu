@@ -24,9 +24,6 @@ abstract class Subscription implements _$Subscription {
     // 初回支払日
     required Timestamp firstPaidOn,
 
-    // 通知を有効にするかどうか
-    required bool isNotificationEnabled,
-
     // メモ
     required String? note,
 
@@ -47,7 +44,6 @@ abstract class Subscription implements _$Subscription {
       iconImagePath: data['iconImagePath'] as String,
       paymentCycle: PaymentCycle.values.byName(data['paymentCycle'] as String),
       firstPaidOn: data['firstPaidOn'] as Timestamp,
-      isNotificationEnabled: data['isNotificationEnabled'] as bool,
       note: data['note'] as String?,
       createdAt: data['createdAt'] as Timestamp,
     );
@@ -61,7 +57,6 @@ abstract class Subscription implements _$Subscription {
       'iconImagePath': iconImagePath,
       'paymentCycle': paymentCycle,
       'firstPaidOn': firstPaidOn,
-      'isNotificationEnabled': isNotificationEnabled,
       'note': note,
       'createdAt': createdAt,
     };

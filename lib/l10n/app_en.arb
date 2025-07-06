@@ -134,14 +134,6 @@
             }
         }
     },
-    "notificationTitle": "Notification",
-    "@notificationTitle": {
-        "description": ""
-    },
-    "reminderTitle": "Notify the day before payment",
-    "@reminderTitle": {
-        "description": ""
-    },
     "memoFormTitle": "Note",
     "@memoFormTitle": {
         "description": ""
@@ -358,14 +350,6 @@
     },
     "thankYouMessage": "Thank you for your continued support of Subrisu.",
     "@thankYouMessage": {
-        "description": ""
-    },
-    "showOpenNotificationSettingsDialogContent": "To receive a notification the day before payment, you need to enable app notifications.",
-    "@showOpenNotificationSettingsDialogContent": {
-        "description": ""
-    },
-    "openNotificationSettingsButton": "Set up",
-    "@openNotificationSettingsButton": {
         "description": ""
     },
     "reminder": "recieve payment reminder",

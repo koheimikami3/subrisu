@@ -36,9 +36,6 @@ abstract class SubscriptionFormState implements _$SubscriptionFormState {
     // 選択確定初回支払い日
     required DateTime resultFirstPaidDate,
 
-    // 通知を有効にするかどうか
-    @Default(false) bool isNotificationEnabled,
-
     // メモ
     @Default('') String note,
   }) = _SubscriptionFormState;

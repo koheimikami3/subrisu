@@ -21,7 +21,6 @@ Future<void> createSubscription(Ref ref) async {
     iconImagePath: iconImagePath,
     paymentCycle: formState.paymentCycle.name,
     firstPaidOn: formState.resultFirstPaidDate,
-    isNotificationEnabled: formState.isNotificationEnabled,
     note: note,
   );
 

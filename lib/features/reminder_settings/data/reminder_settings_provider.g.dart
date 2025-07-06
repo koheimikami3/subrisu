@@ -6,7 +6,7 @@ part of 'reminder_settings_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$reminderSettingsHash() => r'72e5445719da124a4eb98874eedf58e0946e5f10';
+String _$reminderSettingsHash() => r'a9e9fe5cb4724d5d3b1d81cadfa5e6db7b119b86';
 
 /// 指定されたユーザーIDでUserDocumentのreminderを取得するFutureProvider
 ///

@@ -22,9 +22,7 @@ mixin _$Subscription {
   num get price => throw _privateConstructorUsedError; // アイコン画像パス
   String get iconImagePath => throw _privateConstructorUsedError; // 支払い周期
   PaymentCycle get paymentCycle => throw _privateConstructorUsedError; // 初回支払日
-  Timestamp get firstPaidOn =>
-      throw _privateConstructorUsedError; // 通知を有効にするかどうか
-  bool get isNotificationEnabled => throw _privateConstructorUsedError; // メモ
+  Timestamp get firstPaidOn => throw _privateConstructorUsedError; // メモ
   String? get note => throw _privateConstructorUsedError; // 作成日
   Timestamp get createdAt => throw _privateConstructorUsedError;
 
@@ -48,7 +46,6 @@ abstract class $SubscriptionCopyWith<$Res> {
       String iconImagePath,
       PaymentCycle paymentCycle,
       Timestamp firstPaidOn,
-      bool isNotificationEnabled,
       String? note,
       Timestamp createdAt});
 }
@@ -74,7 +71,6 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
     Object? iconImagePath = null,
     Object? paymentCycle = null,
     Object? firstPaidOn = null,
-    Object? isNotificationEnabled = null,
     Object? note = freezed,
     Object? createdAt = null,
   }) {
@@ -103,10 +99,6 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
           ? _value.firstPaidOn
           : firstPaidOn // ignore: cast_nullable_to_non_nullable
               as Timestamp,
-      isNotificationEnabled: null == isNotificationEnabled
-          ? _value.isNotificationEnabled
-          : isNotificationEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
       note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
@@ -134,7 +126,6 @@ abstract class _$$SubscriptionImplCopyWith<$Res>
       String iconImagePath,
       PaymentCycle paymentCycle,
       Timestamp firstPaidOn,
-      bool isNotificationEnabled,
       String? note,
       Timestamp createdAt});
 }
@@ -158,7 +149,6 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
     Object? iconImagePath = null,
     Object? paymentCycle = null,
     Object? firstPaidOn = null,
-    Object? isNotificationEnabled = null,
     Object? note = freezed,
     Object? createdAt = null,
   }) {
@@ -187,10 +177,6 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
           ? _value.firstPaidOn
           : firstPaidOn // ignore: cast_nullable_to_non_nullable
               as Timestamp,
-      isNotificationEnabled: null == isNotificationEnabled
-          ? _value.isNotificationEnabled
-          : isNotificationEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
       note: freezed == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
@@ -213,7 +199,6 @@ class _$SubscriptionImpl extends _Subscription {
       required this.iconImagePath,
       required this.paymentCycle,
       required this.firstPaidOn,
-      required this.isNotificationEnabled,
       required this.note,
       required this.createdAt})
       : super._();
@@ -236,9 +221,6 @@ class _$SubscriptionImpl extends _Subscription {
 // 初回支払日
   @override
   final Timestamp firstPaidOn;
-// 通知を有効にするかどうか
-  @override
-  final bool isNotificationEnabled;
 // メモ
   @override
   final String? note;
@@ -248,7 +230,7 @@ class _$SubscriptionImpl extends _Subscription {
 
   @override
   String toString() {
-    return 'Subscription(id: $id, serviceName: $serviceName, price: $price, iconImagePath: $iconImagePath, paymentCycle: $paymentCycle, firstPaidOn: $firstPaidOn, isNotificationEnabled: $isNotificationEnabled, note: $note, createdAt: $createdAt)';
+    return 'Subscription(id: $id, serviceName: $serviceName, price: $price, iconImagePath: $iconImagePath, paymentCycle: $paymentCycle, firstPaidOn: $firstPaidOn, note: $note, createdAt: $createdAt)';
   }
 
   @override
@@ -266,25 +248,14 @@ class _$SubscriptionImpl extends _Subscription {
                 other.paymentCycle == paymentCycle) &&
             (identical(other.firstPaidOn, firstPaidOn) ||
                 other.firstPaidOn == firstPaidOn) &&
-            (identical(other.isNotificationEnabled, isNotificationEnabled) ||
-                other.isNotificationEnabled == isNotificationEnabled) &&
             (identical(other.note, note) || other.note == note) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      serviceName,
-      price,
-      iconImagePath,
-      paymentCycle,
-      firstPaidOn,
-      isNotificationEnabled,
-      note,
-      createdAt);
+  int get hashCode => Object.hash(runtimeType, id, serviceName, price,
+      iconImagePath, paymentCycle, firstPaidOn, note, createdAt);
 
   /// Create a copy of Subscription
   /// with the given fields replaced by the non-null parameter values.
@@ -303,7 +274,6 @@ abstract class _Subscription extends Subscription {
       required final String iconImagePath,
       required final PaymentCycle paymentCycle,
       required final Timestamp firstPaidOn,
-      required final bool isNotificationEnabled,
       required final String? note,
       required final Timestamp createdAt}) = _$SubscriptionImpl;
   const _Subscription._() : super._();
@@ -320,9 +290,7 @@ abstract class _Subscription extends Subscription {
   @override
   PaymentCycle get paymentCycle; // 初回支払日
   @override
-  Timestamp get firstPaidOn; // 通知を有効にするかどうか
-  @override
-  bool get isNotificationEnabled; // メモ
+  Timestamp get firstPaidOn; // メモ
   @override
   String? get note; // 作成日
   @override
