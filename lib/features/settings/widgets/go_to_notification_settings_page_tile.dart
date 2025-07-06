@@ -1,8 +1,8 @@
 import '../../../importer.dart';
 
-/// リマインダー設定画面に遷移するタイル
-class GoToReminderSettingsPageTile extends StatelessWidget {
-  const GoToReminderSettingsPageTile({super.key});
+/// 通知設定画面に遷移するタイル
+class GoToNotificationSettingsPageTile extends StatelessWidget {
+  const GoToNotificationSettingsPageTile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,9 @@ class GoToReminderSettingsPageTile extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute<void>(builder: (_) => const ReminderSettingsPage()),
+          MaterialPageRoute<void>(
+            builder: (_) => const NotificationSettingsPage(),
+          ),
         );
       },
     );

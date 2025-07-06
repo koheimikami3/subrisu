@@ -1,12 +1,12 @@
 import '../../../importer.dart';
 
-part 'reminder_settings_page_state.freezed.dart';
+part 'notification_settings_page_state.freezed.dart';
 
-/// ReminderSettingsPageのState
+/// 通知設定画面のState
 @freezed
-abstract class ReminderSettingsPageState
-    implements _$ReminderSettingsPageState {
-  const factory ReminderSettingsPageState({
+abstract class NotificationSettingsPageState
+    implements _$NotificationSettingsPageState {
+  const factory NotificationSettingsPageState({
     // リマインド通知の有効/無効
     @Default(true) bool isEnabled,
 
@@ -21,7 +21,7 @@ abstract class ReminderSettingsPageState
 
     // 選択確定した「何時に通知するか」
     @Default(AppConfigs.defaultReminderHour) int resultHour,
-  }) = _ReminderSettingsPageState;
+  }) = _NotificationSettingsPageState;
 
-  const ReminderSettingsPageState._();
+  const NotificationSettingsPageState._();
 }

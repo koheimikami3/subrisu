@@ -1,12 +1,14 @@
 import '../../../importer.dart';
 
-part 'reminder_settings_page_provider.g.dart';
+part 'notification_settings_page_provider.g.dart';
 
-/// ReminderSettingsPageのNotifierProvider
+/// 通知設定画面のNotifierProvider
 @riverpod
-class ReminderSettingsPageNotifer extends _$ReminderSettingsPageNotifer {
+class NotificationSettingsPageNotifier
+    extends _$NotificationSettingsPageNotifier {
   @override
-  ReminderSettingsPageState build() => const ReminderSettingsPageState();
+  NotificationSettingsPageState build() =>
+      const NotificationSettingsPageState();
 
   // 画面の状態を初期化する
   void initState({

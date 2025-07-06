@@ -1,16 +1,18 @@
 import '../../../../importer.dart';
 
-/// リマインド通知に関する注意書きのテキスト
-class ReminderNoticeText extends StatelessWidget {
-  const ReminderNoticeText({super.key});
+/// 通知に関する注意書きのテキスト
+class NotificationNoticeText extends StatelessWidget {
+  const NotificationNoticeText({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Wrap(
       children: [
-        NoticeText(text: AppLocalizations.of(context)!.reminderNoticePrefix),
+        NoticeText(
+            text: AppLocalizations.of(context)!.notificationNoticePrefix),
         _notificationSettingsText(context),
-        NoticeText(text: AppLocalizations.of(context)!.reminderNoticeSuffix),
+        NoticeText(
+            text: AppLocalizations.of(context)!.notificationNoticeSuffix),
       ],
     );
   }
@@ -25,7 +27,7 @@ class ReminderNoticeText extends StatelessWidget {
         );
       },
       child: NoticeText(
-        text: AppLocalizations.of(context)!.reminderNoticeSettings,
+        text: AppLocalizations.of(context)!.notificationNoticeSettings,
         isBold: true,
         color: Colors.blue,
       ),

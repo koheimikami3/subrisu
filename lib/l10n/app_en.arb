@@ -16,9 +16,9 @@
     "@purchasePageTitle": {
         "description": "The title displayed in the AppBar on the Purchase Page"
     },
-    "reminderSettingsPageTitle": "Reminder",
-    "@reminderSettingsPageTitle": {
-        "description": "The title displayed in the AppBar on the Reminder Setting Page"
+    "notificationSettingsPageTitle": "Notification",
+    "@notificationSettingsPageTitle": {
+        "description": "The title displayed in the AppBar on the Notification Setting Page"
     },
     "themeSettingsPageTitle": "Theme",
     "@themeSettingsPageTitle": {
@@ -174,7 +174,7 @@
     "@purchaseItem": {
         "description": ""
     },
-    "notificationItem": "Reminder",
+    "notificationItem": "Notification",
     "@notificationItem": {
         "description": ""
     },
@@ -374,17 +374,17 @@
     "@reminderHourTitle": {
         "description": ""
     },
-    "reminderNoticePrefix": "To receive reminder notifications, ",
-    "@reminderNoticePrefix": {
-        "description": "Prefix for the reminder notification supplement text"
+    "notificationNoticePrefix": "To receive notifications, ",
+    "@notificationNoticePrefix": {
+        "description": "Prefix for the notification supplement text"
     },
-    "reminderNoticeSettings": "enable notification settings",
-    "@reminderNoticeSettings": {
-        "description": "The tappable part of the reminder notification supplement text (device notification settings)"
+    "notificationNoticeSettings": "enable notification settings",
+    "@notificationNoticeSettings": {
+        "description": "The tappable part of the notification supplement text (device notification settings)"
     },
-    "reminderNoticeSuffix": ".",
-    "@reminderNoticeSuffix": {
-        "description": "Suffix for the reminder notification supplement text"
+    "notificationNoticeSuffix": ".",
+    "@notificationNoticeSuffix": {
+        "description": "Suffix for the notification supplement text"
     },
     "theme": "{theme, select, device{System} light{Light Mode} dark{Dark Mode} other{error}}",
     "@theme": {

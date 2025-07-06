@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'reminder_settings_page_state.dart';
+part of 'notification_settings_page_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$ReminderSettingsPageState {
+mixin _$NotificationSettingsPageState {
 // リマインド通知の有効/無効
   bool get isEnabled =>
       throw _privateConstructorUsedError; // Pickerで選択中の「支払い日の何日前に通知するか」
@@ -28,18 +28,20 @@ mixin _$ReminderSettingsPageState {
       throw _privateConstructorUsedError; // 選択確定した「何時に通知するか」
   int get resultHour => throw _privateConstructorUsedError;
 
-  /// Create a copy of ReminderSettingsPageState
+  /// Create a copy of NotificationSettingsPageState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ReminderSettingsPageStateCopyWith<ReminderSettingsPageState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $NotificationSettingsPageStateCopyWith<NotificationSettingsPageState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ReminderSettingsPageStateCopyWith<$Res> {
-  factory $ReminderSettingsPageStateCopyWith(ReminderSettingsPageState value,
-          $Res Function(ReminderSettingsPageState) then) =
-      _$ReminderSettingsPageStateCopyWithImpl<$Res, ReminderSettingsPageState>;
+abstract class $NotificationSettingsPageStateCopyWith<$Res> {
+  factory $NotificationSettingsPageStateCopyWith(
+          NotificationSettingsPageState value,
+          $Res Function(NotificationSettingsPageState) then) =
+      _$NotificationSettingsPageStateCopyWithImpl<$Res,
+          NotificationSettingsPageState>;
   @useResult
   $Res call(
       {bool isEnabled,
@@ -50,17 +52,17 @@ abstract class $ReminderSettingsPageStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ReminderSettingsPageStateCopyWithImpl<$Res,
-        $Val extends ReminderSettingsPageState>
-    implements $ReminderSettingsPageStateCopyWith<$Res> {
-  _$ReminderSettingsPageStateCopyWithImpl(this._value, this._then);
+class _$NotificationSettingsPageStateCopyWithImpl<$Res,
+        $Val extends NotificationSettingsPageState>
+    implements $NotificationSettingsPageStateCopyWith<$Res> {
+  _$NotificationSettingsPageStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ReminderSettingsPageState
+  /// Create a copy of NotificationSettingsPageState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -97,12 +99,12 @@ class _$ReminderSettingsPageStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ReminderSettingsPageStateImplCopyWith<$Res>
-    implements $ReminderSettingsPageStateCopyWith<$Res> {
-  factory _$$ReminderSettingsPageStateImplCopyWith(
-          _$ReminderSettingsPageStateImpl value,
-          $Res Function(_$ReminderSettingsPageStateImpl) then) =
-      __$$ReminderSettingsPageStateImplCopyWithImpl<$Res>;
+abstract class _$$NotificationSettingsPageStateImplCopyWith<$Res>
+    implements $NotificationSettingsPageStateCopyWith<$Res> {
+  factory _$$NotificationSettingsPageStateImplCopyWith(
+          _$NotificationSettingsPageStateImpl value,
+          $Res Function(_$NotificationSettingsPageStateImpl) then) =
+      __$$NotificationSettingsPageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -114,16 +116,16 @@ abstract class _$$ReminderSettingsPageStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ReminderSettingsPageStateImplCopyWithImpl<$Res>
-    extends _$ReminderSettingsPageStateCopyWithImpl<$Res,
-        _$ReminderSettingsPageStateImpl>
-    implements _$$ReminderSettingsPageStateImplCopyWith<$Res> {
-  __$$ReminderSettingsPageStateImplCopyWithImpl(
-      _$ReminderSettingsPageStateImpl _value,
-      $Res Function(_$ReminderSettingsPageStateImpl) _then)
+class __$$NotificationSettingsPageStateImplCopyWithImpl<$Res>
+    extends _$NotificationSettingsPageStateCopyWithImpl<$Res,
+        _$NotificationSettingsPageStateImpl>
+    implements _$$NotificationSettingsPageStateImplCopyWith<$Res> {
+  __$$NotificationSettingsPageStateImplCopyWithImpl(
+      _$NotificationSettingsPageStateImpl _value,
+      $Res Function(_$NotificationSettingsPageStateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ReminderSettingsPageState
+  /// Create a copy of NotificationSettingsPageState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -134,7 +136,7 @@ class __$$ReminderSettingsPageStateImplCopyWithImpl<$Res>
     Object? selectedHour = null,
     Object? resultHour = null,
   }) {
-    return _then(_$ReminderSettingsPageStateImpl(
+    return _then(_$NotificationSettingsPageStateImpl(
       isEnabled: null == isEnabled
           ? _value.isEnabled
           : isEnabled // ignore: cast_nullable_to_non_nullable
@@ -161,8 +163,9 @@ class __$$ReminderSettingsPageStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReminderSettingsPageStateImpl extends _ReminderSettingsPageState {
-  const _$ReminderSettingsPageStateImpl(
+class _$NotificationSettingsPageStateImpl
+    extends _NotificationSettingsPageState {
+  const _$NotificationSettingsPageStateImpl(
       {this.isEnabled = true,
       this.selectedDaysBefore = AppConfigs.defaultReminderDaysBefore,
       this.resultDaysBefore = AppConfigs.defaultReminderDaysBefore,
@@ -194,14 +197,14 @@ class _$ReminderSettingsPageStateImpl extends _ReminderSettingsPageState {
 
   @override
   String toString() {
-    return 'ReminderSettingsPageState(isEnabled: $isEnabled, selectedDaysBefore: $selectedDaysBefore, resultDaysBefore: $resultDaysBefore, selectedHour: $selectedHour, resultHour: $resultHour)';
+    return 'NotificationSettingsPageState(isEnabled: $isEnabled, selectedDaysBefore: $selectedDaysBefore, resultDaysBefore: $resultDaysBefore, selectedHour: $selectedHour, resultHour: $resultHour)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReminderSettingsPageStateImpl &&
+            other is _$NotificationSettingsPageStateImpl &&
             (identical(other.isEnabled, isEnabled) ||
                 other.isEnabled == isEnabled) &&
             (identical(other.selectedDaysBefore, selectedDaysBefore) ||
@@ -218,24 +221,26 @@ class _$ReminderSettingsPageStateImpl extends _ReminderSettingsPageState {
   int get hashCode => Object.hash(runtimeType, isEnabled, selectedDaysBefore,
       resultDaysBefore, selectedHour, resultHour);
 
-  /// Create a copy of ReminderSettingsPageState
+  /// Create a copy of NotificationSettingsPageState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReminderSettingsPageStateImplCopyWith<_$ReminderSettingsPageStateImpl>
-      get copyWith => __$$ReminderSettingsPageStateImplCopyWithImpl<
-          _$ReminderSettingsPageStateImpl>(this, _$identity);
+  _$$NotificationSettingsPageStateImplCopyWith<
+          _$NotificationSettingsPageStateImpl>
+      get copyWith => __$$NotificationSettingsPageStateImplCopyWithImpl<
+          _$NotificationSettingsPageStateImpl>(this, _$identity);
 }
 
-abstract class _ReminderSettingsPageState extends ReminderSettingsPageState {
-  const factory _ReminderSettingsPageState(
+abstract class _NotificationSettingsPageState
+    extends NotificationSettingsPageState {
+  const factory _NotificationSettingsPageState(
       {final bool isEnabled,
       final int selectedDaysBefore,
       final int resultDaysBefore,
       final int selectedHour,
-      final int resultHour}) = _$ReminderSettingsPageStateImpl;
-  const _ReminderSettingsPageState._() : super._();
+      final int resultHour}) = _$NotificationSettingsPageStateImpl;
+  const _NotificationSettingsPageState._() : super._();
 
 // リマインド通知の有効/無効
   @override
@@ -251,10 +256,11 @@ abstract class _ReminderSettingsPageState extends ReminderSettingsPageState {
   @override
   int get resultHour;
 
-  /// Create a copy of ReminderSettingsPageState
+  /// Create a copy of NotificationSettingsPageState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ReminderSettingsPageStateImplCopyWith<_$ReminderSettingsPageStateImpl>
+  _$$NotificationSettingsPageStateImplCopyWith<
+          _$NotificationSettingsPageStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -2,14 +2,15 @@ import 'package:flutter/cupertino.dart';
 
 import '../../../../importer.dart';
 
-/// リマインダーの「何時に通知するか」を選択するPicker
-class ReminderHourPicker extends ConsumerWidget {
-  const ReminderHourPicker({super.key});
+/// 支払いリマインダーの「何時に通知するか」を選択するPicker
+class PaymentReminderHourPicker extends ConsumerWidget {
+  const PaymentReminderHourPicker({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final resultHour = ref.watch(
-      reminderSettingsPageNotiferProvider.select((state) => state.resultHour),
+      notificationSettingsPageNotifierProvider
+          .select((state) => state.resultHour),
     );
     final hourList = <int>[for (var i = 0; i <= 23; i++) i];
 
@@ -20,7 +21,7 @@ class ReminderHourPicker extends ConsumerWidget {
       ),
       onSelectedItemChanged: (value) {
         ref
-            .read(reminderSettingsPageNotiferProvider.notifier)
+            .read(notificationSettingsPageNotifierProvider.notifier)
             .setSelectedHour(hourList[value]);
       },
       children: [

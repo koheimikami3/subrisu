@@ -1,8 +1,8 @@
 import '../../../../importer.dart';
 
-/// Pickerで選択した「何日前に通知するか」を保存するボタン
-class SaveReminderDaysBeforeButton extends ConsumerWidget {
-  const SaveReminderDaysBeforeButton({super.key});
+/// Pickerで選択した支払いリマインダーの「何日前に通知するか」を保存するボタン
+class SavePaymentReminderDaysBeforeButton extends ConsumerWidget {
+  const SavePaymentReminderDaysBeforeButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -10,7 +10,7 @@ class SaveReminderDaysBeforeButton extends ConsumerWidget {
       onPressed: () {
         // Pickerで選択中の「何日前に通知するか」の状態を更新
         ref
-            .read(reminderSettingsPageNotiferProvider.notifier)
+            .read(notificationSettingsPageNotifierProvider.notifier)
             .setResultDaysBefore();
       },
     );
