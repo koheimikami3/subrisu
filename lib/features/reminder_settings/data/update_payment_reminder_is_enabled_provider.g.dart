@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'update_reminder_is_enabled_provider.dart';
+part of 'update_payment_reminder_is_enabled_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
 String _$updateReminderIsEnabledHash() =>
-    r'4597fd2838ec48d1e6becfebb4b383b684bdfa7d';
+    r'd70b646084a5aea18a6168279352bfdecdd59817';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -30,22 +30,26 @@ class _SystemHash {
   }
 }
 
-/// 指定されたbool値でUserDocumentのreminder.isEnabledを更新するFutureProvider
+/// 指定された値でUserDocumentの
+/// notification.paymentReminder.isEnabledを更新するFutureProvider
 ///
 /// Copied from [updateReminderIsEnabled].
 @ProviderFor(updateReminderIsEnabled)
 const updateReminderIsEnabledProvider = UpdateReminderIsEnabledFamily();
 
-/// 指定されたbool値でUserDocumentのreminder.isEnabledを更新するFutureProvider
+/// 指定された値でUserDocumentの
+/// notification.paymentReminder.isEnabledを更新するFutureProvider
 ///
 /// Copied from [updateReminderIsEnabled].
 class UpdateReminderIsEnabledFamily extends Family<AsyncValue<void>> {
-  /// 指定されたbool値でUserDocumentのreminder.isEnabledを更新するFutureProvider
+  /// 指定された値でUserDocumentの
+  /// notification.paymentReminder.isEnabledを更新するFutureProvider
   ///
   /// Copied from [updateReminderIsEnabled].
   const UpdateReminderIsEnabledFamily();
 
-  /// 指定されたbool値でUserDocumentのreminder.isEnabledを更新するFutureProvider
+  /// 指定された値でUserDocumentの
+  /// notification.paymentReminder.isEnabledを更新するFutureProvider
   ///
   /// Copied from [updateReminderIsEnabled].
   UpdateReminderIsEnabledProvider call(
@@ -80,11 +84,13 @@ class UpdateReminderIsEnabledFamily extends Family<AsyncValue<void>> {
   String? get name => r'updateReminderIsEnabledProvider';
 }
 
-/// 指定されたbool値でUserDocumentのreminder.isEnabledを更新するFutureProvider
+/// 指定された値でUserDocumentの
+/// notification.paymentReminder.isEnabledを更新するFutureProvider
 ///
 /// Copied from [updateReminderIsEnabled].
 class UpdateReminderIsEnabledProvider extends AutoDisposeFutureProvider<void> {
-  /// 指定されたbool値でUserDocumentのreminder.isEnabledを更新するFutureProvider
+  /// 指定された値でUserDocumentの
+  /// notification.paymentReminder.isEnabledを更新するFutureProvider
   ///
   /// Copied from [updateReminderIsEnabled].
   UpdateReminderIsEnabledProvider(

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'reminder_settings.dart';
+part of 'payment_reminder_settings.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,39 +15,40 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$ReminderSettings {
-// リマインダーを有効にするかどうか
+mixin _$PaymentReminderSettings {
+// 通知が有効かどうか
   bool get isEnabled => throw _privateConstructorUsedError; // 何日前に通知するか
   int get daysBefore => throw _privateConstructorUsedError; // 何時に通知するか
   int get hour => throw _privateConstructorUsedError;
 
-  /// Create a copy of ReminderSettings
+  /// Create a copy of PaymentReminderSettings
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ReminderSettingsCopyWith<ReminderSettings> get copyWith =>
+  $PaymentReminderSettingsCopyWith<PaymentReminderSettings> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ReminderSettingsCopyWith<$Res> {
-  factory $ReminderSettingsCopyWith(
-          ReminderSettings value, $Res Function(ReminderSettings) then) =
-      _$ReminderSettingsCopyWithImpl<$Res, ReminderSettings>;
+abstract class $PaymentReminderSettingsCopyWith<$Res> {
+  factory $PaymentReminderSettingsCopyWith(PaymentReminderSettings value,
+          $Res Function(PaymentReminderSettings) then) =
+      _$PaymentReminderSettingsCopyWithImpl<$Res, PaymentReminderSettings>;
   @useResult
   $Res call({bool isEnabled, int daysBefore, int hour});
 }
 
 /// @nodoc
-class _$ReminderSettingsCopyWithImpl<$Res, $Val extends ReminderSettings>
-    implements $ReminderSettingsCopyWith<$Res> {
-  _$ReminderSettingsCopyWithImpl(this._value, this._then);
+class _$PaymentReminderSettingsCopyWithImpl<$Res,
+        $Val extends PaymentReminderSettings>
+    implements $PaymentReminderSettingsCopyWith<$Res> {
+  _$PaymentReminderSettingsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ReminderSettings
+  /// Create a copy of PaymentReminderSettings
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -74,25 +75,28 @@ class _$ReminderSettingsCopyWithImpl<$Res, $Val extends ReminderSettings>
 }
 
 /// @nodoc
-abstract class _$$ReminderSettingsImplCopyWith<$Res>
-    implements $ReminderSettingsCopyWith<$Res> {
-  factory _$$ReminderSettingsImplCopyWith(_$ReminderSettingsImpl value,
-          $Res Function(_$ReminderSettingsImpl) then) =
-      __$$ReminderSettingsImplCopyWithImpl<$Res>;
+abstract class _$$PaymentReminderSettingsImplCopyWith<$Res>
+    implements $PaymentReminderSettingsCopyWith<$Res> {
+  factory _$$PaymentReminderSettingsImplCopyWith(
+          _$PaymentReminderSettingsImpl value,
+          $Res Function(_$PaymentReminderSettingsImpl) then) =
+      __$$PaymentReminderSettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool isEnabled, int daysBefore, int hour});
 }
 
 /// @nodoc
-class __$$ReminderSettingsImplCopyWithImpl<$Res>
-    extends _$ReminderSettingsCopyWithImpl<$Res, _$ReminderSettingsImpl>
-    implements _$$ReminderSettingsImplCopyWith<$Res> {
-  __$$ReminderSettingsImplCopyWithImpl(_$ReminderSettingsImpl _value,
-      $Res Function(_$ReminderSettingsImpl) _then)
+class __$$PaymentReminderSettingsImplCopyWithImpl<$Res>
+    extends _$PaymentReminderSettingsCopyWithImpl<$Res,
+        _$PaymentReminderSettingsImpl>
+    implements _$$PaymentReminderSettingsImplCopyWith<$Res> {
+  __$$PaymentReminderSettingsImplCopyWithImpl(
+      _$PaymentReminderSettingsImpl _value,
+      $Res Function(_$PaymentReminderSettingsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ReminderSettings
+  /// Create a copy of PaymentReminderSettings
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -101,7 +105,7 @@ class __$$ReminderSettingsImplCopyWithImpl<$Res>
     Object? daysBefore = null,
     Object? hour = null,
   }) {
-    return _then(_$ReminderSettingsImpl(
+    return _then(_$PaymentReminderSettingsImpl(
       isEnabled: null == isEnabled
           ? _value.isEnabled
           : isEnabled // ignore: cast_nullable_to_non_nullable
@@ -120,12 +124,12 @@ class __$$ReminderSettingsImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReminderSettingsImpl extends _ReminderSettings {
-  const _$ReminderSettingsImpl(
+class _$PaymentReminderSettingsImpl extends _PaymentReminderSettings {
+  const _$PaymentReminderSettingsImpl(
       {required this.isEnabled, required this.daysBefore, required this.hour})
       : super._();
 
-// リマインダーを有効にするかどうか
+// 通知が有効かどうか
   @override
   final bool isEnabled;
 // 何日前に通知するか
@@ -137,14 +141,14 @@ class _$ReminderSettingsImpl extends _ReminderSettings {
 
   @override
   String toString() {
-    return 'ReminderSettings(isEnabled: $isEnabled, daysBefore: $daysBefore, hour: $hour)';
+    return 'PaymentReminderSettings(isEnabled: $isEnabled, daysBefore: $daysBefore, hour: $hour)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReminderSettingsImpl &&
+            other is _$PaymentReminderSettingsImpl &&
             (identical(other.isEnabled, isEnabled) ||
                 other.isEnabled == isEnabled) &&
             (identical(other.daysBefore, daysBefore) ||
@@ -155,24 +159,24 @@ class _$ReminderSettingsImpl extends _ReminderSettings {
   @override
   int get hashCode => Object.hash(runtimeType, isEnabled, daysBefore, hour);
 
-  /// Create a copy of ReminderSettings
+  /// Create a copy of PaymentReminderSettings
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReminderSettingsImplCopyWith<_$ReminderSettingsImpl> get copyWith =>
-      __$$ReminderSettingsImplCopyWithImpl<_$ReminderSettingsImpl>(
-          this, _$identity);
+  _$$PaymentReminderSettingsImplCopyWith<_$PaymentReminderSettingsImpl>
+      get copyWith => __$$PaymentReminderSettingsImplCopyWithImpl<
+          _$PaymentReminderSettingsImpl>(this, _$identity);
 }
 
-abstract class _ReminderSettings extends ReminderSettings {
-  const factory _ReminderSettings(
+abstract class _PaymentReminderSettings extends PaymentReminderSettings {
+  const factory _PaymentReminderSettings(
       {required final bool isEnabled,
       required final int daysBefore,
-      required final int hour}) = _$ReminderSettingsImpl;
-  const _ReminderSettings._() : super._();
+      required final int hour}) = _$PaymentReminderSettingsImpl;
+  const _PaymentReminderSettings._() : super._();
 
-// リマインダーを有効にするかどうか
+// 通知が有効かどうか
   @override
   bool get isEnabled; // 何日前に通知するか
   @override
@@ -180,10 +184,10 @@ abstract class _ReminderSettings extends ReminderSettings {
   @override
   int get hour;
 
-  /// Create a copy of ReminderSettings
+  /// Create a copy of PaymentReminderSettings
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ReminderSettingsImplCopyWith<_$ReminderSettingsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PaymentReminderSettingsImplCopyWith<_$PaymentReminderSettingsImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

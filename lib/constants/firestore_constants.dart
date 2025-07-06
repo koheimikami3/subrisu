@@ -13,7 +13,8 @@ class FirestoreConstants {
   static const timezoneField = 'timezone';
   static const timezoneNameField = 'name';
   static const timezoneOffsetField = 'offset';
-  static const reminderField = 'reminder';
+  static const notificationsField = 'notifications';
+  static const paymentReminderField = 'paymentReminder';
   static const isEnabled = 'isEnabled';
   static const daysBeforeField = 'daysBefore';
   static const hourField = 'hour';
