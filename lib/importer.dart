@@ -43,6 +43,7 @@ export 'package:subrisu/components/my_banner_ad.dart';
 export 'package:subrisu/components/my_filled_button.dart';
 export 'package:subrisu/components/my_list_tile.dart';
 export 'package:subrisu/components/my_text_field.dart';
+export 'package:subrisu/components/notice_text.dart';
 export 'package:subrisu/components/picker_sheet.dart';
 export 'package:subrisu/components/save_picker_value_button.dart';
 export 'package:subrisu/components/show_picker_button.dart';

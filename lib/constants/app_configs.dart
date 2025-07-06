@@ -2,7 +2,7 @@
 class AppConfigs {
   AppConfigs._();
 
-  // テキストデフォルトフォントサイズ
+  // テキストフォントサイズ
   static const defaultFontSize = 13.5;
 
   // 支払いリマインダーのデフォルト値

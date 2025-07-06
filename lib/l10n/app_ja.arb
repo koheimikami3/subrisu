@@ -308,8 +308,8 @@
     "@alreadyPurchased": {
         "description": ""
     },
-    "purchaseSupplement": "*広告の非表示は買い切りです。",
-    "@purchaseSupplement": {
+    "purchaseNotice": "広告の非表示は買い切りです。",
+    "@purchaseNotice": {
         "description": ""
     },
     "total": "今月",
