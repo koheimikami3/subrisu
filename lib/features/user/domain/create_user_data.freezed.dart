@@ -22,7 +22,7 @@ CreateUserData _$CreateUserDataFromJson(Map<String, dynamic> json) {
 mixin _$CreateUserData {
 // 端末のOS
   String get os => throw _privateConstructorUsedError; // FCMトークン
-  String get fcmToken => throw _privateConstructorUsedError; // タイムゾーン
+  String? get fcmToken => throw _privateConstructorUsedError; // タイムゾーン
   Map<String, dynamic> get timezone => throw _privateConstructorUsedError; // 通知
   Map<String, dynamic> get notifications =>
       throw _privateConstructorUsedError; // 作成日時
@@ -47,7 +47,7 @@ abstract class $CreateUserDataCopyWith<$Res> {
   @useResult
   $Res call(
       {String os,
-      String fcmToken,
+      String? fcmToken,
       Map<String, dynamic> timezone,
       Map<String, dynamic> notifications,
       @CreatedAtField() DateTime? createdAt});
@@ -69,7 +69,7 @@ class _$CreateUserDataCopyWithImpl<$Res, $Val extends CreateUserData>
   @override
   $Res call({
     Object? os = null,
-    Object? fcmToken = null,
+    Object? fcmToken = freezed,
     Object? timezone = null,
     Object? notifications = null,
     Object? createdAt = freezed,
@@ -79,10 +79,10 @@ class _$CreateUserDataCopyWithImpl<$Res, $Val extends CreateUserData>
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as String,
-      fcmToken: null == fcmToken
+      fcmToken: freezed == fcmToken
           ? _value.fcmToken
           : fcmToken // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       timezone: null == timezone
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
@@ -109,7 +109,7 @@ abstract class _$$CreateUserDataImplCopyWith<$Res>
   @useResult
   $Res call(
       {String os,
-      String fcmToken,
+      String? fcmToken,
       Map<String, dynamic> timezone,
       Map<String, dynamic> notifications,
       @CreatedAtField() DateTime? createdAt});
@@ -129,7 +129,7 @@ class __$$CreateUserDataImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? os = null,
-    Object? fcmToken = null,
+    Object? fcmToken = freezed,
     Object? timezone = null,
     Object? notifications = null,
     Object? createdAt = freezed,
@@ -139,10 +139,10 @@ class __$$CreateUserDataImplCopyWithImpl<$Res>
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as String,
-      fcmToken: null == fcmToken
+      fcmToken: freezed == fcmToken
           ? _value.fcmToken
           : fcmToken // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       timezone: null == timezone
           ? _value._timezone
           : timezone // ignore: cast_nullable_to_non_nullable
@@ -180,7 +180,7 @@ class _$CreateUserDataImpl extends _CreateUserData {
   final String os;
 // FCMトークン
   @override
-  final String fcmToken;
+  final String? fcmToken;
 // タイムゾーン
   final Map<String, dynamic> _timezone;
 // タイムゾーン
@@ -256,7 +256,7 @@ class _$CreateUserDataImpl extends _CreateUserData {
 abstract class _CreateUserData extends CreateUserData {
   const factory _CreateUserData(
       {required final String os,
-      required final String fcmToken,
+      required final String? fcmToken,
       required final Map<String, dynamic> timezone,
       required final Map<String, dynamic> notifications,
       @CreatedAtField() final DateTime? createdAt}) = _$CreateUserDataImpl;
@@ -269,7 +269,7 @@ abstract class _CreateUserData extends CreateUserData {
   @override
   String get os; // FCMトークン
   @override
-  String get fcmToken; // タイムゾーン
+  String? get fcmToken; // タイムゾーン
   @override
   Map<String, dynamic> get timezone; // 通知
   @override

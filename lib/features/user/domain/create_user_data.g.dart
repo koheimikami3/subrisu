@@ -9,7 +9,7 @@ part of 'create_user_data.dart';
 _$CreateUserDataImpl _$$CreateUserDataImplFromJson(Map<String, dynamic> json) =>
     _$CreateUserDataImpl(
       os: json['os'] as String,
-      fcmToken: json['fcmToken'] as String,
+      fcmToken: json['fcmToken'] as String?,
       timezone: json['timezone'] as Map<String, dynamic>,
       notifications: json['notifications'] as Map<String, dynamic>,
       createdAt: const CreatedAtField().fromJson(json['createdAt']),
