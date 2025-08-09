@@ -23,12 +23,15 @@ Future<void> createUser(Ref ref, String userId) async {
   // UserDocumentの作成データ
   final userData = CreateUserData(
     os: os,
-    token: token!,
+    fcmToken: token!,
     timezone: timezone,
-    reminder: {
-      FirestoreConstants.isEnabled: AppConfigs.defaultReminderIsEnabled,
-      FirestoreConstants.daysBeforeField: AppConfigs.defaultReminderDaysBefore,
-      FirestoreConstants.hourField: AppConfigs.defaultReminderHour,
+    notifications: {
+      FirestoreConstants.paymentReminderField: {
+        FirestoreConstants.isEnabled: AppConfigs.defaultReminderIsEnabled,
+        FirestoreConstants.daysBeforeField:
+            AppConfigs.defaultReminderDaysBefore,
+        FirestoreConstants.hourField: AppConfigs.defaultReminderHour,
+      },
     },
   );
 

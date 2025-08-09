@@ -22,10 +22,9 @@ CreateUserData _$CreateUserDataFromJson(Map<String, dynamic> json) {
 mixin _$CreateUserData {
 // 端末のOS
   String get os => throw _privateConstructorUsedError; // FCMトークン
-  String get token => throw _privateConstructorUsedError; // タイムゾーン
-  Map<String, dynamic> get timezone =>
-      throw _privateConstructorUsedError; // 支払いリマインダー
-  Map<String, dynamic> get reminder =>
+  String get fcmToken => throw _privateConstructorUsedError; // タイムゾーン
+  Map<String, dynamic> get timezone => throw _privateConstructorUsedError; // 通知
+  Map<String, dynamic> get notifications =>
       throw _privateConstructorUsedError; // 作成日時
   @CreatedAtField()
   DateTime? get createdAt => throw _privateConstructorUsedError;
@@ -48,9 +47,9 @@ abstract class $CreateUserDataCopyWith<$Res> {
   @useResult
   $Res call(
       {String os,
-      String token,
+      String fcmToken,
       Map<String, dynamic> timezone,
-      Map<String, dynamic> reminder,
+      Map<String, dynamic> notifications,
       @CreatedAtField() DateTime? createdAt});
 }
 
@@ -70,9 +69,9 @@ class _$CreateUserDataCopyWithImpl<$Res, $Val extends CreateUserData>
   @override
   $Res call({
     Object? os = null,
-    Object? token = null,
+    Object? fcmToken = null,
     Object? timezone = null,
-    Object? reminder = null,
+    Object? notifications = null,
     Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
@@ -80,17 +79,17 @@ class _$CreateUserDataCopyWithImpl<$Res, $Val extends CreateUserData>
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as String,
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
+      fcmToken: null == fcmToken
+          ? _value.fcmToken
+          : fcmToken // ignore: cast_nullable_to_non_nullable
               as String,
       timezone: null == timezone
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
-      reminder: null == reminder
-          ? _value.reminder
-          : reminder // ignore: cast_nullable_to_non_nullable
+      notifications: null == notifications
+          ? _value.notifications
+          : notifications // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -110,9 +109,9 @@ abstract class _$$CreateUserDataImplCopyWith<$Res>
   @useResult
   $Res call(
       {String os,
-      String token,
+      String fcmToken,
       Map<String, dynamic> timezone,
-      Map<String, dynamic> reminder,
+      Map<String, dynamic> notifications,
       @CreatedAtField() DateTime? createdAt});
 }
 
@@ -130,9 +129,9 @@ class __$$CreateUserDataImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? os = null,
-    Object? token = null,
+    Object? fcmToken = null,
     Object? timezone = null,
-    Object? reminder = null,
+    Object? notifications = null,
     Object? createdAt = freezed,
   }) {
     return _then(_$CreateUserDataImpl(
@@ -140,17 +139,17 @@ class __$$CreateUserDataImplCopyWithImpl<$Res>
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as String,
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
+      fcmToken: null == fcmToken
+          ? _value.fcmToken
+          : fcmToken // ignore: cast_nullable_to_non_nullable
               as String,
       timezone: null == timezone
           ? _value._timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
-      reminder: null == reminder
-          ? _value._reminder
-          : reminder // ignore: cast_nullable_to_non_nullable
+      notifications: null == notifications
+          ? _value._notifications
+          : notifications // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -165,12 +164,12 @@ class __$$CreateUserDataImplCopyWithImpl<$Res>
 class _$CreateUserDataImpl extends _CreateUserData {
   const _$CreateUserDataImpl(
       {required this.os,
-      required this.token,
+      required this.fcmToken,
       required final Map<String, dynamic> timezone,
-      required final Map<String, dynamic> reminder,
+      required final Map<String, dynamic> notifications,
       @CreatedAtField() this.createdAt})
       : _timezone = timezone,
-        _reminder = reminder,
+        _notifications = notifications,
         super._();
 
   factory _$CreateUserDataImpl.fromJson(Map<String, dynamic> json) =>
@@ -181,7 +180,7 @@ class _$CreateUserDataImpl extends _CreateUserData {
   final String os;
 // FCMトークン
   @override
-  final String token;
+  final String fcmToken;
 // タイムゾーン
   final Map<String, dynamic> _timezone;
 // タイムゾーン
@@ -192,14 +191,14 @@ class _$CreateUserDataImpl extends _CreateUserData {
     return EqualUnmodifiableMapView(_timezone);
   }
 
-// 支払いリマインダー
-  final Map<String, dynamic> _reminder;
-// 支払いリマインダー
+// 通知
+  final Map<String, dynamic> _notifications;
+// 通知
   @override
-  Map<String, dynamic> get reminder {
-    if (_reminder is EqualUnmodifiableMapView) return _reminder;
+  Map<String, dynamic> get notifications {
+    if (_notifications is EqualUnmodifiableMapView) return _notifications;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_reminder);
+    return EqualUnmodifiableMapView(_notifications);
   }
 
 // 作成日時
@@ -209,7 +208,7 @@ class _$CreateUserDataImpl extends _CreateUserData {
 
   @override
   String toString() {
-    return 'CreateUserData(os: $os, token: $token, timezone: $timezone, reminder: $reminder, createdAt: $createdAt)';
+    return 'CreateUserData(os: $os, fcmToken: $fcmToken, timezone: $timezone, notifications: $notifications, createdAt: $createdAt)';
   }
 
   @override
@@ -218,9 +217,11 @@ class _$CreateUserDataImpl extends _CreateUserData {
         (other.runtimeType == runtimeType &&
             other is _$CreateUserDataImpl &&
             (identical(other.os, os) || other.os == os) &&
-            (identical(other.token, token) || other.token == token) &&
+            (identical(other.fcmToken, fcmToken) ||
+                other.fcmToken == fcmToken) &&
             const DeepCollectionEquality().equals(other._timezone, _timezone) &&
-            const DeepCollectionEquality().equals(other._reminder, _reminder) &&
+            const DeepCollectionEquality()
+                .equals(other._notifications, _notifications) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt));
   }
@@ -230,9 +231,9 @@ class _$CreateUserDataImpl extends _CreateUserData {
   int get hashCode => Object.hash(
       runtimeType,
       os,
-      token,
+      fcmToken,
       const DeepCollectionEquality().hash(_timezone),
-      const DeepCollectionEquality().hash(_reminder),
+      const DeepCollectionEquality().hash(_notifications),
       createdAt);
 
   /// Create a copy of CreateUserData
@@ -255,9 +256,9 @@ class _$CreateUserDataImpl extends _CreateUserData {
 abstract class _CreateUserData extends CreateUserData {
   const factory _CreateUserData(
       {required final String os,
-      required final String token,
+      required final String fcmToken,
       required final Map<String, dynamic> timezone,
-      required final Map<String, dynamic> reminder,
+      required final Map<String, dynamic> notifications,
       @CreatedAtField() final DateTime? createdAt}) = _$CreateUserDataImpl;
   const _CreateUserData._() : super._();
 
@@ -268,11 +269,11 @@ abstract class _CreateUserData extends CreateUserData {
   @override
   String get os; // FCMトークン
   @override
-  String get token; // タイムゾーン
+  String get fcmToken; // タイムゾーン
   @override
-  Map<String, dynamic> get timezone; // 支払いリマインダー
+  Map<String, dynamic> get timezone; // 通知
   @override
-  Map<String, dynamic> get reminder; // 作成日時
+  Map<String, dynamic> get notifications; // 作成日時
   @override
   @CreatedAtField()
   DateTime? get createdAt;

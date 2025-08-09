@@ -6,12 +6,12 @@ part of 'fcm_token_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fcmTokenHash() => r'665141e34e54e650bf24401d4b6e6a537fb37473';
+String _$fcmTokenHash() => r'afca8fd08992b80778b8c4b6c39f6e963f16aef4';
 
 /// 端末のFCMトークンを取得するFutureProvider
 ///
 /// エミュレーターでgetToken()を使用するとエラーになるため、
-/// リリースモードではgetToken()を使用し、デバッグモードではgetAPNSToken()を使用する
+/// リリースモードではgetToken()を使用し、デバッグモードでNULLを返す
 ///
 /// Copied from [fcmToken].
 @ProviderFor(fcmToken)

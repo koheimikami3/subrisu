@@ -11,13 +11,13 @@ abstract class CreateUserData implements _$CreateUserData {
     required String os,
 
     // FCMトークン
-    required String token,
+    required String fcmToken,
 
     // タイムゾーン
     required Map<String, dynamic> timezone,
 
-    // 支払いリマインダー
-    required Map<String, dynamic> reminder,
+    // 通知
+    required Map<String, dynamic> notifications,
 
     // 作成日時
     @CreatedAtField() DateTime? createdAt,
