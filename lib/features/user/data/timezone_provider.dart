@@ -10,6 +10,6 @@ Future<Map<String, dynamic>> timezone(Ref ref) async {
 
   return {
     FirestoreConstants.timezoneNameField: timezone,
-    FirestoreConstants.timezoneOffsetField: offset,
+    FirestoreConstants.timezoneUtcOffsetField: offset,
   };
 }

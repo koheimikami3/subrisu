@@ -9,7 +9,7 @@ part of 'notification_settings_page_provider.dart';
 String _$notificationSettingsPageNotifierHash() =>
     r'4154361fac062a1e0162be32bd9fff0a48cdfe2d';
 
-/// NotificationSettingsPageのNotifierProvider
+/// 通知設定画面のNotifierProvider
 ///
 /// Copied from [NotificationSettingsPageNotifier].
 @ProviderFor(NotificationSettingsPageNotifier)
