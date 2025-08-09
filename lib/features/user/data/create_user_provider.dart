@@ -15,7 +15,7 @@ Future<void> createUser(Ref ref, String userId) async {
   }
 
   // 端末のFCMトークンを取得
-  final token = await ref.read(fcmTokenProvider.future);
+  final fcmToken = await ref.read(fcmTokenProvider.future);
 
   // 端末のタイムゾーン情報を取得
   final timezone = await ref.read(timezoneProvider.future);
@@ -23,7 +23,7 @@ Future<void> createUser(Ref ref, String userId) async {
   // UserDocumentの作成データ
   final userData = CreateUserData(
     os: os,
-    fcmToken: token!,
+    fcmToken: fcmToken,
     timezone: timezone,
     notifications: {
       FirestoreConstants.paymentReminderField: {

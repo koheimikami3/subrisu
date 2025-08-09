@@ -11,7 +11,7 @@ abstract class CreateUserData implements _$CreateUserData {
     required String os,
 
     // FCMトークン
-    required String fcmToken,
+    required String? fcmToken,
 
     // タイムゾーン
     required Map<String, dynamic> timezone,
