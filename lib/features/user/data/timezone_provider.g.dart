@@ -6,7 +6,7 @@ part of 'timezone_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$timezoneHash() => r'b6fe1ddf2aaa7ba40cc42da0048714a332a441e9';
+String _$timezoneHash() => r'344ea36607cec25f5f90d58947a81500fb3b1b7d';
 
 /// 端末のタイムゾーン情報を取得するFutureProvider
 ///
