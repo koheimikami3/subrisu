@@ -8,7 +8,7 @@ Future<void> updateUser(Ref ref) async {
   final userId = ref.read(userIdProvider);
 
   // 端末のFCMトークンを取得
-  final token = await ref.read(fcmTokenProvider.future);
+  final fcmToken = await ref.read(fcmTokenProvider.future);
 
   // 端末のタイムゾーン情報を取得
   final timezone = await ref.read(timezoneProvider.future);
@@ -19,7 +19,7 @@ Future<void> updateUser(Ref ref) async {
       .collection(FirestoreConstants.usersCollection)
       .doc(userId)
       .update({
-    FirestoreConstants.tokenField: token,
+    FirestoreConstants.fcmTokenField: fcmToken,
     FirestoreConstants.timezoneField: timezone,
   });
 }

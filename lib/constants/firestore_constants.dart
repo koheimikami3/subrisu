@@ -9,7 +9,7 @@ class FirestoreConstants {
   // フィールド名
   static const createdAtField = 'createdAt';
   static const updatedAtField = 'updatedAt';
-  static const tokenField = 'token';
+  static const fcmTokenField = 'fcmToken';
   static const timezoneField = 'timezone';
   static const timezoneNameField = 'name';
   static const timezoneUtcOffsetField = 'utcOffset';
