@@ -1,4 +1,6 @@
-import '../../../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:subrisu/features/settings/settings_page.dart';
 
 /// 設定画面に遷移するボタン
 class GoToSettingsPageButton extends StatelessWidget {

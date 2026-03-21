@@ -1,4 +1,5 @@
-import '../../../importer.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:subrisu/constants/app_configs.dart';
 
 part 'notification_settings_page_state.freezed.dart';
 

@@ -1,4 +1,14 @@
-import '../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:subrisu/components/dialog/my_alert_dialog.dart';
+import 'package:subrisu/components/dialog/progress_dialog.dart';
+import 'package:subrisu/components/my_list_tile.dart';
+import 'package:subrisu/enums/tile_position.dart';
+import 'package:subrisu/env/env.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
+import 'package:subrisu/providers/purchase_status_provider.dart';
 
 /// 復元処理を行うタイル
 class RestoreTile extends ConsumerWidget {

@@ -1,4 +1,11 @@
-import '../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:subrisu/components/dialog/my_alert_dialog.dart';
+import 'package:subrisu/components/my_list_tile.dart';
+import 'package:subrisu/constants/app_urls.dart';
+import 'package:subrisu/enums/tile_position.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
+import 'package:subrisu/providers/in_app_review_provider.dart';
 
 /// アプリのレビュー画面を開くタイル
 class OpenAppReviewTile extends ConsumerWidget {

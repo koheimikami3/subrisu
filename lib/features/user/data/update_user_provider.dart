@@ -1,4 +1,10 @@
-import '../../../importer.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:subrisu/constants/firestore_constants.dart';
+import 'package:subrisu/features/user/data/fcm_token_provider.dart';
+import 'package:subrisu/features/user/data/timezone_provider.dart';
+import 'package:subrisu/providers/firebase_firestore_provider.dart';
+import 'package:subrisu/providers/user_id_provider.dart';
 
 part 'update_user_provider.g.dart';
 

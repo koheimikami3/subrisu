@@ -1,4 +1,9 @@
-import '../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:subrisu/constants/shered_preferences_keys.dart';
+import 'package:subrisu/enums/currency_settings.dart';
+import 'package:subrisu/enums/language_settings.dart';
+import 'package:subrisu/providers/shared_preferences_provider.dart';
 
 part 'currency_settings_provider.g.dart';
 

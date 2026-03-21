@@ -1,4 +1,10 @@
-import '../../../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:subrisu/components/dialog/confirmation_dialog.dart';
+import 'package:subrisu/components/dialog/my_alert_dialog.dart';
+import 'package:subrisu/components/dialog/progress_dialog.dart';
+import 'package:subrisu/features/subscription/data/delete_subscription_provider.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// サブスクリプション削除の確認を行うダイアログ
 class DeleteSubscriptionDialog extends ConsumerWidget {

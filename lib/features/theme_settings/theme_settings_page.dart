@@ -1,4 +1,6 @@
-import '../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/features/theme_settings/theme_settings_page_body.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// テーマ設定画面
 class ThemeSettingsPage extends StatelessWidget {

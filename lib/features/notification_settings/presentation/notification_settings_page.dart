@@ -1,4 +1,6 @@
-import '../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/features/notification_settings/presentation/notification_settings_page_body.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// 通知設定画面
 class NotificationSettingsPage extends StatelessWidget {

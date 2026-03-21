@@ -1,4 +1,7 @@
-import '../../../importer.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:subrisu/providers/subscriptions_collection_provider.dart';
 
 part 'delete_subscription_provider.g.dart';
 

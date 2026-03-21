@@ -1,4 +1,15 @@
-import '../../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:subrisu/components/item_divider.dart';
+import 'package:subrisu/components/items_title.dart';
+import 'package:subrisu/constants/app_colors.dart';
+import 'package:subrisu/features/subscription/presentation/widgets/price_input_form.dart';
+import 'package:subrisu/features/subscription/presentation/widgets/select_subscription_icon_button.dart';
+import 'package:subrisu/features/subscription/presentation/widgets/service_name_input_form.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
+import 'package:subrisu/providers/theme_settings_provider.dart';
+import 'package:subrisu/utils/color_selector.dart';
 
 /// サービス情報を表示する
 class ServiceInfo extends ConsumerWidget {

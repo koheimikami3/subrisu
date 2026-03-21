@@ -1,4 +1,5 @@
-import '../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/components/loading_indicator.dart';
 
 /// 処理の実行中を知らせるダイアログを表示する
 ///

@@ -1,4 +1,6 @@
-import '../../../../importer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:subrisu/enums/payment_cycle.dart';
 
 part 'subscription.freezed.dart';
 

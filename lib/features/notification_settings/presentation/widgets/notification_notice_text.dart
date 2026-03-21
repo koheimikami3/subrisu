@@ -1,4 +1,7 @@
-import '../../../../importer.dart';
+import 'package:app_settings/app_settings.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/components/notice_text.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// 通知に関する注意書きのテキスト
 class NotificationNoticeText extends StatelessWidget {

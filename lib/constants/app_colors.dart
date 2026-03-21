@@ -1,4 +1,5 @@
-import '../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 /// アプリケーション全体で使用される色定数を管理するクラス
 class AppColors {

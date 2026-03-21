@@ -1,4 +1,10 @@
-import '../../../../../importer.dart';
+import 'dart:io';
+import 'package:flutter/material.dart';
+import 'package:subrisu/components/dialog/my_alert_dialog.dart';
+import 'package:subrisu/components/my_filled_button.dart';
+import 'package:subrisu/constants/app_urls.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 /// アップデートを促すダイアログ
 class ForcedUpdateDialog extends StatelessWidget {

@@ -1,4 +1,19 @@
-import '../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:subrisu/components/dialog/my_alert_dialog.dart';
+import 'package:subrisu/components/dialog/progress_dialog.dart';
+import 'package:subrisu/components/my_list_tile.dart';
+import 'package:subrisu/enums/purchase_status.dart';
+import 'package:subrisu/enums/tile_position.dart';
+import 'package:subrisu/env/env.dart';
+import 'package:subrisu/features/purchase/providers/offerings_provider.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
+import 'package:subrisu/providers/purchase_status_provider.dart';
+import 'package:subrisu/providers/theme_settings_provider.dart';
+import 'package:subrisu/utils/color_selector.dart';
 
 /// 購入処理を行うタイル
 class PurchaseTile extends ConsumerWidget {

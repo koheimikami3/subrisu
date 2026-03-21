@@ -1,4 +1,9 @@
-import '../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/components/items_title.dart';
+import 'package:subrisu/components/my_list_tile.dart';
+import 'package:subrisu/enums/tile_position.dart';
+import 'package:subrisu/features/purchase/purchase_page.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// 課金画面に遷移するタイル
 class GoToPurchasePageTile extends StatelessWidget {

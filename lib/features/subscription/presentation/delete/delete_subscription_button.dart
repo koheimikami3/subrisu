@@ -1,4 +1,6 @@
-import '../../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:subrisu/features/subscription/presentation/delete/widgets/delete_subscription_dialog.dart';
 
 /// サブスクリプション削除の確認ダイアログを表示するタイル
 class DeleteSubscriptionButton extends StatelessWidget {

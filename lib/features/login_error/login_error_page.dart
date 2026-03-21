@@ -1,4 +1,6 @@
-import '../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/features/login_error/login_error_page_body.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// ログインエラー画面
 class LoginErrorPage extends StatelessWidget {

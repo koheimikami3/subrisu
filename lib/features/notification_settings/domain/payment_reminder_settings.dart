@@ -1,4 +1,7 @@
-import '../../../../importer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:subrisu/constants/app_configs.dart';
+import 'package:subrisu/constants/firestore_constants.dart';
 
 part 'payment_reminder_settings.freezed.dart';
 

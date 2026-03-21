@@ -1,4 +1,7 @@
-import '../../../importer.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:subrisu/constants/shered_preferences_keys.dart';
+import 'package:subrisu/enums/subscription_sort_order.dart';
+import 'package:subrisu/providers/shared_preferences_provider.dart';
 
 part 'subscription_sort_order_provider.g.dart';
 

@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
-
-import '../../../importer.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:subrisu/providers/firebase_messaging_provider.dart';
 
 part 'fcm_token_provider.g.dart';
 

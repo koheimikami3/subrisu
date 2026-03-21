@@ -1,4 +1,6 @@
-import '../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/features/purchase/purchase_page_body.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// 課金画面
 class PurchasePage extends StatelessWidget {

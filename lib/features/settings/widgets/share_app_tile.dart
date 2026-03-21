@@ -1,4 +1,9 @@
-import '../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:subrisu/components/my_list_tile.dart';
+import 'package:subrisu/constants/app_urls.dart';
+import 'package:subrisu/enums/tile_position.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// アプリのシェアシートを呼び出すタイル
 class ShareAppTile extends StatelessWidget {

@@ -1,4 +1,13 @@
-import '../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/components/item_divider.dart';
+import 'package:subrisu/components/items_title.dart';
+import 'package:subrisu/features/settings/widgets/app_version_tile.dart';
+import 'package:subrisu/features/settings/widgets/open_app_review_tile.dart';
+import 'package:subrisu/features/settings/widgets/open_inquiry_tile.dart';
+import 'package:subrisu/features/settings/widgets/open_privacy_policy_tile.dart';
+import 'package:subrisu/features/settings/widgets/open_terms_of_service_tile.dart';
+import 'package:subrisu/features/settings/widgets/share_app_tile.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// サポート項目リスト
 class SupportItemList extends StatelessWidget {

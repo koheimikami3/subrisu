@@ -1,4 +1,5 @@
-import '../../../importer.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:subrisu/enums/payment_cycle.dart';
 
 part 'subscription_form_state.freezed.dart';
 

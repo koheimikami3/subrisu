@@ -1,4 +1,5 @@
-import '../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/enums/theme_settings.dart';
 
 /// テーマ設定に応じた色を返す
 Color? selectColor({

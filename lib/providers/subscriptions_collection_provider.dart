@@ -1,4 +1,9 @@
-import '../importer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:subrisu/constants/firestore_constants.dart';
+import 'package:subrisu/providers/firebase_firestore_provider.dart';
+import 'package:subrisu/providers/user_id_provider.dart';
 
 part 'subscriptions_collection_provider.g.dart';
 

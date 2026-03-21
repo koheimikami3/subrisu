@@ -1,4 +1,19 @@
-import 'importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:subrisu/app_theme.dart';
+import 'package:subrisu/components/loading_indicator.dart';
+import 'package:subrisu/constants/shered_preferences_keys.dart';
+import 'package:subrisu/enums/language_settings.dart';
+import 'package:subrisu/enums/theme_settings.dart';
+import 'package:subrisu/features/login_error/login_error_page.dart';
+import 'package:subrisu/features/subscription/presentation/list/subscription_list.page.dart';
+import 'package:subrisu/features/user/data/login_provider.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
+import 'package:subrisu/providers/language_settings_provider.dart';
+import 'package:subrisu/providers/purchase_status_provider.dart';
+import 'package:subrisu/providers/shared_preferences_provider.dart';
+import 'package:subrisu/providers/theme_settings_provider.dart';
 
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});

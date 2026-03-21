@@ -1,4 +1,5 @@
-import '../../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// 詳細情報フォームの共通化クラス
 class DetailItem extends StatelessWidget {

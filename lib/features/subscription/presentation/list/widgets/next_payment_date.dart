@@ -1,4 +1,6 @@
-import '../../../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/enums/payment_cycle.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// 次回支払日までの日数を表示する
 ///

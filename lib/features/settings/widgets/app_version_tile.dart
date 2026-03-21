@@ -1,4 +1,9 @@
-import '../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:subrisu/components/my_list_tile.dart';
+import 'package:subrisu/enums/tile_position.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
+import 'package:subrisu/providers/package_info_provider.dart';
 
 /// アプリバージョンを表示するタイル
 class AppVersionTile extends ConsumerWidget {

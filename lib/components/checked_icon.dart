@@ -1,4 +1,5 @@
-import '../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/constants/app_colors.dart';
 
 /// 項目が選択済みであることを示すアイコン
 class CheckedIcon extends StatelessWidget {

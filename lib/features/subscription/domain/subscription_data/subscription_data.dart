@@ -1,4 +1,5 @@
-import 'package:subrisu/importer.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:subrisu/utils/first_paid_on_field.dart';
 
 part 'subscription_data.freezed.dart';
 part 'subscription_data.g.dart';

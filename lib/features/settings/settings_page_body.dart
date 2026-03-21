@@ -1,4 +1,8 @@
-import '../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:subrisu/features/settings/widgets/app_item_list.dart';
+import 'package:subrisu/features/settings/widgets/go_to_purchase_page_tile.dart';
+import 'package:subrisu/features/settings/widgets/support_item_list.dart';
 
 /// 設定画面のScaffoldBody
 class SettingsPageBody extends StatelessWidget {

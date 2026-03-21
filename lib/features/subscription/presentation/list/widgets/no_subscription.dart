@@ -1,4 +1,8 @@
-import '../../../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:subrisu/constants/app_colors.dart';
+import 'package:subrisu/gen/assets.gen.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// サブスクリプションが1つも登録されていないことを示すテキストとサブリス画像
 class NoSubscription extends StatelessWidget {

@@ -1,4 +1,5 @@
-import '../importer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 /// firstPaidOnFieldフィールドのDateTime/Timestamp変換を行うクラス
 class FirstPaidOnField implements JsonConverter<DateTime, dynamic> {

@@ -1,4 +1,6 @@
-import '../../../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:subrisu/gen/assets.gen.dart';
 
 /// サブリス画像
 class SubrisuImage extends StatelessWidget {

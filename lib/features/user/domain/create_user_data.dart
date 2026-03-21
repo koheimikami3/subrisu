@@ -1,4 +1,5 @@
-import 'package:subrisu/importer.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:subrisu/utils/created_at_field.dart';
 
 part 'create_user_data.freezed.dart';
 part 'create_user_data.g.dart';

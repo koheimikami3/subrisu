@@ -1,4 +1,5 @@
-import '../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
 
 /// 実行確認を行うダイアログ
 class ConfirmationDialog extends StatelessWidget {

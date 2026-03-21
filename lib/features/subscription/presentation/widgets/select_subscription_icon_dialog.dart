@@ -1,4 +1,13 @@
-import '../../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:subrisu/components/my_filled_button.dart';
+import 'package:subrisu/constants/app_colors.dart';
+import 'package:subrisu/features/subscription/presentation/subscription_form_provider.dart';
+import 'package:subrisu/features/subscription/presentation/widgets/subscription_icon_list.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
+import 'package:subrisu/providers/theme_settings_provider.dart';
+import 'package:subrisu/utils/color_selector.dart';
 
 class SelectSubscriptionIconDialog extends ConsumerWidget {
   const SelectSubscriptionIconDialog({super.key});

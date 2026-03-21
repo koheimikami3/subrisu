@@ -1,4 +1,7 @@
-import 'importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:subrisu/constants/app_colors.dart';
+import 'package:subrisu/constants/app_configs.dart';
 
 /// ライトモードのテーマ設定を行う
 ThemeData appThemeLight() {

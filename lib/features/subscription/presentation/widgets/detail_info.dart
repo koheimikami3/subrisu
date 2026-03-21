@@ -1,4 +1,15 @@
-import '../../../../importer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:subrisu/components/item_divider.dart';
+import 'package:subrisu/components/items_title.dart';
+import 'package:subrisu/constants/app_colors.dart';
+import 'package:subrisu/enums/payment_cycle.dart';
+import 'package:subrisu/features/subscription/presentation/widgets/first_paid_on_form.dart';
+import 'package:subrisu/features/subscription/presentation/widgets/payment_cycle_selection_form.dart';
+import 'package:subrisu/l10n/app_localizations.dart';
+import 'package:subrisu/providers/theme_settings_provider.dart';
+import 'package:subrisu/utils/color_selector.dart';
 
 /// サブスクリプションの詳細情報
 class DetailInfo extends ConsumerWidget {
