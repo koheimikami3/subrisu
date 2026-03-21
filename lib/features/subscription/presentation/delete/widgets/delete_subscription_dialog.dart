@@ -33,6 +33,8 @@ class DeleteSubscriptionDialog extends ConsumerWidget {
       errorMessge = AppLocalizations.of(context)!.deleteSubscriptionError;
     }
 
+    if (!context.mounted) return;
+
     // プログレスダイアログを閉じる
     Navigator.pop(context);
 

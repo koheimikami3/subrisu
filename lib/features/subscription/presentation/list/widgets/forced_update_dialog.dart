@@ -33,6 +33,7 @@ class ForcedUpdateDialog extends StatelessWidget {
         if (await canLaunchUrl(url)) {
           await launchUrl(url);
         } else {
+          if (!context.mounted) return;
           showErrorDialog(context, AppLocalizations.of(context)!.openUrlError);
         }
       },

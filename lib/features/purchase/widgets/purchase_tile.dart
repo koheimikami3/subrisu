@@ -73,6 +73,8 @@ class PurchaseTile extends ConsumerWidget {
       // RevenueCatのofferingsを取得
       offerings = await ref.read(offeringsProvider.future);
     } on PlatformException {
+      if (!context.mounted) return;
+
       // プログレスダイアログを閉じる
       Navigator.pop(context);
 
@@ -95,6 +97,8 @@ class PurchaseTile extends ConsumerWidget {
     } on PlatformException catch (e) {
       final code = PurchasesErrorHelper.getErrorCode(e);
 
+      if (!context.mounted) return;
+
       // プログレスダイアログを閉じる
       Navigator.pop(context);
 
@@ -116,6 +120,8 @@ class PurchaseTile extends ConsumerWidget {
     if (entitlementInfo != null && entitlementInfo.isActive) {
       // バナー広告を非表示にする
       ref.read(purchaseStatusNotifierProvider.notifier).setActive();
+
+      if (!context.mounted) return;
 
       // プログレスダイアログを閉じる
       Navigator.pop(context);

@@ -34,6 +34,8 @@ class CreateSubscriptionButton extends ConsumerWidget {
       errorMessage = AppLocalizations.of(context)!.createSubscriptionError;
     }
 
+    if (!context.mounted) return;
+
     // プログレスダイアログを閉じる
     Navigator.pop(context);
 
