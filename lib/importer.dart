@@ -20,7 +20,6 @@ export 'package:flutter_riverpod/flutter_riverpod.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:flutter_timezone/flutter_timezone.dart';
 export 'package:freezed_annotation/freezed_annotation.dart';
-export 'package:get_it/get_it.dart';
 export 'package:google_mobile_ads/google_mobile_ads.dart';
 export 'package:in_app_review/in_app_review.dart';
 export 'package:package_info_plus/package_info_plus.dart';
