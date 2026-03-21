@@ -39,7 +39,9 @@ class UpdateSubscriptionButton extends ConsumerWidget {
       errorMessage = AppLocalizations.of(context)!.updateSubscritpionError;
     }
 
-    if (!context.mounted) return;
+    if (!context.mounted) {
+      return;
+    }
 
     // プログレスダイアログを閉じる
     Navigator.pop(context);

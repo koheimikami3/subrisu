@@ -71,5 +71,8 @@ dart run flutter_native_splash:create
 ### コード生成
 生成ファイル（`*.g.dart`、`*.freezed.dart`、`assets.gen.dart`）はリポジトリにコミット済み。`@riverpod`、`@freezed`、`@Envied`アノテーションを変更した後は`build_runner`を再実行すること。
 
+### コーディング規約
+- if文のbodyはワンライナーにせず、必ずブロック`{}`で囲む
+
 ### リント
 `pedantic_mono`をベースの解析ルールセットとして使用（`analysis_options.yaml`参照）。

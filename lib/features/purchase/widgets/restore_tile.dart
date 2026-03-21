@@ -25,7 +25,9 @@ class RestoreTile extends ConsumerWidget {
       final entitlementInfo =
           customerInfo.entitlements.all[Env.revenueCatEntitlementId];
 
-      if (!context.mounted) return;
+      if (!context.mounted) {
+        return;
+      }
 
       // 過去に購入している場合
       if (entitlementInfo != null && entitlementInfo.isActive) {
@@ -51,7 +53,9 @@ class RestoreTile extends ConsumerWidget {
         );
       }
     } on PlatformException {
-      if (!context.mounted) return;
+      if (!context.mounted) {
+        return;
+      }
 
       // プログレスダイアログを閉じる
       Navigator.pop(context);
