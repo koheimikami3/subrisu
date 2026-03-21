@@ -6,7 +6,7 @@ part of 'subscriptions_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$subscriptionsHash() => r'6bb25681aed26df0a40d02fbe7c2c7a6ba4c9cf9';
+String _$subscriptionsHash() => r'0177d32bcf92974375eed9b2bea635d73d7d5206';
 
 /// ユーザーのSubscriptionリストを取得するStreamProvider
 ///

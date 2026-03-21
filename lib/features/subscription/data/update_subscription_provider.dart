@@ -5,7 +5,6 @@ part 'update_subscription_provider.g.dart';
 /// ユーザーのSubscriptionDocumentを更新するFutureProvider
 @riverpod
 Future<void> updateSubscription(Ref ref, String subscriptionId) async {
-  final userId = ref.read(userIdProvider);
   final formState = ref.read(subscriptionFormNotifierProvider);
   final note = formState.note.isEmpty ? null : formState.note;
 
@@ -25,11 +24,5 @@ Future<void> updateSubscription(Ref ref, String subscriptionId) async {
   json[FirestoreConstants.updatedAtField] = FieldValue.serverTimestamp();
 
   // SubscriptionDocumentを更新
-  await ref
-      .read(firebaseFirestoreProvider)
-      .collection(FirestoreConstants.usersCollection)
-      .doc(userId)
-      .collection(FirestoreConstants.subscriptionsCollection)
-      .doc(subscriptionId)
-      .update(json);
+  await ref.read(subscriptionsCollectionProvider).doc(subscriptionId).update(json);
 }

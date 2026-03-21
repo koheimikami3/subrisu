@@ -7,12 +7,8 @@ part 'subscriptions_provider.g.dart';
 /// 作成日時を基準に昇順に並び替える
 @riverpod
 Stream<List<Subscription>> subscriptions(Ref ref) {
-  final userId = ref.read(userIdProvider);
   return ref
-      .read(firebaseFirestoreProvider)
-      .collection(FirestoreConstants.usersCollection)
-      .doc(userId)
-      .collection(FirestoreConstants.subscriptionsCollection)
+      .read(subscriptionsCollectionProvider)
       .orderBy(FirestoreConstants.createdAtField)
       .withConverter<Subscription>(
         fromFirestore: Subscription.fromFirestore,

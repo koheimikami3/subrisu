@@ -173,6 +173,7 @@ export 'package:subrisu/providers/language_settings_provider.dart';
 export 'package:subrisu/providers/package_info_provider.dart';
 export 'package:subrisu/providers/purchase_status_provider.dart';
 export 'package:subrisu/providers/shared_preferences_provider.dart';
+export 'package:subrisu/providers/subscriptions_collection_provider.dart';
 export 'package:subrisu/providers/subscription_sort_order_provider.dart';
 export 'package:subrisu/providers/theme_settings_provider.dart';
 export 'package:subrisu/providers/user_id_provider.dart';

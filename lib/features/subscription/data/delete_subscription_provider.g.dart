@@ -7,7 +7,7 @@ part of 'delete_subscription_provider.dart';
 // **************************************************************************
 
 String _$deleteSubscriptionHash() =>
-    r'c7107131b92f818f0ea9163549180d8668659d85';
+    r'8260d751ac83a37be803d14f9cb0b1fc8589248d';
 
 /// Copied from Dart SDK
 class _SystemHash {
