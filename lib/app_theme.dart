@@ -24,7 +24,7 @@ ThemeData appThemeLight() {
         ),
       ),
     ),
-    dialogTheme: const DialogTheme(surfaceTintColor: Colors.white),
+    dialogTheme: const DialogThemeData(surfaceTintColor: Colors.white),
     progressIndicatorTheme:
         const ProgressIndicatorThemeData(color: AppColors.primary),
   );

@@ -127,7 +127,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get priceHint => 'Price*';
 
   @override
-  String get deleteSubscriptionDialogContent => 'Are you sure you want to delete this subscription?';
+  String get deleteSubscriptionDialogContent =>
+      'Are you sure you want to delete this subscription?';
 
   @override
   String get deleteSubscriptionButton => 'Delete';
@@ -204,22 +205,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get loginError => 'Login failed.\nPlease try again after some time.';
 
   @override
-  String get fetchSubscriptionsError => 'Failed to retrieve subscription.\nPlease try again after some time.';
+  String get fetchSubscriptionsError =>
+      'Failed to retrieve subscription.\nPlease try again after some time.';
 
   @override
-  String get createSubscriptionError => 'Failed to register subscription data. Please try again after some time.';
+  String get createSubscriptionError =>
+      'Failed to register subscription data. Please try again after some time.';
 
   @override
-  String get updateSubscritpionError => 'Failed to update subscription data. Please try again after some time.';
+  String get updateSubscritpionError =>
+      'Failed to update subscription data. Please try again after some time.';
 
   @override
-  String get deleteSubscriptionError => 'Failed to delete subscription data. Please try again after some time.';
+  String get deleteSubscriptionError =>
+      'Failed to delete subscription data. Please try again after some time.';
 
   @override
   String get noPurchaseItemError => 'No purchasable items were found.';
 
   @override
-  String get noPurchaseInfoError => 'Past purchase information was not found. Please check the account used for the purchase.';
+  String get noPurchaseInfoError =>
+      'Past purchase information was not found. Please check the account used for the purchase.';
 
   @override
   String get openReviewError => 'Failed to open the review page.';
@@ -234,7 +240,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get openUrlError => 'Failed to open the page for the specified URL.';
 
   @override
-  String get noSubscription => 'No subscriptions available.\nYou can add subscription using the + button at the bottom right.';
+  String get noSubscription =>
+      'No subscriptions available.\nYou can add subscription using the + button at the bottom right.';
 
   @override
   String get sortPullDownTitle => 'Sort';
@@ -271,7 +278,8 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get thankYouMessage => 'Thank you for your continued support of Subrisu.';
+  String get thankYouMessage =>
+      'Thank you for your continued support of Subrisu.';
 
   @override
   String get reminder => 'recieve payment reminder';

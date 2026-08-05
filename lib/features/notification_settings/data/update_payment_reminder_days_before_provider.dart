@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:subrisu/constants/firestore_constants.dart';
 import 'package:subrisu/providers/firebase_firestore_provider.dart';

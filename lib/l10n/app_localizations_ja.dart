@@ -204,16 +204,20 @@ class AppLocalizationsJa extends AppLocalizations {
   String get loginError => 'ログインに失敗しました。\n時間をおいて再度お試しください。';
 
   @override
-  String get fetchSubscriptionsError => 'サブスクリプションの取得に失敗しました。\n時間をおいて再度お試しください。';
+  String get fetchSubscriptionsError =>
+      'サブスクリプションの取得に失敗しました。\n時間をおいて再度お試しください。';
 
   @override
-  String get createSubscriptionError => 'サブスクリプションデータを登録できませんでした。時間をおいて再度お試しください。';
+  String get createSubscriptionError =>
+      'サブスクリプションデータを登録できませんでした。時間をおいて再度お試しください。';
 
   @override
-  String get updateSubscritpionError => 'サブスクリプションデータを更新できませんでした。時間をおいて再度お試しください。';
+  String get updateSubscritpionError =>
+      'サブスクリプションデータを更新できませんでした。時間をおいて再度お試しください。';
 
   @override
-  String get deleteSubscriptionError => 'サブスクリプションデータを削除できませんでした。時間をおいて再度お試しください。';
+  String get deleteSubscriptionError =>
+      'サブスクリプションデータを削除できませんでした。時間をおいて再度お試しください。';
 
   @override
   String get noPurchaseItemError => '購入可能なアイテムが見つかりませんでした。';
