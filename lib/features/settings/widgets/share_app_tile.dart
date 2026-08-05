@@ -15,8 +15,10 @@ class ShareAppTile extends StatelessWidget {
       position: TilePosition.middle,
       name: AppLocalizations.of(context)!.shareItem,
       leadingIcon: Icons.share_outlined,
-      onTap: () => Share.share(
-        AppLocalizations.of(context)!.shareText(AppUrls.appStore),
+      onTap: () => SharePlus.instance.share(
+        ShareParams(
+          text: AppLocalizations.of(context)!.shareText(AppUrls.appStore),
+        ),
       ),
     );
   }

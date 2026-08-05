@@ -110,7 +110,9 @@ class PurchaseTile extends ConsumerWidget {
 
     try {
       // 購入処理を実行
-      customerInfo = await Purchases.purchasePackage(package!);
+      final purchaseResult =
+          await Purchases.purchase(PurchaseParams.package(package!));
+      customerInfo = purchaseResult.customerInfo;
     } on PlatformException catch (e) {
       final code = PurchasesErrorHelper.getErrorCode(e);
 
