@@ -18,15 +18,20 @@ class MyBannerAd extends ConsumerStatefulWidget {
 }
 
 class _MyBannerAdState extends ConsumerState<MyBannerAd> {
-  final _myBanner = BannerAd(
-    adUnitId: Platform.isIOS
-        ? kReleaseMode
-            ? Env.iOSReleaseAdId
-            : Env.iOSDebugAdId
-        : kReleaseMode
-            ? Env.androidDebugAdId
-            : Env.androidDebugAdId,
-    size: AdSize.fullBanner,
+  static const AdSize _adSize = AdSize.fullBanner;
+
+  /// 実行プラットフォームとビルドモードに応じた広告ユニットIDを返す
+  static String get _adUnitId {
+    if (Platform.isIOS) {
+      return kReleaseMode ? Env.iOSReleaseAdId : Env.iOSDebugAdId;
+    } else {
+      return kReleaseMode ? Env.androidReleaseAdId : Env.androidDebugAdId;
+    }
+  }
+
+  late final _myBanner = BannerAd(
+    adUnitId: _adUnitId,
+    size: _adSize,
     request: const AdRequest(),
     listener: const BannerAdListener(),
   );
@@ -40,6 +45,12 @@ class _MyBannerAdState extends ConsumerState<MyBannerAd> {
   }
 
   @override
+  void dispose() {
+    _myBanner.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final purchaseStatus = ref.watch(purchaseStatusNotifierProvider);
 
@@ -48,18 +59,7 @@ class _MyBannerAdState extends ConsumerState<MyBannerAd> {
         : Padding(
             padding: EdgeInsets.only(bottom: 30.h),
             child: SizedBox(
-              height: BannerAd(
-                adUnitId: Platform.isIOS
-                    ? kReleaseMode
-                        ? Env.iOSReleaseAdId
-                        : Env.iOSDebugAdId
-                    : kReleaseMode
-                        ? Env.androidDebugAdId
-                        : Env.androidDebugAdId,
-                size: AdSize.fullBanner,
-                request: const AdRequest(),
-                listener: const BannerAdListener(),
-              ).size.height.toDouble(),
+              height: _adSize.height.toDouble(),
               width: double.infinity,
               child: AdWidget(ad: _myBanner),
             ),
