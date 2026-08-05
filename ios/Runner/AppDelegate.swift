@@ -1,9 +1,10 @@
 import UIKit
 import Flutter
-import Firebase
+// Swift Package Managerには`Firebase`アンブレラモジュールが無いため、個別のモジュールを読み込む
+import FirebaseAppCheck
 
 @main
-@objc class AppDelegate: FlutterAppDelegate {
+@objc class AppDelegate: FlutterAppDelegate, FlutterImplicitEngineDelegate {
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -15,7 +16,11 @@ import Firebase
     AppCheck.setAppCheckProviderFactory(providerFactory)
 #endif
 
-    GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+
+  // UISceneライフサイクルではAppDelegateではなくこちらでプラグインを登録する
+  func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
+    GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
   }
 }
