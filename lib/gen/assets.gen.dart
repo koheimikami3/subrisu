@@ -12,8 +12,26 @@ import 'package:flutter/widgets.dart';
 class $ImagesGen {
   const $ImagesGen();
 
+  /// Directory path: images/other_apps
+  $ImagesOtherAppsGen get otherApps => const $ImagesOtherAppsGen();
+
   /// Directory path: images/subscription
   $ImagesSubscriptionGen get subscription => const $ImagesSubscriptionGen();
+}
+
+class $ImagesOtherAppsGen {
+  const $ImagesOtherAppsGen();
+
+  /// File path: images/other_apps/eitangocho.png
+  AssetGenImage get eitangocho =>
+      const AssetGenImage('images/other_apps/eitangocho.png');
+
+  /// File path: images/other_apps/metronome.png
+  AssetGenImage get metronome =>
+      const AssetGenImage('images/other_apps/metronome.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [eitangocho, metronome];
 }
 
 class $ImagesSubscriptionGen {

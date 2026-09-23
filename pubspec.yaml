@@ -73,4 +73,5 @@ flutter:
   generate: true
   
   assets:
+    - images/other_apps/
     - images/subscription/

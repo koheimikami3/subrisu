@@ -143,6 +143,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get supportItemsTitle => 'Support';
 
   @override
+  String get authorAppsTitle => 'More Apps by the Developer';
+
+  @override
+  String get authorAppGetButton => 'Get';
+
+  @override
+  String get eitangochoName => 'Simple Vocabulary Notebook';
+
+  @override
+  String get eitangochoTagline => 'Make your own flashcards';
+
+  @override
+  String get metronomeName => 'Metronome';
+
+  @override
+  String get metronomeTagline => 'Time signature, tempo & BPM';
+
+  @override
   String get appVersionTitle => 'Version';
 
   @override

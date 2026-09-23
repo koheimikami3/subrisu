@@ -305,6 +305,42 @@ abstract class AppLocalizations {
   ///
   ///
   /// In en, this message translates to:
+  /// **'More Apps by the Developer'**
+  String get authorAppsTitle;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Get'**
+  String get authorAppGetButton;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Simple Vocabulary Notebook'**
+  String get eitangochoName;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Make your own flashcards'**
+  String get eitangochoTagline;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Metronome'**
+  String get metronomeName;
+
+  ///
+  ///
+  /// In en, this message translates to:
+  /// **'Time signature, tempo & BPM'**
+  String get metronomeTagline;
+
+  ///
+  ///
+  /// In en, this message translates to:
   /// **'Version'**
   String get appVersionTitle;
 
