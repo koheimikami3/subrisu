@@ -10,6 +10,9 @@
 
 Subrisuはサブスクリプション管理のFlutter/Dart製iOSアプリ。バックエンドにFirebase（Auth, Firestore, Remote Config, Crashlytics, Messaging, Analytics）、アプリ内課金にRevenueCat、バナー広告にGoogle Mobile Adsを使用。日本語・英語の多言語対応。
 
+- ストアに掲載したリリースノートの控え: `docs/release-notes.md`(提出のたびに追記する。書き方の決まりも同ファイルの冒頭にある)
+- リリース作業(`/release`)が読むアプリ固有の設定: `docs/release.md`(常時は読み込まない)
+
 ## ビルド・開発コマンド
 
 ```bash
