@@ -166,6 +166,30 @@
     "@supportItemsTitle": {
         "description": ""
     },
+    "authorAppsTitle": "More Apps by the Developer",
+    "@authorAppsTitle": {
+        "description": ""
+    },
+    "authorAppGetButton": "Get",
+    "@authorAppGetButton": {
+        "description": ""
+    },
+    "eitangochoName": "Simple Vocabulary Notebook",
+    "@eitangochoName": {
+        "description": ""
+    },
+    "eitangochoTagline": "Make your own flashcards",
+    "@eitangochoTagline": {
+        "description": ""
+    },
+    "metronomeName": "Metronome",
+    "@metronomeName": {
+        "description": ""
+    },
+    "metronomeTagline": "Time signature, tempo & BPM",
+    "@metronomeTagline": {
+        "description": ""
+    },
     "appVersionTitle": "Version",
     "@appVersionTitle": {
         "description": ""

@@ -142,6 +142,24 @@ class AppLocalizationsJa extends AppLocalizations {
   String get supportItemsTitle => 'サポート';
 
   @override
+  String get authorAppsTitle => '作者の他のアプリ';
+
+  @override
+  String get authorAppGetButton => '入手';
+
+  @override
+  String get eitangochoName => 'シンプル英単語帳';
+
+  @override
+  String get eitangochoTagline => '自分で作る暗記カード';
+
+  @override
+  String get metronomeName => 'メトロノーム';
+
+  @override
+  String get metronomeTagline => '拍子・テンポ・BPM';
+
+  @override
   String get appVersionTitle => 'バージョン';
 
   @override

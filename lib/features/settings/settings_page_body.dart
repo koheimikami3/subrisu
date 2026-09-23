@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:subrisu/features/settings/widgets/app_item_list.dart';
+import 'package:subrisu/features/settings/widgets/author_app_item_list.dart';
 import 'package:subrisu/features/settings/widgets/go_to_purchase_page_tile.dart';
 import 'package:subrisu/features/settings/widgets/support_item_list.dart';
 
@@ -22,6 +23,8 @@ class SettingsPageBody extends StatelessWidget {
                 const AppItemList(),
                 SizedBox(height: 25.h),
                 const SupportItemList(),
+                SizedBox(height: 25.h),
+                const AuthorAppItemList(),
                 SizedBox(height: 50.h),
               ],
             ),
