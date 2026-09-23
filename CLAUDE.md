@@ -31,9 +31,6 @@ flutter analyze
 # ローカライズファイル生成
 flutter gen-l10n
 
-# アプリアイコン生成
-dart run flutter_launcher_icons
-
 # スプラッシュスクリーン生成
 dart run flutter_native_splash:create
 ```
@@ -67,6 +64,9 @@ dart run flutter_native_splash:create
 ### ローカライズ
 - ARBファイルは`lib/l10n/`に配置（テンプレート：`app_en.arb`、翻訳：`app_ja.arb`）
 - `AppLocalizations`（`flutter_gen/gen_l10n/`）経由でアクセス
+
+### アプリアイコン
+`ios/Runner/AppIcon.icon`（Icon Composer 形式）が正基準。Icon Composer で開いて編集する。`icon.json` の `layers` は先頭が最前面。同名の appiconset は置かない（`.icon` が優先され、iOS 25 以前向けの絵も `.icon` から Xcode が生成するため）。
 
 ### コード生成
 生成ファイル（`*.g.dart`、`*.freezed.dart`、`assets.gen.dart`）はリポジトリにコミット済み。`@riverpod`、`@freezed`、`@Envied`アノテーションを変更した後は`build_runner`を再実行すること。
