@@ -7,6 +7,7 @@ version: 2.8.0+1
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.47.8'
 
 dependencies:
   flutter:
@@ -17,17 +18,17 @@ dependencies:
 
   app_settings: ^5.1.1
   app_tracking_transparency: ^2.0.7
-  cloud_firestore: ^6.8.0
+  cloud_firestore: ^6.10.2
   cupertino_icons: ^1.0.2
   dotted_border: ^2.0.0+3
   envied: ^1.1.1
-  firebase_analytics: ^12.4.6
-  firebase_app_check: ^0.4.6
-  firebase_auth: ^6.5.7
-  firebase_core: ^4.13.0
-  firebase_crashlytics: ^5.2.7
-  firebase_messaging: ^16.5.0
-  firebase_remote_config: ^6.5.6
+  firebase_analytics: ^12.6.1
+  firebase_app_check: ^0.4.9
+  firebase_auth: ^6.7.1
+  firebase_core: ^4.15.2
+  firebase_crashlytics: ^5.4.1
+  firebase_messaging: ^16.7.1
+  firebase_remote_config: ^6.7.1
   flutter_native_splash: ^2.2.16
   flutter_riverpod: ^2.4.7
   flutter_screenutil: ^5.5.4
