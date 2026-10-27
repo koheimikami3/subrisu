@@ -7,6 +7,8 @@ analyzer:
     - lib/**/*.freezed.dart
     # Swift Package Managerが依存パッケージのソースを展開する場所
     - build/**
+    - android/**
+    - ios/**
 
 linter:
   rules:
